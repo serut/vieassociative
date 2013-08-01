@@ -1,0 +1,36 @@
+<div class="tab_container">
+    <div class="tab_container_in">
+        <?php echo Form::open(array('class'=> 'form')); ?>
+            <?php echo Form::token(); ?>
+            <div class="control-group <?php if($errors->get('nom','<span class="help-inline">:message</span>')): ?>error<?php endif; ?>">
+                <label class="control-label">Nom de l'association</label>
+                <div class="controls">
+                    <div class="formulaire">
+                        <?php foreach ($errors->get('nom') as $message): ?>
+                            <?php echo $message; ?><br>
+                        <?php endforeach; ?>
+                        <?php echo Form::text('nom','',array('class'=>"input-xlarge", 'id'=>"nom", 'data-placement'=> 'right','data-rel'=> 'tooltip', 'data-trigger'=>"focus", 'data-original-title'=>"Entrez le nom exact de l'association qui vous autorise à publier en son nom",'placeholder'=>"Nom de l'association",'rele' =>'tooltip',)); ?>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group <?php if($errors->get('lien','<span class="help-inline">:message</span>')): ?>error<?php endif; ?>">
+                <label class="control-label">Votre lien avec l'association</label>
+                <div class="controls">
+                    <div class="formulaire">
+                        <?php foreach ($errors->get('lien') as $message): ?>
+                            <?php echo $message; ?><br>
+                        <?php endforeach; ?>
+                        <?php echo Form::text('lien','',array('class' => 'input-xlarge','id'=>'lien', 'data-placement'=> 'right','data-rel'=> 'tooltip', 'data-trigger'=>"focus", 'data-original-title'=>"Cette donnée nous sert à mieux connaitre les portes paroles d'association, comme vous !",'placeholder'=>"Autre poste",'rele' =>'tooltip')); ?>
+                        <hr>
+                        <p>
+                            Exemple : 
+                            <a class="btn-vie-assoc" type="button" onclick="$('#lien').val($(this).text());">Président</a>
+                            <a class="btn-vie-assoc" type="button" onclick="$('#lien').val($(this).text());">Trésorier</a>
+                            <a class="btn-vie-assoc" type="button" onclick="$('#lien').val($(this).text());">Secrétaire</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        <?php echo Form::close(); ?>
+    </div>
+</div>

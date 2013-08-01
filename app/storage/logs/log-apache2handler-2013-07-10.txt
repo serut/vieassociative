@@ -1,0 +1,1306 @@
+[2013-07-10 13:18:15] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php:4920
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4762): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\MethodNotAllowedException))
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4750): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#5 {main} [] []
+[2013-07-10 13:19:22] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php:4920
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4762): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\MethodNotAllowedException))
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4750): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#5 {main} [] []
+[2013-07-10 13:20:40] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php:4920
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4762): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\MethodNotAllowedException))
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4750): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#5 {main} [] []
+[2013-07-10 13:20:52] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php:4920
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4762): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\MethodNotAllowedException))
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4750): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#5 {main} [] []
+[2013-07-10 13:21:02] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php:4920
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4762): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\MethodNotAllowedException))
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4750): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#5 {main} [] []
+[2013-07-10 13:21:14] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php:4920
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4762): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\MethodNotAllowedException))
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4750): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#5 {main} [] []
+[2013-07-10 13:21:54] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php:4920
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4762): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\MethodNotAllowedException))
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4750): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#5 {main} [] []
+[2013-07-10 13:22:24] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php:4920
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4762): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\MethodNotAllowedException))
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4750): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#5 {main} [] []
+[2013-07-10 13:53:43] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SiteHelper' not found' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:48
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 13:53:53] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SiteHelper' not found' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:48
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 13:54:06] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SiteHelper' not found' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:48
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 13:55:32] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SiteHelper' not found' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:48
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 13:55:58] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SiteHelper' not found' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:48
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 13:56:46] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SiteHelper' not found' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:48
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 13:57:31] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SiteHelper' not found' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:48
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:05:38] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SwordCompiler' not found' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\start\global.php:89
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:10:09] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'Blade' (T_STRING), expecting function (T_FUNCTION)' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\views\blade.php:8
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:10:36] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'public' (T_PUBLIC)' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\views\blade.php:3
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:17:11] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'control' (T_STRING)' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php:10
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:17:30] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'control' (T_STRING)' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php:10
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:17:50] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ','' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php:22
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:18:24] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ','' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php:24
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:19:23] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ','' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php:25
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:19:46] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ','' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php:25
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:20:06] log.ERROR: exception 'ErrorException' with message 'Missing argument 1 for SiteHelpers::create_input(), called in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583 on line 48 and defined' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php:8
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php(8): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', 'J:\xampp2\htdoc...', 8, Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583(48): SiteHelpers::create_input()
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('J:\xampp2\htdoc...')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('J:\xampp2\htdoc...', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('J:\xampp2\htdoc...', Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1413): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(156): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(126): Illuminate\Routing\Controllers\Controller->processResponse(Object(Illuminate\Routing\Router), 'getConnexion', Object(Illuminate\View\View))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'getConnexion', Array)
+#12 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#16 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#17 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#18 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2013-07-10 14:20:08] log.ERROR: exception 'ErrorException' with message 'Missing argument 1 for SiteHelpers::create_input(), called in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583 on line 48 and defined' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php:8
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php(8): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', 'J:\xampp2\htdoc...', 8, Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583(48): SiteHelpers::create_input()
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('J:\xampp2\htdoc...')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('J:\xampp2\htdoc...', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('J:\xampp2\htdoc...', Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1413): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(156): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(126): Illuminate\Routing\Controllers\Controller->processResponse(Object(Illuminate\Routing\Router), 'getConnexion', Object(Illuminate\View\View))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'getConnexion', Array)
+#12 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#16 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#17 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#18 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2013-07-10 14:20:18] log.ERROR: exception 'ErrorException' with message 'Missing argument 1 for SiteHelpers::create_input(), called in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583 on line 48 and defined' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php:8
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php(8): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', 'J:\xampp2\htdoc...', 8, Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583(48): SiteHelpers::create_input()
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('J:\xampp2\htdoc...')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('J:\xampp2\htdoc...', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('J:\xampp2\htdoc...', Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1413): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(156): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(126): Illuminate\Routing\Controllers\Controller->processResponse(Object(Illuminate\Routing\Router), 'getConnexion', Object(Illuminate\View\View))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'getConnexion', Array)
+#12 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#16 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#17 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#18 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2013-07-10 14:20:39] log.ERROR: exception 'ErrorException' with message 'Missing argument 1 for SiteHelpers::create_input(), called in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583 on line 48 and defined' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php:8
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php(8): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', 'J:\xampp2\htdoc...', 8, Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583(48): SiteHelpers::create_input()
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('J:\xampp2\htdoc...')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('J:\xampp2\htdoc...', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('J:\xampp2\htdoc...', Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1413): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(156): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(126): Illuminate\Routing\Controllers\Controller->processResponse(Object(Illuminate\Routing\Router), 'getConnexion', Object(Illuminate\View\View))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'getConnexion', Array)
+#12 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#16 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#17 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#18 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2013-07-10 14:21:00] log.ERROR: exception 'ErrorException' with message 'Missing argument 1 for SiteHelpers::create_input(), called in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583 on line 48 and defined' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php:8
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php(8): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', 'J:\xampp2\htdoc...', 8, Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583(48): SiteHelpers::create_input()
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('J:\xampp2\htdoc...')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('J:\xampp2\htdoc...', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('J:\xampp2\htdoc...', Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1413): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(156): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(126): Illuminate\Routing\Controllers\Controller->processResponse(Object(Illuminate\Routing\Router), 'getConnexion', Object(Illuminate\View\View))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'getConnexion', Array)
+#12 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#16 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#17 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#18 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2013-07-10 14:21:27] log.ERROR: exception 'ErrorException' with message 'Missing argument 1 for SiteHelpers::create_input(), called in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583 on line 48 and defined' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php:8
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php(8): Illuminate\Exception\Handler->handleError(2, 'Missing argumen...', 'J:\xampp2\htdoc...', 8, Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583(48): SiteHelpers::create_input()
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('J:\xampp2\htdoc...')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('J:\xampp2\htdoc...', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('J:\xampp2\htdoc...', Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1413): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(156): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(126): Illuminate\Routing\Controllers\Controller->processResponse(Object(Illuminate\Routing\Router), 'getConnexion', Object(Illuminate\View\View))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'getConnexion', Array)
+#12 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#16 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#17 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#18 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2013-07-10 14:29:29] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:45
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:29:58] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:45
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:30:03] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:45
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:31:22] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:45
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:31:39] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:45
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:32:23] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:45
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:33:10] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:40
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:33:13] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:40
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:33:14] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:40
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:33:33] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:40
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:33:53] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:40
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:39:20] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '=', expecting '('' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:41
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:39:46] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';', expecting '('' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:41
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:40:20] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';', expecting '('' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:41
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:40:24] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:41
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:40:49] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:41
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:41:33] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';', expecting '('' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:52
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:41:48] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';', expecting '('' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:52
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:42:13] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';', expecting '('' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:52
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:42:21] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';', expecting '('' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:52
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:42:46] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';', expecting '('' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:52
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:51:07] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php:13
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:51:34] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php:13
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:53:18] log.ERROR: exception 'ErrorException' with message 'Undefined variable: formsOptions' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php:22
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php(22): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', 'J:\xampp2\htdoc...', 22, Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583(52): SiteHelpers::create_input(Array)
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('J:\xampp2\htdoc...')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('J:\xampp2\htdoc...', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('J:\xampp2\htdoc...', Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1413): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(156): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(126): Illuminate\Routing\Controllers\Controller->processResponse(Object(Illuminate\Routing\Router), 'getConnexion', Object(Illuminate\View\View))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'getConnexion', Array)
+#12 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#16 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#17 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#18 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2013-07-10 14:55:38] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '=>' (T_DOUBLE_ARROW)' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php:14
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:56:00] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '=>' (T_DOUBLE_ARROW)' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php:14
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:58:58] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '=>' (T_DOUBLE_ARROW)' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php:14
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 14:59:00] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '=>' (T_DOUBLE_ARROW)' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php:14
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 15:03:00] log.ERROR: exception 'ErrorException' with message 'Undefined variable: txt' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php:16
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php(16): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', 'J:\xampp2\htdoc...', 16, Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php(10): SiteHelpers::simple_input(Array)
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583(51): SiteHelpers::create_input(Array)
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('J:\xampp2\htdoc...')
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('J:\xampp2\htdoc...', Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('J:\xampp2\htdoc...', Array)
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1413): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(156): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(126): Illuminate\Routing\Controllers\Controller->processResponse(Object(Illuminate\Routing\Router), 'getConnexion', Object(Illuminate\View\View))
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'getConnexion', Array)
+#13 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#16 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#17 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#18 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#19 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#20 {main} [] []
+[2013-07-10 15:15:09] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ''=>"pseudo", '' (T_CONSTANT_ENCAPSED_STRING)' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:106
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 15:22:49] log.ERROR: exception 'ErrorException' with message 'Undefined variable: text' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php:21
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php(21): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', 'J:\xampp2\htdoc...', 21, Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php(7): SiteHelpers::simple_input(Array)
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583(51): SiteHelpers::create_input(Array)
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('J:\xampp2\htdoc...')
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('J:\xampp2\htdoc...', Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('J:\xampp2\htdoc...', Array)
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1413): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(156): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(126): Illuminate\Routing\Controllers\Controller->processResponse(Object(Illuminate\Routing\Router), 'getConnexion', Object(Illuminate\View\View))
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'getConnexion', Array)
+#13 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#16 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#17 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#18 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#19 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#20 {main} [] []
+[2013-07-10 15:23:21] log.ERROR: exception 'BadMethodCallException' with message 'Method mail does not exist.' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Html\FormBuilder.php:830
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(183): Illuminate\Html\FormBuilder->__call('mail', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(183): Illuminate\Html\FormBuilder->mail('mail', '', Array)
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php(21): Illuminate\Support\Facades\Facade::__callStatic('mail', Array)
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php(21): Illuminate\Support\Facades\Form::mail('mail', '', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php(7): SiteHelpers::simple_input(Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583(112): SiteHelpers::create_input(Array)
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('J:\xampp2\htdoc...')
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('J:\xampp2\htdoc...', Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('J:\xampp2\htdoc...', Array)
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1413): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(156): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(126): Illuminate\Routing\Controllers\Controller->processResponse(Object(Illuminate\Routing\Router), 'getConnexion', Object(Illuminate\View\View))
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'getConnexion', Array)
+#16 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#17 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#18 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#19 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#20 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#21 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#22 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#23 {main} [] []
+[2013-07-10 15:27:02] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '}'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php:51
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 15:31:48] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '}'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 15:32:23] log.ERROR: exception 'ErrorException' with message 'htmlentities() expects parameter 1 to be string, array given' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Support\helpers.php:502
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(2, 'htmlentities() ...', 'J:\xampp2\htdoc...', 502, Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Support\helpers.php(502): htmlentities(Array, 3, 'UTF-8', false)
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Html\HtmlBuilder.php(356): e(Array)
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Html\HtmlBuilder.php(337): Illuminate\Html\HtmlBuilder->attributeElement('value', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Html\FormBuilder.php(232): Illuminate\Html\HtmlBuilder->attributes(Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Html\FormBuilder.php(283): Illuminate\Html\FormBuilder->input('email', 'mail', Array, Array)
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(180): Illuminate\Html\FormBuilder->email('mail', Array)
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php(43): Illuminate\Support\Facades\Facade::__callStatic('email', Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php(43): Illuminate\Support\Facades\Form::email('mail', Array)
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php(21): SiteHelpers::callFormClass(Array)
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\SiteHelpers.php(7): SiteHelpers::simple_input(Array)
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583(112): SiteHelpers::create_input(Array)
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('J:\xampp2\htdoc...')
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('J:\xampp2\htdoc...', Array)
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('J:\xampp2\htdoc...', Array)
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#16 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#17 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#18 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1413): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#19 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(156): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#20 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(126): Illuminate\Routing\Controllers\Controller->processResponse(Object(Illuminate\Routing\Router), 'getConnexion', Object(Illuminate\View\View))
+#21 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'getConnexion', Array)
+#22 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#23 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#24 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#25 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#26 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#27 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#28 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#29 {main} [] []
+[2013-07-10 15:58:57] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'nav' (T_STRING), expecting ')'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:65
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 15:59:00] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'nav' (T_STRING), expecting ')'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:65
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 19:40:29] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ','' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:27
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 19:40:40] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ','' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:27
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 19:55:24] log.ERROR: exception 'ErrorException' with message 'Undefined variable: connexTentative' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583:25
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c7ee8cd4fa952f3809d1dd4c53e15583(25): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', 'J:\xampp2\htdoc...', 25, Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('J:\xampp2\htdoc...')
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('J:\xampp2\htdoc...', Array)
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('J:\xampp2\htdoc...', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1413): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(156): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(126): Illuminate\Routing\Controllers\Controller->processResponse(Object(Illuminate\Routing\Router), 'getConnexion', Object(Illuminate\View\View))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'getConnexion', Array)
+#11 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#16 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#17 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2013-07-10 20:04:33] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ':'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php:9
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 20:04:36] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ':'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php:9
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 20:11:42] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ':'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php:9
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 20:14:46] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ':'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php:9
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 20:15:01] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ','' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php:56
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 20:15:33] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '$need' (T_VARIABLE), expecting identifier (T_STRING)' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\BaseValidator.php:6
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 20:16:20] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '$i' (T_VARIABLE)' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\BaseValidator.php:8
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 20:16:33] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '=>' (T_DOUBLE_ARROW)' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\lang\fr\core\form.php:4
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 20:21:45] log.ERROR: exception 'ErrorException' with message 'Non-static method validators_connexion::login() should not be called statically, assuming $this from incompatible context' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php:14
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(14): Illuminate\Exception\Handler->handleError(2048, 'Non-static meth...', 'J:\xampp2\htdoc...', 14, Array)
+#1 [internal function]: LoginController->postLogin()
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postLogin', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postLogin', Array)
+#5 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2013-07-10 20:23:33] log.ERROR: exception 'ErrorException' with message 'Undefined variable: v' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php:15
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(15): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', 'J:\xampp2\htdoc...', 15, Array)
+#1 [internal function]: LoginController->postLogin()
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postLogin', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postLogin', Array)
+#5 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2013-07-10 20:23:47] log.ERROR: exception 'ErrorException' with message 'Undefined variable: nbrConnectionTentative' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php:15
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(15): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', 'J:\xampp2\htdoc...', 15, Array)
+#1 [internal function]: LoginController->postLogin()
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postLogin', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postLogin', Array)
+#5 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2013-07-10 20:24:28] log.ERROR: exception 'ErrorException' with message 'Undefined variable: inputs' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php:9
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php(9): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', 'J:\xampp2\htdoc...', 9, Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(15): validators_connexion->login(0)
+#2 [internal function]: LoginController->postLogin()
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postLogin', Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postLogin', Array)
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#13 {main} [] []
+[2013-07-10 20:25:03] log.ERROR: exception 'ErrorException' with message 'Undefined offset: 2' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\BaseValidator.php:12
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\BaseValidator.php(12): Illuminate\Exception\Handler->handleError(8, 'Undefined offse...', 'J:\xampp2\htdoc...', 12, Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php(9): BaseValidator->need(Array)
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(15): validators_connexion->login(0)
+#3 [internal function]: LoginController->postLogin()
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postLogin', Array)
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postLogin', Array)
+#7 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#14 {main} [] []
+[2013-07-10 20:26:16] log.ERROR: exception 'ErrorException' with message 'Undefined offset: 1' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\BaseValidator.php:12
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\BaseValidator.php(12): Illuminate\Exception\Handler->handleError(8, 'Undefined offse...', 'J:\xampp2\htdoc...', 12, Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php(9): BaseValidator->need(Array)
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(15): validators_connexion->login(0)
+#3 [internal function]: LoginController->postLogin()
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postLogin', Array)
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postLogin', Array)
+#7 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#14 {main} [] []
+[2013-07-10 20:26:42] log.ERROR: exception 'ErrorException' with message 'Undefined offset: 1' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\BaseValidator.php:12
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\BaseValidator.php(12): Illuminate\Exception\Handler->handleError(8, 'Undefined offse...', 'J:\xampp2\htdoc...', 12, Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php(9): BaseValidator->need(Array)
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(15): validators_connexion->login(0)
+#3 [internal function]: LoginController->postLogin()
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postLogin', Array)
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postLogin', Array)
+#7 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#14 {main} [] []
+[2013-07-10 20:28:47] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';', expecting ')'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\BaseValidator.php:4
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 20:32:24] log.ERROR: exception 'ErrorException' with message 'Undefined index: password' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\BaseValidator.php:12
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\BaseValidator.php(12): Illuminate\Exception\Handler->handleError(8, 'Undefined index...', 'J:\xampp2\htdoc...', 12, Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php(9): BaseValidator->need(Array)
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(15): validators_connexion->login(0)
+#3 [internal function]: LoginController->postLogin()
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postLogin', Array)
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postLogin', Array)
+#7 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#14 {main} [] []
+[2013-07-10 20:34:48] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '.'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 20:34:49] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '.'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php:42
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 20:35:35] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Maximum execution time of 30 seconds exceeded' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Http\Request.php:187
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 20:43:06] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Maximum execution time of 30 seconds exceeded' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Support\Str.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 20:43:23] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Maximum execution time of 30 seconds exceeded' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Container\Container.php:436
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 20:45:07] log.ERROR: exception 'ErrorException' with message 'Undefined variable: text' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php:37
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php(37): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', 'J:\xampp2\htdoc...', 37, Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(15): validators_connexion->login(0)
+#2 [internal function]: LoginController->postLogin()
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postLogin', Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postLogin', Array)
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#13 {main} [] []
+[2013-07-10 20:45:08] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Maximum execution time of 30 seconds exceeded' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Http\Request.php:433
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 20:45:22] log.ERROR: exception 'ErrorException' with message 'Undefined variable: text' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php:37
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php(37): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', 'J:\xampp2\htdoc...', 37, Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(15): validators_connexion->login(1)
+#2 [internal function]: LoginController->postLogin()
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postLogin', Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postLogin', Array)
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#13 {main} [] []
+[2013-07-10 20:52:28] log.ERROR: exception 'BadMethodCallException' with message 'Method [validateExistingNick] does not exist.' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php:1762
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(216): Illuminate\Validation\Validator->__call('validateExistin...', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(216): Illuminate\Validation\Validator->validateExistingNick('pseudo', 'Sesruutzenzje', Array, Object(Illuminate\Validation\Validator))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(179): Illuminate\Validation\Validator->validate('pseudo', 'existingNick:no')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(193): Illuminate\Validation\Validator->passes()
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php(74): Illuminate\Validation\Validator->fails()
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(24): validators_connexion->register()
+#6 [internal function]: LoginController->postRegister()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postRegister', Array)
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postRegister', Array)
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#16 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#17 {main} [] []
+[2013-07-10 20:52:30] log.ERROR: exception 'BadMethodCallException' with message 'Method [validateExistingNick] does not exist.' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php:1762
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(216): Illuminate\Validation\Validator->__call('validateExistin...', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(216): Illuminate\Validation\Validator->validateExistingNick('pseudo', 'Sesruutzenzje', Array, Object(Illuminate\Validation\Validator))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(179): Illuminate\Validation\Validator->validate('pseudo', 'existingNick:no')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(193): Illuminate\Validation\Validator->passes()
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php(74): Illuminate\Validation\Validator->fails()
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(24): validators_connexion->register()
+#6 [internal function]: LoginController->postRegister()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postRegister', Array)
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postRegister', Array)
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#16 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#17 {main} [] []
+[2013-07-10 20:52:32] log.ERROR: exception 'BadMethodCallException' with message 'Method [validateExistingNick] does not exist.' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php:1762
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(216): Illuminate\Validation\Validator->__call('validateExistin...', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(216): Illuminate\Validation\Validator->validateExistingNick('pseudo', 'Sesruutzenzje', Array, Object(Illuminate\Validation\Validator))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(179): Illuminate\Validation\Validator->validate('pseudo', 'existingNick:no')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(193): Illuminate\Validation\Validator->passes()
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php(74): Illuminate\Validation\Validator->fails()
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(24): validators_connexion->register()
+#6 [internal function]: LoginController->postRegister()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postRegister', Array)
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postRegister', Array)
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#16 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#17 {main} [] []
+[2013-07-10 20:52:36] log.ERROR: exception 'BadMethodCallException' with message 'Method [validateExistingNick] does not exist.' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php:1762
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(216): Illuminate\Validation\Validator->__call('validateExistin...', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(216): Illuminate\Validation\Validator->validateExistingNick('pseudo', 'Sesruutzenzje', Array, Object(Illuminate\Validation\Validator))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(179): Illuminate\Validation\Validator->validate('pseudo', 'existingNick:no')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(193): Illuminate\Validation\Validator->passes()
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php(74): Illuminate\Validation\Validator->fails()
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(24): validators_connexion->register()
+#6 [internal function]: LoginController->postRegister()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postRegister', Array)
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postRegister', Array)
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#16 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#17 {main} [] []
+[2013-07-10 20:52:57] log.ERROR: exception 'BadMethodCallException' with message 'Method [validateExistingNick] does not exist.' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php:1762
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(216): Illuminate\Validation\Validator->__call('validateExistin...', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(216): Illuminate\Validation\Validator->validateExistingNick('pseudo', 'Sesruutzenzje', Array, Object(Illuminate\Validation\Validator))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(179): Illuminate\Validation\Validator->validate('pseudo', 'existingNick:no')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(193): Illuminate\Validation\Validator->passes()
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php(74): Illuminate\Validation\Validator->fails()
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(24): validators_connexion->register()
+#6 [internal function]: LoginController->postRegister()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postRegister', Array)
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postRegister', Array)
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#16 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#17 {main} [] []
+[2013-07-10 20:54:28] log.ERROR: exception 'BadMethodCallException' with message 'Method [validateExistingNick] does not exist.' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php:1762
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(216): Illuminate\Validation\Validator->__call('validateExistin...', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(216): Illuminate\Validation\Validator->validateExistingNick('pseudo', 'Sesruutzenzje', Array, Object(Illuminate\Validation\Validator))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(179): Illuminate\Validation\Validator->validate('pseudo', 'existingNick:no')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(193): Illuminate\Validation\Validator->passes()
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php(74): Illuminate\Validation\Validator->fails()
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(32): validators_connexion->register()
+#6 [internal function]: LoginController->postRegister()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postRegister', Array)
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postRegister', Array)
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#16 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#17 {main} [] []
+[2013-07-10 21:00:46] log.ERROR: exception 'BadMethodCallException' with message 'Method [validateExistingNick] does not exist.' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php:1762
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(216): Illuminate\Validation\Validator->__call('validateExistin...', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(216): Illuminate\Validation\Validator->validateExistingNick('pseudo', 'Sesruutzenzje', Array, Object(Illuminate\Validation\Validator))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(179): Illuminate\Validation\Validator->validate('pseudo', 'ExistingNick:no')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(193): Illuminate\Validation\Validator->passes()
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php(75): Illuminate\Validation\Validator->fails()
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(24): validators_connexion->register()
+#6 [internal function]: LoginController->postRegister()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postRegister', Array)
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postRegister', Array)
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#16 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#17 {main} [] []
+[2013-07-10 21:01:17] log.ERROR: exception 'BadMethodCallException' with message 'Method [validateExistingNick] does not exist.' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php:1762
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(216): Illuminate\Validation\Validator->__call('validateExistin...', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(216): Illuminate\Validation\Validator->validateExistingNick('pseudo', 'Sesruutzenzje', Array, Object(Illuminate\Validation\Validator))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(179): Illuminate\Validation\Validator->validate('pseudo', 'ExistingNick:no')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(193): Illuminate\Validation\Validator->passes()
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php(67): Illuminate\Validation\Validator->fails()
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(24): validators_connexion->register()
+#6 [internal function]: LoginController->postRegister()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postRegister', Array)
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postRegister', Array)
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#16 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#17 {main} [] []
+[2013-07-10 21:01:39] log.ERROR: exception 'BadMethodCallException' with message 'Method [validateExistingNick] does not exist.' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php:1762
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(216): Illuminate\Validation\Validator->__call('validateExistin...', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(216): Illuminate\Validation\Validator->validateExistingNick('pseudo', 'Sesruutzenzje', Array, Object(Illuminate\Validation\Validator))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(179): Illuminate\Validation\Validator->validate('pseudo', 'ExistingNick:no')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(193): Illuminate\Validation\Validator->passes()
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php(67): Illuminate\Validation\Validator->fails()
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(24): validators_connexion->register()
+#6 [internal function]: LoginController->postRegister()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postRegister', Array)
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postRegister', Array)
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#16 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#17 {main} [] []
+[2013-07-10 21:03:01] log.ERROR: exception 'BadMethodCallException' with message 'Method [validateExistingNick] does not exist.' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php:1762
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(216): Illuminate\Validation\Validator->__call('validateExistin...', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(216): Illuminate\Validation\Validator->validateExistingNick('pseudo', 'Sesruutzenzje', Array, Object(Illuminate\Validation\Validator))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(179): Illuminate\Validation\Validator->validate('pseudo', 'ExistingNick:no')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Validation\Validator.php(193): Illuminate\Validation\Validator->passes()
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php(76): Illuminate\Validation\Validator->fails()
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(24): validators_connexion->register()
+#6 [internal function]: LoginController->postRegister()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postRegister', Array)
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postRegister', Array)
+#10 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#16 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#17 {main} [] []
+[2013-07-10 21:04:41] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot use object of type Illuminate\Validation\Validator as array' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php:25
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 21:05:00] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot use object of type Illuminate\Validation\Validator as array' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php:25
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 21:05:47] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot use object of type Illuminate\Validation\Validator as array' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php:25
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 21:41:42] log.ERROR: exception 'InvalidArgumentException' with message 'View [module.facebook] not found.' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\FileViewFinder.php:123
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\FileViewFinder.php(64): Illuminate\View\FileViewFinder->findInPaths('module.facebook', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Environment.php(115): Illuminate\View\FileViewFinder->find('module.facebook')
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\2250f3a05d6ce8976e395bc3be589787(128): Illuminate\View\Environment->make('module.facebook', Array)
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('J:\xampp2\htdoc...')
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('J:\xampp2\htdoc...', Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('J:\xampp2\htdoc...', Array)
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1413): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(58): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2013-07-10 21:42:27] log.ERROR: exception 'InvalidArgumentException' with message 'View [module.facebook] not found.' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\FileViewFinder.php:123
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\FileViewFinder.php(64): Illuminate\View\FileViewFinder->findInPaths('module.facebook', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Environment.php(115): Illuminate\View\FileViewFinder->find('module.facebook')
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\2250f3a05d6ce8976e395bc3be589787(128): Illuminate\View\Environment->make('module.facebook', Array)
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('J:\xampp2\htdoc...')
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('J:\xampp2\htdoc...', Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('J:\xampp2\htdoc...', Array)
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1413): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(58): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2013-07-10 21:47:31] log.ERROR: exception 'InvalidArgumentException' with message 'View [template.aside.posteTonEvenement] not found.' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\FileViewFinder.php:123
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\FileViewFinder.php(64): Illuminate\View\FileViewFinder->findInPaths('template.aside....', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Environment.php(115): Illuminate\View\FileViewFinder->find('template.aside....')
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\2250f3a05d6ce8976e395bc3be589787(129): Illuminate\View\Environment->make('template.aside....', Array)
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('J:\xampp2\htdoc...')
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('J:\xampp2\htdoc...', Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('J:\xampp2\htdoc...', Array)
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1413): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(58): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2013-07-10 21:59:45] log.ERROR: exception 'Exception' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Sesqsqsdfqsdrzj' for key 'username' (SQL: insert into `user` (`email`, `username`, `password`, `updated_at`, `created_at`) values (?, ?, ?, ?, ?)) (Bindings: array (
+  0 => 'csdggca@hotmail.fr',
+  1 => 'Sesqsqsdfqsdrzj',
+  2 => '$2y$08$nt6kt1Gecc1MN802JNgZXuGDqxbdCFqi7I.eOawzHkA2M6hiteFyK',
+  3 => '2013-07-10 21:59:45',
+  4 => '2013-07-10 21:59:45',
+))' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php:502
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(475): Illuminate\Database\Connection->handleQueryException(Object(PDOException), 'insert into `us...', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(324): Illuminate\Database\Connection->run('insert into `us...', Array, Object(Closure))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(281): Illuminate\Database\Connection->statement('insert into `us...', Array)
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php(30): Illuminate\Database\Connection->insert('insert into `us...', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php(1347): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into `us...', Array, 'id')
+#5 [internal function]: Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(729): call_user_func_array(Array, Array)
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1140): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1140): Illuminate\Database\Eloquent\Builder->insertGetId(Array, 'id')
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1110): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1022): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(36): Illuminate\Database\Eloquent\Model->save()
+#12 [internal function]: LoginController->postRegister()
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postRegister', Array)
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postRegister', Array)
+#16 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#17 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#18 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#19 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#20 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#21 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#22 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#23 {main} [] []
+[2013-07-10 22:03:06] log.ERROR: exception 'Exception' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Sesqsqsdfqsdrzj' for key 'username' (SQL: insert into `user` (`email`, `username`, `password`, `updated_at`, `created_at`) values (?, ?, ?, ?, ?)) (Bindings: array (
+  0 => 'csdggca@hotmail.fr',
+  1 => 'Sesqsqsdfqsdrzj',
+  2 => '$2y$08$BjTKiwsloyz7kfkUeZAjiewHJVAYCToCoekoAFTTZ9Xr3MGwSXZY2',
+  3 => '2013-07-10 22:03:06',
+  4 => '2013-07-10 22:03:06',
+))' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php:502
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(475): Illuminate\Database\Connection->handleQueryException(Object(PDOException), 'insert into `us...', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(324): Illuminate\Database\Connection->run('insert into `us...', Array, Object(Closure))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(281): Illuminate\Database\Connection->statement('insert into `us...', Array)
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php(30): Illuminate\Database\Connection->insert('insert into `us...', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php(1347): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into `us...', Array, 'id')
+#5 [internal function]: Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(729): call_user_func_array(Array, Array)
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1140): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1140): Illuminate\Database\Eloquent\Builder->insertGetId(Array, 'id')
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1110): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1022): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(36): Illuminate\Database\Eloquent\Model->save()
+#12 [internal function]: LoginController->postRegister()
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postRegister', Array)
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postRegister', Array)
+#16 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#17 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#18 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#19 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#20 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#21 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#22 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#23 {main} [] []
+[2013-07-10 22:03:19] log.ERROR: exception 'Exception' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Sesqsqsdfqsdrzj' for key 'username' (SQL: insert into `user` (`email`, `username`, `password`, `updated_at`, `created_at`) values (?, ?, ?, ?, ?)) (Bindings: array (
+  0 => 'csdggca@hotmail.fr',
+  1 => 'Sesqsqsdfqsdrzj',
+  2 => '$2y$08$JjmFJHY/1ZT82XdHg3DTfucGvT3GgY9PzPVErcunWSNtwLGclWibS',
+  3 => '2013-07-10 22:03:19',
+  4 => '2013-07-10 22:03:19',
+))' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php:502
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(475): Illuminate\Database\Connection->handleQueryException(Object(PDOException), 'insert into `us...', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(324): Illuminate\Database\Connection->run('insert into `us...', Array, Object(Closure))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(281): Illuminate\Database\Connection->statement('insert into `us...', Array)
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php(30): Illuminate\Database\Connection->insert('insert into `us...', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php(1347): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into `us...', Array, 'id')
+#5 [internal function]: Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(729): call_user_func_array(Array, Array)
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1140): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1140): Illuminate\Database\Eloquent\Builder->insertGetId(Array, 'id')
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1110): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1022): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(36): Illuminate\Database\Eloquent\Model->save()
+#12 [internal function]: LoginController->postRegister()
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postRegister', Array)
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postRegister', Array)
+#16 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#17 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#18 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#19 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#20 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#21 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#22 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#23 {main} [] []
+[2013-07-10 22:06:11] log.ERROR: exception 'Exception' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Sesqsqsdfqsdrzj' for key 'username' (SQL: insert into `user` (`email`, `username`, `password`, `updated_at`, `created_at`) values (?, ?, ?, ?, ?)) (Bindings: array (
+  0 => 'csdggca@hotmail.fr',
+  1 => 'Sesqsqsdfqsdrzj',
+  2 => '$2y$08$lW6eZmKZNj5XS1EYh1j4a.i2mvIAQAP4dfESR3wd9nxKgbRoeXs/W',
+  3 => '2013-07-10 22:06:11',
+  4 => '2013-07-10 22:06:11',
+))' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php:502
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(475): Illuminate\Database\Connection->handleQueryException(Object(PDOException), 'insert into `us...', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(324): Illuminate\Database\Connection->run('insert into `us...', Array, Object(Closure))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(281): Illuminate\Database\Connection->statement('insert into `us...', Array)
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php(30): Illuminate\Database\Connection->insert('insert into `us...', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php(1347): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into `us...', Array, 'id')
+#5 [internal function]: Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(729): call_user_func_array(Array, Array)
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1140): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1140): Illuminate\Database\Eloquent\Builder->insertGetId(Array, 'id')
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1110): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1022): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(36): Illuminate\Database\Eloquent\Model->save()
+#12 [internal function]: LoginController->postRegister()
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postRegister', Array)
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postRegister', Array)
+#16 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#17 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#18 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#19 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#20 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#21 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#22 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#23 {main} [] []
+[2013-07-10 22:07:04] log.ERROR: exception 'Exception' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Sesqsqsdfqsdrzj' for key 'username' (SQL: insert into `user` (`email`, `username`, `password`, `updated_at`, `created_at`) values (?, ?, ?, ?, ?)) (Bindings: array (
+  0 => 'csdggca@hotmail.fr',
+  1 => 'Sesqsqsdfqsdrzj',
+  2 => '$2y$08$QG2hKOGzwOf1NdqEfFou7ee/kGnKv/oOizk7pztXI0gs1qBgWkM16',
+  3 => '2013-07-10 22:07:04',
+  4 => '2013-07-10 22:07:04',
+))' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php:502
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(475): Illuminate\Database\Connection->handleQueryException(Object(PDOException), 'insert into `us...', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(324): Illuminate\Database\Connection->run('insert into `us...', Array, Object(Closure))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(281): Illuminate\Database\Connection->statement('insert into `us...', Array)
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php(30): Illuminate\Database\Connection->insert('insert into `us...', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php(1347): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into `us...', Array, 'id')
+#5 [internal function]: Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(729): call_user_func_array(Array, Array)
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1140): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1140): Illuminate\Database\Eloquent\Builder->insertGetId(Array, 'id')
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1110): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1022): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(36): Illuminate\Database\Eloquent\Model->save()
+#12 [internal function]: LoginController->postRegister()
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postRegister', Array)
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postRegister', Array)
+#16 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#17 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#18 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#19 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#20 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#21 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#22 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#23 {main} [] []
+[2013-07-10 22:07:35] log.ERROR: exception 'Exception' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Sesqsqsdfqsdrzj' for key 'username' (SQL: insert into `user` (`email`, `username`, `password`, `updated_at`, `created_at`) values (?, ?, ?, ?, ?)) (Bindings: array (
+  0 => 'csdggca@hotmail.fr',
+  1 => 'Sesqsqsdfqsdrzj',
+  2 => '$2y$08$jhoLOp6GnfFY3C6k/oBb..IeydI5y1FemAp0rJ3dQ2tzjhlWZUQLi',
+  3 => '2013-07-10 22:07:35',
+  4 => '2013-07-10 22:07:35',
+))' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php:502
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(475): Illuminate\Database\Connection->handleQueryException(Object(PDOException), 'insert into `us...', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(324): Illuminate\Database\Connection->run('insert into `us...', Array, Object(Closure))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(281): Illuminate\Database\Connection->statement('insert into `us...', Array)
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php(30): Illuminate\Database\Connection->insert('insert into `us...', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php(1347): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into `us...', Array, 'id')
+#5 [internal function]: Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(729): call_user_func_array(Array, Array)
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1140): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1140): Illuminate\Database\Eloquent\Builder->insertGetId(Array, 'id')
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1110): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1022): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(36): Illuminate\Database\Eloquent\Model->save()
+#12 [internal function]: LoginController->postRegister()
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postRegister', Array)
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postRegister', Array)
+#16 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#17 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#18 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#19 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#20 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#21 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#22 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#23 {main} [] []
+[2013-07-10 22:08:38] log.ERROR: exception 'Exception' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Sesqsqsdfqsdrzj' for key 'username' (SQL: insert into `user` (`email`, `username`, `password`, `updated_at`, `created_at`) values (?, ?, ?, ?, ?)) (Bindings: array (
+  0 => 'csdggca@hotmail.fr',
+  1 => 'Sesqsqsdfqsdrzj',
+  2 => '$2y$08$atEAUA2CrNCBxvECZPEw9O7ngKEZC.FAD7ekm5pU.vOHwBn8PMUem',
+  3 => '2013-07-10 22:08:38',
+  4 => '2013-07-10 22:08:38',
+))' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php:502
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(475): Illuminate\Database\Connection->handleQueryException(Object(PDOException), 'insert into `us...', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(324): Illuminate\Database\Connection->run('insert into `us...', Array, Object(Closure))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(281): Illuminate\Database\Connection->statement('insert into `us...', Array)
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php(30): Illuminate\Database\Connection->insert('insert into `us...', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php(1347): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into `us...', Array, 'id')
+#5 [internal function]: Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(729): call_user_func_array(Array, Array)
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1140): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1140): Illuminate\Database\Eloquent\Builder->insertGetId(Array, 'id')
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1110): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1022): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(36): Illuminate\Database\Eloquent\Model->save()
+#12 [internal function]: LoginController->postRegister()
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postRegister', Array)
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postRegister', Array)
+#16 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#17 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#18 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#19 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#20 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#21 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#22 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#23 {main} [] []
+[2013-07-10 22:09:01] log.ERROR: exception 'Exception' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Sesqsqsdfqsdrzj' for key 'username' (SQL: insert into `user` (`email`, `username`, `password`, `updated_at`, `created_at`) values (?, ?, ?, ?, ?)) (Bindings: array (
+  0 => 'csdggca@hotmail.fr',
+  1 => 'Sesqsqsdfqsdrzj',
+  2 => '$2y$08$blgO2HDEtoWNXhsbNbw5NelX9KXTmV7BQXxYpwq3ng8uTiNT/pyEa',
+  3 => '2013-07-10 22:09:01',
+  4 => '2013-07-10 22:09:01',
+))' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php:502
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(475): Illuminate\Database\Connection->handleQueryException(Object(PDOException), 'insert into `us...', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(324): Illuminate\Database\Connection->run('insert into `us...', Array, Object(Closure))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(281): Illuminate\Database\Connection->statement('insert into `us...', Array)
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php(30): Illuminate\Database\Connection->insert('insert into `us...', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php(1347): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into `us...', Array, 'id')
+#5 [internal function]: Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(729): call_user_func_array(Array, Array)
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1140): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1140): Illuminate\Database\Eloquent\Builder->insertGetId(Array, 'id')
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1110): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1022): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(36): Illuminate\Database\Eloquent\Model->save()
+#12 [internal function]: LoginController->postRegister()
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postRegister', Array)
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postRegister', Array)
+#16 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#17 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#18 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#19 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#20 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#21 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#22 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#23 {main} [] []
+[2013-07-10 22:35:19] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot use object of type Illuminate\Support\MessageBag as array' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php:77
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 22:38:56] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'Lang' (T_STRING)' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\validators\connexion.php:76
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 22:43:27] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Url' not found' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php:39
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-10 23:48:31] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1438
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\MethodNotAllowedException))
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#5 {main} [] []

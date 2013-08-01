@@ -1,0 +1,119 @@
+[2013-07-16 09:47:47] log.ERROR: exception 'PDOException' with message 'SQLSTATE[HY000] [2002] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connectors\Connector.php:47
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connectors\Connector.php(47): PDO->__construct('mysql:host=eu-c...', 'b5c64457c5a990', 'b7ecc63d', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connectors\MySqlConnector.php(20): Illuminate\Database\Connectors\Connector->createConnection('mysql:host=eu-c...', Array, Array)
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connectors\ConnectionFactory.php(41): Illuminate\Database\Connectors\MySqlConnector->connect(Array)
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\DatabaseManager.php(100): Illuminate\Database\Connectors\ConnectionFactory->make(Array, 'mysql')
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\DatabaseManager.php(64): Illuminate\Database\DatabaseManager->makeConnection('mysql')
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\DatabaseManager.php(204): Illuminate\Database\DatabaseManager->connection()
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(180): Illuminate\Database\DatabaseManager->__call('select', Array)
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(180): Illuminate\Database\DatabaseManager->select('SELECT count(*)...', Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\TentativeConnexion.php(14): Illuminate\Support\Facades\Facade::__callStatic('select', Array)
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\TentativeConnexion.php(14): Illuminate\Support\Facades\DB::select('SELECT count(*)...', Array)
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(7): TentativeConnexion::get('127.0.0.1')
+#11 [internal function]: LoginController->getConnexion()
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('getConnexion', Array)
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'getConnexion', Array)
+#15 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#16 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#17 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#18 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#19 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#20 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#21 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#22 {main} [] []
+[2013-07-16 09:48:14] log.ERROR: exception 'PDOException' with message 'SQLSTATE[HY000] [2002] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connectors\Connector.php:47
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connectors\Connector.php(47): PDO->__construct('mysql:host=eu-c...', 'b5c64457c5a990', 'b7ecc63d', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connectors\MySqlConnector.php(20): Illuminate\Database\Connectors\Connector->createConnection('mysql:host=eu-c...', Array, Array)
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connectors\ConnectionFactory.php(41): Illuminate\Database\Connectors\MySqlConnector->connect(Array)
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\DatabaseManager.php(100): Illuminate\Database\Connectors\ConnectionFactory->make(Array, 'mysql')
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\DatabaseManager.php(64): Illuminate\Database\DatabaseManager->makeConnection('mysql')
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\DatabaseManager.php(204): Illuminate\Database\DatabaseManager->connection()
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(180): Illuminate\Database\DatabaseManager->__call('select', Array)
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(180): Illuminate\Database\DatabaseManager->select('SELECT count(*)...', Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\TentativeConnexion.php(14): Illuminate\Support\Facades\Facade::__callStatic('select', Array)
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\TentativeConnexion.php(14): Illuminate\Support\Facades\DB::select('SELECT count(*)...', Array)
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\LoginController.php(7): TentativeConnexion::get('127.0.0.1')
+#11 [internal function]: LoginController->getConnexion()
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('getConnexion', Array)
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'getConnexion', Array)
+#15 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#16 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#17 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#18 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#19 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#20 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#21 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#22 {main} [] []
+[2013-07-16 12:13:22] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '}'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\005ac6b9eaf03d266df3c3947aaa2e11:56
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-16 12:13:22] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '}'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\005ac6b9eaf03d266df3c3947aaa2e11:56
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-16 12:13:26] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '}'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\005ac6b9eaf03d266df3c3947aaa2e11:52
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-16 12:13:26] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '}'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\005ac6b9eaf03d266df3c3947aaa2e11:52
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-16 12:13:29] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '}'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\005ac6b9eaf03d266df3c3947aaa2e11:55
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-16 12:13:29] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '}'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\005ac6b9eaf03d266df3c3947aaa2e11:55
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-16 12:14:43] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method SiteHelpers::create_checkbox()' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\005ac6b9eaf03d266df3c3947aaa2e11:36
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-16 12:14:43] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method SiteHelpers::create_checkbox()' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\005ac6b9eaf03d266df3c3947aaa2e11:36
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-16 13:27:25] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '}'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\AssociationController.php:40
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-16 13:27:25] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '}'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\AssociationController.php:40
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-16 15:06:03] log.ERROR: exception 'ErrorException' with message 'Undefined variable: url' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\URLSubdomain.php:29
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\libraries\URLSubdomain.php(29): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', 'J:\xampp2\htdoc...', 29, Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\78fd270ccf25544c235be85721d53dca(36): URLSubdomain::to('www', '')
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('J:\xampp2\htdoc...')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('J:\xampp2\htdoc...', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('J:\xampp2\htdoc...', Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\005ac6b9eaf03d266df3c3947aaa2e11(137): Illuminate\View\View->render()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(38): include('J:\xampp2\htdoc...')
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('J:\xampp2\htdoc...', Array)
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(100): Illuminate\View\Engines\CompilerEngine->get('J:\xampp2\htdoc...', Array)
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\View.php(81): Illuminate\View\View->getContents()
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Http\Response.php(69): Illuminate\View\View->render()
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1413): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(156): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(126): Illuminate\Routing\Controllers\Controller->processResponse(Object(Illuminate\Routing\Router), 'getAdd', Object(Illuminate\View\View))
+#16 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'getAdd', Array)
+#17 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#18 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(80): call_user_func_array(Object(Closure), Array)
+#19 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Route.php(47): Illuminate\Routing\Route->callCallable()
+#20 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#21 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#22 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#23 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#24 {main} [] []

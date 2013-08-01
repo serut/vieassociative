@@ -1,0 +1,17 @@
+
+
+<?php $main_and_aside = true; ?>
+<?php $__env->startSection('main-content'); ?>
+    <section>
+        <div>
+            <h3 class="head"><?php echo Lang::get('user/edit.head_modification'); ?></h3>
+            <div class="form-horizontal">
+                
+
+            </div>
+        </div>
+    </section>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('template.theme', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

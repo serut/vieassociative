@@ -1,0 +1,123 @@
+[2013-05-29 20:30:18] log.ERROR: exception 'InvalidArgumentException' with message 'There are no commands defined in the "migrate:" namespace.
+
+Did you mean this?
+    migrate' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php:516
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(554): Symfony\Component\Console\Application->findNamespace('migrate:')
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(181): Symfony\Component\Console\Application->find('migrate::instal...')
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(121): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\artisan(59): Symfony\Component\Console\Application->run()
+#4 {main} [] []
+[2013-05-29 20:30:25] log.ERROR: exception 'InvalidArgumentException' with message 'There are no commands defined in the "migrate:" namespace.
+
+Did you mean this?
+    migrate' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php:516
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(554): Symfony\Component\Console\Application->findNamespace('migrate:')
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(181): Symfony\Component\Console\Application->find('migrate::instal...')
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(121): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\artisan(59): Symfony\Component\Console\Application->run()
+#4 {main} [] []
+[2013-05-29 20:30:34] log.ERROR: exception 'RuntimeException' with message 'Too many arguments.' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Input\ArgvInput.php:181
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Input\ArgvInput.php(90): Symfony\Component\Console\Input\ArgvInput->parseArgument('install')
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Input\Input.php(60): Symfony\Component\Console\Input\ArgvInput->parse()
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Command\Command.php(226): Symfony\Component\Console\Input\Input->bind(Object(Symfony\Component\Console\Input\InputDefinition))
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Console\Command.php(96): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(892): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(184): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(121): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\artisan(59): Symfony\Component\Console\Application->run()
+#8 {main} [] []
+[2013-05-29 20:33:22] log.ERROR: exception 'RuntimeException' with message 'Too many arguments.' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Input\ArgvInput.php:181
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Input\ArgvInput.php(90): Symfony\Component\Console\Input\ArgvInput->parseArgument('create')
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Input\Input.php(60): Symfony\Component\Console\Input\ArgvInput->parse()
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Command\Command.php(226): Symfony\Component\Console\Input\Input->bind(Object(Symfony\Component\Console\Input\InputDefinition))
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Console\Command.php(96): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(892): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(184): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(121): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\artisan(59): Symfony\Component\Console\Application->run()
+#8 {main} [] []
+[2013-05-29 20:33:35] log.ERROR: exception 'InvalidArgumentException' with message 'Command "migrate:create" is not defined.
+
+Did you mean one of these?
+    migrate:reset
+    migrate:make' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php:610
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(181): Symfony\Component\Console\Application->find('migrate:create')
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(121): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\artisan(59): Symfony\Component\Console\Application->run()
+#3 {main} [] []
+[2013-05-29 20:34:05] log.ERROR: exception 'Exception' with message 'SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'migrations' already exists (SQL: create table `migrations` (`migration` varchar(255) not null, `batch` int not null) default character set utf8 collate utf8_unicode_ci) (Bindings: array (
+))' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php:502
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(475): Illuminate\Database\Connection->handleQueryException(Object(PDOException), 'create table `m...', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(324): Illuminate\Database\Connection->run('create table `m...', Array, Object(Closure))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Schema\Blueprint.php(63): Illuminate\Database\Connection->statement('create table `m...')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Schema\Builder.php(148): Illuminate\Database\Schema\Blueprint->build(Object(Illuminate\Database\MySqlConnection), Object(Illuminate\Database\Schema\Grammars\MySqlGrammar))
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Schema\Builder.php(91): Illuminate\Database\Schema\Builder->build(Object(Illuminate\Database\Schema\Blueprint))
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Migrations\DatabaseMigrationRepository.php(126): Illuminate\Database\Schema\Builder->create('migrations', Object(Closure))
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Console\Migrations\InstallCommand.php(52): Illuminate\Database\Migrations\DatabaseMigrationRepository->createRepository()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Console\Command.php(108): Illuminate\Database\Console\Migrations\InstallCommand->fire()
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Command\Command.php(244): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Console\Command.php(96): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(892): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(184): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\InstallCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(121): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\artisan(59): Symfony\Component\Console\Application->run()
+#14 {main} [] []
+[2013-05-29 20:34:13] log.ERROR: exception 'Exception' with message 'SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'migrations' already exists (SQL: create table `migrations` (`migration` varchar(255) not null, `batch` int not null) default character set utf8 collate utf8_unicode_ci) (Bindings: array (
+))' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php:502
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(475): Illuminate\Database\Connection->handleQueryException(Object(PDOException), 'create table `m...', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(324): Illuminate\Database\Connection->run('create table `m...', Array, Object(Closure))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Schema\Blueprint.php(63): Illuminate\Database\Connection->statement('create table `m...')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Schema\Builder.php(148): Illuminate\Database\Schema\Blueprint->build(Object(Illuminate\Database\MySqlConnection), Object(Illuminate\Database\Schema\Grammars\MySqlGrammar))
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Schema\Builder.php(91): Illuminate\Database\Schema\Builder->build(Object(Illuminate\Database\Schema\Blueprint))
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Migrations\DatabaseMigrationRepository.php(126): Illuminate\Database\Schema\Builder->create('migrations', Object(Closure))
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Console\Migrations\InstallCommand.php(52): Illuminate\Database\Migrations\DatabaseMigrationRepository->createRepository()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Console\Command.php(108): Illuminate\Database\Console\Migrations\InstallCommand->fire()
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Command\Command.php(244): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Console\Command.php(96): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(892): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(184): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\InstallCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(121): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\artisan(59): Symfony\Component\Console\Application->run()
+#14 {main} [] []
+[2013-05-29 20:34:35] log.ERROR: exception 'Exception' with message 'SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'migrations' already exists (SQL: create table `migrations` (`migration` varchar(255) not null, `batch` int not null) default character set utf8 collate utf8_unicode_ci) (Bindings: array (
+))' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php:502
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(475): Illuminate\Database\Connection->handleQueryException(Object(PDOException), 'create table `m...', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(324): Illuminate\Database\Connection->run('create table `m...', Array, Object(Closure))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Schema\Blueprint.php(63): Illuminate\Database\Connection->statement('create table `m...')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Schema\Builder.php(148): Illuminate\Database\Schema\Blueprint->build(Object(Illuminate\Database\MySqlConnection), Object(Illuminate\Database\Schema\Grammars\MySqlGrammar))
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Schema\Builder.php(91): Illuminate\Database\Schema\Builder->build(Object(Illuminate\Database\Schema\Blueprint))
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Migrations\DatabaseMigrationRepository.php(126): Illuminate\Database\Schema\Builder->create('migrations', Object(Closure))
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Console\Migrations\InstallCommand.php(52): Illuminate\Database\Migrations\DatabaseMigrationRepository->createRepository()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Console\Command.php(108): Illuminate\Database\Console\Migrations\InstallCommand->fire()
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Command\Command.php(244): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Console\Command.php(96): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(892): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(184): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\InstallCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(121): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\artisan(59): Symfony\Component\Console\Application->run()
+#14 {main} [] []
+[2013-05-29 20:34:41] log.ERROR: exception 'ErrorException' with message 'include(J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc/app/database/migrations/2013_05_29_203342_basics_tables.php): failed to open stream: No such file or directory' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\composer\ClassLoader.php:183
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\composer\ClassLoader.php(183): Illuminate\Exception\Handler->handleError(2, 'include(J:\xamp...', 'J:\xampp2\htdoc...', 183, Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\composer\ClassLoader.php(183): Composer\Autoload\ClassLoader::loadClass()
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('BasicsTables')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Migrations\Migrator.php(301): spl_autoload_call('BasicsTables')
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Migrations\Migrator.php(194): Illuminate\Database\Migrations\Migrator->resolve('2013_05_29_2033...')
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Migrations\Migrator.php(174): Illuminate\Database\Migrations\Migrator->runDown(Object(stdClass), false)
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Console\Migrations\ResetCommand.php(56): Illuminate\Database\Migrations\Migrator->rollback(false)
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Console\Command.php(108): Illuminate\Database\Console\Migrations\ResetCommand->fire()
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Command\Command.php(244): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Console\Command.php(96): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(892): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(184): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\ResetCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\symfony\console\Symfony\Component\Console\Application.php(121): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\artisan(59): Symfony\Component\Console\Application->run()
+#14 {main} [] []

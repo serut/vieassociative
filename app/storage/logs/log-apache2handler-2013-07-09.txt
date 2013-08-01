@@ -1,0 +1,79 @@
+[2013-07-09 16:39:29] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function messages() on a non-object' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\ConnexionController.php:45
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-09 16:47:43] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method TentativeConnexion::getNbrConnexionTentative()' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\ConnexionController.php:12
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-09 16:47:52] log.ERROR: exception 'ErrorException' with message 'Undefined variable: v' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\ConnexionController.php:31
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\ConnexionController.php(31): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', 'J:\xampp2\htdoc...', 31, Array)
+#1 [internal function]: ConnexionController->postConnexion()
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postConnexion', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4740): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postConnexion', Array)
+#5 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(7797): call_user_func_array(Object(Closure), Array)
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(7784): Illuminate\Routing\Route->callCallable()
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4751): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2013-07-09 17:01:55] log.ERROR: exception 'ReflectionException' with message 'Class LoginController does not exist' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Inspector.php:29
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Inspector.php(29): ReflectionClass->__construct('LoginController')
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4456): Illuminate\Routing\Controllers\Inspector->getRoutable('LoginController', '')
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(3312): Illuminate\Routing\Router->controller('', 'LoginController')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\routes.php(31): Illuminate\Support\Facades\Facade::__callStatic('controller', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\routes.php(31): Illuminate\Support\Facades\Route::controller('', 'LoginController')
+#5 [internal function]: {closure}()
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4604): call_user_func(Object(Closure))
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(3312): Illuminate\Routing\Router->group(Array, Object(Closure))
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\routes.php(32): Illuminate\Support\Facades\Facade::__callStatic('group', Array)
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\routes.php(32): Illuminate\Support\Facades\Route::group(Array, Object(Closure))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\start.php(251): require('J:\xampp2\htdoc...')
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\start.php(66): require('J:\xampp2\htdoc...')
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(36): require_once('J:\xampp2\htdoc...')
+#13 {main} [] []
+[2013-07-09 17:11:25] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php:4920
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4762): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\MethodNotAllowedException))
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4750): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#5 {main} [] []
+[2013-07-09 17:11:38] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php:4920
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4762): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\MethodNotAllowedException))
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4750): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#5 {main} [] []
+[2013-07-09 17:11:51] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php:4920
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4762): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\MethodNotAllowedException))
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4750): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#5 {main} [] []
+[2013-07-09 17:11:51] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php:4920
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4762): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\MethodNotAllowedException))
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4750): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#5 {main} [] []
+[2013-07-09 17:11:52] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php:4920
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4762): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\MethodNotAllowedException))
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4750): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#5 {main} [] []

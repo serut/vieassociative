@@ -1,0 +1,36 @@
+[2013-08-01 11:08:53] log.ERROR: exception 'PHPParser_Error' with message 'Syntax error, unexpected '/', expecting T_STRING or T_NS_SEPARATOR or '{' on line 2' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\nikic\php-parser\lib\PHPParser\Parser.php:1098
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\classpreloader\classpreloader\src\ClassPreloader\Command\PreCompileCommand.php(93): PHPParser_Parser->parse('<?php??namespac...')
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\classpreloader\classpreloader\src\ClassPreloader\Command\PreCompileCommand.php(206): ClassPreloader\Command\PreCompileCommand->getCode('app/libraries/S...')
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\symfony\console\Symfony\Component\Console\Command\Command.php(244): ClassPreloader\Command\PreCompileCommand->execute(Object(Symfony\Component\Console\Input\ArrayInput), Object(Symfony\Component\Console\Output\NullOutput))
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\laravel\framework\src\Illuminate\Console\Command.php(140): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArrayInput), Object(Symfony\Component\Console\Output\NullOutput))
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\laravel\framework\src\Illuminate\Foundation\Console\OptimizeCommand.php(84): Illuminate\Console\Command->callSilent('compile', Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\laravel\framework\src\Illuminate\Foundation\Console\OptimizeCommand.php(61): Illuminate\Foundation\Console\OptimizeCommand->compileClasses()
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\laravel\framework\src\Illuminate\Console\Command.php(108): Illuminate\Foundation\Console\OptimizeCommand->fire()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\symfony\console\Symfony\Component\Console\Command\Command.php(244): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\laravel\framework\src\Illuminate\Console\Command.php(96): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\symfony\console\Symfony\Component\Console\Application.php(897): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\symfony\console\Symfony\Component\Console\Application.php(191): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Foundation\Console\OptimizeCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\symfony\console\Symfony\Component\Console\Application.php(121): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\artisan(59): Symfony\Component\Console\Application->run()
+#13 {main} [] []
+[2013-08-01 11:09:15] log.ERROR: exception 'PHPParser_Error' with message 'Syntax error, unexpected ';', expecting T_STRING on line 2' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\nikic\php-parser\lib\PHPParser\Parser.php:1098
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\classpreloader\classpreloader\src\ClassPreloader\Command\PreCompileCommand.php(93): PHPParser_Parser->parse('<?php??namespac...')
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\classpreloader\classpreloader\src\ClassPreloader\Command\PreCompileCommand.php(206): ClassPreloader\Command\PreCompileCommand->getCode('app/libraries/S...')
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\symfony\console\Symfony\Component\Console\Command\Command.php(244): ClassPreloader\Command\PreCompileCommand->execute(Object(Symfony\Component\Console\Input\ArrayInput), Object(Symfony\Component\Console\Output\NullOutput))
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\laravel\framework\src\Illuminate\Console\Command.php(140): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArrayInput), Object(Symfony\Component\Console\Output\NullOutput))
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\laravel\framework\src\Illuminate\Foundation\Console\OptimizeCommand.php(84): Illuminate\Console\Command->callSilent('compile', Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\laravel\framework\src\Illuminate\Foundation\Console\OptimizeCommand.php(61): Illuminate\Foundation\Console\OptimizeCommand->compileClasses()
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\laravel\framework\src\Illuminate\Console\Command.php(108): Illuminate\Foundation\Console\OptimizeCommand->fire()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\symfony\console\Symfony\Component\Console\Command\Command.php(244): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\laravel\framework\src\Illuminate\Console\Command.php(96): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\symfony\console\Symfony\Component\Console\Application.php(897): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\symfony\console\Symfony\Component\Console\Application.php(191): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Foundation\Console\OptimizeCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\symfony\console\Symfony\Component\Console\Application.php(121): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\artisan(59): Symfony\Component\Console\Application->run()
+#13 {main} [] []
+[2013-08-01 11:22:30] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot redeclare class libraries\SiteHelpers' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\app\libraries\SiteHelpers.php:3
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []

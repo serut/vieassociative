@@ -1,0 +1,58 @@
+[2013-06-27 11:33:38] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'text' (T_STRING), expecting ')'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\11a74d982c01e300a4f29c2f6393a3be:59
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-06-27 11:33:38] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'text' (T_STRING), expecting ')'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\11a74d982c01e300a4f29c2f6393a3be:59
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-06-27 11:34:09] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\11a74d982c01e300a4f29c2f6393a3be:57
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-06-27 11:34:09] log.ERROR: exception 'ErrorException' with message 'file_put_contents(J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage/views/11a74d982c01e300a4f29c2f6393a3be): failed to open stream: Invalid argument' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php:3889
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(2, 'file_put_conten...', 'J:\xampp2\htdoc...', 3889, Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(3889): file_put_contents('J:\xampp2\htdoc...', '<?php $__env->s...')
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Compilers\BladeCompiler.php(66): Illuminate\Filesystem\Filesystem->put('J:\xampp2\htdoc...', '<?php $__env->s...')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(40): Illuminate\View\Compilers\BladeCompiler->compile('J:\xampp2\htdoc...')
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(8889): Illuminate\View\Engines\CompilerEngine->get('J:\xampp2\htdoc...', Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(8880): Illuminate\View\View->getContents()
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(9474): Illuminate\View\View->render()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(9022): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4910): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(7788): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4751): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#14 {main} [] []
+[2013-06-27 11:34:13] log.ERROR: exception 'ErrorException' with message 'file_put_contents(J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage/views/11a74d982c01e300a4f29c2f6393a3be): failed to open stream: Invalid argument' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php:3889
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(2, 'file_put_conten...', 'J:\xampp2\htdoc...', 3889, Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(3889): file_put_contents('J:\xampp2\htdoc...', '<?php $__env->s...')
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Compilers\BladeCompiler.php(66): Illuminate\Filesystem\Filesystem->put('J:\xampp2\htdoc...', '<?php $__env->s...')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(40): Illuminate\View\Compilers\BladeCompiler->compile('J:\xampp2\htdoc...')
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(8889): Illuminate\View\Engines\CompilerEngine->get('J:\xampp2\htdoc...', Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(8880): Illuminate\View\View->getContents()
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(9474): Illuminate\View\View->render()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(9022): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4910): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(7788): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4751): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#14 {main} [] []
+[2013-06-27 11:34:13] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\11a74d982c01e300a4f29c2f6393a3be:57
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-06-27 13:11:54] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php:4920
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4762): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\MethodNotAllowedException))
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4750): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#5 {main} [] []

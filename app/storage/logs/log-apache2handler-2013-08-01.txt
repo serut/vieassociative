@@ -1,0 +1,101 @@
+[2013-08-01 11:02:24] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'URLSubdomain' not found' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\app\storage\views\e06ad7505e3d610eeed752b03936721a:7
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-08-01 11:04:47] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'URLSubdomain' not found' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\app\storage\views\e06ad7505e3d610eeed752b03936721a:7
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-08-01 11:07:18] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'URLSubdomain' not found' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\app\storage\views\e06ad7505e3d610eeed752b03936721a:7
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-08-01 11:07:19] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'URLSubdomain' not found' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\app\storage\views\e06ad7505e3d610eeed752b03936721a:7
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-08-01 11:07:19] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'URLSubdomain' not found' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\app\storage\views\e06ad7505e3d610eeed752b03936721a:7
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-08-01 11:07:19] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'URLSubdomain' not found' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\app\storage\views\e06ad7505e3d610eeed752b03936721a:7
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-08-01 11:07:19] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'URLSubdomain' not found' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\app\storage\views\e06ad7505e3d610eeed752b03936721a:7
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-08-01 11:07:19] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'URLSubdomain' not found' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\app\storage\views\e06ad7505e3d610eeed752b03936721a:7
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-08-01 11:07:20] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'URLSubdomain' not found' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\app\storage\views\e06ad7505e3d610eeed752b03936721a:7
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-08-01 11:12:19] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'URLSubdomain' not found' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\app\storage\views\e06ad7505e3d610eeed752b03936721a:7
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-08-01 11:12:20] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'URLSubdomain' not found' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\app\storage\views\e06ad7505e3d610eeed752b03936721a:7
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-08-01 11:12:36] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'URLSubdomain' not found' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\app\storage\views\e06ad7505e3d610eeed752b03936721a:7
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-08-01 11:13:30] log.ERROR: exception 'ErrorException' with message 'Class 'libraries' not found' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\bootstrap\compiled.php:4087
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(2, 'Class 'librarie...', 'J:\xampp2\htdoc...', 4087, Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\bootstrap\compiled.php(4087): class_alias('libraries', 'URLSubdomain')
+#2 [internal function]: Illuminate\Foundation\AliasLoader->load('URLSubdomain')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\app\storage\views\e06ad7505e3d610eeed752b03936721a(7): spl_autoload_call('URLSubdomain')
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\bootstrap\compiled.php(9121): include('J:\xampp2\htdoc...')
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('J:\xampp2\htdoc...', Array)
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\bootstrap\compiled.php(9014): Illuminate\View\Engines\CompilerEngine->get('J:\xampp2\htdoc...', Array)
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\bootstrap\compiled.php(9005): Illuminate\View\View->getContents()
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\bootstrap\compiled.php(9599): Illuminate\View\View->render()
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\bootstrap\compiled.php(9147): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\bootstrap\compiled.php(4960): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\bootstrap\compiled.php(7877): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\bootstrap\compiled.php(4801): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\bootstrap\compiled.php(497): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\bootstrap\compiled.php(484): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\public\index.php(50): Illuminate\Foundation\Application->run()
+#16 {main} [] []
+[2013-08-01 11:22:10] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot redeclare class libraries\SiteHelpers' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\app\libraries\SiteHelpers.php:3
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-08-01 11:22:10] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot redeclare class libraries\SiteHelpers' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\app\libraries\SiteHelpers.php:3
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-08-01 11:22:11] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot redeclare class libraries\SiteHelpers' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\app\libraries\SiteHelpers.php:3
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-08-01 11:24:14] log.ERROR: exception 'ErrorException' with message 'Non-static method Symfony\Component\HttpFoundation\Request::getHost() should not be called statically' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\app\libraries\URLSubdomain.php:21
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\app\libraries\URLSubdomain.php(21): Illuminate\Exception\Handler->handleError(2048, 'Non-static meth...', 'J:\xampp2\htdoc...', 21, Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\app\libraries\URLSubdomain.php(21): Symfony\Component\HttpFoundation\Request::getHost()
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\app\storage\views\e06ad7505e3d610eeed752b03936721a(7): URLSubdomain::to('association', '/add')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\bootstrap\compiled.php(9121): include('J:\xampp2\htdoc...')
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('J:\xampp2\htdoc...', Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\bootstrap\compiled.php(9014): Illuminate\View\Engines\CompilerEngine->get('J:\xampp2\htdoc...', Array)
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\bootstrap\compiled.php(9005): Illuminate\View\View->getContents()
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\bootstrap\compiled.php(9599): Illuminate\View\View->render()
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\bootstrap\compiled.php(9147): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\bootstrap\compiled.php(4960): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\bootstrap\compiled.php(7877): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\bootstrap\compiled.php(4801): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\bootstrap\compiled.php(497): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\bootstrap\compiled.php(484): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\public\index.php(50): Illuminate\Foundation\Application->run()
+#15 {main} [] []
+[2013-08-01 11:25:43] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'SiteHelpers' not found' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\laravel-master\app\storage\views\9be7f567975978735e029e620af38284:41
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []

@@ -1,0 +1,104 @@
+[2013-06-12 18:37:44] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ''nomEv'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\EvenementController.php:31
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-06-12 18:37:47] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ''nomEv'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\EvenementController.php:31
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-06-12 18:41:29] log.ERROR: exception 'InvalidArgumentException' with message 'View [evenement.choisirAssociation] not found.' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php:8028
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(8001): Illuminate\View\FileViewFinder->findInPaths('evenement.chois...', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(8101): Illuminate\View\FileViewFinder->find('evenement.chois...')
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(3310): Illuminate\View\Environment->make('evenement.chois...')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\EvenementController.php(5): Illuminate\Support\Facades\Facade::__callStatic('make', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\EvenementController.php(5): Illuminate\Support\Facades\View::make('evenement.chois...')
+#5 [internal function]: EvenementController->getChoisirAssociation()
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('getChoisirAssoc...', Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4740): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'getChoisirAssoc...', Array)
+#9 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(7797): call_user_func_array(Object(Closure), Array)
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(7784): Illuminate\Routing\Route->callCallable()
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4751): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#16 {main} [] []
+[2013-06-12 18:41:43] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method Illuminate\Routing\Router::getchoisir()' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php:4468
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-06-12 18:44:32] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method Illuminate\Routing\Router::getchoisir()' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php:4468
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-06-12 18:44:58] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method Illuminate\Routing\Router::getchoisir()' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php:4468
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-06-12 18:45:03] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method Illuminate\Routing\Router::getchoisir()' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php:4468
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-06-12 18:45:30] log.ERROR: exception 'InvalidArgumentException' with message 'View [evenement.choisirAssociation] not found.' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php:8028
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(8001): Illuminate\View\FileViewFinder->findInPaths('evenement.chois...', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(8101): Illuminate\View\FileViewFinder->find('evenement.chois...')
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(3310): Illuminate\View\Environment->make('evenement.chois...')
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\EvenementController.php(5): Illuminate\Support\Facades\Facade::__callStatic('make', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\EvenementController.php(5): Illuminate\Support\Facades\View::make('evenement.chois...')
+#5 [internal function]: EvenementController->getChoisirAssociation()
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('getChoisirAssoc...', Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4740): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'getChoisirAssoc...', Array)
+#9 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(7797): call_user_func_array(Object(Closure), Array)
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(7784): Illuminate\Routing\Route->callCallable()
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4751): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#16 {main} [] []
+[2013-06-12 19:14:47] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\EvenementController.php:25
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-06-12 19:14:49] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\EvenementController.php:25
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-06-12 19:25:14] log.ERROR: exception 'ErrorException' with message 'Undefined variable: data' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\EvenementController.php:68
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\EvenementController.php(68): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', 'J:\xampp2\htdoc...', 68, Array)
+#1 [internal function]: EvenementController->postAjouter('1')
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('postAjouter', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4740): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'postAjouter', Array)
+#5 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}('1')
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(7797): call_user_func_array(Object(Closure), Array)
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(7784): Illuminate\Routing\Route->callCallable()
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4751): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2013-06-12 20:27:42] log.ERROR: exception 'ErrorException' with message 'Use of undefined constant contact - assumed 'contact'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\ContactController.php:6
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\ContactController.php(6): Illuminate\Exception\Handler->handleError(8, 'Use of undefine...', 'J:\xampp2\htdoc...', 6, Array)
+#1 [internal function]: ContactController->getContact()
+#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('getContact', Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4740): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'getContact', Array)
+#5 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(7797): call_user_func_array(Object(Closure), Array)
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(7784): Illuminate\Routing\Route->callCallable()
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(4751): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2013-06-12 21:45:25] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<'' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\storage\views\c2de6561fbb58b5a8bf2dbeded820c6e:130
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []

@@ -1,0 +1,27 @@
+[2013-05-31 16:25:40] log.ERROR: exception 'Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'actif' in 'where clause' (SQL: SELECT evenement.id,id_assoc, titre,evenement.id_type_sous_evenement,type_repetition,id_photo,evenement.id_type_evenement, lieu.ville as nom_de_la_ville,date_format(date_deb,"%w") as jourEcrit, date_format(date_deb,"%d") as jour, date_format(date_deb,"%Y") as an,date_format(date_deb,"%c") as mois, texte, type_evenement.libelle as libelle_evenement,type_sous_evenement.libelle as libelle_sous_evenement 
+            FROM lieu, type_evenement,type_sous_evenement,evenement 
+            WHERE lieu.id=evenement.id_lieu AND type_evenement.id = evenement.id_type_evenement AND type_sous_evenement.id = evenement.id_type_sous_evenement AND evenement.id_assoc= ?  AND actif = 1 ORDER BY date_deb ASC) (Bindings: array (
+  0 => 1,
+))' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php:502
+Stack trace:
+#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(475): Illuminate\Database\Connection->handleQueryException(Object(PDOException), 'SELECT evenemen...', Array)
+#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Database\Connection.php(269): Illuminate\Database\Connection->run('SELECT evenemen...', Array, Object(Closure))
+#2 [internal function]: Illuminate\Database\Connection->select('SELECT evenemen...', Array)
+#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(13321): call_user_func_array(Array, Array)
+#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(6988): Illuminate\Database\DatabaseManager->__call('select', Array)
+#5 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(6988): Illuminate\Database\DatabaseManager->select('SELECT evenemen...', Array)
+#6 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\Evenement.php(9): Illuminate\Support\Facades\Facade::__callStatic('select', Array)
+#7 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\models\Evenement.php(9): Illuminate\Support\Facades\DB::select('SELECT evenemen...', Array)
+#8 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\app\controllers\EvenementController.php(225): Evenement::listeEvenementsDUneAssoc(1)
+#9 [internal function]: EvenementController->getEvenementAssociation()
+#10 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#11 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('getEvenementAss...', Array)
+#12 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(9980): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'getEvenementAss...', Array)
+#13 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#14 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(16626): call_user_func_array(Object(Closure), Array)
+#15 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(16605): Illuminate\Routing\Route->callCallable()
+#16 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(10000): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#17 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(1010): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#18 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\bootstrap\compiled.php(993): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#19 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
+#20 {main} [] []

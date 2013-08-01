@@ -1,0 +1,4 @@
+Options +FollowSymLinks
+RewriteEngine on
+RewriteBase /
+RewriteRule (.*) public/$1 [L]

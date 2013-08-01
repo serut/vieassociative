@@ -1,0 +1,32 @@
+.special_bloc_connexion{
+    margin-left: 220px;
+    width: 650px;
+}
+
+/*Boutons de connexion : */
+.connection-icon {
+    background: url("/img/connection.png");
+    display: inline-block;
+    height: 45px;
+    line-height: 600px;
+    overflow: hidden;
+    width: 310px;
+}
+.connection-icon-twitter {
+    background-position: 0 -48px;
+}
+.connection-icon-orange {
+    background-position: 0 -95px;
+}
+.connection-icon-yahoo {
+    background-position: 0 -145px;
+}
+.connection-icon-google {
+    background-position: 0 -193px;
+}
+.connection-icon-hotmail {
+    background-position: 0 -243px;
+}
+.center{
+    text-align: center;
+}

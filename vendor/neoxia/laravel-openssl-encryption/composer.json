@@ -1,0 +1,23 @@
+{
+    "name": "neoxia/laravel-openssl-encryption",
+    "description": "Laravel 4 encryption package that uses the PHP openssl extension",
+    "keywords": ["laravel", "openssl"],
+    "authors": [
+        {
+            "name": "Gilles Mergoil",
+            "email": "gml@neoxia.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.0.x",
+        "illuminate/encryption": "4.0.x"
+    },
+    "autoload": {
+        "psr-0": {
+            "Neoxia\\LaravelOpensslEncryption": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}

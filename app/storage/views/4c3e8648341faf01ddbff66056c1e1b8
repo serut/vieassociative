@@ -35,7 +35,6 @@
                     <?php $input= array(
                         'id'=>"link",
                         'label'=>Lang::get('association/form_create.label_link'),
-                        'data-toggle'=> 'div-real-name',
                         'form' => array(
                             'placeholder'=>Lang::get('association/form_create.placeholder_link'),
                             'class' => 'input-xlarge',

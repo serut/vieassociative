@@ -14,15 +14,13 @@
 App::before(function($request)
 {
 
-    $firstTime = Session::get('firstTime');
-    if(empty($firstTime) && Auth::guest()){
-        Session::put('firstTime',"Testé");
-        if(isset($_COOKIE['vieasso_remember']) && !empty($_COOKIE['vieasso_remember'])){
-            $id = User::reconnecterDepuisToken($_COOKIE['vieasso_remember']);
-            if($id > 0){
-                Auth::loginUsingId($id);
-                User::connexion(Auth::user()->id);
-            }
+    if(isset($_COOKIE['vieasso_remember']) && !empty($_COOKIE['vieasso_remember']) && Auth::guest()){
+        $id = User::reconnecterDepuisToken($_COOKIE['vieasso_remember']);
+        if($id > 0){
+            Auth::loginUsingId($id);
+            User::connexion(Auth::user()->id);
+        }else{
+            setcookie('vieasso_remember', $_COOKIE['vieasso_remember'], time()-10);
         }
     }
 });
@@ -48,7 +46,7 @@ Route::when('user/log', 'guest');
 Route::filter('auth', function()
 {
 	if (Auth::guest()){
-        return Redirect::to(URLSubdomain::to('www','/user/log'));
+        return Redirect::guest('user/log');
     }
 });
 Route::filter('guest', function()

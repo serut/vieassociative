@@ -1,3 +1,12 @@
+
+## Link
+
+* [Access to the online doc](http://doc.vieassociative.fr)
+* [Access to the website](http://www.vieassociative.fr)
+* [Github vieassociative doc](https://github.com/serut/doc-vieassoc)
+* [Github vieassociative](https://github.com/serut/vieassociative)
+
+
 ## License
 This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.
 
@@ -5,7 +14,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-
 
 French version : http://creativecommons.org/licenses/by-nc-sa/3.0/fr/
 
-We currently use these softwares for making vieassociative like  :
+We currently use these softwares for making vieassociative awesome  :
 
 * Laravel : MIT License
 * Bootstrap : Apache 2.0

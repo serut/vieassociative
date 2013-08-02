@@ -4,7 +4,7 @@
         <div id="footer" class="row">
             <div class="span14 hidden-phone">
                 <span><a href="index.html">Accueil</a></span>
-                <span><a href="elements.html">Qui sommes-nous ?</a></span>
+                <span><a href="http://doc.vieassociative.fr/">Developpeurs</a></span>
                 @if (Auth::check())
                     <span><a href="portfolio-4-columns.html">Espace membre</a></span>
                 @else

@@ -11,7 +11,6 @@ class FromScratch extends Migration {
 	 */
 	public function up()
 	{
-		$this->down();
 		Schema::create('association', function($table){
 			$table->engine = 'InnoDB';
 			$table->increments('id');
@@ -24,7 +23,7 @@ class FromScratch extends Migration {
 
 		Schema::create('connexion_tentative', function($table){
 			$table->engine = 'InnoDB';
-			$table->increments('id'); // USED ????
+			$table->increments('id');
 			$table->string('ip',15);
 			$table->timestamps();
 		});
@@ -125,9 +124,10 @@ class FromScratch extends Migration {
 			$table->string('email')->unique('email');
 			$table->string('password',128);
 			$table->string('level')->default('user');
+			$table->string('firstname');
+			$table->string('lastname');
 
 			$table->timestamps();
-			$table->integer('associationEnManagement'); // Le dernier id de la derniere association en management
 
 			$table->integer('state');
 		});

@@ -15,7 +15,7 @@ class AssociationController  extends BaseController {
             if($result['data']['choice']=="true"){
                 User::addAssoc(Session::get('idUser'),$id_assoc,$result['data']['link']);
             }
-            $result['redirect_url'] = URL::action('AssociationController@getGererMaintenant',array($id_assoc));
+            $result['redirect_url'] = '/';
             $result['data']=null; //Remove data
         }
         return Response::json($result);
@@ -45,7 +45,12 @@ class AssociationController  extends BaseController {
         return View::make('association.edit-vieassociative-informations');
     }
     public function getListNews($idAssoc){
-        return View::make('association.list-news');
+        $news = Post::listNews($idAssoc);
+        return View::make('association.list-news')->with('news',$news);
+    }
+    public function getAddNews($idAssoc){
+        $idPost = Post::addNews($idAssoc);
+        return Redirect::to('/'.$idAssoc.'/edit/news/'.$idPost.'/edit');;
     }
     public function getEditNews($idAssoc, $idNews){
         return View::make('association.edit-news');

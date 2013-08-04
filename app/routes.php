@@ -57,6 +57,7 @@
             Route::get('{id}/edit/evenement/{idEv}/edit', 'EvenementController@getEdit')->where('id', '[0-9]+')->where('idEv', '[0-9]+');
             Route::get('{id}/edit/picture', 'PictureController@getAssociationPictures')->where('id', '[0-9]+');
             Route::get('{id}/edit/news', 'AssociationController@getListNews')->where('id', '[0-9]+');
+            Route::get('{id}/edit/news/add', 'AssociationController@getAddNews')->where('id', '[0-9]+');
             Route::get('{id}/edit/news/{idNews}/edit', 'AssociationController@getEditNews')->where('id', '[0-9]+')->where('idNews', '[0-9]+');
             Route::get('{id}/edit/social', 'AssociationController@getEditSocial')->where('id', '[0-9]+');
             Route::get('{id}/edit/administrator', 'AssociationController@getEditAdministrator')->where('id', '[0-9]+');

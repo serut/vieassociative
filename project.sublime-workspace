@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"id",
+				"idAssoc"
+			],
+			[
 				"php",
 				"phpinfo"
 			],
@@ -70,10 +74,6 @@
 			[
 				"check",
 				"checked"
-			],
-			[
-				"id",
-				"idUser"
 			],
 			[
 				"c",
@@ -144,11 +144,19 @@
 	"buffers":
 	[
 		{
-			"file": "app/filters.php",
+			"file": "app/views/association/list-news.blade.php",
 			"settings":
 			{
-				"buffer_size": 3255,
-				"line_ending": "Unix"
+				"buffer_size": 1913,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/lang/fr/association/edit/news.php",
+			"settings":
+			{
+				"buffer_size": 280,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -203,6 +211,16 @@
 	},
 	"file_history":
 	[
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/routes.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/association/edit-news.blade.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/database/migrations/2013_08_04_110844_posts.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/models/elo/PropositionPost.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/controllers/AssociationController.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/models/Post.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/models/elo/Post.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/database/migrations/2013_05_20_141549_from_scratch.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/filters.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/doc-vieassoc/docs/01_Getting_Started/01_Installation_on_Windows.md",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/doc-vieassoc/docs/04_Planning_in_french.md",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/template/main_html_component/footer.blade.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/template/theme.blade.php",
@@ -210,7 +228,6 @@
 		"/J/xampp2/apache/conf/extra/httpd-vhosts.conf",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/readme.md",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/models/User.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/doc-vieassoc/docs/01_Getting_Started/01_Installation_on_Windows.md",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/doc-vieassoc/README.md",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/laravel-master/.gitignore",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/laravel-master/app/config/prod/app.php",
@@ -321,16 +338,7 @@
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/config/app.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/config/auth.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/config/cache.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/config/compile.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/config/local/database.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/config/queue.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/config/view.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/config/session.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/config/database.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/config/production/mail.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/config/workbench.php",
-		"/J/Users/Serut/AppData/Local/Temp/Temp1_www-vieassoc.zip/bootstrap/autoload.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/bootstrap/autoload.php"
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/config/compile.php"
 	],
 	"find":
 	{
@@ -354,6 +362,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"			\n",
 			"OPENSSL_RAW_DATA",
 			"@",
 			"},\n",
@@ -478,19 +487,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "app/filters.php",
+					"file": "app/views/association/list-news.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3255,
+						"buffer_size": 1913,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								644,
-								644
+								1175,
+								1175
 							]
 						],
 						"settings":
@@ -499,8 +508,35 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
+						"translation.x": 126.0,
+						"translation.y": 399.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/lang/fr/association/edit/news.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 280,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								230,
+								230
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
 						"translation.x": 0.0,
-						"translation.y": 114.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

@@ -348,7 +348,7 @@ class Application extends Container implements HttpKernelInterface, ResponsePrep
     }
     public static function getBootstrapFile()
     {
-        return 'J:\\xampp2\\htdocs\\lara_vieassoc\\Dropbox\\Dev\\laravel-master\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation' . '/start.php';
+        return 'J:\\xampp2\\htdocs\\lara_vieassoc\\Dropbox\\Dev\\www-vieassoc\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation' . '/start.php';
     }
     public function startExceptionHandling()
     {
@@ -10055,7 +10055,7 @@ class PrettyPageHandler extends Handler
             return Handler::DONE;
         }
         if (!($resources = $this->getResourcesPath())) {
-            $resources = 'J:\\xampp2\\htdocs\\lara_vieassoc\\Dropbox\\Dev\\laravel-master\\vendor\\filp\\whoops\\src\\Whoops\\Handler' . '/../Resources';
+            $resources = 'J:\\xampp2\\htdocs\\lara_vieassoc\\Dropbox\\Dev\\www-vieassoc\\vendor\\filp\\whoops\\src\\Whoops\\Handler' . '/../Resources';
         }
         $templateFile = "{$resources}/pretty-template.php";
         $cssFile = "{$resources}/pretty-page.css";

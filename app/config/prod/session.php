@@ -120,6 +120,6 @@ return array(
 	|
 	*/
 
-	'domain' => '.vieassociative.fr',
+	'domain' => 'vieassociative.fr',
 
 );

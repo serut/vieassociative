@@ -46,7 +46,7 @@ Route::when('user/log', 'guest');
 Route::filter('auth', function()
 {
 	if (Auth::guest()){
-        return Redirect::guest('user/log');
+        return Redirect::to(URLSubdomain::to('www','/user/log'));
     }
 });
 Route::filter('guest', function()

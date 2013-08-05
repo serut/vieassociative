@@ -61,7 +61,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     }
 
     static function getInfoProfils($id){
-        $sql = 'SELECT level,associationEnManagement,display_name from user where id = ?';
+        $sql = 'SELECT level,display_name from user where id = ?';
         $result = DB::select($sql, array($id));
         return $result[0];
     }
@@ -84,11 +84,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     static function modifierLienAssoc($idUser,$idInsertAssoc,$lien){
         $sql = 'UPDATE user_association SET nom_lien=? WHERE id_user = ? AND id_assoc = ?';
         $result = DB::update($sql, array($lien,$idUser,$idInsertAssoc));
-        return $result;
-    }
-    static function changerAssociationManagement($idUser,$idAssoc){
-        $sql = 'UPDATE user SET associationEnManagement = ? WHERE id = ?';
-        $result = DB::update($sql, array($idAssoc,$idUser));
         return $result;
     }
     

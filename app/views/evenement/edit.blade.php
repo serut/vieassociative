@@ -225,4 +225,59 @@
     <script src="{{ asset('/pluggin/tinyMCE/tiny_mce/tiny_mce.js') }}"></script>
     <script src="{{ asset('/js/page/ajouterEve-timepicker.js') }}"></script>
     <script src="{{ asset('/js/page/ajouterEve.js') }}"></script>
+    
+    <script src="{{ asset('/js/vendor/datepicker.js') }}"></script>
+    <script type="text/javascript">
+        var lang = {
+            monthNames:[
+                "Janvier", "Février", "Mars", "Avril", "Mai", "Juin","Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre"
+            ],
+            datepicker:{
+                daysMin: ["D", "L", "M", "M", "J", "V", "S"],
+                months: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
+                monthsShort: ["Jan", "Fév", "Mar", "Avr", "Mai", "Jui", "Juil", "Aoû", "Sep", "Oct", "Nov", "Déc"]
+            }
+        }
+
+        var from = new Date();
+        var to = new Date();
+        var textDate = from.getDate()+' '+lang.monthNames[from.getMonth()]+' '+from.getFullYear()+' - '+to.getDate()+' '+lang.monthNames[to.getMonth()]+' '+to.getFullYear();
+        $('.date-container .date-range-field span :last').text(textDate);
+                
+        $('.datepicker-calendar:last').click(function(event){
+            // stop the click propagation when clicking on the calendar element
+            // so that we don't close it
+            event.stopPropagation();
+        }).DatePicker({
+            inline: true,
+            date: [from, to],
+            calendars: 3,
+            mode: 'range',
+            locale: lang.datepicker,
+            starts:1,
+            current: new Date(to.getFullYear(), to.getMonth() - 1, 1),
+            onChange: function(dates,el) {
+                onChangeDatePicker(dates,$(this));
+            }
+        });
+        $('.date-container .date-range-field:last').click(function(){
+            $(this).parent().find('.datepicker-calendar').toggle();
+            if($(this).parent().find('.date-range-field a').text().charCodeAt(0) == 9660) {
+                // switch to up-arrow
+                $(this).parent().find('.date-range-field a').html('&#9650;');
+            } else {
+                // switch to down-arrow
+                $(this).parent().find('.date-range-field a').html('&#9660;');
+            }
+            return false;
+        }); 
+        $('.datepicker-from :last').val(intToString(from.getDate())+'/'+intToString(from.getMonth())+'/'+from.getFullYear())
+                                    .bind('change',function(){changeValOfInput($(this))})
+        $('.datepicker-to :last').val(intToString(to.getDate())+'/'+intToString(to.getMonth())+'/'+to.getFullYear())
+                                    .bind('change',function(){changeValOfInput($(this))})
+        $('html').click(function() {
+            changePeriod();
+        });
+        
+    </script>
 @stop

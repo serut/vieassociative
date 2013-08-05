@@ -14,11 +14,13 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-
 
 French version : http://creativecommons.org/licenses/by-nc-sa/3.0/fr/
 
-We currently use these softwares for making vieassociative awesome  :
+## we do not reinvent the whell ##
 
-* Laravel : MIT License
-* Bootstrap : Apache 2.0
-* JQuery : MIT License
+We currently use these softwares for making vieassociative awesome :
+
+* (Laravel)[http://laravel.com/docs] : MIT License
+* (Bootstrap)[http://getbootstrap.com/2.3.2/] : Apache 2.0
+* (JQuery)[http://jquery.com/] : MIT License
 * LESS : Apache 2.0
 * Buttons : Apache 2.0
 * NicEdit : MIT License
@@ -29,6 +31,7 @@ We currently use these softwares for making vieassociative awesome  :
 * masonry : MIT License
 * mcustomscrollbar : GNU and Creative Commons
 * jquery-mousewheel : MIT License
+* (bootstrap-datepicker)[https://github.com/eternicode/bootstrap-datepicker] : Apache 2.0
 
 Moreover there are libraries included by Laravel : thanks to them too. ;)
 

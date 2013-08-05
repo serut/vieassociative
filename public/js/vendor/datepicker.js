@@ -1,3 +1,53 @@
+function changeValOfInput(el){
+    var from = el.parent().find('.datepicker-from').val().split('/');
+    var to = el.parent().find('.datepicker-to').val().split('/');
+    if(isCorrectDate()){ // Try by regex if it's a correct french format date
+        d=[];
+        d.push(new Date(from[2],from[1],from[0]));
+        d.push(new Date(to[2],to[1],to[0]));
+        if(d[0] < d[1] && from[0].length!=0 && from[1].length!=0 && from[2].length!=0 && to[0].length!=0 && to[1].length!=0 && to[2].length!=0){
+            // I take a date with a french format and reorganize it to call the function DatePickerSetDate with english format
+            el.parent().parent().parent().find('.datepicker-calendar').DatePickerSetDate([d[0],d[1]], true);
+            onChangeDatePicker(d,el);
+        }
+    }
+}
+// Test if it's a correct french format date - should be included in the datepicker library
+function isCorrectDate(){
+    var correctDate = true;
+    //look if the input has a correct date
+    var pattern = new RegExp($('.datepicker-from :first').attr('pattern'));
+    $('.datepicker-from').each(function(){
+        if(! pattern.test($(this).val())){
+            correctDate= false;
+        }
+    })
+    $('.datepicker-to').each(function(){
+        if(! pattern.test($(this).val())){
+            correctDate= false;
+        }
+    })
+    return correctDate;
+}
+// Called when the datepicker have change his period
+function changePeriod(){
+    $(this).hide();
+}
+// Call each time the datepicker has been modificated, prepare things related to datepicker but does not modify graph
+// Needs validation by the user of the period ( a click ) for modify the graph ( not bind here )
+function onChangeDatePicker (dates,el){
+    // update the range display
+    var textDate = dates[0].getDate()+' '+lang.monthNames[dates[0].getMonth()]+', '+dates[0].getFullYear()+' - '+dates[1].getDate()+' '+lang.monthNames[dates[1].getMonth()]+', '+dates[1].getFullYear()
+    el.parent().parent().parent().find('.date-range-field span').text(textDate)
+            .parent().find('a').html("&#9650;")
+    el.parent().find('.datepicker-from').val(intToString(dates[0].getDate())+'/'+intToString(dates[0].getMonth()+1)+'/'+dates[0].getFullYear())
+    el.parent().find('.datepicker-to').val(intToString(dates[1].getDate())+'/'+intToString(dates[1].getMonth()+1)+'/'+dates[1].getFullYear())
+}
+function intToString(i){
+    if(i>9)
+        return i;
+    return '0'+i;
+}
 /**
  * DatePicker 1.0.0
  * 
@@ -35,8 +85,8 @@
         days:  'datepickerViewDays'
       },
       tpl = {
-        wrapper: '<div class="datepicker"><div class="datepickerBorderT" /><div class="datepickerBorderB" /><div class="datepickerBorderL" /><div class="datepickerBorderR" /><div class="datepickerBorderTL" /><div class="datepickerBorderTR" /><div class="datepickerBorderBL" /><div class="datepickerBorderBR" /><div class="datepickerContainer"><table cellspacing="0" cellpadding="0"><tbody><tr></tr></tbody></table></div></div>'+
-          '<div style="float:right;">'+
+        wrapper: '<div class="datepicker"><div class="datepickerBorderT" /><div class="datepickerBorderB" /><div class="datepickerBorderL" /><div class="datepickerBorderR" /><div class="datepickerBorderTL" /><div class="datepickerBorderTR" /><div class="datepickerBorderBL" /><div class="datepickerBorderBR" /><div class="datepickerContainer"><table cellspacing="0" cellpadding="0"><tbody><tr></tr></tbody></table></div></div>',
+        rightPanel :'<div style="float:right;">'+
             'De :<br><input type="text" class="input-small datepicker-from" required="required" pattern="^[0-3]?[0-9]\/[0-1]?[0-9]/[0-9]{4}$" title="20/10/2010"><br>'+
             'A :<br><input type="text" class="input-small datepicker-to" required="required" pattern="^[0-3]?[0-9]\/[0-1]?[0-9]/[0-9]{4}$" title="20/10/2010"><br>'+
             '<a onclick="wsbGraph.datepicker.changePeriod();" href="#" class="btn btn-mini btn-success"><i class="icon- ui-icon-plus"></i> Valider</a>'+
@@ -832,7 +882,12 @@
             var id = 'datepicker_' + parseInt(Math.random() * 1000), cnt;
             options.id = id;
             $(this).data('datepickerId', options.id);
-            var cal = $(tpl.wrapper).attr('id', id).bind('click', click).data('datepicker', options);
+            if(options.mode =="range"){
+              var wrap = tpl.wrapper + tpl.rightPanel;
+            }else{
+              var wrap = tpl.wrapper;
+            }
+            var cal = $(wrap).attr('id', id).bind('click', click).data('datepicker', options);
             if (options.className) {
               cal.addClass(options.className);
             }

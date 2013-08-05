@@ -55,7 +55,23 @@ class SiteHelpers{
 		return $txt;
 	}
 	
-	
+	static function create_datepicker_range(){
+		$txt = '<div class="date-container">';
+			$txt.= '<div class="date-range-field"><span></span>';
+			$txt.= '<a href="#">▼</a></div>';
+			$txt.= '<div class="datepicker-calendar"></div>';
+		$txt.= "</div>";
+		return $txt;
+	}
+
+	static function create_datepicker(){
+		$txt = '<div class="date-container">';
+			$txt.= '<div class="date-range-field"><span></span>';
+			$txt.= '<a href="#">▼</a></div>';
+			$txt.= '<div class="datepicker-calendar"></div>';
+		$txt.= "</div>";
+		return $txt;
+	}
 
 	static function simple_input($options){
 		$txt= '';

@@ -49,11 +49,21 @@ class AssociationController  extends BaseController {
         return View::make('association.list-news')->with('news',$news);
     }
     public function getAddNews($idAssoc){
-        $idPost = Post::addNews($idAssoc);
-        return Redirect::to('/'.$idAssoc.'/edit/news/'.$idPost.'/edit');;
+        $idPost = Post::addNews($idAssoc,Auth::user()->id);
+        return Redirect::to('/'.$idAssoc.'/edit/news/'.$idPost.'/edit');
     }
-    public function getEditNews($idAssoc, $idNews){
+    public function getEditNews($idAssoc, $idPost){
         return View::make('association.edit-news');
+    }
+    public function postEditNews($idAssoc, $idPost){
+        $v = new validators_associationEditPost;
+        $result = $v->validate();
+        if(isset($result['success'])){
+            Post::addProposition($idPost,Auth::user()->id,$result['data']);
+            $result['redirect_url'] = '/'.$idAssoc.'/edit/';
+            $result['data']=null; //Remove data
+        }
+        return Response::json($result);
     }
     public function getEditSocial($idAssoc){
         return View::make('association.edit-social');

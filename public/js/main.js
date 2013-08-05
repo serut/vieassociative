@@ -127,7 +127,7 @@ function launchEditor(el){
     }
 }
 function launchEditorReady(idEditor){
-    var editor = nicEditor = new nicEditor({
+    var editor = new nicEditor({
         fullPanel : true,
         iconsPath : '/pluggin/nicEdit/nicEditorIcons.gif',
         bgcolor : '#fff'

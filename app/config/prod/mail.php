@@ -94,7 +94,7 @@ return array(
 	|
 	*/
 
-	'password' => VA_SMTP_PASSWORD,
+	'password' => getenv(VA_SMTP_PASSWORD),
 
 	/*
 	|--------------------------------------------------------------------------

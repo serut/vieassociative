@@ -48,9 +48,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'eu-cdbr-west-01.cleardb.com',
-			'database'  => VA_DB_NAME,
-			'username'  => VA_DB_USERNAME,
-			'password'  => VA_DB_PASSWORD,
+			'database'  => getenv(VA_DB_NAME),
+			'username'  => getenv(VA_DB_USERNAME),
+			'password'  => getenv(VA_DB_PASSWORD),
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

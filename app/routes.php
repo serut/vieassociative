@@ -11,7 +11,6 @@
 |
 */
 
-
 //if it's in prod, the server will use subdomains to navigate on the website, otherwise it will use prefix
 //if(App::environment() == 'production'){
     $server = explode('.', Request::server('HTTP_HOST')); // sweet routing - not fully reliable

@@ -50,7 +50,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
             $domain = "vieassoc.lo";
         else
             $domain = "vieassociative.fr";
-        setcookie('vieasso_remember', '', strtotime( '+30 days' ), '/',$domain);
+        setcookie('vieasso_remember', $token, strtotime( '+30 days' ), '/',$domain);
     }
     static function addAssoc($id_user,$id_assoc,$link){
         $el = new elo_UserAssociation;

@@ -48,6 +48,7 @@
             {
                 return View::make('index.index');
             });
+            Route::get('discussion', 'DiscussionController@getIndex');
             Route::get('{id}-{text}', 'AssociationController@getProfile')->where('id', '[0-9]+')->where('text', '[a-z-]+');
             Route::get('{id}/edit', 'AssociationController@getEdit')->where('id', '[0-9]+');
             Route::get('{id}/edit/general-informations', 'AssociationController@getEditGeneralInformations')->where('id', '[0-9]+');
@@ -69,14 +70,18 @@
                 $associationForm = new AssociationFormController;
                 return $associationForm->getForm($id,$origin,$item);
             })->where('id', '[0-9]+')->where('origin', '[a-z-]+')->where('item', '[a-z-_]+');
+            Route::post('{id}/form/{origin}/{item}', function($id,$origin,$item)
+            {
+                $associationForm = new AssociationFormController;
+                return $associationForm->postForm($id,$origin,$item);
+            })->where('id', '[0-9]+')->where('origin', '[a-z-]+')->where('item', '[a-z-_]+');
             Route::group(array('before'=>'auth'), function()
             {
                 Route::get('add', 'AssociationController@getAdd');
                 Route::post('add', 'AssociationController@postAdd');
-                //Route::get('{id}/gererMaintenant', 'AssociationController@getGererMaintenant')->where('id', '[0-9]+');
                 Route::controller('{id}/evenement', 'EvenementController');
                 Route::group(array('before' => 'assoc'), function(){
-                    //
+                    // Protected URL
                 });
             });
             break;

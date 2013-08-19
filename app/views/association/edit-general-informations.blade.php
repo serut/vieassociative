@@ -18,47 +18,48 @@
               <tbody>
                 <tr>
                   <td>Nom de l'association sous lequel le public vous identifie</td>
-                  <td>Faites de la musique</td>
+                  <td>{{{$association->name}}}</td>
                   <td><a href="#" data-modal-form="display_name"><i class="icon-chevron-down"></i> Editer </a></td>
                 </tr>
                 <tr>
                   <td>Nom de l'association déposé en préfecture</td>
-                  <td>Faites de la musique SAS Malegoude</td>
+                  <td>{{{$association->legal_name}}}</td>
                   <td><a href="#" data-modal-form="legal_name"><i class="icon-chevron-down"></i> Editer </a><br> <a href="#"><i class="icon-remove"></i> Supprimer </a></td>
                 </tr>
                 <tr>
                   <td>Accronyme</td>
-                  <td>Aucun</td>
+                  <td>{{{$association->acronym}}}</td>
                   <td><a href="#" data-modal-form="acronym_name"><i class="icon-plus"></i> Ajouter </a></td>
                 </tr>
                 <tr>
                   <td>But</td>
-                  <td>Prévenir et alléger les souffrances des hommes.Protéger la  [...]</td>
+                  <td>{{{$association->goal}}}</td>
                   <td><a href="#" data-modal-form="goal"><i class="icon-chevron-down"></i> Editer </a><br> <a href="#"><i class="icon-remove"></i> Supprimer </a></td>
                 </tr>
                 <tr>
                   <td>Date de création</td>
-                  <td>16/04/1999</td>
+                  <td>{{$association->official_date_creation}}</td>
                   <td><a href="#" data-modal-form="official_date_creation"><i class="icon-chevron-down"></i> Modifier </a></td>
                 </tr>
                 <tr>
                   <td>Site web </td>
-                  <td>www.croix-rouge.fr</td>
+                  <td>{{{$association->website_url}}}</td>
                   <td><a href="#" data-modal-form="website_url"><i class="icon-chevron-down"></i> Editer </a><br> <a href="#"><i class="icon-remove"></i> Supprimer </a></td>
                 </tr>
                 <tr>
                   <td>Siege</td>
-                  <td>Paris</td>
+                  <td>{{{$association->headquater}}}</td>
                   <td><a href="#" data-modal-form="headquater"><i class="icon-chevron-down"></i> Editer </a><br> <a href="#"><i class="icon-remove"></i>Supprimer </a></td>
                 </tr>
                 <tr>
                   <td>Association reconnue d'utilité publique </td>
-                  <td>Non</td>
+                  <td>
+
+                  {{{$association->admitted_public_utility_display()}}}</td>
                   <td><a href="#" data-modal-form="admitted_public_utility"><i class="icon-chevron-down"></i> Modifier </a></td>
                 </tr>
               </tbody>
             </table>
-
 
             <p>En 2012 :</p>
             <table class="table table-striped">

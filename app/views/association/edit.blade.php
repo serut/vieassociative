@@ -56,7 +56,7 @@
                 </tr>
                 <tr>
                   <td>Les publications</td>
-                  <td>2 publications</td>
+                  <td>{{$count_news}} publications</td>
                   <td><a href="edit/news"> Editer</a></td>
                 </tr>
                 <tr>

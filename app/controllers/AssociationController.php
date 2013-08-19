@@ -30,8 +30,8 @@ class AssociationController  extends BaseController {
     }
     
     public function getEdit($idAssoc) {
-        return View::make('association.edit');
-            //->with('logo',Association::getLogo($idAssoc))
+        return View::make('association.edit')
+            ->with('count_news',Post::countNews($idAssoc));
             //->with('rang',Association::getRangUser(Session::get('idUser'), $idAssoc))
             //->with('associationEnGestationNom',Association::getName($idAssoc));
     }
@@ -39,7 +39,8 @@ class AssociationController  extends BaseController {
         return View::make('association.profile');
     }
     public function getEditGeneralInformations($idAssoc){
-        return View::make('association.edit-general-informations');
+        return View::make('association.edit-general-informations')
+            ->with('association',elo_Association::find($idAssoc));
     }
     public function getEditVieAssociativeInformations($idAssoc){
         return View::make('association.edit-vieassociative-informations');
@@ -53,7 +54,7 @@ class AssociationController  extends BaseController {
         return Redirect::to('/'.$idAssoc.'/edit/news/'.$idPost.'/edit');
     }
     public function getEditNews($idAssoc, $idPost){
-        return View::make('association.edit-news');
+        return View::make('association.edit-news')->with('post',Post::get($idPost,Auth::user()->id));
     }
     public function postEditNews($idAssoc, $idPost){
         $v = new validators_associationEditPost;

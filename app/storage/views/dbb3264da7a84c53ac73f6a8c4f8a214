@@ -20,7 +20,7 @@
                 <thead>
                     <tr>
                         <td>Titre</td>
-                        <td>Date de publication</td>
+                        <td>Dernière modification</td>
                         <td>Publié</td>
                         <td></td>
                     </tr>
@@ -28,8 +28,8 @@
                 <tbody>
                     <?php foreach($news as $n): ?>
                     <tr>
-                        <td>Lorem title</td>
-                        <td><?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($n->updated_at))->diffForHumans(); ?></td>
+                        <td><?php echo e($n->propositionPost->title); ?></td>
+                        <td><?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($n->propositionPost->updated_at))->diffForHumans(); ?></td>
                         <td>
                         <?php if($n->active): ?>
                             <i class="icon-ok"></i></td>

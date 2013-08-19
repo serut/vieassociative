@@ -21,7 +21,7 @@
                 <thead>
                     <tr>
                         <td>Titre</td>
-                        <td>Date de publication</td>
+                        <td>Dernière modification</td>
                         <td>Publié</td>
                         <td></td>
                     </tr>
@@ -29,8 +29,8 @@
                 <tbody>
                     @foreach($news as $n)
                     <tr>
-                        <td>Lorem title</td>
-                        <td>{{\Carbon\Carbon::createFromTimeStamp(strtotime($n->updated_at))->diffForHumans()}}</td>
+                        <td>{{{$n->propositionPost->title}}}</td>
+                        <td>{{\Carbon\Carbon::createFromTimeStamp(strtotime($n->propositionPost->updated_at))->diffForHumans()}}</td>
                         <td>
                         @if($n->active)
                             <i class="icon-ok"></i></td>

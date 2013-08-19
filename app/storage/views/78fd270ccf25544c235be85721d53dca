@@ -126,6 +126,8 @@
 <?php echo $__env->yieldSection(); ?>
 </div>
 
+<?php $__env->startSection ('full-container'); ?>
+<?php echo $__env->yieldSection(); ?>
 <div id="push"></div>
 <footer>
     <div class="container">

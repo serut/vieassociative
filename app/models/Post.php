@@ -1,9 +1,20 @@
 <?php
 class Post extends Eloquent
 {
-    
+    static function get($idPost,$idAuthor){
+        return elo_PropositionPost::where('id_author',$idAuthor)
+                    ->where('id_post',$idPost)->first();
+    }
     static function listNews($idAssoc){
-        return elo_Post::where('id_association',$idAssoc)->get();
+        $posts = elo_Post::where('id_association',$idAssoc)->get();
+        foreach ($posts as $k => $v) {
+            $posts[$k]->propositionPost = $v->propositionPost()->first();
+        }
+        return $posts;
+    }
+
+    static function countNews($idAssoc){
+        return elo_Post::where('id_association',$idAssoc)->count();
     }
 
     static function addNews($idAssoc,$idUser){

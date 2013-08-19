@@ -30,6 +30,7 @@
                     @input = array(
                         'id'=>"title",
                         'label'=>Lang::get('association/edit/news.label_title'),
+                        'value'=>$post->title,
                         'form' => array(
                             'placeholder'=>Lang::get('association/edit/news.placeholder_title'),
                             'class' => 'input-xlarge',
@@ -40,8 +41,7 @@
                     <div>
                         <label class="control-label" for="inputPassword">{{Lang::get('association/edit/news.label_text')}}</label>
                         <div class="controls controls-textarea">
-                            <textarea name="text" rows="8" id="text" class="input-xxlarge nicEditor-textarea" onclick="launchEditor($(this))">
-                            </textarea>
+                            <textarea name="text" rows="8" id="text" class="input-xxlarge nicEditor-textarea" onclick="launchEditor($(this))">{{$post->content}}</textarea>
                         </div>
                     </div>
                 </div>

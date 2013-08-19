@@ -6,7 +6,6 @@
 @endif
 <div class="container">
 @section ('content')
-
 	@if(isset($small_centred) && $small_centred)
 		@full_include template.html_bricks.small-centred 
 	@endif

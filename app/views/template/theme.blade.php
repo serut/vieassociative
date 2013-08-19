@@ -25,5 +25,7 @@
 @show
 </div>
 
+@section ('full-container')
+@show
 @full_include template.main_html_component.footer
 @full_include template.main_html_component.foot

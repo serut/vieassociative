@@ -2,7 +2,7 @@
 
 //	''=>'',
 return array(
-	'head_what_vieassociative' => 'Qu\'est ce que  Vie Associative ?',
+	'head_what_vieassociative' => 'Qu\'est ce que Vie Associative ?',
 	'head_found_evenement' => 'Trouver les évènements',
 	'found_evenement'=>'La fonctionnalité la plus interessante de Vie Associative est de pouvoir retrouver les évènements qui ont lieu proche de chez soi juste en tapant votre position et la distance que vous pensez pouvoir ...',
 	'head_1'=>'Regroupons nos savoirs faire sur une seule plateforme',

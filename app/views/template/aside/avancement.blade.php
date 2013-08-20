@@ -1,5 +1,6 @@
 <div class="background">
     <h3 class="head">{{Lang::get('aside.avancement_head')}}</h3>
+    Deadline : début 2014<br>
     <span class="justify">Déploiement du site en ligne :</span>
     <div class="progress progress-striped active">
     	<div class="bar" style="width: 100%;"></div>

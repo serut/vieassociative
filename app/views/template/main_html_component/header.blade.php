@@ -8,7 +8,7 @@
 			</div>
 	        <nav id="menu" class="span12 align-right hidden-phone">
 	        	<div>
-					<a href="#" class="button button-orange hidden-tablet">Découvrez le projet Vie Associative</a>
+					<?php // <a href="#" class="button button-orange hidden-tablet">Découvrez le projet Vie Associative</a> ?>
 					@if (Auth::check())
 						<a href="{{URLSubdomain::to('www','/user/logout')}}" class="button button-blue">Deconnexion</a>
 		            @else

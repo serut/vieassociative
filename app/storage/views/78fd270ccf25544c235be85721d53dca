@@ -32,7 +32,7 @@
 			</div>
 	        <nav id="menu" class="span12 align-right hidden-phone">
 	        	<div>
-					<a href="#" class="button button-orange hidden-tablet">Découvrez le projet Vie Associative</a>
+					<?php // <a href="#" class="button button-orange hidden-tablet">Découvrez le projet Vie Associative</a> ?>
 					<?php if (Auth::check()): ?>
 						<a href="<?php echo URLSubdomain::to('www','/user/logout'); ?>" class="button button-blue">Deconnexion</a>
 		            <?php else: ?>
@@ -93,29 +93,47 @@
 		<div class="row">
 	<aside class="span8 hidden-phone">
 	<div class="background">
-    <h3 class="head">Poste ton évènement</h3>
-    <p class="justify">Enregistrement ton association  dolor sit amet, consectetur adipiscing elit. Nulla in ligula risus. Nullam aliquet ullamcorper arcu, interdum bibendum orci dictum id. In et velit a nunc fermentum suscipit. Phasellus dui libero, sol !</p>
-    <p class="text-right"><a href="/evenement/ajouter" class="button button-violet">Ajoute annonce</a></p>
+    <h3 class="head"><?php echo Lang::get('aside.facebook_head'); ?></h3>
+    <p class="justify"><?php echo Lang::get('aside.facebook_text'); ?>
+    </p>
+    <div class="text-center"><img src="/img/items/rejoignez-nous-sur-facebook.jpg" alt="rejoignez nous sur facebook"></div>
+</div>
+	<div class="background">
+    <h3 class="head"><?php echo Lang::get('aside.avancement_head'); ?></h3>
+    <span class="justify">Deploiement du site en ligne :</span>
+    <div class="progress progress-striped active">
+    	<div class="bar" style="width: 100%;"></div>
+    </div>
+    <span class="justify">Developement du noyau : </span>
+    <div class="progress progress-striped active">
+    	<div class="bar" style="width: 95%;"></div>
+    </div>
+    <span class="justify">Creation de la video : </span>
+    <div class="progress progress-striped active">
+    	<div class="bar" style="width: 90%;"></div>
+    </div>
+    <span class="justify">Design du logo : </span>
+    <div class="progress progress-striped active">
+    	<div class="bar" style="width: 80%;"></div>
+    </div>
+    <span class="justify">Developement du profil associatif : </span>
+    <div class="progress progress-striped active">
+    	<div class="bar" style="width: 30%;"></div>
+    </div>
+    <span class="justify">Developement de l'edition : </span>
+    <div class="progress progress-striped active">
+    	<div class="bar" style="width: 15%;"></div>
+    </div>
+    <span class="justify">Developement d'un outil de discussion: </span>
+    <div class="progress progress-striped active">
+    	<div class="bar" style="width: 0%;"></div>
+    </div>
 </div>	
 	<div class="background">
-    <h3 class="head">Twittser</h3>
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-    <!-- Begin Twitter Feed Area  -->
-       <div class="minSubHead twitterfeed">
-           <div class="right">
-               <a href="https://twitter.com/VieAssociative" class="twitter-follow-button" data-show-count="false" data-lang="fr">Suivre @VieAssociative</a>
-           </div>
-           <div id="tweet"></div>
-       </div>
-     <!-- End Twitter Feed Area  -->
-</div>
-	<div class="background">
-    <h3 class="head">Facebook</h3>
-    <p>VieAssociative est une bien belle idée, dont seul 1/5 vous a été dévoillé, mais ce site n'a que peu de contenu.
-    Sans votre soutiens, ce projet n'as rien de mieux que ce qui se fait déjà sur la toile. N'importe quel petit soutiens ( gratuit en plus ) de votre part sera gage de notre future réussite !
-    </p>
-    <p class="text-center"><img src="/img/items/rejoignez-nous-sur-facebook.jpg" alt="rejoignez nous sur facebook"></p>
-</div>
+    <h3 class="head"><?php echo Lang::get('aside.add_association_head'); ?></h3>
+    <p class="justify"><?php echo Lang::get('aside.add_association_text'); ?></p>
+    <a href="<?php echo URLSubdomain::to('association','/add'); ?>" class="button button-violet pull-right"><?php echo Lang::get('aside.add_association_btn'); ?></a><br>
+</div>	
 </aside>
     <div class="span16">
 		<?php echo $__env->yieldContent('main-content'); ?>
@@ -133,14 +151,13 @@
     <div class="container">
         <div id="footer" class="row">
             <div class="span14 hidden-phone">
-                <span><a href="index.html">Accueil</a></span>
+                <span><a href="<?php echo URLSubdomain::to('www','/'); ?>">Accueil</a></span>
                 <span><a href="http://doc.vieassociative.fr/">Developpeurs</a></span>
                 <?php if (Auth::check()): ?>
-                    <span><a href="portfolio-4-columns.html">Espace membre</a></span>
+                    <span><a href="<?php echo URLSubdomain::to('www','/user/1'); ?>">Espace membre</a></span>
                 <?php else: ?>
-                    <span><a href="portfolio-4-columns.html">Connexion / inscription</a></span>
+                    <span><a href="<?php echo URLSubdomain::to('www','/user/log'); ?>">Connexion / inscription</a></span>
                 <?php endif; ?>
-                <span><a href="/contact/contact">Contact</a></span>
             </div>
             <div class="span9 align-right">
                 <span class="social_icons">

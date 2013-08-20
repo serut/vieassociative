@@ -120,15 +120,16 @@
     <div class="progress progress-striped active">
     	<div class="bar" style="width: 30%;"></div>
     </div>
-    <span class="justify">Developement de l'edition : </span>
+    <span class="justify">Developement de l'editeur de profil : </span>
     <div class="progress progress-striped active">
     	<div class="bar" style="width: 15%;"></div>
     </div>
-    <span class="justify">Developement d'un outil de discussion: </span>
+    <span class="justify">Developement d'un outil de discussion : </span>
     <div class="progress progress-striped active">
     	<div class="bar" style="width: 0%;"></div>
     </div>
-</div>	
+    Et ne pas oublier toute la communication...
+</div>
 	<div class="background">
     <h3 class="head"><?php echo Lang::get('aside.add_association_head'); ?></h3>
     <p class="justify"><?php echo Lang::get('aside.add_association_text'); ?></p>

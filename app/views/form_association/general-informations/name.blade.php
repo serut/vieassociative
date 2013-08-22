@@ -5,14 +5,14 @@
 @stop
 
 @section('form')
-	<p>{{Lang::get('association/modal_form/general-informations.legal_name')}}</p>
+	<p>{{Lang::get('association/modal_form/general-informations.name')}}{{$val}}</p>
 	{{ Form::open(array('class'=> 'form-horizontal form-modal','data-validate'=>'our-parsey')) }}
 		@input = array(
-	        'id'=>"legal_name",
-	        'label'=>Lang::get('association/modal_form/general-informations.label_legal_name'),
+	        'id'=>"name",
+	        'label'=>Lang::get('association/modal_form/general-informations.label_name'),
 	        'value'=>$val,
 	        'form' => array(
-	            'placeholder'=>Lang::get('association/modal_form/general-informations.placeholder_legal_name'),
+	            'placeholder'=>Lang::get('association/modal_form/general-informations.placeholder_name'),
 	            'class' => 'input-xlarge',
 	            'data-maxlength'=>"100",
 	        )
@@ -21,5 +21,6 @@
     {{ Form::close() }}
     <script type="text/javascript">
   		$(".form-modal").attr('parsley',"true").parsley(confParsley);
+  		$("[data-rel=tooltip]").tooltip();
     </script>
 @stop

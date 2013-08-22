@@ -7,8 +7,8 @@
         <div>
             <ul class="breadcrumb">
               <li><a href="#">Association</a> <span class="divider">/</span></li>
-              <li><a href="/1-qsdf">Faites de la musique</a> <span class="divider">/</span></li>
-              <li><a href="/1/edit">Edition</a> <span class="divider">/</span></li>
+              <li><a href="/{{$association->id}}-qsdf">{{{$association->name}}}</a> <span class="divider">/</span></li>
+              <li><a href="/{{$association->id}}/edit">Edition</a> <span class="divider">/</span></li>
               <li class="active">Informations Generales</li>
             </ul>
             <h3 class="head">{{Lang::get('association/edit/general-informations.edit_association')}}</h3>
@@ -19,70 +19,68 @@
                 <tr>
                   <td>Nom de l'association sous lequel le public vous identifie</td>
                   <td>{{{$association->name}}}</td>
-                  <td><a href="#" data-modal-form="display_name"><i class="icon-chevron-down"></i> Editer </a></td>
+                  <td><a href="#" data-modal-form="name"><i class="icon-pencil"></i></a></td>
                 </tr>
                 <tr>
                   <td>Nom de l'association déposé en préfecture</td>
                   <td>{{{$association->legal_name}}}</td>
-                  <td><a href="#" data-modal-form="legal_name"><i class="icon-chevron-down"></i> Editer </a><br> <a href="#"><i class="icon-remove"></i> Supprimer </a></td>
+                  <td><a href="#" data-modal-form="legal_name"><i class="icon-pencil"></i></a></td>
                 </tr>
                 <tr>
                   <td>Accronyme</td>
                   <td>{{{$association->acronym}}}</td>
-                  <td><a href="#" data-modal-form="acronym_name"><i class="icon-plus"></i> Ajouter </a></td>
+                  <td><a href="#" data-modal-form="acronym"><i class="icon-pencil"></i></td>
                 </tr>
                 <tr>
                   <td>But</td>
                   <td>{{{$association->goal}}}</td>
-                  <td><a href="#" data-modal-form="goal"><i class="icon-chevron-down"></i> Editer </a><br> <a href="#"><i class="icon-remove"></i> Supprimer </a></td>
+                  <td><a href="#" data-modal-form="goal"><i class="icon-pencil"></i></a><br></td>
                 </tr>
                 <tr>
                   <td>Date de création</td>
                   <td>{{$association->official_date_creation}}</td>
-                  <td><a href="#" data-modal-form="official_date_creation"><i class="icon-chevron-down"></i> Modifier </a></td>
+                  <td><a href="#" data-modal-form="official_date_creation"><i class="icon-pencil"></i></a></td>
                 </tr>
                 <tr>
                   <td>Site web </td>
                   <td>{{{$association->website_url}}}</td>
-                  <td><a href="#" data-modal-form="website_url"><i class="icon-chevron-down"></i> Editer </a><br> <a href="#"><i class="icon-remove"></i> Supprimer </a></td>
+                  <td><a href="#" data-modal-form="website_url"><i class="icon-pencil"></i></a></td>
                 </tr>
                 <tr>
                   <td>Siege</td>
                   <td>{{{$association->headquater}}}</td>
-                  <td><a href="#" data-modal-form="headquater"><i class="icon-chevron-down"></i> Editer </a><br> <a href="#"><i class="icon-remove"></i>Supprimer </a></td>
+                  <td><a href="#" data-modal-form="headquater"><i class="icon-pencil"></i></a></td>
                 </tr>
                 <tr>
                   <td>Association reconnue d'utilité publique </td>
                   <td>
 
                   {{{$association->admitted_public_utility_display()}}}</td>
-                  <td><a href="#" data-modal-form="admitted_public_utility"><i class="icon-chevron-down"></i> Modifier </a></td>
+                  <td><a href="#" data-modal-form="admitted_public_utility"><i class="icon-pencil"></i></td>
+                </tr>
+                <tr>
+                  <td>Statuts de l'association </td>
+                  <td>
+
+                  TODO</td>
+                  <td><a href="#" data-modal-form="statuts"><i class="icon-pencil"></i></td>
+                </tr>
+                <tr>
+                  <td>Réglement intérieur </td>
+                  <td>
+
+                  TODO</td>
+                  <td><a href="#" data-modal-form="internal_regulation"><i class="icon-pencil"></i></td>
+                </tr>
+                <tr>
+                  <td>Adresse de contact </td>
+                  <td>
+
+                  TODO {{{$association->contact_adress}}}</td>
+                  <td><a href="#" data-modal-form="contact_adress"><i class="icon-pencil"></i></td>
                 </tr>
               </tbody>
             </table>
-
-            <p>En 2012 :</p>
-            <table class="table table-striped">
-              <tbody>
-                <tr>
-                  <td>L'équipe</td>
-                  <td>7 postes déclarés</td>
-                  <td><a href="#"><i class="icon-chevron-down"></i> Modifier </a></td>
-                </tr>
-                <tr>
-                  <td>Nombre de membre :</td>
-                  <td>237</td>
-                  <td><a href="#"><i class="icon-chevron-down"></i> Modifier </a></td>
-                </tr>
-                <tr>
-                  <td>Nombre d'employés :</td>
-                  <td>16000</td>
-                  <td><a href="#"><i class="icon-chevron-down"></i> Modifier </a></td>
-                </tr>
-              </tbody>
-            </table>
-            <p class="text-right"><a href="#"><i class="icon-plus"></i> Ajouter </a> les statistiques d'une autre année</p>
-
             </div>
         </div>
     </section>

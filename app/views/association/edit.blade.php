@@ -7,7 +7,7 @@
         <div>
             <ul class="breadcrumb">
               <li><a href="#">Association</a> <span class="divider">/</span></li>
-              <li><a href="/1-qsdf">Faites de la musique</a> <span class="divider">/</span></li>
+              <li><a href="/{{$association->id}}-qsdf">{{{$association->name}}}</a> <span class="divider">/</span></li>
               <li class="active">Edition</li>
             </ul>
             <h3 class="head">{{Lang::get('association/edit.edit_association')}}</h3>
@@ -18,7 +18,6 @@
               <a href=""><i class="icon-share-alt"></i></a> -
               <a href="#" onclick="$('#wait-moderation').toggle();"><i class="icon-eye-close"></i></a> -
               <a href="#"><i class="icon-refresh"></i></a>
-
             </span>
             </p>
             <div class="row" id="wait-moderation">

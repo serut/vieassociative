@@ -18,20 +18,20 @@ French version : http://creativecommons.org/licenses/by-nc-sa/3.0/fr/
 
 We currently use these softwares for making vieassociative awesome :
 
-* (Laravel)[http://laravel.com/docs] : MIT License
-* (Bootstrap)[http://getbootstrap.com/2.3.2/] : Apache 2.0
-* (JQuery)[http://jquery.com/] : MIT License
-* LESS : Apache 2.0
-* Buttons : Apache 2.0
+* [Laravel](http://laravel.com/docs) : MIT License
+* [Bootstrap](http://getbootstrap.com/2.3.2/) : Apache 2.0
+* [JQuery](http://jquery.com/) : MIT License
+* [LESS](http://lesscss.org/) : Apache 2.0
+* [Buttons](http://alexwolfe.github.io/Buttons/) : Apache 2.0
 * NicEdit : MIT License
-* Parsley : free to use
+* [Parsley](http://parsleyjs.org/) : free to use
 * FancyBox : free to use for personal or non-profit website projects
 * imagesLoaded : MIT License
 * tmpl : free to use
 * masonry : MIT License
 * mcustomscrollbar : GNU and Creative Commons
 * jquery-mousewheel : MIT License
-* (bootstrap-datepicker)[https://github.com/eternicode/bootstrap-datepicker] : Apache 2.0
+* [bootstrap-datepicker](https://github.com/eternicode/bootstrap-datepicker) : Apache 2.0
 
 Moreover there are libraries included by Laravel : thanks to them too. ;)
 

@@ -47,7 +47,7 @@ class LoginController extends BaseController
         Session::put('myassocs',array());
         Session::put('idUser',null);
         Session::put('level',null);
-        Session::put('display_name',null);
+        Session::put('name',null);
         unset($_COOKIE['vieasso__']);
     }
     

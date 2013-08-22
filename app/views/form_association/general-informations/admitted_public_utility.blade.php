@@ -8,17 +8,18 @@
 	<p>{{Lang::get('association/modal_form/general-informations.admitted_public_utility')}}</p>
 	{{ Form::open(array('class'=> 'form-horizontal form-modal','data-validate'=>'our-parsey')) }}
 		@input = array(
-		    'id'=>"link",
+		    'id'=>"admitted_public_utility",
 		    'label'=>Lang::get('association/modal_form/general-informations.label_choice_admitted_public_utility'),
-		    'name'=> 'choice',
+		    'name'=> 'admitted_public_utility',
+		    'value'=> ($val == 1) ? "true" : "false",
 		    'elements' => array(
 		        '1'=>array(
 		            'value'=>'true',
-		            'text'=>Lang::get('association/modal_form/general-informations.radio_yes'),
+		            'text'=>Lang::get('form.radio_yes'),
 		        ),
 		        '2'=>array(
 		            'value'=>'false',
-		            'text'=>Lang::get('association/modal_form/general-informations.radio_no'),
+		            'text'=>Lang::get('form.radio_no'),
 		        ),
 		    )
 		)@

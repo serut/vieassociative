@@ -19,7 +19,7 @@
 
 			<div class="row">
 	        	<div class="span17 head">
-	           		<h2 class="name">{{$profile['name']}}</h2>
+	           		<h2 class="name">{{{$association->name}}}</h2>
 		            <span class="ss hidden-phone">
 						<a class="facebook" href="#">facebook</a>
 						<a class="googleplus" href="#">googleplus</a>

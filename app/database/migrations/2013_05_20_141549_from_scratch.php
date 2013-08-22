@@ -120,7 +120,7 @@ class FromScratch extends Migration {
 			$table->increments('id');
 
 			$table->string('username')->unique('username');
-			$table->string('display_name');
+			$table->string('name');
 			$table->string('email')->unique('email');
 			$table->string('password',128);
 			$table->string('level')->default('user');

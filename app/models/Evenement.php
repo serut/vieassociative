@@ -94,7 +94,7 @@ class Evenement
                     type_repetition,
                     lieu,
                     titre,
-                    display_name,
+                    name,
                     association.nom as nomAssoc,
                     id_logo,
                     ville.nom as nom_de_la_ville,

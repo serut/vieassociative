@@ -10,10 +10,10 @@
 		@input = array(
 	        'id'=>"website_url",
 	        'label'=>Lang::get('association/modal_form/general-informations.label_website_url'),
+	        'value'=>$val,
 	        'form' => array(
 	            'placeholder'=>Lang::get('association/modal_form/general-informations.placeholder_website_url'),
 	            'class' => 'input-xlarge',
-	            'data-original-title'=>Lang::get('association/modal_form/general-informations.tooltip_website_url'),
 	            'data-maxlength'=>"100",
 	        )
 	    )@

@@ -9,10 +9,10 @@
 		<?php $input= array(
 	        'id'=>"legal_name",
 	        'label'=>Lang::get('association/modal_form/general-informations.label_legal_name'),
+	        'value'=>$val,
 	        'form' => array(
 	            'placeholder'=>Lang::get('association/modal_form/general-informations.placeholder_legal_name'),
 	            'class' => 'input-xlarge',
-	            'data-original-title'=>Lang::get('association/modal_form/general-informations.tooltip_legal_name'),
 	            'data-maxlength'=>"100",
 	        )
 	    ); ?>

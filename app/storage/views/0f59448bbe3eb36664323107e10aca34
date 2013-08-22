@@ -4,7 +4,7 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('form'); ?>
-	<p><?php echo Lang::get('association/modal_form/general-informations.display_name'); ?></p>
+	<p><?php echo Lang::get('association/modal_form/general-informations.name'); ?></p>
 	<?php echo Form::open(array('class'=> 'form-horizontal form-modal','data-validate'=>'our-parsey')); ?>
 		TODO
     <?php echo Form::close(); ?>

@@ -10,10 +10,10 @@
 		@input = array(
 	        'id'=>"headquater",
 	        'label'=>Lang::get('association/modal_form/general-informations.label_headquater'),
+	        'value'=>$val,
 	        'form' => array(
 	            'placeholder'=>Lang::get('association/modal_form/general-informations.placeholder_headquater'),
 	            'class' => 'input-xlarge',
-	            'data-original-title'=>Lang::get('association/modal_form/general-informations.tooltip_headquater'),
 	            'data-maxlength'=>"100",
 	        )
 	    )@

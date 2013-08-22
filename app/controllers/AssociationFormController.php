@@ -2,6 +2,10 @@
 
 class AssociationFormController  extends BaseController {
 
+    
+    public $allowedOrigin = array('general-informations',
+                                    'vieassociative-informations',
+                                );
     /*
         @origin = the page name on the association control panel
         @item = the name of the input that the user wants to edit
@@ -12,15 +16,16 @@ class AssociationFormController  extends BaseController {
         switch ($origin) {
             case 'general-informations':
                 switch ($item) {
-                    case 'display_name':
+                    case 'name':
                     case 'legal_name':
-                    case 'acronym_name':
+                    case 'acronym':
                     case 'goal':
                     case 'official_date_creation':
                     case 'website_url':
                     case 'headquater':
                     case 'admitted_public_utility':
-                        return View::make($view_name);
+                    $val = elo_Association::find($id)->$item;
+                    return View::make($view_name)->with('val',$val);
                 }
                 break;
             case 'vieassociative-informations':
@@ -47,40 +52,41 @@ class AssociationFormController  extends BaseController {
         switch ($origin) {
             case 'general-informations':
                 $v = new validators_associationGeneralInformation;
-                switch ($item) {
-                    case 'display_name':
-                        $result = $v->display_name();
-                        $update=array('name' => $result['data']['display_name']);
-                        break;
-                    case 'legal_name':
-                        $result = $v->legal_name();
-                        $update= array('legal_name' => $result['data']['legal_name']);
-                        break;
-                    case 'acronym_name':
-                        $result = $v->acronym_name();
-                        $update = array('acronym' => $result['data']['acronym_name']);
-                        break;
-                    case 'goal':
-                        $result = $v->goal();
-                        $update = array('goal' => $result['data']['goal']);
-                        break;
-                    case 'official_date_creation':
-                        $result = $v->official_date_creation();
-                        $update = array('official_date_creation' => $result['data']['official_date_creation']);
-                        break;
-                    case 'website_url':
-                        $result = $v->website_url();
-                        $update = array('website_url' => $result['data']['website_url']);
-                        break;
-                    case 'headquater':
-                        $result = $v->headquater();
-                        $update = array('headquater' => $result['data']['headquater']);
-                        break;
-                    case 'admitted_public_utility':
-                        $result = $v->admitted_public_utility();
-                        $update = array('admitted_public_utility' => $result['data']['admitted_public_utility']);
-                        break;
-                }
+                    switch ($item) {
+                        case 'name':
+                            $result = $v->name();
+                            $update=array('name' => $result['data']['name']);
+                            break;
+                        case 'legal_name':
+                            $result = $v->legal_name();
+                            $update= array('legal_name' => $result['data']['legal_name']);
+                            break;
+                        case 'acronym':
+                            $result = $v->acronym();
+                            $update = array('acronym' => $result['data']['acronym']);
+                            break;
+                        case 'goal':
+                            $result = $v->goal();
+                            $update = array('goal' => $result['data']['goal']);
+                            break;
+                        case 'official_date_creation':
+                            $result = $v->official_date_creation();
+                            $update = array('official_date_creation' => $result['data']['official_date_creation']);
+                            break;
+                        case 'website_url':
+                            $result = $v->website_url();
+                            $update = array('website_url' => $result['data']['website_url']);
+                            break;
+                        case 'headquater':
+                            $result = $v->headquater();
+                            $update = array('headquater' => $result['data']['headquater']);
+                            break;
+                        case 'admitted_public_utility':
+                            $result = $v->admitted_public_utility();
+                            $boolean = ($result['data']['admitted_public_utility'] == "true") ? 1 : 0; 
+                            $update = array('admitted_public_utility' => $boolean);
+                            break;
+                    }
                 if(isset($result['success'])){
                     elo_Association::where('id',$id)->update($update);
                 }

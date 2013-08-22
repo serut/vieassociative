@@ -5,7 +5,7 @@
 @stop
 
 @section('form')
-	<p>{{Lang::get('association/modal_form/general-informations.display_name')}}</p>
+	<p>{{Lang::get('association/modal_form/general-informations.name')}}</p>
 	{{ Form::open(array('class'=> 'form-horizontal form-modal','data-validate'=>'our-parsey')) }}
 		TODO
     {{ Form::close() }}

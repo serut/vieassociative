@@ -5,15 +5,15 @@
 @stop
 
 @section('form')
-	<p>{{Lang::get('association/modal_form/vieassociative-informations.acronym_name')}}</p>
+	<p>{{Lang::get('association/modal_form/vieassociative-informations.acronym')}}</p>
 	{{ Form::open(array('class'=> 'form-horizontal form-modal','data-validate'=>'our-parsey')) }}
 		@input = array(
-	        'id'=>"acronym_name",
-	        'label'=>Lang::get('association/modal_form/vieassociative-informations.label_acronym_name'),
+	        'id'=>"acronym",
+	        'label'=>Lang::get('association/modal_form/vieassociative-informations.label_acronym'),
 	        'form' => array(
-	            'placeholder'=>Lang::get('association/modal_form/vieassociative-informations.placeholder_acronym_name'),
+	            'placeholder'=>Lang::get('association/modal_form/vieassociative-informations.placeholder_acronym'),
 	            'class' => 'input-xlarge',
-	            'data-original-title'=>Lang::get('association/modal_form/vieassociative-informations.tooltip_acronym_name'),
+	            'data-original-title'=>Lang::get('association/modal_form/vieassociative-informations.tooltip_acronym'),
 	            'data-maxlength'=>"100",
 	        )
 	    )@

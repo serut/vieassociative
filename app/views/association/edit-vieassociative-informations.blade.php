@@ -62,11 +62,6 @@
                   <td><a href="#" data-modal-form="module_price"><i class="icon-remove"></i> Désactiver </a></td>
                 </tr>
                 <tr>
-                  <td>Adresse mail de contact</td>
-                  <td>dupont@gmail.com</td>
-                  <td><a href="#" data-modal-form="main_mail"><i class="icon-remove"></i> Modifier </a></td>
-                </tr>
-                <tr>
                   <td>Texte de la page d'acceuil</td>
                   <td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commo [..]</td>
                   <td><a href="#" data-modal-form="welcome_text"><i class="icon-chevron-down"></i> Editer </a><br> <a href="#"><i class="icon-remove"></i>Supprimer </a></td>

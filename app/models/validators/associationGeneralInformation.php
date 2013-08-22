@@ -19,10 +19,10 @@ class validators_associationGeneralInformation extends BaseValidator
         }
         return $message;
     }
-    public function display_name(){
-        $inputsRequired = array('display_name');
+    public function name(){
+        $inputsRequired = array('name');
         $rules = array(
-            'display_name' => 'required|min:2|max:80',
+            'name' => 'required|min:2|max:80',
         );
         return $this->test($inputsRequired,$rules);
 	}
@@ -33,10 +33,10 @@ class validators_associationGeneralInformation extends BaseValidator
         );
         return $this->test($inputsRequired,$rules);
     }
-    public function acronym_name(){
-        $inputsRequired = array('acronym_name');
+    public function acronym(){
+        $inputsRequired = array('acronym');
         $rules = array(
-            'acronym_name' => 'required|min:2|max:80',
+            'acronym' => 'required|min:2|max:80',
         );
         return $this->test($inputsRequired,$rules);
     }
@@ -69,7 +69,7 @@ class validators_associationGeneralInformation extends BaseValidator
         return $this->test($inputsRequired,$rules);
     }
     public function admitted_public_utility(){
-        $inputsRequired = array('headquater');
+        $inputsRequired = array('admitted_public_utility');
         $rules = array(
             'admitted_public_utility' => 'required|min:2|max:80',
         );

@@ -5,7 +5,7 @@
 @stop
 
 @section('form')
-	<p>{{Lang::get('association/modal_form/vieassociative-informations.acronym_name')}}</p>
+	<p>{{Lang::get('association/modal_form/vieassociative-informations.acronym')}}</p>
 	{{ Form::open(array('class'=> 'form-horizontal form-modal','data-validate'=>'our-parsey')) }}
 		@input = array(
 		    'id'=>"link",

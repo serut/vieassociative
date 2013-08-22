@@ -26,6 +26,17 @@ class CompleteAssociationProfile extends Migration {
 			$table->integer('nb_evenements');
 			$table->integer('nb_social_connected');
 			$table->integer('nb_administrator');
+			$table->string('goal');
+			$table->softDeletes();
+			$table->text('statuts');
+			$table->text('internal_regulation');
+			$table->string('contact_adress');
+			$table->string('url_name');
+			$table->string('page_facebook');
+			$table->string('page_googleplus');
+			$table->string('page_youtube');
+			$table->string('page_paypal');
+			$table->string('page_twitter');
 		});
 	}
 

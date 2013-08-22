@@ -1,5 +1,6 @@
 <?php
 class SiteHelpers{
+
 	static function create_radio($options){
 		$txt = '<div class="control-group">';
 			$txt.= SiteHelpers::add_label($options);
@@ -9,8 +10,8 @@ class SiteHelpers{
 			$txt.= '>';
 				foreach ($options['elements'] as $k => $v) {
 					$txt.= '<label class="checkbox">';
-					if(isset($v['checked'])){
-						$txt.= Form::radio($options['name'], $v['value'],$v['checked']);
+					if(isset($v['checked']) || $options['value']==$v['value']){
+						$txt.= Form::radio($options['name'], $v['value'],true);
 					}else{
 						$txt.= Form::radio($options['name'], $v['value']);
 					}

@@ -22,7 +22,7 @@ $this->inlineScript()->prependFile('/js/index.js')->prependFile('/js/twitter-wid
                                     <ul class="nav ">
                                         <li><i class="icon-user hidden-tablet"></i><small><i>Posté par : 
                                                     <?php
-                                                        echo $resultat['display_name'];
+                                                        echo $resultat['name'];
                                                     ?></i></small></li>
                                         <li><i class="icon-time hidden-tablet"></i><small><i>Ajoute :  <?php echo $resultat['date_ajout'] ?></i></small></li>
                                     </ul>

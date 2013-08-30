@@ -7,6 +7,9 @@ class SiteHelpers{
 			$txt.= '<div class="controls"';
 			if(isset($options['data-toggle']))
 				$txt.= ' data-toggle="'.$options['data-toggle'].'"';
+
+			if(!isset($options['value']))
+				$options['value']='';
 			$txt.= '>';
 				foreach ($options['elements'] as $k => $v) {
 					$txt.= '<label class="checkbox">';

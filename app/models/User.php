@@ -41,7 +41,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     static function connexion($id){
         $infoProfil = User::getInfoProfils($id);
         Session::put('idUser', $id);
-        Session::put('name', $infoProfil->name);
+        Session::put('name', $infoProfil->username);
         Session::put('level', $infoProfil->level);
         Session::put('myassocs', Association::getAssociations($id));
         $token = sha1(mt_rand(0, 0x7fffffff ) ^ crc32("okw6XAw25BOX8EY") ^ crc32(microtime()));
@@ -61,7 +61,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     }
 
     static function getInfoProfils($id){
-        $sql = 'SELECT level,name from user where id = ?';
+        $sql = 'SELECT level,username from user where id = ?';
         $result = DB::select($sql, array($id));
         return $result[0];
     }

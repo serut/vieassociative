@@ -94,6 +94,8 @@
                     fclose($abusePingdom);
                     $abusePingdom = fopen('http://association.vieassociative.fr', 'r');
                     fclose($abusePingdom);
+                    $abusePingdom = fopen('http://news.vieassociative.fr', 'r');
+                    fclose($abusePingdom);
                     $abusePingdom = fopen('http://doc.vieassociative.fr', 'r');
                     fclose($abusePingdom);
                 }

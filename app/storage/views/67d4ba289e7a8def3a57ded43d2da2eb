@@ -75,7 +75,7 @@
                   <td>Adresse de contact </td>
                   <td>
 
-                  TODO : <?php echo e($association->contact_adress); ?></td>
+                  TODO <?php echo e($association->contact_adress); ?></td>
                   <td><a href="#" data-modal-form="contact_adress"><i class="icon-pencil"></i></td>
                 </tr>
               </tbody>

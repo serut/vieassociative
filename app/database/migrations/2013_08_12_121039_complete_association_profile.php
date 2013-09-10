@@ -26,7 +26,6 @@ class CompleteAssociationProfile extends Migration {
 			$table->integer('nb_evenements');
 			$table->integer('nb_social_connected');
 			$table->integer('nb_administrator');
-			$table->string('goal');
 			$table->softDeletes();
 			$table->text('statuts');
 			$table->text('internal_regulation');

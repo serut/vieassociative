@@ -120,10 +120,12 @@
 
                 <hr>
                 <div>
-                    <label class="checkbox">
-                        <input name="approuve" type="checkbox" required="required">{{Lang::get('association/form_create.notice_part_1')}}<a target="_blank" href="/info/condition">{{Lang::get('association/form_create.notice_part_link')}}</a>{{Lang::get('association/form_create.notice_part_2')}}:
+                    <label class="checkbox justify">
+                        <input name="approuve" type="checkbox" required="required">{{Lang::get('association/form_create.notice_part_1')}}<a target="_blank" href="/info/condition">{{Lang::get('association/form_create.notice_part_link')}}</a>{{Lang::get('association/form_create.notice_part_2')}}
+
+                        {{Lang::get('association/form_create.notice_create_association')}}
                     </label>
-                    <p>{{Lang::get('association/form_create.notice_create_association')}}</p>
+                    
                 </div>
                 <div class="nav text-right">
                     <button type="submit" class="button button-green">{{Lang::get('core/form.send')}}</button>

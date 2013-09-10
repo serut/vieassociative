@@ -8,7 +8,7 @@
 	    <div>
 			<h3 class="head">{{Lang::get('index/index.head_what_vieassociative')}}</h3>
 	    	<div class="text-center">
-	    	<iframe width="480" height="360" src="//www.youtube-nocookie.com/embed/UjDmuHG-GYg?rel=0" frameborder="0" allowfullscreen></iframe>
+	    	<iframe width="480" height="360" src="//www.youtube-nocookie.com/embed/4TlJ4qKO2Xg?rel=0" frameborder="0" allowfullscreen></iframe>
 		    </div>
 	        <h3 class="head">{{Lang::get('index/index.head_1')}}</h3>
 	        <p>{{Lang::get('index/index.content_1_0')}}<br>

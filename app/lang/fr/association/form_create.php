@@ -22,11 +22,11 @@ return array(
 	"link_two"=>"Trésorier",
 	"link_three"=>"Secrétaire",
 
-	"notice_create_association"=>"Si vous usurpassez ou/et utilisez à tord l'image d'une association, votre responsabilité pénale peut être engagée. Vie Associative se réserve le droit d'intervenir en cas d'abus.",
+	"notice_create_association"=>"Il est rappelé que toute fausse déclaration est passible de peines d'emprisonnement et d'amendes prévues par les articles 441-6 et 441-7 du code pénal.",
 
-	"notice_part_1"=>"J'ai lu et j'accepte les ",
+	"notice_part_1"=>"J'ai lu et accepté les ",
 	"notice_part_link"=>"conditions d'utilisation",
-	"notice_part_2"=>", et je reconnais que ",
+	"notice_part_2"=>", et je certifie sur l'honneur l'exactitude des informations que je vais fournir.",
 
 	"checkbox_prefecture"=>"L'association est enregistrée sous un autre nom en préfecture",
 	"label_prefecture"=>"Le nom déclaré en préfecture",

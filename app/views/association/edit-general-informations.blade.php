@@ -62,21 +62,20 @@
                   <td>Statuts de l'association </td>
                   <td>
 
-                  TODO</td>
+                  </td>
                   <td><a href="#" data-modal-form="statuts"><i class="icon-pencil"></i></td>
                 </tr>
                 <tr>
                   <td>Réglement intérieur </td>
                   <td>
 
-                  TODO</td>
+                  </td>
                   <td><a href="#" data-modal-form="internal_regulation"><i class="icon-pencil"></i></td>
                 </tr>
                 <tr>
                   <td>Adresse de contact </td>
                   <td>
-
-                  TODO {{{$association->contact_adress}}}</td>
+                  {{{$association->contact_adress}}}</td>
                   <td><a href="#" data-modal-form="contact_adress"><i class="icon-pencil"></i></td>
                 </tr>
               </tbody>

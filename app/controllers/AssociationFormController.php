@@ -24,6 +24,9 @@ class AssociationFormController  extends BaseController {
                     case 'website_url':
                     case 'headquater':
                     case 'admitted_public_utility':
+                    case 'internal_regulation':
+                    case 'statuts':
+                    case 'contact_adress':
                     $val = elo_Association::find($id)->$item;
                     return View::make($view_name)->with('val',$val);
                 }
@@ -85,6 +88,18 @@ class AssociationFormController  extends BaseController {
                             $result = $v->admitted_public_utility();
                             $boolean = ($result['data']['admitted_public_utility'] == "true") ? 1 : 0; 
                             $update = array('admitted_public_utility' => $boolean);
+                            break;
+                        case 'internal_regulation':
+                            $result = $v->internal_regulation();
+                            $update = array('internal_regulation' => $result['data']['internal_regulation']);
+                            break;
+                        case 'statuts':
+                            $result = $v->statuts();
+                            $update = array('statuts' => $result['data']['statuts']);
+                            break;
+                        case 'contact_adress':
+                            $result = $v->contact_adress();
+                            $update = array('contact_adress' => $result['data']['contact_adress']);
                             break;
                     }
                 if(isset($result['success'])){

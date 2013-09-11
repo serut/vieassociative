@@ -75,4 +75,25 @@ class validators_associationGeneralInformation extends BaseValidator
         );
         return $this->test($inputsRequired,$rules);
     }
+    public function internal_regulation(){
+        $inputsRequired = array('internal_regulation');
+        $rules = array(
+            'internal_regulation' => 'required',
+        );
+        return $this->test($inputsRequired,$rules);
+    }
+    public function statuts(){
+        $inputsRequired = array('statuts');
+        $rules = array(
+            'statuts' => 'required',
+        );
+        return $this->test($inputsRequired,$rules);
+    }
+    public function contact_adress(){
+        $inputsRequired = array('contact_adress');
+        $rules = array(
+            'contact_adress' => 'required',
+        );
+        return $this->test($inputsRequired,$rules);
+    }
 }

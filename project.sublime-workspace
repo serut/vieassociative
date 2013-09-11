@@ -174,14 +174,6 @@
 				"buffer_size": 6920,
 				"line_ending": "Unix"
 			}
-		},
-		{
-			"file": "app/views/index/index.blade.php",
-			"settings":
-			{
-				"buffer_size": 2661,
-				"line_ending": "Windows"
-			}
 		}
 	],
 	"build_system": "",
@@ -235,6 +227,12 @@
 	},
 	"file_history":
 	[
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/index/index.blade.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/association/edit-general-informations.blade.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/form_association/general-informations/internal_regulation.blade.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/models/validators/associationGeneralInformation.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/controllers/AssociationFormController.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/form_association/general-informations/statuts.blade.php",
 		"/J/Users/Serut/Desktop/couldown.html",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/lang/fr/association/form_create.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/association/add.blade.php",
@@ -264,13 +262,10 @@
 		"/F/ISO/FEAR 2 ISO/f2-clonedvd.nfo",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/association/edit-vieassociative-informations.blade.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/association/profile.blade.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/association/edit-general-informations.blade.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/controllers/AssociationController.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/controllers/AssociationFormController.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/association/edit.blade.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/form_association/general-informations/admitted_public_utility.blade.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/readme.md",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/models/validators/associationGeneralInformation.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/association/edit-statistics.blade.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/storage/logs/log-apache2handler-2013-08-12.txt",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/storage/views/67d4ba289e7a8def3a57ded43d2da2eb",
@@ -308,7 +303,6 @@
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/lang/fr/index/index.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/template/aside/facebook.blade.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/template/main_html_component/header.blade.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/index/index.blade.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/template/main_html_component/aside.blade.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/lang/fr/aside.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/template/main_html_component/footer.blade.php",
@@ -360,9 +354,7 @@
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/laravel-master/app/libraries/SiteHelpers.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/laravel-master/app/libraries/URLSubdomain.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/laravel-master/app/filters.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/laravel-master/app/config/compile.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/laravel-master/bootstrap/start.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/laravel-master/bootstrap/compiled.php"
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/laravel-master/app/config/compile.php"
 	],
 	"find":
 	{
@@ -387,6 +379,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"statuts",
 			"\n              ",
 			"}}}</",
 			"acronym_name",
@@ -520,7 +513,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -548,34 +541,6 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 798.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/views/index/index.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2661,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								307,
-								307
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 153.0,
-						"translation.y": 114.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

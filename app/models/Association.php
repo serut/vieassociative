@@ -22,7 +22,13 @@ class Association  extends Eloquent
         $a = elo_Association::findOrFail($id_assoc);
         return $a;
     }
-
+    static function addAdmin($id_user,$id_assoc,$link){
+        $el = new elo_UserAssociation();
+        $el->id_user = $id_user;
+        $el->id_assoc = $id_assoc;
+        $el->link = $link;
+        $el->touch();
+    }
 
 
     static function getAssociations($idUser){

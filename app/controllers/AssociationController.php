@@ -76,7 +76,8 @@ class AssociationController  extends BaseController {
         return View::make('association.edit-social');
     }
     public function getEditAdministrator($idAssoc){
-        return View::make('association.edit-administrator');
+        return View::make('association.edit-administrator')
+            ->with('association',elo_Association::find($idAssoc));
     }
     public function getHistory($idAssoc){
         return View::make('association.history');

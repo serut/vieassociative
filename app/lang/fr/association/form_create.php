@@ -21,6 +21,7 @@ return array(
 	"link_one"=>"Président",
 	"link_two"=>"Trésorier",
 	"link_three"=>"Secrétaire",
+	"link_four"=>"Membre",
 
 	"notice_create_association"=>"Il est rappelé que toute fausse déclaration est passible de peines d'emprisonnement et d'amendes prévues par les articles 441-6 et 441-7 du code pénal.",
 

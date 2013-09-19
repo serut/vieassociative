@@ -104,6 +104,7 @@ class AssociationFormController  extends BaseController {
                     }
                 if(isset($result['success'])){
                     elo_Association::where('id',$id)->update($update);
+                    $result['redirect_url'] = '/'.$id.'/edit/general-informations';
                 }
                 break;
             case 'vieassociative-informations':
@@ -122,9 +123,33 @@ class AssociationFormController  extends BaseController {
                         return View::make($view_name);
                 }
                 break;
+            case 'administrator':
+                $v = new validators_associationAdministrator;
+                if(Input::has('who')){
+                    // if we don't know if he register himself or somebody else
+                    $result = $v->add_when_not_admin();
+                    if(isset($result['success'])){
+                        if($result['data']['who']=='false'){
+                            Association::addAdmin(Auth::user()->id,$id,$result['data']['link']);
+                        }else{
+                            $user = User::where('email', $result['data']['admin_mail'])->firstOrFail();
+                            Association::addAdmin($user->id,$id,$result['data']['link']);
+                        }
+                    }
+                }else{
+                    // he is already an admin, he is adding somebody else
+                    $result = $v->add_when_already_admin();
+                    if(isset($result['success'])){
+                        $user = User::where('email', $result['data']['admin_mail'])->firstOrFail();
+                        Association::addAdmin($user->id,$id,$result['data']['link']);
+                    }
+                }
+                //SECURITY ??
+                if(isset($result['success'])){
+                    $result['redirect_url'] = '/'.$id.'/edit/administrator';
+                }
         }
         if(isset($result['success'])){
-            $result['redirect_url'] = '/'.$id.'/edit/general-informations';
             $result['data']=null; //Remove data
         }
         return Response::json($result);

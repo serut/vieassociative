@@ -44,17 +44,17 @@
             <table class="table table-striped">
               <tbody>
                 <tr>
-                  <td>Information générale de l'association</td>
+                  <td><span class="text-success">Information générale de l'association</span></td>
                   <td>80% completé</td>
                   <td><a href="edit/general-informations"> Editer</a></td>
                 </tr>
                 <tr>
-                  <td>La page Vie Associative</td>
-                  <td>40% completé</td>
-                  <td><a href="edit/vieassociative-informations"> Editer</a></td>
+                  <td><span class="text-success">Administrateurs</span></td>
+                  <td>{{$count_admin}} administrateurs</td>
+                  <td><a href="edit/administrator"> Editer</a></td>
                 </tr>
                 <tr>
-                  <td>Les publications</td>
+                  <td><span class="text-success">Les publications</span></td>
                   <td>{{$count_news}} publications</td>
                   <td><a href="edit/news"> Editer</a></td>
                 </tr>
@@ -64,9 +64,14 @@
                   <td><a href="edit/picture"> Editer</a></td>
                 </tr>
                 <tr>
-                  <td>Les évenements</td>
-                  <td>2 évènements</td>
-                  <td><a href="edit/evenement"> Editer</a></td>
+                  <td>La page Vie Associative</td>
+                  <td>40% completé</td>
+                  <td><a href="edit/vieassociative-informations"> Editer</a></td>
+                </tr>
+                <tr>
+                  <td>Historique</td>
+                  <td>200 élements</td>
+                  <td><a href="history"> Afficher</a></td>
                 </tr>
                 <tr>
                   <td>Les réseaux sociaux</td>
@@ -74,14 +79,9 @@
                   <td><a href="edit/social"> Editer</a></td>
                 </tr>
                 <tr>
-                  <td>Administrateurs</td>
-                  <td>0 administrateurs</td>
-                  <td><a href="edit/administrator"> Editer</a></td>
-                </tr>
-                <tr>
-                  <td>Historique</td>
-                  <td>200 élements</td>
-                  <td><a href="history"> Afficher</a></td>
+                  <td>Les évenements</td>
+                  <td>2 évènements</td>
+                  <td><a href="edit/evenement"> Editer</a></td>
                 </tr>
 
               </tbody>

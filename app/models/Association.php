@@ -29,7 +29,9 @@ class Association  extends Eloquent
         $el->link = $link;
         $el->touch();
     }
-
+    static function countAdmin($idAssoc){
+        return elo_UserAssociation::where('id_assoc',$idAssoc)->count();
+    }
 
     static function getAssociations($idUser){
         $sql = 'SELECT id_assoc as id,link FROM user_association WHERE user_association.id_user = ?';

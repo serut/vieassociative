@@ -16,29 +16,26 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <td>Psuedo</td>
-                        <td>Date d'ajout des fonctions</td>
-                        <td>Publié</td>
-                        <td></td>
+                        <td>{{Lang::get('association/edit/administrator.nickname')}}</td>
+                        <td>{{Lang::get('association/edit/administrator.date_function_added')}}</td>
+                        <td>{{Lang::get('association/edit/administrator.link')}}</td>
+                        @if($is_admin)
+                        <td>{{Lang::get('association/edit/administrator.remove')}}</td>
+                        @endif
                     </tr>
                 </thead>
+                @foreach($admin as $k=>$v)
                 <tbody>
                     <tr>
-                        <td>Jackie</td>
-                        <td>03-10-2001 17:16:18</td>
-                        <td><i class="icon-ok"></i></td>
-                        <td><a href="news/1/edit"> Editer</a></td>
+                        <td>{{$v->id_user}}</td>
+                        <td>{{$v->updated_at}}</td>
+                        <td>{{$v->link}}</td>
+                        @if($is_admin)
+                        <td><a href="#"><i class="icon-remove"></i></a></td>
+                        @endif
                     </tr>
                 </tbody>
-                <tbody>
-                    <tr>
-                        <td>Roger</td>
-                        <td>17-09-2000 17:18:19</td>
-                        <td><i class="icon-remove"></i></td>
-                        <td><a href="news/1/edit"> Editer</a></td>
-                    </tr>
-                </tbody>
-
+                @endforeach
             </table>
             <hr>
             <h3 class="head">{{Lang::get('association/edit/administrator.add_admin')}} </h3>
@@ -61,11 +58,11 @@
                         ),
                     )
                 )@
-                @if(true)
+                @if($is_admin)
+                    <div id="div-user">
+                @else
                     {{SiteHelpers::create_radio($input)}}
                     <div style="display:none;" id="div-user">
-                @else
-                    <div id="div-user">
                 @endif
                     @input = array(
                         'id'=>"admin_mail",

@@ -10,6 +10,16 @@ return array(
 	"add_someone_else"=>"Je veux ajouter quelqu'un d'autre",
 	"add_me"=>"Je veux m'ajouter",
 	"he_is"=>"En tant que",
+	"nickname"=>"Pseudo",
+	"date_function_added"=>"Date d'ajout des fonctions",
+	"remove"=>"Supprimer",
+	"link"=>"Lien",
+	""=>"",
+	""=>"",
+	""=>"",
+	""=>"",
+	""=>"",
+	""=>"",
+	""=>"",
 	""=>"",
 );
-

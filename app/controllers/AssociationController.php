@@ -32,6 +32,7 @@ class AssociationController  extends BaseController {
     public function getEdit($idAssoc) {
         return View::make('association.edit')
             ->with('count_news',Post::countNews($idAssoc))
+            ->with('count_admin',Association::countAdmin($idAssoc))
             ->with('association',elo_Association::find($idAssoc));
             //->with('rang',Association::getRangUser(Session::get('idUser'), $idAssoc))
             //->with('associationEnGestationNom',Association::getName($idAssoc));
@@ -77,7 +78,9 @@ class AssociationController  extends BaseController {
     }
     public function getEditAdministrator($idAssoc){
         return View::make('association.edit-administrator')
-            ->with('association',elo_Association::find($idAssoc));
+            ->with('association',elo_Association::find($idAssoc))
+            ->with('is_admin',false)
+            ->with('admin',elo_UserAssociation::where('id_assoc',$idAssoc)->get());
     }
     public function getHistory($idAssoc){
         return View::make('association.history');

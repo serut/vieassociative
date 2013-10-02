@@ -24,10 +24,6 @@
             {
                 return View::make('index.maintenance');
             });
-            Route::get('/design', function()
-            {
-                return View::make('all-template')->with('main_and_aside','true');
-            });
             //user.vieassociative.fr/*
             Route::group(array('prefix' => 'user'), function()
             {
@@ -49,6 +45,7 @@
                 return View::make('index.index');
             });
             Route::get('discussion', 'DiscussionController@getIndex');
+            Route::post('discussion/add', 'DiscussionController@postAdd');
             Route::get('{id}-{text}', 'AssociationController@getProfile')->where('id', '[0-9]+')->where('text', '[a-z-]+');
             Route::get('{id}/edit', 'AssociationController@getEdit')->where('id', '[0-9]+');
             Route::get('{id}/edit/general-informations', 'AssociationController@getEditGeneralInformations')->where('id', '[0-9]+');

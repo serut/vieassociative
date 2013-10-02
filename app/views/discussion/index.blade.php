@@ -1,182 +1,76 @@
 @extends('template.theme')
 
-@section('full-container')
-<div>
-    <div class="container">
-        <div class="span1"></div>
-        <section class="post span22 ">
-            <div class="content row">
-                <div class="span1">
-                    <span> <i class="icon-chevron-up"></i></span><br>
-                    <span>13</span><br>
-                    <span> <i class="icon-chevron-down"></i></span>
-                </div>
-                <div class="span20">
-                    <div>
-                        <h6>La question</h6>
-                        <span>Est ce qu'il fait beau ?</span>
-                    </div>
+
+@set_true $small_centred 
+@section('small-content')
+    <div>
+        <div id="answers">
+        @if(!empty($posts))
+            <section class="span24">
+            @foreach($posts as $p)
+                <div data-id="{{$p->id}}">
+                    @if($p->level == 2)
+                        <div class="span-comment-space-2 pull-left">
+                        </div>
+                    @endif
+                    @if($p->level == 3)
+                        <div class="span-comment-space-3 pull-left">
+                        </div>
+                    @endif
                     <div class="row">
-                        <div class="span15">
-                            <h6>Mon commentaire</h6>
-                            <p>
-                                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse potenti. Vivamus purus arcu, commodo cursus egestas et, dictum lobortis dui. Curabitur at mi eu mi sollicitudin faucibus at at libero. Praesent vestibulum molestie lacus. Aenean hendrerit mauris. Phasellus porta. Fusce taciti sociosqu ad litora suscipit varius mi Vivamus purus arcu, commodo cursus egestas et dictum.
-                                [...]
-                            </p>
+                        <div class="span-image pull-left">
+                            <img src="/img/items/user-thumb.jpg" alt="placeholder+image">
                         </div>
-                        <div class="span5 pull-right">
-                            <span>posté il y a 17 minutes</span><br>
+                        @if($p->level == 1)
+                            <div class="span20">
+                        @endif
+                        @if($p->level == 2)
+                            <div class="span17">
+                        @endif
+                        @if($p->level == 3)
+                            <div class="span14">
+                        @endif
+                            <span class="author"><a href="#profil">Joel Sapin</a></span>
+                            <span class="light">- 17 minutes</span><br>
                             <div>
-                                <img src="/img/items/user-thumb.jpg" alt="placeholder+image">
-                                <span><a href="#profil">Joel Mameire</a></span> - 
-                                <span class="text-success">187 <i class="icon-star"></i></span>
+                                {{$p->content}}
                             </div>
+
+                                <div>
+                                    {{($p->vote_up - $p->vote_down)}} <i class="icon-chevron-up"></i>
+                                    | <i class="icon-chevron-down"></i>
+                                    <a class="light answer" href="#">Répondre</a> 
+                                </div>
                         </div>
                     </div>
                 </div>
-                
-            </div>
-        </section>
-    </div>
-    <div id="answer">
-        <div class="center-line"></div>
-        <div class="horizontal-line"></div>
-        <div class="opinion-left span5 well">
-            <h3>Avis défavorable</h3>
-            <a class="button button-blue text-center" href="#"><i class="icon-thumbs-up"></i> ( 0 )</a>
-        </div>
-        <div class="opinion-right span5 pull-right well">
-            <h3>Avis favorable</h3>
-            <a class="button button-blue" href="#"><i class="icon-thumbs-up"></i> ( 0 )</a>
-        </div>
-        <div class="left-line"></div>
-        <div class="centred-line"></div>
-        <div class="right-line"></div>
-        <section class="answer-left span15">
-            <div class="content row">
-                <div class="span1">
-                    <span> <i class="icon-chevron-up"></i></span><br>
-                    <span>0</span><br>
-                    <span> <i class="icon-chevron-down"></i></span>
-                </div>
+            @endforeach
+            <div class="form-answer">
                 <div class="row">
-                        <div class="span8">
-                            <p>
-                                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse potenti. Vivamus purus arcu, commodo cursus egestas et, dictum lobortis dui. Curabitur at mi eu mi sollicitudin faucibus at at libero. Praesent vestibulum molestie lacus. Aenean hendrerit mauris. Phasellus porta. Fusce taciti sociosqu ad litora suscipit varius mi Vivamus purus arcu, commodo cursus egestas et dictum.
-                                [...]
-                            </p>
-                            <a class="button button-blue" href="#">Signaler</a>
-                            <a class="button button-blue" href="#">Commenter</a>
-                            <a class="button button-blue" href="#">dsf</a>
+                    <div class="span-image pull-left">
+                        <img src="/img/items/user-thumb.jpg" alt="placeholder+image">
+                    </div>
+                    <div>
+                        {{ Form::open(array('class'=> 'form','url' => '/discussion/add', 'data-validate'=>'our-parsey-1')) }}
+
+                        <textarea name="text" rows="4" id="text" class="input-xxlarge nicEditor-textarea" onclick="launchEditor($(this))"></textarea>
+                        <br>
+                        <div class="nav pull-right">
+                            <button type="submit" class="button button-green">Envoyer</button>
                         </div>
-                        <div class="span5 pull-right">
-                            <span>posté il y a 17 minutes</span><br>
-                            <div>
-                                <img src="/img/items/user-thumb.jpg" alt="placeholder+image">
-                                <span><a href="#profil">Joel Sapin</a><br><span class="text-error">4 <i class="icon-star"></i></span></span>
-                            </div>
-                        </div>
+                        {{Form::hidden('id_answer', '0',array('id'=>'id_answer'))}}
+                        {{ Form::close() }}
+                        
+                    </div>
                 </div>
-                
             </div>
-        </section>
-        <section class="answer-left span15">
-            <div class="content row">
-                <div class="span1">
-                    <span> <i class="icon-chevron-up"></i></span><br>
-                    <span>0</span><br>
-                    <span> <i class="icon-chevron-down"></i></span>
-                </div>
-                <div class="row">
-                        <div class="span8">
-                            <p>
-                                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse potenti. Vivamus purus arcu, commodo cursus egestas et, dictum lobortis dui. Curabitur at mi eu mi sollicitudin faucibus at at libero. Praesent vestibulum molestie lacus. Aenean hendrerit mauris. Phasellus porta. Fusce taciti sociosqu ad litora suscipit varius mi Vivamus purus arcu, commodo cursus egestas et dictum.
-                                [...]
-                            </p>
-                            <a class="button button-blue" href="#">Signaler</a>
-                            <a class="button button-blue" href="#">Commenter</a>
-                            <a class="button button-blue" href="#">dsf</a>
-                        </div>
-                        <div class="span5 pull-right">
-                            <span>posté il y a 17 minutes</span><br>
-                            <div>
-                                <img src="/img/items/user-thumb.jpg" alt="placeholder+image">
-                                <span><a href="#profil">Joel Sapin</a><br><span class="text-error">4 <i class="icon-star"></i></span></span>
-                            </div>
-                        </div>
-                </div>
-                
-            </div>
-        </section>
-        <section class="answer-middel span15">
-            <div class="content row">
-                <div class="span1">
-                    <span> <i class="icon-chevron-up"></i></span><br>
-                    <span>0</span><br>
-                    <span> <i class="icon-chevron-down"></i></span>
-                </div>
-                <div class="row">
-                        <div class="span8">
-                            <p>
-                                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse potenti. Vivamus purus arcu, commodo cursus egestas et, dictum lobortis dui. Curabitur at mi eu mi sollicitudin faucibus at at libero. Praesent vestibulum molestie lacus. Aenean hendrerit mauris. Phasellus porta. Fusce taciti sociosqu ad litora suscipit varius mi Vivamus purus arcu, commodo cursus egestas et dictum.
-                                [...]
-                            </p>
-                            <a class="button button-blue" href="#">Signaler</a>
-                            <a class="button button-blue" href="#">Commenter</a>
-                            <a class="button button-blue" href="#">dsf</a>
-                        </div>
-                        <div class="span5 pull-right">
-                            <span>posté il y a 17 minutes</span><br>
-                            <div>
-                                <img src="/img/items/user-thumb.jpg" alt="placeholder+image">
-                                <span><a href="#profil">Joel Sapin</a><br><span class="text-error">4 <i class="icon-star"></i></span></span>
-                            </div>
-                        </div>
-                </div>
-                
-            </div>
-        </section>
-        <section class="answer-right span15">
-            <div class="content row">
-                <div class="span1">
-                    <span> <i class="icon-chevron-up"></i></span><br>
-                    <span>0</span><br>
-                    <span> <i class="icon-chevron-down"></i></span>
-                </div>
-                <div class="row">
-                        <div class="span8">
-                            <p>
-                                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse potenti. Vivamus purus arcu, commodo cursus egestas et, dictum lobortis dui. Curabitur at mi eu mi sollicitudin faucibus at at libero. Praesent vestibulum molestie lacus. Aenean hendrerit mauris. Phasellus porta. Fusce taciti sociosqu ad litora suscipit varius mi Vivamus purus arcu, commodo cursus egestas et dictum.
-                                [...]
-                            </p>
-                            <a class="button button-blue" href="#">Signaler</a>
-                            <a class="button button-blue" href="#">Commenter</a>
-                            <a class="button button-blue" href="#">dsf</a>
-                        </div>
-                        <div class="span5 pull-right">
-                            <span>posté il y a 17 minutes</span><br>
-                            <div>
-                                <img src="/img/items/user-thumb.jpg" alt="placeholder+image">
-                                <span><a href="#profil">Joel Sapin</a><br><span class="text-error">4 <i class="icon-star"></i></span></span>
-                            </div>
-                        </div>
-                </div>
-                
-            </div>
-        </section>
-        <div class="row">
-        <div class="add-left span3">
-            <a class="button button-blue text-center" href="#"><i class="icon-plus"></i></a>
-        </div>
-        <div class="add-center span3">
-            <a class="button button-blue text-center" href="#"><i class="icon-plus"></i></a>
-        </div>
-        <div class="add-right span3">
-            <a class="button button-blue text-center" href="#"><i class="icon-plus"></i></a>
-        </div>
+            </section>
+        @else
+            Il n'y a pas de commentaire pour le moment
+        @endif
+
         </div>
     </div>
-</div>
 @stop
 
 {{-- Footer script --}}
@@ -184,12 +78,23 @@
     <script type="text/javascript">
 
         $(function() {
-            var answer = $("#answer");
-            var lines = $('.left-line, .centred-line, .right-line');
-            setInterval(function(){
-                var height = answer.height();
-                lines.css('height',height);
-            },2000);
+            $('#answers > section > div').each(function(){
+                var id = $(this).attr('data-id');
+                console.log($(this).find('.icon-chevron-up'))
+                $(this).find('.icon-chevron-up').click(function(){
+                    alert("up !");
+                });
+                $(this).find('.icon-chevron-down').click(function(){
+                    alert("down !");
+                });
+                $(this).find('.signal').click(function(){
+                    alert("Merci de nous contacter par mail - cette fonctionnalité n'est pas encore fonctionnelle");
+                });
+                $(this).find('.answer').click(function(){
+                    $('#id_answer').val($(this).parent().parent().parent().parent().attr('data-id'))
+                    return false;
+                });
+            })
         });
     </script>
 @stop

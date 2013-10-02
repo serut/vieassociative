@@ -11,6 +11,7 @@ class FromScratch extends Migration {
 	 */
 	public function up()
 	{
+		$this->down();
 		Schema::create('association', function($table){
 			$table->engine = 'InnoDB';
 			$table->increments('id');
@@ -19,6 +20,23 @@ class FromScratch extends Migration {
 			$table->boolean('active');
 			$table->integer('id_logo');
 			$table->timestamps();
+		});
+
+		Schema::create('user', function($table){
+			$table->engine = 'InnoDB';
+			$table->increments('id');
+
+			$table->string('username')->unique('username');
+			$table->string('name');
+			$table->string('email')->unique('email');
+			$table->string('password',128);
+			$table->string('level')->default('user');
+			$table->string('firstname');
+			$table->string('lastname');
+
+			$table->timestamps();
+
+			$table->integer('state');
 		});
 
 		Schema::create('connexion_tentative', function($table){
@@ -68,25 +86,6 @@ class FromScratch extends Migration {
 
 
 
-		Schema::create('image', function($table){
-			$table->engine = 'InnoDB';
-			$table->increments('id');
-
-			$table->string('ip', 15);
-
-			$table->integer('id_assoc');
-			$table->integer('id_user');
-
-			$table->dateTime('date');
-
-			$table->string('libelle');
-
-			$table->boolean('active');
-			$table->boolean('locale');
-
-			$table->integer('vue');
-
-		});
 
 
 		Schema::create('lieu', function($table){
@@ -115,30 +114,17 @@ class FromScratch extends Migration {
 		});
 
 
-		Schema::create('user', function($table){
-			$table->engine = 'InnoDB';
-			$table->increments('id');
-
-			$table->string('username')->unique('username');
-			$table->string('name');
-			$table->string('email')->unique('email');
-			$table->string('password',128);
-			$table->string('level')->default('user');
-			$table->string('firstname');
-			$table->string('lastname');
-
-			$table->timestamps();
-
-			$table->integer('state');
-		});
+		
 
 
 		Schema::create('user_association', function($table){
 			$table->engine = 'InnoDB';
 			$table->increments('id');
 
-			$table->integer('id_user');
-			$table->integer('id_assoc');
+			$table->integer('id_user')->unsigned();
+			$table->foreign('id_user')->references('id')->on('user');
+			$table->integer('id_assoc')->unsigned();
+			$table->foreign('id_assoc')->references('id')->on('association');
 			$table->string('link',30);
 
 			$table->timestamps();
@@ -152,6 +138,7 @@ class FromScratch extends Migration {
 			$table->timestamp('date_fin');
 		});
 
+
 	}
 
 	/**
@@ -161,7 +148,6 @@ class FromScratch extends Migration {
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('association');
 		Schema::dropIfExists('connexion_tentative');
 		Schema::dropIfExists('evenement');
 		Schema::dropIfExists('evenement_repete_jour');
@@ -169,9 +155,10 @@ class FromScratch extends Migration {
 		Schema::dropIfExists('lieu');
 		Schema::dropIfExists('type_evenement');
 		Schema::dropIfExists('type_sous_evenement');
-		Schema::dropIfExists('user');
 		Schema::dropIfExists('user_association');
 		Schema::dropIfExists('user_token');
+		Schema::dropIfExists('user');
+		Schema::dropIfExists('association');
 	}
 
 }

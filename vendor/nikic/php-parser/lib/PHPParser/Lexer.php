@@ -51,6 +51,7 @@ class PHPParser_Lexer
             '~^Unterminated comment starting line ([0-9]+)$~',
             $error['message'], $matches
         )) {
+            throw new PHPParser_Error('Unterminated comment', $matches[1]);
         }
 
         if (preg_match(

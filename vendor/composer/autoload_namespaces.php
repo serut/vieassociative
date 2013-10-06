@@ -27,6 +27,7 @@ return array(
     'Normalizer' => array($vendorDir . '/patchwork/utf8/class'),
     'Neoxia\\LaravelOpensslEncryption' => array($vendorDir . '/neoxia/laravel-openssl-encryption/src'),
     'Monolog' => array($vendorDir . '/monolog/monolog/src'),
+    'Jeremeamia\\SuperClosure' => array($vendorDir . '/jeremeamia/SuperClosure/src'),
     'Illuminate' => array($vendorDir . '/laravel/framework/src'),
     'Doctrine\\DBAL\\' => array($vendorDir . '/doctrine/dbal/lib'),
     'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/lib'),
@@ -36,5 +37,5 @@ return array(
     'Doctrine\\Common\\Annotations\\' => array($vendorDir . '/doctrine/annotations/lib'),
     'Doctrine\\Common\\' => array($vendorDir . '/doctrine/common/lib'),
     'ClassPreloader' => array($vendorDir . '/classpreloader/classpreloader/src'),
-    'Carbon' => array($vendorDir . '/nesbot/carbon'),
+    'Carbon' => array($vendorDir . '/nesbot/carbon/src'),
 );

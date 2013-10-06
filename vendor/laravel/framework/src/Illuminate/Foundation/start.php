@@ -24,9 +24,9 @@ error_reporting(-1);
 |
 */
 
-if ( ! ( extension_loaded('mcrypt') or extension_loaded('openssl') ) )
+if ( ! extension_loaded('mcrypt'))
 {
-	die('Laravel requires the Mcrypt PHP extension or Openssl PHP extension.'.PHP_EOL);
+	die('Laravel requires the Mcrypt PHP extension.'.PHP_EOL);
 
 	exit(1);
 }

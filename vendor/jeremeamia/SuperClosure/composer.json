@@ -1,0 +1,23 @@
+{
+    "name": "jeremeamia/SuperClosure",
+    "type": "library",
+    "description": "Doing interesting things with closures like serialization and partial function application.",
+    "keywords": ["closure", "serialize", "serializable", "function", "parser", "tokenizer"],
+    "homepage": "https://github.com/jeremeamia/super_closure",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jeremy Lindblom"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "nikic/php-parser": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-0": { "Jeremeamia\\SuperClosure": "src/" }
+    }
+}

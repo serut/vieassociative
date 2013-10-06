@@ -46,6 +46,7 @@
             });
             Route::get('discussion', 'DiscussionController@getIndex');
             Route::post('discussion/add', 'DiscussionController@postAdd');
+            Route::post('discussion/vote', 'DiscussionController@postVote');
             Route::get('{id}-{text}', 'AssociationController@getProfile')->where('id', '[0-9]+')->where('text', '[a-z-]+');
             Route::get('{id}/edit', 'AssociationController@getEdit')->where('id', '[0-9]+');
             Route::get('{id}/edit/general-informations', 'AssociationController@getEditGeneralInformations')->where('id', '[0-9]+');

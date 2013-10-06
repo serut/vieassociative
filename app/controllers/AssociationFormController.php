@@ -103,7 +103,14 @@ class AssociationFormController  extends BaseController {
                             break;
                     }
                 if(isset($result['success'])){
-                    elo_Association::where('id',$id)->update($update);
+                    if($this->isAdministrator()){
+                        elo_Association::where('id',$id)->update($update);
+                    }else{
+                        $type = 1;
+                        $where = array('id'=>$id);
+                        $dataMessage = array('nickname'=>'Dupond');
+                        Proposition::add($type,$update,$where,$dataMessage);
+                    }
                     $result['redirect_url'] = '/'.$id.'/edit/general-informations';
                 }
                 break;
@@ -153,5 +160,9 @@ class AssociationFormController  extends BaseController {
             $result['data']=null; //Remove data
         }
         return Response::json($result);
+    }
+
+    public function isAdministrator(){
+        return true;
     }
 }

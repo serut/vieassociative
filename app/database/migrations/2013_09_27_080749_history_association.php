@@ -11,25 +11,6 @@ class HistoryAssociation extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('answer', function($table)
-		{
-			$table->engine = 'InnoDB';
-			$table->increments('id');
-			$table->integer('id_assoc')->unsigned()->nullable();
-			$table->foreign('id_assoc')->references('id')->on('association');
-			$table->integer('id_author')->unsigned();
-			$table->foreign('id_author')->references('id')->on('user');
-			$table->integer('id_answer')->unsigned()->nullable();
-			$table->foreign('id_answer')->references('id')->on('answer');
-			$table->integer('id_discussion')->unsigned()->nullable();
-			$table->foreign('id_discussion')->references('id')->on('discussion');
-			$table->integer('level');
-			$table->integer('vote_up');
-			$table->integer('vote_down');
-			$table->text('content');
-			$table->timestamps();
-			$table->softDeletes();
-		});
 		Schema::create('discussion', function($table)
 		{
 			$table->engine = 'InnoDB';
@@ -39,18 +20,52 @@ class HistoryAssociation extends Migration {
 			$table->timestamps();
 			$table->softDeletes();
 		});
-		
-		Schema::create('history', function($table)
+
+		Schema::create('answer', function($table)
 		{
 			$table->engine = 'InnoDB';
 			$table->increments('id');
-			$table->integer('type');
-			$table->integer('state');
+			$table->integer('id_assoc')->unsigned()->nullable();
+			$table->foreign('id_assoc')->references('id')->on('association');
+			$table->integer('id_user')->unsigned()->nullable();
+			$table->foreign('id_user')->references('id')->on('user');
+			$table->integer('id_answer')->unsigned()->nullable();
+			$table->foreign('id_answer')->references('id')->on('answer');
+			$table->integer('id_discussion')->unsigned()->nullable();
+			$table->foreign('id_discussion')->references('id')->on('discussion');
+			$table->integer('level');
+			$table->integer('vote');
+			$table->text('content');
+			$table->timestamps();
+			$table->softDeletes();
+		});
+
+		
+		Schema::create('proposition', function($table)
+		{
+			$table->engine = 'InnoDB';
+			$table->increments('id');
+			$table->integer('finished');
 			$table->timestamp('deadline');
 			$table->integer('id_discussion')->unsigned();
 			$table->foreign('id_discussion')->references('id')->on('discussion');
+			$table->integer('type_query');
+			$table->text('data');
+			$table->text('where');
 			$table->timestamps();
 			$table->softDeletes();
+		});
+
+		Schema::create('vote', function($table)
+		{
+			$table->engine = 'InnoDB';
+			$table->increments('id');
+			$table->integer('id_user')->unsigned();
+			$table->foreign('id_user')->references('id')->on('user');
+			$table->integer('id_answer')->unsigned();
+			$table->foreign('id_answer')->references('id')->on('answer');
+			$table->integer('value');
+			$table->timestamps();
 		});
 	}
 
@@ -61,8 +76,9 @@ class HistoryAssociation extends Migration {
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('history');
-		Schema::dropIfExists('discussion');
+		Schema::dropIfExists('vote');
+		Schema::dropIfExists('proposition');
 		Schema::dropIfExists('answer');
+		Schema::dropIfExists('discussion');
 	}
 }

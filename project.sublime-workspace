@@ -167,57 +167,6 @@
 	},
 	"buffers":
 	[
-		{
-			"contents": "<?php\n\n/*\n|--------------------------------------------------------------------------\n| Application Routes\n|--------------------------------------------------------------------------\n|\n| Here is where you can register all of the routes for an application.\n| It's a breeze. Simply tell Laravel the URIs it should respond to\n| and give it the Closure to execute when that URI is requested.\n|\n*/\n\n//if it's in prod, the server will use subdomains to navigate on the website, otherwise it will use prefix\n//if(App::environment() == 'production'){\n    $server = explode('.', Request::server('HTTP_HOST')); // sweet routing - not fully reliable\n    switch ($server['0']) {\n        case 'www':\n            Route::get('/', function()\n            {\n                return View::make('index.index');\n            });\n            Route::get('/maintenance', function()\n            {\n                return View::make('index.maintenance');\n            });\n            //user.vieassociative.fr/*\n            Route::group(array('prefix' => 'user'), function()\n            {\n                Route::get('log', 'LoginController@getConnexion');\n                Route::post('log/register', 'LoginController@postRegister');\n                Route::post('log/login', 'LoginController@postLogin');\n\n                Route::group(array('before' => 'auth'), function(){\n                    Route::get('logout', 'LoginController@getLogout');\n                    Route::get('{id}/edit', 'UserController@getEdit')->where('id', '[0-9]+');\n                    Route::get('{id}-{text}', 'UserController@getProfil')->where('id', '[0-9]+')->where('text', '[a-z-]+');\n                });\n            });\n            break;\n        case 'association':\n        //association.vieassociative.fr/*\n            Route::get('/', function()\n            {\n                return View::make('index.index');\n            });\n            Route::get('discussion', 'DiscussionController@getIndex');\n            Route::get('{id}-{text}', 'AssociationController@getProfile')->where('id', '[0-9]+')->where('text', '[a-z-]+');\n            Route::get('{id}/edit', 'AssociationController@getEdit')->where('id', '[0-9]+');\n            Route::get('{id}/edit/general-informations', 'AssociationController@getEditGeneralInformations')->where('id', '[0-9]+');\n            Route::get('{id}/edit/vieassociative-informations', 'AssociationController@getEditVieAssociativeInformations')->where('id', '[0-9]+');\n            Route::get('{id}/edit/evenement', 'EvenementController@getEvenementAssociation')->where('id', '[0-9]+');\n            Route::get('{id}/edit/evenement/{idEv}/edit', 'EvenementController@getEdit')->where('id', '[0-9]+')->where('idEv', '[0-9]+');\n            Route::get('{id}/edit/picture', 'PictureController@getAssociationPictures')->where('id', '[0-9]+');\n            \n            Route::get('{id}/edit/news', 'AssociationController@getListNews')->where('id', '[0-9]+');\n            Route::get('{id}/edit/news/add', 'AssociationController@getAddNews')->where('id', '[0-9]+');\n            Route::get('{id}/edit/news/{idNews}/edit', 'AssociationController@getEditNews')->where('id', '[0-9]+')->where('idNews', '[0-9]+');\n            Route::post('{id}/edit/news/{idNews}/edit', 'AssociationController@postEditNews')->where('id', '[0-9]+')->where('idNews', '[0-9]+');\n            \n            Route::get('{id}/edit/social', 'AssociationController@getEditSocial')->where('id', '[0-9]+');\n            Route::get('{id}/edit/administrator', 'AssociationController@getEditAdministrator')->where('id', '[0-9]+');\n            Route::get('{id}/history', 'AssociationController@getHistory')->where('id', '[0-9]+');\n            Route::get('{id}/form/{origin}/{item}', function($id,$origin,$item)\n            {\n                $associationForm = new AssociationFormController;\n                return $associationForm->getForm($id,$origin,$item);\n            })->where('id', '[0-9]+')->where('origin', '[a-z-]+')->where('item', '[a-z-_]+');\n            Route::post('{id}/form/{origin}/{item}', function($id,$origin,$item)\n            {\n                $associationForm = new AssociationFormController;\n                return $associationForm->postForm($id,$origin,$item);\n            })->where('id', '[0-9]+')->where('origin', '[a-z-]+')->where('item', '[a-z-_]+');\n            Route::group(array('before'=>'auth'), function()\n            {\n                Route::get('add', 'AssociationController@getAdd');\n                Route::post('add', 'AssociationController@postAdd');\n                Route::controller('{id}/evenement', 'EvenementController');\n                Route::group(array('before' => 'assoc'), function(){\n                    // Protected URL\n                });\n            });\n            break;\n        case 'alive':\n            Route::get('/alive',function(){\n                try{\n                    $abusePingdom = fopen('http://www.vieassociative.fr', 'r');\n                    fclose($abusePingdom);\n                    $abusePingdom = fopen('http://faitesdelamusique.vieassociative.fr', 'r');\n                    fclose($abusePingdom);\n                    $abusePingdom = fopen('http://association.vieassociative.fr', 'r');\n                    fclose($abusePingdom);\n                    $abusePingdom = fopen('http://news.vieassociative.fr', 'r');\n                    fclose($abusePingdom);\n                    $abusePingdom = fopen('http://doc.vieassociative.fr', 'r');\n                    fclose($abusePingdom);\n                }\n                catch(Exception $e)\n                {\n                    echo $e->getMessage();\n                }\n                TentativeConnexion::deleteOldEntries();\n                return 'Thanks !';\n            });\n            break;\n    }\n\n/*\nRoute::controller('contact', 'ContactController');\nRoute::controller('image', 'ImgsController');\nRoute::get('voir-evenement/{:ville}/{:categorie}/{:titre}-{:id}', 'EvenementController@voir');\nRoute::controller('search/{:action}/{:id}', 'EvenementController');\n*/\nApp::missing(function($exception)\n{\n    switch ($exception->getStatusCode()) {\n        case '404':\n            return Response::view('errors.404', array(), 404);;\n        case '403':\n            return Response::view('errors.403', array(), 403);;\n        case '500':\n            //Log::error('http error 500 on page ' . Request::url());\n            return Response::view('errors.500', array(), 500);;\n        default:\n            //Log::error('http error '.$exception->getStatusCode().' on page ' . Request::url());\n            return Response::view('errors.500', array(), 500);;\n    }\n});\n/*\nExemples :\nRoute::group(array('domain' => '{account}.myapp.com'), function()\n{\n\n    Route::get('user/{id}', function($account, $id)\n    {\n        //\n    });\n\n});",
-			"file": "app/routes.php",
-			"file_size": 7062,
-			"file_write_time": 130238096278041545,
-			"settings":
-			{
-				"buffer_size": 6763,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/controllers/DiscussionController.php",
-			"settings":
-			{
-				"buffer_size": 235,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/models/Answer.php",
-			"settings":
-			{
-				"buffer_size": 1832,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/views/discussion/index.blade.php",
-			"settings":
-			{
-				"buffer_size": 2403,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "public/css/less/specific.less",
-			"settings":
-			{
-				"buffer_size": 7746,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/database/migrations/2013_09_27_080749_history_association.php",
-			"settings":
-			{
-				"buffer_size": 1770,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -270,8 +219,19 @@
 	},
 	"file_history":
 	[
-		"/D/xampp/htdocs/vieassociative/app/models/elo/Answer.php",
+		"/D/xampp/htdocs/vieassociative/app/routes.php",
+		"/D/xampp/htdocs/vieassociative/app/controllers/AssociationFormController.php",
+		"/D/xampp/htdocs/vieassociative/app/models/Answer.php",
+		"/D/xampp/htdocs/vieassociative/app/models/Proposition.php",
+		"/D/xampp/htdocs/vieassociative/app/database/migrations/2013_09_27_080749_history_association.php",
+		"/D/xampp/htdocs/vieassociative/app/views/discussion/index.blade.php",
+		"/D/xampp/htdocs/vieassociative/app/controllers/DiscussionController.php",
+		"/D/xampp/htdocs/vieassociative/app/views/association/list-news.blade.php",
+		"/D/xampp/htdocs/vieassociative/app/models/validators/discussion.php",
+		"/D/xampp/htdocs/vieassociative/app/models/elo/Vote.php",
+		"/D/Users/ser/Desktop/qsd",
 		"/D/xampp/htdocs/vieassociative/public/css/less/specific.less",
+		"/D/xampp/htdocs/vieassociative/app/models/elo/Answer.php",
 		"/D/xampp/htdocs/vieassociative/public/css/before/design.css",
 		"/D/xampp/htdocs/vieassociative/public/css/less/general.less",
 		"/D/xampp/htdocs/vieassociative/app/views/connexion/connexion.blade.php",
@@ -284,7 +244,6 @@
 		"/D/xampp/htdocs/vieassociative/app/database/migrations/2013_09_27_080749_HistoryAssociation.php",
 		"/D/xampp/htdocs/vieassociative/app/database/migrations/2013_09_24_101334_history_association.php",
 		"/D/Users/ser/Desktop/jfioqefzeofjzeoifjzeoifjzoeifjzeoi.java",
-		"/D/xampp/htdocs/vieassociative/app/routes.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/index/index.blade.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/association/edit-general-informations.blade.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/form_association/general-informations/internal_regulation.blade.php",
@@ -387,17 +346,7 @@
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/config/prod/app.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc-OLD/app/config/prod/app.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/models/validators/associationEditPost.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/public/js/vendor/parsley.min.js",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/database/migrations/2013_08_04_110844_posts.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/public/js/vendor/bootstrap.datepicker.js",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/public/js/vendor/datepicker.js",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/models/Association.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/doc-vieassoc/docs/01_Getting_Started/01_Installation_on_Windows.md",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/public/css/less/include.less",
-		"/J/xampp2/htdocs/fghjkl/projet-tut-2013.html",
-		"/J/xampp2/htdocs/fghjkl/datepicker.js",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/test/app/routes.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/models/elo/PropositionPost.php"
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/public/js/vendor/parsley.min.js"
 	],
 	"find":
 	{
@@ -423,6 +372,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"e",
 			"oswald",
 			"owwald",
 			"association",
@@ -558,185 +508,14 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": false,
+		"whole_word": true,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 3,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/routes.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6763,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1913,
-								1933
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 132.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/controllers/DiscussionController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 235,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								220,
-								220
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/models/Answer.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1832,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1793,
-								1793
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 396.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/views/discussion/index.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2403,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2356,
-								2356
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1056.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "public/css/less/specific.less",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7746,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6039,
-								6039
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 6924.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/database/migrations/2013_09_27_080749_history_association.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1770,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								921,
-								921
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 660.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],

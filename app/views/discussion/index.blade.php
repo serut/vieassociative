@@ -5,8 +5,8 @@
 @section('small-content')
     <div>
         <div id="answers">
-        @if(!empty($posts))
             <section class="span24">
+        @if(!empty($posts))
             @foreach($posts as $p)
                 <div data-id="{{$p->id}}">
                     @if($p->level == 2)
@@ -21,30 +21,40 @@
                         <div class="span-image pull-left">
                             <img src="/img/items/user-thumb.jpg" alt="placeholder+image">
                         </div>
+                            <div class="
                         @if($p->level == 1)
-                            <div class="span20">
+                            span20
                         @endif
                         @if($p->level == 2)
-                            <div class="span17">
+                            span17
                         @endif
                         @if($p->level == 3)
-                            <div class="span14">
+                            span14
                         @endif
+                            ">
                             <span class="author"><a href="#profil">Joel Sapin</a></span>
-                            <span class="light">- 17 minutes</span><br>
+                            <span class="light">- {{\Carbon\Carbon::createFromTimeStamp(strtotime($p->created_at))->diffForHumans()}}</span><br>
                             <div>
                                 {{$p->content}}
                             </div>
 
                                 <div>
-                                    {{($p->vote_up - $p->vote_down)}} <i class="icon-chevron-up"></i>
+                                    <span class="count-vote">{{$p->vote}}</span>
+                                     <i class="icon-chevron-up"></i>
                                     | <i class="icon-chevron-down"></i>
-                                    <a class="light answer" href="#">Répondre</a> 
+                                    @if($p->level != 3)
+                                        <a class="light answer" href="#">Répondre</a> 
+                                    @endif
                                 </div>
                         </div>
                     </div>
                 </div>
             @endforeach
+        @else
+            Il n'y a pas de commentaire pour le moment
+        @endif
+        @if (Auth::check())
+
             <div class="form-answer">
                 <div class="row">
                     <div class="span-image pull-left">
@@ -59,15 +69,14 @@
                             <button type="submit" class="button button-green">Envoyer</button>
                         </div>
                         {{Form::hidden('id_answer', '0',array('id'=>'id_answer'))}}
+                        {{Form::hidden('id_discussion', '1')}}
                         {{ Form::close() }}
                         
                     </div>
                 </div>
             </div>
-            </section>
-        @else
-            Il n'y a pas de commentaire pour le moment
         @endif
+            </section>
 
         </div>
     </div>
@@ -78,14 +87,26 @@
     <script type="text/javascript">
 
         $(function() {
+            function ajaxVote(el,v){
+                $.ajax({
+                    type: "POST",
+                    url: "/discussion/vote",
+                    dataType: 'json',
+                    data: {
+                        id_answer: el.parent().parent().parent().parent().attr('data-id'),
+                        value: v,
+                    },
+                }).done(function(data) {
+                    $(el).parent().find('.count-vote').html(data['vote_value']);
+                },el);
+            }
             $('#answers > section > div').each(function(){
                 var id = $(this).attr('data-id');
-                console.log($(this).find('.icon-chevron-up'))
                 $(this).find('.icon-chevron-up').click(function(){
-                    alert("up !");
+                    ajaxVote($(this),1);
                 });
                 $(this).find('.icon-chevron-down').click(function(){
-                    alert("down !");
+                    ajaxVote($(this),0);
                 });
                 $(this).find('.signal').click(function(){
                     alert("Merci de nous contacter par mail - cette fonctionnalité n'est pas encore fonctionnelle");

@@ -47,11 +47,12 @@ class Answer  extends Eloquent
         return $return;
     }
 
-    static function add_like($id_user,$id_discussion){
-
-    }
-
-    static function add_dislike($id_user,$id_discussion){
-
+    static function addFirstMessageNewProposition($id_discussion, $type,$data){
+        $a = new elo_Answer();
+        $a->id_user = null;
+        $a->content = Lang::get('association/propositon.proposition'.$type,$data);
+        $a->id_discussion=$id_discussion;
+        $a->level=1;
+        $a->touch();
     }
 }

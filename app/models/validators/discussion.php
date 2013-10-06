@@ -16,6 +16,14 @@ class validators_discussion extends BaseValidator
         $rules = array(
             'text' => 'required|max:3000',
             'id_answer' => 'integer',
+            'id_discussion' => 'integer',
+        );
+        return $this->test($rules);
+    }
+    public function vote(){
+        $rules = array(
+            'id_answer' => 'integer',
+            'value' => 'between:0,1',
         );
         return $this->test($rules);
     }

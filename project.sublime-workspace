@@ -167,6 +167,49 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "app/controllers/AssociationFormController.php",
+			"settings":
+			{
+				"buffer_size": 7776,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/database/migrations/2013_09_27_080749_history_association.php",
+			"settings":
+			{
+				"buffer_size": 2224,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Users/ser/Desktop/Ouvrage.java",
+			"settings":
+			{
+				"buffer_size": 554,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "public class Exemplaire{\n	private String code;\n	private boolean emprunte = false;\n	public Exemplaire(String code){\n		this.code = code;\n	}\n	public String getCode(){\n		return code;\n	}\n	public void maintenantTesDispo() {\n		assert emprunte; //precondition\n		emprunte = false;\n	}\n	public void maintenantTuNesPlusDisponible() {\n		assert ! emprunte; //precondition\n		emprunte = true;\n	}\n	public void setEmprunte(boolean etat){\n		emprunte = etat;\n	}\n	public boolean getEmprunte(){\n		return emprunte;\n	}\n	\n}\n",
+			"file": "/D/Users/ser/Desktop/class Ouvrage{",
+			"file_size": 521,
+			"file_write_time": 130247398421652437,
+			"settings":
+			{
+				"buffer_size": 499,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/lang/fr/association/modal_form/general-informations.php",
+			"settings":
+			{
+				"buffer_size": 1173,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -514,8 +557,150 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/controllers/AssociationFormController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7776,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3793,
+								3793
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1361.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/database/migrations/2013_09_27_080749_history_association.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 2224,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1103,
+								1103
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 501.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/D/Users/ser/Desktop/Ouvrage.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 554,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/D/Users/ser/Desktop/class Ouvrage{",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 499,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								333,
+								341
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/lang/fr/association/modal_form/general-informations.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1173,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								325,
+								325
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -587,7 +772,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 279.0,
+	"side_bar_width": 221.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

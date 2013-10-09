@@ -2,7 +2,8 @@
 class Answer  extends Eloquent
 {
     static function getAnswers($id_discussion){
-        $result = elo_Answer::orderBy('level', 'DESC')->orderBy('id', 'ASC')->get();
+        $result = elo_Answer::where('id_discussion',$id_discussion)
+                            ->with('author')->orderBy('level', 'DESC')->orderBy('id', 'ASC')->get();
         $commentsLevel3 = [];
         $commentsLevel2 = [];
         $comments = [];
@@ -47,11 +48,15 @@ class Answer  extends Eloquent
         return $return;
     }
 
-    static function addFirstMessageNewProposition($id_discussion, $type,$data){
+    static function addFirstMessageNewProposition($data){
         $a = new elo_Answer();
-        $a->id_user = null;
-        $a->content = Lang::get('association/propositon.proposition'.$type,$data);
-        $a->id_discussion=$id_discussion;
+        $a->id_user = $data['id_user'];
+        $a->content = Lang::get('association/proposition/answer.proposition'.$data['type_answer'],   
+                                array('explanation'=>$data['explanation'],
+                                    'precedent_value'=>$data['before'],
+                                    'new_value'=>$data['after'])
+                                );
+        $a->id_discussion=$data['id_discussion'];
         $a->level=1;
         $a->touch();
     }

@@ -13,6 +13,7 @@
             <h3 class="head">{{Lang::get('association/edit.edit_association')}}</h3>
             <p>{{Lang::get('association/edit.warn_possiblity_for_normal_user')}}</p>
             <p>
+            @if(!empty($proposition))
             <span class="badge badge-warning">40</span> <span>Modification en attente :</span>
             <span class="pull-right">
               <a href=""><i class="icon-share-alt"></i></a> -
@@ -22,25 +23,22 @@
             </p>
             <div class="row" id="wait-moderation">
                 <div id="list-modification" class="span14 content">
-                    @for($i=0; $i<40;$i++)
-                    <div class="item itemtwitter">
+                    @foreach($proposition as $p)
+                    <div class="item">
                         <div class="text">
-                            <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span>
+                            <span>Title : {{$p->title}}</span>
                             <div class="tweetbtn">
                             <img width="13" height="13" alt="Favorite" src="/img/to sprite/retweet_mini.png">
-                            <a href="http://twitter.com/intent/retweet?tweet_id=319926146185711616">Valider</a>
-                            <img width="12" height="12" alt="Favorite" src="/img/to sprite/reply_mini.png">
-                            <a href="http://twitter.com/intent/tweet?in_reply_to=319926146185711616">Refuser</a>
-                            <img width="12" height="12" alt="Favorite" src="/img/to sprite/favorite_mini.png">
-                            <a href="http://twitter.com/intent/favorite?tweet_id=319926146185711616">Ignorer</a>
-                            <i>il y a 7 heures</i>
+                            <a href="discussion/{{$p->id_discussion}}">Afficher</a>
+                            <i>{{\Carbon\Carbon::createFromTimeStamp(strtotime($p->created_at))->diffForHumans()}}</i>
                             </div>
                         </div>
                     </div>
-                    @endfor
+                    @endforeach
                 </div>
             </div>
             <hr>
+            @endif
             <table class="table table-striped">
               <tbody>
                 <tr>

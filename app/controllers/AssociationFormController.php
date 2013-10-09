@@ -54,65 +54,7 @@ class AssociationFormController  extends BaseController {
         $result = array('error'=>'no method found');
         switch ($origin) {
             case 'general-informations':
-                $v = new validators_associationGeneralInformation;
-                    switch ($item) {
-                        case 'name':
-                            $result = $v->name();
-                            $update=array('name' => $result['data']['name']);
-                            break;
-                        case 'legal_name':
-                            $result = $v->legal_name();
-                            $update= array('legal_name' => $result['data']['legal_name']);
-                            break;
-                        case 'acronym':
-                            $result = $v->acronym();
-                            $update = array('acronym' => $result['data']['acronym']);
-                            break;
-                        case 'goal':
-                            $result = $v->goal();
-                            $update = array('goal' => $result['data']['goal']);
-                            break;
-                        case 'official_date_creation':
-                            $result = $v->official_date_creation();
-                            $update = array('official_date_creation' => $result['data']['official_date_creation']);
-                            break;
-                        case 'website_url':
-                            $result = $v->website_url();
-                            $update = array('website_url' => $result['data']['website_url']);
-                            break;
-                        case 'headquater':
-                            $result = $v->headquater();
-                            $update = array('headquater' => $result['data']['headquater']);
-                            break;
-                        case 'admitted_public_utility':
-                            $result = $v->admitted_public_utility();
-                            $boolean = ($result['data']['admitted_public_utility'] == "true") ? 1 : 0; 
-                            $update = array('admitted_public_utility' => $boolean);
-                            break;
-                        case 'internal_regulation':
-                            $result = $v->internal_regulation();
-                            $update = array('internal_regulation' => $result['data']['internal_regulation']);
-                            break;
-                        case 'statuts':
-                            $result = $v->statuts();
-                            $update = array('statuts' => $result['data']['statuts']);
-                            break;
-                        case 'contact_adress':
-                            $result = $v->contact_adress();
-                            $update = array('contact_adress' => $result['data']['contact_adress']);
-                            break;
-                    }
-                if(isset($result['success'])){
-                    if($this->isAdministrator()){
-                        elo_Association::where('id',$id)->update($update);
-                    }else{
-                        $type = 1;
-                        $where = array('id'=>$id);
-                        $dataMessage = array('nickname'=>'Dupond');
-                        Proposition::add($type,$update,$where,$dataMessage);
-                    }
-                    $result['redirect_url'] = '/'.$id.'/edit/general-informations';
-                }
+                $result = $this->generalInformations($id,$item);
                 break;
             case 'vieassociative-informations':
                 switch ($item) {
@@ -161,8 +103,55 @@ class AssociationFormController  extends BaseController {
         }
         return Response::json($result);
     }
-
+    private function generalInformations($id,$item){
+        $v = new validators_associationGeneralInformation;
+        switch ($item) {
+            case 'name':
+            case 'legal_name':
+            case 'acronym':
+            case 'goal':
+            case 'official_date_creation':
+            case 'website_url':
+            case 'headquater':
+            case 'internal_regulation':
+            case 'statuts':
+            case 'contact_adress':
+                $result = $v->$item();
+                $update=array($item => $result['data'][$item]);
+                $before = elo_Association::find($id)->first()->$item;
+                $proposition = $result['data'][$item];
+                break;
+            case 'admitted_public_utility':
+                $result = $v->$item();
+                $boolean = ($result['data'][$item] == "true") ? 1 : 0; 
+                $update = array($item => $boolean);
+                $before = elo_Association::find($id)->first()->$item;
+                $proposition = $boolean;
+                break;
+        }
+        if(isset($result['success'])){
+            if($this->isAdministrator()){
+                //Apply the request right now
+                elo_Association::where('id',$id)->update($update);
+            }else{
+                //Create a proposition
+                $data['id_assoc'] = $id;
+                $data['type'] = $item;
+                $data['update'] = $update;
+                $data['where'] = array('id'=>$id);
+                $data['message'] = array('before'=>$before,
+                                        'after'=>$proposition,
+                                        'explanation'=>Lang::get('association/proposition/type.'.$item),
+                                        'title'=>Lang::get('association/proposition/title.'.$item),
+                                        'type_answer'=>(empty($before)) ? 2 : 1
+                                    );
+                Proposition::add($data);
+            }
+            $result['redirect_url'] = '/'.$id.'/edit/general-informations';
+        }
+        return $result;
+    }
     public function isAdministrator(){
-        return true;
+        return false;
     }
 }

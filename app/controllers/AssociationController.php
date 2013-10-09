@@ -10,7 +10,6 @@ class AssociationController  extends BaseController {
         $result = $v->register();
         if(isset($result['success'])){
             $id_assoc = Association::add($result['data']);
-
             // if the association has been created by one of his authorised user
             if($result['data']['choice']=="true"){
                 User::addAssoc(Session::get('idUser'),$id_assoc,$result['data']['link']);
@@ -33,7 +32,8 @@ class AssociationController  extends BaseController {
         return View::make('association.edit')
             ->with('count_news',Post::countNews($idAssoc))
             ->with('count_admin',Association::countAdmin($idAssoc))
-            ->with('association',elo_Association::find($idAssoc));
+            ->with('association',elo_Association::find($idAssoc))
+            ->with('proposition',Proposition::getPropositions($idAssoc));
             //->with('rang',Association::getRangUser(Session::get('idUser'), $idAssoc))
             //->with('associationEnGestationNom',Association::getName($idAssoc));
     }

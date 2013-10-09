@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"data",
+				"dataMessage"
+			],
+			[
+				"is",
+				"is_array"
+			],
+			[
 				"id",
 				"id_discussion"
 			],
@@ -171,42 +179,50 @@
 			"file": "app/controllers/AssociationFormController.php",
 			"settings":
 			{
-				"buffer_size": 7776,
+				"buffer_size": 6625,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/database/migrations/2013_09_27_080749_history_association.php",
+			"file": "app/models/Answer.php",
 			"settings":
 			{
-				"buffer_size": 2224,
+				"buffer_size": 2364,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/Users/ser/Desktop/Ouvrage.java",
+			"file": "app/controllers/AssociationController.php",
 			"settings":
 			{
-				"buffer_size": 554,
+				"buffer_size": 3857,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "public class Exemplaire{\n	private String code;\n	private boolean emprunte = false;\n	public Exemplaire(String code){\n		this.code = code;\n	}\n	public String getCode(){\n		return code;\n	}\n	public void maintenantTesDispo() {\n		assert emprunte; //precondition\n		emprunte = false;\n	}\n	public void maintenantTuNesPlusDisponible() {\n		assert ! emprunte; //precondition\n		emprunte = true;\n	}\n	public void setEmprunte(boolean etat){\n		emprunte = etat;\n	}\n	public boolean getEmprunte(){\n		return emprunte;\n	}\n	\n}\n",
-			"file": "/D/Users/ser/Desktop/class Ouvrage{",
-			"file_size": 521,
-			"file_write_time": 130247398421652437,
+			"file": "app/lang/fr/association/proposition/answer.php",
 			"settings":
 			{
-				"buffer_size": 499,
+				"buffer_size": 447,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/lang/fr/association/modal_form/general-informations.php",
+			"contents": "<?php\nclass Proposition  extends Eloquent\n{\n    static function add($data){\n        $proposition = new elo_Proposition();\n        $proposition->finished = 0;\n        $proposition->title = $data['message']['title'];\n        $data['message']['id_user'] = Auth::user()->id;\n        //look if a conversation like this one exist\n        $p = elo_Proposition::where('id_assoc',$data['id_assoc'])->where('type_query',$data['type'])->first();\n        if(empty($p)){\n            $d = new elo_Discussion();\n            $d->touch();\n            //create the first post of this conversation\n            $data['message']['id_discussion'] = $d->id;\n            $proposition->id_discussion = $d->id;\n            \n            \n        }else{\n            $data['message']['id_discussion'] = $p->id_discussion;\n            $proposition->id_discussion = $p->id_discussion;\n        }\n        Answer::addFirstMessageNewProposition($data['message']);\n        $proposition->id_assoc = $data['id_assoc'];\n        //store the query\n        $proposition->type_query = $data['type'];\n        $proposition->data = json_encode($data['update']);\n        $proposition->where = json_encode($data['where']);\n        $proposition->touch();\n    }\n\n    static function getPropositions($id_assoc){\n        return elo_Proposition::where('id_assoc',$id_assoc)\n                                ->orderBy('updated_at', 'DESC')->get();\n    }\n}",
+			"file": "app/models/Proposition.php",
+			"file_size": 1445,
+			"file_write_time": 130257881490668755,
 			"settings":
 			{
-				"buffer_size": 1173,
+				"buffer_size": 1400,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/routes.php",
+			"settings":
+			{
+				"buffer_size": 6832,
 				"line_ending": "Windows"
 			}
 		}
@@ -262,26 +278,42 @@
 	},
 	"file_history":
 	[
-		"/D/xampp/htdocs/vieassociative/app/routes.php",
-		"/D/xampp/htdocs/vieassociative/app/controllers/AssociationFormController.php",
-		"/D/xampp/htdocs/vieassociative/app/models/Answer.php",
-		"/D/xampp/htdocs/vieassociative/app/models/Proposition.php",
+		"/D/xampp/htdocs/vieassociative/app/models/LieuTable.php",
+		"/D/xampp/htdocs/vieassociative/app/lang/fr/association/proposition/answer.php",
 		"/D/xampp/htdocs/vieassociative/app/database/migrations/2013_09_27_080749_history_association.php",
-		"/D/xampp/htdocs/vieassociative/app/views/discussion/index.blade.php",
 		"/D/xampp/htdocs/vieassociative/app/controllers/DiscussionController.php",
+		"/D/xampp/htdocs/vieassociative/app/models/Proposition.php",
+		"/D/xampp/htdocs/vieassociative/app/lang/fr/association/proposition/title.php",
+		"/D/xampp/htdocs/vieassociative/app/lang/fr/association/proposition/type.php",
+		"/D/xampp/htdocs/vieassociative/app/lang/fr/association/proposition.php",
+		"/D/xampp/htdocs/vieassociative/app/lang/fr/association/modal_form/general-informations.php",
+		"/D/xampp/htdocs/vieassociative/app/views/discussion/index.blade.php",
+		"/D/Users/ser/Desktop/tube.c",
+		"/D/Users/ser/Desktop/canular1",
+		"/D/xampp/htdocs/vieassociative/app/controllers/AssociationController.php",
+		"/D/xampp/htdocs/vieassociative/app/views/association/edit.blade.php",
+		"/D/xampp/htdocs/vieassociative/app/routes.php",
+		"/D/xampp/htdocs/vieassociative/app/models/User.php",
+		"/D/xampp/htdocs/vieassociative/app/models/Answer.php",
+		"/D/xampp/htdocs/vieassociative/app/models/elo/Answer.php",
+		"/D/xampp/htdocs/vieassociative/app/models/elo/Proposition.php",
+		"/D/xampp/htdocs/vieassociative/app/controllers/AssociationFormController.php",
+		"/D/xampp/htdocs/vieassociative/app/models/elo/Discussion.php",
+		"/D/xampp/htdocs/vieassociative/app/database/migrations/2013_10_07_122749_proposition.php",
+		"/D/xampp/htdocs/vieassociative/artisan",
+		"/D/Users/ser/Desktop/Ouvrage.java",
+		"/D/Users/ser/Desktop/class Ouvrage{",
 		"/D/xampp/htdocs/vieassociative/app/views/association/list-news.blade.php",
 		"/D/xampp/htdocs/vieassociative/app/models/validators/discussion.php",
 		"/D/xampp/htdocs/vieassociative/app/models/elo/Vote.php",
 		"/D/Users/ser/Desktop/qsd",
 		"/D/xampp/htdocs/vieassociative/public/css/less/specific.less",
-		"/D/xampp/htdocs/vieassociative/app/models/elo/Answer.php",
 		"/D/xampp/htdocs/vieassociative/public/css/before/design.css",
 		"/D/xampp/htdocs/vieassociative/public/css/less/general.less",
 		"/D/xampp/htdocs/vieassociative/app/views/connexion/connexion.blade.php",
 		"/D/xampp/htdocs/vieassociative/app/storage/views/d70dde38ccb431c1ccc8d788c3ac4f0e",
 		"/D/xampp/htdocs/vieassociative/vendor/composer/autoload_classmap.php",
 		"/D/xampp/htdocs/vieassociative/app/database/migrations/2013_05_20_141549_from_scratch.php",
-		"/D/Users/ser/Desktop/Ouvrage.java",
 		"/D/Users/ser/Desktop/Exemplaire.java",
 		"/D/xampp/htdocs/vieassociative/.gitignore",
 		"/D/xampp/htdocs/vieassociative/app/database/migrations/2013_09_27_080749_HistoryAssociation.php",
@@ -373,23 +405,7 @@
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/models/elo/Post.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/models/Post.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/association/list-news.blade.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/association/edit-news.blade.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/controllers/DiscussionController.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/discussion/index.blade.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/public/css/less/specific.less",
-		"/J/Users/Serut/Desktop/Promote Your Business Product Service/AE/Promote Your Business-Product-Service2.aep",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/config/prod/database.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/config/prod/session.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/lang/fr/association/edit/news.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/evenement/edit.blade.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/public/css/less/datepicker.less",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/public/js/main.js",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/filters.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/config/prod/mail.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/config/prod/app.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc-OLD/app/config/prod/app.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/models/validators/associationEditPost.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/public/js/vendor/parsley.min.js"
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/association/edit-news.blade.php"
 	],
 	"find":
 	{
@@ -557,7 +573,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -566,15 +582,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7776,
+						"buffer_size": 6625,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3793,
-								3793
+								6346,
+								6346
 							]
 						],
 						"settings":
@@ -584,119 +600,150 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1361.0,
+						"translation.y": 2393.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/database/migrations/2013_09_27_080749_history_association.php",
-					"semi_transient": true,
+					"file": "app/models/Answer.php",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2224,
+						"buffer_size": 2364,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1103,
-								1103
+								544,
+								544
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 501.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "/D/Users/ser/Desktop/Ouvrage.java",
+					"file": "app/controllers/AssociationController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 554,
+						"buffer_size": 3857,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1629,
+								1629
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Java/Java.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 330.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "/D/Users/ser/Desktop/class Ouvrage{",
+					"file": "app/lang/fr/association/proposition/answer.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 499,
+						"buffer_size": 447,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								333,
-								341
+								447,
+								447
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Java/Java.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
-						"translation.x": 0.0,
-						"translation.y": 1.0,
+						"translation.x": 20.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "app/lang/fr/association/modal_form/general-informations.php",
+					"file": "app/models/Proposition.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1173,
+						"buffer_size": 1400,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								325,
-								325
+								1206,
+								1206
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/routes.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6832,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4613,
+								4613
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 858.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -772,7 +819,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 221.0,
+	"side_bar_width": 273.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

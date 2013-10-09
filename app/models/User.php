@@ -59,34 +59,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         $el->link = $link;
         $el->touch();
     }
-
-    static function getInfoProfils($id){
-        $sql = 'SELECT level,username from user where id = ?';
-        $result = DB::select($sql, array($id));
-        return $result[0];
-    }
-    
-    static function isTakenUsername($username){
-        $count = User::where('username', '=', $username)->count();
-        return $count  != 0;
-
-    }
-    
-    static function isTakenMail($email){
-        $count = User::where('email', '=', $email)->count();
-        return $count  != 0;
-    }
-    
-    
-    
-    
-
-    static function modifierLienAssoc($idUser,$idInsertAssoc,$lien){
-        $sql = 'UPDATE user_association SET nom_lien=? WHERE id_user = ? AND id_assoc = ?';
-        $result = DB::update($sql, array($lien,$idUser,$idInsertAssoc));
-        return $result;
-    }
-    
     static function creerToken($id_user,$token){
         $el = new elo_UserToken;
         $el->id_user = $id_user;
@@ -101,4 +73,25 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         }
         return $el->id_user;
     }
+    static function getInfoProfils($id){
+        $sql = 'SELECT level,username from user where id = ?';
+        $result = DB::select($sql, array($id));
+        return $result[0];
+    }
+    /*
+    static function isTakenUsername($username){
+        $count = User::where('username', '=', $username)->count();
+        return $count  != 0;
+
+    }
+    static function isTakenMail($email){
+        $count = User::where('email', '=', $email)->count();
+        return $count  != 0;
+    }
+    static function modifierLienAssoc($idUser,$idInsertAssoc,$lien){
+        $sql = 'UPDATE user_association SET nom_lien=? WHERE id_user = ? AND id_assoc = ?';
+        $result = DB::update($sql, array($lien,$idUser,$idInsertAssoc));
+        return $result;
+    }
+    */
 }

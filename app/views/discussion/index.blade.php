@@ -32,7 +32,7 @@
                             span14
                         @endif
                             ">
-                            <span class="author"><a href="#profil">Joel Sapin</a></span>
+                            <span class="author"><a href="#profil">{{$p->author->username}}</a></span>
                             <span class="light">- {{\Carbon\Carbon::createFromTimeStamp(strtotime($p->created_at))->diffForHumans()}}</span><br>
                             <div>
                                 {{$p->content}}
@@ -69,7 +69,7 @@
                             <button type="submit" class="button button-green">Envoyer</button>
                         </div>
                         {{Form::hidden('id_answer', '0',array('id'=>'id_answer'))}}
-                        {{Form::hidden('id_discussion', '1')}}
+                        {{Form::hidden('id_discussion', $id_discussion)}}
                         {{ Form::close() }}
                         
                     </div>

@@ -47,8 +47,11 @@ class HistoryAssociation extends Migration {
 			$table->increments('id');
 			$table->integer('finished');
 			$table->timestamp('deadline');
+			$table->string('title');
 			$table->integer('id_discussion')->unsigned();
 			$table->foreign('id_discussion')->references('id')->on('discussion');
+			$table->integer('id_assoc')->unsigned();
+			$table->foreign('id_assoc')->references('id')->on('association');
 			$table->integer('type_query');
 			$table->text('data');
 			$table->text('where');

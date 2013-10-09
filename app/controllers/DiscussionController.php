@@ -2,10 +2,11 @@
 
 class DiscussionController  extends BaseController {
 
-    public function getIndex() {
-    	$discussion = Answer::getAnswers(1);
+    public function getConversation($idAssoc, $idDiscu) {
+    	$discussion = Answer::getAnswers($idDiscu);
         return View::make('discussion.index')
-            ->with('posts',$discussion);
+            ->with('posts',$discussion)
+            ->with('id_discussion',$idDiscu);
     }
 
     public function postAdd(){
@@ -25,7 +26,7 @@ class DiscussionController  extends BaseController {
         		$e->level = 1;
         	}
         	$e->touch();
-			$result['redirect_url'] = '/discussion';
+			$result['redirect_url'] = '/discussion/'.$result['data']['id_discussion'];
 			$result['data']=null; //Remove data
 		}
 		return Response::json($result);

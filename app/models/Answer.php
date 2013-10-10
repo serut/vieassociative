@@ -1,9 +1,20 @@
 <?php
 class Answer  extends Eloquent
 {
-    static function getAnswers($id_discussion){
-        $result = elo_Answer::where('id_discussion',$id_discussion)
+    
+    static function getAnswer($id_discussion){
+        $data = elo_Answer::where('id_discussion',$id_discussion)
                             ->with('author')->orderBy('level', 'DESC')->orderBy('id', 'ASC')->get();
+        return Answer::organizeComments($data);
+    }
+    static function getAnswerAndProposition($id_discussion){
+        $data = elo_Answer::where('id_discussion',$id_discussion)
+                            ->with('author')->with('proposition')
+                            ->orderBy('level', 'DESC')->orderBy('id', 'ASC')->get();
+        return Answer::organizeComments($data);
+    }
+    static function organizeComments($result){
+        
         $commentsLevel3 = [];
         $commentsLevel2 = [];
         $comments = [];

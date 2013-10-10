@@ -27,4 +27,11 @@ class validators_discussion extends BaseValidator
         );
         return $this->test($rules);
     }
+    public function validate(){
+        $rules = array(
+            'id_proposition' => 'integer',
+            'value' => 'between:0,1',
+        );
+        return $this->test($rules);
+    }
 }

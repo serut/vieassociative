@@ -78,7 +78,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         $result = DB::select($sql, array($id));
         return $result[0];
     }
-    /*
     static function isTakenUsername($username){
         $count = User::where('username', '=', $username)->count();
         return $count  != 0;
@@ -88,6 +87,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         $count = User::where('email', '=', $email)->count();
         return $count  != 0;
     }
+    /*
     static function modifierLienAssoc($idUser,$idInsertAssoc,$lien){
         $sql = 'UPDATE user_association SET nom_lien=? WHERE id_user = ? AND id_assoc = ?';
         $result = DB::update($sql, array($lien,$idUser,$idInsertAssoc));

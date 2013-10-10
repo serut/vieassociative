@@ -26,11 +26,11 @@
                     @foreach($proposition as $p)
                     <div class="item">
                         <div class="text">
-                            <span>Title : {{$p->title}}</span>
+                            <span>Title : {{$p->discussion->title}}</span>
                             <div class="tweetbtn">
                             <img width="13" height="13" alt="Favorite" src="/img/to sprite/retweet_mini.png">
-                            <a href="discussion/{{$p->id_discussion}}">Afficher</a>
-                            <i>{{\Carbon\Carbon::createFromTimeStamp(strtotime($p->created_at))->diffForHumans()}}</i>
+                            <a href="discussion/{{$p->discussion->id}}">Afficher</a>
+                            <i>{{\Carbon\Carbon::createFromTimeStamp(strtotime($p->updated_at))->diffForHumans()}}</i>
                             </div>
                         </div>
                     </div>

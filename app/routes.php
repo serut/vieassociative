@@ -49,6 +49,7 @@
             {
                 Route::post('discussion/add', 'DiscussionController@postAdd');
                 Route::post('discussion/vote', 'DiscussionController@postVote');
+                Route::post('discussion/validate', 'DiscussionController@postValidate');
                 Route::get('{id}/edit', 'AssociationController@getEdit')->where('id', '[0-9]+');
                 Route::get('{id}/edit/general-informations', 'AssociationController@getEditGeneralInformations')->where('id', '[0-9]+');
                 Route::get('{id}/edit/vieassociative-informations', 'AssociationController@getEditVieAssociativeInformations')->where('id', '[0-9]+');

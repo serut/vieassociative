@@ -175,14 +175,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/models/Proposition.php",
-			"settings":
-			{
-				"buffer_size": 1459,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -235,6 +227,13 @@
 	},
 	"file_history":
 	[
+		"/D/xampp/htdocs/philippe/index.html",
+		"/D/xampp/htdocs/vieassociative/app/views/template/theme.blade.php",
+		"/D/xampp/htdocs/vieassociative/app/models/Proposition.php",
+		"/D/xampp/htdocs/vieassociative/app/views/template/main_html_component/link-head.blade.php",
+		"/D/xampp/htdocs/vieassociative/public/css/compiled.css",
+		"/D/xampp/htdocs/vieassociative/public/css/css/include.css",
+		"/D/xampp/htdocs/vieassociative/public/css/less/general.less",
 		"/D/xampp/htdocs/vieassociative/app/database/migrations/2013_09_27_080749_history_association.php",
 		"/D/xampp/htdocs/vieassociative/app/models/Answer.php",
 		"/D/xampp/htdocs/vieassociative/app/controllers/AssociationFormController.php",
@@ -242,7 +241,6 @@
 		"/D/xampp/htdocs/vieassociative/app/controllers/AssociationController.php",
 		"/D/xampp/htdocs/vieassociative/public/js/social.js",
 		"/D/xampp/htdocs/vieassociative/app/lang/fr/association/proposition/answer.php",
-		"/D/xampp/htdocs/vieassociative/app/models/Proposition.php",
 		"/D/xampp/htdocs/vieassociative/app/routes.php",
 		"/D/xampp/htdocs/vieassociative/app/models/LieuTable.php",
 		"/D/xampp/htdocs/vieassociative/app/controllers/DiscussionController.php",
@@ -268,7 +266,6 @@
 		"/D/Users/ser/Desktop/qsd",
 		"/D/xampp/htdocs/vieassociative/public/css/less/specific.less",
 		"/D/xampp/htdocs/vieassociative/public/css/before/design.css",
-		"/D/xampp/htdocs/vieassociative/public/css/less/general.less",
 		"/D/xampp/htdocs/vieassociative/app/views/connexion/connexion.blade.php",
 		"/D/xampp/htdocs/vieassociative/app/storage/views/d70dde38ccb431c1ccc8d788c3ac4f0e",
 		"/D/xampp/htdocs/vieassociative/vendor/composer/autoload_classmap.php",
@@ -357,12 +354,7 @@
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/template/main_html_component/aside.blade.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/lang/fr/aside.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/template/main_html_component/footer.blade.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/index/maintenance.blade.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/template/admitted_public_utility.blade.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/public/css/less/general.less",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/models/elo/Association.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/models/elo/Post.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/models/Post.php"
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/index/maintenance.blade.php"
 	],
 	"find":
 	{
@@ -530,38 +522,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/models/Proposition.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1459,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								880,
-								909
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 66.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],

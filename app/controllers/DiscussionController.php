@@ -3,10 +3,11 @@
 class DiscussionController  extends BaseController {
 
     public function getConversation($idAssoc, $idDiscu) {
-    	$discussion = Answer::getAnswers($idDiscu);
-        return View::make('discussion.index')
+    	$discussion = Answer::getAnswerAndProposition($idDiscu);
+        return View::make('discussion.proposition')
             ->with('posts',$discussion)
-            ->with('id_discussion',$idDiscu);
+            ->with('discussion',elo_Discussion::find($idDiscu))
+            ->with('association',elo_Association::find($idAssoc));
     }
 
     public function postAdd(){
@@ -26,7 +27,7 @@ class DiscussionController  extends BaseController {
         		$e->level = 1;
         	}
         	$e->touch();
-			$result['redirect_url'] = '/discussion/'.$result['data']['id_discussion'];
+			$result['refresh'] = true;
 			$result['data']=null; //Remove data
 		}
 		return Response::json($result);
@@ -83,4 +84,16 @@ class DiscussionController  extends BaseController {
 		return Response::json($result);
     }
 
+
+
+    public function postValidate(){
+        $v = new validators_discussion;
+        $result = $v->validate();
+        if(isset($result['success'])){
+            Proposition::process($result['data']['id_proposition']);
+            $result['data']=null; //Remove data
+        }
+        
+        return Response::json($result);
+    }
 }

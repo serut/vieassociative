@@ -10,4 +10,8 @@ class elo_Answer  extends Eloquent
     {
         return $this->belongsTo('elo_User','id_user');
     }
+    public function proposition()
+    {
+        return $this->hasOne('elo_Proposition','id_answer');
+    }
 }

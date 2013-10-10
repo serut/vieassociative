@@ -5,6 +5,12 @@
 	<script src="http://cdn.vieassociative.fr/js/vendor/bootstrap.min.js"></script>
 	<script src="http://cdn.vieassociative.fr/js/vendor/fancybox.min.js"></script>
 	<script src="http://cdn.vieassociative.fr/js/main.js"></script>
+	<script type="text/javascript">
+	   var _gaq=[['_setAccount','UA-35348467-1'],['_trackPageview']];
+	   (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	   g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	   s.parentNode.insertBefore(g,s)}(document,'script'));
+   </script>
 	<script src="http://cdn.vieassociative.fr/js/vendor/images-loaded.min.js" async="true"></script>
 	<script src="http://cdn.vieassociative.fr/js/vendor/parsley.min.js" async="true"></script>
 	<script src="http://cdn.vieassociative.fr/js/vendor/tmpl.min.js" async="true"></script>

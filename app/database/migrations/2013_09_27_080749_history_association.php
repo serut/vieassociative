@@ -53,6 +53,8 @@ class HistoryAssociation extends Migration {
 			$table->integer('id_assoc')->unsigned();
 			$table->foreign('id_assoc')->references('id')->on('association');
 			$table->integer('type_query');
+			$table->integer('id_answer')->unsigned()->nullable();
+			$table->foreign('id_answer')->references('id')->on('answer');
 			$table->text('data');
 			$table->text('where');
 			$table->timestamps();

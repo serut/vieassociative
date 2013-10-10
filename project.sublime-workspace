@@ -176,53 +176,10 @@
 	"buffers":
 	[
 		{
-			"file": "app/controllers/AssociationFormController.php",
-			"settings":
-			{
-				"buffer_size": 6625,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/models/Answer.php",
-			"settings":
-			{
-				"buffer_size": 2364,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/controllers/AssociationController.php",
-			"settings":
-			{
-				"buffer_size": 3857,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/lang/fr/association/proposition/answer.php",
-			"settings":
-			{
-				"buffer_size": 447,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "<?php\nclass Proposition  extends Eloquent\n{\n    static function add($data){\n        $proposition = new elo_Proposition();\n        $proposition->finished = 0;\n        $proposition->title = $data['message']['title'];\n        $data['message']['id_user'] = Auth::user()->id;\n        //look if a conversation like this one exist\n        $p = elo_Proposition::where('id_assoc',$data['id_assoc'])->where('type_query',$data['type'])->first();\n        if(empty($p)){\n            $d = new elo_Discussion();\n            $d->touch();\n            //create the first post of this conversation\n            $data['message']['id_discussion'] = $d->id;\n            $proposition->id_discussion = $d->id;\n            \n            \n        }else{\n            $data['message']['id_discussion'] = $p->id_discussion;\n            $proposition->id_discussion = $p->id_discussion;\n        }\n        Answer::addFirstMessageNewProposition($data['message']);\n        $proposition->id_assoc = $data['id_assoc'];\n        //store the query\n        $proposition->type_query = $data['type'];\n        $proposition->data = json_encode($data['update']);\n        $proposition->where = json_encode($data['where']);\n        $proposition->touch();\n    }\n\n    static function getPropositions($id_assoc){\n        return elo_Proposition::where('id_assoc',$id_assoc)\n                                ->orderBy('updated_at', 'DESC')->get();\n    }\n}",
 			"file": "app/models/Proposition.php",
-			"file_size": 1445,
-			"file_write_time": 130257881490668755,
 			"settings":
 			{
-				"buffer_size": 1400,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/routes.php",
-			"settings":
-			{
-				"buffer_size": 6832,
+				"buffer_size": 1459,
 				"line_ending": "Windows"
 			}
 		}
@@ -278,11 +235,17 @@
 	},
 	"file_history":
 	[
-		"/D/xampp/htdocs/vieassociative/app/models/LieuTable.php",
-		"/D/xampp/htdocs/vieassociative/app/lang/fr/association/proposition/answer.php",
 		"/D/xampp/htdocs/vieassociative/app/database/migrations/2013_09_27_080749_history_association.php",
-		"/D/xampp/htdocs/vieassociative/app/controllers/DiscussionController.php",
+		"/D/xampp/htdocs/vieassociative/app/models/Answer.php",
+		"/D/xampp/htdocs/vieassociative/app/controllers/AssociationFormController.php",
+		"/D/xampp/htdocs/vieassociative/app/views/template/main_html_component/link-foot.blade.php",
+		"/D/xampp/htdocs/vieassociative/app/controllers/AssociationController.php",
+		"/D/xampp/htdocs/vieassociative/public/js/social.js",
+		"/D/xampp/htdocs/vieassociative/app/lang/fr/association/proposition/answer.php",
 		"/D/xampp/htdocs/vieassociative/app/models/Proposition.php",
+		"/D/xampp/htdocs/vieassociative/app/routes.php",
+		"/D/xampp/htdocs/vieassociative/app/models/LieuTable.php",
+		"/D/xampp/htdocs/vieassociative/app/controllers/DiscussionController.php",
 		"/D/xampp/htdocs/vieassociative/app/lang/fr/association/proposition/title.php",
 		"/D/xampp/htdocs/vieassociative/app/lang/fr/association/proposition/type.php",
 		"/D/xampp/htdocs/vieassociative/app/lang/fr/association/proposition.php",
@@ -290,14 +253,10 @@
 		"/D/xampp/htdocs/vieassociative/app/views/discussion/index.blade.php",
 		"/D/Users/ser/Desktop/tube.c",
 		"/D/Users/ser/Desktop/canular1",
-		"/D/xampp/htdocs/vieassociative/app/controllers/AssociationController.php",
 		"/D/xampp/htdocs/vieassociative/app/views/association/edit.blade.php",
-		"/D/xampp/htdocs/vieassociative/app/routes.php",
 		"/D/xampp/htdocs/vieassociative/app/models/User.php",
-		"/D/xampp/htdocs/vieassociative/app/models/Answer.php",
 		"/D/xampp/htdocs/vieassociative/app/models/elo/Answer.php",
 		"/D/xampp/htdocs/vieassociative/app/models/elo/Proposition.php",
-		"/D/xampp/htdocs/vieassociative/app/controllers/AssociationFormController.php",
 		"/D/xampp/htdocs/vieassociative/app/models/elo/Discussion.php",
 		"/D/xampp/htdocs/vieassociative/app/database/migrations/2013_10_07_122749_proposition.php",
 		"/D/xampp/htdocs/vieassociative/artisan",
@@ -403,9 +362,7 @@
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/public/css/less/general.less",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/models/elo/Association.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/models/elo/Post.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/models/Post.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/association/list-news.blade.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/association/edit-news.blade.php"
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/models/Post.php"
 	],
 	"find":
 	{
@@ -573,138 +530,24 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/controllers/AssociationFormController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6625,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6346,
-								6346
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2393.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/models/Answer.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2364,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								544,
-								544
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/controllers/AssociationController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3857,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1629,
-								1629
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 330.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/lang/fr/association/proposition/answer.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 447,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								447,
-								447
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 20.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
 					"file": "app/models/Proposition.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1400,
+						"buffer_size": 1459,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1206,
-								1206
+								880,
+								909
 							]
 						],
 						"settings":
@@ -714,36 +557,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/routes.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6832,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4613,
-								4613
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 858.0,
+						"translation.y": 66.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

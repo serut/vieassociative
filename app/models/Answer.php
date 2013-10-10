@@ -59,5 +59,6 @@ class Answer  extends Eloquent
         $a->id_discussion=$data['id_discussion'];
         $a->level=1;
         $a->touch();
+        return $a->id;
     }
 }

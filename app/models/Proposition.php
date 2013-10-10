@@ -14,24 +14,22 @@ class Proposition  extends Eloquent
             //create the first post of this conversation
             $data['message']['id_discussion'] = $d->id;
             $proposition->id_discussion = $d->id;
-            
-            
         }else{
             $data['message']['id_discussion'] = $p->id_discussion;
             $proposition->id_discussion = $p->id_discussion;
         }
-        Answer::addFirstMessageNewProposition($data['message']);
+        $proposition->id_answer = Answer::addFirstMessageNewProposition($data['message']);
         $proposition->id_assoc = $data['id_assoc'];
         //store the query
         $proposition->type_query = $data['type'];
         $proposition->data = json_encode($data['update']);
         $proposition->where = json_encode($data['where']);
         $proposition->touch();
-        
     }
 
     static function getPropositions($id_assoc){
         return elo_Proposition::where('id_assoc',$id_assoc)
+                                ->groupBy('id_discussion')
                                 ->orderBy('updated_at', 'DESC')->get();
     }
 }

@@ -90,7 +90,11 @@ class DiscussionController  extends BaseController {
         $v = new validators_discussion;
         $result = $v->validate();
         if(isset($result['success'])){
-            Proposition::process($result['data']['id_proposition']);
+            if($result['data']['value']=='1'){
+                Proposition::process($result['data']['id_proposition']);
+            }else{
+                Proposition::refused($result['data']['id_proposition']);
+            }
             $result['data']=null; //Remove data
         }
         

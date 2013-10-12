@@ -7,8 +7,8 @@
         <div>
             <ul class="breadcrumb">
               <li><a href="#">Association</a> <span class="divider">/</span></li>
-              <li><a href="/1-qsdf">Faites de la musique</a> <span class="divider">/</span></li>
-              <li><a href="/1/edit">Edition</a> <span class="divider">/</span></li>
+              <li><a href="/{{$association->id}}-qsdf">Faites de la musique</a> <span class="divider">/</span></li>
+              <li><a href="/{{$association->id}}/edit">Edition</a> <span class="divider">/</span></li>
               <li class="active">L'historique</li>
             </ul>
             <h3 class="head">{{Lang::get('association/edit/history.history')}} </h3>

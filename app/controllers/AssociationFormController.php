@@ -78,22 +78,28 @@ class AssociationFormController  extends BaseController {
                     // if we don't know if he register himself or somebody else
                     $result = $v->add_when_not_admin();
                     if(isset($result['success'])){
-                        if($result['data']['who']=='false'){
-                            Association::addAdmin(Auth::user()->id,$id,$result['data']['link']);
-                        }else{
-                            $user = User::where('email', $result['data']['admin_mail'])->firstOrFail();
-                            Association::addAdmin($user->id,$id,$result['data']['link']);
+                        $nbAdmin = elo_UserAssociation::where('id_assoc',$id)->count();
+                        if($nbAdmin==0 || $this->isAdministrator($id)){
+                            if($result['data']['who']=='false'){
+                                Association::addAdmin(Auth::user()->id,$id,$result['data']['link']);
+                            }else{
+                                $user = User::where('email', $result['data']['admin_mail'])->firstOrFail();
+                                if(!$this->isUserAdministrator($id,$user->id)){
+                                    Association::addAdmin($user->id,$id,$result['data']['link']);
+                                }
+                            }
                         }
                     }
                 }else{
-                    // he is already an admin, he is adding somebody else
                     $result = $v->add_when_already_admin();
-                    if(isset($result['success'])){
+                    // he is already an admin, he is adding somebody else
+                    if(isset($result['success']) && $this->isAdministrator($id)){
                         $user = User::where('email', $result['data']['admin_mail'])->firstOrFail();
-                        Association::addAdmin($user->id,$id,$result['data']['link']);
+                        if(!$this->isUserAdministrator($id,$user->id)){
+                            Association::addAdmin($user->id,$id,$result['data']['link']);
+                        }
                     }
                 }
-                //SECURITY ??
                 if(isset($result['success'])){
                     $result['redirect_url'] = '/'.$id.'/edit/administrator';
                 }
@@ -130,7 +136,7 @@ class AssociationFormController  extends BaseController {
                 break;
         }
         if(isset($result['success'])){
-            if($this->isAdministrator()){
+            if($this->isAdministrator($id)){
                 //Apply the request right now
                 elo_Association::where('id',$id)->update($update);
             }else{
@@ -151,7 +157,11 @@ class AssociationFormController  extends BaseController {
         }
         return $result;
     }
-    public function isAdministrator(){
-        return false;
+    public function isAdministrator($id_assoc){
+        return $this->isUserAdministrator($id_assoc,Auth::user()->id); 
+    }
+    public function isUserAdministrator($id_assoc,$id_user){
+        $is_admin = elo_UserAssociation::where('id_assoc',$id_assoc)->where('id_user',$id_user)->count();
+        return $is_admin>0 ? true : false; 
     }
 }

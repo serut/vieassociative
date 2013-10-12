@@ -8,9 +8,9 @@
 <section>
     <div>
         <ul class="breadcrumb">
-          <li><a href="/1-qsdf">Faites de la musique</a> <span class="divider">/</span></li>
-          <li><a href="/1/edit">Edition</a> <span class="divider">/</span></li>
-          <li><a href="/1/edit/news">Mes publications</a> <span class="divider">/</span></li>
+          <li><a href="/{{$association->id}}-qsdf">Faites de la musique</a> <span class="divider">/</span></li>
+          <li><a href="/{{$association->id}}/edit">Edition</a> <span class="divider">/</span></li>
+          <li><a href="/{{$association->id}}/edit/news">Mes publications</a> <span class="divider">/</span></li>
           <li class="active">Editer une publication</li>
         </ul>
         <h3 class="head">{{Lang::get('association/edit/news.modify_news')}}</h3>

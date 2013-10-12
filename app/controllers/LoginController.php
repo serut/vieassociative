@@ -48,7 +48,11 @@ class LoginController extends BaseController
         Session::put('idUser',null);
         Session::put('level',null);
         Session::put('name',null);
-        unset($_COOKIE['vieasso__']);
+        if(App::environment() == 'local')
+            $domain = "vieassoc.lo";
+        else
+            $domain = "vieassociative.fr";
+        setcookie('vieasso_remember', $_COOKIE['vieasso_remember'], time()-10, '/',$domain);
     }
     
     

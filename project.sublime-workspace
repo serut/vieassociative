@@ -175,6 +175,22 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "app/controllers/DiscussionController.php",
+			"settings":
+			{
+				"buffer_size": 3091,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/filters.php",
+			"settings":
+			{
+				"buffer_size": 3277,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -227,21 +243,29 @@
 	},
 	"file_history":
 	[
+		"/D/xampp/htdocs/vieassociative/app/database/migrations/2013_09_27_080749_history_association.php",
+		"/D/xampp/htdocs/vieassociative/app/views/association/edit.blade.php",
+		"/D/xampp/htdocs/vieassociative/app/models/Proposition.php",
+		"/D/xampp/htdocs/vieassociative/app/views/discussion/proposition.blade.php",
+		"/D/xampp/htdocs/vieassociative/app/models/Answer.php",
+		"/D/xampp/htdocs/vieassociative/app/lang/fr/association/proposition/answer.php",
+		"/D/xampp/htdocs/vieassociative/app/models/elo/Proposition.php",
+		"/D/xampp/htdocs/vieassociative/app/routes.php",
+		"/D/xampp/htdocs/vieassociative/app/models/validators/discussion.php",
+		"/D/xampp/htdocs/vieassociative/app/models/User.php",
+		"/D/xampp/htdocs/vieassociative/app/models/elo/Answer.php",
+		"/D/xampp/htdocs/vieassociative/app/controllers/AssociationController.php",
+		"/D/xampp/htdocs/vieassociative/public/js/vendor/parsley.min.js",
+		"/D/xampp/htdocs/vieassociative/app/views/association/edit-general-informations.blade.php",
 		"/D/xampp/htdocs/philippe/index.html",
 		"/D/xampp/htdocs/vieassociative/app/views/template/theme.blade.php",
-		"/D/xampp/htdocs/vieassociative/app/models/Proposition.php",
 		"/D/xampp/htdocs/vieassociative/app/views/template/main_html_component/link-head.blade.php",
 		"/D/xampp/htdocs/vieassociative/public/css/compiled.css",
 		"/D/xampp/htdocs/vieassociative/public/css/css/include.css",
 		"/D/xampp/htdocs/vieassociative/public/css/less/general.less",
-		"/D/xampp/htdocs/vieassociative/app/database/migrations/2013_09_27_080749_history_association.php",
-		"/D/xampp/htdocs/vieassociative/app/models/Answer.php",
 		"/D/xampp/htdocs/vieassociative/app/controllers/AssociationFormController.php",
 		"/D/xampp/htdocs/vieassociative/app/views/template/main_html_component/link-foot.blade.php",
-		"/D/xampp/htdocs/vieassociative/app/controllers/AssociationController.php",
 		"/D/xampp/htdocs/vieassociative/public/js/social.js",
-		"/D/xampp/htdocs/vieassociative/app/lang/fr/association/proposition/answer.php",
-		"/D/xampp/htdocs/vieassociative/app/routes.php",
 		"/D/xampp/htdocs/vieassociative/app/models/LieuTable.php",
 		"/D/xampp/htdocs/vieassociative/app/controllers/DiscussionController.php",
 		"/D/xampp/htdocs/vieassociative/app/lang/fr/association/proposition/title.php",
@@ -251,17 +275,12 @@
 		"/D/xampp/htdocs/vieassociative/app/views/discussion/index.blade.php",
 		"/D/Users/ser/Desktop/tube.c",
 		"/D/Users/ser/Desktop/canular1",
-		"/D/xampp/htdocs/vieassociative/app/views/association/edit.blade.php",
-		"/D/xampp/htdocs/vieassociative/app/models/User.php",
-		"/D/xampp/htdocs/vieassociative/app/models/elo/Answer.php",
-		"/D/xampp/htdocs/vieassociative/app/models/elo/Proposition.php",
 		"/D/xampp/htdocs/vieassociative/app/models/elo/Discussion.php",
 		"/D/xampp/htdocs/vieassociative/app/database/migrations/2013_10_07_122749_proposition.php",
 		"/D/xampp/htdocs/vieassociative/artisan",
 		"/D/Users/ser/Desktop/Ouvrage.java",
 		"/D/Users/ser/Desktop/class Ouvrage{",
 		"/D/xampp/htdocs/vieassociative/app/views/association/list-news.blade.php",
-		"/D/xampp/htdocs/vieassociative/app/models/validators/discussion.php",
 		"/D/xampp/htdocs/vieassociative/app/models/elo/Vote.php",
 		"/D/Users/ser/Desktop/qsd",
 		"/D/xampp/htdocs/vieassociative/public/css/less/specific.less",
@@ -351,10 +370,7 @@
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/lang/fr/index/index.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/template/aside/facebook.blade.php",
 		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/template/main_html_component/header.blade.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/template/main_html_component/aside.blade.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/lang/fr/aside.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/template/main_html_component/footer.blade.php",
-		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/index/maintenance.blade.php"
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/template/main_html_component/aside.blade.php"
 	],
 	"find":
 	{
@@ -380,6 +396,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"I",
+			"id_discussion",
 			"e",
 			"oswald",
 			"owwald",
@@ -522,8 +540,67 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/controllers/DiscussionController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3091,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								146,
+								169
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/filters.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 3277,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2779,
+								2779
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1848.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],

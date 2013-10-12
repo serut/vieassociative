@@ -42,7 +42,7 @@
         //association.vieassociative.fr/*
             Route::get('/', function()
             {
-                return View::make('index.index');
+                return View::make('index.association');
             });
             Route::get('{id}-{text}', 'AssociationController@getProfile')->where('id', '[0-9]+')->where('text', '[a-z-]+');
             Route::group(array('before'=>'auth'), function()

@@ -7,8 +7,8 @@
         <div>
             <ul class="breadcrumb">
               <li><a href="#">Association</a> <span class="divider">/</span></li>
-              <li><a href="/1-qsdf">Faites de la musique</a> <span class="divider">/</span></li>
-              <li><a href="/1/edit">Edition</a> <span class="divider">/</span></li>
+              <li><a href="/{{$association->id}}-qsdf">Faites de la musique</a> <span class="divider">/</span></li>
+              <li><a href="/{{$association->id}}/edit">Edition</a> <span class="divider">/</span></li>
               <li class="active">Les administrateurs</li>
             </ul>
             <h3 class="head">{{Lang::get('association/edit/administrator.list_admin')}} </h3>
@@ -27,8 +27,8 @@
                 @foreach($admin as $k=>$v)
                 <tbody>
                     <tr>
-                        <td>{{$v->id_user}}</td>
-                        <td>{{$v->updated_at}}</td>
+                        <td>{{$v->author->username}}</td>
+                        <td>{{\Carbon\Carbon::createFromTimeStamp(strtotime($v->updated_at))->formatLocalized('%A %d %B %Y %H:%I')}}</td>
                         <td>{{$v->link}}</td>
                         @if($is_admin)
                         <td><a href="#"><i class="icon-remove"></i></a></td>
@@ -37,11 +37,10 @@
                 </tbody>
                 @endforeach
             </table>
+            @if($is_admin || !$admin->count())
             <hr>
             <h3 class="head">{{Lang::get('association/edit/administrator.add_admin')}} </h3>
             {{ Form::open(array('class'=> 'form-horizontal form-modal','data-validate'=>'our-parsey', 'url'=>'/'.$association->id.'/form/administrator/add')) }}
-
-                
                 @input = array(
                     'id'=>"who",
                     'name'=> 'who',
@@ -92,6 +91,7 @@
                             'class' => 'input-xlarge',
                             'data-original-title'=>Lang::get('association/form_create.tooltip_link'),
                             'data-maxlength'=>"30",
+                            'required'=>"required",
                         )
                     )@
                     {{SiteHelpers::create_input($input)}}
@@ -102,6 +102,7 @@
                 <br>
             {{ Form::close() }}
             </div>
+            @endif
         </div>
     </section>
 @stop

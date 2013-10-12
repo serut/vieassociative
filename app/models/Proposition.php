@@ -59,9 +59,19 @@ class Proposition  extends Eloquent
         elo_Association::where('id',$where['id'])->update($data);
         $p->delete();
         $a = elo_Answer::findOrFail($p->id_answer);
-        $a->content .= '<h6 class="text-success" href="#">'.
+        $a->content .= '<h6 class="text-success">'.
                        Lang::get('association/proposition/answer.success').
                        \Carbon\Carbon::createFromTimeStamp(strtotime($p->created_at))->formatLocalized('%A %d %B %Y %H:%I').
+                       '</h6>'; 
+        $a->touch();
+    }
+
+    static function refused($id){
+        $p = elo_Proposition::findOrFail($id);
+        $p->delete();
+        $a = elo_Answer::findOrFail($p->id_answer);
+        $a->content .= '<h6 class="text-error">'.
+                       Lang::get('association/proposition/answer.refused').
                        '</h6>'; 
         $a->touch();
     }

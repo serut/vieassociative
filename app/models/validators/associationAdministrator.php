@@ -32,7 +32,7 @@ class validators_associationAdministrator extends BaseValidator
     public function add_when_already_admin(){
         // he adds somebody else as admin
         $rules = array(
-            'admin_mail' => 'required|email|exists:user',
+            'admin_mail' => 'required|email|exists:user,email',
             'link' => 'required|max:30',
         );
         return $this->test($rules);

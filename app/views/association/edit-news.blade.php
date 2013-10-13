@@ -46,8 +46,16 @@
                     </div>
                 </div>
                 <div id="lB" class="tab-pane">
-                    <h5>{{Lang::get('association/edit/news.wish_time_publish')}} :</h5>
-                    <input name="wish_time_publish" type="text" value="02-16-2012" class="datepicker">
+                    @input = array(
+                        'id'=>"published_at",
+                        'label'=>Lang::get('association/edit/news.label_published_at'),
+                        'value'=>$post->published_at,
+                        'form' => array(
+                            'placeholder'=>Lang::get('association/edit/news.placeholder_published_at'),
+                            'class' => 'datepicker',
+                        )
+                    )@
+                    {{SiteHelpers::create_input($input)}}
                 </div>
             </div>
         </div>

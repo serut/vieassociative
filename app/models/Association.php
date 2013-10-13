@@ -22,13 +22,6 @@ class Association  extends Eloquent
         $a = elo_Association::findOrFail($id_assoc);
         return $a;
     }
-    static function addAdmin($id_user,$id_assoc,$link){
-        $el = new elo_UserAssociation();
-        $el->id_user = $id_user;
-        $el->id_assoc = $id_assoc;
-        $el->link = $link;
-        $el->touch();
-    }
     static function countAdmin($idAssoc){
         return elo_UserAssociation::where('id_assoc',$idAssoc)->count();
     }
@@ -38,8 +31,6 @@ class Association  extends Eloquent
         $result = DB::select($sql, array($idUser));
         return $result;
     }
-
-
     static function getLogo($idAssoc){
         $sql = 'SELECT image.libelle FROM association,image WHERE association.id_logo = image.id AND association.id = ?';
         $result = DB::select($sql, array($idAssoc));

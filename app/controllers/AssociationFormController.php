@@ -73,41 +73,65 @@ class AssociationFormController  extends BaseController {
                 }
                 break;
             case 'administrator':
-                $v = new validators_associationAdministrator;
-                if(Input::has('who')){
-                    // if we don't know if he register himself or somebody else
-                    $result = $v->add_when_not_admin();
-                    if(isset($result['success'])){
-                        $nbAdmin = elo_UserAssociation::where('id_assoc',$id)->count();
-                        if($nbAdmin==0 || $this->isAdministrator($id)){
-                            if($result['data']['who']=='false'){
-                                Association::addAdmin(Auth::user()->id,$id,$result['data']['link']);
-                            }else{
-                                $user = User::where('email', $result['data']['admin_mail'])->firstOrFail();
-                                if(!$this->isUserAdministrator($id,$user->id)){
-                                    Association::addAdmin($user->id,$id,$result['data']['link']);
-                                }
-                            }
-                        }
-                    }
-                }else{
-                    $result = $v->add_when_already_admin();
-                    // he is already an admin, he is adding somebody else
-                    if(isset($result['success']) && $this->isAdministrator($id)){
-                        $user = User::where('email', $result['data']['admin_mail'])->firstOrFail();
-                        if(!$this->isUserAdministrator($id,$user->id)){
-                            Association::addAdmin($user->id,$id,$result['data']['link']);
-                        }
-                    }
+                switch ($item) {
+                    case 'add':
+                        $result = $this->addAdministrator($id,$item);
+                        break;
+                    case 'remove':
+
                 }
-                if(isset($result['success'])){
-                    $result['redirect_url'] = '/'.$id.'/edit/administrator';
-                }
+                
         }
         if(isset($result['success'])){
             $result['data']=null; //Remove data
         }
         return Response::json($result);
+    }
+    private function removeAdministrator($id, $item){
+        $v = new validators_associationAdministrator;
+        $result = $v->remove_admin();
+        if(isset($result['success']) && $this->isAdministrator($id)){
+            elo_UserAssociation::where('id_assoc',$id)
+                                ->where('id_user',$result['data']['id_user'])
+                                ->delete();
+        }
+        if(isset($result['success'])){
+            $result['redirect_url'] = '/'.$id.'/edit/administrator';
+        }
+        return $result;
+    }
+    private function addAdministrator($id, $item){
+        $v = new validators_associationAdministrator;
+        if(Input::has('who')){
+            // if we don't know if he register himself or somebody else
+            $result = $v->add_when_not_admin();
+            if(isset($result['success'])){
+                $nbAdmin = elo_UserAssociation::where('id_assoc',$id)->count();
+                if($nbAdmin==0 || $this->isAdministrator($id)){
+                    if($result['data']['who']=='false'){
+                        User::addAdmin(Auth::user()->id,$id,$result['data']['link']);
+                    }else{
+                        $user = User::where('email', $result['data']['admin_mail'])->firstOrFail();
+                        if(!$this->isUserAdministrator($id,$user->id)){
+                            User::addAdmin($user->id,$id,$result['data']['link']);
+                        }
+                    }
+                }
+            }
+        }else{
+            $result = $v->add_when_already_admin();
+            // he is already an admin, he is adding somebody else
+            if(isset($result['success']) && $this->isAdministrator($id)){
+                $user = User::where('email', $result['data']['admin_mail'])->firstOrFail();
+                if(!$this->isUserAdministrator($id,$user->id)){
+                    User::addAdmin($user->id,$id,$result['data']['link']);
+                }
+            }
+        }
+        if(isset($result['success'])){
+            $result['redirect_url'] = '/'.$id.'/edit/administrator';
+        }
+        return $result;
     }
     private function generalInformations($id,$item){
         $v = new validators_associationGeneralInformation;

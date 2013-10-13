@@ -43,7 +43,7 @@
               <tbody>
                 <tr>
                   <td><span class="text-success">Information générale de l'association</span></td>
-                  <td>80% completé</td>
+                  <td></td>
                   <td><a href="edit/general-informations"> Editer</a></td>
                 </tr>
                 <tr>

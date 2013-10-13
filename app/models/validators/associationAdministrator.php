@@ -37,4 +37,11 @@ class validators_associationAdministrator extends BaseValidator
         );
         return $this->test($rules);
     }
+    public function remove(){
+        // he adds somebody else as admin
+        $rules = array(
+            'id_user' => 'integer',
+        );
+        return $this->test($rules);
+    }
 }

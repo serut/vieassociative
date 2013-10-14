@@ -30,6 +30,7 @@
 
 		            @input = array(
 				            'id'=>"username",
+				            'full-width'=>true,
 		            		'form' => array(
 					            'placeholder'=>Lang::get('membre/form_connexion.placeholder_pseudo'),
 					            'class' => 'input-large username-field',
@@ -44,6 +45,7 @@
 		            @input = array(
 				            'type' => 'password',
 				            'id'=>"password",
+				            'full-width'=>true,
 		            		'form' => array(
 					            'placeholder'=>Lang::get('membre/form_connexion.placeholder_password'),
 					            'class' => 'input-large password-field',
@@ -80,6 +82,7 @@
 	        {{ Form::open(array('class'=> 'form','url' => 'user/log/register', 'data-validate'=>'our-parsey-2')) }}
 	        	@input = array(
 			            'id'=>"pseudo",
+			            'full-width'=>true,
 	            		'form' => array(
 				            'placeholder'=>Lang::get('membre/form_connexion.placeholder_pseudo'),
 				            'class' => 'input-large username-field',
@@ -94,6 +97,7 @@
 
 	            @input = array(
 			            'id'=>"mail",
+			            'full-width'=>true,
 	            		'form' => array(
 				            'placeholder'=>Lang::get('membre/form_connexion.placeholder_email'),
 				            'class' => 'input-large email-field',
@@ -108,6 +112,7 @@
 	            @input = array(
 			            'type' => 'password',
 			            'id'=>"password",
+			            'full-width'=>true,
 	            		'form' => array(
 				            'placeholder'=>Lang::get('membre/form_connexion.placeholder_password'),
 				            'class' => 'input-large password-field',

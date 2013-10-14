@@ -14,7 +14,7 @@
             <div class="span9 align-right">
                 <span class="social_icons">
                     <span class="rss"><a title="rss" href="#"></a></span>
-                    <span class="googleplus"><a title="googleplus" href="#"></a></span>
+                    <span class="googleplus"><a title="googleplus" href="https://plus.google.com/u/0/b/111279553320723865802/111279553320723865802"></a></span>
                     <span class="twitter"><a title="twitter" href="https://twitter.com/VieAssociative"></a></span>
                     <span class="facebook"><a title="facebook" href="https://www.facebook.com/vieassociativeofficiel"></a></span>
                 </span>

@@ -52,7 +52,10 @@ class SiteHelpers{
 	static function create_input($options){
 		$txt = '<div class="control-group">';
 			$txt.= SiteHelpers::add_label($options);
-			$txt.= '<div class="controls">';
+			if(isset($options['full-width']))
+				$txt.= '<div class="controls-full-width">';
+			else
+				$txt.= '<div class="controls">';
 				$txt.= SiteHelpers::simple_input($options);
 			$txt.= "</div>";
 		$txt.= "</div>";
@@ -109,6 +112,13 @@ class SiteHelpers{
 		switch ($options['type']) {
 			case 'password':
 				return Form::password($options['id'], $options['form']);
+			case 'dateandtime':
+				$options['form']['data-format']="dd/MM/yyyy hh:mm:ss";
+				return Form::text($options['id'],$options['value'],$options['form']).'
+						<span class="add-on">
+                            <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+                            </i>
+                        </span>';
 		}
 		return Form::text($options['id'],$options['value'],$options['form']);
 	}

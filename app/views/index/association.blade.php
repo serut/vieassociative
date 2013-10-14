@@ -80,7 +80,7 @@
                   	<i class="icon-remove"></i> Attaque XSS <br>
                   	<i class="icon-remove"></i> Utilisation du CSRF<br>
                   	<i class="icon-remove"></i> Vérification complète des droits avant d'appliquer les taches d'administrateur<br>
-                  	<i class="icon-ok"></i> La totalité des autres failles à ma connaissance<br>
+                  	<i class="icon-ok"></i> La totalité des autres failles à notre connaissance<br>
                   	</td>
                 </tr>
                 <tr>

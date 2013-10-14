@@ -15,16 +15,18 @@
 	<script src="http://cdn.vieassociative.fr/js/vendor/parsley.min.js" async="true"></script>
 	<script src="http://cdn.vieassociative.fr/js/vendor/tmpl.min.js" async="true"></script>
 	<script src="http://cdn.vieassociative.fr/js/vendor/masonry.min.js" async="true"></script>
+	<script src="http://cdn.vieassociative.fr/js/vendor/bootstrap-datetimepicker.min.footer-js" async="true"></script>
 @else
 	{{-- Direct link --}}
 	<script src="/js/vendor/jquery-1.9.1.min.js"></script>
 	<script src="/js/vendor/bootstrap.min.js"></script>
 	<script src="/js/vendor/fancybox.min.js"></script>
 	<script src="/js/main.js"></script>
-	<script src="/js/vendor/images-loaded.min.js" async="true"></script>
-	<script src="/js/vendor/parsley.min.js" async="true"></script>
-	<script src="/js/vendor/tmpl.min.js" async="true"></script>
-	<script src="/js/vendor/masonry.min.js" async="true"></script>
+	<script src="/js/vendor/images-loaded.min.js"></script>
+	<script src="/js/vendor/parsley.min.js"></script>
+	<script src="/js/vendor/tmpl.min.js"></script>
+	<script src="/js/vendor/masonry.min.js"></script>
+	<script src="/js/vendor/bootstrap-datetimepicker.min.js"></script>
 @endif
 
 

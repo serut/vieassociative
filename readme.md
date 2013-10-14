@@ -31,7 +31,7 @@ We currently use these softwares for making vieassociative awesome :
 * masonry : MIT License
 * mcustomscrollbar : GNU and Creative Commons
 * jquery-mousewheel : MIT License
-* [bootstrap-datepicker](https://github.com/eternicode/bootstrap-datepicker) : Apache 2.0
+* [bootstrap-datetimepicker](https://github.com/tarruda/bootstrap-datetimepicker) : Apache 2.0
 
 Moreover there are libraries included by Laravel : thanks to them too. ;)
 

@@ -48,11 +48,12 @@
                 <div id="lB" class="tab-pane">
                     @input = array(
                         'id'=>"published_at",
+                        'class'=>"input-append date",
                         'label'=>Lang::get('association/edit/news.label_published_at'),
                         'value'=>$post->published_at,
+                        'type'=>'dateandtime',
                         'form' => array(
-                            'placeholder'=>Lang::get('association/edit/news.placeholder_published_at'),
-                            'class' => 'datepicker',
+                            'class'=>'input-medium',
                         )
                     )@
                     {{SiteHelpers::create_input($input)}}
@@ -66,16 +67,16 @@
     {{ Form::close() }}
     </div>
 </section>
+
 @stop
 
 {{-- Footer script --}}
 @section('footer-js')
-    <script src="{{asset('/js/vendor/bootstrap.datepicker.js')}}"></script>
-    <script type="text/javascript" src="{{asset('/pluggin/bootstrap-datepicker/locales/bootstrap-datepicker.fr.js')}}" charset="UTF-8"></script>    <script src="{{asset('/js/vendor/bootstrap.datepicker.js')}}"></script>
     <script type="text/javascript">
-        $('.datepicker').datepicker({
-            language: "fr",
-            format: "yyyy/mm/dd",
+    $(function() {
+      $('#published_at').parent().datetimepicker({
+          language: 'pt-BR'
         });
+      });
     </script>
 @stop

@@ -1,7 +1,7 @@
 <?php
 class BaseValidator{
 	public function getMessageMissingInput(){
-		return array('status'=>'error', 'text'=>Lang::get('core/form.input_missing'));
+		return array('error'=>array('type'=>'Validateur Error', 'message'=>Lang::get('core/form.input_missing'),'file'=>'Validator','line'=>0));
 	}
 	public function need($elements){
 		$noProblem = true;

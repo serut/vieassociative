@@ -18,7 +18,7 @@
         <hr>
         {{ Form::open(array('class'=> 'form-horizontal','data-validate'=>'our-parsey')) }}
 
-        <div class="tabbable tabs-left">
+        <div class="tabbable">
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#lA">{{Lang::get('association/edit/news.content')}}</a></li>
                 <li><a data-toggle="tab" href="#lB">{{Lang::get('association/edit/news.advanced_options')}}</a></li>
@@ -39,10 +39,8 @@
                     )@
                     {{SiteHelpers::create_input($input)}}
                     <div>
-                        <label class="control-label" for="inputPassword">{{Lang::get('association/edit/news.label_text')}}</label>
-                        <div class="controls controls-textarea">
-                            <textarea name="text" rows="8" id="text" class="input-xxlarge nicEditor-textarea" onclick="launchEditor($(this))">{{$post->content}}</textarea>
-                        </div>
+                        <label for="inputPassword">{{Lang::get('association/edit/news.label_text')}}</label>
+                        {{SiteHelpers::add_textarea('text',$post->content, true, true)}}
                     </div>
                 </div>
                 <div id="lB" class="tab-pane">

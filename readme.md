@@ -23,7 +23,7 @@ We currently use these softwares for making vieassociative awesome :
 * [JQuery](http://jquery.com/) : MIT License
 * [LESS](http://lesscss.org/) : Apache 2.0
 * [Buttons](http://alexwolfe.github.io/Buttons/) : Apache 2.0
-* NicEdit : MIT License
+* [bootstrap-wysiwyg](https://github.com/mindmup/bootstrap-wysiwyg) : MIT License
 * [Parsley](http://parsleyjs.org/) : free to use
 * FancyBox : free to use for personal or non-profit website projects
 * imagesLoaded : MIT License

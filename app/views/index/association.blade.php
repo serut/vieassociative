@@ -86,8 +86,8 @@
                 <tr>
                   <td>Vie Associative</td>
                   <td>
-                    <i class="icon-remove"></i> Changer le WYSIWYG <br>
-                    <i class="icon-remove"></i> Ajouter un datepicker - dateperiod<br>
+                    <i class="icon-ok"></i> Changer le WYSIWYG <br>
+                    <i class="icon-ok"></i> Ajouter un datepicker - dateperiod<br>
                     <i class="icon-remove"></i> Devrions nous utiliser AngularJS ?<br>
                     </td>
                 </tr>

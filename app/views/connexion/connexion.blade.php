@@ -26,7 +26,7 @@
 	        @if ( $connexTentative < 10 )
 	            {{--// Le gars a le droit de voir le formulaire --}}
                 <p>{{Lang::choice('membre/connexion.connect_account',10-$connexTentative,array('number' => 10-$connexTentative))}}</p>
-	            {{ Form::open(array('class'=> 'form','url' => 'user/log/login', 'data-validate'=>'our-parsey-1')) }}
+	            {{ Form::open(array('class'=> 'form','url' => 'user/log/login', 'data-validate'=>'our-parsey-1', 'data-loading'=>'true')) }}
 
 		            @input = array(
 				            'id'=>"username",
@@ -79,7 +79,7 @@
 	    <div>
 	    	<h3 class="head">{{Lang::get('membre/connexion.head_create_account')}}</h3>
 	        <p>{{Lang::get('membre/connexion.create_account')}}</p>
-	        {{ Form::open(array('class'=> 'form','url' => 'user/log/register', 'data-validate'=>'our-parsey-2')) }}
+	        {{ Form::open(array('class'=> 'form','url' => 'user/log/register', 'data-validate'=>'our-parsey-2', 'data-loading'=>'true')) }}
 	        	@input = array(
 			            'id'=>"pseudo",
 			            'full-width'=>true,

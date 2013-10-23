@@ -6,7 +6,7 @@
     <section>
         <div>
             <h3 class="head">{{Lang::get('association/form_create.head_add_association')}}</h3>
-            {{ Form::open(array('class'=> 'form-horizontal','data-validate'=>'our-parsey')) }}
+            {{ Form::open(array('class'=> 'form-horizontal','data-validate'=>'our-parsey', 'data-loading'=>'true')) }}
 
                 @input = array(
                     'id'=>"link",

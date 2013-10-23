@@ -74,7 +74,22 @@ div[data-role="editor-toolbar"] {
 .nicEdit-pane div{
     line-height: normal;
 }
+.spinner-container {
+    -webkit-transition: opacity 1s ease-in-out;
+       -moz-transition: opacity 1s ease-in-out;
+        -ms-transition: opacity 1s ease-in-out;
+         -o-transition: opacity 1s ease-in-out;
+            transition: opacity 1s ease-in-out;
+    .opacity(0.5);
+    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.75);
+    position: absolute;
+    .rounded-corners(5px);
+}
 .spinner-load {
+    margin: -16px auto;
+    position: relative;
+    top: 50%;
     background-image: url(/img/items/spinner.png);
     width: 32px; height: 32px;
     animation: loader-spinner .7s infinite linear;

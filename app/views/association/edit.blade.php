@@ -26,7 +26,7 @@
                     @foreach($proposition as $p)
                     <div class="item">
                         <div class="text">
-                            <span>Title : {{$p->discussion->title}}</span>
+                            <span>{{$p->discussion->title}}</span>
                             <div class="tweetbtn">
                             <img width="13" height="13" alt="Favorite" src="/img/to sprite/retweet_mini.png">
                             <a href="discussion/{{$p->discussion->id}}">Afficher</a>

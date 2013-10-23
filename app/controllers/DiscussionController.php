@@ -7,7 +7,8 @@ class DiscussionController  extends BaseController {
         return View::make('discussion.proposition')
             ->with('posts',$discussion)
             ->with('discussion',elo_Discussion::find($idDiscu))
-            ->with('association',elo_Association::find($idAssoc));
+            ->with('association',elo_Association::find($idAssoc))
+            ->with('is_admin',User::isAdministrator($idAssoc));
     }
 
     public function postAdd(){
@@ -97,7 +98,6 @@ class DiscussionController  extends BaseController {
             }
             $result['data']=null; //Remove data
         }
-        
         return Response::json($result);
     }
 }

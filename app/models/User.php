@@ -38,6 +38,21 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         return $this->email;
     }
 
+    static function isAdministrator($id_assoc){
+        return User::isUserAdministrator($id_assoc,Auth::user()->id); 
+    }
+
+    static function isUserAdministrator($id_assoc,$id_user){
+        $is_admin = elo_UserAssociation::where('id_assoc',$id_assoc)->where('id_user',$id_user)->count();
+        return $is_admin>0 ? true : false; 
+    }
+    static function addAdmin($id_user,$id_assoc,$link){
+        $el = new elo_UserAssociation();
+        $el->id_user = $id_user;
+        $el->id_assoc = $id_assoc;
+        $el->link = $link;
+        $el->touch();
+    }
     static function connexion($id){
         $infoProfil = User::getInfoProfils($id);
         Session::put('idUser', $id);

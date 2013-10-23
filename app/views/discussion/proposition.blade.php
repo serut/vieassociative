@@ -53,10 +53,8 @@
                                     @if($p->level != 3)
                                         <a class="light answer" href="#">Répondre</a> 
                                     @endif
-                                    @if(!empty($p->proposition))
+                                    @if(!empty($p->proposition) && $is_admin)
                                         <a class="text-success validate" data-proposition="{{$p->proposition->id}}" href="#">Valider</a> 
-                                    @endif
-                                    @if(!empty($p->proposition))
                                         <a class="text-warning refuse" data-proposition="{{$p->proposition->id}}" href="#">Refuser</a> 
                                     @endif
                                 </div>

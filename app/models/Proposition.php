@@ -3,7 +3,6 @@ class Proposition  extends Eloquent
 {
     static function add($data){
         $proposition = new elo_Proposition();
-        $proposition->finished = 0;
         $data['message']['id_user'] = Auth::user()->id;
         //look if a conversation like this one exist
         $p = elo_Proposition::where('id_assoc',$data['id_assoc'])->where('type_query',$data['type'])->first();

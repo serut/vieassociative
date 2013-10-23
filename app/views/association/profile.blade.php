@@ -187,7 +187,7 @@
             	<li>Aliquam tincidunt mauris eu risus.</li>
             </ol>
             
-            <p class="text-right"><a href="/1/edit">Editer cette page</a></p>
+            <p class="text-right"><a href="/{{$association->id}}/edit">Editer cette page</a></p>
         </div>
     </section>
 	<!-- Posts will go here ... -->

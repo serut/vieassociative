@@ -48,10 +48,9 @@ class AssociationController  extends BaseController {
         return View::make('association.edit-social');
     }
     public function getEditAdministrator($idAssoc){
-        $a = new AssociationFormController();
         return View::make('association.edit-administrator')
             ->with('association',elo_Association::find($idAssoc))
-            ->with('is_admin',$a->isAdministrator($idAssoc))
+            ->with('is_admin',User::isAdministrator($idAssoc))
             ->with('admin',elo_UserAssociation::where('id_assoc',$idAssoc)->with('author')->get());
     }
     public function getHistory($idAssoc){

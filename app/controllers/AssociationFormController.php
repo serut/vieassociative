@@ -54,7 +54,7 @@ class AssociationFormController  extends BaseController {
         $result = array('error'=>'no method found');
         switch ($origin) {
             case 'general-informations':
-                $result = $this->generalInformations($id,$item);
+                $result = $this->modifyGeneralInformations($id,$item);
                 break;
             case 'vieassociative-informations':
                 switch ($item) {
@@ -90,7 +90,7 @@ class AssociationFormController  extends BaseController {
     private function removeAdministrator($id, $item){
         $v = new validators_associationAdministrator;
         $result = $v->remove_admin();
-        if(isset($result['success']) && $this->isAdministrator($id)){
+        if(isset($result['success']) && User::isAdministrator($id)){
             elo_UserAssociation::where('id_assoc',$id)
                                 ->where('id_user',$result['data']['id_user'])
                                 ->delete();
@@ -107,12 +107,12 @@ class AssociationFormController  extends BaseController {
             $result = $v->add_when_not_admin();
             if(isset($result['success'])){
                 $nbAdmin = elo_UserAssociation::where('id_assoc',$id)->count();
-                if($nbAdmin==0 || $this->isAdministrator($id)){
+                if($nbAdmin==0 || User::isAdministrator($id)){
                     if($result['data']['who']=='false'){
                         User::addAdmin(Auth::user()->id,$id,$result['data']['link']);
                     }else{
                         $user = User::where('email', $result['data']['admin_mail'])->firstOrFail();
-                        if(!$this->isUserAdministrator($id,$user->id)){
+                        if(!User::isUserAdministrator($id,$user->id)){
                             User::addAdmin($user->id,$id,$result['data']['link']);
                         }
                     }
@@ -123,7 +123,7 @@ class AssociationFormController  extends BaseController {
             // he is already an admin, he is adding somebody else
             if(isset($result['success']) && $this->isAdministrator($id)){
                 $user = User::where('email', $result['data']['admin_mail'])->firstOrFail();
-                if(!$this->isUserAdministrator($id,$user->id)){
+                if(!User::isUserAdministrator($id,$user->id)){
                     User::addAdmin($user->id,$id,$result['data']['link']);
                 }
             }
@@ -133,7 +133,7 @@ class AssociationFormController  extends BaseController {
         }
         return $result;
     }
-    private function generalInformations($id,$item){
+    private function modifyGeneralInformations($id,$item){
         $v = new validators_associationGeneralInformation;
         switch ($item) {
             case 'name':
@@ -160,7 +160,7 @@ class AssociationFormController  extends BaseController {
                 break;
         }
         if(isset($result['success'])){
-            if($this->isAdministrator($id)){
+            if(User::isAdministrator($id)){
                 //Apply the request right now
                 elo_Association::where('id',$id)->update($update);
             }else{
@@ -181,11 +181,5 @@ class AssociationFormController  extends BaseController {
         }
         return $result;
     }
-    public function isAdministrator($id_assoc){
-        return $this->isUserAdministrator($id_assoc,Auth::user()->id); 
-    }
-    public function isUserAdministrator($id_assoc,$id_user){
-        $is_admin = elo_UserAssociation::where('id_assoc',$id_assoc)->where('id_user',$id_user)->count();
-        return $is_admin>0 ? true : false; 
-    }
+    
 }

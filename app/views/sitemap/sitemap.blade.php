@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.google.com/schemas/sitemap/0.84">
+<url>
+<loc>http://www.vieassociative.fr/</loc>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>http://www.vieassociative.fr/user/log</loc>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>http://www.vieassoc.lo/legal</loc>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>http://www.vieassociative.fr/info/condition</loc>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>http://doc.vieassociative.fr/</loc>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>http://www.vieassociative.fr/add</loc>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
+</url>
+@foreach($listAssocs as $a)
+<url>
+<loc>http://www.vieassociative.fr/{{$a->id}}-{{$a->slug}}</loc>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
+</url>
+@endforeach
+</urlset>

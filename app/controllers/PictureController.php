@@ -10,8 +10,7 @@ class PictureController  extends BaseController {
     }
     public function getAssociationPictures($idAssoc){
         return View::make('picture.gestion-image')
-                ->with('type',Input::get('change'))
-                ->with('mesImages',Image::mesImages(Session::get('associationEnManagement')));
+                ->with('type',Input::get('change'));
     }
     /* ZEND
     public function getDesactiverImage(){
@@ -31,7 +30,8 @@ class PictureController  extends BaseController {
         
         $dossier_image_originalle = $this->url . 'original' . DIRECTORY_SEPARATOR;
         $dossier_image = $this->url . $qualite . DIRECTORY_SEPARATOR;
-        if (!file_exists($dossier_image_originalle . $nom_image)) {
+        if (!file_exists($dossier_image_originalle . $nom_image)) 
+        {
             $imageAfficher = "image-introuvable-vieassoc.png";
         }else{
             if (!file_exists($dossier_image . $nom_image)) {
@@ -95,7 +95,7 @@ class PictureController  extends BaseController {
             $imageYAfterPoint = ($imageY / 2) - ($imageYAfter / 2);
         }
         
-        // Bonne crÃ©ation d'image
+        // Bonne création d'image
         if ($file_ext == 'jpg' OR $file_ext == 'jpeg') {
             $image_new = imagecreatefromjpeg($imageProvenance);
         } elseif ($file_ext == 'gif') {

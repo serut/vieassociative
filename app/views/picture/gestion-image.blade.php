@@ -11,28 +11,9 @@
                 <li><a href="/1/edit">Edition</a> <span class="divider">/</span></li>
                 <li class="active">Images</li>
             </ul>
-            <h3 class="head">{{Lang::get('association/edit/picture.edit_gallery')}}</h3>
-            <form>
-                <div id="uploader">
-                    <p>Si ce message ne change disparait pas sous peu, c'est que votre navigateur est trop ancien pour pouvoir charger notre module d'envoie d'image</p>
-                </div>
-            </form>
-          <div id="busy3" class="square">
-          </div>
-      </div>
-      <div>
-        <div class="filter-portfolio">
-            <ul class="filterable">
-                <li><a class="option-set" data-categories="*">All</a></li>
-                <li><a class="option-set" data-categories="design">Design</a></li>
-                <li><a class="option-set" data-categories="illustration">Illustration</a></li>
-            </ul> 
-        </div>
-        <div id="gallery" class="portfolio-items isotope span23">
-          <!-- Pictures will go here ... -->
-        </div>
-      </div>
-      <a href="#">Top</a>
+            
+            <input id="fileupload" type="file" name="files[]" data-url="/1/edit/picture/upload" multiple>
+        <div>
     </section>
 @stop
 @section('footer-js')
@@ -47,6 +28,24 @@
     <script src="/pluggin/plupload/i18n/fr.js"></script>
     <script src="/pluggin/plupload/custom.js"></script>
     <script src="/pluggin/neteye/jquery.activity-indicator-1.0.0.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/pluggin/jQueryFileUpload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="/pluggin/jQueryFileUpload/js/jquery.iframe-transport.js"></script>
+    <script src="/pluggin/jQueryFileUpload/js/jquery.fileupload.js"></script>
+    <script>
+    
+    $(function () {
+        $('#fileupload').fileupload({
+            dataType: 'json',
+            done: function (e, data) {
+                $.each(data.result.files, function (index, file) {
+                    $('<p/>').text(file.name).appendTo(document.body);
+                });
+            }
+        });
+    });
+
+    </script>
 
     <script id="photo-pattern" type="text/x-jquery-tmpl">
         <div class="element ${categories} span-size${size}" >

@@ -4,7 +4,8 @@
 	"keywords": ["framework", "laravel"],
 	"require": {
 		"laravel/framework": "4.0.*",
-    	"neoxia/laravel-openssl-encryption": "1.0.*"
+    	"neoxia/laravel-openssl-encryption": "1.0.*",
+		"aws/aws-sdk-php": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

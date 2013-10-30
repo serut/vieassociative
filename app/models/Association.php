@@ -4,6 +4,7 @@ class Association  extends Eloquent
     static function add($assoc){
         $a = new elo_Association;
         $a->name = $assoc['name'];
+        $a->slug = Str::slug($assoc['name'],'-');
         $a->acronym = $assoc['acronym'];
         $a->active = 1;
         $a->touch();

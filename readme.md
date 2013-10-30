@@ -14,7 +14,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-
 
 French version : http://creativecommons.org/licenses/by-nc-sa/3.0/fr/
 
-## we do not reinvent the whell ##
+## we do not reinvent the wheel ##
 
 We currently use these softwares for making vieassociative awesome :
 

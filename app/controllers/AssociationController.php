@@ -56,8 +56,6 @@ class AssociationController  extends BaseController {
     public function getHistory($idAssoc){
         return View::make('association.history');
     }
-
-
     
     public function postAdd(){
         $v = new validators_associationAdd;
@@ -69,12 +67,13 @@ class AssociationController  extends BaseController {
                 User::addAssoc(Auth::user()->id,$id_assoc,$result['data']['link']);
                 $result['redirect_url'] = '/'.$id_assoc.'/edit';
             }else{
-                $result['redirect_url'] = '/'.$id_assoc.'-todo';
+                $result['redirect_url'] = '/'.$id_assoc.'-'.Str::slug($result['data']['name'],'-');;
             }
             $result['data']=null; //Remove data
         }
         return Response::json($result);
     }
+    
     public function postEditNews($idAssoc, $idPost){
         $v = new validators_associationEditPost;
         $result = $v->validate();

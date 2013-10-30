@@ -7,7 +7,7 @@
         <div>
             <ul class="breadcrumb">
               <li><a href="#">Association</a> <span class="divider">/</span></li>
-              <li><a href="/{{$association->id}}-qsdf">{{{$association->name}}}</a> <span class="divider">/</span></li>
+              <li><a href="/{{$association->id}}-qsdf">{{$association->name}}</a> <span class="divider">/</span></li>
               <li class="active">Edition</li>
             </ul>
             <h3 class="head">{{Lang::get('association/edit.edit_association')}}</h3>

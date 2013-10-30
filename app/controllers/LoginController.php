@@ -37,6 +37,8 @@ class LoginController extends BaseController
             Auth::loginUsingId($user->id);
             User::connexion($user->id);
             $result['redirect_url'] = URL::to('/');
+            $c = new EmailController();
+            $c->sendConfirmation($user->username,$user->email);
         }
         return Response::json($result);
 

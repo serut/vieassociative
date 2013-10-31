@@ -16,6 +16,7 @@ class FromScratch extends Migration {
 			$table->engine = 'InnoDB';
 			$table->increments('id');
 			$table->string('name');
+			$table->string('slug');
 			$table->string('acronym');
 			$table->boolean('active');
 			$table->integer('id_logo');

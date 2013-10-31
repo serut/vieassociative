@@ -37,6 +37,7 @@
                     Route::get('{id}-{text}', 'UserController@getProfil')->where('id', '[0-9]+')->where('text', '[a-z-]+');
                 });
             });
+            Route::get('sitemap.xml', 'SitemapController@getSitemap');
             break;
         case 'association':
         //association.vieassociative.fr/*

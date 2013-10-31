@@ -29,7 +29,7 @@ return array(
 	|
 	*/
 
-	'host' => 'smtp.gmail.com',
+	'host' => 'smtp.mailgun.org',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return array(
 	|
 	*/
 
-	'port' => 443,
+	'port' => 587,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -55,7 +55,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'no-reply@vieassociative.fr', 'name' => 'vieassociative <3'),
+	'from' => array('address' => 'no-reply@vieassociative.fr', 'name' => null),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -81,7 +81,7 @@ return array(
 	|
 	*/
 
-	'username' => 'contact@vieassociative.fr',
+	'username' => 'postmaster@vieassociative.fr',
 
 	/*
 	|--------------------------------------------------------------------------

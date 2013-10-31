@@ -11,209 +11,158 @@
                 <li><a href="/1/edit">Edition</a> <span class="divider">/</span></li>
                 <li class="active">Images</li>
             </ul>
-            
-            <input id="fileupload" type="file" name="files[]" data-url="/1/edit/picture/upload" multiple>
-        <div>
+<div class="container">
+    <br>
+    <!-- The file upload form used as target for the file upload widget -->
+    <form id="fileupload" action="//jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data">
+        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+        <div class="row fileupload-buttonbar">
+            <div class="col-lg-7">
+                <!-- The fileinput-button span is used to style the file input field as button -->
+                <span class="btn btn-success fileinput-button">
+                    <i class="glyphicon glyphicon-plus"></i>
+                    <span>Add files...</span>
+                    <input type="file" name="files[]" multiple>
+                </span>
+                <button type="submit" class="btn btn-primary start">
+                    <i class="glyphicon glyphicon-upload"></i>
+                    <span>Start upload</span>
+                </button>
+                <button type="reset" class="btn btn-warning cancel">
+                    <i class="glyphicon glyphicon-ban-circle"></i>
+                    <span>Cancel upload</span>
+                </button>
+                <button type="button" class="btn btn-danger delete">
+                    <i class="glyphicon glyphicon-trash"></i>
+                    <span>Delete</span>
+                </button>
+                <input type="checkbox" class="toggle">
+                <!-- The global file processing state -->
+                <span class="fileupload-process"></span>
+            </div>
+            <!-- The global progress state -->
+            <div class="col-lg-5 fileupload-progress fade">
+                <!-- The global progress bar -->
+                <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+                </div>
+                <!-- The extended global progress state -->
+                <div class="progress-extended">&nbsp;</div>
+            </div>
+        </div>
+        <!-- The table listing the files available for upload/download -->
+        <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
+    </form>
+    <br>
+</div>
+
+
     </section>
 @stop
 @section('footer-js')
-
-    <link href="/pluggin/prettyPhoto/prettyPhoto.css" rel="stylesheet">
-
-    <link href="/pluggin/plupload/jquery-ui.css" rel="stylesheet">
-    <link href="/pluggin/plupload/jquery.ui.plupload.css" rel="stylesheet">
-    <script src="/pluggin/plupload/jquery-ui.js"></script>
-    <script src="/pluggin/plupload/plupload.full.js"></script>
-    <script src="/pluggin/plupload/jquery.ui.plupload/jquery.ui.plupload.js"></script>
-    <script src="/pluggin/plupload/i18n/fr.js"></script>
-    <script src="/pluggin/plupload/custom.js"></script>
-    <script src="/pluggin/neteye/jquery.activity-indicator-1.0.0.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script id="template-upload" type="text/x-tmpl">
+        {% for (var i=0, file; file=o.files[i]; i++) { %}
+            <tr class="template-upload fade">
+                <td>
+                    <span class="preview"></span>
+                </td>
+                <td>
+                    <p class="name">{%=file.name%}</p>
+                    <strong class="error text-danger"></strong>
+                </td>
+                <td>
+                    <p class="size">Processing...</p>
+                    <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
+                </td>
+                <td>
+                    {% if (!i && !o.options.autoUpload) { %}
+                        <button class="btn btn-primary start" disabled>
+                            <i class="glyphicon glyphicon-upload"></i>
+                            <span>Start</span>
+                        </button>
+                    {% } %}
+                    {% if (!i) { %}
+                        <button class="btn btn-warning cancel">
+                            <i class="glyphicon glyphicon-ban-circle"></i>
+                            <span>Cancel</span>
+                        </button>
+                    {% } %}
+                </td>
+            </tr>
+        {% } %}
+    </script>
+    <!-- The template to display files available for download -->
+    <script id="template-download" type="text/x-tmpl">
+        {% for (var i=0, file; file=o.files[i]; i++) { %}
+            <tr class="template-download fade">
+                <td>
+                    <span class="preview">
+                        {% if (file.thumbnailUrl) { %}
+                            <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>
+                        {% } %}
+                    </span>
+                </td>
+                <td>
+                    <p class="name">
+                        {% if (file.url) { %}
+                            <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
+                        {% } else { %}
+                            <span>{%=file.name%}</span>
+                        {% } %}
+                    </p>
+                    {% if (file.error) { %}
+                        <div><span class="label label-danger">Error</span> {%=file.error%}</div>
+                    {% } %}
+                </td>
+                <td>
+                    <span class="size">{%=o.formatFileSize(file.size)%}</span>
+                </td>
+                <td>
+                    {% if (file.deleteUrl) { %}
+                        <button class="btn btn-danger delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
+                            <i class="glyphicon glyphicon-trash"></i>
+                            <span>Delete</span>
+                        </button>
+                        <input type="checkbox" name="delete" value="1" class="toggle">
+                    {% } else { %}
+                        <button class="btn btn-warning cancel">
+                            <i class="glyphicon glyphicon-ban-circle"></i>
+                            <span>Cancel</span>
+                        </button>
+                    {% } %}
+                </td>
+            </tr>
+        {% } %}
+    </script>
+    <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
     <script src="/pluggin/jQueryFileUpload/js/vendor/jquery.ui.widget.js"></script>
+    <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+    <script src="http://blueimp.github.io/JavaScript-Load-Image/js/load-image.min.js"></script>
+    <!-- The Canvas to Blob plugin is included for image resizing functionality -->
+    <script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+    <!-- blueimp Gallery script -->
+    <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+    <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
     <script src="/pluggin/jQueryFileUpload/js/jquery.iframe-transport.js"></script>
+    <!-- The basic File Upload plugin -->
     <script src="/pluggin/jQueryFileUpload/js/jquery.fileupload.js"></script>
-    <script>
-    
-    $(function () {
-        $('#fileupload').fileupload({
-            dataType: 'json',
-            done: function (e, data) {
-                $.each(data.result.files, function (index, file) {
-                    $('<p/>').text(file.name).appendTo(document.body);
-                });
-            }
-        });
-    });
-
-    </script>
-
-    <script id="photo-pattern" type="text/x-jquery-tmpl">
-        <div class="element ${categories} span-size${size}" >
-            <a class="fancybox" href="${url_img}" rel="gallery1" title="A title">
-                <img src="${url_img}" class="size${size}"alt=" " />
-            </a>
-        </div>
-        {{--<div class="thumb-text">
-            <b>${head}</b><br>
-            <div class="divider"></div>
-            <a href="#" title="Image Dummy Title" >${link}</a>
-        </div>--}}
-    </script>
-    <script type="text/javascript">
-      function desactiverImage(idImage){
-          var informations = $("li[data-id^='id-"+idImage+"']");
-          ajax(idImage,"/image/desactiver-image",informations,"desactiverImage");
-      }
-      function desactiverImageApresAjax(info){
-          info.hide();
-      }
-      
-      function selectionnerImage(idImage){
-          var informations = $("li[data-id^='id-"+idImage+"']").find('.last span');
-          ajax(idImage,"<?php switch($type){case "logo":echo"/association/changer-logo";break;case "affiche":echo"/evenement/changer-affiche";break;}?>",informations,"selectionnerImage");
-      }
-      function selectionnerImageApresAjax(info,url){
-          info.find('.second span').html('<div class="loadings"></div> Redirection ...');
-          document.location.href=url;
-      }
-      function ajax(idImage, url, info,type){
-          var infoLibelle = info.find('.second span');
-          infoLibelle.html('<img src="http://wbpreview.com/previews/WB0375140/img/loading-black.gif" class="loader"> Chargement ...');
-          $('.loadings').each(function(){ 
-              $(this).activity({segments: 8, width:2, space: 0, length: 3, align: 'left',color: '#000', speed: 1.5});
-          });
-          $.ajax({
-              url: url,
-              dataType: 'json',
-              cache:"false",
-              data: {id: idImage}
-            }).done(function(j) {
-                console.log(j);
-                console.log(info);
-                if(j['etat'] == "succes"){
-                    infoLibelle.find('.second span').html('<i class="icon-ok"></i> Ok');
-                    switch(type){
-                        case "desactiverImage" :
-                            desactiverImageApresAjax(info);
-                        break;
-                        case "selectionnerImage" :
-                            selectionnerImageApresAjax(info,j['url']);
-                    }
-                }else{
-                    infoLibelle.find('.second span').html('<i class="icon-remove"></i> <b>Echec</b>');
-                }
-            },info,type,infoLibelle).error(function(info) {
-                  infoLibelle.find('.second span').html('<i class="icon-remove"></i> <b>Echec</b>');
-            },infoLibelle);
-      }
-    /*Gallery PART START*/
-    var data = [
-        {
-            'url_img':'http://lorempixel.com/800/600/sports/',
-            'head':'WordPress Custom Theme',
-            'link':'Read More',
-            'categories':'illustration',
-            'size' : '2',
-        },
-        {
-            'url_img':'http://lorempixel.com/800/600/animals/',
-            'head':'WordPress Custom Theme',
-            'link':'Read More',
-            'categories':'illustration design',
-            'size' : '1',
-        },
-        {
-            'url_img':'http://lorempixel.com/1000/600/animals/',
-            'head':'WordPress Custom Theme',
-            'link':'Read More',
-            'categories':'illustration',
-            'size' : '2',
-        },
-        {
-            'url_img':'http://dummyimage.com/800x1600/4d494d/686a82.gif&text=placeholder+image',
-            'head':'WordPress Custom Theme',
-            'link':'Read More',
-            'categories':'illustration design',
-            'size' : '1',
-        },
-        {
-            'url_img':'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn1/c26.26.328.328/s160x160/378926_10150600500671124_496920089_n.jpg',
-            'head':'WordPress Custom Theme',
-            'link':'Read More',
-            'categories':'design',
-            'size' : '1',
-        },{
-            'url_img':'http://lorempixel.com/600/1300/animals/',
-            'head':'WordPress Custom Theme',
-            'link':'Read More',
-            'categories':'illustration',
-            'size' : '2',
-        },
-        {
-            'url_img':'http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image',
-            'head':'WordPress Custom Theme',
-            'link':'Read More',
-            'categories':'illustration design',
-            'size' : '1',
-        },
-        {
-            'url_img':'http://dummyimage.com/1000x768/4d494d/686a82.gif&text=placeholder+image',
-            'head':'WordPress Custom Theme',
-            'link':'Read More',
-            'categories':'illustration',
-            'size' : '2',
-        },
-        {
-            'url_img':'http://dummyimage.com/800x1600/4d494d/686a82.gif&text=placeholder+image',
-            'head':'WordPress Custom Theme',
-            'link':'Read More',
-            'categories':'illustration design',
-            'size' : '1',
-        },
-        {
-            'url_img':'http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image',
-            'head':'WordPress Custom Theme',
-            'link':'Read More',
-            'categories':'design',
-            'size' : '1',
-        },{
-            'url_img':'http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image',
-            'head':'WordPress Custom Theme',
-            'link':'Read More',
-            'categories':'illustration',
-            'size' : '2',
-        },
-        {
-            'url_img':'http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image',
-            'head':'WordPress Custom Theme',
-            'link':'Read More',
-            'categories':'illustration design',
-            'size' : '1',
-        },
-        {
-            'url_img':'http://dummyimage.com/1000x768/4d494d/686a82.gif&text=placeholder+image',
-            'head':'WordPress Custom Theme',
-            'link':'Read More',
-            'categories':'illustration',
-            'size' : '2',
-        },
-        {
-            'url_img':'http://dummyimage.com/800x1600/4d494d/686a82.gif&text=placeholder+image',
-            'head':'WordPress Custom Theme',
-            'link':'Read More',
-            'categories':'illustration design',
-            'size' : '1',
-        },
-        {
-            'url_img':'http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image',
-            'head':'WordPress Custom Theme',
-            'link':'Read More',
-            'categories':'design',
-            'size' : '1',
-        },
-    ]
-    loadGallery($('#gallery'),data,$('#photo-pattern'));
-    /*Gallery PART END*/
-    </script>
+    <!-- The File Upload processing plugin -->
+    <script src="/pluggin/jQueryFileUpload/js/jquery.fileupload-process.js"></script>
+    <!-- The File Upload image preview & resize plugin -->
+    <script src="/pluggin/jQueryFileUpload/js/jquery.fileupload-image.js"></script>
+    <!-- The File Upload audio preview plugin -->
+    <script src="/pluggin/jQueryFileUpload/js/jquery.fileupload-audio.js"></script>
+    <!-- The File Upload video preview plugin -->
+    <script src="/pluggin/jQueryFileUpload/js/jquery.fileupload-video.js"></script>
+    <!-- The File Upload validation plugin -->
+    <script src="/pluggin/jQueryFileUpload/js/jquery.fileupload-validate.js"></script>
+    <!-- The File Upload user interface plugin -->
+    <script src="/pluggin/jQueryFileUpload/js/jquery.fileupload-ui.js"></script>
+    <!-- The main application script -->
+    <script src="/pluggin/jQueryFileUpload/js/main.js"></script>
+    <!-- The XDomainRequest Transport is included for cross-domain file deletion for IE 8 and IE 9 -->
+    <!--[if (gte IE 8)&(lt IE 10)]>
+    <script src="js/cors/jquery.xdr-transport.js"></script>
+    <![endif]-->
 @stop
 

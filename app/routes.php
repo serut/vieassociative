@@ -45,7 +45,7 @@
             {
                 return View::make('index.association');
             });
-            Route::get('{id}-{text}', 'AssociationController@getProfile')->where('id', '[0-9]+')->where('text', '[a-z-]+');
+            Route::get('{id}-{text}', 'AssociationController@getProfile')->where('id', '[0-9]+')->where('text', '[a-z-0-9]+');
             Route::group(array('before'=>'auth'), function()
             {
                 Route::post('discussion/add', 'DiscussionController@postAdd');

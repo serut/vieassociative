@@ -7,7 +7,7 @@
         <div>
             <ul class="breadcrumb">
               <li><a href="#">Association</a> <span class="divider">/</span></li>
-              <li><a href="/{{$association->id}}-qsdf">{{$association->name}}</a> <span class="divider">/</span></li>
+              <li><a href="/{{$association->id}}-{{$association->slug}}">{{$association->name}}</a> <span class="divider">/</span></li>
               <li class="active">Edition</li>
             </ul>
             <h3 class="head">{{Lang::get('association/edit.edit_association')}}</h3>
@@ -91,22 +91,4 @@
 @stop
 @section('footer-js')
 <script src="/js/vendor/jquery.mousewheel.min.js" async="true"></script>
-<script type="text/javascript">
-    /*List modifications PART START*/
-    $.ajax({
-        url: '/js/vendor/jquery.mCustomScrollbar.min.js',
-        dataType: 'script',
-        cache: true,
-        success: function() {
-            $("#list-modification").mCustomScrollbar({
-                theme:"dark",
-                scrollButtons:{
-                    enable:true
-                }
-            });
-        }
-    });
-    /*List modifications PART END*/
-    
-    </script>
 @stop

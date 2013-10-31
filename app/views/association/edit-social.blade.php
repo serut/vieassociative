@@ -7,7 +7,7 @@
 <section>
     <div>
         <ul class="breadcrumb">
-          <li><a href="/{{$association->id}}-qsdf">Faites de la musique</a> <span class="divider">/</span></li>
+          <li><a href="/{{$association->id}}-{{$association->slug}}">{{$association->name}}</a> <span class="divider">/</span></li>
           <li><a href="/{{$association->id}}/edit">Edition</a> <span class="divider">/</span></li>
           <li class="active">Editer les pages sociales</li>
         </ul>

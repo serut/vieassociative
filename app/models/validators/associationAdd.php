@@ -1,7 +1,7 @@
 <?php
 class validators_associationAdd extends BaseValidator
 {
-	public function register(){
+    public function register(){
         $inputs = Input::get();
         $inputsRequired = array('name','choice');
         // Looks if every inputs required are present
@@ -19,6 +19,8 @@ class validators_associationAdd extends BaseValidator
         $v = Validator::make($inputs, $rules);
         if(! $v->fails()){
             $message = array('success'=>'true','data'=>$inputs);
+            $purifier = App::make('HTMLPurifier');
+            $message['data']['name'] = $purifier->purify($message['data']['name']);
         }else{
             $message = array('error'=>'');
         }

@@ -5,7 +5,8 @@
 	"require": {
 		"laravel/framework": "4.0.*",
     	"neoxia/laravel-openssl-encryption": "1.0.*",
-		"aws/aws-sdk-php": "dev-master"
+		"aws/aws-sdk-php": "dev-master",
+		"ezyang/htmlpurifier": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

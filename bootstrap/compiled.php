@@ -368,7 +368,7 @@ class Application extends Container implements HttpKernelInterface, ResponsePrep
     }
     public static function getBootstrapFile()
     {
-        return 'C:\\Serveurs\\XAMPP\\htdocs\\vieassociative\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation' . '/start.php';
+        return 'J:\\xampp\\htdocs\\vieassociative\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation' . '/start.php';
     }
     public function startExceptionHandling()
     {
@@ -3033,7 +3033,8 @@ class ExceptionHandler
                             <h2><span>%d/%d</span> %s: %s</h2>
                         </div>
                         <div class="block">
-                            <ol class="traces list_exception">', $ind, $total, $class, $message);
+                            <ol class="traces list_exception">
+', $ind, $total, $class, $message);
                     foreach ($e['trace'] as $trace) {
                         $content .= '       <li>';
                         if ($trace['function']) {
@@ -3062,7 +3063,7 @@ class ExceptionHandler
                 }
             }
         }
-        return "            <div id=\"sf-resetcontent\" class=\"sf-reset\">\n                <h1>{$title}</h1>\n                {$content}\n            </div>";
+        return "            <div id=\"sf-resetcontent\" class=\"sf-reset\">\r\n                <h1>{$title}</h1>\r\n                {$content}\r\n            </div>";
     }
     public function getStylesheet(FlattenException $exception)
     {
@@ -3119,7 +3120,7 @@ class ExceptionHandler
     }
     private function decorate($content, $css)
     {
-        return "<!DOCTYPE html>\n<html>\n    <head>\n        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/>\n        <meta name=\"robots\" content=\"noindex,nofollow\" />\n        <style>\n            /* Copyright (c) 2010, Yahoo! Inc. All rights reserved. Code licensed under the BSD License: http://developer.yahoo.com/yui/license.html */\n            html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}\n\n            html { background: #eee; padding: 10px }\n            img { border: 0; }\n            #sf-resetcontent { width:970px; margin:0 auto; }\n            {$css}\n        </style>\n    </head>\n    <body>\n        {$content}\n    </body>\n</html>";
+        return "<!DOCTYPE html>\r\n<html>\r\n    <head>\r\n        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/>\r\n        <meta name=\"robots\" content=\"noindex,nofollow\" />\r\n        <style>\r\n            /* Copyright (c) 2010, Yahoo! Inc. All rights reserved. Code licensed under the BSD License: http://developer.yahoo.com/yui/license.html */\r\n            html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}\r\n\r\n            html { background: #eee; padding: 10px }\r\n            img { border: 0; }\r\n            #sf-resetcontent { width:970px; margin:0 auto; }\r\n            {$css}\r\n        </style>\r\n    </head>\r\n    <body>\r\n        {$content}\r\n    </body>\r\n</html>";
     }
     private function abbrClass($class)
     {
@@ -3676,7 +3677,7 @@ class ErrorHandler
         }
         if ($this->displayErrors && error_reporting() & $level && $this->level & $level) {
             if (!class_exists('Symfony\\Component\\Debug\\Exception\\ContextErrorException')) {
-                require 'C:\\Serveurs\\XAMPP\\htdocs\\vieassociative\\vendor\\symfony\\debug\\Symfony\\Component\\Debug' . '/Exception/ContextErrorException.php';
+                require 'J:\\xampp\\htdocs\\vieassociative\\vendor\\symfony\\debug\\Symfony\\Component\\Debug' . '/Exception/ContextErrorException.php';
             }
             throw new ContextErrorException(sprintf('%s: %s in %s line %d', isset($this->levels[$level]) ? $this->levels[$level] : $level, $message, $file, $line), 0, $level, $file, $line, $context);
         }
@@ -10300,7 +10301,7 @@ class PrettyPageHandler extends Handler
             return Handler::DONE;
         }
         if (!($resources = $this->getResourcesPath())) {
-            $resources = 'C:\\Serveurs\\XAMPP\\htdocs\\vieassociative\\vendor\\filp\\whoops\\src\\Whoops\\Handler' . '/../Resources';
+            $resources = 'J:\\xampp\\htdocs\\vieassociative\\vendor\\filp\\whoops\\src\\Whoops\\Handler' . '/../Resources';
         }
         $templateFile = "{$resources}/pretty-template.php";
         $cssFile = "{$resources}/pretty-page.css";

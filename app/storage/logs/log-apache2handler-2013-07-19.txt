@@ -1,8 +1,0 @@
-[2013-07-19 13:54:35] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException' in J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php:1438
-Stack trace:
-#0 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\MethodNotAllowedException))
-#1 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
-#2 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(522): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
-#3 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(497): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
-#4 J:\xampp2\htdocs\lara_vieassoc\Dropbox\Dev\www-vieassoc\public\index.php(50): Illuminate\Foundation\Application->run()
-#5 {main} [] []

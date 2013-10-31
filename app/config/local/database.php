@@ -48,7 +48,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'vieassociative',
+			'database'  => 'vieassoc',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',

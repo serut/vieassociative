@@ -3,12 +3,12 @@ class EmailController extends BaseController
 {
 	public function sendConfirmation($name,$email)
 	{
-		Mail::pretend();
 		$user=array('name'=>$name,'email'=>$email);
-		$data=array('name'=>$name,'email'=>$email);
-		Mail::send('mail.register', $data, function($message) use ($user)
-		{
-		    $message->to($user['email'], $user['name'])->subject('Welcome!');
+		$data=array('name'=>$name);
+		Mail::send('mail.register', $data, function ($message) use ($user) {
+			$message->subject('Welcome!');
+			$message->from('noreply@vieassociative.fr', 'Vie Associative');
+			$message->to($user['email']);
 		});
 	}
 	public function sendNewsletter()

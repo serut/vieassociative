@@ -3,9 +3,21 @@
 class SitemapController extends BaseController {
 
 	public function getSitemap() {
-		header("Content-type:application/xml");
-        return View::make('sitemap.sitemap')
-        	//->header('Content-Type', 'text/xml, application/xml')
-            ->with('listAssocs',elo_Association::all()); 
+		$localURL = array(
+				'http://www.vieassociative.fr/',
+				'http://www.vieassociative.fr/user/log',
+				'http://www.vieassociative.fr/legal',
+				'http://www.vieassociative.fr/info/condition',
+				'http://doc.vieassociative.fr/',
+				'http://association.vieassociative.fr/add',
+			);
+		$view = View::make('sitemap.sitemap')
+			->with('localURL',$localURL)
+			->with('listAssocs',elo_Association::all());
+        return Response::make(
+        	$view
+        	,200
+        	,array('Content-type' => 'text/xml; charset=utf-8')
+        );
     }
 }

@@ -7,6 +7,7 @@ use Illuminate\Support\MessageBag;
 use Illuminate\Container\Container;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Illuminate\Support\Contracts\MessageProviderInterface;
 
 class Validator implements MessageProviderInterface {
@@ -14,7 +15,7 @@ class Validator implements MessageProviderInterface {
 	/**
 	 * The Translator implementation.
 	 *
-	 * @var Symfony\Component\Translation\TranslatorInterface
+	 * @var \Symfony\Component\Translation\TranslatorInterface
 	 */
 	protected $translator;
 
@@ -66,6 +67,13 @@ class Validator implements MessageProviderInterface {
 	 * @var array
 	 */
 	protected $customMessages = array();
+
+	/**
+	 * The array of fallback error messages.
+	 *
+	 * @var array
+	 */
+	protected $fallbackMessages = array();
 
 	/**
 	 * The array of custom attribute names.
@@ -167,7 +175,7 @@ class Validator implements MessageProviderInterface {
 	 * @param  string  $attribute
 	 * @param  string|array  $rules
 	 * @param  callable  $callback
-	 * @param  
+	 * @return void
 	 */
 	public function sometimes($attribute, $rules, $callback)
 	{
@@ -632,6 +640,8 @@ class Validator implements MessageProviderInterface {
 	 */
 	protected function validateMax($attribute, $value, $parameters)
 	{
+		if ($value instanceof UploadedFile and ! $value->isValid()) return false;
+
 		return $this->getSize($attribute, $value) <= $parameters[0];
 	}
 
@@ -853,7 +863,7 @@ class Validator implements MessageProviderInterface {
 			$extra[$segments[$i]] = $segments[$i + 1];
 		}
 
-		return $extra;	
+		return $extra;
 	}
 
 	/**
@@ -1088,15 +1098,19 @@ class Validator implements MessageProviderInterface {
 			return $this->getSizeMessage($attribute, $rule);
 		}
 
-		// Finally, if on developer specified messages have been set, and no other
+		// Finally, if no developer specified messages have been set, and no other
 		// special messages apply for this rule, we will just pull the default
 		// messages out of the translator service for this validation rule.
-		else
-		{
-			$key = "validation.{$lowerRule}";
+		$key = "validation.{$lowerRule}";
 
-			return $this->translator->trans($key);
+		if ($key != ($value = $this->translator->trans($key)))
+		{
+			return $value;
 		}
+
+		return $this->getInlineMessage(
+			$attribute, $lowerRule, $this->fallbackMessages
+		) ?: $key;
 	}
 
 	/**
@@ -1104,10 +1118,13 @@ class Validator implements MessageProviderInterface {
 	 *
 	 * @param  string  $attribute
 	 * @param  string  $lowerRule
+	 * @param  array   $source
 	 * @return string
 	 */
-	protected function getInlineMessage($attribute, $lowerRule)
+	protected function getInlineMessage($attribute, $lowerRule, $source = null)
 	{
+		$source = $source ?: $this->customMessages;
+
 		$keys = array("{$attribute}.{$lowerRule}", $lowerRule);
 
 		// First we will check for a custom message for an attribute specific rule
@@ -1115,10 +1132,7 @@ class Validator implements MessageProviderInterface {
 		// that is not attribute specific. If we find either we'll return it.
 		foreach ($keys as $key)
 		{
-			if (isset($this->customMessages[$key]))
-			{
-				return $this->customMessages[$key];
-			}
+			if (isset($source[$key])) return $source[$key];
 		}
 	}
 
@@ -1568,6 +1582,13 @@ class Validator implements MessageProviderInterface {
 	 */
 	public function addExtensions(array $extensions)
 	{
+		if ($extensions)
+		{
+			$keys = array_map('snake_case', array_keys($extensions));
+
+			$extensions = array_combine($keys, array_values($extensions));
+		}
+
 		$this->extensions = array_merge($this->extensions, $extensions);
 	}
 
@@ -1590,13 +1611,13 @@ class Validator implements MessageProviderInterface {
 	/**
 	 * Register a custom validator extension.
 	 *
-	 * @param  string   $rule
+	 * @param  string  $rule
 	 * @param  Closure|string  $extension
 	 * @return void
 	 */
 	public function addExtension($rule, $extension)
 	{
-		$this->extensions[$rule] = $extension;
+		$this->extensions[snake_case($rule)] = $extension;
 	}
 
 	/**
@@ -1732,7 +1753,7 @@ class Validator implements MessageProviderInterface {
 	/**
 	 * Set the Translator implementation.
 	 *
-	 * @param \Symfony\Component\Translation\TranslatorInterface  $translator
+	 * @param  \Symfony\Component\Translation\TranslatorInterface  $translator
 	 * @return void
 	 */
 	public function setTranslator(TranslatorInterface $translator)
@@ -1753,12 +1774,33 @@ class Validator implements MessageProviderInterface {
 	/**
 	 * Set the custom messages for the validator
 	 *
-	 * @param array $messages
+	 * @param  array  $messages
 	 * @return void
 	 */
 	public function setCustomMessages(array $messages)
 	{
 		$this->customMessages = array_merge($this->customMessages, $messages);
+	}
+
+	/**
+	 * Get the fallback messages for the validator.
+	 *
+	 * @return void
+	 */
+	public function getFallbackMessages()
+	{
+		return $this->fallbackMessages;
+	}
+
+	/**
+	 * Set the fallback messages for the validator.
+	 *
+	 * @param  array  $messages
+	 * @return void
+	 */
+	public function setFallbackMessages(array $messages)
+	{
+		$this->fallbackMessages = $messages;
 	}
 
 	/**

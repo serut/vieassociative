@@ -306,7 +306,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\RedirectResponse as SymfonyRedirect;
 class Application extends Container implements HttpKernelInterface, ResponsePreparerInterface
 {
-    const VERSION = '4.0.7';
+    const VERSION = '4.0.9';
     protected $booted = false;
     protected $bootingCallbacks = array();
     protected $bootedCallbacks = array();
@@ -318,8 +318,24 @@ class Application extends Container implements HttpKernelInterface, ResponsePrep
     public function __construct(Request $request = null)
     {
         $this['request'] = $this->createRequest($request);
+        $this->registerBaseServiceProviders();
+    }
+    protected function registerBaseServiceProviders()
+    {
+        foreach (array('Exception', 'Routing', 'Event') as $name) {
+            $this->{"register{$name}Provider"}();
+        }
+    }
+    protected function registerExceptionProvider()
+    {
         $this->register(new ExceptionServiceProvider($this));
+    }
+    protected function registerRoutingProvider()
+    {
         $this->register(new RoutingServiceProvider($this));
+    }
+    protected function registerEventProvider()
+    {
         $this->register(new EventServiceProvider($this));
     }
     protected function createRequest(Request $request = null)
@@ -352,7 +368,7 @@ class Application extends Container implements HttpKernelInterface, ResponsePrep
     }
     public static function getBootstrapFile()
     {
-        return 'D:\\xampp\\htdocs\\vieassociative\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation' . '/start.php';
+        return 'C:\\Serveurs\\XAMPP\\htdocs\\vieassociative\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation' . '/start.php';
     }
     public function startExceptionHandling()
     {
@@ -361,7 +377,11 @@ class Application extends Container implements HttpKernelInterface, ResponsePrep
     }
     public function environment()
     {
-        return $this['env'];
+        if (count(func_get_args()) > 0) {
+            return in_array($this['env'], func_get_args());
+        } else {
+            return $this['env'];
+        }
     }
     public function detectEnvironment($environments)
     {
@@ -591,6 +611,10 @@ class Application extends Container implements HttpKernelInterface, ResponsePrep
         $manifest = $this['config']['app.manifest'];
         return new ProviderRepository(new Filesystem(), $manifest);
     }
+    public function getLocale()
+    {
+        return $this['config']->get('app.locale');
+    }
     public function setLocale($locale)
     {
         $this['config']->set('app.locale', $locale);
@@ -738,7 +762,10 @@ class Request extends SymfonyRequest
     }
     public function hasFile($key)
     {
-        return $this->file($key) instanceof \SplFileInfo;
+        if (is_array($file = $this->file($key))) {
+            $file = head($file);
+        }
+        return $file instanceof \SplFileInfo;
     }
     public function header($key = null, $default = null)
     {
@@ -1143,7 +1170,6 @@ class Request
         foreach ($clientIps as $key => $clientIp) {
             if (IpUtils::checkIp($clientIp, $trustedProxies)) {
                 unset($clientIps[$key]);
-                continue;
             }
         }
         return $clientIps ? array_reverse($clientIps) : array($ip);
@@ -2265,6 +2291,7 @@ class NativeSessionStorage implements SessionStorageInterface
             $this->saveHandler->setActive(false);
         }
         $this->closed = true;
+        $this->started = false;
     }
     public function clear()
     {
@@ -3006,8 +3033,7 @@ class ExceptionHandler
                             <h2><span>%d/%d</span> %s: %s</h2>
                         </div>
                         <div class="block">
-                            <ol class="traces list_exception">
-', $ind, $total, $class, $message);
+                            <ol class="traces list_exception">', $ind, $total, $class, $message);
                     foreach ($e['trace'] as $trace) {
                         $content .= '       <li>';
                         if ($trace['function']) {
@@ -3036,7 +3062,7 @@ class ExceptionHandler
                 }
             }
         }
-        return "            <div id=\"sf-resetcontent\" class=\"sf-reset\">\r\n                <h1>{$title}</h1>\r\n                {$content}\r\n            </div>";
+        return "            <div id=\"sf-resetcontent\" class=\"sf-reset\">\n                <h1>{$title}</h1>\n                {$content}\n            </div>";
     }
     public function getStylesheet(FlattenException $exception)
     {
@@ -3093,7 +3119,7 @@ class ExceptionHandler
     }
     private function decorate($content, $css)
     {
-        return "<!DOCTYPE html>\r\n<html>\r\n    <head>\r\n        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/>\r\n        <meta name=\"robots\" content=\"noindex,nofollow\" />\r\n        <style>\r\n            /* Copyright (c) 2010, Yahoo! Inc. All rights reserved. Code licensed under the BSD License: http://developer.yahoo.com/yui/license.html */\r\n            html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}\r\n\r\n            html { background: #eee; padding: 10px }\r\n            img { border: 0; }\r\n            #sf-resetcontent { width:970px; margin:0 auto; }\r\n            {$css}\r\n        </style>\r\n    </head>\r\n    <body>\r\n        {$content}\r\n    </body>\r\n</html>";
+        return "<!DOCTYPE html>\n<html>\n    <head>\n        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/>\n        <meta name=\"robots\" content=\"noindex,nofollow\" />\n        <style>\n            /* Copyright (c) 2010, Yahoo! Inc. All rights reserved. Code licensed under the BSD License: http://developer.yahoo.com/yui/license.html */\n            html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}\n\n            html { background: #eee; padding: 10px }\n            img { border: 0; }\n            #sf-resetcontent { width:970px; margin:0 auto; }\n            {$css}\n        </style>\n    </head>\n    <body>\n        {$content}\n    </body>\n</html>";
     }
     private function abbrClass($class)
     {
@@ -3289,7 +3315,8 @@ class ExceptionServiceProvider extends ServiceProvider
     }
     protected function getResourcePath()
     {
-        return 'D:\\xampp\\htdocs\\vieassociative\\vendor\\laravel\\framework\\src\\Illuminate\\Exception' . '/resources';
+        $base = $this->app['path.base'];
+        return $base . '/vendor/laravel/framework/src/Illuminate/Exception/resources';
     }
 }
 namespace Illuminate\Routing;
@@ -3649,7 +3676,7 @@ class ErrorHandler
         }
         if ($this->displayErrors && error_reporting() & $level && $this->level & $level) {
             if (!class_exists('Symfony\\Component\\Debug\\Exception\\ContextErrorException')) {
-                require 'D:\\xampp\\htdocs\\vieassociative\\vendor\\symfony\\debug\\Symfony\\Component\\Debug' . '/Exception/ContextErrorException.php';
+                require 'C:\\Serveurs\\XAMPP\\htdocs\\vieassociative\\vendor\\symfony\\debug\\Symfony\\Component\\Debug' . '/Exception/ContextErrorException.php';
             }
             throw new ContextErrorException(sprintf('%s: %s in %s line %d', isset($this->levels[$level]) ? $this->levels[$level] : $level, $message, $file, $line), 0, $level, $file, $line, $context);
         }
@@ -4027,7 +4054,7 @@ class Filesystem
         if ($this->exists($path)) {
             return $this->put($path, $data . $this->get($path));
         } else {
-            return $this->put($data);
+            return $this->put($path, $data);
         }
     }
     public function append($path, $data)
@@ -4100,9 +4127,13 @@ class Filesystem
         }
         return $directories;
     }
-    public function makeDirectory($path, $mode = 511, $recursive = false)
+    public function makeDirectory($path, $mode = 511, $recursive = false, $force = false)
     {
-        return mkdir($path, $mode, $recursive);
+        if ($force) {
+            return @mkdir($path, $mode, $recursive);
+        } else {
+            return mkdir($path, $mode, $recursive);
+        }
     }
     public function copyDirectory($directory, $destination, $options = null)
     {
@@ -4291,6 +4322,15 @@ namespace Illuminate\Cookie;
 use Illuminate\Support\ServiceProvider;
 class CookieServiceProvider extends ServiceProvider
 {
+    public function boot()
+    {
+        $app = $this->app;
+        $this->app->after(function ($request, $response) use($app) {
+            foreach ($app['cookie']->getQueuedCookies() as $cookie) {
+                $response->headers->setCookie($cookie);
+            }
+        });
+    }
     public function register()
     {
         $this->app['cookie'] = $this->app->share(function ($app) {
@@ -5497,7 +5537,7 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
     }
     protected function fillableFromArray(array $attributes)
     {
-        if (count($this->fillable) > 0) {
+        if (count($this->fillable) > 0 and !static::$unguarded) {
             return array_intersect_key($attributes, array_flip($this->fillable));
         }
         return $attributes;
@@ -6264,7 +6304,7 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
         if (is_numeric($value)) {
             return Carbon::createFromTimestamp($value);
         } elseif (preg_match('/^(\\d{4})-(\\d{2})-(\\d{2})$/', $value)) {
-            return Carbon::createFromFormat('Y-m-d', $value);
+            return Carbon::createFromFormat('Y-m-d', $value)->startOfDay();
         } elseif (!$value instanceof DateTime) {
             $format = $this->getDateFormat();
             return Carbon::createFromFormat($format, $value);
@@ -6854,6 +6894,7 @@ class CookieJar
     protected $encrypter;
     protected $path = '/';
     protected $domain = null;
+    protected $queued = array();
     public function __construct(Request $request, Encrypter $encrypter)
     {
         $this->request = $request;
@@ -6910,6 +6951,23 @@ class CookieJar
     public function getEncrypter()
     {
         return $this->encrypter;
+    }
+    public function queue()
+    {
+        if (head(func_get_args()) instanceof Cookie) {
+            $cookie = head(func_get_args());
+        } else {
+            $cookie = call_user_func_array(array($this, 'make'), func_get_args());
+        }
+        $this->queued[$cookie->getName()] = $cookie;
+    }
+    public function unqueue($name)
+    {
+        unset($this->queued[$name]);
+    }
+    public function getQueuedCookies()
+    {
+        return $this->queued;
     }
 }
 namespace Illuminate\Encryption;
@@ -6985,9 +7043,9 @@ class Encrypter
         $beforePad = strlen($value) - $pad;
         return substr($value, $beforePad) == str_repeat(substr($value, -1), $pad);
     }
-    protected function invalidPayload(array $data)
+    protected function invalidPayload($data)
     {
-        return !isset($data['iv']) or !isset($data['value']) or !isset($data['mac']);
+        return !is_array($data) or !isset($data['iv']) or !isset($data['value']) or !isset($data['mac']);
     }
     protected function getIvSize()
     {
@@ -7460,6 +7518,7 @@ class StreamHandler extends AbstractProcessingHandler
 {
     protected $stream;
     protected $url;
+    private $errorMessage;
     public function __construct($stream, $level = Logger::DEBUG, $bubble = true)
     {
         parent::__construct($level, $bubble);
@@ -7482,18 +7541,20 @@ class StreamHandler extends AbstractProcessingHandler
             if (!$this->url) {
                 throw new \LogicException('Missing stream url, the stream can not be opened. This may be caused by a premature call to close().');
             }
-            $errorMessage = null;
-            set_error_handler(function ($code, $msg) use(&$errorMessage) {
-                $errorMessage = preg_replace('{^fopen\\(.*?\\): }', '', $msg);
-            });
+            $this->errorMessage = null;
+            set_error_handler(array($this, 'customErrorHandler'));
             $this->stream = fopen($this->url, 'a');
             restore_error_handler();
             if (!is_resource($this->stream)) {
                 $this->stream = null;
-                throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: ' . $errorMessage, $this->url));
+                throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: ' . $this->errorMessage, $this->url));
             }
         }
         fwrite($this->stream, (string) $record['formatted']);
+    }
+    private function customErrorHandler($code, $msg)
+    {
+        $this->errorMessage = preg_replace('{^fopen\\(.*?\\): }', '', $msg);
     }
 }
 namespace Monolog\Handler;
@@ -9297,7 +9358,7 @@ class PhpEngine implements EngineInterface
         } catch (\Exception $e) {
             $this->handleViewException($e);
         }
-        return ob_get_clean();
+        return ltrim(ob_get_clean());
     }
     protected function handleViewException($e)
     {
@@ -9355,7 +9416,7 @@ class Response
         $charset = $this->charset ?: 'UTF-8';
         if (!$headers->has('Content-Type')) {
             $headers->set('Content-Type', 'text/html; charset=' . $charset);
-        } elseif (0 === strpos($headers->get('Content-Type'), 'text/') && false === strpos($headers->get('Content-Type'), 'charset')) {
+        } elseif (0 === stripos($headers->get('Content-Type'), 'text/') && false === stripos($headers->get('Content-Type'), 'charset')) {
             $headers->set('Content-Type', $headers->get('Content-Type') . '; charset=' . $charset);
         }
         if ($headers->has('Transfer-Encoding')) {
@@ -10239,7 +10300,7 @@ class PrettyPageHandler extends Handler
             return Handler::DONE;
         }
         if (!($resources = $this->getResourcesPath())) {
-            $resources = 'D:\\xampp\\htdocs\\vieassociative\\vendor\\filp\\whoops\\src\\Whoops\\Handler' . '/../Resources';
+            $resources = 'C:\\Serveurs\\XAMPP\\htdocs\\vieassociative\\vendor\\filp\\whoops\\src\\Whoops\\Handler' . '/../Resources';
         }
         $templateFile = "{$resources}/pretty-template.php";
         $cssFile = "{$resources}/pretty-page.css";

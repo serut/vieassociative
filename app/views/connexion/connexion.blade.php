@@ -2,7 +2,7 @@
 
 
 {{--set_true $small_centred --}}
-@section('small-content')
+@section('small-content') 
     <section>
     	<div>
 	    	<h3 class="head">La connexion en 1 clic, sécurisé et rapide !</h3>
@@ -19,7 +19,7 @@
 
 
 @set_true $two_part 
-@section('left-content')
+@section('left-content') 
     <section>
     	<div>
 			<h3 class="head">{{Lang::get('membre/connexion.head_connect_account')}}</h3>

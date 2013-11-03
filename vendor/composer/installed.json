@@ -635,12 +635,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/Seldaek/monolog.git",
-            "reference": "0f3c054dff866aa687ab07572b731fb2ba32e703"
+            "reference": "7f99ac07d38fd367d1f5f85693ae8433738f7f94"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Seldaek/monolog/zipball/0f3c054dff866aa687ab07572b731fb2ba32e703",
-            "reference": "0f3c054dff866aa687ab07572b731fb2ba32e703",
+            "url": "https://api.github.com/repos/Seldaek/monolog/zipball/7f99ac07d38fd367d1f5f85693ae8433738f7f94",
+            "reference": "7f99ac07d38fd367d1f5f85693ae8433738f7f94",
             "shasum": ""
         },
         "require": {
@@ -660,7 +660,7 @@
             "mlehner/gelf-php": "Allow sending log messages to a GrayLog2 server",
             "raven/raven": "Allow sending log messages to a Sentry server"
         },
-        "time": "2013-10-28 09:41:17",
+        "time": "2013-10-31 21:38:39",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -913,55 +913,6 @@
         ],
         "description": "Symfony BrowserKit Component",
         "homepage": "http://symfony.com"
-    },
-    {
-        "name": "predis/predis",
-        "version": "0.8.x-dev",
-        "version_normalized": "0.8.9999999.9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/nrk/predis.git",
-            "reference": "4824af15631f6a80a939cdc58104d03e0aadd17a"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/nrk/predis/zipball/4824af15631f6a80a939cdc58104d03e0aadd17a",
-            "reference": "4824af15631f6a80a939cdc58104d03e0aadd17a",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.2"
-        },
-        "suggest": {
-            "ext-curl": "Allows access to Webdis when paired with phpiredis",
-            "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
-        },
-        "time": "2013-08-31 08:51:10",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Predis": "lib/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Daniele Alessandri",
-                "email": "suppakilla@gmail.com",
-                "homepage": "http://clorophilla.net"
-            }
-        ],
-        "description": "Flexible and feature-complete PHP client library for Redis",
-        "homepage": "http://github.com/nrk/predis",
-        "keywords": [
-            "nosql",
-            "predis",
-            "redis"
-        ]
     },
     {
         "name": "ircmaxell/password-compat",
@@ -1352,12 +1303,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/guzzle/guzzle.git",
-            "reference": "57e96c16fecc32f07736dc9645fdfe1b0160a07c"
+            "reference": "a280594ffbb1b563a0f042182221f39e7de9efa3"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/guzzle/guzzle/zipball/57e96c16fecc32f07736dc9645fdfe1b0160a07c",
-            "reference": "57e96c16fecc32f07736dc9645fdfe1b0160a07c",
+            "url": "https://api.github.com/repos/guzzle/guzzle/zipball/a280594ffbb1b563a0f042182221f39e7de9efa3",
+            "reference": "a280594ffbb1b563a0f042182221f39e7de9efa3",
             "shasum": ""
         },
         "require": {
@@ -1398,7 +1349,7 @@
             "zendframework/zend-cache": "2.0.*",
             "zendframework/zend-log": "2.0.*"
         },
-        "time": "2013-10-30 02:57:15",
+        "time": "2013-11-02 21:40:25",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1437,74 +1388,6 @@
             "http client",
             "rest",
             "web service"
-        ]
-    },
-    {
-        "name": "aws/aws-sdk-php",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/aws/aws-sdk-php.git",
-            "reference": "448c8cbc4d494100904941da744b99343d0057d7"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/448c8cbc4d494100904941da744b99343d0057d7",
-            "reference": "448c8cbc4d494100904941da744b99343d0057d7",
-            "shasum": ""
-        },
-        "require": {
-            "guzzle/guzzle": "~3.7.0",
-            "php": ">=5.3.3"
-        },
-        "require-dev": {
-            "doctrine/cache": "~1.0",
-            "ext-openssl": "*",
-            "monolog/monolog": "1.4.*",
-            "phpunit/phpunit": "3.7.*",
-            "symfony/class-loader": "2.*",
-            "symfony/yaml": "2.*"
-        },
-        "suggest": {
-            "doctrine/cache": "Adds support for caching of credentials and responses",
-            "ext-apc": "Allows service description opcode caching, request and response caching, and credentials caching",
-            "ext-openssl": "Allows working with CloudFront private distributions and verifying received SNS messages",
-            "monolog/monolog": "Adds support for logging HTTP requests and responses",
-            "symfony/yaml": "Eases the ability to write manifests for creating jobs in AWS Import/Export"
-        },
-        "time": "2013-10-25 20:11:10",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.4.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Aws": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "Apache-2.0"
-        ],
-        "authors": [
-            {
-                "name": "Amazon Web Services",
-                "homepage": "http://aws.amazon.com"
-            }
-        ],
-        "description": "AWS SDK for PHP",
-        "homepage": "http://aws.amazon.com/sdkforphp2",
-        "keywords": [
-            "amazon",
-            "aws",
-            "dynamodb",
-            "ec2",
-            "s3",
-            "sdk"
         ]
     },
     {
@@ -1961,18 +1844,583 @@
         "homepage": "http://symfony.com"
     },
     {
+        "name": "edvinaskrucas/notification",
+        "version": "1.2.1",
+        "version_normalized": "1.2.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/edvinaskrucas/notification.git",
+            "reference": "ccb7a33257c9793e384348d122541d4703a678ac"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/edvinaskrucas/notification/zipball/ccb7a33257c9793e384348d122541d4703a678ac",
+            "reference": "ccb7a33257c9793e384348d122541d4703a678ac",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/config": "4.0.x",
+            "illuminate/session": "4.0.x",
+            "illuminate/support": "4.0.x",
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "mockery/mockery": "0.7.*"
+        },
+        "time": "2013-10-01 18:19:59",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Krucas\\Notification": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Edvinas Kručas",
+                "email": "edv.krucas@gmail.com"
+            }
+        ]
+    },
+    {
+        "name": "aws/aws-sdk-php",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/aws/aws-sdk-php.git",
+            "reference": "204550d00de76f70c8a69444823320354a0898c7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/204550d00de76f70c8a69444823320354a0898c7",
+            "reference": "204550d00de76f70c8a69444823320354a0898c7",
+            "shasum": ""
+        },
+        "require": {
+            "guzzle/guzzle": "~3.7.0",
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "doctrine/cache": "~1.0",
+            "ext-openssl": "*",
+            "monolog/monolog": "1.4.*",
+            "phpunit/phpunit": "3.7.*",
+            "symfony/class-loader": "2.*",
+            "symfony/yaml": "2.*"
+        },
+        "suggest": {
+            "doctrine/cache": "Adds support for caching of credentials and responses",
+            "ext-apc": "Allows service description opcode caching, request and response caching, and credentials caching",
+            "ext-openssl": "Allows working with CloudFront private distributions and verifying received SNS messages",
+            "monolog/monolog": "Adds support for logging HTTP requests and responses",
+            "symfony/yaml": "Eases the ability to write manifests for creating jobs in AWS Import/Export"
+        },
+        "time": "2013-10-31 19:16:43",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.4.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Aws": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "Amazon Web Services",
+                "homepage": "http://aws.amazon.com"
+            }
+        ],
+        "description": "AWS SDK for PHP",
+        "homepage": "http://aws.amazon.com/sdkforphp2",
+        "keywords": [
+            "amazon",
+            "aws",
+            "dynamodb",
+            "ec2",
+            "s3",
+            "sdk"
+        ]
+    },
+    {
+        "name": "jeremykendall/php-domain-parser",
+        "version": "0.0.6",
+        "version_normalized": "0.0.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jeremykendall/php-domain-parser.git",
+            "reference": "485b91bbef3d249d77bda0b430a15e3dd9b38cea"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jeremykendall/php-domain-parser/zipball/485b91bbef3d249d77bda0b430a15e3dd9b38cea",
+            "reference": "485b91bbef3d249d77bda0b430a15e3dd9b38cea",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "jeremykendall/phpctagger": "0.0.*",
+            "mikey179/vfsstream": "1.1.*"
+        },
+        "time": "2013-01-29 19:16:38",
+        "bin": [
+            "bin/pdp-psl"
+        ],
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Pdp": "library/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jeremy Kendall",
+                "homepage": "http://about.me/jeremykendall",
+                "role": "Developer"
+            }
+        ],
+        "description": "Public Suffix List based URL parsing implemented in PHP.",
+        "keywords": [
+            "Public Suffix List",
+            "domain parsing",
+            "url parsing"
+        ]
+    },
+    {
+        "name": "jwage/purl",
+        "version": "v0.0.2",
+        "version_normalized": "0.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jwage/purl.git",
+            "reference": "8ae4252083fa59ad97fb361ae6b6aa4b52a0783c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jwage/purl/zipball/8ae4252083fa59ad97fb361ae6b6aa4b52a0783c",
+            "reference": "8ae4252083fa59ad97fb361ae6b6aa4b52a0783c",
+            "shasum": ""
+        },
+        "require": {
+            "jeremykendall/php-domain-parser": "0.0.6",
+            "php": ">=5.3.0"
+        },
+        "time": "2013-02-21 14:55:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Purl": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jonathan H. Wage",
+                "email": "jonwage@gmail.com",
+                "homepage": "http://www.jwage.com/"
+            }
+        ],
+        "description": "URL Manipulation for PHP 5.3",
+        "homepage": "http://github.com/jwage/purl",
+        "keywords": [
+            "manipulation",
+            "url"
+        ]
+    },
+    {
+        "name": "thomaswelton/facebook-php-sdk",
+        "version": "v3.2.2",
+        "version_normalized": "3.2.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thomaswelton/facebook-php-sdk.git",
+            "reference": "2377bd3e99b781768e7a4932296f961b9588253c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thomaswelton/facebook-php-sdk/zipball/2377bd3e99b781768e7a4932296f961b9588253c",
+            "reference": "2377bd3e99b781768e7a4932296f961b9588253c",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "ext-json": "*",
+            "php": ">=5.2.0"
+        },
+        "time": "2013-07-14 19:26:40",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache2"
+        ],
+        "authors": [
+            {
+                "name": "Facebook",
+                "homepage": "https://github.com/facebook/facebook-php-sdk/contributors"
+            }
+        ],
+        "description": "Facebook PHP SDK",
+        "homepage": "https://github.com/thomaswelton/facebook-php-sdk",
+        "keywords": [
+            "facebook",
+            "sdk"
+        ]
+    },
+    {
+        "name": "thomaswelton/laravel-facebook",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thomaswelton/laravel-facebook.git",
+            "reference": "77b1de2d6a247c5f637a7451dcbaec106a0b2299"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thomaswelton/laravel-facebook/zipball/77b1de2d6a247c5f637a7451dcbaec106a0b2299",
+            "reference": "77b1de2d6a247c5f637a7451dcbaec106a0b2299",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "4.0.x",
+            "jwage/purl": "0.0.*",
+            "php": ">=5.3.0",
+            "thomaswelton/facebook-php-sdk": "3.2.*"
+        },
+        "time": "2013-09-10 12:24:21",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/migrations"
+            ],
+            "psr-0": {
+                "Thomaswelton\\LaravelFacebook": "src/",
+                "Facebook\\php": "vendor/facebook/php-sdk/src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "authors": [
+            {
+                "name": "ThomasWelton",
+                "email": "thomaswelton@me.com",
+                "homepage": "https://github.com/thomaswelton",
+                "role": "Developer"
+            }
+        ]
+    },
+    {
+        "name": "lusitanian/oauth",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Lusitanian/PHPoAuthLib.git",
+            "reference": "1fd10262cc73ed2c4f76b17076b33728823fc5ec"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Lusitanian/PHPoAuthLib/zipball/1fd10262cc73ed2c4f76b17076b33728823fc5ec",
+            "reference": "1fd10262cc73ed2c4f76b17076b33728823fc5ec",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "3.7.*",
+            "predis/predis": "0.8.*@dev",
+            "symfony/http-foundation": "~2.1"
+        },
+        "suggest": {
+            "predis/predis": "Allows using the Redis storage backend.",
+            "symfony/http-foundation": "Allows using the Symfony Session storage backend."
+        },
+        "time": "2013-10-28 15:21:17",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "OAuth": "src",
+                "OAuth\\Unit": "tests"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "David Desberg",
+                "email": "david@daviddesberg.com"
+            },
+            {
+                "name": "Pieter Hordijk",
+                "email": "info@pieterhordijk.com",
+                "homepage": "https://pieterhordijk.com",
+                "role": "developer"
+            }
+        ],
+        "description": "PHP 5.3+ oAuth 1/2 Library",
+        "keywords": [
+            "Authentication",
+            "authorization",
+            "oauth",
+            "security"
+        ]
+    },
+    {
+        "name": "artdarek/oauth-4-laravel",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/artdarek/oauth-4-laravel.git",
+            "reference": "90cb02a7a6202619e5136b1c793f60956f43d0f3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/artdarek/oauth-4-laravel/zipball/90cb02a7a6202619e5136b1c793f60956f43d0f3",
+            "reference": "90cb02a7a6202619e5136b1c793f60956f43d0f3",
+            "shasum": ""
+        },
+        "require": {
+            "lusitanian/oauth": "dev-master",
+            "php": ">=5.3"
+        },
+        "require-dev": {
+            "illuminate/support": "4.0.*"
+        },
+        "time": "2013-10-16 12:58:53",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Artdarek\\OAuth": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Artdarek",
+                "email": "artdarek@gmail.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "OAuth Service Provider for Laravel 4",
+        "homepage": "https://github.com/artdarek/oauth-4-laravel",
+        "keywords": [
+            "Lusitanian",
+            "laravel",
+            "oauth",
+            "php"
+        ]
+    },
+    {
+        "name": "aws/aws-sdk-php-laravel",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/aws/aws-sdk-php-laravel.git",
+            "reference": "3896c7296cababe1bf99d63c644c39cbb2467a33"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/aws/aws-sdk-php-laravel/zipball/3896c7296cababe1bf99d63c644c39cbb2467a33",
+            "reference": "3896c7296cababe1bf99d63c644c39cbb2467a33",
+            "shasum": ""
+        },
+        "require": {
+            "aws/aws-sdk-php": "~2.2",
+            "illuminate/foundation": "4.*",
+            "illuminate/support": "4.*",
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "3.7.*"
+        },
+        "time": "2013-10-29 02:35:35",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Aws\\Laravel": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "Amazon Web Services",
+                "homepage": "http://aws.amazon.com"
+            }
+        ],
+        "description": "A simple Laravel 4 service provider for including the AWS SDK for PHP.",
+        "homepage": "http://aws.amazon.com/sdkforphp2",
+        "keywords": [
+            "Laravel 4",
+            "amazon",
+            "aws",
+            "dynamodb",
+            "ec2",
+            "laravel",
+            "s3",
+            "sdk"
+        ]
+    },
+    {
+        "name": "themonkeys/error-emailer",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/TheMonkeys/laravel-error-emailer.git",
+            "reference": "d57e911ebf648e6c56d8f342829547be3836b868"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/TheMonkeys/laravel-error-emailer/zipball/d57e911ebf648e6c56d8f342829547be3836b868",
+            "reference": "d57e911ebf648e6c56d8f342829547be3836b868",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "4.0.x",
+            "php": ">=5.3.0"
+        },
+        "time": "2013-07-25 02:33:24",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/migrations"
+            ],
+            "psr-0": {
+                "Themonkeys\\ErrorEmailer": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "themonkeys",
+                "email": "developers@themonkeys.com.au"
+            }
+        ],
+        "description": "Emails you whenever an error occurs on your server",
+        "homepage": "http://github.com/TheMonkeys/laravel-error-emailer",
+        "keywords": [
+            "email",
+            "error",
+            "exception",
+            "laravel",
+            "sysadmin"
+        ]
+    },
+    {
+        "name": "predis/predis",
+        "version": "0.8.x-dev",
+        "version_normalized": "0.8.9999999.9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nrk/predis.git",
+            "reference": "695b6dd7b315a828a778a421037c85e718fb9054"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nrk/predis/zipball/695b6dd7b315a828a778a421037c85e718fb9054",
+            "reference": "695b6dd7b315a828a778a421037c85e718fb9054",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2"
+        },
+        "suggest": {
+            "ext-curl": "Allows access to Webdis when paired with phpiredis",
+            "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
+        },
+        "time": "2013-11-02 17:52:43",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Predis": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Daniele Alessandri",
+                "email": "suppakilla@gmail.com",
+                "homepage": "http://clorophilla.net"
+            }
+        ],
+        "description": "Flexible and feature-complete PHP client library for Redis",
+        "homepage": "http://github.com/nrk/predis",
+        "keywords": [
+            "nosql",
+            "predis",
+            "redis"
+        ]
+    },
+    {
         "name": "laravel/framework",
         "version": "4.0.x-dev",
         "version_normalized": "4.0.9999999.9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/laravel/framework.git",
-            "reference": "dfd88c5078dc9cbc846a7f8d40f6b083a3f00e2a"
+            "reference": "241a2fd0c74d3752732b960af83bc9c902035ebd"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/laravel/framework/zipball/dfd88c5078dc9cbc846a7f8d40f6b083a3f00e2a",
-            "reference": "dfd88c5078dc9cbc846a7f8d40f6b083a3f00e2a",
+            "url": "https://api.github.com/repos/laravel/framework/zipball/241a2fd0c74d3752732b960af83bc9c902035ebd",
+            "reference": "241a2fd0c74d3752732b960af83bc9c902035ebd",
             "shasum": ""
         },
         "require": {
@@ -2036,7 +2484,7 @@
             "pda/pheanstalk": "2.1.*",
             "phpunit/phpunit": "3.7.*"
         },
-        "time": "2013-10-29 20:05:47",
+        "time": "2013-11-02 18:38:24",
         "type": "library",
         "extra": {
             "branch-alias": {

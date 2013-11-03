@@ -10,6 +10,6 @@
     <title>Vie Associative</title>
     <meta name="description" content="">
 
-	@full_include template.main_html_component.link-head 
+	@include ('template.main_html_component.link-head') 
 </head>
 <body>

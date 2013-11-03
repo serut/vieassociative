@@ -3,9 +3,13 @@
 	"description": "The Laravel Framework.",
 	"keywords": ["framework", "laravel"],
 	"require": {
-		"laravel/framework": "4.0.*",
-    	"neoxia/laravel-openssl-encryption": "1.0.*",
-		"aws/aws-sdk-php": "dev-master",
+		"laravel/framework": "4.*",
+		"neoxia/laravel-openssl-encryption": "1.0.*",
+		"aws/aws-sdk-php-laravel": "dev-master",
+		"edvinaskrucas/notification": "1.*",
+		"thomaswelton/laravel-facebook": "dev-master",
+		"artdarek/oauth-4-laravel": "dev-master",
+		"themonkeys/error-emailer": "dev-master",
 		"ezyang/htmlpurifier": "dev-master"
 	},
 	"autoload": {

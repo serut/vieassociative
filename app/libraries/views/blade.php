@@ -30,6 +30,7 @@ Blade::extend(function($view)
 		return $view;
 	} else {
 		//return $view;
+		/*
 		$replace = array(
 			'/<!--[^\[](.*?)[^\]]-->/s' => '',       // HTML comments (except IE conditional comments)
 			"/<\?php/"                  => '<?php',  // Opening PHP tags
@@ -39,6 +40,7 @@ Blade::extend(function($view)
 			"/ +/"                      => ' ',      // Multiple spaces
 		);
 		$view = preg_replace(array_keys($replace), array_values($replace), $view);
+		*/
 		return $view;
 	}
 });

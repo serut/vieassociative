@@ -116,6 +116,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Krucas\Notification\NotificationServiceProvider',
 		'Artdarek\OAuth\OAuthServiceProvider',
+		'Aws\Laravel\AwsServiceProvider',
 	),
 
 	/*
@@ -182,6 +183,7 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Notification' 	  => 'Krucas\Notification\Facades\Notification',
 		'OAuth' 		  => 'Artdarek\OAuth\Facade\OAuth',
+		'AWS' 			  => 'Aws\Laravel\AwsFacade',
 	),
 	'encoding' => 'utf-8',
 );

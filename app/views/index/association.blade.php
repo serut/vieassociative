@@ -27,9 +27,10 @@
                   <td>Gestion des utilisateurs</td>
                   <td>
                   	  <i class="icon-ok"></i> Se connecter<br>
-                  	  <i class="icon-ok"></i> S'enregistrer<br>
+                      <i class="icon-ok"></i> S'enregistrer<br>
+                  	  <i class="icon-ok"></i> Connexion depuis un réseau social<br>
                   	  <i class="icon-remove"></i> Edition du profil<br>
-                  	  <i class="icon-remove"></i> Envoie des mails<br>
+                  	  <i class="icon-ok"></i> Envoie des mails<br>
                   	  <i class="icon-remove"></i> Affichage de notifications en temps réel<br>
                   </td>
                 </tr>
@@ -37,8 +38,8 @@
                   <td>Gestion des sites associations</td>
                   <td>
                   	<i class="icon-ok"></i> Edition du profil adapté aux associations<br>
-	                <i class="icon-ok"></i> Gestion des conversations<br>
-	                <i class="icon-remove"></i> Gestion du mur d'actualité<br>
+  	                <i class="icon-ok"></i> Gestion des conversations<br>
+  	                <i class="icon-remove"></i> Gestion du mur d'actualité<br>
                   	<i class="icon-remove"></i> Gestion de pages statiques<br>
                   	<i class="icon-remove"></i> Moteur de recherche d'associations<br>
                   	<i class="icon-remove"></i> Gestion des sponsors<br>
@@ -62,7 +63,7 @@
                 <tr>
                   <td>Gestion des fichiers</td>
                   <td>
-                  	  <i class="icon-remove"></i> Gérer l'envoi de fichiers de tous types<br>
+                  	  <i class="icon-ok"></i> Gérer l'envoi de fichiers de tous types<br>
                   	  <i class="icon-remove"></i> Gérer un porte document<br>
                   	  <i class="icon-remove"></i> Gérer des albums de photos<br>
                   	  </td>
@@ -77,9 +78,9 @@
                 <tr>
                   <td>Gestion de la sécurité</td>
                   <td>
-                  	<i class="icon-remove"></i> Attaque XSS <br>
+                  	<i class="icon-ok"></i> Attaque XSS <br>
                   	<i class="icon-remove"></i> Utilisation du CSRF<br>
-                  	<i class="icon-remove"></i> Vérification complète des droits avant d'appliquer les taches d'administrateur<br>
+                  	<i class="icon-ok"></i> Vérification complète des droits avant d'appliquer les taches d'administrateur<br>
                   	<i class="icon-ok"></i> La totalité des autres failles à notre connaissance<br>
                   	</td>
                 </tr>

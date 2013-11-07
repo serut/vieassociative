@@ -6895,7 +6895,7 @@ abstract class Manager
 namespace Illuminate\Cookie;
 
 use Closure;
-use Neoxia\LaravelOpensslEncryption\Encrypter;
+use Illuminate\Encryption\Encrypter;
 use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

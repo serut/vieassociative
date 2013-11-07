@@ -65,7 +65,63 @@ class LoginController extends BaseController
         $this->disconnect();
         return Redirect::to('/user/log');
     }
-    
+    public function getFacebook() {
+        // get data from input
+        $code = Input::get('code');
+        // get fb service
+        $fb = OAuth::consumer('Facebook');
+        // if code is provided get user data and sign in
+        if (!empty($code)){
+            // This was a callback request from google, get the token
+            $token = $fb->requestAccessToken($code);
+            // Send a request with it
+            $result = json_decode( $fb->request( '/me' ), true );
+            $message = 'Your unique facebook user id is: ' . $result['id'] . ' and your name is ' . $result['name'];
+            echo $message. "<br/>";
+            //Var_dump
+            //display whole array().
+            dd($result);
+        }else {
+            // we ask permission
+            $url = $fb->getAuthorizationUri();
+            return Response::make()->header( 'Location', (string)$url );
+        }
+    }
+
+    public function getGoogle(){
+        $code = Input::get('code');
+        $googleService = OAuth::consumer('Google');
+        if (!empty($code)){
+            $token = $googleService->requestAccessToken($code);
+            $result = json_decode($googleService->request( 'https://www.googleapis.com/oauth2/v1/userinfo'), true );
+            $message = 'Your unique Google user id is: ' . $result['id'] . ' and your name is ' . $result['name'];
+            echo $message. "<br/>";
+            dd($result);
+        }else {
+            $url = $googleService->getAuthorizationUri();
+            return Response::make()->header( 'Location', (string)$url );
+        }
+    }
+
+    public function getLive(){
+        $code = Input::get('code');
+        $microsoft = OAuth::consumer('Microsoft');
+        if (!empty($code)){
+            $token = $microsoft->requestAccessToken($code);
+            $result = json_decode($microsoft->request('https://apis.live.net/v5.0/me?'), true );
+            $message = 'Your unique Microsoft user id is: ' . $result['id'] . ' and your name is ' . $result['name'];
+            echo $message. "<br/>";
+            dd($result);
+        }else {
+            $url = $microsoft->getAuthorizationUri();
+            return Response::make()->header( 'Location', (string)$url );
+        }
+    }
+    /*
+        Facebook data : 
+        Your unique facebook user id is: 1320685747 and your name is AndrÃ©a Buisset
+        array(15) { ["id"]=> string(10) "1320685747" ["name"]=> string(15) "AndrÃ©a Buisset" ["first_name"]=> string(7) "AndrÃ©a" ["last_name"]=> string(7) "Buisset" ["link"]=> string(37) "https://www.facebook.com/AmbreAkasora" ["username"]=> string(12) "AmbreAkasora" ["quotes"]=> string(84) ""L'amour et la haine sont le recto et le verso d'un mÃªme sentiment" Mr Labourdette." ["education"]=> array(1) { [0]=> array(3) { ["school"]=> array(2) { ["id"]=> string(12) "197576131108" ["name"]=> string(34) "Grand Sud Formation TOURISM SCHOOL" } ["concentration"]=> array(1) { [0]=> array(2) { ["id"]=> string(15) "528018097281649" ["name"]=> string(30) "Animatrice Tourisme et Loisirs" } } ["type"]=> string(7) "College" } } ["gender"]=> string(6) "female" ["email"]=> string(25) "andrea.buisset@hotmail.fr" ["timezone"]=> int(1) ["locale"]=> string(5) "fr_FR" ["languages"]=> array(2) { [0]=> array(2) { ["id"]=> string(15) "103803232991647" ["name"]=> string(7) "English" } [1]=> array(2) { ["id"]=> string(15) "108224912538348" ["name"]=> string(6) "French" } } ["verified"]=> bool(true) ["updated_time"]=> string(24) "2013-10-18T06:07:44+0000" } 
+    */
     /* ZEND
     public function getFacebook(){
         // include hybridauth lib

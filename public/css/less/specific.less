@@ -191,6 +191,219 @@
 	}
 }
 
+.input-block-level {
+    display: block;
+    width: 100%;
+    min-height: 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#social-timeline{
+	.social-box {
+		border: none;
+		margin-top: 0;
+	}
+	.media.social-box.with-heading .social-users-avatars {
+	    margin-top: 36px;
+	}
+	p{
+		margin:0 10px 10px 0;
+	}
+	.media.social-box {
+		.social-composer{
+			textarea {
+			    resize: none;
+			    height: 20px;
+			    margin-bottom: 0;
+			    -webkit-transition: all 0.4s ease;
+			    -moz-transition: all 0.4s ease;
+			    -o-transition: all 0.4s ease;
+			    transition: all 0.4s ease;
+			    &:focus {
+				    height: 80px;
+				}
+			}
+			.btn {
+			    -webkit-border-radius: 3px;
+			    -moz-border-radius: 3px;
+			    border-radius: 3px;
+			}
+		}
+		.social-users-avatars img {
+		    margin-bottom: 10px;
+		    -webkit-border-radius: 3px;
+		    -moz-border-radius: 3px;
+		    border-radius: 3px;
+		    margin-top: 10px;
+		}
+		.media-body.social-body {
+		    padding: 10px;
+		    .social-heading {
+			    color: #939AA4!important;
+			    font-size: 11.9px;
+			    border-bottom: 1px solid #e6e6e6;
+			    padding-bottom: 6px;
+			    margin-left: -10px;
+			    margin-right: -10px;
+			    padding-left: 10px;
+			    padding-right: 10px;
+			}
+			.social-time-publication {
+			    color: #939AA4!important;
+			    font-size: 11.9px;
+			}
+
+			ul.gallery{
+				margin-left: 0;
+				li{
+					margin-bottom: 4px;
+				}
+			}
+			.social-share-image {
+			    margin: 0px -10px 5px;
+			    color: #ffffff!important;
+			    position: relative;
+			    h1,h2,h3,h4,h5,h6{
+    				margin: 0;
+			    }
+			    img {
+				    display: block;
+				    width: 100%;
+				    height: auto;
+				}
+				.social-share-image-text {
+				    position: absolute;
+				    left: 10px;
+				    top: 5px;
+				}
+			}
+			.social-share-video {
+			    color: #ffffff!important;
+			    h1,h2,h3,h4,h5,h6{
+    				margin: 0;
+			    }
+			    img {
+				    display: block;
+				    height: auto;
+				    width: 100%;
+				}
+				.social-share-video-wrapper {
+				    position: relative;
+				    display: inline-block;
+				    cursor: pointer;
+				}
+				.social-share-video-wrapper:after {
+				    position: absolute;
+				    left: 0;
+				    top: 0;
+				    right: 0;
+				    bottom: 0;
+				    content: '';
+				    background-image: url(http://cesarlab.com/templates/social/assets/css/pages/../../img/pages/social-timeline/media-play.png);
+				    background-repeat: no-repeat;
+				    background-position: center center;
+				    opacity: 0.9;
+				    border-radius: 2em;
+				    border-radius: 50px;
+				}
+				.social-share-video-text {
+				    left: 10px;
+				    bottom: 0;
+				    position: absolute;
+				}
+			}
+			.social-footer{
+				.social-controls,.social-info-users{
+					color: #939AA4!important;
+    				font-size: 11.9px;
+				}
+				.social-controls {
+				    font-weight: bold;
+				    padding-bottom: 6px;
+				}
+				span {
+				    cursor: pointer;
+				    margin-right: 10px;
+				}
+				.social-info-users {
+				    padding-top: 7px;
+				    border-top: 1px solid #e6e6e6;
+				}
+				.social-comments {
+				    margin-top: 7px;
+				    margin-bottom: -10px;
+				    padding-bottom: 5px;
+				}
+				.social-comments img {
+				    -webkit-border-radius: 3px;
+				    -moz-border-radius: 3px;
+				    border-radius: 3px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 480px) {
+    #social-timeline .media.social-box.social-composer .social-users-avatars {
+        display: none;
+    }
+
+    #social-timeline .media.social-box.social-composer .media-body.social-body {
+        padding-bottom: 0;
+    }
+
+    #social-timeline .media.social-box.social-composer .social-footer {
+        display: inline-table;
+        width: 100%;
+        margin-bottom: -10px;
+    }
+
+    #social-timeline .media.social-box.social-composer .social-footer .btn-group {
+        float: left;
+    }
+
+    #social-timeline .media.social-box.social-composer .social-footer .btn.pull-right {
+        float: right;
+    }
+
+    #social-timeline .media.social-box {
+        position: relative;
+    }
+
+    #social-timeline .media.social-box .media-heading {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 65px;
+        display: block;
+        padding: 17px 0px;
+        background: white;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        text-align: center;
+    }
+
+    #social-timeline .media.social-box .pull-left {
+        float: left;
+    }
+
+    #social-timeline .media.social-box .social-users-avatars {
+        float: none;
+        margin-bottom: 0;
+    }
+
+    #social-timeline .media.social-box .social-users-avatars img {
+        display: inline-block!important;
+    }
+
+    #social-timeline .media-body.social-body .social-share-video2 .social-share-video-wrapper:after {
+        background-size: 50px;
+    }
+}
 /* social reporter  
 ================================================== */
 #social-fetch{

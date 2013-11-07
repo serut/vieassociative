@@ -27,7 +27,7 @@
                   <td><a href="#" data-modal-form="legal_name"><i class="icon-pencil"></i></a></td>
                 </tr>
                 <tr>
-                  <td>Accronyme</td>
+                  <td>Acronyme</td>
                   <td>{{{$association->acronym}}}</td>
                   <td><a href="#" data-modal-form="acronym"><i class="icon-pencil"></i></td>
                 </tr>

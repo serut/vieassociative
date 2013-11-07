@@ -37,12 +37,12 @@
                   <td><a href="#" data-modal-form="services_between_partners"><i class="icon-chevron-down"></i> Modifier </a></td>
                 </tr>
                 <tr>
-                  <td>Module Gallerie photo</td>
+                  <td>Module Galerie photo</td>
                   <td>Activé</td>
                   <td><a href="#" data-modal-form="module_photo"><i class="icon-remove"></i> Désactiver </a></td>
                 </tr>
                 <tr>
-                  <td>Module Gallerie évènements</td>
+                  <td>Module Galerie évènements</td>
                   <td>Activé</td>
                   <td><a href="#" data-modal-form="module_evenement"><i class="icon-remove"></i> Désactiver </a></td>
                 </tr>
@@ -52,7 +52,7 @@
                   <td><a href="#" data-modal-form="module_social"><i class="icon-remove"></i> Désactiver </a></td>
                 </tr>
                 <tr>
-                  <td>Module Gallerie de sponsor</td>
+                  <td>Module Galerie de sponsor</td>
                   <td>Activé</td>
                   <td><a href="#" data-modal-form="module_sponsor"><i class="icon-remove"></i> Désactiver </a></td>
                 </tr>

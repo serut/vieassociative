@@ -72,6 +72,7 @@ include($app['path.base'].'/app/libraries/SiteError.php');
 include($app['path.base'].'/app/libraries/SiteHelpers.php'); 
 include($app['path.base'].'/app/libraries/URLSubdomain.php'); 
 include($app['path.base'].'/app/libraries/HTMLPurifier.php'); 
+include($app['path.base'].'/app/libraries/Pubnub.php'); 
 
 /*
 |--------------------------------------------------------------------------

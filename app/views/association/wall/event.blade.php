@@ -1,0 +1,91 @@
+<div class="media social-box">
+	<a href="#" class="pull-left social-users-avatars">
+	<img alt="Events" src="http://cesarlab.com/templates/social/assets/img/pages/social-timeline/calendar.png" class="media-object">
+	</a>
+	<div class="media-body social-body">
+		<h4 class="media-heading">Upcomming Events ( To remake )</h4>
+		<ul style="margin-bottom: 0;" class="thumbnails">
+			<li class="span8">
+				<div class="thumbnail">
+					<img alt="alt name" src="http://cesarlab.com/templates/social/assets/img/pages/social-timeline/event-image1.jpg">
+					<div class="caption">
+					<p>
+						<strong>Event Title</strong>
+					</p>
+					<table border="0" style="margin-bottom: 5px;">
+						<tbody>
+						<tr>
+							<td><i class="icon-calendar"></i></td>
+							<td>Sunday at 8:00am</td>
+						</tr>
+						<tr>
+							<td style="vertical-align: top;"><i class="icon-map-marker"></i>
+							</td>
+							<td>Convetion Center. San Francisco, CA</td>
+						</tr>
+						</tbody>
+					</table>
+					<p>
+						<a class="btn btn-small" href="#">Join</a>
+						<img alt="alt name" src="http://cesarlab.com/templates/social/assets/img/avatars/a-26x26.png">
+						<img alt="alt name" src="http://cesarlab.com/templates/social/assets/img/avatars/b-26x26.png">
+						<img alt="alt name" src="http://cesarlab.com/templates/social/assets/img/avatars/c-26x26.png">
+					</p>
+					</div>
+				</div>
+			</li>
+			<li class="span8">
+				<div class="thumbnail">
+					<img alt="alt name" src="http://cesarlab.com/templates/social/assets/img/pages/social-timeline/event-image2.jpg">
+					<div class="caption">
+					<p><strong>Event Title</strong></p>
+					<table border="0" style="margin-bottom: 5px;">
+						<tbody>
+						<tr>
+							<td><i class="icon-calendar"></i></td>
+							<td>Sunday at 8:00am</td>
+						</tr>
+						<tr>
+							<td style="vertical-align: top;"><i class="icon-map-marker"></i></td>
+							<td>Convetion Center. San Francisco, CA</td>
+						</tr>
+						</tbody>
+					</table>
+					<p>
+						<a class="btn btn-small" href="#">Join</a>
+						<img alt="alt name" src="http://cesarlab.com/templates/social/assets/img/avatars/a-26x26.png">
+						<img alt="alt name" src="http://cesarlab.com/templates/social/assets/img/avatars/b-26x26.png">
+						<img alt="alt name" src="http://cesarlab.com/templates/social/assets/img/avatars/c-26x26.png">
+					</p>
+					</div>
+				</div>
+			</li>
+			<li class="span8">
+				<div class="thumbnail">
+					<img alt="alt name" src="http://cesarlab.com/templates/social/assets/img/pages/social-timeline/event-image3.jpg">
+					<div class="caption">
+					<p><strong>Event Title</strong></p>
+					<table border="0" style="margin-bottom: 5px;">
+						<tbody>
+						<tr>
+							<td><i class="icon-calendar"></i></td>
+							<td>Sunday at 8:00am</td>
+						</tr>
+						<tr>
+							<td style="vertical-align: top;"><i class="icon-map-marker"></i></td>
+							<td>Convetion Center. San Francisco, CA</td>
+						</tr>
+						</tbody>
+					</table>
+					<p>
+						<a class="btn btn-small" href="#">Join</a>
+						<img alt="alt name" src="http://cesarlab.com/templates/social/assets/img/avatars/a-26x26.png">
+						<img alt="alt name" src="http://cesarlab.com/templates/social/assets/img/avatars/b-26x26.png">
+						<img alt="alt name" src="http://cesarlab.com/templates/social/assets/img/avatars/c-26x26.png">
+					</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

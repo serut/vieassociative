@@ -89,8 +89,8 @@ return array(
 		'Illuminate\Routing\ControllerServiceProvider',
 		'Illuminate\Cookie\CookieServiceProvider',
 		'Illuminate\Database\DatabaseServiceProvider',
-		//'Illuminate\Encryption\EncryptionServiceProvider',
-    	'Neoxia\LaravelOpensslEncryption\LaravelOpensslEncryptionServiceProvider',
+		'Illuminate\Encryption\EncryptionServiceProvider',
+    	//'Neoxia\LaravelOpensslEncryption\LaravelOpensslEncryptionServiceProvider',
 		'Illuminate\Filesystem\FilesystemServiceProvider',
 		'Illuminate\Hashing\HashServiceProvider',
 		'Illuminate\Html\HtmlServiceProvider',
@@ -117,6 +117,7 @@ return array(
 		'Krucas\Notification\NotificationServiceProvider',
 		'Artdarek\OAuth\OAuthServiceProvider',
 		'Aws\Laravel\AwsServiceProvider',
+		'Themonkeys\ErrorEmailer\ErrorEmailerServiceProvider',
 	),
 
 	/*

@@ -16,6 +16,9 @@
     $server = explode('.', Request::server('HTTP_HOST')); // sweet routing - not fully reliable
     switch ($server['0']) {
         case 'www':
+            /*
+            Route::get('/', 'NotificationController@getIndex');
+            */
             Route::get('/', function()
             {
                 return View::make('index.index');
@@ -30,6 +33,9 @@
             Route::group(array('prefix' => 'user'), function()
             {
                 Route::get('log', 'LoginController@getConnexion');
+                Route::get('log/fb', 'LoginController@getFacebook');
+                Route::get('log/google', 'LoginController@getGoogle');
+                Route::get('log/live', 'LoginController@getLive');
                 Route::post('log/register', 'LoginController@postRegister');
                 Route::post('log/login', 'LoginController@postLogin');
 

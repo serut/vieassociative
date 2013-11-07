@@ -31,7 +31,6 @@ return array(
     'OAuth\\Unit' => array($vendorDir . '/lusitanian/oauth/tests'),
     'OAuth' => array($vendorDir . '/lusitanian/oauth/src'),
     'Normalizer' => array($vendorDir . '/patchwork/utf8/class'),
-    'Neoxia\\LaravelOpensslEncryption' => array($vendorDir . '/neoxia/laravel-openssl-encryption/src'),
     'Monolog' => array($vendorDir . '/monolog/monolog/src'),
     'Krucas\\Notification' => array($vendorDir . '/edvinaskrucas/notification/src'),
     'Jeremeamia\\SuperClosure' => array($vendorDir . '/jeremeamia/SuperClosure/src'),
@@ -52,4 +51,5 @@ return array(
     'Aws\\Laravel' => array($vendorDir . '/aws/aws-sdk-php-laravel/src'),
     'Aws' => array($vendorDir . '/aws/aws-sdk-php/src'),
     'Artdarek\\OAuth' => array($vendorDir . '/artdarek/oauth-4-laravel/src'),
+    '' => array($vendorDir . '/camcima/pubnub-php-api/3.3'),
 );

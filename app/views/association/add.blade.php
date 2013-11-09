@@ -15,13 +15,13 @@
                     'data-toggle'=> 'div-linked',
                     'elements' => array(
                         '1'=>array(
-                            'value'=>'true',
-                            'text'=>Lang::get('association/form_create.radio_yes'),
-                        ),
-                        '2'=>array(
                             'value'=>'false',
                             'text'=>Lang::get('association/form_create.radio_no'),
                             'checked'=>true,
+                        ),
+                        '2'=>array(
+                            'value'=>'true',
+                            'text'=>Lang::get('association/form_create.radio_yes'),
                         ),
                     )
                 )@
@@ -46,7 +46,7 @@
                     {{SiteHelpers::create_input($input)}}
                 </div>
 
-                    <hr>
+                <hr>
 
                 @input = array(
                     'id'=>"name",
@@ -60,63 +60,6 @@
                     )
                 )@
                 {{ SiteHelpers::create_input($input) }}
-
-                @input = array(
-                    'id'=>"link",
-                    'label'=>'',
-                    'name'=> 'choice',
-                    'data-toggle'=> 'div-real-name',
-                    'elements' => array(
-                        '1'=>array(
-                            'value'=>'true',
-                            'text'=>Lang::get('association/form_create.checkbox_prefecture'),
-                        ),
-                    )
-                )@
-                {{SiteHelpers::create_checkbox($input)}}
-                <div style="display:none;" id="div-real-name">
-                    @input = array(
-                        'id'=>"link",
-                        'label'=>Lang::get('association/form_create.label_prefecture'),
-                        'data-toggle'=> 'div-real-name',
-                        'form' => array(
-                            'placeholder'=>Lang::get('association/form_create.label_prefecture'),
-                            'class' => 'input-xlarge',
-                            'data-original-title'=>Lang::get('association/form_create.tooltip_prefecture'),
-                            'data-maxlength'=>"30",
-                        )
-                    )@
-                    {{SiteHelpers::create_input($input)}}
-                </div>
-
-                @input = array(
-                    'id'=>"link",
-                    'label'=>'',
-                    'name'=> 'choice',
-                    'data-toggle'=> 'div-acronym',
-                    'elements' => array(
-                        '1'=>array(
-                            'value'=>'true',
-                            'text'=>Lang::get('association/form_create.label_acronym'),
-                        ),
-                    )
-                )@
-                {{SiteHelpers::create_checkbox($input)}}
-                <div style="display:none;" id="div-acronym">
-                    @input = array(
-                        'id'=>"acronym",
-                        'label'=>Lang::get('association/form_create.placeholder_acronym'),
-                        'form' => array(
-                            'placeholder'=>Lang::get('association/form_create.placeholder_acronym'),
-                            'class' => 'input-xlarge',
-                            'data-original-title'=>Lang::get('association/form_create.tooltip_acronym'),
-                            'data-maxlength'=>"8",
-                        )
-                    )@
-                    {{ SiteHelpers::create_input($input) }}
-                </div>
-
-                
 
                 <hr>
                 <div>

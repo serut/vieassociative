@@ -1,5 +1,26 @@
 <?php
 class BaseValidator{
+	public function test($rules,$toPurify=array()){
+        $inputs = Input::get();
+        if(!empty($toPurify)){
+            $inputs = $this->purify($input,$toPurify);
+        }
+        $v = Validator::make($inputs, $rules);
+        if(! $v->fails()){
+            $message = array('success'=>'true','data'=>$inputs);
+        }else{
+            $message = array('error'=>'');
+        }
+        return $message;
+    }
+    public function purify($input,$toPurify){
+        $purifier = App::make('HTMLPurifier');
+        foreach ($toPurify as $k => $v) {
+            if(isset($input[$v])){
+                $input[$v] = $purifier->purify($input[$v]);
+            }
+        }
+    }
 	public function getMessageMissingInput(){
 		return array('error'=>array('type'=>'Validateur Error', 'message'=>Lang::get('core/form.input_missing'),'file'=>'Validator','line'=>0));
 	}

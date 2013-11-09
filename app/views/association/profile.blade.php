@@ -26,6 +26,8 @@
 						<a class="paypal" href="#">paypal</a>
 						<a class="youtube" href="#">youtube</a>
 						<a class="twitter" href="#">twitter</a>
+						<a href="/{{$association->id}}/edit">Editer cette page</a>
+
 						{{--
 						<a class="skype" href="#">skype</a>
 						<a class="picasa" href="#">picasa</a>
@@ -88,7 +90,7 @@
 								<div class="span5">
 									<p>Actualités <b>Facebook</b></p>
 									<i class="icon-chevron-right"></i>
-									<img src="http://cesarlab.com/img/items/like.png">
+									<img src="/img/items/like.png">
 								</div>
 							</div>
 
@@ -98,7 +100,7 @@
 								</div>
 								<div class="span5">
 									<p>Actualités <b>Twitter</b></p>
-									<img src="http://cesarlab.com/img/items/follow.png">
+									<img src="/img/items/follow.png">
 								</div>
 							</div>
 
@@ -108,7 +110,7 @@
 								</div>
 								<div class="span5">
 									<p>Actualités <b>Google +</b></p>
-									<img src="http://cesarlab.com/img/items/plus-one.png">
+									<img src="/img/items/plus-one.png">
 								</div>
 							</div>
 						</aside>
@@ -121,11 +123,11 @@
 								<div class="text">
 									<span>Güzel güzel söz verdik iyimi, gelde şimdi yap...</span>
 									<div class="tweetbtn">
-									<img width="13" height="13" alt="Favorite" src="http://cesarlab.com/img/to sprite/retweet_mini.png">
+									<img width="13" height="13" alt="Favorite" src="/img/to sprite/retweet_mini.png">
 									<a href="http://twitter.com/intent/retweet?tweet_id=319926146185711616">Retweet</a>
-									<img width="12" height="12" alt="Favorite" src="http://cesarlab.com/img/to sprite/reply_mini.png">
+									<img width="12" height="12" alt="Favorite" src="/img/to sprite/reply_mini.png">
 									<a href="http://twitter.com/intent/tweet?in_reply_to=319926146185711616">Reply</a>
-									<img width="12" height="12" alt="Favorite" src="http://cesarlab.com/img/to sprite/favorite_mini.png">
+									<img width="12" height="12" alt="Favorite" src="/img/to sprite/favorite_mini.png">
 									<a href="http://twitter.com/intent/favorite?tweet_id=319926146185711616">Favorite</a>
 									<i>3 months ago</i>
 									</div>
@@ -176,21 +178,20 @@
 
 
 			<hr>
-			<div id="social-timeline">
-			<div class="span23">
-				<div class="span21">
-					<div class="row-fluid">
-						<?php
-							$posts = array("single-photo","text","video","link","event","multiple-photo","single-photo","text","video","link","event","multiple-photo","single-photo","text","video","link","event","multiple-photo");
-						?>
-						@foreach($posts as $p )
-							@include('association.wall.'.$p, array('p'=>$p))
-						@endforeach
-					</div>
-			 	</div>
+			<div id="social-timeline" class="row">
+				<div class="span23">
+					<div class="span21">
+						<div class="row-fluid">
+							<?php
+								$posts = array("single-photo","text","video","link","event","multiple-photo","single-photo","text","video","link","event","multiple-photo","single-photo","text","video","link","event","multiple-photo");
+							?>
+							@foreach($posts as $p )
+								@include('association.wall.'.$p, array('p'=>$p))
+							@endforeach
+						</div>
+				 	</div>
+				</div>
 			</div>
-			</div>
-			<p class="text-right"><a href="/{{$association->id}}/edit">Editer cette page</a></p>
 		</div>
 	</section>
 	<!-- Posts will go here ... -->

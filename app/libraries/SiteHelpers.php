@@ -1,5 +1,9 @@
 <?php
 class SiteHelpers{
+	static function datepicker_to_timestamp($t){
+		$pattern = '/([0-9]{2})\/([0-9]{2})\/([0-9]{4}) ([0-9]{2}):([0-9]{2}):([0-9]{2})/';
+        return preg_replace($pattern, '$3-$2-$1 $4:$5:$6',$t);
+	}
 
 	static function create_radio($options){
 		$txt = '<div class="control-group">';
@@ -136,7 +140,7 @@ class SiteHelpers{
 	static function add_textarea($name, $value, $text = false, $font = false){
 		$txt =' <div>
 	            <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">';
-	            if(isset($font)){
+	            if($font){
 	            	$txt .='<div class="btn-group">
 	                <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font"><i class="icon-font"></i><b class="caret"></b></a>
 	                  <ul class="dropdown-menu">
@@ -151,7 +155,6 @@ class SiteHelpers{
 	                  </ul>
 	              </div>';
 	            }
-	            if(isset($text)){
 	              $txt .='<div class="btn-group">
 	                <a class="btn" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="icon-bold"></i></a>
 	                <a class="btn" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="icon-italic"></i></a>
@@ -171,7 +174,9 @@ class SiteHelpers{
 	                <a class="btn" data-edit="insertorderedlist" title="Number list"><i class="icon-list-ol"></i></a>
 	                <a class="btn" data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="icon-indent-left"></i></a>
 	                <a class="btn" data-edit="indent" title="Indent (Tab)"><i class="icon-indent-right"></i></a>
-	              </div>
+	              </div>';
+                if($text){
+	              $txt .='
 	              <div class="btn-group">
 	                <a class="btn" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="icon-align-left"></i></a>
 	                <a class="btn" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="icon-align-center"></i></a>

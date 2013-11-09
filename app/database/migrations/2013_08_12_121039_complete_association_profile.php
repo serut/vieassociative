@@ -17,7 +17,7 @@ class CompleteAssociationProfile extends Migration {
 			$table->string('goal');
 			$table->string('website_url');
 			$table->date('official_date_creation');
-			$table->string('headquater');
+			$table->string('headquarter');
 			$table->boolean('admitted_public_utility');
 			$table->integer('general_information_completed');
 			$table->integer('vieassociative_page_completed');

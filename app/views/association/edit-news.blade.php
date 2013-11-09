@@ -14,55 +14,79 @@
           <li class="active">Editer une publication</li>
         </ul>
         <h3 class="head">{{Lang::get('association/edit/news.modify_news')}}</h3>
-        <p>{{Lang::get('association/edit.warn_possiblity_for_normal_user')}}</p>
         <hr>
         {{ Form::open(array('class'=> 'form-horizontal','data-validate'=>'our-parsey')) }}
 
-        <div class="tabbable">
-            <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#lA">{{Lang::get('association/edit/news.content')}}</a></li>
-                <li><a data-toggle="tab" href="#lB">{{Lang::get('association/edit/news.advanced_options')}}</a></li>
-            </ul>
-            <div class="tab-content">
-                <div id="lA" class="tab-pane active">
-                    <h5>Informations sur votre évènement :</h5>
-                    
-                    @input = array(
-                        'id'=>"title",
-                        'label'=>Lang::get('association/edit/news.label_title'),
-                        'value'=>$post->title,
-                        'form' => array(
-                            'placeholder'=>Lang::get('association/edit/news.placeholder_title'),
-                            'class' => 'input-xlarge',
-                            'data-maxlength'=>"30",
-                        )
-                    )@
-                    {{SiteHelpers::create_input($input)}}
-                    <div>
-                        <label for="inputPassword">{{Lang::get('association/edit/news.label_text')}}</label>
-                        {{SiteHelpers::add_textarea('text',$post->content, true, true)}}
-                    </div>
-                </div>
-                <div id="lB" class="tab-pane">
-                    @input = array(
-                        'id'=>"published_at",
-                        'class'=>"input-append date",
-                        'label'=>Lang::get('association/edit/news.label_published_at'),
-                        'value'=>$post->published_at,
-                        'type'=>'dateandtime',
-                        'form' => array(
-                            'class'=>'input-medium',
-                        )
-                    )@
-                    {{SiteHelpers::create_input($input)}}
-                </div>
+        <h5>Informations sur votre évènement :</h5>
+            @input = array(
+                'id'=>"publish_later",
+                'name'=>"publish_later",
+                'label'=>'Publier',
+                'data-toggle'=> 'div-publish-later',
+                'elements' => array(
+                    '1'=>array(
+                        'value'=>'false',
+                        'text'=>"en ligne",
+                        'checked'=>true,
+                    ),
+                    '2'=>array(
+                        'value'=>'true',
+                        'text'=>"hors ligne",
+                    ),
+                )
+            )@
+            {{SiteHelpers::create_radio($input)}}
+            <div style="display:none;" id="div-publish-later">
+                @input = array(
+                    'id'=>"published_at",
+                    'class'=>"input-append date",
+                    'label'=>Lang::get('association/edit/news.label_published_at'),
+                    'value'=>$post->published_at,
+                    'type'=>'dateandtime',
+                    'form' => array(
+                        'class'=>'input-medium',
+                    )
+                )@
+                {{SiteHelpers::create_input($input)}}
+            </div>
+
+            <div>{{Lang::get('association/edit/news.label_title')}}</div>
+            @input = array(
+                'id'=>"title",
+                'value'=>$post->title,
+                'form' => array(
+                    'placeholder'=>Lang::get('association/edit/news.placeholder_title'),
+                    'class' => 'input-xxlarge',
+                )
+            )@
+            {{SiteHelpers::simple_input($input)}}
+            <div>
+                <label>{{Lang::get('association/edit/news.label_text')}}</label>
+                {{SiteHelpers::add_textarea('text',$post->text, true, true)}}
+            </div>
+        <br>
+        <h5>Personnalisez votre publication avec :</h5>
+        <div class="row" style="margin-left:10px">
+            <div class="thumbnail span4">
+                <span class="text-center">Une grande image</span>
+            </div>
+            <div class="thumbnail span4">
+                <span class="text-center">Plusieurs images</span>
+            </div>
+            <div class="thumbnail span4">
+                <span class="text-center">Un lien</span>
+            </div>
+            <div class="thumbnail span4">
+                <span class="text-center">Un évènement</span>
+            </div>
+            <div class="thumbnail span4">
+                <span class="text-center">Une vidéo</span>
             </div>
         </div>
-        <br>
         <div class="pull-right">
             <button class="button button-green" type="submit">Valider</button>
         </div>
-    {{ Form::close() }}
+        {{ Form::close() }}
     </div>
 </section>
 

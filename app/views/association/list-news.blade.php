@@ -15,7 +15,7 @@
             <p>{{Lang::get('association/edit.warn_possiblity_for_normal_user')}}</p>
             <hr>
                 <div class="pull-right">
-                    <a class="button button-blue" href="/1/edit/news/add">{{Lang::get('association/edit/news.create_news')}}</a>
+                    <a class="button button-blue" href="news/0/edit">{{Lang::get('association/edit/news.create_news')}}</a>
                 </div>
             <table class="table table-striped">
                 <thead>
@@ -29,14 +29,9 @@
                 <tbody>
                     @foreach($news as $n)
                     <tr>
-                        <td>{{{$n->propositionPost->title}}}</td>
-                        <td>{{\Carbon\Carbon::createFromTimeStamp(strtotime($n->propositionPost->updated_at))->diffForHumans()}}</td>
-                        <td>
-                        @if($n->active)
-                            <i class="icon-ok"></i></td>
-                        @else
-                            <i class="icon-remove"></i></td>
-                        @endif
+                        <td>{{{$n->title}}}</td>
+                        <td>{{\Carbon\Carbon::createFromTimeStamp(strtotime($n->updated_at))->diffForHumans()}}</td>
+                        <td><i class="icon-remove"></i></td>
                         <td><a href="news/{{$n->id}}/edit"> Editer</a></td>
                     </tr>
                     @endforeach

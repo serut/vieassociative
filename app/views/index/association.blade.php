@@ -63,7 +63,8 @@
                 <tr>
                   <td>Gestion des fichiers</td>
                   <td>
-                  	  <i class="icon-ok"></i> Gérer l'envoi de fichiers de tous types<br>
+                      <i class="icon-ok"></i> Gérer l'envoi de fichiers de tous types<br>
+                  	  <i class="icon-ok"></i> Gérer la découpe d'image<br>
                   	  <i class="icon-remove"></i> Gérer un porte document<br>
                   	  <i class="icon-remove"></i> Gérer des albums de photos<br>
                   	  </td>

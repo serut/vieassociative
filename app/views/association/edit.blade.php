@@ -21,22 +21,18 @@
               <a href="#"><i class="icon-refresh"></i></a>
             </span>
             </p>
-            <div class="row" id="wait-moderation">
-                <div id="list-modification" class="span14 content">
-                    @foreach($proposition as $p)
-                    <div class="item">
-                        <div class="text">
-                            <span>{{$p->discussion->title}}</span>
-                            <div class="tweetbtn">
-                            <img width="13" height="13" alt="Favorite" src="/img/to sprite/retweet_mini.png">
-                            <a href="discussion/{{$p->discussion->id}}">Afficher</a>
-                            <i>{{\Carbon\Carbon::createFromTimeStamp(strtotime($p->updated_at))->diffForHumans()}}</i>
-                            </div>
-                        </div>
+            @foreach($proposition as $p)
+            <div class="item">
+                <div class="text">
+                    <span>{{$p->discussion->title}}</span>
+                    <div class="tweetbtn">
+                    <img width="13" height="13" alt="Favorite" src="/img/to sprite/retweet_mini.png">
+                    <a href="discussion/{{$p->discussion->id}}">Afficher</a>
+                    <i>{{\Carbon\Carbon::createFromTimeStamp(strtotime($p->updated_at))->diffForHumans()}}</i>
                     </div>
-                    @endforeach
                 </div>
             </div>
+            @endforeach
             <hr>
             @endif
             <table class="table table-striped">
@@ -59,7 +55,7 @@
                 <tr>
                   <td>Les photos</td>
                   <td>16 images</td>
-                  <td><a href="edit/picture"> Editer</a></td>
+                  <td><a href="edit/file"> Editer</a></td>
                 </tr>
                 <tr>
                   <td>La page Vie Associative</td>

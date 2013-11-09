@@ -5,16 +5,14 @@
 @stop
 
 @section('form')
-	<p>{{Lang::get('association/modal_form/general-informations.statuts')}}</p>
-	{{ Form::open(array('class'=> 'form-horizontal form-modal')) }}
+	{{ Form::open(array('class'=> 'form-horizontal form-modal','id'=>'statuts-form')) }}
 	<div>
-        <label class="control-label" for="inputPassword">{{Lang::get('association/modal_form/general-informations.label_statuts')}}</label>
-        <div class="controls controls-textarea">
-            <textarea name="statuts" rows="8" id="statuts" class="input-xxlarge nicEditor-textarea" onclick="launchEditor($(this))">{{$val}}</textarea>
-        </div>
+        <label>{{Lang::get('association/modal_form/general-informations.label_statuts')}}</label>
+        {{SiteHelpers::add_textarea('statuts',$val, false, false)}}
     </div>
     {{ Form::close() }}
     <script type="text/javascript">
   		$(".form-modal").attr('parsley',"true").parsley(confParsley);
+        myWysiwyg($('#statuts-form'));
     </script>
 @stop

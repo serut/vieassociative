@@ -1,99 +1,70 @@
 <?php
 class validators_associationGeneralInformation extends BaseValidator
 {
-	private function test($inputsRequired,$rules){
-        $inputs = Input::get();
-        // Looks if every inputs required are present
-        try{
-            $arrayElements = $this->need($inputsRequired);
-            extract($arrayElements);
-        }catch (Exception $e) {
-            return $this->getMessageMissingInput();
-        }
-
-        $v = Validator::make($inputs, $rules);
-        if(! $v->fails()){
-            $message = array('success'=>'true','data'=>$inputs);
-        }else{
-            $message = array('error'=>'');
-        }
-        return $message;
-    }
     public function name(){
-        $inputsRequired = array('name');
         $rules = array(
             'name' => 'required|min:2|max:80',
         );
-        return $this->test($inputsRequired,$rules);
+        return $this->test($rules);
 	}
     public function legal_name(){
-        $inputsRequired = array('legal_name');
         $rules = array(
             'legal_name' => 'required|min:2|max:80',
         );
-        return $this->test($inputsRequired,$rules);
+        return $this->test($rules);
     }
     public function acronym(){
-        $inputsRequired = array('acronym');
         $rules = array(
             'acronym' => 'required|min:2|max:80',
         );
-        return $this->test($inputsRequired,$rules);
+        return $this->test($rules);
     }
     public function goal(){
-        $inputsRequired = array('goal');
         $rules = array(
             'goal' => 'required|min:2|max:80',
         );
-        return $this->test($inputsRequired,$rules);
+        return $this->test($rules);
     }
     public function official_date_creation(){
-        $inputsRequired = array('official_date_creation');
         $rules = array(
             'official_date_creation' => 'required|min:2|max:80',
         );
-        return $this->test($inputsRequired,$rules);
+        return $this->test($rules);
     }
     public function website_url(){
-        $inputsRequired = array('website_url');
         $rules = array(
             'website_url' => 'required|min:2|max:80',
         );
-        return $this->test($inputsRequired,$rules);
+        return $this->test($rules);
     }
-    public function headquater(){
-        $inputsRequired = array('headquater');
+    public function headquarter(){
         $rules = array(
-            'headquater' => 'required|min:2|max:80',
+            'headquarter' => 'required|min:2|max:80',
         );
-        return $this->test($inputsRequired,$rules);
+        return $this->test($rules);
     }
     public function admitted_public_utility(){
-        $inputsRequired = array('admitted_public_utility');
         $rules = array(
             'admitted_public_utility' => 'required|min:2|max:80',
         );
-        return $this->test($inputsRequired,$rules);
+        return $this->test($rules);
     }
     public function internal_regulation(){
-        $inputsRequired = array('internal_regulation');
         $rules = array(
             'internal_regulation' => 'required',
         );
-        return $this->test($inputsRequired,$rules);
+        return $this->test($rules);
     }
     public function statuts(){
-        $inputsRequired = array('statuts');
         $rules = array(
             'statuts' => 'required',
         );
-        return $this->test($inputsRequired,$rules);
+        return $this->test($rules);
     }
     public function contact_adress(){
-        $inputsRequired = array('contact_adress');
         $rules = array(
             'contact_adress' => 'required',
         );
-        return $this->test($inputsRequired,$rules);
+        return $this->test($rules);
     }
 }

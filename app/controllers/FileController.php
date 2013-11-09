@@ -1,6 +1,6 @@
 <?php
 
-class PictureController  extends BaseController {
+class FileController  extends BaseController {
 
     private $root;
     private $url;
@@ -8,8 +8,17 @@ class PictureController  extends BaseController {
         $this->root = dirname(dirname(dirname(__FILE__)));
         $this->url = $this->root.DIRECTORY_SEPARATOR.'banque-image'.DIRECTORY_SEPARATOR;
     }
-    public function getAssociationPictures($idAssoc){
-        return View::make('picture.gestion-image')
+    public function getFiles($idAssoc){
+        return View::make('picture.display')
+                ->with('association',elo_Association::find($idAssoc))
+                ->with('type',Input::get('change'));
+    }
+    public function getUpload($idAssoc){
+        return View::make('picture.upload')
+                ->with('type',Input::get('change'));
+    }
+    public function getCrop($idAssoc){
+        return View::make('picture.crop')
                 ->with('type',Input::get('change'));
     }
     /* ZEND

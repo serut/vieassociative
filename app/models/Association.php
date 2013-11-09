@@ -5,13 +5,11 @@ class Association  extends Eloquent
         $a = new elo_Association;
         $a->name = $assoc['name'];
         $a->slug = Str::slug($assoc['name'],'-');
-        $a->acronym = $assoc['acronym'];
-        $a->active = 1;
         $a->touch();
         return $a->id;
     }
     static function getRangUser($id_user, $id_assoc){
-        $l = elo_UserAssociation::where('id_user','=',$id_user)->where('id_assoc','=',$id_assoc)->firstOrFail();
+        $l = elo_UserAssociation::where('id_user',$id_user)->where('id_assoc',$id_assoc)->firstOrFail();
         return empty($l) ? $l->link : '';
     }
     

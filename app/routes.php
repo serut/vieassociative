@@ -64,13 +64,17 @@
                 Route::get('{id}/edit/vieassociative-informations', 'AssociationController@getEditVieAssociativeInformations')->where('id', '[0-9]+');
                 Route::get('{id}/edit/evenement', 'EvenementController@getEvenementAssociation')->where('id', '[0-9]+');
                 Route::get('{id}/edit/evenement/{idEv}/edit', 'EvenementController@getEdit')->where('id', '[0-9]+')->where('idEv', '[0-9]+');
-                Route::get('{id}/edit/picture', 'PictureController@getAssociationPictures')->where('id', '[0-9]+');
+                Route::get('{id}/edit/file', 'FileController@getFiles')->where('id', '[0-9]+');
+                Route::get('{id}/edit/file/upload', 'FileController@getUpload')->where('id', '[0-9]+');
+                Route::get('{id}/edit/file/crop', 'FileController@getCrop')->where('id', '[0-9]+');
                 
                 Route::get('{id}/edit/news', 'AssociationController@getListNews')->where('id', '[0-9]+');
                 Route::get('{id}/edit/news/add', 'AssociationController@getAddNews')->where('id', '[0-9]+');
                 Route::get('{id}/edit/news/{idNews}/edit', 'AssociationController@getEditNews')->where('id', '[0-9]+')->where('idNews', '[0-9]+');
                 Route::post('{id}/edit/news/{idNews}/edit', 'AssociationController@postEditNews')->where('id', '[0-9]+')->where('idNews', '[0-9]+');
                 
+
+
                 Route::get('{id}/edit/social', 'AssociationController@getEditSocial')->where('id', '[0-9]+');
                 Route::get('{id}/edit/administrator', 'AssociationController@getEditAdministrator')->where('id', '[0-9]+');
                 Route::get('{id}/discussion/{idDiscu}', 'DiscussionController@getConversation')->where('id', '[0-9]+')->where('idDiscu', '[0-9]+');

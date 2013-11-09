@@ -18,6 +18,7 @@ class LoginController extends BaseController
                 $result['redirect_url'] = URL::to('/');
             }else{
                 TentativeConnexion::add(IP);
+                $result['error'] = Lang::get('membre/form_connexion.login_not_correct');
             }
         }
         else
@@ -38,6 +39,8 @@ class LoginController extends BaseController
             User::connexion($user->id);
             $result['redirect_url'] = URL::to('/');
             EmailController::register($user->username,$user->email);
+        }else{
+            $result['error']=Lang::get('core/form.form_uncomplete');
         }
         return Response::json($result);
 

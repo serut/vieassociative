@@ -2,50 +2,26 @@
 class validators_connexion extends BaseValidator
 {
 	public function login($nbrConnexTentative){
-        $inputsRequired = array('username','password');
-
-        // Looks if every inputs required are present
-        try{
-            $arrayElements = $this->need($inputsRequired);
-            extract($arrayElements);
-        }catch (Exception $e) {
-            return $this->getMessageMissingInput();
-        }
-
         // Add specific rule for the validation of data
         $rules = array(
-            'username' => 'required|min:4',
-            'password' => 'required|min:6|max:30'
+            'password' => 'required|min:6|max:30',
+            'username' => 'required|min:4|connexion'
         );
 
-        //Try to validate with rules if everything is correct
-        $v = Validator::make(Input::get(), $rules);
-        if(! $v->fails()){
-            $credentialsWithUsername = array('username' => $username,
-                                            'password' => $password);
-            $credentialsWithMail = array('email' => $username, 
-                                        'password' => $password);
-            if (Auth::attempt($credentialsWithUsername) || Auth::attempt($credentialsWithMail)){
-                $message = array('success'=>'true');
-            }else{
-                $message = array('error'=>Lang::get('membre/form_connexion.login_not_correct'));
-            }
-        }else{
-            $message = array('error'=>Lang::get('core/form.form_uncomplete'));
-        }
-        return $message;
+        Validator::extend('connexion', function($attribute, $value, $parameters)
+        {
+            $credentialsWithUsername = array('username' => Input::get('username'),
+                                        'password' => Input::get('password'));
+            $credentialsWithMail = array('email' => Input::get('username'), 
+                                    'password' => Input::get('password'));
+            return Auth::attempt($credentialsWithUsername) || Auth::attempt($credentialsWithMail);
+        });
+
+        return $this->test($rules);
 	}
 
 
 	public function register(){
-        $inputsRequired = array('pseudo','mail','password');
-        // Looks if every inputs required are present
-        try{
-            $arrayElements = $this->need($inputsRequired);
-            extract($arrayElements);
-        }catch (Exception $e) {
-            return $this->getMessageMissingInput();
-        }
         Validator::extend('existing_nick', function($attribute, $value, $parameters)
         {
             return ! User::isTakenUsername(Input::get('pseudo'));
@@ -61,12 +37,9 @@ class validators_connexion extends BaseValidator
             'password' => 'required|min:6|max:30',
         );
 
-             //user_already_exist
-        $v = Validator::make(Input::get(), $rules);
-        if(! $v->fails()){
-            $message = array('success'=>'true');
-        }else{
-            $message = array('error'=>'');
+        return $this->test($rules);
+        /*
+    
             $fail = $v->failed();
             if(isset($fail['pseudo'])){
                 $message['error'] .= Lang::get('membre/form_connexion.user_already_exist');
@@ -75,7 +48,6 @@ class validators_connexion extends BaseValidator
                 $message['error'] .= Lang::get('membre/form_connexion.mail_already_exist');
             }
 
-        }
-        return $message;
+        */
 	}
 }

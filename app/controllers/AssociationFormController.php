@@ -22,7 +22,7 @@ class AssociationFormController  extends BaseController {
                     case 'goal':
                     case 'official_date_creation':
                     case 'website_url':
-                    case 'headquater':
+                    case 'headquarter':
                     case 'admitted_public_utility':
                     case 'internal_regulation':
                     case 'statuts':
@@ -121,8 +121,9 @@ class AssociationFormController  extends BaseController {
         }else{
             $result = $v->add_when_already_admin();
             // he is already an admin, he is adding somebody else
-            if(isset($result['success']) && $this->isAdministrator($id)){
-                $user = User::where('email', $result['data']['admin_mail'])->firstOrFail();
+            if(isset($result['success']) && User::isAdministrator($id)){
+                $user = User::where('email',"l.mieulet@gmail.com")->first();
+                //$user = User::where('email',$result['data']['admin_mail'])->first();
                 if(!User::isUserAdministrator($id,$user->id)){
                     User::addAdmin($user->id,$id,$result['data']['link']);
                 }
@@ -142,7 +143,7 @@ class AssociationFormController  extends BaseController {
             case 'goal':
             case 'official_date_creation':
             case 'website_url':
-            case 'headquater':
+            case 'headquarter':
             case 'internal_regulation':
             case 'statuts':
             case 'contact_adress':

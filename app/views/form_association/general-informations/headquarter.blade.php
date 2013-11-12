@@ -5,14 +5,14 @@
 @stop
 
 @section('form')
-	<p>{{Lang::get('association/modal_form/general-informations.headquater')}}</p>
+	<p>{{Lang::get('association/modal_form/general-informations.headquarter')}}</p>
 	{{ Form::open(array('class'=> 'form-horizontal form-modal','data-validate'=>'our-parsey')) }}
 		@input = array(
-	        'id'=>"headquater",
-	        'label'=>Lang::get('association/modal_form/general-informations.label_headquater'),
+	        'id'=>"headquarter",
+	        'label'=>Lang::get('association/modal_form/general-informations.label_headquarter'),
 	        'value'=>$val,
 	        'form' => array(
-	            'placeholder'=>Lang::get('association/modal_form/general-informations.placeholder_headquater'),
+	            'placeholder'=>Lang::get('association/modal_form/general-informations.placeholder_headquarter'),
 	            'class' => 'input-xlarge',
 	            'data-maxlength'=>"100",
 	        )

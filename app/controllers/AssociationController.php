@@ -4,13 +4,6 @@ class AssociationController  extends BaseController {
     public function getAdd() {
         return View::make('association.add');
     }
-    public function getGererMaintenant($idAssoc) {
-        Session::put('associationEnManagement',$idAssoc);
-        User::changerAssociationManagement(Session::get('idUser'),$idAssoc);
-        Session::put('associationEnManagementNom',Association::getName($idAssoc));
-        Session::put('myassocs',Association::getAssociations(Session::get('idUser')));
-        return Redirect::action('AssociationController@getEdit',array($idAssoc));
-    }
     public function getEdit($idAssoc) {
         return View::make('association.edit')
             ->with('count_news',Post::countNews($idAssoc))
@@ -35,13 +28,9 @@ class AssociationController  extends BaseController {
             ->with('news',Post::listNews($idAssoc))
             ->with('association',elo_Association::find($idAssoc));
     }
-    public function getAddNews($idAssoc){
-        $idPost = Post::addNews($idAssoc,Auth::user()->id);
-        return Redirect::to('/'.$idAssoc.'/edit/news/'.$idPost.'/edit');
-    }
     public function getEditNews($idAssoc, $idPost){
         return View::make('association.edit-news')
-            ->with('post',Post::get($idPost,Auth::user()->id))
+            ->with('post',Post::get($idPost))
             ->with('association',elo_Association::find($idAssoc));
     }
     public function getEditSocial($idAssoc){
@@ -59,7 +48,7 @@ class AssociationController  extends BaseController {
     
     public function postAdd(){
         $v = new validators_associationAdd;
-        $result = $v->register();
+        $result = $v->add();
         if(isset($result['success'])){
             $id_assoc = Association::add($result['data']);
             // if the association has been created by one of his authorised user
@@ -78,7 +67,7 @@ class AssociationController  extends BaseController {
         $v = new validators_associationEditPost;
         $result = $v->validate();
         if(isset($result['success'])){
-            Post::addProposition($idPost,Auth::user()->id,$result['data']);
+            Post::edit($idPost,$idAssoc,$result['data']);
             $result['redirect_url'] = '/'.$idAssoc.'/edit/';
             $result['data']=null; //Remove data
         }

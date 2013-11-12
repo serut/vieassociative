@@ -12,6 +12,7 @@
               <li class="active">Les administrateurs</li>
             </ul>
             <h3 class="head">{{Lang::get('association/edit/administrator.list_admin')}} </h3>
+            @if(! $admin->isEmpty())
             <hr>
             <table class="table table-striped">
                 <thead>
@@ -37,6 +38,9 @@
                 </tbody>
                 @endforeach
             </table>
+            @else
+                Cette association n'a pas d'administrateur. Notre politique sdfoksdfsqdlfsqdk fjzefj zoiefj ezoijf izejf zeoifj zioejf 
+            @endif
             @if($is_admin || !$admin->count())
             <hr>
             <div>

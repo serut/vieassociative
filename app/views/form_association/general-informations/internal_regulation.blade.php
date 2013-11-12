@@ -5,16 +5,14 @@
 @stop
 
 @section('form')
-	<p>{{Lang::get('association/modal_form/general-informations.internal_regulation')}}</p>
-	{{ Form::open(array('class'=> 'form-horizontal form-modal')) }}
-	<div>
-        <label class="control-label" for="inputPassword">{{Lang::get('association/modal_form/general-informations.internal_regulation')}}</label>
-        <div class="controls controls-textarea">
-            <textarea name="internal_regulation" rows="8" id="internal_regulation" class="input-xxlarge nicEditor-textarea" onclick="launchEditor($(this))">{{$val}}</textarea>
-        </div>
+    {{ Form::open(array('class'=> 'form-horizontal form-modal','id'=>'internal-regulation-form')) }}
+    <div>
+        <label>{{Lang::get('association/modal_form/general-informations.internal_regulation')}}</label>
+        {{SiteHelpers::add_textarea('internal_regulation',$val, false, false)}}
     </div>
     {{ Form::close() }}
     <script type="text/javascript">
         $(".form-modal").attr('parsley',"true").parsley(confParsley);
+        myWysiwyg($('#internal-regulation-form'));
     </script>
 @stop

@@ -47,7 +47,7 @@ return array(
 	'connections' => array(
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'eu-cdbr-west-01.cleardb.com',
+			'host'      => getenv('VA_DB_HOST'),
 			'database'  => getenv('VA_DB_NAME'),
 			'username'  => getenv('VA_DB_USERNAME'),
 			'password'  => getenv('VA_DB_PASSWORD'),

@@ -1,0 +1,26 @@
+
+<?php $__env->startSection('head'); ?>
+	<?php echo Lang::get('association/modal_form/general-informations.head'); ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('form'); ?>
+	<p><?php echo Lang::get('association/modal_form/general-informations.acronym'); ?></p>
+	<?php echo Form::open(array('class'=> 'form-horizontal form-modal','data-validate'=>'our-parsey')); ?>
+		<?php $input= array(
+	        'id'=>"acronym",
+	        'label'=>Lang::get('association/modal_form/general-informations.label_acronym'),
+	        'value'=>$val,
+	        'form' => array(
+	            'placeholder'=>Lang::get('association/modal_form/general-informations.placeholder_acronym'),
+	            'class' => 'input-xlarge',
+	            'data-maxlength'=>"100",
+	        )
+	    ); ?>
+	    <?php echo SiteHelpers::create_input($input); ?>
+    <?php echo Form::close(); ?>
+    <script type="text/javascript">
+  		$(".form-modal").attr('parsley',"true").parsley(confParsley);
+    </script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('form_association.general', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

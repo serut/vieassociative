@@ -53,6 +53,8 @@
             {
                 return View::make('index.association');
             });
+            Route::options('/upload', 'FileUploadController@fileUpload');
+            Route::post('/upload', 'FileUploadController@postFileUpload');
             Route::get('{id}-{text}', 'AssociationController@getProfile')->where('id', '[0-9]+')->where('text', '[a-z-0-9]+');
             Route::group(array('before'=>'auth'), function()
             {

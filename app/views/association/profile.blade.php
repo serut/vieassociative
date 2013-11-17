@@ -16,7 +16,6 @@
 			<img src="{{$profile['cover']}}" class="cover">
 			<img src="{{$profile['logo']}}" class="logo">
 		<div>
-
 			<div class="row">
 				<div class="span17 head">
 					<h2 class="name">{{{$association->name}}}</h2>
@@ -182,8 +181,11 @@
 				<div class="span23">
 					<div class="span21">
 						<div class="row-fluid">
+							@foreach($newsFeed as $news )
+								@include('association.wall.'.$news->type, array('p'=>$news))
+							@endforeach
 							<?php
-								$posts = array("single-photo","text","video","link","event","multiple-photo","single-photo","text","video","link","event","multiple-photo","single-photo","text","video","link","event","multiple-photo");
+								$posts = array("single-photo","video","event","multiple-photo","link");
 							?>
 							@foreach($posts as $p )
 								@include('association.wall.'.$p, array('p'=>$p))

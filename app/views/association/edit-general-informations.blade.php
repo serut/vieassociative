@@ -100,7 +100,7 @@
         }).fail(function() {
             alert("error");
         });
-        e.stopPropagation();
+        e.preventDefault();
     })
     /*Modal form bind PART END*/
 </script>

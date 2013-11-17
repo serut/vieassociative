@@ -13,7 +13,6 @@
 			</ul>
 			<div class="container">
 				<br>
-
 				<div id="dnd" class="b-upload b-upload_dnd">
 					<div class="row">
 						<div class="dropzone drag-and-drop span22">
@@ -31,15 +30,26 @@
 							<input type="file" name="files[]" multiple id="selectFile">
 						</div>
 					</div>
-				   <div class="js-files b-upload__files span21">
-				      <div class="js-file-tpl b-thumb span4" data-id="<%=uid%>" title="<%-name%>, <%-sizeText%>">
-				         <div class="b-thumb__preview">
-				            <div class="b-thumb__preview__pic"></div>
-				         </div>
-				         <div class="b-thumb__progress progress progress-small"><div class="bar"></div></div>
-				         <div class="b-text-center"><%-name%></div>
-				      </div>
-				   </div>
+
+					<div class="js-files b-upload__files" >
+				    	<div class="js-file-tpl b-thumb span4" data-id="<%=uid%>" title="<%-name%>, <%-sizeText%>">
+					         <div class="b-thumb__preview fancybox" rel="gallery1" >
+					            <div class="b-thumb__preview__pic"></div>
+					         </div>
+					         <div class="b-thumb__progress progress progress-small"><div class="bar"></div></div>
+					         <div class="b-text-center"></div>
+					    </div>
+						<div class="thumb-text">
+							<b><%-name%></b><br>
+							<div class="divider"></div>
+							<a href="#" title="Image Dummy Title" ><%-name%></a>
+						</div>
+					</div>
+				</div>
+				<div id="div-hidden-photo">
+					<div id="gallery" class="portfolio-items isotope span23">
+						<!-- Pictures will go here ... -->
+					</div>
 				</div>
 			</div>
 		</div>
@@ -86,15 +96,26 @@
 	</script>
 	<script src="/pluggin/jquery.fileapi/FileAPI/FileAPI.min.js"></script>
 	<script src="/pluggin/jquery.fileapi/jquery.fileapi.min.js"></script>
-	<script src="/pluggin/jquery.fileapi/jcrop/jquery.Jcrop.min.js"></script>jquery.modal
-	<link href="/pluggin/jquery.fileapi/jcrop/jquery.Jcrop.min.css" rel="stylesheet" type="text/css"/>
-	<script src="/pluggin/jquery.fileapi/statics/jquery.modal.js"></script>
+	<script id="photo-pattern" type="text/x-jquery-tmpl">
+		<div class="element ${categories} span-size${size}" >
+			<a class="fancybox" href="${url_img}" rel="gallery1" title="A title">
+				<img src="${url_img}" class="size${size}"alt=" " />
+			</a>
+		</div>
+		{{--<div class="thumb-text">
+			<b>${head}</b><br>
+			<div class="divider"></div>
+			<a href="#" title="Image Dummy Title" >${link}</a>
+		</div>--}}
+	</script>
 	<script>
 	    $('#dnd').fileapi({
-		   url: 'http://rubaxa.org/FileAPI/server/ctrl.php',
+		   url: "{{URLSubdomain::to('association','/upload')}}",
 		   paramName: 'filedata',
 		   autoUpload: true,
-		   elements: {
+		   chunkSize: 2 * FileAPI.MB,
+			chunkUploadRetry: 3,
+		    elements: {
 		      list: '.js-files',
 		      file: {
 		         tpl: '.js-file-tpl',
@@ -104,7 +125,7 @@
 		            height: 150
 		         },
 		         upload: { show: '.progress' },
-		         complete: { hide: '.progress' },
+		         complete: { hide: '.progress'},
 		         progress: '.progress .bar'
 		      },
 		      dnd: {
@@ -113,7 +134,123 @@
 		         fallback: '.dropzone.no-drag-and-drop'
 		      }
 		   }
-		});
+		}).on('filecomplete',function(err/**String*/, xhr/**Object*/, file/**Object/, options/**Object*/){
+			if( !err ){
+		      // File successfully uploaded
+		      var result = xhr.responseText;
+		    }
+			console.log('File completed');
+			console.log(file);
+			$('#gallery').masonry( 'addItems',file);
+		})
+		/*Gallery PART START*/
+		var data = [
+			{
+				'url_img':'http://lorempixel.com/800/600/sports/',
+				'head':'WordPress Custom Theme',
+				'link':'Read More',
+				'categories':'illustration',
+				'size' : '2',
+			},
+			{
+				'url_img':'http://lorempixel.com/800/600/animals/',
+				'head':'WordPress Custom Theme',
+				'link':'Read More',
+				'categories':'illustration design',
+				'size' : '1',
+			},
+			{
+				'url_img':'http://lorempixel.com/1000/600/animals/',
+				'head':'WordPress Custom Theme',
+				'link':'Read More',
+				'categories':'illustration',
+				'size' : '2',
+			},
+			{
+				'url_img':'http://dummyimage.com/800x1600/4d494d/686a82.gif&text=placeholder+image',
+				'head':'WordPress Custom Theme',
+				'link':'Read More',
+				'categories':'illustration design',
+				'size' : '1',
+			},
+			{
+				'url_img':'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn1/c26.26.328.328/s160x160/378926_10150600500671124_496920089_n.jpg',
+				'head':'WordPress Custom Theme',
+				'link':'Read More',
+				'categories':'design',
+				'size' : '1',
+			},{
+				'url_img':'http://lorempixel.com/600/1300/animals/',
+				'head':'WordPress Custom Theme',
+				'link':'Read More',
+				'categories':'illustration',
+				'size' : '2',
+			},
+			{
+				'url_img':'http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image',
+				'head':'WordPress Custom Theme',
+				'link':'Read More',
+				'categories':'illustration design',
+				'size' : '1',
+			},
+			{
+				'url_img':'http://dummyimage.com/1000x768/4d494d/686a82.gif&text=placeholder+image',
+				'head':'WordPress Custom Theme',
+				'link':'Read More',
+				'categories':'illustration',
+				'size' : '2',
+			},
+			{
+				'url_img':'http://dummyimage.com/800x1600/4d494d/686a82.gif&text=placeholder+image',
+				'head':'WordPress Custom Theme',
+				'link':'Read More',
+				'categories':'illustration design',
+				'size' : '1',
+			},
+			{
+				'url_img':'http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image',
+				'head':'WordPress Custom Theme',
+				'link':'Read More',
+				'categories':'design',
+				'size' : '1',
+			},{
+				'url_img':'http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image',
+				'head':'WordPress Custom Theme',
+				'link':'Read More',
+				'categories':'illustration',
+				'size' : '2',
+			},
+			{
+				'url_img':'http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image',
+				'head':'WordPress Custom Theme',
+				'link':'Read More',
+				'categories':'illustration design',
+				'size' : '1',
+			},
+			{
+				'url_img':'http://dummyimage.com/1000x768/4d494d/686a82.gif&text=placeholder+image',
+				'head':'WordPress Custom Theme',
+				'link':'Read More',
+				'categories':'illustration',
+				'size' : '2',
+			},
+			{
+				'url_img':'http://dummyimage.com/800x1600/4d494d/686a82.gif&text=placeholder+image',
+				'head':'WordPress Custom Theme',
+				'link':'Read More',
+				'categories':'illustration design',
+				'size' : '1',
+			},
+			{
+				'url_img':'http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image',
+				'head':'WordPress Custom Theme',
+				'link':'Read More',
+				'categories':'design',
+				'size' : '1',
+			},
+		]
+		loadGallery($('#gallery'),data,$('#photo-pattern'));
+	/*Gallery PART END*/
 	</script>
 @stop
 

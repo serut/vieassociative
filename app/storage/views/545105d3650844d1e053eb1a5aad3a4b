@@ -1,0 +1,53 @@
+
+<?php $__env->startSection('main'); ?>
+    
+					<td>
+						<h3><?php echo Lang::get('mail/base.hello'); ?></h3>
+						<p class="lead"><?php echo Lang::get('mail/register.felicitation'); ?></p>
+						<p><?php echo Lang::get('mail/register.details'); ?></p>
+						</br>
+						<p><?php echo Lang::get('mail/register.user'); ?><?php echo $name; ?></p>
+						<!-- Callout Panel -->
+						<p class="callout">
+							<?php echo Lang::get('mail/register.link'); ?> <a href="#">VieAssociative &raquo;</a>
+						</p><!-- /Callout Panel -->					
+												
+						<!-- social & contact -->
+						<table class="social" width="100%">
+							<tr>
+								<td>
+									
+									<!-- column 1 -->
+									<table align="left" class="column">
+										<tr>
+											<td>				
+												
+												<h5 class=""><?php echo Lang::get('mail/base.follow'); ?></h5>
+												<p class=""><a href="#" class="soc-btn fb">Facebook</a> <a href="#" class="soc-btn tw">Twitter</a> <a href="#" class="soc-btn gp">Google+</a></p>
+						
+												
+											</td>
+										</tr>
+									</table><!-- /column 1 -->	
+									
+									<!-- column 2 -->
+									<table align="left" class="column">
+										<tr>
+											<td>				
+																			
+												<h5 class=""><?php echo Lang::get('mail/base.contact'); ?></h5>
+                		Email: <strong><a href="emailto:reply@vieassociative.com">reply@vieassociative.com</a></strong></p>
+                
+											</td>
+										</tr>
+									</table><!-- /column 2 -->
+									
+									<span class="clear"></span>	
+									
+								</td>
+							</tr>
+						</table><!-- /social & contact -->
+						
+					</td>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('mail.template', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

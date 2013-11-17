@@ -1,7 +1,6 @@
 <?php
-class Answer  extends Eloquent
+class Answer extends Eloquent
 {
-    
     static function getAnswer($id_discussion){
         $data = elo_Answer::where('id_discussion',$id_discussion)
                             ->with('author')->orderBy('level', 'DESC')->orderBy('id', 'ASC')->get();

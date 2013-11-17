@@ -1,5 +1,4 @@
 <?php
-
 class AssociationController  extends BaseController {
     public function getAdd() {
         return View::make('association.add');
@@ -13,7 +12,8 @@ class AssociationController  extends BaseController {
     }
     public function getProfile($idAssoc) {
         return View::make('association.profile')
-            ->with('association',elo_Association::find($idAssoc));
+            ->with('association',elo_Association::find($idAssoc))
+            ->with('newsFeed',NewsFeed::get($idAssoc));
     }
     public function getEditGeneralInformations($idAssoc){
         return View::make('association.edit-general-informations')

@@ -45,11 +45,16 @@ return array(
 	*/
 
 	'connections' => array(
-
-
-		//nothing here - go to the local folder for specify credentials
-
-
+		'mysql' => array(
+			'driver'    => 'mysql',
+			'host'      => 'localhost',
+			'database'  => 'vieassoc',
+			'username'  => 'root',
+			'password'  => '',
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
+		),
 	),
 
 	/*

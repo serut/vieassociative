@@ -68,65 +68,7 @@ class FileController  extends BaseController {
         return $result[1];
     }
 
-    private function creerImageDimensionnee($fileOri, $imageX, $imageY) {
-        // A partir du nom du fichier, recupere le nom et l'extension
-        $file = $this->getFileName($fileOri);
-        $file_ext = $file[1];
-        $file_name = $file[0];
-        $qualite = 100; // Qualite de l'image
-        $color = "ffffff"; // Couleur de fond
-
-        $imageProvenance = $this->url .DIRECTORY_SEPARATOR. "original" .DIRECTORY_SEPARATOR. $fileOri;
-
-        $imageXAfter = 0; // Dimension de la future image
-        $imageYAfter = 0;
-        $imageXAfterPoint = 0; // decalage de l'ancienne image dans la nouvelle image
-        $imageYAfterPoint = 0;
-
-        //Calcul de la dimension de l'image rÃ©sultante
-        $size = getimagesize($imageProvenance);
-        if ($size[0] >= $imageX AND $size[1] >= $imageY) {
-            if (($size[0] / $imageX) > ($size[1] / $imageY)) {
-                $imageXAfter = $imageX;
-                $imageYAfter = floor(($size[1] * $imageX) / $size[0]);
-                $imageXAfterPoint = 0;
-                $imageYAfterPoint = ($imageY / 2) - ($imageYAfter / 2);
-            } else {
-                $imageXAfter = floor(($size[0] * $imageY) / $size[1]);
-                $imageYAfter = $imageY;
-                $imageXAfterPoint = ($imageX / 2) - ($imageXAfter / 2);
-                $imageYAfterPoint = 0;
-            }
-        } else {
-            $imageXAfter = $size[0];
-            $imageYAfter = $size[1];
-            $imageXAfterPoint = ($imageX / 2) - ($imageXAfter / 2);
-            $imageYAfterPoint = ($imageY / 2) - ($imageYAfter / 2);
-        }
-        
-        // Bonne création d'image
-        if ($file_ext == 'jpg' OR $file_ext == 'jpeg') {
-            $image_new = imagecreatefromjpeg($imageProvenance);
-        } elseif ($file_ext == 'gif') {
-            $image_new = imagecreatefromgif($imageProvenance);
-        } elseif ($file_ext == 'png') {
-            $image_new = imagecreatefrompng($imageProvenance);
-        } elseif ($extension == 'bmp') {
-            $image_new = imagecreatefromwbmp($imageProvenance);
-        } else {
-            die("Erreur 001 : Impossible de trouver le bon format pour recreer l'image");
-            exit;
-        }
-
-
-        //Creation de l'image
-        $image = imagecreatetruecolor($imageX, $imageY);
-        $color = imagecolorallocate($image, hexdec($color[0] . $color[1]), hexdec($color[2] . $color[3]), hexdec($color[4] . $color[5]));
-        imagefilledrectangle($image, 0, 0, $imageX, $imageY, $color);
-        imagecopyresampled($image, $image_new, $imageXAfterPoint, $imageYAfterPoint, 0, 0, $imageXAfter, $imageYAfter, $size[0], $size[1]);
-
-        return $image;
-    }
+    
     /*Get the file extension*/
     private function getFileName($file){
         $file = preg_replace("#[^a-zA-Z0-9_\-.]#", "", $file);

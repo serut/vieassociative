@@ -1,7 +1,6 @@
 <?php
 class Categorie  extends Eloquent
 {
-    
     public function getSousCategorie($id){
         $sql = "SELECT * from type_sous_evenement WHERE id_type_evenement = ?";
         $result = DB::select($sql, array($id));

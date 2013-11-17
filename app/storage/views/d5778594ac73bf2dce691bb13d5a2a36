@@ -1,0 +1,19 @@
+
+<?php $__env->startSection('head'); ?>
+	<?php echo Lang::get('association/modal_form/general-informations.head'); ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('form'); ?>
+    <?php echo Form::open(array('class'=> 'form-horizontal form-modal','id'=>'internal-regulation-form')); ?>
+    <div>
+        <label><?php echo Lang::get('association/modal_form/general-informations.internal_regulation'); ?></label>
+        <?php echo SiteHelpers::add_textarea('internal_regulation',$val, false, false); ?>
+    </div>
+    <?php echo Form::close(); ?>
+    <script type="text/javascript">
+        $(".form-modal").attr('parsley',"true").parsley(confParsley);
+        myWysiwyg($('#internal-regulation-form'));
+    </script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('form_association.general', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

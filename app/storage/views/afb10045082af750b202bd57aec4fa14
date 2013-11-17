@@ -1,0 +1,45 @@
+
+
+<?php $main_and_aside = true; ?>
+<?php $__env->startSection('main-content'); ?>
+    <section>
+        <div>
+            <ul class="breadcrumb">
+                <li><a href="#">Association</a> <span class="divider">/</span></li>
+                <li><a href="/<?php echo $association->id; ?>-<?php echo $association->slug; ?>"><?php echo $association->name; ?></a> <span class="divider">/</span></li>
+                <li><a href="/<?php echo $association->id; ?>/edit">Edition</a> <span class="divider">/</span></li>
+                <li class="active">Mes publications</li>
+            </ul>
+            <h3 class="head"><?php echo Lang::get('association/edit/news.select_news'); ?> </h3>
+            <p><?php echo Lang::get('association/edit.warn_possiblity_for_normal_user'); ?></p>
+            <hr>
+                <div class="pull-right">
+                    <a class="button button-blue" href="news/0/edit"><?php echo Lang::get('association/edit/news.create_news'); ?></a>
+                </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td>Titre</td>
+                        <td>Dernière modification</td>
+                        <td>Publié</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($news as $n): ?>
+                    <tr>
+                        <td><?php echo e($n->title); ?></td>
+                        <td><?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($n->updated_at))->diffForHumans(); ?></td>
+                        <td><i class="icon-remove"></i></td>
+                        <td><a href="news/<?php echo $n->id; ?>/edit"> Editer</a></td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+
+            </table>
+
+            </div>
+        </div>
+    </section>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('template.theme', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

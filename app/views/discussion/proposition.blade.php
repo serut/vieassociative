@@ -127,24 +127,29 @@
             }
             $('#answers > section > div').each(function(){
                 var id = $(this).attr('data-id');
-                $(this).find('.icon-chevron-up').click(function(){
+                $(this).find('.icon-chevron-up').click(function(e){
                     ajaxVote($(this),1);
+                    e.preventDefault();
                 });
-                $(this).find('.icon-chevron-down').click(function(){
+                $(this).find('.icon-chevron-down').click(function(e){
                     ajaxVote($(this),0);
+                    e.preventDefault();
                 });
                 $(this).find('.validate').click(function(){
                     ajaxValidate($(this),1);
+                    e.preventDefault();
                 });
                 $(this).find('.refuse').click(function(){
                     ajaxValidate($(this),0);
+                    e.preventDefault();
                 });
                 $(this).find('.signal').click(function(){
                     alert("Merci de nous contacter par mail - cette fonctionnalité n'est pas encore fonctionnelle");
+                    e.preventDefault();
                 });
-                $(this).find('.answer').click(function(){
+                $(this).find('.answer').click(function(e){
                     $('#id_answer').val($(this).parent().parent().parent().parent().attr('data-id'))
-                    return false;
+                    e.preventDefault();
                 });
             })
         });

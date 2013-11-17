@@ -13,7 +13,6 @@
             </ul>
             <h3 class="head">{{Lang::get('association/edit/news.select_news')}} </h3>
             <p>{{Lang::get('association/edit.warn_possiblity_for_normal_user')}}</p>
-            {{getenv('PATH')}}
             <hr>
                 <div class="pull-right">
                     <a class="button button-blue" href="file/upload">{{Lang::get('association/edit/news.create_news')}}</a>

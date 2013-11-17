@@ -1,0 +1,12 @@
+<div class="media social-box">
+	<a href="#" class="pull-left social-users-avatars">
+		<img alt="Maria" src="http://cesarlab.com/templates/social/assets/img/people-face/user1_55.jpg" class="media-object">
+	</a>
+	<div class="media-body social-body">
+		<h4><?php echo $p->post->title; ?></h4>
+		<p>
+			<?php echo $p->post->text; ?>
+		</p>
+		<?php echo $__env->make('association.wall.post-footer', array('p'=>$p), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	</div>
+</div>

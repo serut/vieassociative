@@ -29,5 +29,8 @@ class Post extends Eloquent
             $post->wish_time_publish = SiteHelpers::datepicker_to_timestamp($data['published_at']);
         }
         $post->touch();
+        if(! $idPost && $data['publish_later'] =="false"){
+            NewsFeed::addNews($idAssoc,$post->id);
+        }
     }
 }

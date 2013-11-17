@@ -12,15 +12,8 @@
             </ul>
             <h3 class="head">{{Lang::get('association/edit.edit_association')}}</h3>
             <p>{{Lang::get('association/edit.warn_possiblity_for_normal_user')}}</p>
-            <p>
             @if(!empty($proposition))
-            <span class="badge badge-warning">40</span> <span>Modification en attente :</span>
-            <span class="pull-right">
-              <a href=""><i class="icon-share-alt"></i></a> -
-              <a href="#" onclick="$('#wait-moderation').toggle();"><i class="icon-eye-close"></i></a> -
-              <a href="#"><i class="icon-refresh"></i></a>
-            </span>
-            </p>
+            <p>Modification en attente :</p>
             @foreach($proposition as $p)
             <div class="item">
                 <div class="text">

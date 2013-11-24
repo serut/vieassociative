@@ -1,6 +1,6 @@
 <?php
 
 return array(
-	'debug' => false,
+	'debug' => true,
 	'key' => getenv('VA_APP_KEY'),
 );

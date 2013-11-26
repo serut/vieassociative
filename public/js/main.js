@@ -22,33 +22,6 @@ function loadGallery(el,data,picturePattern) {
         'speedOut' : 200,
         'overlayShow' : false 
     });
-    var li = el.find("li");
-    var filters = el.parent().find(".filterable a");
-    filters.first().addClass('active');
-    $(li, filters).each(function(i) {
-        $(this).addClass($(this).attr('data-categories') );
-    });
-    filters.click(function(e) {
-        currentOption = $(this).attr('data-categories');
-        filters.removeClass('active');
-        $(this).addClass('active');
-        el.find('.element').each(function(){
-            (!$(this).hasClass(currentOption) && currentOption!='*') ? $(this).hide() : $(this).show();
-            $(this).css('position', 'absolute'); // correct masonry bug
-        });
-        el.masonry(); // re-sort goods
-        e.preventDefault();
-    });
-    filters.first().addClass('active');
-    /*JQUERY HOVER OPACITY EFFECT STARTS*/
-    el.find(".item-hover").hover(
-        function(){
-            $(this).find(".portfolio-thumbnail").stop(true, true).animate({ opacity: 'show' }, 100);
-        },function() {
-            $(this).find(".portfolio-thumbnail").stop(true, true).animate({ opacity: 'hide' }, 500);
-        }
-    );
-    /*JQUERY HOVER OPACITY EFFECT ENDS*/
 };
  /*Gallery PLUGIN ENDS*/
 

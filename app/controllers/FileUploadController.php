@@ -14,33 +14,33 @@ class FileUploadController extends BaseController
 		$file = Input::file('filedata');
 		if($file){
 			$name = $this->generateName($file->getClientOriginalName());
-			$return["name"] = $name;
-			$return["size"] = $file->getSize();
-			$return["width"] = "200";
-			$return["height"] = "200";
-			$return["mime"] = "image/jpeg";
+			$return["status"] = 200;
+			$return["files"] = array($name);
 
-			$return["dataURL"] = "http://img.vieassociative.fr/".$name;
 			$this->sendObjectFile($name,$file->getRealPath());
-			File::addFile($name, $extension, $id_assoc);
+			File::addFile($name, $extension);
 
 			/*$if(){
 				//create a thumb
 				$this->sendFile($name,$file->getRealPath());
 			}*/
-			return Response::json(array('files' => $return), 200);
 		}else{
 			if(Request::header('X-Requested-With') == "XMLHttpRequest"){
 				if($infoSizeFile = $this->getInformationOfChuckedFile()){
 					Session::push('chucked_file', file_get_contents('php://input'));
 					if(($infoSizeFile[2]+1) == $infoSizeFile[3]){
 						//We have all parts of this file
-						$this->sendObjectString('img5.jpg',implode('',Session::get('chucked_file')));
+						$name = $this->generateName($this->getFileName());
+						$this->sendObjectString($name,implode('',Session::get('chucked_file')));
 						Session::forget('chucked_file');
+						$return["status"] = 200;
+						$return["files"] = array($name);
+						File::addFile($name, $extension);
 					}
 				}
 			}
 		}
+		return Response::json($return);
 	}
     public function getInformationOfChuckedFile() {
     	$val = Request::header('Content-Range');
@@ -49,6 +49,12 @@ class FileUploadController extends BaseController
         if(preg_match($pattern, $val,$elements))
         	return $elements;
         return false;
+    }
+    public function getFileName(){
+    	$val = Request::header('Content-Disposition');
+             //Exemple : attachment; filename=cobravrai.png
+        $name = explode('=', $val);
+        return $name[1];
     }
 	public function isImg($extension){
 		$imgExtension = array('png','jpg');

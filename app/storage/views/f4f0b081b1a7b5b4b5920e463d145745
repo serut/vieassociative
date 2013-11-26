@@ -83,6 +83,7 @@
 			},
 			onSelect: function (evt, ui){
 				var file = ui.files[0];
+				console.log(file)
 				if( file ){
 					$('#cropper').show();
 					$('#validate').click(function(){

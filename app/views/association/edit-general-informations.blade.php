@@ -49,7 +49,7 @@
                 <tr>
                   <td>Siege</td>
                   <td>{{{$association->headquater}}}</td>
-                  <td><a href="#" data-modal-form="headquater"><i class="icon-pencil"></i></a></td>
+                  <td><a href="#" data-modal-form="headquarter"><i class="icon-pencil"></i></a></td>
                 </tr>
                 <tr>
                   <td>Association reconnue d'utilité publique </td>

@@ -31,13 +31,21 @@
 						</div>
 					</div>
 
-					<div class="js-files b-upload__files" >
-				    	<div class="js-file-tpl b-thumb span4" data-id="<%=uid%>" title="<%-name%>, <%-sizeText%>">
-					         <div class="b-thumb__preview fancybox" rel="gallery1" >
-					            <div class="b-thumb__preview__pic"></div>
-					         </div>
-					         <div class="b-thumb__progress progress progress-small"><div class="bar"></div></div>
-					         <div class="b-text-center"></div>
+					<div class="js-files b-upload__files modal">
+				    	<div class="js-file-tpl b-thumb" data-id="<%=uid%>" title="<%-name%>, <%-sizeText%>">
+							<table class="preview span4 table table-striped">
+								<tr>
+									<td>
+								         <div class="b-thumb__preview fancybox " rel="gallery1" >
+								            <div class="b-thumb__preview__pic"></div>
+								         </div>
+							         </td>
+									<td>
+								         <div class="b-thumb__progress progress progress-small"><div class="bar"></div></div>
+								         <div class="b-text-center"></div>
+							         </td>
+								</tr>
+							</table>
 					    </div>
 						<div class="thumb-text">
 							<b><%-name%></b><br>
@@ -77,14 +85,62 @@
 		width: 100%;
 		margin-top: -80px;
 	}
-	.webcam, .userpic {
-	    background: url("http://expomap.ru/images/users/no-userpic-big.gif") no-repeat scroll 0 0 / cover rgba(0, 0, 0, 0);
-	    border: 2px solid #AAAAAA;
-	    display: inline-block;
-	    height: 200px;
-	    position: relative;
-	    width: 200px;
+	.hoverimage { 
+		position: absolute; 
+		top: 0; 
+		left: 0; 
+		display: none;
+		text-align: center;
+		width: 100%;
+		height: 98%;
 	}
+	.b-upload__files{
+        bottom: 45px;
+	    max-height: 150px;
+	    left: 70%;
+	    position: absolute;
+	    top: auto;
+	    width: 375px;
+	    overflow: auto;
+    }
+	.hoverimage img.icn1 {
+		top: 27%;
+		left: 10px;
+		position: absolute;
+		z-index: 300;
+		opacity: 0.7;
+	}
+
+	.hoverimage img.icn2 {
+		top: 27%;
+		left: 100px;
+		position: absolute;
+		z-index: 300;	
+		opacity: 0.7;
+	}
+
+	.overlay-img {
+		background-color: gray;
+		opacity: 0.75;
+		height: 100% !important;
+		width: 100%;
+	}
+
+	.hoverimage img.icn1, .hoverimage img.icn2 {
+		-webkit-transition-duration: 0.6s;
+	    -moz-transition-duration: 0.6s;
+		-o-transition-duration: 0.6s;
+		transition-duration: 0.6s;
+		-webkit-transition-property: opacity;
+		-moz-transition-property: opacity;
+		-o-transition-property: opacity;
+		transition-property: opacity;
+	}
+
+	.hoverimage img.icn1:hover, .hoverimage img.icn2:hover {
+		opacity: 1;
+	}
+
 </style>
 @stop
 @section('footer-js')
@@ -97,10 +153,19 @@
 	<script src="/pluggin/jquery.fileapi/FileAPI/FileAPI.min.js"></script>
 	<script src="/pluggin/jquery.fileapi/jquery.fileapi.min.js"></script>
 	<script id="photo-pattern" type="text/x-jquery-tmpl">
-		<div class="element ${categories} span-size${size}" >
+		<div class="element ${categories} span-size${size} item-hover" >
 			<a class="fancybox" href="${url_img}" rel="gallery1" title="A title">
 				<img src="${url_img}" class="size${size}"alt=" " />
 			</a>
+			<div class="hoverimage">
+				<div class="overlay-img"></div>
+				<a class="prettyPhoto" href="http://teothemes.com/wp/scrn/files/2012/12/FreeGreatPicture.com-30230-buick-regal-wallpaper.jpg">
+					<img alt="" src="http://teothemes.com/wp/scrn/wp-content/themes/SCRN/images/overlay-icn1.png" class="icn1">
+				</a>
+				<a href="http://teothemes.com/wp/scrn/portfolio/project-title-5/" rel="nofollow" class="portf-load">
+					<img alt="" src="http://teothemes.com/wp/scrn/wp-content/themes/SCRN/images/overlay-icn2.png" class="icn2">
+				</a>
+			</div>
 		</div>
 		{{--<div class="thumb-text">
 			<b>${head}</b><br>
@@ -121,11 +186,11 @@
 		         tpl: '.js-file-tpl',
 		         preview: {
 		            el: '.b-thumb__preview',
-		            width: 150,
-		            height: 150
+		            width: 80,
+		            height: 80
 		         },
-		         upload: { show: '.progress' },
-		         complete: { hide: '.progress'},
+		         upload: {show: '.progress'},
+		         complete: { hide: '.preview'},
 		         progress: '.progress .bar'
 		      },
 		      dnd: {
@@ -139,116 +204,37 @@
 		      // File successfully uploaded
 		      var result = xhr.responseText;
 		    }
-			console.log('File completed');
-			console.log(file);
-			$('#gallery').masonry( 'addItems',file);
+			data = [{
+				'url_img':'http://img.vieassociative.fr/'+xhr.result.files[0],
+				'head':'WordPress Custom Theme',
+				'link':'Read More',
+				'categories':'illustration',
+				'size' : '2',
+			}];
+			var newpic = $('#photo-pattern').tmpl(data);
+			var imgLoad = imagesLoaded(newpic.find('img'));
+		    imgLoad.on( 'done', function( instance ) {
+				$('#gallery').prepend(newpic).masonry('prepended',newpic);
+		    });
+			$('#gallery .item-hover').each(function(){
+				$(this).hover(function(){
+					//in
+					$(this).find('.hoverimage').show();
+				},function(){
+					//out
+					$(this).find('.hoverimage').hide();
+				});
+			}
+			);
 		})
 		/*Gallery PART START*/
-		var data = [
-			{
-				'url_img':'http://lorempixel.com/800/600/sports/',
-				'head':'WordPress Custom Theme',
-				'link':'Read More',
-				'categories':'illustration',
-				'size' : '2',
-			},
-			{
-				'url_img':'http://lorempixel.com/800/600/animals/',
-				'head':'WordPress Custom Theme',
-				'link':'Read More',
-				'categories':'illustration design',
-				'size' : '1',
-			},
-			{
-				'url_img':'http://lorempixel.com/1000/600/animals/',
-				'head':'WordPress Custom Theme',
-				'link':'Read More',
-				'categories':'illustration',
-				'size' : '2',
-			},
-			{
-				'url_img':'http://dummyimage.com/800x1600/4d494d/686a82.gif&text=placeholder+image',
-				'head':'WordPress Custom Theme',
-				'link':'Read More',
-				'categories':'illustration design',
-				'size' : '1',
-			},
-			{
-				'url_img':'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn1/c26.26.328.328/s160x160/378926_10150600500671124_496920089_n.jpg',
-				'head':'WordPress Custom Theme',
-				'link':'Read More',
-				'categories':'design',
-				'size' : '1',
-			},{
-				'url_img':'http://lorempixel.com/600/1300/animals/',
-				'head':'WordPress Custom Theme',
-				'link':'Read More',
-				'categories':'illustration',
-				'size' : '2',
-			},
-			{
-				'url_img':'http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image',
-				'head':'WordPress Custom Theme',
-				'link':'Read More',
-				'categories':'illustration design',
-				'size' : '1',
-			},
-			{
-				'url_img':'http://dummyimage.com/1000x768/4d494d/686a82.gif&text=placeholder+image',
-				'head':'WordPress Custom Theme',
-				'link':'Read More',
-				'categories':'illustration',
-				'size' : '2',
-			},
-			{
-				'url_img':'http://dummyimage.com/800x1600/4d494d/686a82.gif&text=placeholder+image',
-				'head':'WordPress Custom Theme',
-				'link':'Read More',
-				'categories':'illustration design',
-				'size' : '1',
-			},
-			{
-				'url_img':'http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image',
-				'head':'WordPress Custom Theme',
-				'link':'Read More',
-				'categories':'design',
-				'size' : '1',
-			},{
-				'url_img':'http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image',
-				'head':'WordPress Custom Theme',
-				'link':'Read More',
-				'categories':'illustration',
-				'size' : '2',
-			},
-			{
-				'url_img':'http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image',
-				'head':'WordPress Custom Theme',
-				'link':'Read More',
-				'categories':'illustration design',
-				'size' : '1',
-			},
-			{
-				'url_img':'http://dummyimage.com/1000x768/4d494d/686a82.gif&text=placeholder+image',
-				'head':'WordPress Custom Theme',
-				'link':'Read More',
-				'categories':'illustration',
-				'size' : '2',
-			},
-			{
-				'url_img':'http://dummyimage.com/800x1600/4d494d/686a82.gif&text=placeholder+image',
-				'head':'WordPress Custom Theme',
-				'link':'Read More',
-				'categories':'illustration design',
-				'size' : '1',
-			},
-			{
-				'url_img':'http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image',
-				'head':'WordPress Custom Theme',
-				'link':'Read More',
-				'categories':'design',
-				'size' : '1',
-			},
-		]
+		var data = [{
+			'url_img':'http://dummyimage.com/800x1600/4d494d/686a82.gif&text=placeholder+image',
+			'head':'WordPress Custom Theme',
+			'link':'Read More',
+			'categories':'illustration design',
+			'size' : '1',
+		}]
 		loadGallery($('#gallery'),data,$('#photo-pattern'));
 	/*Gallery PART END*/
 	</script>

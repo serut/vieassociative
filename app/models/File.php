@@ -1,17 +1,18 @@
 <?php
 class File  extends Eloquent
 {
-	static function addFile($name, $extension, $id_assoc){
+	static function addFile($name, $extension){
 		$f = new elo_File();
 		$f->name = $name;
 		$f->extension = $extension;
-		$f->id_assoc = $id_assoc;
+		$f->id_user = Auth::user()->id;
 		$f->touch();
 	}
-	static function addImg($original,$crop){
+	static function addImg($name, $extension){
 		$i = new elo_Img();
-		$i->original = $original;
-		$i->crop = $crop;
+		$f->name = $name;
+		$f->extension = $extension;
+		$f->id_user = Auth::user()->id;
 		$i->touch();
 		return $i->id;
 	}

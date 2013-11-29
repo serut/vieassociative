@@ -66,9 +66,8 @@
                 Route::get('{id}/edit/vieassociative-informations', 'AssociationController@getEditVieAssociativeInformations')->where('id', '[0-9]+');
                 Route::get('{id}/edit/evenement', 'EvenementController@getEvenementAssociation')->where('id', '[0-9]+');
                 Route::get('{id}/edit/evenement/{idEv}/edit', 'EvenementController@getEdit')->where('id', '[0-9]+')->where('idEv', '[0-9]+');
-                Route::get('{id}/edit/file', 'FileController@getFiles')->where('id', '[0-9]+');
-                Route::get('{id}/edit/file/upload', 'FileController@getUpload')->where('id', '[0-9]+');
-                Route::get('{id}/edit/file/crop', 'FileController@getCrop')->where('id', '[0-9]+');
+                Route::get('{id}/edit/file', 'FileController@getUpload')->where('id', '[0-9]+');
+                Route::get('{id}/edit/file/crop/{idPicture}', 'FileController@getCrop')->where('id', '[0-9]+')->where('idPicture', '[0-9]+');
                 
                 Route::get('{id}/edit/news', 'AssociationController@getListNews')->where('id', '[0-9]+');
                 Route::get('{id}/edit/news/add', 'AssociationController@getAddNews')->where('id', '[0-9]+');

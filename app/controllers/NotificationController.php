@@ -1,6 +1,7 @@
 <?php
 
 class NotificationController  extends BaseController {
+	// This bullshit is not working
     public function getIndex() {
     	$pubnub = App::make('Pubnub');
         $info = $pubnub->publish(array(

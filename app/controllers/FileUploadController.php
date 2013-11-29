@@ -2,8 +2,7 @@
 
 class FileUploadController extends BaseController
 {	
-	public function postFileUpload()
-	{
+	public function postFileUpload(){
 		/*$v = new validators_fileUpload();
 		$v->uploadFile();
 		if(isset($result['success']))

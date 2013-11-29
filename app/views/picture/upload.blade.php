@@ -30,29 +30,23 @@
 							<input type="file" name="files[]" multiple id="selectFile">
 						</div>
 					</div>
-
-					<div class="js-files b-upload__files modal">
-				    	<div class="js-file-tpl b-thumb" data-id="<%=uid%>" title="<%-name%>, <%-sizeText%>">
-							<table class="preview span4 table table-striped">
-								<tr>
-									<td>
-								         <div class="b-thumb__preview fancybox " rel="gallery1" >
-								            <div class="b-thumb__preview__pic"></div>
-								         </div>
-							         </td>
-									<td>
-								         <div class="b-thumb__progress progress progress-small"><div class="bar"></div></div>
-								         <div class="b-text-center"></div>
-							         </td>
-								</tr>
-							</table>
-					    </div>
-						<div class="thumb-text">
-							<b><%-name%></b><br>
-							<div class="divider"></div>
-							<a href="#" title="Image Dummy Title" ><%-name%></a>
-						</div>
+					<div class="row span22" style="margin-bottom: 20px;">
+						<div class="js-upload button button-green pull-right">Upload</div>
 					</div>
+					 <div class="row js-files">
+				         <div class="js-file-tpl span3 img-polaroid" data-id="<%=uid%>" title="<%-name%>, <%-sizeText%>">
+				            <div class="b-thumb__preview pull-left">
+				               <div class="b-thumb__preview__pic"></div>
+				            </div>
+
+				            <div data-fileapi="remove" class="pull-right"><i class="icon-trash" title="Supprimer le fichier"></i></div>
+				            <% if( /^image/.test(type) ){ %>
+				               <br><div data-fileapi="rotate.cw" class="pull-right"><i class="icon-repeat" title="Faire pivoter l'image"></i></div>
+				            <% } %>
+				            <div class="b-thumb__name"><%-name%></div>
+				            <div class="b-thumb__progress progress progress-striped active"><div class="bar"></div></div>
+				         </div>
+				      </div>
 				</div>
 				<div id="div-hidden-photo">
 					<div id="gallery" class="portfolio-items isotope span23">
@@ -94,15 +88,6 @@
 		width: 100%;
 		height: 98%;
 	}
-	.b-upload__files{
-        bottom: 45px;
-	    max-height: 150px;
-	    left: 70%;
-	    position: absolute;
-	    top: auto;
-	    width: 375px;
-	    overflow: auto;
-    }
 	.hoverimage img.icn1 {
 		top: 27%;
 		left: 10px;
@@ -124,6 +109,9 @@
 		opacity: 0.75;
 		height: 100% !important;
 		width: 100%;
+	}
+	.js-files{
+		margin-left: -10px;
 	}
 
 	.hoverimage img.icn1, .hoverimage img.icn2 {
@@ -177,20 +165,22 @@
 	    $('#dnd').fileapi({
 		   url: "{{URLSubdomain::to('association','/upload')}}",
 		   paramName: 'filedata',
-		   autoUpload: true,
+		   multiple: true,
 		   chunkSize: 2 * FileAPI.MB,
 			chunkUploadRetry: 3,
-		    elements: {
+		   elements: {
+		      ctrl: { upload: '.js-upload' },
+		      emptyQueue: { hide: '.js-upload' },
 		      list: '.js-files',
 		      file: {
 		         tpl: '.js-file-tpl',
 		         preview: {
 		            el: '.b-thumb__preview',
-		            width: 80,
-		            height: 80
+		            width: 98,
+		            height: 98
 		         },
-		         upload: {show: '.progress'},
-		         complete: { hide: '.preview'},
+		         upload: { show: '.progress', hide: '.icon-repeat' },
+		         complete: { hide: '.progress' },
 		         progress: '.progress .bar'
 		      },
 		      dnd: {

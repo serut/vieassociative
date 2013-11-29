@@ -1,5 +1,5 @@
 <?php
-class elo_Lieu  extends Eloquent
+class Lieu  extends Eloquent
 {
 	protected $table = 'lieu';
     protected $primaryKey = 'id';

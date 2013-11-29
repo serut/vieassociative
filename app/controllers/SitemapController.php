@@ -13,7 +13,7 @@ class SitemapController extends BaseController {
 			);
 		$view = View::make('sitemap.sitemap')
 			->with('localURL',$localURL)
-			->with('listAssocs',elo_Association::all());
+			->with('listAssocs',Association::all());
         return Response::make(
         	$view
         	,200

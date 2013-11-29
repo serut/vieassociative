@@ -10,7 +10,7 @@ class FileController  extends BaseController {
     }
     public function getFiles($idAssoc){
         return View::make('picture.display')
-                ->with('association',elo_Association::find($idAssoc))
+                ->with('association',Association::find($idAssoc))
                 ->with('type',Input::get('change'));
     }
     public function getUpload($idAssoc){

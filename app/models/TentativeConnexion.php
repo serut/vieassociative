@@ -1,10 +1,13 @@
 <?php
 
 class TentativeConnexion {
+    protected $table = 'connexion_tentative';
+    protected $primaryKey = 'ip';
+    public $timestamps = true;
 
     
     static function add($ip){
-        $test = new elo_ConnexionTentative;
+        $test = new ConnexionTentative;
         $test->ip=$ip;
         $test->touch();
     }

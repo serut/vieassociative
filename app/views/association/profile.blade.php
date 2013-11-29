@@ -185,7 +185,7 @@
 								@include('association.wall.'.$news->type, array('p'=>$news))
 							@endforeach
 							<?php
-								//$posts = array("single-photo","video","event","multiple-photo","link");
+								$posts = array("single-photo","video","event","multiple-photo","link");
 							?>
 							@foreach($posts as $p )
 								@include('association.wall.'.$p, array('p'=>$p))

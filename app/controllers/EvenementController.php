@@ -17,7 +17,7 @@ class EvenementController extends BaseController {
     public function postChoisirAssociation(){
         $id_assoc = Input::get('id_assoc',null);
         if($id_assoc!=null){ // He choosed / created an association, now we can add an event !
-            $ev = new elo_Evenement;
+            $ev = new Evenement;
             $ev->touch();
             return $this->redirect()->to('evenement/ajouter', array('idEv'=>$ev->id));
         }

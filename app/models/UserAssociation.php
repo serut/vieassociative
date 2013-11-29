@@ -1,5 +1,5 @@
 <?php
-class elo_UserAssociation  extends Eloquent
+class UserAssociation  extends Eloquent
 {
 	protected $table = 'user_association';
     protected $primaryKey = 'id';
@@ -7,6 +7,6 @@ class elo_UserAssociation  extends Eloquent
    	
    	public function author()
     {
-        return $this->belongsTo('elo_User','id_user');
+        return $this->belongsTo('User','id_user');
     }
 }

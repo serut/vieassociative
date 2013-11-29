@@ -1,5 +1,5 @@
 <?php
-class elo_TypeEvenement  extends Eloquent
+class TypeEvenement  extends Eloquent
 {
 	protected $table = 'type_evenement';
     protected $primaryKey = 'id';

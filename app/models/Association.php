@@ -1,28 +1,34 @@
 <?php
 class Association  extends Eloquent
 {
+    protected $table = 'association';
+    protected $primaryKey = 'id';
+    public $timestamps = true;
+    public function admitted_public_utility_display(){
+        return $this->admitted_public_utility ? 'Oui' : 'Non';
+    }
     static function add($assoc){
-        $a = new elo_Association;
+        $a = new Association;
         $a->name = $assoc['name'];
         $a->slug = Str::slug($assoc['name'],'-');
         $a->touch();
         return $a->id;
     }
     static function getRangUser($id_user, $id_assoc){
-        $l = elo_UserAssociation::where('id_user',$id_user)->where('id_assoc',$id_assoc)->firstOrFail();
+        $l = UserAssociation::where('id_user',$id_user)->where('id_assoc',$id_assoc)->firstOrFail();
         return empty($l) ? $l->link : '';
     }
     
     static function getName($id_assoc){
-        $a = elo_Association::findOrFail($id_assoc);
+        $a = Association::findOrFail($id_assoc);
         return $a->name;
     }
     static function get($id_assoc){
-        $a = elo_Association::findOrFail($id_assoc);
+        $a = Association::findOrFail($id_assoc);
         return $a;
     }
     static function countAdmin($idAssoc){
-        return elo_UserAssociation::where('id_assoc',$idAssoc)->count();
+        return UserAssociation::where('id_assoc',$idAssoc)->count();
     }
 
     static function getAssociations($idUser){

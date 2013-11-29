@@ -43,11 +43,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     }
 
     static function isUserAdministrator($id_assoc,$id_user){
-        $is_admin = elo_UserAssociation::where('id_assoc',$id_assoc)->where('id_user',$id_user)->count();
+        $is_admin = UserAssociation::where('id_assoc',$id_assoc)->where('id_user',$id_user)->count();
         return $is_admin>0 ? true : false; 
     }
     static function addAdmin($id_user,$id_assoc,$link){
-        $el = new elo_UserAssociation();
+        $el = new UserAssociation();
         $el->id_user = $id_user;
         $el->id_assoc = $id_assoc;
         $el->link = $link;
@@ -68,21 +68,21 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         setcookie('vieasso_remember', $token, strtotime( '+30 days' ), '/',$domain);
     }
     static function addAssoc($id_user,$id_assoc,$link){
-        $el = new elo_UserAssociation;
+        $el = new UserAssociation;
         $el->id_user = $id_user;
         $el->id_assoc = $id_assoc;
         $el->link = $link;
         $el->touch();
     }
     static function creerToken($id_user,$token){
-        $el = new elo_UserToken;
+        $el = new UserToken;
         $el->id_user = $id_user;
         $el->token = $token;
         $el->date_fin = date('Y-m-d h:m:s', strtotime('+3 week'));
         $el->save();
     }
     static function reconnecterDepuisToken($token){
-        $el = elo_UserToken::where('token', '=', $token)->where('date_fin', '>', date('Y-m-d h:m:s', time()))->first();
+        $el = UserToken::where('token', '=', $token)->where('date_fin', '>', date('Y-m-d h:m:s', time()))->first();
         if(!$el){
             return 0;
         }

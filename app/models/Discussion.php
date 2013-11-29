@@ -1,7 +1,7 @@
 <?php
-class elo_Evenement  extends Eloquent
+class Discussion  extends Eloquent
 {
-	protected $table = 'evenement';
+	protected $table = 'discussion';
     protected $primaryKey = 'id';
    	public $timestamps = true;
 }

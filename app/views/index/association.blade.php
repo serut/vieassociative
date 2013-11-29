@@ -73,7 +73,7 @@
                   <td>Connectivité avec les réseaux sociaux</td>
                   <td>
                   	<i class="icon-remove"></i> Synchroniser notre plateforme avec le contenu disponible des autres réseaux sociaux<br>
-                  	<i class="icon-remove"></i> Envoi de publication automatiquement sur les réseaux sociaux
+                  	<i class="icon-remove"></i> Envoie de publication automatiquement sur les réseaux sociaux
                   	</td>
                 </tr>
                 <tr>

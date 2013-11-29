@@ -27,7 +27,7 @@ class AssociationFormController  extends BaseController {
                     case 'internal_regulation':
                     case 'statuts':
                     case 'contact_adress':
-                    $val = elo_Association::find($id)->$item;
+                    $val = Association::find($id)->$item;
                     return View::make($view_name)->with('val',$val);
                 }
                 break;
@@ -91,7 +91,7 @@ class AssociationFormController  extends BaseController {
         $v = new validators_associationAdministrator;
         $result = $v->remove_admin();
         if(isset($result['success']) && User::isAdministrator($id)){
-            elo_UserAssociation::where('id_assoc',$id)
+            UserAssociation::where('id_assoc',$id)
                                 ->where('id_user',$result['data']['id_user'])
                                 ->delete();
         }
@@ -106,7 +106,7 @@ class AssociationFormController  extends BaseController {
             // if we don't know if he register himself or somebody else
             $result = $v->add_when_not_admin();
             if(isset($result['success'])){
-                $nbAdmin = elo_UserAssociation::where('id_assoc',$id)->count();
+                $nbAdmin = UserAssociation::where('id_assoc',$id)->count();
                 if($nbAdmin==0 || User::isAdministrator($id)){
                     if($result['data']['who']=='false'){
                         User::addAdmin(Auth::user()->id,$id,$result['data']['link']);
@@ -149,21 +149,21 @@ class AssociationFormController  extends BaseController {
             case 'contact_adress':
                 $result = $v->$item();
                 $update=array($item => $result['data'][$item]);
-                $before = elo_Association::find($id)->first()->$item;
+                $before = Association::find($id)->first()->$item;
                 $proposition = $result['data'][$item];
                 break;
             case 'admitted_public_utility':
                 $result = $v->$item();
                 $boolean = ($result['data'][$item] == "true") ? 1 : 0; 
                 $update = array($item => $boolean);
-                $before = elo_Association::find($id)->first()->$item;
+                $before = Association::find($id)->first()->$item;
                 $proposition = $boolean;
                 break;
         }
         if(isset($result['success'])){
             if(User::isAdministrator($id)){
                 //Apply the request right now
-                elo_Association::where('id',$id)->update($update);
+                Association::where('id',$id)->update($update);
             }else{
                 //Create a proposition
                 $data['id_assoc'] = $id;

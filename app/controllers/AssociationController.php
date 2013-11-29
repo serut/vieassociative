@@ -7,40 +7,40 @@ class AssociationController  extends BaseController {
         return View::make('association.edit')
             ->with('count_news',Post::countNews($idAssoc))
             ->with('count_admin',Association::countAdmin($idAssoc))
-            ->with('association',elo_Association::find($idAssoc))
+            ->with('association',Association::find($idAssoc))
             ->with('proposition',Proposition::getPropositions($idAssoc));
     }
     public function getProfile($idAssoc) {
         return View::make('association.profile')
-            ->with('association',elo_Association::find($idAssoc))
+            ->with('association',Association::find($idAssoc))
             ->with('newsFeed',NewsFeed::get($idAssoc));
     }
     public function getEditGeneralInformations($idAssoc){
         return View::make('association.edit-general-informations')
-            ->with('association',elo_Association::find($idAssoc));
+            ->with('association',Association::find($idAssoc));
     }
     public function getEditVieAssociativeInformations($idAssoc){
         return View::make('association.edit-vieassociative-informations')
-            ->with('association',elo_Association::find($idAssoc));
+            ->with('association',Association::find($idAssoc));
     }
     public function getListNews($idAssoc){
         return View::make('association.list-news')
             ->with('news',Post::listNews($idAssoc))
-            ->with('association',elo_Association::find($idAssoc));
+            ->with('association',Association::find($idAssoc));
     }
     public function getEditNews($idAssoc, $idPost){
         return View::make('association.edit-news')
             ->with('post',Post::get($idPost))
-            ->with('association',elo_Association::find($idAssoc));
+            ->with('association',Association::find($idAssoc));
     }
     public function getEditSocial($idAssoc){
         return View::make('association.edit-social');
     }
     public function getEditAdministrator($idAssoc){
         return View::make('association.edit-administrator')
-            ->with('association',elo_Association::find($idAssoc))
+            ->with('association',Association::find($idAssoc))
             ->with('is_admin',User::isAdministrator($idAssoc))
-            ->with('admin',elo_UserAssociation::where('id_assoc',$idAssoc)->with('author')->get());
+            ->with('admin',UserAssociation::where('id_assoc',$idAssoc)->with('author')->get());
     }
     public function getHistory($idAssoc){
         return View::make('association.history');

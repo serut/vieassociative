@@ -1,7 +1,7 @@
 <?php
-class elo_User extends Eloquent
+class Iml extends Eloquent
 {
-	protected $table = 'user';
+	protected $table = 'img';
     protected $primaryKey = 'id';
    	public $timestamps = true;
 }

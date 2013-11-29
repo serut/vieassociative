@@ -1,4 +1,10 @@
 <?php
+
+/**
+*On garde ce fichier uniquement pour la requete getLieu.
+*Ce fichier ne compile pas du tout !!!
+*
+*/
 namespace VieAssoc\Model;
 
 use Zend\Db\TableGateway\AbstractTableGateway;

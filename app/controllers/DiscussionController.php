@@ -6,8 +6,8 @@ class DiscussionController  extends BaseController {
     	$discussion = Answer::getAnswerAndProposition($idDiscu);
         return View::make('discussion.proposition')
             ->with('posts',$discussion)
-            ->with('discussion',elo_Discussion::find($idDiscu))
-            ->with('association',elo_Association::find($idAssoc))
+            ->with('discussion',Discussion::find($idDiscu))
+            ->with('association',Association::find($idAssoc))
             ->with('is_admin',User::isAdministrator($idAssoc));
     }
 
@@ -15,12 +15,12 @@ class DiscussionController  extends BaseController {
 		$v = new validators_discussion;
 		$result = $v->add();
         if(isset($result['success'])){
-        	$e = new elo_Answer();
+        	$e = new Answer();
         	$e->id_user = Auth::user()->id;
         	$e->content = $result['data']['text'];
         	$e->id_discussion = $result['data']['id_discussion'];
         	if($result['data']['id_answer'] > 0){
-        		$parent = elo_Answer::findOrFail(intval($result['data']['id_answer']));
+        		$parent = Answer::findOrFail(intval($result['data']['id_answer']));
         		$e->level = $parent->level +1;
 				$e->id_answer = $result['data']['id_answer'];
         	}else{
@@ -39,15 +39,15 @@ class DiscussionController  extends BaseController {
 		$v = new validators_discussion;
 		$result = $v->vote();
         if(isset($result['success'])){
-        	$voteExistant = elo_Vote::where('id_answer',intval($result['data']['id_answer']))
+        	$voteExistant = Vote::where('id_answer',intval($result['data']['id_answer']))
         			->where('id_user',Auth::user()->id)->first();
         	if(empty($voteExistant)){
-        		$e = new elo_Vote();
+        		$e = new Vote();
         		$e->id_user = Auth::user()->id;
         		$e->id_answer = $result['data']['id_answer'];
         		$e->value = $result['data']['value'];
         		$e->touch();
-    			$answer = elo_Answer::find(intval($e->id_answer));
+    			$answer = Answer::find(intval($e->id_answer));
         		if($e->value){
         			$answer->vote++;
         		}else{
@@ -57,7 +57,7 @@ class DiscussionController  extends BaseController {
         	}else{
         		if($voteExistant->value==$result['data']['value']){
         			//Remove the vote
-    				$answer = elo_Answer::find($voteExistant->id_answer);
+    				$answer = Answer::find($voteExistant->id_answer);
 	        		if(intval($result['data']['value'])){
 	        			$answer->vote--;
 	        		}else{
@@ -69,7 +69,7 @@ class DiscussionController  extends BaseController {
         			//Add the oposite vote
         			$voteExistant->value=$result['data']['value'];
         			$voteExistant->touch();
-    				$answer = elo_Answer::find($voteExistant->id_answer);
+    				$answer = Answer::find($voteExistant->id_answer);
 	        		if($result['data']['value']){
 	        			$answer->vote+=2;
 	        		}else{

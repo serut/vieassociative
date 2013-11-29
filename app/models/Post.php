@@ -1,26 +1,33 @@
 <?php
 class Post extends Eloquent
 {
+    protected $table = 'post';
+    public $timestamps = true;
+    
+    public function getModificatedDate(){
+        return $this->update_at;
+          return date("g:i a F j, Y ", strtotime($this->update_at));  
+    }
     static function get($idPost){
-        $p = elo_Post::where('id',$idPost)->first();
+        $p = Post::where('id',$idPost)->first();
         if($p){
             return $p;
         }
-        return new elo_Post();
+        return new Post();
     }
     static function listNews($idAssoc){
-        return elo_Post::where('id_association',$idAssoc)->get();
+        return Post::where('id_association',$idAssoc)->get();
     }
 
     static function countNews($idAssoc){
-        return elo_Post::where('id_association',$idAssoc)->count();
+        return Post::where('id_association',$idAssoc)->count();
     }
 
     static function edit($idPost,$idAssoc,$data){
         if($idPost){
-            $post = elo_Post::where('id',$idPost)->first();
+            $post = Post::where('id',$idPost)->first();
         }else{
-            $post = new elo_Post();
+            $post = new Post();
             $post->id_association = $idAssoc;
         }
         $post->title = $data['title'];

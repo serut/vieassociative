@@ -19,7 +19,7 @@ class validators_discussion extends BaseValidator
     public function validate(){
         Validator::extend('have_autorisation', function($attribute, $value, $parameters)
         {
-            $p = elo_Proposition::findOrFail(Input::get('id_proposition'));
+            $p = Proposition::findOrFail(Input::get('id_proposition'));
             return User::isAdministrator($p->id_assoc);
         });
         

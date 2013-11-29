@@ -1,8 +1,16 @@
-<?php namespace Artdarek\OAuth;
+<?php 
+/**
+ * @author     Dariusz Prząda <artdarek@gmail.com>
+ * @copyright  Copyright (c) 2013
+ * @license    http://www.opensource.org/licenses/mit-license.html MIT License
+ */
+
+namespace Artdarek\OAuth;
 
 use Illuminate\Support\ServiceProvider;
 
-class OAuthServiceProvider extends ServiceProvider {
+class OAuthServiceProvider extends ServiceProvider 
+{
 
     /**
      * Indicates if loading of the provider is deferred.
@@ -31,13 +39,10 @@ class OAuthServiceProvider extends ServiceProvider {
 	    // Register 'oauth'
 		    $this->app['oauth'] = $this->app->share(function($app)
 		    {
-
                 // create oAuth instance
                 	$oauth = new OAuth();
-
         		// return oAuth instance
 		        	return $oauth;
-
 		    });
     }
 

@@ -45,7 +45,7 @@ class Url
             $parts['query'] = QueryString::fromString($parts['query']);
         }
 
-        return new self($parts['scheme'], $parts['host'], $parts['user'],
+        return new static($parts['scheme'], $parts['host'], $parts['user'],
             $parts['pass'], $parts['port'], $parts['path'], $parts['query'],
             $parts['fragment']);
     }
@@ -518,7 +518,7 @@ class Url
 
         if (!$path) {
             if (count($query)) {
-                $this->query = $query;
+                $this->addQuery($query, $strictRfc386);
             }
         } else {
             if ($path[0] == '/') {
@@ -529,11 +529,20 @@ class Url
                 $this->path .= '/' . $path;
             }
             $this->normalizePath();
-            $this->query = $query;
+            $this->addQuery($query, $strictRfc386);
         }
 
         $this->fragment = $url->getFragment();
 
         return $this;
+    }
+
+    private function addQuery(QueryString $new, $strictRfc386)
+    {
+        if ($strictRfc386) {
+            $this->query = $new;
+        } else {
+            $this->query->merge($new);
+        }
     }
 }

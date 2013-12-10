@@ -15,7 +15,8 @@
 	<script src="http://cdn.vieassociative.fr/js/vendor/parsley.min.js" async="true"></script>
 	<script src="http://cdn.vieassociative.fr/js/vendor/tmpl.min.js" async="true"></script>
 	<script src="http://cdn.vieassociative.fr/js/vendor/masonry.min.js" async="true"></script>
-	<script src="http://cdn.vieassociative.fr/js/vendor/bootstrap-datetimepicker.min.footer-js" async="true"></script>
+	<script src="http://cdn.vieassociative.fr/js/vendor/bootstrap-datetimepicker.min.js" async="true"></script>
+	<script src="http://cdn.vieassociative.fr/js/vendor/jquery.hotkeys.js"></script>
 	<script src="http://cdn.vieassociative.fr/js/vendor/toastr.js"></script>
 @else
 	{{-- Direct link --}}

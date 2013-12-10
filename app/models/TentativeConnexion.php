@@ -1,13 +1,13 @@
 <?php
 
-class TentativeConnexion {
+class TentativeConnexion extends Eloquent {
     protected $table = 'connexion_tentative';
     protected $primaryKey = 'ip';
     public $timestamps = true;
 
     
     static function add($ip){
-        $test = new ConnexionTentative;
+        $test = new TentativeConnexion;
         $test->ip=$ip;
         $test->touch();
     }

@@ -10,32 +10,17 @@ class FileUploadController extends BaseController
 			
 		}*/
 		$return = array();
-		$file = Input::file('filedata');
-		if($file){
-			$name = $this->generateName($file->getClientOriginalName());
-			$return["status"] = 200;
-			$return["files"] = array($name);
-
-			$this->sendObjectFile($name,$file->getRealPath());
-			File::addFile($name, $extension);
-
-			/*$if(){
-				//create a thumb
-				$this->sendFile($name,$file->getRealPath());
-			}*/
-		}else{
-			if(Request::header('X-Requested-With') == "XMLHttpRequest"){
-				if($infoSizeFile = $this->getInformationOfChuckedFile()){
-					Session::push('chucked_file', file_get_contents('php://input'));
-					if(($infoSizeFile[2]+1) == $infoSizeFile[3]){
-						//We have all parts of this file
-						$name = $this->generateName($this->getFileName());
-						$this->sendObjectString($name,implode('',Session::get('chucked_file')));
-						Session::forget('chucked_file');
-						$return["status"] = 200;
-						$return["files"] = array($name);
-						File::addFile($name, $extension);
-					}
+		if(Request::header('X-Requested-With') == "XMLHttpRequest"){
+			if($infoSizeFile = $this->getInformationOfChuckedFile()){
+				Session::push('chucked_file', file_get_contents('php://input'));
+				if(($infoSizeFile[2]+1) == $infoSizeFile[3]){
+					//We have all parts of this file
+					$name =  $this->getFileName();
+					$this->sendObjectString($name[0],implode('',Session::get('chucked_file')));
+					Session::forget('chucked_file');
+					$return["status"] = 200;
+					$return["files"] = array($name[0]);
+					Files::addFile($name[1], $name[2]);
 				}
 			}
 		}
@@ -53,14 +38,28 @@ class FileUploadController extends BaseController
     	$val = Request::header('Content-Disposition');
              //Exemple : attachment; filename=cobravrai.png
         $name = explode('=', $val);
-        return $name[1];
+        return $this->cleanFileName($name[1]);
     }
+    /*Get the file extension*/
+	public function cleanFileName($file){
+		$file = preg_replace("#[^a-zA-Z0-9_\-.]#", "", $file);
+		preg_match('%^(.*?)[\\\\/]*(([^/\\\\]*?)(\.([^\.\\\\/]+?)|))[\\\\/\.]*$%im',$file,$result);
+		if(!empty($result[5])){
+			$file_ext=$result[5];
+			$file_name=$result[3];
+			$file_name = preg_replace('/[^\w\._]+/', '_', $file_name);
+			$randomString =  Str::random(12);
+			$file_name = $randomString.$file_name;
+			$name = $file_name.'.'.$file_ext;
+		}else{
+			//error - regex failed
+			throw new Exception("Error Processing Request", 1);
+		}
+		return array($name,$file_name,$file_ext);
+	}
 	public function isImg($extension){
 		$imgExtension = array('png','jpg');
 		return in_array($extension, $imgExtension);
-	}
-	public function generateName ($str){
-		return Str::random(12).str_replace(" ", "_",$str);
 	}
 	public function sendObjectFile($name,$pathSrc){
 			try{

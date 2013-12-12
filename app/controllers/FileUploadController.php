@@ -1,38 +1,58 @@
 <?php
-
+/**
+	* This is the controller for uploading files
+	*
+	* @author  MIEULET Léo <l.mieulet@gmail.com>
+*/
 class FileUploadController extends BaseController
 {	
+	private $prefix_img;
+	function __construct(){
+		if(App::environment() != "prod"){
+			$this->prefix_img = 'deva';
+		}else{
+			$this->prefix_img = 'a';
+		}
+	}
+ 	/**
+		* @param string header('X-Requested-With') Given by our upload API
+		* @return AJAX URL to files
+	*/
 	public function postFileUpload(){
-		/*$v = new validators_fileUpload();
-		$v->uploadFile();
-		if(isset($result['success']))
-		{
-			
-		}*/
 		$return = array();
 		if(Request::header('X-Requested-With') == "XMLHttpRequest"){
+			$context = $this->getContext();
 			if($infoSizeFile = $this->getInformationOfChuckedFile()){
 				Session::push('chucked_file', file_get_contents('php://input'));
 				if(($infoSizeFile[2]+1) == $infoSizeFile[3]){
 					//We have all parts of this file
 					$name =  $this->getFileName();
-					$this->sendObjectString($name[0],implode('',Session::get('chucked_file')));
+					$this->sendObject($name[0],implode('',Session::get('chucked_file')),$context);
 					Session::forget('chucked_file');
 					$return["status"] = 200;
-					$return["files"] = array($name[0]);
-					Files::addFile($name[1], $name[2]);
+					$return["files"] = array($this->prefix_img.$context['idAssoc'].'/'.$name[0]);
+					$this->addToDatabase($name,$context);
 				}
 			}
 		}
 		return Response::json($return);
 	}
+	public function getContext() {
+    	$val = Request::header('Referer');
+             //Exemple : http://association.vieassoc.lo/1/edit/file/3
+        $pattern  = '/http:\/\/([a-z\.:]+)\/([0-9]+)\/([a-z\/:\.]+)\/([0-9]+)/s';
+        if(preg_match($pattern, $val,$elements))
+        	return array('idAssoc'=>$elements[2],'idGallery'=>$elements[4]);
+        throw new Exception("Error Processing Request", 1);
+    }
+		
     public function getInformationOfChuckedFile() {
     	$val = Request::header('Content-Range');
              //Exemple : bytes 2097152-3795036/3795037
         $pattern  = '/bytes ([0-9]+)-([0-9]+)\/([0-9]+)/s';
         if(preg_match($pattern, $val,$elements))
         	return $elements;
-        return false;
+        throw new Exception("Error Processing Request", 1);
     }
     public function getFileName(){
     	$val = Request::header('Content-Disposition');
@@ -57,25 +77,25 @@ class FileUploadController extends BaseController
 		}
 		return array($name,$file_name,$file_ext);
 	}
+
+	
 	public function isImg($extension){
-		$imgExtension = array('png','jpg');
-		return in_array($extension, $imgExtension);
+		$imgExtension = array('png','jpg','bmp','jpeg');
+		return in_array(strtolower($extension), $imgExtension);
 	}
-	public function sendObjectFile($name,$pathSrc){
-			try{
-				$s3 = AWS::get('s3');
-				$s3->putObject(array(
-					'Bucket'     => 'img.vieassociative.fr',
-					'Key'     	  => $name,
-					'SourceFile' => $pathSrc,
-					'ACL'        => 'public-read',
-				));
-			} catch (S3Exception $e) {
-				var_dump($e);
-				return Response::json('error', 400);
+	public function addToDatabase($file,$context){
+		if($this->isImg($file[2])){
+			Img::add($file[0], $file[2]);
+			FolderFileImg::addImg($context['idGallery'],$file[0]);
+		}else{
+			$idFile = Files::add($file[0], $file[2]);
+			FolderFileImg::addFile($context['idGallery'],$idFile);
+		}
+	}
+	public function sendObject($name,$src,$context){
+			if(isset($context['idAssoc'])){
+				$name = $this->prefix_img .$context['idAssoc'].'/'.$name;
 			}
-	}
-	public function sendObjectString($name,$src){
 			try{
 				$s3 = AWS::get('s3');
 				$s3->putObject(array(
@@ -85,7 +105,7 @@ class FileUploadController extends BaseController
 					'ACL'        => 'public-read',
 				));
 			} catch (S3Exception $e) {
-				var_dump($e);
+				//var_dump($e);
 				return Response::json('error', 400);
 			}
 	}

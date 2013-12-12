@@ -8,9 +8,13 @@ class Association  extends Eloquent
         return $this->admitted_public_utility ? 'Oui' : 'Non';
     }
     static function add($assoc){
+        $gallery = new Folder;
+        $gallery->name = "/";
+        $gallery->touch();
         $a = new Association;
         $a->name = $assoc['name'];
         $a->slug = Str::slug($assoc['name'],'-');
+        $a->id_folder = $gallery->id;
         $a->touch();
         return $a->id;
     }

@@ -48,7 +48,7 @@
                 <tr>
                   <td>Les photos</td>
                   <td>16 images</td>
-                  <td><a href="edit/file"> Editer</a></td>
+                  <td><a href="edit/file/{{$association->id_folder}}"> Editer</a></td>
                 </tr>
                 <tr>
                   <td>La page Vie Associative</td>

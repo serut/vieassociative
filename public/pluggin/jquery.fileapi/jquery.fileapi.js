@@ -15,12 +15,19 @@
 
 		, _dataAttr = 'data-fileapi'
 		, _dataFileId = 'data-fileapi-id'
+
 		, _slice	= [].slice
+		, _each		= api.each
+		, _extend	= api.extend
+
 		, _bind		= function (ctx, fn) {
 			var args = _slice.call(arguments, 2);
 			return	fn.bind ? fn.bind.apply(fn, [ctx].concat(args)) : function (){
 				return fn.apply(ctx, args.concat(_slice.call(arguments)));
 			};
+		}
+		, _optDataAttr = function (name){
+			return '['+_dataAttr+'="'+name+'"]';
 		}
 	;
 
@@ -31,7 +38,7 @@
 		this.el  = el[0];
 
 		this._options = {}; // previous options
-		this.options  = options = $.extend({
+		this.options  = options = _extend({
 			url: 0,
 			data: {}, // additional POST-data
 			accept: 0, // accept mime types, "*" — unlimited
@@ -43,13 +50,15 @@
 			chunkUploadRetry: 3, // number of retries during upload chunks (html5)
 
 			maxSize: 0, // max file size, 0 — unlimited
-			maxFiles: 0, // @todo: max uploaded files
+			maxFiles: 0, // 0 unlimited
 			imageSize: 0, // { minWidth: 320, minHeight: 240, maxWidth: 3840, maxHeight: 2160 }
 
 			sortFn: 0,
 			filterFn: 0,
 			autoUpload: false,
-			resetOnSelect: void 0,
+
+			clearOnSelect: void 0,
+			clearOnComplete: void 0,
 
 			lang: {
 				  B:	'bytes'
@@ -65,31 +74,31 @@
 
 			elements: {
 				ctrl: {
-					upload: '[data-fileapi="ctrl.upload"]',
-					reset: '[data-fileapi="ctrl.reset"]',
-					abort: '[data-fileapi="ctrl.abort"]'
+					upload: _optDataAttr('ctrl.upload'),
+					reset: _optDataAttr('ctrl.reset'),
+					abort: _optDataAttr('ctrl.abort')
 				},
 				empty: {
-					show: '[data-fileapi="empty.show"]',
-					hide: '[data-fileapi="empty.hide"]'
+					show: _optDataAttr('empty.show'),
+					hide: _optDataAttr('empty.hide')
 				},
 				emptyQueue: {
-					show: '[data-fileapi="emptyQueue.show"]',
-					hide: '[data-fileapi="emptyQueue.hide"]'
+					show: _optDataAttr('emptyQueue.show'),
+					hide: _optDataAttr('emptyQueue.hide')
 				},
 				active: {
-					show: '[data-fileapi="active.show"]',
-					hide: '[data-fileapi="active.hide"]'
+					show: _optDataAttr('active.show'),
+					hide: _optDataAttr('active.hide')
 				},
-				size: '[data-fileapi="size"]',
-				name: '[data-fileapi="name"]',
-				progress: '[data-fileapi="progress"]',
+				size: _optDataAttr('size'),
+				name: _optDataAttr('name'),
+				progress: _optDataAttr('progress'),
 				file: {
-					tpl: '[data-fileapi="file.tpl"]',
-					progress: '[data-fileapi="file.progress"]',
+					tpl: _optDataAttr('file.tpl'),
+					progress: _optDataAttr('file.progress'),
 					active: {
-						show: '[data-fileapi="active.show"]',
-						hide: '[data-fileapi="active.hide"]'
+						show: _optDataAttr('active.show'),
+						hide: _optDataAttr('active.hide')
 					},
 					preview: {
 						el: 0,
@@ -100,9 +109,9 @@
 					}
 				},
 				dnd: {
-					el: '[data-fileapi="dnd"]',
+					el: _optDataAttr('dnd'),
 					hover: 'dnd_hover',
-					fallback: '[data-filapi="dnd.fallback"]'
+					fallback: _optDataAttr('dnd.fallback')
 				}
 			},
 
@@ -135,7 +144,7 @@
 		this.itemTplFn = $.fn.fileapi.tpl( $('<div/>').append( this.elem('file.tpl')).html() );
 
 
-		api.each(options, function (value, option){
+		_each(options, function (value, option){
 			this._setOption(option, value);
 		}, this);
 
@@ -172,8 +181,8 @@
 
 		this.$progress = this.elem('progress');
 
-		if( options.resetOnSelect === void 0 ){
-			options.resetOnSelect = !options.multiple;
+		if( options.clearOnSelect === void 0 ){
+			options.clearOnSelect = !options.multiple;
 		}
 
 		this.clear();
@@ -191,7 +200,9 @@
 			var
 				  opts = this.options
 				, maxSize = opts.maxSize
+				, maxFiles = opts.maxFiles
 				, filterFn = opts.filterFn
+				, countFiles = this.files.length
 				, files = api.getFiles(evt)
 				, data = {
 					  all: files
@@ -205,26 +216,31 @@
 
 			if( imageSize || filterFn ){
 				api.filterFiles(files, function (file, info){
-					var ok = true;
 					if( info && imageSize ){
-						ok =   (!imageSize.minWidth || info.width >= imageSize.minWidth)
-							&& (!imageSize.minHeight || info.height >= imageSize.minHeight)
-							&& (!imageSize.maxWidth || info.height <= imageSize.maxWidth)
-							&& (!imageSize.maxHeight || info.height <= imageSize.maxHeight)
-						;
+						_checkFileByCriteria(file, 'minWidth', imageSize.minWidth, info.width);
+						_checkFileByCriteria(file, 'minHeight', imageSize.minHeight, info.height);
+						_checkFileByCriteria(file, 'maxWidth', imageSize.maxWidth, info.width);
+						_checkFileByCriteria(file, 'maxHeight', imageSize.maxHeight, info.height);
 					}
-					return	ok && (!maxSize || file.size <= maxSize) && (!filterFn || filterFn(file, info));
-				}, function (succes, other){
-					data.files = succes;
-					data.other = other;
+
+					_checkFileByCriteria(file, 'maxSize', maxSize, file.size);
+
+					return	!file.errors && (!filterFn || filterFn(file, info));
+				}, function (success, rejected){
+					_extractFilesOverLimit(maxFiles, countFiles, success, rejected);
+
+					data.other = rejected;
+					data.files = success;
 
 					fn.call(_this, data);
 				});
 			} else {
-				api.each(files, function (file){
-					data[!maxSize || file.size <= maxSize ? 'files' : 'other'].push(file);
+				_each(files, function (file){
+					_checkFileByCriteria(file, 'maxSize', maxSize, file.size);
+					data[file.errors ? 'other' : 'files'].push(file);
 				});
 
+				_extractFilesOverLimit(maxFiles, countFiles, data.files, data.other);
 				fn.call(_this, data);
 			}
 		},
@@ -274,7 +290,7 @@
 		_onSelect: function (evt){
 			this._getFiles(evt, _bind(this, function (data){
 				if( data.all.length && this.emit('select', data) !== false ){
-					this.add(data.files, this.options.resetOnSelect);
+					this.add(data.files, this.options.clearOnSelect);
 				}
 			}));
 		},
@@ -283,16 +299,12 @@
 			var
 				  el = evt.currentTarget
 				, act = $.attr(el, _dataAttr)
-				, $item = $(el).closest('['+_dataFileId+']', this.$el)
-				, uid = $item.attr(_dataFileId)
+				, uid = $(el).closest('['+_dataFileId+']', this.$el).attr(_dataFileId)
 				, prevent = true
 			;
 
 			if( 'remove' == act ){
-				$item.remove();
-				this.queue = api.filter(this.queue, function (file){ return api.uid(file) != uid; });
-				this.files = api.filter(this.files, function (file){ return api.uid(file) != uid; });
-				this._redraw();
+				this.remove(uid);
 			}
 			else if( /^rotate/.test(act)  ){
 				this.rotate(uid, (/ccw/.test(act) ? '-=90' : '+=90'));
@@ -340,7 +352,7 @@
 				, files: xhr.files
 				, widget: this
 			};
-			return	$.extend(evt, extra);
+			return	_extend(evt, extra);
 		},
 
 		_emitUploadEvent: function (prefix){
@@ -372,7 +384,7 @@
 		},
 
 		_onUploadEvent: function (evt, ui){
-			var _this = this, $progress = this.$progress, type = evt.type;
+			var _this = this, $progress = _this.$progress, type = evt.type;
 
 			if( type == 'progress' ){
 				$progress.stop().animate({ width: ui.loaded/ui.total*100 + '%' }, 300);
@@ -385,7 +397,7 @@
 				// Завершение загрузки
 				var fn = function (){
 					$progress.dequeue();
-					_this.dequeue();
+					_this[_this.options.clearOnComplete ? 'clear' : 'dequeue']();
 				};
 
 				this.xhr = null;
@@ -404,16 +416,21 @@
 				  uid	= api.uid(file)
 				, deg	= this._rotate[uid]
 				, crop	= this._crop[uid]
+				, resize = this._resize[uid]
 			;
 
 			if( deg || crop ){
 				var trans = opts.imageTransform = opts.imageTransform || {};
 				if( $.isEmptyObject(trans) || _isOriginTransform(trans) ){
+					_extend(trans, resize);
+
 					trans.crop		= crop;
 					trans.rotate	= deg;
 				}
 				else {
-					api.each(trans, function (opts){
+					_each(trans, function (opts){
+						_extend(opts, resize);
+
 						opts.crop	= crop;
 						opts.rotate	= deg;
 					});
@@ -468,8 +485,8 @@
 
 		_redraw: function (){
 			var
-				  active = !!this.active
-				, files = this.files
+				  files = this.files
+				, active = !!this.active
 				, empty = !files.length && !active
 				, emptyQueue = !this.queue.length && !active
 				, name = []
@@ -480,7 +497,7 @@
 			;
 
 
-			api.each(files, function (file, i){
+			_each(files, function (file, i){
 				var uid = api.uid(file);
 
 				name.push(file.name);
@@ -509,40 +526,37 @@
 			this.elem('size').text( this._getFormatedSize(size) );
 
 
-			if( this.__empty !== empty ){
-				this.__empty = empty;
-
-				this.elem('empty.show').toggle( empty );
-				this.elem('empty.hide').toggle( !empty );
-			}
+			this.elem('empty.show').toggle( empty );
+			this.elem('empty.hide').toggle( !empty );
 
 
-			if( this.__emptyQueue !== emptyQueue ){
-				this.__emptyQueue = empty;
-
-				this.elem('emptyQueue.show').toggle( emptyQueue );
-				this.elem('emptyQueue.hide').toggle( !emptyQueue );
-			}
+			this.elem('emptyQueue.show').toggle( emptyQueue );
+			this.elem('emptyQueue.hide').toggle( !emptyQueue );
 
 
-			if( this.__active !== active ){
-				this.__active = active;
-
-				this.elem('active.show').toggle( active );
-				this.elem('active.hide').toggle( !active );
-
-				this.$('.js-fileapi-wrapper,:file')
-					[active ? 'attr' : 'removeAttr']('aria-disabled', active)
-					[propFn]('disabled', active)
-				;
-			}
+			this.elem('active.show').toggle( active );
+			this.elem('active.hide').toggle( !active );
 
 
-			// Upload & reset control
-			this.elem('ctrl.upload')
-				.add( this.elem('ctrl.reset') )
-				[empty || active ? 'attr' : 'removeAttr']('aria-disabled', empty || active)
-				[propFn]('disabled', empty || active)
+			this.$('.js-fileapi-wrapper,:file')
+				[active ? 'attr' : 'removeAttr']('aria-disabled', active)
+				[propFn]('disabled', active)
+			;
+
+			// Upload control
+			this._disableElem('ctrl.upload', empty || active);
+
+			// Reset control
+			this._disableElem('ctrl.reset', empty || active);
+
+			// Abort control
+			this._disableElem('ctrl.abort', !active);
+		},
+
+		_disableElem: function (name, state){
+			this.elem(name)
+				[state ? 'attr' : 'removeAttr']('aria-disabled', 'disabled')
+				[propFn]('disabled', state)
 			;
 		},
 
@@ -553,8 +567,6 @@
 			;
 
 			if( /^image/.test(file.type) ){
-				api.log('_makeFilePreview:', uid, file);
-
 				var
 					  image = api.Image(file)
 					, doneFn = function (){
@@ -593,7 +605,7 @@
 		emit: function (name, arg){
 			var opts = this.options, evt = $.Event(name), res;
 			evt.widget = this;
-			name = $.camelCase('on-'+name.replace(/(file)(upload)/, '$1-$2'));
+			name = $.camelCase('on-'+name.replace(/(file)(upload|progress|complete)/i, '$1-$2'));
 			if( $.isFunction(opts[name]) ){
 				res = opts[name].call(this.el, evt, arg);
 			}
@@ -603,9 +615,9 @@
 		/**
 		 * Add files to queue
 		 * @param  {Array}    files
-		 * @param  {Boolean}  [reset]
+		 * @param  {Boolean}  [clear]
 		 */
-		add: function (files, reset){
+		add: function (files, clear){
 			files = [].concat(files);
 
 			if( files.length ){
@@ -620,7 +632,7 @@
 				}
 
 				if( preview && preview.el ){
-					api.each(files, function (file){
+					_each(files, function (file){
 						this._makeFilePreview(api.uid(file), file, preview, true);
 					}, this);
 				}
@@ -629,8 +641,8 @@
 					this.xhr.append(files);
 				}
 
-				this.queue = reset ? files : this.queue.concat(files);
-				this.files = reset ? files : this.files.concat(files);
+				this.queue = clear ? files : this.queue.concat(files);
+				this.files = clear ? files : this.files.concat(files);
 
 				if( this.options.autoUpload ){
 					this.upload();
@@ -682,7 +694,7 @@
 		 */
 		option: function (name, value){
 			if( value !== void 0 && $.isPlainObject(value) ){
-				api.each(value, function (val, key){
+				_each(value, function (val, key){
 					this.option(name+'.'+key, val);
 				}, this);
 
@@ -703,7 +715,7 @@
 						val[part] = value;
 						break;
 					}
-					else if( val[part] === void 0 ){
+					else if( !val[part] ){
 						val[part] = {};
 					}
 
@@ -769,7 +781,8 @@
 					, files = {}
 					, uploadOpts = {
 						  url:   opts.url
-						, data:  $.extend({}, this.serialize(), opts.data)
+						, data:  _extend({}, this.serialize(), opts.data)
+						, headers: opts.headers
 						, files: files
 						, chunkSize: opts.chunkSize|0
 						, chunkUploadRetry: opts.chunkUploadRetry|0
@@ -782,7 +795,7 @@
 				files[$el.find(':file').attr('name') || 'files[]'] = this.queue;
 
 				// Add event listeners
-				api.each(['upload', 'progress', 'complete'], function (name){
+				_each(['upload', 'progress', 'complete'], function (name){
 					uploadOpts[name] = _bind(this, this[$.camelCase('_emit-'+name+'Event')], '');
 					uploadOpts['file'+name] = _bind(this, this[$.camelCase('_emit-'+name+'Event')], 'file');
 				}, this);
@@ -803,7 +816,9 @@
 
 			if( $el.length ){
 				api.getInfo(file, _bind(this, function (err, info){
-					if( !err ){
+					if( err ){
+						this.emit('preview-error', [err, file]);
+					} else {
 						// @todo error emit
 						if( !$el.find('div>div').length ){
 							$el.html(
@@ -821,7 +836,28 @@
 						}
 
 
-						var rx = preview.width/coords.w, ry = preview.height/coords.h;
+						var
+							  pw = preview.width, ph = preview.height
+							, mx = pw, my = ph
+							, rx = pw/coords.w, ry = ph/coords.h
+						;
+						
+						if( preview.keepAspectRatio ){
+							if (rx > 1 && ry > 1){ // image is smaller than preview (no scale)
+								rx = ry = 1;
+								my = coords.h;
+								mx = coords.w;
+
+							} else { // image is bigger than preview (scale)
+								if( rx < ry ){
+									ry = rx;
+									my = pw * coords.h / coords.w;
+								} else {
+									rx = ry;
+									mx = ph * coords.w / coords.h;
+								}
+							}
+						}
 
 						$el.find('>div>div').css({
 							  width:	Math.round(rx * info.width)
@@ -829,11 +865,28 @@
 							, marginLeft:	-Math.round(rx * coords.x)
 							, marginTop:	-Math.round(ry * coords.y)
 						});
+
+						if( preview.keepAspectRatio ){ // create side gaps
+							$el.find('>div').css({
+								  width:	Math.round(mx)
+								, height:	Math.round(my)
+								, marginLeft:	mx < pw  ? Math.round((pw - mx) / 2)  : 0
+								, marginTop:	my < ph ? Math.round((ph - my) / 2) : 0
+							});
+						}
 					}
 				}));
 			}
 
 			this._crop[uid] = coords;
+		},
+
+		resize: function (file, width, height, type){
+			this._resize[api.uid(file)] = {
+				  type: type
+				, width: width
+				, height: height
+			};
 		},
 
 		rotate: function (file, deg){
@@ -858,8 +911,18 @@
 			});
 		},
 
+		remove: function (file){
+			var uid = typeof file == 'object' ? api.uid(file) : file;
+
+			this.fileElem(uid).remove();
+			this.queue = api.filter(this.queue, function (file){ return api.uid(file) != uid; });
+			this.files = api.filter(this.files, function (file){ return api.uid(file) != uid; });
+			this._redraw();
+		},
+
 		clear: function (){
 			this._crop		= {};
+			this._resize	= {};
 			this._rotate	= {}; // rotate deg
 
 			this.queue		= [];
@@ -901,6 +964,32 @@
 	}
 
 
+	function _checkFileByCriteria(file, name, excepted, actual){
+		if( excepted ){
+			var val = excepted - actual, isMax = /max/.test(name);
+			if( (isMax && val < 0) || (!isMax && val > 0) ){
+				if( !file.errors ){
+					file.errors = {};
+				}
+				file.errors[name] = Math.abs(val);
+			}
+		}
+	}
+
+
+	function _extractFilesOverLimit(limit, countFiles, files, other){
+		if( limit ){
+			var delta = files.length - (limit - countFiles);
+			if( delta > 0 ){
+				_each(files.splice(0, delta), function (file, i){
+					_checkFileByCriteria(file, 'maxFiles', -1, i);
+					other.push(file);
+				});
+			}
+		}
+	}
+
+
 
 
 
@@ -920,10 +1009,10 @@
 			if( typeof options == 'string' ){
 				var fn = plugin[options], res;
 				if( $.isFunction(fn) ){
-					res = fn.call(plugin, value, arguments[2]);
+					res = fn.apply(plugin, _slice.call(arguments, 1));
 				}
 				else if( fn === void 0 ){
-					res = this.option(options, value);
+					res = plugin.option(options, value);
 				}
 				return	res === void 0 ? this : res;
 			}
@@ -935,7 +1024,7 @@
 	};
 
 
-	$.fn.fileapi.version = '0.1.4';
+	$.fn.fileapi.version = '0.2.0';
 	$.fn.fileapi.tpl = function (text){
 		var index = 0;
 		var source = "__b+='";
@@ -989,7 +1078,7 @@
 		}
 		else {
 			$el.data(key, true);
-			options = $.extend({ success: noop, error: noop }, options);
+			options = _extend({ success: noop, error: noop }, options);
 
 			FileAPI.Camera.publish($el, options, function (err, cam){
 				$el.data(key, err ? false : cam);
@@ -1011,11 +1100,24 @@
 			$el.first().Jcrop.apply($el, arguments);
 		}
 		else {
-			api.getInfo(file, function (err, info){
-				var Image = api.Image(file);
+			var
+				minSize = opts.minSize || [0, 0],
+				ratio = (opts.aspectRatio || minSize[0]/minSize[1])
+			;
 
-				if( opts.maxSize ){
-					Image.resize(opts.maxSize[0], opts.maxSize[1], 'max');
+			if( $.isArray(opts.minSize) && opts.aspectRatio === void 0 && ratio > 0 ){
+				opts.aspectRatio = ratio;
+			}
+
+			api.getInfo(file, function (err, info){
+				var Image = api.Image(file), maxSize = opts.maxSize;
+
+				if( maxSize ){
+					Image.resize(
+						  Math.max(maxSize[0], minSize[0])
+						, Math.max(maxSize[1], minSize[1])
+						, 'max'
+					);
 				}
 
 				Image.rotate('auto').get(function (err, img){
@@ -1024,7 +1126,7 @@
 						, minSide = Math.min(img.width, img.height)
 
 						, selWidth = minSide
-						, selHeight = minSide / (opts.aspectRatio || 1)
+						, selHeight = minSide / ratio
 					;
 
 					if( selection ){
@@ -1042,7 +1144,7 @@
 						opts.setSelect = [selLeft|0, selTop|0, (selLeft + selWidth)|0, (selTop + selHeight)|0];
 					}
 
-					api.each(['onSelect', 'onChange'], function (name, fn){
+					_each(['onSelect', 'onChange'], function (name, fn){
 						if( fn = opts[name] ){
 							opts[name] = function (coords){
 								var fw = info.width/img.width, fh = info.height/img.height;
@@ -1051,6 +1153,10 @@
 									, y: (coords.y * fh + 0.5)|0
 									, w: (coords.w * fw + 0.5)|0
 									, h: (coords.h * fh + 0.5)|0
+									, lx: coords.x // local coords
+									, ly: coords.y
+									, lw: coords.w
+									, lh: coords.h
 								});
 							};
 						}

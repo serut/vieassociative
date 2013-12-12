@@ -5,12 +5,12 @@
 @section('large-content')
 	<section>
 		<div>
-			<ul class="breadcrumb">
-				<li><a href="#">Association</a> <span class="divider">/</span></li>
-				<li><a href="/1-qsdf">Faites de la musique</a> <span class="divider">/</span></li>
-				<li><a href="/1/edit">Edition</a> <span class="divider">/</span></li>
-				<li class="active">Images</li>
-			</ul>
+            <ul class="breadcrumb">
+              <li><a href="#">Association</a> <span class="divider">/</span></li>
+              <li><a href="/{{$association->id}}-{{$association->slug}}">{{$association->name}}</a> <span class="divider">/</span></li>
+              <li><a href="/{{$association->id}}-{{$association->slug}}/edit">Edition</a> <span class="divider">/</span></li>
+			  <li class="active">Images</li>
+            </ul>
 			<div class="container">
 				<br>
 				<div id="dnd" class="b-upload b-upload_dnd">
@@ -31,7 +31,7 @@
 						</div>
 					</div>
 					<div class="row span22" style="margin-bottom: 20px;">
-						<div class="js-upload button button-green pull-right">Upload</div>
+						<div class="ctrl-upload button button-green pull-right">Upload</div>
 					</div>
 					 <div class="row js-files">
 				         <div class="js-file-tpl span3 img-polaroid" data-id="<%=uid%>" title="<%-name%>, <%-sizeText%>">
@@ -45,6 +45,8 @@
 				            <% } %>
 				            <div class="b-thumb__name"><%-name%></div>
 				            <div class="b-thumb__progress progress progress-striped active"><div class="bar"></div></div>
+				            <div class="transfert-ok" style="display: none;">Transfert effectué</div>
+
 				         </div>
 				      </div>
 				</div>
@@ -79,80 +81,52 @@
 		width: 100%;
 		margin-top: -80px;
 	}
-	.hoverimage { 
-		position: absolute; 
-		top: 0; 
-		left: 0; 
-		display: none;
+	.table-option{
+		margin-bottom: 0;
+	}
+	.table-option .item-option{
 		text-align: center;
-		width: 100%;
-		height: 98%;
 	}
-	.hoverimage img.icn1 {
-		top: 27%;
-		left: 10px;
-		position: absolute;
-		z-index: 300;
-		opacity: 0.7;
-	}
-
-	.hoverimage img.icn2 {
-		top: 27%;
-		left: 100px;
-		position: absolute;
-		z-index: 300;	
-		opacity: 0.7;
-	}
-
-	.overlay-img {
-		background-color: gray;
-		opacity: 0.75;
-		height: 100% !important;
-		width: 100%;
-	}
-	.js-files{
-		margin-left: -10px;
-	}
-
-	.hoverimage img.icn1, .hoverimage img.icn2 {
-		-webkit-transition-duration: 0.6s;
-	    -moz-transition-duration: 0.6s;
-		-o-transition-duration: 0.6s;
-		transition-duration: 0.6s;
-		-webkit-transition-property: opacity;
-		-moz-transition-property: opacity;
-		-o-transition-property: opacity;
-		transition-property: opacity;
-	}
-
-	.hoverimage img.icn1:hover, .hoverimage img.icn2:hover {
-		opacity: 1;
-	}
-
 </style>
 @stop
 @section('footer-js')
 	<script>
 	    window.FileAPI = {
 	          debug: false // debug mode
+			, media: true
 	        , staticPath: '/js/jquery.fileapi/FileAPI/' // path to *.swf
 	    };
 	</script>
 	<script src="/pluggin/jquery.fileapi/FileAPI/FileAPI.min.js"></script>
 	<script src="/pluggin/jquery.fileapi/jquery.fileapi.min.js"></script>
 	<script id="photo-pattern" type="text/x-jquery-tmpl">
-		<div class="element ${categories} span-size${size} item-hover" >
-			<a class="fancybox" href="${url_img}" rel="gallery1" title="A title">
-				<img src="${url_img}" class="size${size}"alt=" " />
-			</a>
-			<div class="hoverimage">
-				<div class="overlay-img"></div>
-				<a class="prettyPhoto" href="http://teothemes.com/wp/scrn/files/2012/12/FreeGreatPicture.com-30230-buick-regal-wallpaper.jpg">
-					<img alt="" src="http://teothemes.com/wp/scrn/wp-content/themes/SCRN/images/overlay-icn1.png" class="icn1">
-				</a>
-				<a href="http://teothemes.com/wp/scrn/portfolio/project-title-5/" rel="nofollow" class="portf-load">
-					<img alt="" src="http://teothemes.com/wp/scrn/wp-content/themes/SCRN/images/overlay-icn2.png" class="icn2">
-				</a>
+		<div class="element span-size${size} img-polaroid" >
+			<img src="${url_img}" class="size${size}" />
+			<div class="options">
+			<table class="table table-option">
+                <tr>
+                	<td class="item-option">
+		                <a class="remove" href="#" onclick="imgDelete(this);return false;">
+							<i class="icon-trash"></i>
+						</a>
+					</td>
+	                <td class="item-option">
+						<a class="fancybox" href="${url_img}" rel="/">
+							<i class="icon-zoom-in"></i>
+						</a>
+					</td>
+					@if($hasNextStep)
+					<td class="item-option">
+						<a class="select" href="#" onclick="select(this);return false;">
+							<i class="icon-share-alt"></i>
+						</a>
+					</td>
+					@endif
+                </tr>
+            </table>
+				
+				
+				
 			</div>
 		</div>
 		{{--<div class="thumb-text">
@@ -164,13 +138,14 @@
 	<script>
 	    $('#dnd').fileapi({
 		   url: "{{URLSubdomain::to('association','/upload')}}",
+		   data: { 'session-id': 123 }, // data with GET
 		   paramName: 'filedata',
 		   multiple: true,
 		   chunkSize: 2 * FileAPI.MB,
 			chunkUploadRetry: 3,
 		   elements: {
-		      ctrl: { upload: '.js-upload' },
-		      emptyQueue: { hide: '.js-upload' },
+		      ctrl: { upload: '.ctrl-upload',abort: '.ctrl-abort' },
+		      emptyQueue: { show: '.ctrl-upload',hide: '.ctrl-upload' },
 		      list: '.js-files',
 		      file: {
 		         tpl: '.js-file-tpl',
@@ -180,7 +155,7 @@
 		            height: 98
 		         },
 		         upload: { show: '.progress', hide: '.icon-repeat' },
-		         complete: { hide: '.progress' },
+		         complete: { show: '.transfert-ok',hide: '.progress' },
 		         progress: '.progress .bar'
 		      },
 		      dnd: {
@@ -196,9 +171,6 @@
 		    }
 			data = [{
 				'url_img':'http://img.vieassociative.fr/'+xhr.result.files[0],
-				'head':'WordPress Custom Theme',
-				'link':'Read More',
-				'categories':'illustration',
 				'size' : '2',
 			}];
 			var newpic = $('#photo-pattern').tmpl(data);
@@ -216,16 +188,30 @@
 				});
 			}
 			);
-		})
+		});
 		/*Gallery PART START*/
-		var data = [{
-			'url_img':'http://dummyimage.com/800x1600/4d494d/686a82.gif&text=placeholder+image',
-			'head':'WordPress Custom Theme',
-			'link':'Read More',
-			'categories':'illustration design',
+		var data = [
+		@foreach($gallery['element'] as $e)
+		{
+			'url_img':'http://img.vieassociative.fr/{{$prefix}}{{$association->id}}/{{$e->name_img}}',
 			'size' : '1',
-		}]
+		},
+
+		@endforeach]
 		loadGallery($('#gallery'),data,$('#photo-pattern'));
+		function select(){
+
+		}
+		function open(){
+
+		}
+		function imgDelete(){
+			data = {
+				'head' : 'Vérification',
+				'content' : 'Voulez vous vraiment supprimer cette image ?<br> ( Pour être honnete, cette fonctionnalité ne fonctionne pas encore )'
+			};
+			modalAgree(data);
+		}
 	/*Gallery PART END*/
 	</script>
 @stop

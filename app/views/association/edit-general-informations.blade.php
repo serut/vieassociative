@@ -96,7 +96,7 @@
             url: '/'+id+'/form/'+namePage+'/'+$(this).attr('data-modal-form'),
             dataType: "json",
         }).done(function ( data ) {
-            modalForFormModification(data)
+            modalForFormModification(data);
         }).fail(function() {
             alert("error");
         });

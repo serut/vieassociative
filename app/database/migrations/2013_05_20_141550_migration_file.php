@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class File extends Migration {
+class MigrationFile extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -56,8 +56,6 @@ class File extends Migration {
 			$table->foreign('name_img')->references('name')->on('img');
 			$table->integer('id_file')->unsigned()->nullable();
 			$table->foreign('id_file')->references('id')->on('file');
-			$table->integer('id_assoc')->unsigned()->nullable();
-			$table->foreign('id_assoc')->references('id')->on('association');
 
 			$table->timestamps();
 		});
@@ -70,10 +68,10 @@ class File extends Migration {
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('file');
-		Schema::dropIfExists('img');
-		Schema::dropIfExists('img_other_version');
+		Schema::dropIfExists('folder_file_img');
 		Schema::dropIfExists('folder');
+		Schema::dropIfExists('img_other_version');
+		Schema::dropIfExists('img');
 		Schema::dropIfExists('file');
 	}
 

@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CompleteAssociationProfile extends Migration {
+class MigrationAssociation extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -11,8 +11,14 @@ class CompleteAssociationProfile extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('association', function($table)
-		{
+		Schema::create('association', function($table){
+			$table->engine = 'InnoDB';
+			$table->increments('id');
+			$table->string('name');
+			$table->string('slug');
+			$table->string('acronym');
+			$table->boolean('active');
+			$table->integer('id_logo');
 			$table->string('legal_name');
 			$table->string('goal');
 			$table->string('website_url');
@@ -26,7 +32,6 @@ class CompleteAssociationProfile extends Migration {
 			$table->integer('nb_evenements');
 			$table->integer('nb_social_connected');
 			$table->integer('nb_administrator');
-			$table->softDeletes();
 			$table->text('statuts');
 			$table->text('internal_regulation');
 			$table->string('contact_adress');
@@ -36,7 +41,29 @@ class CompleteAssociationProfile extends Migration {
 			$table->string('page_youtube');
 			$table->string('page_paypal');
 			$table->string('page_twitter');
+			$table->integer('id_folder')->unsigned();
+			$table->foreign('id_folder')->references('id')->on('folder');
+			$table->softDeletes();
+			$table->timestamps();
 		});
+
+
+		Schema::create('user_association', function($table){
+			$table->engine = 'InnoDB';
+			$table->increments('id');
+
+			$table->integer('id_user')->unsigned();
+			$table->foreign('id_user')->references('id')->on('user');
+			$table->integer('id_assoc')->unsigned();
+			$table->foreign('id_assoc')->references('id')->on('association');
+			$table->string('link',30);
+
+			$table->timestamps();
+		});
+
+
+
+
 	}
 
 	/**
@@ -46,7 +73,8 @@ class CompleteAssociationProfile extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::dropIfExists('user_association');
+		Schema::dropIfExists('association');
 	}
 
 }

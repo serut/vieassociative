@@ -133,6 +133,28 @@ function modalForFormModification(data){
 }
  /*Modal form PLUGIN ENDS*/
 
+/*Modal agree PLUGIN STARTS*/
+function modalAgree(data){
+    var html = '<section id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
+        html+= '<div class="modal-header">';
+        html+= '<button type="button" class="close close-modal" data-dismiss="modal" aria-hidden="true">×</button>';
+        html+= '<h3>'+data['head']+'</h3>';
+        html+= '</div>';
+        html+= '<div class="modal-body">';
+        html+= data['content'];
+        html+= '</div>';
+        html+= '<div class="modal-footer">';
+        html+= '<button class="button button-red" data-dismiss="modal" aria-hidden="true">Non</button> ';
+        html+= '<button class="button button-green" onclick="$(this).parent().parent().find(\'form\').submit();">Oui</button>';
+        html+= '</div>';
+        html+= '</section>';
+    $('#push').before(html);
+    $('#myModal').on('hidden', function () {
+      $(this).remove();
+    })
+    $('#myModal').modal('show')
+}
+ /*Modal form PLUGIN ENDS*/
 
 /*Bootstrap bind PLUGIN STARTS
  * Bind specific forms for validate using Parsley

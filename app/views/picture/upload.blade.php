@@ -35,6 +35,7 @@
 					</div>
 					 <div class="row js-files">
 				         <div class="js-file-tpl span3 img-polaroid" data-id="<%=uid%>" title="<%-name%>, <%-sizeText%>">
+				            <div class="row">
 				            <div class="b-thumb__preview pull-left">
 				               <div class="b-thumb__preview__pic"></div>
 				            </div>
@@ -43,6 +44,7 @@
 				            <% if( /^image/.test(type) ){ %>
 				               <br><div data-fileapi="rotate.cw" class="pull-right"><i class="icon-repeat" title="Faire pivoter l'image"></i></div>
 				            <% } %>
+				            </div>
 				            <div class="b-thumb__name"><%-name%></div>
 				            <div class="b-thumb__progress progress progress-striped active"><div class="bar"></div></div>
 				            <div class="transfert-ok" style="display: none;">Transfert effectué</div>
@@ -87,6 +89,15 @@
 	.table-option .item-option{
 		text-align: center;
 	}
+	.b-thumb__preview{
+		margin-left: 10px;
+	}
+	.b-thumb__name{
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    width: 110px;
+	    white-space: nowrap;
+	}
 </style>
 @stop
 @section('footer-js')
@@ -101,7 +112,7 @@
 	<script src="/pluggin/jquery.fileapi/jquery.fileapi.min.js"></script>
 	<script id="photo-pattern" type="text/x-jquery-tmpl">
 		<div class="element span-size${size} img-polaroid" >
-			<img src="${url_img}" class="size${size}" />
+			<img src="${thumbnail}" class="size${size}" />
 			<div class="options">
 			<table class="table table-option">
                 <tr>
@@ -170,7 +181,8 @@
 		      var result = xhr.responseText;
 		    }
 			data = [{
-				'url_img':'http://img.vieassociative.fr/'+xhr.result.files[0],
+				'url_img':'http://img.vieassociative.fr/'+xhr.result.file[0],
+				'thumbnail':'http://img.vieassociative.fr/'+xhr.result.thumbnail[0],
 				'size' : '2',
 			}];
 			var newpic = $('#photo-pattern').tmpl(data);
@@ -194,6 +206,7 @@
 		@foreach($gallery['element'] as $e)
 		{
 			'url_img':'http://img.vieassociative.fr/{{$prefix}}{{$association->id}}/{{$e->name_img}}',
+			'thumbnail':'http://img.vieassociative.fr/{{$prefix}}{{$association->id}}/{{$e->name_img}}_thumbnail.jpg',
 			'size' : '1',
 		},
 

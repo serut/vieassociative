@@ -5,14 +5,14 @@ App::singleton('Pubnub', function()
     if (!class_exists('Pubnub', false))
     {
         // Load the HTML Purifier auto loader
-        require base_path() . '/vendor/pubnub/pubnub/lib/Pubnub/Pubnub.php';
+        require base_path() . '/vendor/pubnub/pubnub/lib/autoloader.php';
     }
     // Return the Pubnub instance
-    $pubnub = new pubnub\Pubnub(
+    $pubnub = new \Pubnub\Pubnub(
         Config::get('pubnub.publish'),
         Config::get('pubnub.subscribe'),  ## SUBSCRIBE_KEY
         Config::get('pubnub.secret'),  ## SECRET_KEY
-        false    ## SSL_ON?
+        Config::get('pubnub.ssl')    ## SSL_ON?
     );
     $info = $pubnub->publish(array(
         'channel' => 'hello_world', ## REQUIRED Channel to Send

@@ -15,15 +15,14 @@ App::singleton('Pubnub', function()
         Config::get('pubnub.ssl')    ## SSL_ON?
     );
     $info = $pubnub->publish(array(
-        'channel' => 'hello_world', ## REQUIRED Channel to Send
+        'channel' => 'my_channel', ## REQUIRED Channel to Send
         'message' => 'Hey World!'   ## REQUIRED Message String/Array
     ));
     print_r($info);
-    $pubnub->subscribe(array(
-        'channel'  => 'hello_world',        ## REQUIRED Channel to Listen
-        'callback' => function($message) {  ## REQUIRED Callback With Response
-            var_dump($message);  ## Print Message
-            return false;         ## Keep listening (return false to stop)
-        }
+    echo("Requesting History...\n");
+    $messages = $pubnub->history(array(
+        'channel' => 'my_channel', ## REQUIRED Channel to Send
+        'limit'   => 10            ## OPTIONAL Limit Number of Messages
     ));
+    print_r($messages);
 });

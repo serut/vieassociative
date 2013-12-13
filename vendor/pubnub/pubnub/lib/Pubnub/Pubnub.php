@@ -8,7 +8,7 @@ namespace Pubnub;
  */
 class Pubnub {
 
-    private $ORIGIN = 'IUNDERSTAND.pubnub.com';  // Change this to your custom origin, or IUNDERSTAND.pubnub.com
+    private $ORIGIN = 'php.pubnub.com';  // Change this to your custom origin, or IUNDERSTAND.pubnub.com
     private $PUBLISH_KEY = 'demo';
     private $SUBSCRIBE_KEY = 'demo';
     private $SECRET_KEY = false;

@@ -540,7 +540,6 @@ class Pubnub {
      * @return string encoded char.
      */
     private static function _encode_char($char) {
-        var_dump($char);
         if (strpos($char,' ~`!@#$%^&*()+=[]\\{}|;\':",./<>?') === false)
             return $char;
         else

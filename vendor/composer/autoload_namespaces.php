@@ -23,6 +23,7 @@ return array(
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
     'Symfony\\Component\\BrowserKit\\' => array($vendorDir . '/symfony/browser-kit'),
     'Purl' => array($vendorDir . '/jwage/purl/src'),
+    'Pubnub\\' => array($vendorDir . '/pubnub/pubnub/lib'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
     'Predis' => array($vendorDir . '/predis/predis/lib'),
     'Pdp' => array($vendorDir . '/jeremykendall/php-domain-parser/library'),
@@ -51,5 +52,4 @@ return array(
     'Aws\\Laravel' => array($vendorDir . '/aws/aws-sdk-php-laravel/src'),
     'Aws' => array($vendorDir . '/aws/aws-sdk-php/src'),
     'Artdarek\\OAuth' => array($vendorDir . '/artdarek/oauth-4-laravel/src'),
-    '' => array($vendorDir . '/camcima/pubnub-php-api/3.3'),
 );

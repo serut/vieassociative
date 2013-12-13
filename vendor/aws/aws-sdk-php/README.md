@@ -19,6 +19,8 @@ minutes by [installing the SDK through Composer][docs-installation] or by downlo
 * [Issues][sdk-issues] – Report issues and submit pull requests (see [Apache 2.0 License][sdk-license])
 * [@awsforphp][sdk-twitter] – Follow us on Twitter
 
+**NEW:** Watch our video — **[Mastering the AWS SDK for PHP](http://youtu.be/_zaW2VZB1ok)** from AWS re:Invent 2013!
+
 ## Features
 
 * Provides easy-to-use HTTP clients for all supported AWS [services][docs-services], [regions][docs-rande], and

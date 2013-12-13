@@ -3,7 +3,7 @@
 /**
  * Abstract class of a tag token (start, end or empty), and its behavior.
  */
-class HTMLPurifier_Token_Tag extends HTMLPurifier_Token
+abstract class HTMLPurifier_Token_Tag extends HTMLPurifier_Token
 {
     /**
      * Static bool marker that indicates the class is a tag.
@@ -58,6 +58,10 @@ class HTMLPurifier_Token_Tag extends HTMLPurifier_Token
         $this->line = $line;
         $this->col = $col;
         $this->armor = $armor;
+    }
+
+    public function toNode() {
+        return new HTMLPurifier_Node_Element($this->name, $this->attr, $this->line, $this->col, $this->armor);
     }
 }
 

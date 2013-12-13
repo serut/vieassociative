@@ -8,7 +8,7 @@
             <ul class="breadcrumb">
               <li><a href="#">Association</a> <span class="divider">/</span></li>
               <li><a href="/{{$association->id}}-{{$association->slug}}">{{$association->name}}</a> <span class="divider">/</span></li>
-              <li><a href="/{{$association->id}}-{{$association->slug}}/edit">Edition</a> <span class="divider">/</span></li>
+              <li><a href="/{{$association->id}}/edit">Edition</a> <span class="divider">/</span></li>
 			  <li class="active">Images</li>
             </ul>
 			<div class="container">

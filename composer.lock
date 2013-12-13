@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "096ba7a0de9c168cd9ed6cd80cfb4b24",
+    "hash": "7d079c5ae7e15c51fc8778d5fd0c9412",
     "packages": [
         {
             "name": "artdarek/oauth-4-laravel",
@@ -59,16 +59,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "7395e77a73cb3b79ba4a57a6c09b9df33781398f"
+                "reference": "61eaf675b7de9ce8b2c6b44317b01e6818ea16c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/7395e77a73cb3b79ba4a57a6c09b9df33781398f",
-                "reference": "7395e77a73cb3b79ba4a57a6c09b9df33781398f",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/61eaf675b7de9ce8b2c6b44317b01e6818ea16c3",
+                "reference": "61eaf675b7de9ce8b2c6b44317b01e6818ea16c3",
                 "shasum": ""
             },
             "require": {
-                "guzzle/guzzle": "~3.7.0",
+                "guzzle/guzzle": ">=3.7.0,<3.9.0",
                 "php": ">=5.3.3"
             },
             "require-dev": {
@@ -119,7 +119,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2013-11-29 08:02:15"
+            "time": "2013-12-12 19:35:51"
         },
         {
             "name": "aws/aws-sdk-php-laravel",
@@ -173,51 +173,6 @@
                 "sdk"
             ],
             "time": "2013-10-29 02:35:35"
-        },
-        {
-            "name": "camcima/pubnub-php-api",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/camcima/pubnub-php-api.git",
-                "reference": "bddb2bc7b6f7707f1435a87a48360c8d7d110084"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/camcima/pubnub-php-api/zipball/bddb2bc7b6f7707f1435a87a48360c8d7d110084",
-                "reference": "bddb2bc7b6f7707f1435a87a48360c8d7d110084",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "": "3.3"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Carlos Cima",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Composer port of PubNub PHP API",
-            "homepage": "https://github.com/camcima/pubnub-php-api",
-            "keywords": [
-                "composer",
-                "messaging",
-                "php",
-                "pubnub",
-                "realtime",
-                "websocket"
-            ],
-            "time": "2012-11-12 18:27:23"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -484,12 +439,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "ad26be7787690d50d572d39a8d2ba5f1542a6d8f"
+                "reference": "ba2ad8a7db24adb37a33ff52ee64b02d59ccfee0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/ad26be7787690d50d572d39a8d2ba5f1542a6d8f",
-                "reference": "ad26be7787690d50d572d39a8d2ba5f1542a6d8f",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/ba2ad8a7db24adb37a33ff52ee64b02d59ccfee0",
+                "reference": "ba2ad8a7db24adb37a33ff52ee64b02d59ccfee0",
                 "shasum": ""
             },
             "require": {
@@ -551,7 +506,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2013-11-19 22:17:03"
+            "time": "2013-12-03 21:02:18"
         },
         {
             "name": "doctrine/dbal",
@@ -746,16 +701,16 @@
         },
         {
             "name": "edvinaskrucas/notification",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/edvinaskrucas/notification.git",
-                "reference": "5018c96afea9b3f82008073afd9bd238c45aaef3"
+                "reference": "27d0f8d3d9e0a52789335e56cf96b8851476fe9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/edvinaskrucas/notification/zipball/5018c96afea9b3f82008073afd9bd238c45aaef3",
-                "reference": "5018c96afea9b3f82008073afd9bd238c45aaef3",
+                "url": "https://api.github.com/repos/edvinaskrucas/notification/zipball/27d0f8d3d9e0a52789335e56cf96b8851476fe9f",
+                "reference": "27d0f8d3d9e0a52789335e56cf96b8851476fe9f",
                 "shasum": ""
             },
             "require": {
@@ -791,7 +746,7 @@
                 "messages",
                 "notifications"
             ],
-            "time": "2013-11-06 20:48:29"
+            "time": "2013-12-07 20:38:37"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -799,12 +754,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezyang/htmlpurifier.git",
-                "reference": "fac747bdbdba6aeaba4bed91ef49b2378c1798e4"
+                "reference": "18b8a0e44aa873bc7b4208ce5c94a76f6e4566ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/fac747bdbdba6aeaba4bed91ef49b2378c1798e4",
-                "reference": "fac747bdbdba6aeaba4bed91ef49b2378c1798e4",
+                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/18b8a0e44aa873bc7b4208ce5c94a76f6e4566ba",
+                "reference": "18b8a0e44aa873bc7b4208ce5c94a76f6e4566ba",
                 "shasum": ""
             },
             "require": {
@@ -836,7 +791,7 @@
             "keywords": [
                 "html"
             ],
-            "time": "2013-08-18 02:27:26"
+            "time": "2013-12-08 23:51:56"
         },
         {
             "name": "filp/whoops",
@@ -895,12 +850,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "b0d91a5aca51fbad219f0bc33f0500745fcf8cd6"
+                "reference": "50c5393062bc9035d0a872b9b2af8221f264ea19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/b0d91a5aca51fbad219f0bc33f0500745fcf8cd6",
-                "reference": "b0d91a5aca51fbad219f0bc33f0500745fcf8cd6",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/50c5393062bc9035d0a872b9b2af8221f264ea19",
+                "reference": "50c5393062bc9035d0a872b9b2af8221f264ea19",
                 "shasum": ""
             },
             "require": {
@@ -944,13 +899,13 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.7-dev"
+                    "dev-master": "3.8-dev"
                 }
             },
             "autoload": {
                 "psr-0": {
-                    "Guzzle\\Tests": "tests/",
-                    "Guzzle": "src/"
+                    "Guzzle": "src/",
+                    "Guzzle\\Tests": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -979,7 +934,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2013-11-28 21:02:44"
+            "time": "2013-12-09 04:01:52"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -1167,12 +1122,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "733cf07800756a3d57a2c912c4d44f5ddf0457b6"
+                "reference": "426c9e0e39915eedd2861b147ba6701443136e3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/733cf07800756a3d57a2c912c4d44f5ddf0457b6",
-                "reference": "733cf07800756a3d57a2c912c4d44f5ddf0457b6",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/426c9e0e39915eedd2861b147ba6701443136e3d",
+                "reference": "426c9e0e39915eedd2861b147ba6701443136e3d",
                 "shasum": ""
             },
             "require": {
@@ -1272,7 +1227,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-11-27 15:45:20"
+            "time": "2013-12-06 01:42:26"
         },
         {
             "name": "lusitanian/oauth",
@@ -1343,12 +1298,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "6f5b3d2a9c63a857d40d200f1bb9f62991c07bf8"
+                "reference": "5ad421d6a1d5d7066a45b617e5164d309c4e2852"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/6f5b3d2a9c63a857d40d200f1bb9f62991c07bf8",
-                "reference": "6f5b3d2a9c63a857d40d200f1bb9f62991c07bf8",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/5ad421d6a1d5d7066a45b617e5164d309c4e2852",
+                "reference": "5ad421d6a1d5d7066a45b617e5164d309c4e2852",
                 "shasum": ""
             },
             "require": {
@@ -1402,20 +1357,20 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2013-11-25 13:58:14"
+            "time": "2013-12-02 09:38:32"
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.6.0",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "b0450b539d1567b2acee6467b6b323a8547b5559"
+                "reference": "03ede52a1f360441b5826cb8a798e0d0a919731f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/b0450b539d1567b2acee6467b6b323a8547b5559",
-                "reference": "b0450b539d1567b2acee6467b6b323a8547b5559",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/03ede52a1f360441b5826cb8a798e0d0a919731f",
+                "reference": "03ede52a1f360441b5826cb8a798e0d0a919731f",
                 "shasum": ""
             },
             "require": {
@@ -1448,7 +1403,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2013-11-23 15:22:05"
+            "time": "2013-12-05 04:13:29"
         },
         {
             "name": "nikic/php-parser",
@@ -1497,16 +1452,16 @@
         },
         {
             "name": "patchwork/utf8",
-            "version": "v1.1.15",
+            "version": "v1.1.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nicolas-grekas/Patchwork-UTF8.git",
-                "reference": "2b13126f572501ce9806846349344f1c6b20b545"
+                "reference": "bc719e850b57791c1024d06f9fe7d474348e7ba6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/2b13126f572501ce9806846349344f1c6b20b545",
-                "reference": "2b13126f572501ce9806846349344f1c6b20b545",
+                "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/bc719e850b57791c1024d06f9fe7d474348e7ba6",
+                "reference": "bc719e850b57791c1024d06f9fe7d474348e7ba6",
                 "shasum": ""
             },
             "require": {
@@ -1544,7 +1499,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2013-11-23 12:47:40"
+            "time": "2013-12-07 12:20:20"
         },
         {
             "name": "predis/predis",
@@ -1552,12 +1507,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nrk/predis.git",
-                "reference": "aac811f8976d574ded6fd59033ba1c1f47ef1c74"
+                "reference": "09cb6677e241feecb165f417e1b3ea9709e1b173"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nrk/predis/zipball/aac811f8976d574ded6fd59033ba1c1f47ef1c74",
-                "reference": "aac811f8976d574ded6fd59033ba1c1f47ef1c74",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/09cb6677e241feecb165f417e1b3ea9709e1b173",
+                "reference": "09cb6677e241feecb165f417e1b3ea9709e1b173",
                 "shasum": ""
             },
             "require": {
@@ -1591,7 +1546,7 @@
                 "predis",
                 "redis"
             ],
-            "time": "2013-11-29 10:14:14"
+            "time": "2013-12-11 12:10:05"
         },
         {
             "name": "psr/log",
@@ -1599,12 +1554,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "134145e8d08ddcb9bb8f49a2feb9aa1f2393650c"
+                "reference": "5144da9525d24346bf009ff28f10cbaa1f0f166e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/134145e8d08ddcb9bb8f49a2feb9aa1f2393650c",
-                "reference": "134145e8d08ddcb9bb8f49a2feb9aa1f2393650c",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/5144da9525d24346bf009ff28f10cbaa1f0f166e",
+                "reference": "5144da9525d24346bf009ff28f10cbaa1f0f166e",
                 "shasum": ""
             },
             "type": "library",
@@ -1634,20 +1589,73 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2013-11-19 10:21:35"
+            "time": "2013-12-05 15:25:07"
         },
         {
-            "name": "swiftmailer/swiftmailer",
-            "version": "v5.0.2",
+            "name": "pubnub/pubnub",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "f3917ecef35a4e4d98b303eb9fee463bc983f379"
+                "url": "https://github.com/pubnub/php-composer.git",
+                "reference": "ab4aa92cc262520f6857252f709a3a44c608e2fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/f3917ecef35a4e4d98b303eb9fee463bc983f379",
-                "reference": "f3917ecef35a4e4d98b303eb9fee463bc983f379",
+                "url": "https://api.github.com/repos/pubnub/php-composer/zipball/ab4aa92cc262520f6857252f709a3a44c608e2fa",
+                "reference": "ab4aa92cc262520f6857252f709a3a44c608e2fa",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Pubnub\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dmitry Medvedev",
+                    "email": "gektor1@gmail.com"
+                },
+                {
+                    "name": "Victor Kislichenko",
+                    "email": "dofer@bigmir.net"
+                },
+                {
+                    "name": "PubNub Support",
+                    "email": "support@pubnub.com"
+                }
+            ],
+            "description": "The Only Global Network For Real-Time Data -- PubNub!",
+            "homepage": "http://www.pubnub.com/",
+            "keywords": [
+                "ajax",
+                "api",
+                "push",
+                "real time",
+                "real-time",
+                "realtime"
+            ],
+            "time": "2013-07-16 21:18:27"
+        },
+        {
+            "name": "swiftmailer/swiftmailer",
+            "version": "v5.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swiftmailer/swiftmailer.git",
+                "reference": "32edc3b0de0fdc1b10f5c4912e8677b3f411a230"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/32edc3b0de0fdc1b10f5c4912e8677b3f411a230",
+                "reference": "32edc3b0de0fdc1b10f5c4912e8677b3f411a230",
                 "shasum": ""
             },
             "require": {
@@ -1683,7 +1691,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2013-08-30 12:35:21"
+            "time": "2013-12-03 13:33:24"
         },
         {
             "name": "symfony/browser-kit",
@@ -1747,12 +1755,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "6027e11bf64235b1d8b9b4a58640256c0c73fdc4"
+                "reference": "f77c13a6b542941075b3faacc5199c9ba9070d75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/6027e11bf64235b1d8b9b4a58640256c0c73fdc4",
-                "reference": "6027e11bf64235b1d8b9b4a58640256c0c73fdc4",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/f77c13a6b542941075b3faacc5199c9ba9070d75",
+                "reference": "f77c13a6b542941075b3faacc5199c9ba9070d75",
                 "shasum": ""
             },
             "require": {
@@ -1791,7 +1799,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2013-11-25 14:49:41"
+            "time": "2013-12-12 16:08:59"
         },
         {
             "name": "symfony/css-selector",
@@ -1851,12 +1859,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Debug.git",
-                "reference": "b4ea949b41f7d01d70a54c9aaae6e17d9f1546ee"
+                "reference": "93f26330c7750628772e074c90dacf27ddf48b6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Debug/zipball/b4ea949b41f7d01d70a54c9aaae6e17d9f1546ee",
-                "reference": "b4ea949b41f7d01d70a54c9aaae6e17d9f1546ee",
+                "url": "https://api.github.com/repos/symfony/Debug/zipball/93f26330c7750628772e074c90dacf27ddf48b6b",
+                "reference": "93f26330c7750628772e074c90dacf27ddf48b6b",
                 "shasum": ""
             },
             "require": {
@@ -1898,7 +1906,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "http://symfony.com",
-            "time": "2013-11-28 16:41:31"
+            "time": "2013-12-12 16:08:59"
         },
         {
             "name": "symfony/dom-crawler",
@@ -1907,12 +1915,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/DomCrawler.git",
-                "reference": "4dc2c596b28884892da24729d9b32d01d89c1a59"
+                "reference": "7a7239828861dfbe883da4b834ac4dd07a8b056f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/4dc2c596b28884892da24729d9b32d01d89c1a59",
-                "reference": "4dc2c596b28884892da24729d9b32d01d89c1a59",
+                "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/7a7239828861dfbe883da4b834ac4dd07a8b056f",
+                "reference": "7a7239828861dfbe883da4b834ac4dd07a8b056f",
                 "shasum": ""
             },
             "require": {
@@ -1951,7 +1959,7 @@
             ],
             "description": "Symfony DomCrawler Component",
             "homepage": "http://symfony.com",
-            "time": "2013-10-30 08:30:20"
+            "time": "2013-12-03 14:51:26"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1960,12 +1968,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "d24a5afe3e711757d87ce9e64d5f6cbc9c4af797"
+                "reference": "30b2f954258361a10301189ddad8522462321924"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/d24a5afe3e711757d87ce9e64d5f6cbc9c4af797",
-                "reference": "d24a5afe3e711757d87ce9e64d5f6cbc9c4af797",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/30b2f954258361a10301189ddad8522462321924",
+                "reference": "30b2f954258361a10301189ddad8522462321924",
                 "shasum": ""
             },
             "require": {
@@ -2005,7 +2013,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2013-11-28 10:26:47"
+            "time": "2013-12-03 14:51:26"
         },
         {
             "name": "symfony/filesystem",
@@ -2158,12 +2166,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "46aa5b516dded0a8b1994b0a19e916bb6bea4f50"
+                "reference": "e6f1920ee06a89fee7810fcd112211599f5f7445"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/46aa5b516dded0a8b1994b0a19e916bb6bea4f50",
-                "reference": "46aa5b516dded0a8b1994b0a19e916bb6bea4f50",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/e6f1920ee06a89fee7810fcd112211599f5f7445",
+                "reference": "e6f1920ee06a89fee7810fcd112211599f5f7445",
                 "shasum": ""
             },
             "require": {
@@ -2220,7 +2228,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "http://symfony.com",
-            "time": "2013-11-25 14:49:41"
+            "time": "2013-12-12 16:08:12"
         },
         {
             "name": "symfony/process",
@@ -2528,7 +2536,7 @@
         "artdarek/oauth-4-laravel": 20,
         "themonkeys/error-emailer": 20,
         "ezyang/htmlpurifier": 20,
-        "camcima/pubnub-php-api": 20
+        "pubnub/pubnub": 20
     },
     "platform": [
 

@@ -4,6 +4,8 @@ class NotificationController  extends BaseController {
 	// This bullshit is not working
     public function getIndex() {
     	$pubnub = App::make('Pubnub');
+		
+		/*
         $info = $pubnub->publish(array(
 		    'channel' => 'hello_world', ## REQUIRED Channel to Send
 		    'message' => 'Hey World!'   ## REQUIRED Message String/Array
@@ -16,6 +18,7 @@ class NotificationController  extends BaseController {
 		        return true;         ## Keep listening (return false to stop)
 		    }
 		));
+		*/
 /*
 		$messages = $pubnub->history(array(
 		    'channel' => 'hello_world',  ## REQUIRED Channel to Send

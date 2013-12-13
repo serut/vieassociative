@@ -11,8 +11,7 @@ class FileController  extends BaseController {
                 ->with('association',Association::find($idAssoc))
                 ->with('gallery',Folder::getGallery($idAssoc))
                 ->with('prefix',$prefix)
-                ->with('hasNextStep',true)
-                ->with('type',Input::get('change'));
+                ->with('hasNextStep',true);
     }
     public function getCrop($idAssoc){
         return View::make('picture.crop')

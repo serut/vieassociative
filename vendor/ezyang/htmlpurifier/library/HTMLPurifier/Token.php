@@ -3,7 +3,7 @@
 /**
  * Abstract base token class that all others inherit from.
  */
-class HTMLPurifier_Token
+abstract class HTMLPurifier_Token
 {
     /**
      * Line number node was on in source document. Null if unknown.
@@ -90,6 +90,11 @@ class HTMLPurifier_Token
         $this->line = $l;
         $this->col = $c;
     }
+
+    /**
+     * Converts a token into its corresponding node.
+     */
+    abstract public function toNode();
 }
 
 // vim: et sw=4 sts=4

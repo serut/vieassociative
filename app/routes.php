@@ -16,9 +16,7 @@
     $server = explode('.', Request::server('HTTP_HOST')); // sweet routing - not fully reliable
     switch ($server['0']) {
         case 'www':
-            /*
-            Route::get('/', 'NotificationController@getIndex');
-            */
+            Route::get('/notifications', 'NotificationController@getIndex');
             Route::get('/', function()
             {
                 return View::make('index.index');

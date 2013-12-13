@@ -10,7 +10,7 @@
 		"artdarek/oauth-4-laravel": "dev-master",
 		"themonkeys/error-emailer": "dev-master",
 		"ezyang/htmlpurifier": "dev-master",
-		"camcima/pubnub-php-api": "dev-master"
+		"pubnub/pubnub": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

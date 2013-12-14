@@ -26,7 +26,6 @@ class Answer extends Eloquent
     }
     static function organizeComments($result){
         
-        
         $commentsLevel3 = array();
         $commentsLevel2 = array();
         $comments = array();
@@ -52,8 +51,7 @@ class Answer extends Eloquent
             }
         }
 
-
-        $return = [];
+        $return = array();
         // put all comments on an array of 1 dimension, as it will be writen on the HTML
         foreach ($comments as $k => $v) {
             $return[] = $v;

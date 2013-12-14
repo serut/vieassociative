@@ -9,7 +9,7 @@ class BaseValidator{
         if(! $v->fails()){
             $message = array('success'=>'true','data'=>$inputs);
         }else{
-            $message = array('error'=>'');
+            $message = array('error'=>"Une erreur est survenue avec la validation");
         }
         return $message;
     }

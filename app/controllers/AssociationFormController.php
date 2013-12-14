@@ -148,16 +148,20 @@ class AssociationFormController  extends BaseController {
             case 'statuts':
             case 'contact_adress':
                 $result = $v->$item();
-                $update=array($item => $result['data'][$item]);
-                $before = Association::find($id)->first()->$item;
-                $proposition = $result['data'][$item];
+                if(isset($result['success'])){
+                    $update=array($item => $result['data'][$item]);
+                    $before = Association::find($id)->first()->$item;
+                    $proposition = $result['data'][$item];
+                }
                 break;
             case 'admitted_public_utility':
                 $result = $v->$item();
-                $boolean = ($result['data'][$item] == "true") ? 1 : 0; 
-                $update = array($item => $boolean);
-                $before = Association::find($id)->first()->$item;
-                $proposition = $boolean;
+                if(isset($result['success'])){
+                    $boolean = ($result['data'][$item] == "true") ? 1 : 0; 
+                    $update = array($item => $boolean);
+                    $before = Association::find($id)->first()->$item;
+                    $proposition = $boolean;
+                }
                 break;
         }
         if(isset($result['success'])){

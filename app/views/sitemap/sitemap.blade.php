@@ -9,7 +9,7 @@
 @endforeach
 @foreach($listAssocs as $a)
 	<url>
-		<loc>http://www.vieassociative.fr/{{$a->id}}-{{$a->slug}}</loc>
+		<loc>http://association.vieassociative.fr/{{$a->id}}-{{$a->slug}}</loc>
 		<changefreq>daily</changefreq>
 		<priority>0.8</priority>
 	</url>

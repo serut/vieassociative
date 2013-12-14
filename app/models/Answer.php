@@ -26,6 +26,7 @@ class Answer extends Eloquent
     }
     static function organizeComments($result){
         
+        
         $commentsLevel3 = array();
         $commentsLevel2 = array();
         $comments = array();

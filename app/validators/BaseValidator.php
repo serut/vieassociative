@@ -17,9 +17,7 @@ class BaseValidator{
         $purifier = App::make('HTMLPurifier');
         foreach ($toPurify as $k => $v) {
             if(isset($input[$v])){
-                var_dump($input[$v]);
                 $input[$v] = $purifier->purify($input[$v]);
-                var_dump($input[$v]);
             }
         }
     }

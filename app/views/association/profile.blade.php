@@ -13,8 +13,8 @@
 		);
 	?>
 	<section class="profile unbackground">
-			<img src="{{$profile['cover']}}" class="cover">
-			<img src="{{$profile['logo']}}" class="logo">
+		<img src="{{$profile['cover']}}" class="cover">
+		<img src="{{$profile['logo']}}" class="logo">
 		<div>
 			<div class="row">
 				<div class="span17 head">
@@ -39,6 +39,9 @@
 				</div>
 			</div>
 			<hr class="separator">
+
+			@if(App::environment() == "prod")
+
 			<div class="row-fluid">
 				<div id="photo" class="span4 img-polaroid" data-toggle="div-hidden-photo" data-categories="*">
 					<p>Photos</p>
@@ -59,122 +62,124 @@
 					<p>Sponsor 2013</p>
 				</div>
 			</div>
-			<div>
-			<div id="div-hidden-photo" style="display:none;">
-				<div class="filter-portfolio">
-					 <ul class="filterable">
-						<li><a class="option-set" data-categories="*">All</a></li>
-						<li><a class="option-set" data-categories="design">Design</a></li>
-						<li><a class="option-set" data-categories="illustration">Illustration</a></li>
-					</ul>	
-				</div>
-							
-				<div id="gallery" class="portfolio-items isotope span23">
-					<!-- Pictures will go here ... -->
-				</div>
-			</div>
 			
-			<div id="div-hidden-evenement" style="display:none;">
-				<div id="timeline-evenement" class="timeline"></div>
-			</div>
-
-			<div id="div-hidden-social" style="display:none;">
-				<div id="social-fetch">
-					<div class="row">
-						<aside class="span8 social-partner">
-							<div class="row facebook">
-								<div class="span2 fb">
-									<i href="#" class="logo"></i>
-								</div>
-								<div class="span5">
-									<p>Actualités <b>Facebook</b></p>
-									<i class="icon-chevron-right"></i>
-									<img src="/img/items/like.png">
-								</div>
-							</div>
-
-							<div class="row twitter">
-								<div class="span2 tw">
-									<i href="#" class="logo"></i>
-								</div>
-								<div class="span5">
-									<p>Actualités <b>Twitter</b></p>
-									<img src="/img/items/follow.png">
-								</div>
-							</div>
-
-							<div class="row google-plus">
-								<div class="span2 ggl">
-									<i href="#" class="logo"></i>
-								</div>
-								<div class="span5">
-									<p>Actualités <b>Google +</b></p>
-									<img src="/img/items/plus-one.png">
-								</div>
-							</div>
-						</aside>
-						<div class="span13 content">
-							@for($i=0; $i<5;$i++)
-							<div class="item itemtwitter">
-								<div class="thumb">
-									<img src="http://a0.twimg.com/profile_images/2627364267/nlliljk98fr9hqgvmoho_normal.jpeg" class="avatar">
-								</div>
-								<div class="text">
-									<span>Güzel güzel söz verdik iyimi, gelde şimdi yap...</span>
-									<div class="tweetbtn">
-									<img width="13" height="13" alt="Favorite" src="/img/to sprite/retweet_mini.png">
-									<a href="http://twitter.com/intent/retweet?tweet_id=319926146185711616">Retweet</a>
-									<img width="12" height="12" alt="Favorite" src="/img/to sprite/reply_mini.png">
-									<a href="http://twitter.com/intent/tweet?in_reply_to=319926146185711616">Reply</a>
-									<img width="12" height="12" alt="Favorite" src="/img/to sprite/favorite_mini.png">
-									<a href="http://twitter.com/intent/favorite?tweet_id=319926146185711616">Favorite</a>
-									<i>3 months ago</i>
-									</div>
-								</div>
-							</div>
-							@endfor
-							<h1>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h1>
-							
-							<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
-							
-							<h2>Header Level 2</h2>
-							
-							<ol>
-								<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-								<li>Aliquam tincidunt mauris eu risus.</li>
-							</ol>
-							
-							<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
-							
-							<h3>Header Level 3</h3>
-							
-							<ul>
-								<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-								<li>Aliquam tincidunt mauris eu risus.</li>
-							</ul>
-							
-							<pre><code>
-							#header h1 a { 
-								display: block; 
-								width: 300px; 
-								height: 80px; 
-							}
-							</code></pre>
-						</div>
+			<div>
+				<div id="div-hidden-photo" style="display:none;">
+					<div class="filter-portfolio">
+						 <ul class="filterable">
+							<li><a class="option-set" data-categories="*">All</a></li>
+							<li><a class="option-set" data-categories="design">Design</a></li>
+							<li><a class="option-set" data-categories="illustration">Illustration</a></li>
+						</ul>	
+					</div>
+								
+					<div id="gallery" class="portfolio-items isotope span23">
+						<!-- Pictures will go here ... -->
 					</div>
 				</div>
-				<p>
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-				</p>
-			</div>
+				
+				<div id="div-hidden-evenement" style="display:none;">
+					<div id="timeline-evenement" class="timeline"></div>
+				</div>
 
-			<div id="div-hidden-member" style="display:none;">
-				<h3>STATS MEMBER AND INFORMATIONS THINGS</h3>
-				<p>
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-				</p>
-			</div>
+				<div id="div-hidden-social" style="display:none;">
+					<div id="social-fetch">
+						<div class="row">
+							<aside class="span8 social-partner">
+								<div class="row facebook">
+									<div class="span2 fb">
+										<i href="#" class="logo"></i>
+									</div>
+									<div class="span5">
+										<p>Actualités <b>Facebook</b></p>
+										<i class="icon-chevron-right"></i>
+										<img src="/img/items/like.png">
+									</div>
+								</div>
 
+								<div class="row twitter">
+									<div class="span2 tw">
+										<i href="#" class="logo"></i>
+									</div>
+									<div class="span5">
+										<p>Actualités <b>Twitter</b></p>
+										<img src="/img/items/follow.png">
+									</div>
+								</div>
+
+								<div class="row google-plus">
+									<div class="span2 ggl">
+										<i href="#" class="logo"></i>
+									</div>
+									<div class="span5">
+										<p>Actualités <b>Google +</b></p>
+										<img src="/img/items/plus-one.png">
+									</div>
+								</div>
+							</aside>
+							<div class="span13 content">
+								@for($i=0; $i<5;$i++)
+								<div class="item itemtwitter">
+									<div class="thumb">
+										<img src="http://a0.twimg.com/profile_images/2627364267/nlliljk98fr9hqgvmoho_normal.jpeg" class="avatar">
+									</div>
+									<div class="text">
+										<span>Güzel güzel söz verdik iyimi, gelde şimdi yap...</span>
+										<div class="tweetbtn">
+										<img width="13" height="13" alt="Favorite" src="/img/to sprite/retweet_mini.png">
+										<a href="http://twitter.com/intent/retweet?tweet_id=319926146185711616">Retweet</a>
+										<img width="12" height="12" alt="Favorite" src="/img/to sprite/reply_mini.png">
+										<a href="http://twitter.com/intent/tweet?in_reply_to=319926146185711616">Reply</a>
+										<img width="12" height="12" alt="Favorite" src="/img/to sprite/favorite_mini.png">
+										<a href="http://twitter.com/intent/favorite?tweet_id=319926146185711616">Favorite</a>
+										<i>3 months ago</i>
+										</div>
+									</div>
+								</div>
+								@endfor
+								<h1>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h1>
+								
+								<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+								
+								<h2>Header Level 2</h2>
+								
+								<ol>
+									<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+									<li>Aliquam tincidunt mauris eu risus.</li>
+								</ol>
+								
+								<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
+								
+								<h3>Header Level 3</h3>
+								
+								<ul>
+									<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+									<li>Aliquam tincidunt mauris eu risus.</li>
+								</ul>
+								
+								<pre><code>
+								#header h1 a { 
+									display: block; 
+									width: 300px; 
+									height: 80px; 
+								}
+								</code></pre>
+							</div>
+						</div>
+					</div>
+					<p>
+						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+					</p>
+				</div>
+
+				<div id="div-hidden-member" style="display:none;">
+					<h3>STATS MEMBER AND INFORMATIONS THINGS</h3>
+					<p>
+						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+					</p>
+				</div>
+			</div>
+			@endif
 
 			<hr>
 			<div id="social-timeline" class="row">

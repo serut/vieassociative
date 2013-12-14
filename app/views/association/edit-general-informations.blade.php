@@ -48,7 +48,7 @@
                 </tr>
                 <tr>
                   <td>Siege</td>
-                  <td>{{{$association->headquater}}}</td>
+                  <td>{{{$association->headquarter}}}</td>
                   <td><a href="#" data-modal-form="headquarter"><i class="icon-pencil"></i></a></td>
                 </tr>
                 <tr>

@@ -17,7 +17,7 @@ class Posts extends Migration {
 			$table->integer('id_association')->unsigned();
 			$table->foreign('id_association')->references('id')->on('association');
 			$table->string('title');
-			$table->string('text');
+			$table->text('text');
 			$table->timestamp('wish_time_publish');
 			$table->timestamps();
 			$table->softDeletes();

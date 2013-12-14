@@ -26,9 +26,9 @@ class Answer extends Eloquent
     }
     static function organizeComments($result){
         
-        $commentsLevel3 = [];
-        $commentsLevel2 = [];
-        $comments = [];
+        $commentsLevel3 = array();
+        $commentsLevel2 = array();
+        $comments = array();
 
         //Classify comments between their level
         foreach ($result as $k => $v) {

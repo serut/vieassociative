@@ -40,7 +40,7 @@
 			</div>
 			<hr class="separator">
 
-			@if(App::environment() == "prod")
+			@if(App::environment() != "prod")
 
 			<div class="row-fluid">
 				<div id="photo" class="span4 img-polaroid" data-toggle="div-hidden-photo" data-categories="*">

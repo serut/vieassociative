@@ -19,31 +19,24 @@
 			<div class="row">
 				<div class="span17 head">
 					<h2 class="name">{{$association->name}}</h2>
-					<span class="ss hidden-phone">
+					<span class="pull-right" style="margin-top:10px;">
+						<a class="button button-blue" href="/{{$association->id}}/edit">Editer</a>
+					</span>
+					<span class="ss hidden-phone pull-right">
 						<a class="facebook" href="#">facebook</a>
 						<a class="googleplus" href="#">googleplus</a>
-						<a class="paypal" href="#">paypal</a>
 						<a class="youtube" href="#">youtube</a>
 						<a class="twitter" href="#">twitter</a>
-						<a href="/{{$association->id}}/edit">Editer cette page</a>
-
-						{{--
-						<a class="skype" href="#">skype</a>
-						<a class="picasa" href="#">picasa</a>
-						<a class="flickr" href="#">flickr</a>
-						<a class="tumblr" href="#">tumblr</a>
-						<a class="vimeo" href="#">vimeo</a>
-						<a class="myspace" href="#">myspace</a>
-						--}}
 					</span>
 				</div>
 			</div>
-			<hr class="separator">
-
+<style type="text/css" src></style>
 			@if(App::environment() != "prod")
-
-			<div class="row-fluid">
-				<div id="photo" class="span4 img-polaroid" data-toggle="div-hidden-photo" data-categories="*">
+			<div class="menu row-fluid" style="display:none;">
+				<div id="photo" class="span4 img-polaroid" data-toggle="div-hidden-news">
+					<p>Fil d'actualité</p>
+				</div>
+				<div id="photo" class="span4 img-polaroid" data-toggle="div-hidden-photo">
 					<p>Photos</p>
 				</div>
 				<div id="evenement" class="span4 img-polaroid" data-toggle="div-hidden-evenement">
@@ -52,14 +45,15 @@
 				<div id="social" class="span4 img-polaroid" data-toggle="div-hidden-social">
 					<p>Social</p>
 				</div>
-				<div class="span4 img-polaroid" data-toggle="div-hidden-member">
-					<p>Nombre membre</p>
+			</div>
+			<div id="info-box">
+				<div class="text-center">
+				Afficher le menu
 				</div>
-				<div class="span4 img-polaroid" data-toggle="div-hidden-reputation">
-					<p>Reputation</p>
+				<div style="background-color: rgba(18, 18, 23, 0.96); height: 5px;">
 				</div>
-				<div class="span4 img-polaroid" data-toggle="div-hidden-last">
-					<p>Sponsor 2013</p>
+				<div class="text-center">
+					<img src="/img/to%20sprite/header-arrow.png" class="header-arrow" alt="">
 				</div>
 			</div>
 			
@@ -172,12 +166,6 @@
 					</p>
 				</div>
 
-				<div id="div-hidden-member" style="display:none;">
-					<h3>STATS MEMBER AND INFORMATIONS THINGS</h3>
-					<p>
-						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-					</p>
-				</div>
 			</div>
 			@endif
 
@@ -371,6 +359,20 @@
 		});
 	});
 	/*Social PART END*/
+
+	/* Menu PART START*/
+	$('#info-box').click(function(){
+		$(".menu").slideToggle(400);
+	});
+	/*
+
+	jQuery(window).load(function(){
+		info_box_resize();
+		jQuery(window).on("resize.infobox", function(){
+			info_box_resize();
+		});
+	});
+	/* Menu PART END*/
 	</script>
 <script id="photo-pattern" type="text/x-jquery-tmpl">
 	<div class="element ${categories} span-size${size}" >

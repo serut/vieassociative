@@ -6,14 +6,49 @@
 					<img alt="Vie Associative" src="/img/logo.png">
 				</a>
 			</div>
-	        <nav id="menu" class="span12 align-right hidden-phone">
+	        <nav id="menu" class="span13 align-right hidden-phone ">
+		        <div class="navbar">
+		        	<ul class="nav">
+						@if (Auth::check())
+	                    <li class="dropdown">
+	                    	<a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="fa fa-warning"></i> <b class="caret"></b></a>
+	                        <ul class="dropdown-menu">
+	                        	<li><a href="#">Notification 1</a></li>
+	                            <li><a href="#">Notification 1</a></li>
+	                        </ul>
+	                	</li>
+	                    <li class="dropdown">
+	                    	<a data-toggle="dropdown" class="dropdown-toggle" href="#">Pages <b class="caret"></b></a>
+	                        <ul class="dropdown-menu">
+	                            <li><a href="about.html">About us</a></li>
+	                            <li><a href="services.html">Services</a></li>
+	                            <li><a href="pricing.html">Pricing</a></li>
+	                            <li><a href="timeline.html">Timeline</a></li>
+	                            <li><a href="sign-in.html">Sign in</a></li>
+	                            <li><a href="sign-up.html">Sign up</a></li>
+	                            <li><a href="breadcrumb.html">Page with breadcrumb</a></li>
+	                            <li><a href="faq.html">FAQ</a></li>
+	                            <li><a href="404.html">Error 404</a></li>
+	                        </ul>
+	                	</li>
+	                    <li class="dropdown">
+	                    	<img src="/img/items/user-thumb.jpg" style="margin-left: 0px; width: 45px; margin-top:-5px;margin-right:10px;"> <a data-toggle="dropdown" class="dropdown-toggle" href="#">Serutan  <b class="caret"></b></a>
+	                        <ul class="dropdown-menu">
+	                            <li><a href="#">Options</a></li>
+	                            <li><a href="#">Profils</a></li>
+	                            <li><a href="{{URLSubdomain::to('www','/user/logout')}}">Deconnexion</a></li>
+	                        </ul>
+	                	</li>
+
+			            @else
+	                	<li>
+							<a href="{{URLSubdomain::to('www','/user/log')}}">Connexion - Inscription </a>
+			            </li>
+		            	@endif
+								
+	                </ul>
+                </div>
 	        	<div>
-					<?php // <a href="#" class="button button-orange hidden-tablet">Découvrez le projet Vie Associative</a> ?>
-					@if (Auth::check())
-						<a href="{{URLSubdomain::to('www','/user/logout')}}" class="button button-blue">Deconnexion</a>
-		            @else
-						<a href="{{URLSubdomain::to('www','/user/log')}}" class="button button-blue">Connexion - Inscription </a>
-		            @endif
 				</div>
 			</nav>
 		</div>

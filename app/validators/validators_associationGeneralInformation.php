@@ -2,7 +2,6 @@
 class validators_associationGeneralInformation extends BaseValidator
 {
     public function name(){
-        echo "name !";
         $rules = array(
             'name' => 'required|min:2|max:80',
         );

@@ -6,17 +6,18 @@
 					<img alt="Vie Associative" src="/img/logo.png">
 				</a>
 			</div>
-	        <nav id="menu" class="span13 align-right hidden-phone ">
-		        <div class="navbar">
+	        <nav id="menu" class="span13 align-right hidden-phone">
+		        <div class="navbar" style="margin-top: 0px;">
 		        	<ul class="nav">
 						@if (Auth::check())
 	                    <li class="dropdown">
-	                    	<a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="fa fa-warning"></i> <b class="caret"></b></a>
+	                    	<a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="fa fa-bell fa-2x"style="margin-top: -4px;"></i> <b class="caret"></b></a>
 	                        <ul class="dropdown-menu">
 	                        	<li><a href="#">Notification 1</a></li>
 	                            <li><a href="#">Notification 1</a></li>
 	                        </ul>
 	                	</li>
+	                	<!--
 	                    <li class="dropdown">
 	                    	<a data-toggle="dropdown" class="dropdown-toggle" href="#">Pages <b class="caret"></b></a>
 	                        <ul class="dropdown-menu">
@@ -31,8 +32,11 @@
 	                            <li><a href="404.html">Error 404</a></li>
 	                        </ul>
 	                	</li>
+	                	-->
 	                    <li class="dropdown">
-	                    	<img src="/img/items/user-thumb.jpg" style="margin-left: 0px; width: 45px; margin-top:-5px;margin-right:10px;"> <a data-toggle="dropdown" class="dropdown-toggle" href="#">Serutan  <b class="caret"></b></a>
+	                    	<a data-toggle="dropdown" class="dropdown-toggle" href="#" style="margin-bottom: 5px;">
+	                    	<img src="/img/items/user-thumb.jpg" style="margin-left: 0px; width: 28px; height: 28px;margin-top:-5px;margin-right:10px;"> Serutan  <b class="caret"></b>
+	                    	</a>
 	                        <ul class="dropdown-menu">
 	                            <li><a href="#">Options</a></li>
 	                            <li><a href="#">Profils</a></li>

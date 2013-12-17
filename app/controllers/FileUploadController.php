@@ -36,7 +36,7 @@ class FileUploadController extends BaseController
 					$return["file"] = array($this->original_url);
 					$return["thumbnail"] = array($this->original_url. "_thumbnail.jpg");
 				}else{
-					$this->postError('Not an image');	
+					return $this->postError('Not an image');	
 				}
 			}
 		}
@@ -44,7 +44,7 @@ class FileUploadController extends BaseController
 	}
 	public function postError($codeError){
 		$return = array('error'=> 'Une erreur a été detecté pendant l\'upload. Code erreur : '.$codeError);
-		die(Response::json($return));
+		return Response::json($return);
 	}
 	public function getContext() {
     	$val = Request::header('Referer');
@@ -59,7 +59,7 @@ class FileUploadController extends BaseController
 				$this->prefix_img = 'a';
 			}
         }else{
-        	$this->postError(1);
+        	return $this->postError(1);
         }
     }
 		
@@ -70,7 +70,7 @@ class FileUploadController extends BaseController
         if(preg_match($pattern, $val,$elements)){
         	return ($elements[2]+1) == $elements[3];
         }else{
-        	$this->postError(4);
+        	return $this->postError(4);
         }
     }
     public function getFileName(){
@@ -80,7 +80,7 @@ class FileUploadController extends BaseController
         if(isset($name[1]) && !empty($name[1])){
         	$this->cleanFileName($name[1]);
         }else{
-        	$this->postError(2);
+        	return $this->postError(2);
         }
     }
     /*Get the file extension*/
@@ -95,7 +95,7 @@ class FileUploadController extends BaseController
 			$this->file_ext=$result[5];
 			$this->name = $this->file_name.'.'.$this->file_ext;
 		}else{
-			$this->postError(3);
+			return $this->postError(3);
 		}
 	}
 
@@ -111,6 +111,11 @@ class FileUploadController extends BaseController
 		$idFile = Files::add($file[0], $file[2]);
 		FolderFileImg::addFile($context['idGallery'],$idFile);
 		*/
+	}
+	public function removeImgFromDatabase($name){
+		FolderFileImg::where('id_folder',$this->id_gallery)->where('name_img',$name)->delete();
+		Img::where('name',$name)->delete();
+		return $this->postError(5);
 	}
 	public function sendObject($src,$s3_url){
 			$contentType = "image/png";//image/jpeg 
@@ -183,14 +188,18 @@ class FileUploadController extends BaseController
         }
         
         // Bonne création d'image
-        if ($file_ext == 'jpg' OR $file_ext == 'jpeg') {
-            $image_new = imagecreatefromjpeg($imageProvenance);
-        } elseif ($file_ext == 'gif') {
-            $image_new = imagecreatefromgif($imageProvenance);
-        } elseif ($file_ext == 'png') {
-            $image_new = imagecreatefrompng($imageProvenance);
-        } elseif ($extension == 'bmp') {
-            $image_new = imagecreatefromwbmp($imageProvenance);
+        try{
+	        if ($file_ext == 'jpg' OR $file_ext == 'jpeg') {
+	            $image_new = imagecreatefromjpeg($imageProvenance);
+	        } elseif ($file_ext == 'gif') {
+	            $image_new = imagecreatefromgif($imageProvenance);
+	        } elseif ($file_ext == 'png') {
+	            $image_new = imagecreatefrompng($imageProvenance);
+	        } elseif ($extension == 'bmp') {
+	            $image_new = imagecreatefromwbmp($imageProvenance);
+	        }
+        }catch(Exception $e) {
+        	$this->removeImgFromDatabase($this->name);
         }
 
 
@@ -207,14 +216,19 @@ class FileUploadController extends BaseController
 		$imageProvenance = "http://img.vieassociative.fr/".$from_url;
 
 		// Bonne création d'image
-        if ($file_ext == 'jpg' OR $file_ext == 'jpeg') {
-            $image = imagecreatefromjpeg($imageProvenance);
-        } elseif ($file_ext == 'gif') {
-            $image = imagecreatefromgif($imageProvenance);
-        } elseif ($file_ext == 'png') {
-            $image = imagecreatefrompng($imageProvenance);
-        } elseif ($extension == 'bmp') {
-            $image = imagecreatefromwbmp($imageProvenance);
+
+        try{
+	        if ($file_ext == 'jpg' OR $file_ext == 'jpeg') {
+	            $image = imagecreatefromjpeg($imageProvenance);
+	        } elseif ($file_ext == 'gif') {
+	            $image = imagecreatefromgif($imageProvenance);
+	        } elseif ($file_ext == 'png') {
+	            $image = imagecreatefrompng($imageProvenance);
+	        } elseif ($extension == 'bmp') {
+	            $image = imagecreatefromwbmp($imageProvenance);
+	        }
+        }catch(Exception $e) {
+        	return $this->removeImgFromDatabase($this->name);
         }
 		$orig_width = imagesx($image);
 		$orig_height = imagesy($image);

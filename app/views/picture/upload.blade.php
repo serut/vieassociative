@@ -177,29 +177,30 @@
 		   }
 		}).on('filecomplete',function(err/**String*/, xhr/**Object*/, file/**Object/, options/**Object*/){
 			if( !err ){
-		      // File successfully uploaded
-		      var result = xhr.responseText;
-		    }
-			data = [{
-				'url_img':'http://img.vieassociative.fr/'+xhr.result.file[0],
-				'thumbnail':'http://img.vieassociative.fr/'+xhr.result.thumbnail[0],
-				'size' : '2',
-			}];
-			var newpic = $('#photo-pattern').tmpl(data);
-			var imgLoad = imagesLoaded(newpic.find('img'));
-		    imgLoad.on( 'done', function( instance ) {
-				$('#gallery').prepend(newpic).masonry('prepended',newpic);
-		    });
-			$('#gallery .item-hover').each(function(){
-				$(this).hover(function(){
-					//in
-					$(this).find('.hoverimage').show();
-				},function(){
-					//out
-					$(this).find('.hoverimage').hide();
+				// File successfully uploaded
+				data = [{
+					'url_img':'http://img.vieassociative.fr/'+xhr.result.file[0],
+					'thumbnail':'http://img.vieassociative.fr/'+xhr.result.thumbnail[0],
+					'size' : '2',
+				}];
+				var newpic = $('#photo-pattern').tmpl(data);
+				var imgLoad = imagesLoaded(newpic.find('img'));
+			    imgLoad.on( 'done', function( instance ) {
+					$('#gallery').prepend(newpic).masonry('prepended',newpic);
+			    });
+				$('#gallery .item-hover').each(function(){
+					$(this).hover(function(){
+						//in
+						$(this).find('.hoverimage').show();
+					},function(){
+						//out
+						$(this).find('.hoverimage').hide();
+					});
 				});
-			}
-			);
+		    }else{
+				console.log("Une erreur est survenue");
+				console.log(xhr.result.error);
+		    }
 		});
 		/*Gallery PART START*/
 		var data = [

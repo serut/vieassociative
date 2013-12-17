@@ -30,7 +30,6 @@
 					</span>
 				</div>
 			</div>
-<style type="text/css" src></style>
 			@if(App::environment() != "prod")
 			<div class="menu row-fluid" style="display:none;">
 				<div id="photo" class="span4 img-polaroid" data-toggle="div-hidden-news">

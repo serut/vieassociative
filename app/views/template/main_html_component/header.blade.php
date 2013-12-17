@@ -1,12 +1,12 @@
 <header>
 	<div class="container">
 		<div class="row">
-		    <div class="span10 offset1">
+		    <div class="span10">
 				<a id="logo" href="{{URLSubdomain::to('www','')}}">
 					<img alt="Vie Associative" src="/img/logo.png">
 				</a>
 			</div>
-	        <nav id="menu" class="span13 align-right hidden-phone">
+	        <nav id="menu" class="span14 align-right">
 		        <div class="navbar" style="margin-top: 0px;">
 		        	<ul class="nav">
 						@if (Auth::check())
@@ -35,7 +35,8 @@
 	                	-->
 	                    <li class="dropdown">
 	                    	<a data-toggle="dropdown" class="dropdown-toggle" href="#" style="margin-bottom: 5px;">
-	                    	<img src="/img/items/user-thumb.jpg" style="margin-left: 0px; width: 28px; height: 28px;margin-top:-5px;margin-right:10px;"> Serutan  <b class="caret"></b>
+	                    	<img src="/img/items/user-thumb.jpg" style="margin-left: 0px; width: 28px; height: 28px;margin-top:-5px;margin-right:10px;">
+	                    	<span class="hidden-phone"> Serutan  <b class="caret"></b></span>
 	                    	</a>
 	                        <ul class="dropdown-menu">
 	                            <li><a href="#">Options</a></li>

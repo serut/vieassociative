@@ -1,3 +1,4 @@
+@if(App::environment() != "prod")
 <div class="social-footer">
 	<div class="social-controls">
 		<span><i class="icon-thumbs-up "></i>Like</span>
@@ -52,3 +53,4 @@
 	
 	</div>
 </div>
+@endif

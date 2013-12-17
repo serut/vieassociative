@@ -16,7 +16,7 @@
 		<img src="{{$profile['cover']}}" class="cover">
 		<img src="{{$profile['logo']}}" class="logo">
 		<div>
-			<div class="row">
+			<div>
 				<div class="span17 head">
 					<h2 class="name">{{$association->name}}</h2>
 					<span class="pull-right" style="margin-top:10px;">
@@ -30,7 +30,7 @@
 					</span>
 				</div>
 			</div>
-			@if(App::environment() != "prod")
+			<div class="clearfix"></div>
 			<div class="menu row-fluid" style="display:none;">
 				<div id="photo" class="span4 img-polaroid" data-toggle="div-hidden-news">
 					<p>Fil d'actualité</p>
@@ -46,10 +46,10 @@
 				</div>
 			</div>
 			<div id="info-box">
-				<div class="text-center">
+				<div class="text-center" style="font-weight: bold;margin-bottom: 10px;margin-top: 20px;">
 				Afficher le menu
 				</div>
-				<div style="background-color: rgba(18, 18, 23, 0.96); height: 5px;">
+				<div style="background-color: #8F8F92; height: 2px">
 				</div>
 				<div class="text-center">
 					<img src="/img/to%20sprite/header-arrow.png" class="header-arrow" alt="">
@@ -166,9 +166,7 @@
 				</div>
 
 			</div>
-			@endif
 
-			<hr>
 			<div id="social-timeline" class="row">
 				<div class="span23">
 					<div class="span21">

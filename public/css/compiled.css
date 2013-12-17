@@ -1151,7 +1151,7 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
 .mCS-dark-thin>.mCSB_scrollTools .mCSB_buttonDown{background-position:-80px -20px}
 .mCS-dark-thin>.mCSB_scrollTools .mCSB_buttonLeft{background-position:-80px -40px}
 .mCS-dark-thin>.mCSB_scrollTools .mCSB_buttonRight{background-position:-80px -56px}
-body{font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;font-size:14px;background:url("/img/items/background.jpg");background-color:#154f75;background-attachment:scroll;background-position:left 0;background-repeat:no-repeat;min-height:100%;position:relative}
+body{font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;font-size:14px;background-color:#78b4e7;background-attachment:scroll;background-position:left 0;background-repeat:no-repeat;min-height:100%;position:relative}
 h1,h2,h3,h4,h5,h6,caption{font-family:'Oswald',sans-serif !important;font-weight:normal;word-spacing:3px;line-height:1.2em}
 a,a>*{text-shadow:none;text-decoration:none;outline:0;color:#f18d05}
 a:hover,a:focus{text-decoration:none;color:#e8543f;-webkit-transition-duration:.3s;-moz-transition-duration:.3s;-o-transition-duration:.3s;transition-duration:.3s}
@@ -1180,7 +1180,8 @@ footer a{color:#000}
 @media (max-width:767px){header{margin:0 -20px} footer{left:0} section{padding:0}}.modal .close-modal{margin-top:5px}
 .modal .modal-footer{margin-left:0;margin-right:0}
 #push{height:47px}
-.background{-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-webkit-box-shadow:0 1px 2px rgba(0,0,0,0.4),inset 0 1px 0 rgba(0,0,0,0.15);-moz-box-shadow:0 1px 2px rgba(0,0,0,0.4),inset 0 1px 0 rgba(0,0,0,0.15);box-shadow:0 1px 2px rgba(0,0,0,0.4),inset 0 1px 0 rgba(0,0,0,0.15);background:rgba(255,255,255,0.85)}
+.background,section,header,footer{-webkit-box-shadow:0 1px 6px rgba(75,132,180,0.7),inset 0 1px 0 rgba(0,0,0,0.15);-moz-box-shadow:0 1px 6px rgba(75,132,180,0.7),inset 0 1px 0 rgba(0,0,0,0.15);box-shadow:0 1px 6px rgba(75,132,180,0.7),inset 0 1px 0 rgba(0,0,0,0.15)}
+.background{background-color:#fff}
 .tab-section .tab-head #content h1{font-weight:normal;text-transform:uppercase;font-weight:400px;font-size:24px !important;float:left;margin-top:0;padding:13px 20px 0;white-space:nowrap;text-align:left}
 .minSubHead{padding-bottom:10px;color:#666}
 .minSubHead p{margin:0 15px}

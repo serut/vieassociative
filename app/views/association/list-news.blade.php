@@ -14,9 +14,6 @@
             <h3 class="head">{{Lang::get('association/edit/news.select_news')}} </h3>
             <p>{{Lang::get('association/edit.warn_possiblity_for_normal_user')}}</p>
             <hr>
-                <div class="pull-right">
-                    <a class="button button-blue" href="news/0/edit">{{Lang::get('association/edit/news.create_news')}}</a>
-                </div>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -38,6 +35,9 @@
                 </tbody>
 
             </table>
+            <div class="text-right">
+                <a class="button button-green" href="news/0/edit">{{Lang::get('association/edit/news.create_news')}}</a>
+            </div>
 
             </div>
         </div>

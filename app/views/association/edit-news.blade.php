@@ -65,6 +65,7 @@
                 {{SiteHelpers::add_textarea('text',$post->text, true, true)}}
             </div>
         <br>
+        @if(App::environment() != "prod")
         <h5>Personnalisez votre publication avec :</h5>
         <div class="row" style="margin-left:10px">
             <div class="thumbnail span4">
@@ -83,7 +84,8 @@
                 <span class="text-center">Une vidéo</span>
             </div>
         </div>
-        <div class="pull-right">
+        @endif
+        <div class="text-right">
             <button class="button button-green" type="submit">Valider</button>
         </div>
         {{ Form::close() }}

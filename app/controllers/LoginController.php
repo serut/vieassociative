@@ -62,7 +62,7 @@ class LoginController extends BaseController
     
     
     public function getResetPassword(){
-        return View::make('connexion.reset-password');
+        return View::make('connexion.reset-password-email');
     }
     public function postResetPassword(){
         $v = new validators_connexion;

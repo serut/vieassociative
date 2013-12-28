@@ -38,7 +38,7 @@
 						<td valign="top" align="left">
 							<div class="h"><div>Bienvenue !</div></div>
 							<div style="text-align: justify;">
-								Merci d'avoir crée un compte {{$name}}!
+								Merci d'avoir créé un compte {{$name}} !
 								<br>
 								Si vous souhaitez en savoir plus sur notre projet, n'hésitez pas à regarder notre vidéo de présentation !
 							</div>
@@ -56,6 +56,14 @@
 <!-- 1/2 Image on the Left end ☺1_2_l☺ -->
 
 
+
+		<table width="600" cellspacing="0" cellpadding="0" class="wrap">
+			<tbody><tr><td valign="top" height="45" align="center">&nbsp;</td></tr>
+			<tr><td valign="top" align="center" class="line">&nbsp;</td></tr>
+			<tr><td valign="top" height="45" align="center">&nbsp;</td></tr>
+		</tbody></table>
+
+		
 <!-- Footer start -->
 
 		<table width="600" cellspacing="0" cellpadding="0" class="wrap">

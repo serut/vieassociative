@@ -55,10 +55,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     }
     static function connexion($id){
         $infoProfil = User::getInfoProfils($id);
-        Session::put('idUser', $id);
         Session::put('name', $infoProfil->username);
-        Session::put('level', $infoProfil->level);
-        Session::put('myassocs', Association::getAssociations($id));
         $token = sha1(mt_rand(0, 0x7fffffff ) ^ crc32("okw6XAw25BOX8EY") ^ crc32(microtime()));
         User::creerToken($id,$token);
         if(App::environment() == 'local')
@@ -94,12 +91,12 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         return $result[0];
     }
     static function isTakenUsername($username){
-        $count = User::where('username', '=', $username)->count();
+        $count = User::where('username', $username)->count();
         return $count  != 0;
 
     }
     static function isTakenMail($email){
-        $count = User::where('email', '=', $email)->count();
+        $count = User::where('email', $email)->count();
         return $count  != 0;
     }
     /*

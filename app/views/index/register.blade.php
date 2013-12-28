@@ -1,4 +1,4 @@
-@extends('mail.template')
+@extends('index.mail')
 @section('content')
 <tbody><tr>
 	<td align="center">
@@ -38,7 +38,7 @@
 						<td valign="top" align="left">
 							<div class="h"><div>Bienvenue !</div></div>
 							<div style="text-align: justify;">
-								Merci d'avoir crée un compte {{$name}}!
+								Merci d'avoir crée un compte !
 								<br>
 								Si vous souhaitez en savoir plus sur notre projet, n'hésitez pas à regarder notre vidéo de présentation !
 							</div>

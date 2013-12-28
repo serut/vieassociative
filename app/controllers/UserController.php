@@ -6,5 +6,8 @@ class UserController extends BaseController
     {
         return View::make('user.edit');
     }
+    public function getProfil($id)
+    {
+        return View::make('user.edit');
+    }
 }
-

@@ -5,7 +5,8 @@ class LoginController extends BaseController
     public function getConnexion()
     {
         $connexTentative= TentativeConnexion::get(IP);
-        return View::make('connexion.connexion')->with('connexTentative',$connexTentative);
+        return View::make('connexion.connexion')
+            ->with('connexTentative',$connexTentative);
     }
     
     public function postLogin(){
@@ -60,8 +61,33 @@ class LoginController extends BaseController
     }
     
     
-    public function getPerteMotDePasse(){
-        return View::make('connexion.perte-mot-de-passe');
+    public function getResetPassword(){
+        return View::make('connexion.reset-password');
+    }
+    public function postResetPassword(){
+        $v = new validators_connexion;
+        $result = $v->resetPassword();
+        if(isset($result['success'])){
+            $user = User::where('email',$email)->first();
+            $pr = new PasswordReset;
+            $pr->pass = Str::random(12);
+            $pr->id_user = $user->id;
+            $pr->touch();
+            EmailController::resetPassword($user->email,$pr->pass);
+        }else{
+            $result['error']=Lang::get('core/form.form_uncomplete');
+        }
+        return Response::json($result);
+    }
+    public function getResetPasswordAfter($pass){
+        $pr = PasswordReset::where('pass',$pass)->first();
+        if(empty($pr)){
+            return View::make('connexion.reset-password-fail');
+        }
+        Auth::loginUsingId($pr->id_user);
+        User::connexion($pr->id_user);
+        return View::make('connexion.reset-password-ok')
+            ->with('username',User::find($pr->id_user)->username);
     }
     public function getLogout(){
     	Auth::logout();

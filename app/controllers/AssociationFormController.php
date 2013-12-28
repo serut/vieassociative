@@ -78,6 +78,8 @@ class AssociationFormController  extends BaseController {
                         $result = $this->addAdministrator($id,$item);
                         break;
                     case 'remove':
+                        $result = $this->removeAdministrator($id);
+                        break;
 
                 }
                 
@@ -86,19 +88,6 @@ class AssociationFormController  extends BaseController {
             $result['data']=null; //Remove data
         }
         return Response::json($result);
-    }
-    private function removeAdministrator($id, $item){
-        $v = new validators_associationAdministrator;
-        $result = $v->remove_admin();
-        if(isset($result['success']) && User::isAdministrator($id)){
-            UserAssociation::where('id_assoc',$id)
-                                ->where('id_user',$result['data']['id_user'])
-                                ->delete();
-        }
-        if(isset($result['success'])){
-            $result['redirect_url'] = '/'.$id.'/edit/administrator';
-        }
-        return $result;
     }
     private function addAdministrator($id, $item){
         $v = new validators_associationAdministrator;
@@ -134,6 +123,16 @@ class AssociationFormController  extends BaseController {
         }
         return $result;
     }
+    private function removeAdministrator($id){
+        $v = new validators_associationAdministrator;
+        $result = $v->remove($id);
+        if(isset($result['success'])){
+            UserAssociation::findOrFail(Input::get('id'))->delete();
+        }
+        $result['redirect_url'] = '/'.$id.'/edit/administrator';
+        return $result;
+    }
+
     private function modifyGeneralInformations($id,$item){
         $v = new validators_associationGeneralInformation;
         switch ($item) {

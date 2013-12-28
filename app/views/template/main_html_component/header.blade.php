@@ -39,8 +39,8 @@
 	                    	<span class="hidden-phone"> Serutan  <b class="caret"></b></span>
 	                    	</a>
 	                        <ul class="dropdown-menu">
-	                            <li><a href="#">Options</a></li>
-	                            <li><a href="#">Profils</a></li>
+	                            <li><a href="{{URLSubdomain::to('www','/user/1/edit')}}">Options</a></li>
+	                            <li><a href="{{URLSubdomain::to('www','/user/1-dfgfdg')}}">Profils</a></li>
 	                            <li><a href="{{URLSubdomain::to('www','/user/logout')}}">Deconnexion</a></li>
 	                        </ul>
 	                	</li>

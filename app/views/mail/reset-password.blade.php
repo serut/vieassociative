@@ -19,32 +19,18 @@
 	
 		<table width="600" cellspacing="0" cellpadding="0" class="wrap">
 		<tbody><tr>
-			<td valign="top" align="center">
-				<table width="100%" cellspacing="0" cellpadding="0" class="o-fix">
+			<td valign="top">
+				<table width="100%" cellspacing="0" cellpadding="0">
 				<tbody><tr>
-					<td valign="top">
 		<!-- CONTENT start -->
-					<table width="290" cellspacing="0" cellpadding="0" align="left" class="m-b">
-					<tbody><tr>
-						<td valign="top" align="left">
-							<a href="https://www.youtube.com/watch?v=4TlJ4qKO2Xg">
-							<img width="290" height="163" border="0" title="" alt="" src="/img/mail/video-presentation.png">
-							</a>
-						</td>
-					</tr>
-					</tbody></table>
-					<table width="290" cellspacing="0" cellpadding="0" align="right">
-					<tbody><tr>
-						<td valign="top" align="left">
-							<div class="h"><div>Bienvenue !</div></div>
-							<div style="text-align: justify;">
-								Merci d'avoir crée un compte {{$name}}!
-								<br>
-								Si vous souhaitez en savoir plus sur notre projet, n'hésitez pas à regarder notre vidéo de présentation !
-							</div>
-						</td>
-					</tr>
-					</tbody></table>
+					<td valign="top" align="left">
+						<div class="h"><div>Headline goes here</div></div>
+						<div>
+							Voici le lien pour changer votre mot de passe :
+						</div>
+						<div class="btn">
+							<a href="http://www.vieassociative.fr/user/reset/{{$pass}}"><img width="94" height="30" border="0" style="background-color:#3E4344" title="read more" alt="read more" src="img/more.png"></a>
+						</div>
 					</td>
 		<!-- CONTENT end -->
 				</tr>

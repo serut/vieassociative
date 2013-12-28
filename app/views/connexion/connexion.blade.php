@@ -62,13 +62,13 @@
 		                <button type="submit" class="button button-green">{{Lang::get('membre/connexion.connexion')}}</button>
 		            </div>
 		            <div class="formulaire">
-		                <p><a target="_blank" href="/membre/perte-mot-de-passe">{{Lang::get('membre/connexion.forget_password')}}</a></p>
+		                <p><a href="/user/reset-password">{{Lang::get('membre/connexion.forget_password')}}</a></p>
 		            </div>
 	            {{ Form::close() }}
 	       @else
 	            {{Lang::get('membre/connexion.please_come_later')}}
 	            <div class="formulaire">
-	                <p><a target="_blank" href="/membre/perte-mot-de-passe" class="btn-vie-assoc">Mot de passe oublié ?</a></p>
+	                <p><a target="_blank" href="/user/reset-password" class="btn-vie-assoc">Mot de passe oublié ?</a></p>
 	            </div>
 	        @endif
         </div>

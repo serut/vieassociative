@@ -26,10 +26,15 @@ class validators_associationAdministrator extends BaseValidator
         );
         return $this->test($rules);
     }
-    public function remove(){
-        // he adds somebody else as admin
+    public function remove($idAssoc){
+        Validator::extend('allowed_to_remove', function($attribute, $value, $parameters)
+        {
+            $ua = UserAssociation::findOrFail(Input::get('id'));
+            return User::isAdministrator($ua->id_assoc);
+        });
+        // Remove admin
         $rules = array(
-            'id_user' => 'integer',
+            'id' => 'integer|allowed_to_remove',
         );
         return $this->test($rules);
     }

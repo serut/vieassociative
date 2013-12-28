@@ -15,7 +15,7 @@
 //if(App::environment() == 'production'){
     $server = explode('.', Request::server('HTTP_HOST')); // sweet routing - not fully reliable
     switch ($server['0']) {
-        case 'www':
+        case 'www': // For www.vieassociative.fr/*
             Route::get('/notifications', 'NotificationController@getIndex');
             Route::get('/', function()
             {
@@ -25,12 +25,18 @@
             {
                 return View::make('index.maintenance');
             });
+            Route::get('/info/condition', function()
+            {
+                return View::make('info.condition');
+            });
             Route::post('/upload', 'FileUploadController@postFileUpload');
             Route::options('/upload', 'FileUploadController@fileUpload');
             //user.vieassociative.fr/*
             Route::group(array('prefix' => 'user'), function()
             {
                 Route::get('log', 'LoginController@getConnexion');
+                Route::get('reset-password', 'LoginController@getResetPassword');
+                Route::get('reset/{pass}', 'LoginController@getResetPasswordAfter')->where('pass', '[a-z-0-9]+');
                 Route::get('log/fb', 'LoginController@getFacebook');
                 Route::get('log/google', 'LoginController@getGoogle');
                 Route::get('log/live', 'LoginController@getLive');
@@ -40,13 +46,12 @@
                 Route::group(array('before' => 'auth'), function(){
                     Route::get('logout', 'LoginController@getLogout');
                     Route::get('{id}/edit', 'UserController@getEdit')->where('id', '[0-9]+');
-                    Route::get('{id}-{text}', 'UserController@getProfil')->where('id', '[0-9]+')->where('text', '[a-z-]+');
+                    Route::get('{id}-{name}', 'UserController@getProfil')->where('id', '[0-9]+')->where('name', '[a-z-]+');
                 });
             });
             Route::get('sitemap.xml', 'SitemapController@getSitemap');
             break;
-        case 'association':
-        //association.vieassociative.fr/*
+        case 'association': // For association.vieassociative.fr/*
             Route::get('/', function()
             {
                 return View::make('index.association');
@@ -77,13 +82,12 @@
                 Route::get('{id}/edit/social', 'AssociationController@getEditSocial')->where('id', '[0-9]+');
                 Route::get('{id}/edit/administrator', 'AssociationController@getEditAdministrator')->where('id', '[0-9]+');
                 Route::get('{id}/discussion/{idDiscu}', 'DiscussionController@getConversation')->where('id', '[0-9]+')->where('idDiscu', '[0-9]+');
-                Route::get('{id}/form/{origin}/{item}', function($id,$origin,$item)
-                {
+                Route::get('{id}/form/{origin}/{item}', function($id,$origin,$item){
                     $associationForm = new AssociationFormController;
                     return $associationForm->getForm($id,$origin,$item);
                 })->where('id', '[0-9]+')->where('origin', '[a-z-]+')->where('item', '[a-z-_]+');
-                Route::post('{id}/form/{origin}/{item}', function($id,$origin,$item)
-                {
+                
+                Route::post('{id}/form/{origin}/{item}', function($id,$origin,$item){
                     $associationForm = new AssociationFormController;
                     return $associationForm->postForm($id,$origin,$item);
                 })->where('id', '[0-9]+')->where('origin', '[a-z-]+')->where('item', '[a-z-_]+');

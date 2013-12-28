@@ -32,7 +32,7 @@
                         <td>{{\Carbon\Carbon::createFromTimeStamp(strtotime($v->updated_at))->formatLocalized('%A %d %B %Y %H:%I')}}</td>
                         <td>{{$v->link}}</td>
                         @if($is_admin)
-                        <td><a href="#"><i class="icon-remove"></i></a></td>
+                        <td><a href="#" onclick="removeAdmin({{$v->id}});return false;"><i class="icon-remove"></i></a></td>
                         @endif
                     </tr>
                 </tbody>
@@ -111,4 +111,21 @@
             @endif
         </div>
     </section>
+@stop
+@section('footer-js')
+<script type="text/javascript">
+    var IDASSOC = {{$association->id}};
+    function removeAdmin(id){
+        $.ajax({
+            type: "POST",
+            url: '/'+IDASSOC+'/form/administrator/remove',
+            dataType: "json",
+            data: {'id':id}
+        }).done(function ( data ) {
+            window.location = data['redirect_url'];
+        }).fail(function() {
+            alert("error");
+        });
+    }
+</script>
 @stop

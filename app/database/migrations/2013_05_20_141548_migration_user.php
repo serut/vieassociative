@@ -45,6 +45,14 @@ class MigrationUser extends Migration {
 		});
 
 
+		Schema::create('password_reset', function($table){
+			$table->engine = 'InnoDB';
+			$table->increments('id');
+			$table->integer('id_user')->unsigned();
+			$table->foreign('id_user')->references('id')->on('user');
+			$table->string('pass',250);
+			$table->timestamps();
+		});
 	}
 
 	/**

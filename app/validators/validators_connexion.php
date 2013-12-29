@@ -57,7 +57,7 @@ class validators_connexion extends BaseValidator
             return ! User::isTakenMail(Input::get('mail'));
         });
         $rules = array(
-            'mail' => 'required|existing_mail:no|email',
+            'mail' => 'required|existing_mail:yes|email',
         );
         return $this->test($rules);
     }

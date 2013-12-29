@@ -68,7 +68,7 @@ class LoginController extends BaseController
         $v = new validators_connexion;
         $result = $v->resetPassword();
         if(isset($result['success'])){
-            $user = User::where('email',$email)->first();
+            $user = User::where('email',Input::get('mail'))->first();
             $pr = new PasswordReset;
             $pr->pass = Str::random(12);
             $pr->id_user = $user->id;

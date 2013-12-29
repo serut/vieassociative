@@ -15,7 +15,7 @@ class EmailController extends BaseController
 	static function resetPassword($email,$pass)
 	{
 		// data for send the mail to the user
-		$data=array('email'=>$email,'pass',$pass);
+		$data=array('email'=>$email,'pass'=>$pass);
 		Mail::send('mail.reset-password', $data, function ($message) use ($data) {
 			$message->subject('VieAssociative Mot de passe perdu');
 			$message->from('noreply@vieassociative.fr', 'Vie Associative');

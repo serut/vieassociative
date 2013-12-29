@@ -7,10 +7,11 @@
 
 
 		<table width="600" cellspacing="0" cellpadding="0" class="wrap">
-			<tbody><tr><td valign="top" height="45" align="center">&nbsp;</td></tr>
-			<tr><td valign="top" align="center" class="line">&nbsp;</td></tr>
-			<tr><td valign="top" height="45" align="center">&nbsp;</td></tr>
-		</tbody></table>
+			<tbody>
+				<tr><td valign="top" height="45" align="center">&nbsp;</td></tr>
+				<tr><td valign="top" align="center" class="line">&nbsp;</td></tr>
+			</tbody>
+		</table>
 
 
 
@@ -36,9 +37,9 @@
 					<table width="290" cellspacing="0" cellpadding="0" align="right">
 					<tbody><tr>
 						<td valign="top" align="left">
-							<div class="h"><div>Bienvenue !</div></div>
-							<div style="text-align: justify;">
-								Merci d'avoir créé un compte {{$name}} !
+							<div class="h"><h3>Bienvenue {{$name}} !</h3></div>
+							<div style="text-align: justify;font-size: 90%;">
+								Merci d'avoir créé un compte sur VieAssociative !
 								<br>
 								Si vous souhaitez en savoir plus sur notre projet, n'hésitez pas à regarder notre vidéo de présentation !
 							</div>
@@ -57,18 +58,14 @@
 
 
 
-		<table width="600" cellspacing="0" cellpadding="0" class="wrap">
-			<tbody><tr><td valign="top" height="45" align="center">&nbsp;</td></tr>
-			<tr><td valign="top" align="center" class="line">&nbsp;</td></tr>
-			<tr><td valign="top" height="45" align="center">&nbsp;</td></tr>
-		</tbody></table>
-
 		
 <!-- Footer start -->
 
 		<table width="600" cellspacing="0" cellpadding="0" class="wrap">
 			<tbody><tr><td valign="top" height="48" align="center">&nbsp;</td></tr>
 		</tbody></table>
+
+		
 		<table width="100%" cellspacing="0" cellpadding="0" class="footer">
 		<tbody><tr>
 			<td valign="top" align="center">

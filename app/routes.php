@@ -36,6 +36,7 @@
             {
                 Route::get('log', 'LoginController@getConnexion');
                 Route::get('reset-password', 'LoginController@getResetPassword');
+                Route::post('reset-password', 'LoginController@postResetPassword');
                 Route::get('reset/{pass}', 'LoginController@getResetPasswordAfter')->where('pass', '[a-z-0-9]+');
                 Route::get('log/fb', 'LoginController@getFacebook');
                 Route::get('log/google', 'LoginController@getGoogle');

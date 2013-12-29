@@ -62,6 +62,7 @@ class MigrationUser extends Migration {
 	 */
 	public function down()
 	{
+		Schema::dropIfExists('password_reset');
 		Schema::dropIfExists('user_token');
 		Schema::dropIfExists('connexion_tentative');
 		Schema::dropIfExists('user');

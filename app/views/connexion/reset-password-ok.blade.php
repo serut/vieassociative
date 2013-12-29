@@ -6,7 +6,7 @@
     <section>
     	<div>
 	    	<h3 class="head">Retrouver son mot de passe</h3>
-	    	<p>Vous revoila {{$name}}. Entrez votre nouveau mot de passe :</p>
+	    	<p>Vous revoila {{$username}}. Entrez votre nouveau mot de passe :</p>
 	    	{{ Form::open(array('class'=> 'form','url' => 'user/form/password','data-validate'=>'our-parsey', 'data-loading'=>'true')) }}
 	            @input = array(
 			            'type' => 'password',

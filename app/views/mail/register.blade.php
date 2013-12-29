@@ -4,12 +4,6 @@
 
 
 
-		<table width="600" cellspacing="0" cellpadding="0" class="wrap">
-			<tbody>
-				<tr><td valign="top" height="45" align="center">&nbsp;</td></tr>
-				<tr><td valign="top" align="center" class="line">&nbsp;</td></tr>
-			</tbody>
-		</table>
 
 
 

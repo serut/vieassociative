@@ -2,11 +2,6 @@
 @section('content')
 
 
-		<table width="600" cellspacing="0" cellpadding="0" class="wrap">
-			<tbody><tr><td valign="top" height="45" align="center">&nbsp;</td></tr>
-			<tr><td valign="top" align="center" class="line">&nbsp;</td></tr>
-		</tbody></table>
-
 
 
 
@@ -19,12 +14,12 @@
 				<tbody><tr>
 		<!-- CONTENT start -->
 					<td valign="top" align="left">
-						<div class="h"><div>Headline goes here</div></div>
+						<div class="h"><h3>Mot de passe perdu</h3></div>
 						<div>
-							Voici le lien pour changer votre mot de passe :
+							Voici le lien pour changer votre mot de passe ( valable 24 heures ! ) :
 						</div>
 						<div class="btn">
-							<a href="http://www.vieassociative.fr/user/reset/{{$pass}}"><img width="94" height="30" border="0" style="background-color:#3E4344" title="read more" alt="read more" src="img/more.png"></a>
+							<a href="http://www.vieassociative.fr/user/reset/{{$pass}}">Cliquez ici</a>
 						</div>
 					</td>
 		<!-- CONTENT end -->

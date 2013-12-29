@@ -27,7 +27,7 @@
                   <td>
                   	  <i class="icon-ok"></i> Se connecter<br>
                       <i class="icon-ok"></i> S'enregistrer<br>
-                  	  <i class="icon-ok"></i> Connexion depuis un réseau social<br>
+                  	  <i class="icon-remove"></i> Connexion depuis un réseau social<br>
                   	  <i class="icon-remove"></i> Edition du profil<br>
                   	  <i class="icon-ok"></i> Envoie des mails<br>
                   	  <i class="icon-remove"></i> Affichage de notifications en temps réel<br>
@@ -38,10 +38,9 @@
                   <td>
                   	<i class="icon-ok"></i> Edition du profil adapté aux associations<br>
   	                <i class="icon-ok"></i> Gestion des conversations<br>
-  	                <i class="icon-remove"></i> Gestion du mur d'actualité<br>
+  	                <i class="icon-ok"></i> Gestion du mur d'actualité<br>
                   	<i class="icon-remove"></i> Gestion de pages statiques<br>
                   	<i class="icon-remove"></i> Moteur de recherche d'associations<br>
-                  	<i class="icon-remove"></i> Gestion des sponsors<br>
                   </td>
                 </tr>
                 <tr>

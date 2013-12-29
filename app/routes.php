@@ -69,8 +69,9 @@
                 Route::get('{id}/edit/vieassociative-informations', 'AssociationController@getEditVieAssociativeInformations')->where('id', '[0-9]+');
                 Route::get('{id}/edit/evenement', 'EvenementController@getEvenementAssociation')->where('id', '[0-9]+');
                 Route::get('{id}/edit/evenement/{idEv}/edit', 'EvenementController@getEdit')->where('id', '[0-9]+')->where('idEv', '[0-9]+');
-                Route::get('{id}/edit/file/{idGallery}', 'FileController@getUpload')->where('id', '[0-9]+')->where('idGallery', '[0-9]+');
-                Route::get('{id}/edit/file/crop/{idPicture}', 'FileController@getCrop')->where('id', '[0-9]+')->where('idPicture', '[0-9]+');
+                Route::get('{id}/edit/file/{idGallery}{typeCrop}{action}', 'FileController@getUpload')->where('id', '[0-9]+')->where('idGallery', '[0-9]+')->where('typeCrop', '[\/a-z0-9]*')->where('action', '[-a-z0-9]*');
+                Route::get('{id}/edit/file/crop/{typeCrop}{action}/{namePic}', 'FileController@getCrop')->where('id', '[0-9]+')->where('typeCrop', '[a-z0-9]+')->where('action', '[-a-z0-9]*')->where('namePic', '[a-zA-Z0-9_\.]+');
+                Route::post('{id}/edit/file/crop/{typeCrop}{action}/{namePic}', 'FileUploadController@postCrop')->where('id', '[0-9]+')->where('typeCrop', '[a-z0-9]+')->where('action', '[-a-z0-9]*')->where('namePic', '[a-zA-Z0-9_\.]+');
                 
                 Route::get('{id}/edit/news', 'AssociationController@getListNews')->where('id', '[0-9]+');
                 Route::get('{id}/edit/news/add', 'AssociationController@getAddNews')->where('id', '[0-9]+');

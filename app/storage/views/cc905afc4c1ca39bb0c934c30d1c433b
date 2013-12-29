@@ -47,7 +47,7 @@
                 </tr>
                 <tr>
                   <td>Siege</td>
-                  <td><?php echo e($association->headquater); ?></td>
+                  <td><?php echo e($association->headquarter); ?></td>
                   <td><a href="#" data-modal-form="headquarter"><i class="icon-pencil"></i></a></td>
                 </tr>
                 <tr>
@@ -95,7 +95,7 @@
             url: '/'+id+'/form/'+namePage+'/'+$(this).attr('data-modal-form'),
             dataType: "json",
         }).done(function ( data ) {
-            modalForFormModification(data)
+            modalForFormModification(data);
         }).fail(function() {
             alert("error");
         });

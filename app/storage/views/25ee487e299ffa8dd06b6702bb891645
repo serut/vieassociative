@@ -14,9 +14,9 @@
             <div class="span9 align-right">
                 <span class="social_icons">
                     <span class="rss"><a title="rss" href="#"></a></span>
-                    <span class="googleplus"><a title="googleplus" href="https://plus.google.com/u/0/b/111279553320723865802/111279553320723865802"></a></span>
-                    <span class="twitter"><a title="twitter" href="https://twitter.com/VieAssociative"></a></span>
-                    <span class="facebook"><a title="facebook" href="https://www.facebook.com/vieassociativeofficiel"></a></span>
+                    <span class="googleplus"><a title="Google +" href="https://plus.google.com/u/0/b/111279553320723865802/111279553320723865802"></a></span>
+                    <span class="twitter"><a title="Twitter" href="https://twitter.com/VieAssociative"></a></span>
+                    <span class="facebook"><a title="Facebook" href="https://www.facebook.com/vieassociativeofficiel"></a></span>
                 </span>
                 <a href="legal" title="Généré en <?php echo round(microtime(true) - TIME_AT_START,3); ?> s">&copy; Vie Associative 2013</a>
             </div>

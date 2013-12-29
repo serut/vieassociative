@@ -128,7 +128,7 @@
 					</td>
 					@if($hasNextStep)
 					<td class="item-option">
-						<a class="select" href="#" onclick="select(this);return false;">
+						<a class="select" href="${url_crop}">
 							<i class="icon-share-alt"></i>
 						</a>
 					</td>
@@ -148,13 +148,13 @@
 	</script>
 	<script>
 	    $('#dnd').fileapi({
-		   url: "{{URLSubdomain::to('association','/upload')}}",
-		   data: { 'session-id': 123 }, // data with GET
-		   paramName: 'filedata',
-		   multiple: true,
-		   chunkSize: 2 * FileAPI.MB,
+			url: "{{URLSubdomain::to('association','/upload')}}",
+			data: { 'session-id': 123 }, // data with GET
+			paramName: 'filedata',
+			multiple: true,
+			chunkSize: 2 * FileAPI.MB,
 			chunkUploadRetry: 3,
-		   elements: {
+			elements: {
 		      ctrl: { upload: '.ctrl-upload',abort: '.ctrl-abort' },
 		      emptyQueue: { show: '.ctrl-upload',hide: '.ctrl-upload' },
 		      list: '.js-files',
@@ -176,9 +176,10 @@
 		      }
 		   }
 		}).on('filecomplete',function(err/**String*/, xhr/**Object*/, file/**Object/, options/**Object*/){
-			if( !err ){
+			if(xhr && xhr.result.error != "true"){
 				// File successfully uploaded
 				data = [{
+					'url_crop':'/{{$association->id}}/edit/file/crop{{$typeCrop}}{{$action}}/'+xhr.result.img_name[0],
 					'url_img':'http://img.vieassociative.fr/'+xhr.result.file[0],
 					'thumbnail':'http://img.vieassociative.fr/'+xhr.result.thumbnail[0],
 					'size' : '2',
@@ -198,14 +199,14 @@
 					});
 				});
 		    }else{
-				console.log("Une erreur est survenue");
-				console.log(xhr.result.error);
+				console.log(xhr.result.status);
 		    }
 		});
 		/*Gallery PART START*/
 		var data = [
 		@foreach($gallery['element'] as $e)
 		{
+			'url_crop':'/{{$association->id}}/edit/file/crop{{$typeCrop}}{{$action}}/{{$e->name_img}}',
 			'url_img':'http://img.vieassociative.fr/{{$prefix}}{{$association->id}}/{{$e->name_img}}',
 			'thumbnail':'http://img.vieassociative.fr/{{$prefix}}{{$association->id}}/{{$e->name_img}}_thumbnail.jpg',
 			'size' : '1',
@@ -213,9 +214,6 @@
 
 		@endforeach]
 		loadGallery($('#gallery'),data,$('#photo-pattern'));
-		function select(){
-
-		}
 		function open(){
 
 		}

@@ -17,32 +17,36 @@ class MigrationAssociation extends Migration {
 			$table->string('name');
 			$table->string('slug');
 			$table->string('acronym');
-			$table->boolean('active');
-			$table->integer('id_logo');
 			$table->string('legal_name');
 			$table->string('goal');
 			$table->string('website_url');
 			$table->date('official_date_creation');
 			$table->string('headquarter');
 			$table->boolean('admitted_public_utility');
-			$table->integer('general_information_completed');
-			$table->integer('vieassociative_page_completed');
 			$table->integer('nb_publications');
 			$table->integer('nb_photos');
-			$table->integer('nb_evenements');
-			$table->integer('nb_social_connected');
 			$table->integer('nb_administrator');
+			$table->integer('nb_evenements');
 			$table->text('statuts');
 			$table->text('internal_regulation');
-			$table->string('contact_adress');
-			$table->string('url_name');
+			$table->string('contact_adress'); // an email for contact the association
+
+
 			$table->string('page_facebook');
 			$table->string('page_googleplus');
 			$table->string('page_youtube');
 			$table->string('page_paypal');
 			$table->string('page_twitter');
+
+
 			$table->integer('id_folder')->unsigned();
 			$table->foreign('id_folder')->references('id')->on('folder');
+
+			$table->string('cover_img')->nullable();
+			$table->foreign('cover_img')->references('name')->on('img');
+			$table->string('logo_img')->nullable();
+			$table->foreign('logo_img')->references('name')->on('img');
+			//$table->string('url_name'); // USELESS ?
 			$table->softDeletes();
 			$table->timestamps();
 		});

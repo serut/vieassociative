@@ -2,7 +2,7 @@
 /**
 	* This is the controller for association pages
 	*
-	* @author  Mike van Riel <mike.vanriel@naenius.com>
+	* @author  Mieulet Léo <l.mieulet@gmail.com>
 */
  class AssociationController  extends BaseController {
  	/**
@@ -25,42 +25,100 @@
 			->with('association',Association::find($idAssoc))
 			->with('proposition',Proposition::getPropositions($idAssoc));
 	}
+
+ 	/**
+		* @see http://association.vieassociative.fr/{$idAssoc}-{$slug} 
+		* @param int $idAssoc The ID of this association
+		* @return View The wall of the association
+	*/
 	public function getProfile($idAssoc) {
+		//The prefix of images
+        if(App::environment() == "prod"){
+            $prefix = 'a';
+        }else{
+            $prefix = 'deva';
+        }
 		return View::make('association.profile')
 			->with('association',Association::find($idAssoc))
+			->with('prefix',$prefix)
 			->with('newsFeed',NewsFeed::get($idAssoc));
 	}
+	
+ 	/**
+		* @see http://association.vieassociative.fr/{$idAssoc}/edit/general-informations
+		* @param int $idAssoc The ID of this association
+		* @param string $slug The slug corresponding of the name of the association
+		* @return View Page where you can edit general information
+	*/
 	public function getEditGeneralInformations($idAssoc){
 		return View::make('association.edit-general-informations')
 			->with('association',Association::find($idAssoc));
 	}
+	
+ 	/**
+ 		* @todo Page non fonctionnelle : edition de paramètre propre à notre site
+		* @see http://association.vieassociative.fr/{$idAssoc}/edit/general-informations
+		* @param int $idAssoc The ID of this association
+		* @return View Page where you can edit vieassociative information
+	*/
 	public function getEditVieAssociativeInformations($idAssoc){
 		return View::make('association.edit-vieassociative-informations')
 			->with('association',Association::find($idAssoc));
 	}
+
+	/**
+		* @see http://association.vieassociative.fr/{$idAssoc}/edit/news
+		* @param int $idAssoc The ID of this association
+		* @return View Page that display all news from an association
+	*/
 	public function getListNews($idAssoc){
 		return View::make('association.list-news')
 			->with('news',Post::listNews($idAssoc))
 			->with('association',Association::find($idAssoc));
 	}
+
+	/**
+		* @see http://association.vieassociative.fr/{$idAssoc}/edit/news/{$idNews}
+		* @param int $idAssoc The ID of this association
+		* @param int $idPost ==> if $idPost = 0 then the user wants to create a new post
+		* @return View Edit or create a news
+	*/
 	public function getEditNews($idAssoc, $idPost){
 		return View::make('association.edit-news')
 			->with('post',Post::get($idPost))
 			->with('association',Association::find($idAssoc));
 	}
+
+	/**
+		* @todo Page non fonctionnelle
+	*/
 	public function getEditSocial($idAssoc){
 		return View::make('association.edit-social');
 	}
+
+	/**
+		* @see http://association.vieassociative.fr/{$idAssoc}/edit/administrator
+		* @param int $idAssoc The ID of this association
+		* @return View Edit administrator for this association
+	*/
 	public function getEditAdministrator($idAssoc){
 		return View::make('association.edit-administrator')
 			->with('association',Association::find($idAssoc))
 			->with('is_admin',User::isAdministrator($idAssoc))
 			->with('admin',UserAssociation::where('id_assoc',$idAssoc)->with('author')->get());
 	}
+	
+	/**
+		* @todo Page non fonctionnelle
+	*/
 	public function getHistory($idAssoc){
 		return View::make('association.history');
 	}
 	
+	/**
+		* API : Create a new association
+		* @return JSON
+	*/
 	public function postAdd(){
 		$v = new validators_associationAdd;
 		$result = $v->add();
@@ -78,6 +136,10 @@
 		return Response::json($result);
 	}
 	
+	/**
+		* API : Edit or create a news
+		* @return JSON
+	*/
 	public function postEditNews($idAssoc, $idPost){
 		$v = new validators_associationEditPost;
 		$result = $v->validate();

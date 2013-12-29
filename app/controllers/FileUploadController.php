@@ -34,6 +34,7 @@ class FileUploadController extends BaseController
 					$this->galleryThumbnail();
 					$return["status"] = 200;
 					$return["file"] = array($this->original_url);
+					$return["img_name"] = array($this->name);
 					$return["thumbnail"] = array($this->original_url. "_thumbnail.jpg");
 				}else{
 					return $this->postError('Not an image');	
@@ -43,7 +44,7 @@ class FileUploadController extends BaseController
 		return Response::json($return);
 	}
 	public function postError($codeError){
-		$return = array('error'=> 'Une erreur a été detecté pendant l\'upload. Code erreur : '.$codeError);
+		$return = array('error'=> 'true','status'=>'Une erreur a été detecté pendant l\'upload. Code erreur : '.$codeError);
 		return Response::json($return);
 	}
 	public function getContext() {
@@ -53,16 +54,18 @@ class FileUploadController extends BaseController
         if(preg_match($pattern, $val,$elements)){
         	$this->id_assoc = $elements[2];
         	$this->id_gallery = $elements[4];
-			if(App::environment() != "prod"){
-				$this->prefix_img = 'deva';
-			}else{
-				$this->prefix_img = 'a';
-			}
+        	$this->prefix_img = $this->getPrefixImg();
         }else{
         	return $this->postError(1);
         }
     }
-		
+	public function getPrefixImg(){
+		if(App::environment() != "prod"){
+			return 'deva';
+		}else{
+			return 'a';
+		}
+	}
     public function isFinished() {
     	$val = Request::header('Content-Range');
              //Exemple : bytes 2097152-3795036/3795037
@@ -248,6 +251,94 @@ class FileUploadController extends BaseController
 		// Print image
 		return $new_image;
     }
+	public function postCrop($idAssoc,$typeCrop,$action,$namePic){
+
+        switch ($typeCrop) {
+            case '400x400':
+                $target_w = 400;
+                $target_h = 400;
+                break;
+            case '120x120':
+                $target_w = 120;
+                $target_h = 120;
+                break;
+            case '200x200':
+                $target_w = 200;
+                $target_h = 200;
+                break;
+            case '940x350':
+            	$target_w = 940;
+				$target_h = 350;
+                break;
+            case '400x400':
+                $target_w = 150;
+                $target_h = 150;
+                break;
+
+            case '400x400':
+                $target_w = 150;
+                $target_h = 150;
+                break;
+
+            default:
+                return Response::view('errors.404', array(), 404);
+                break;
+        }
+		
+		$x = Input::get('x',0);
+		$y = Input::get('y',0);
+		$w = Input::get('w',0);
+		$h = Input::get('h',0);
+		$jpeg_quality = 100;
+		$i = Img::find($namePic);
+		$this->prefix_img = $this->getPrefixImg();
+		$src = "http://img.vieassociative.fr/".$this->prefix_img.$idAssoc.'/'.$i->name;
+		$file_ext = $i->extension;
+		try{
+	        if ($file_ext == 'jpg' OR $file_ext == 'jpeg') {
+	            $img_r = imagecreatefromjpeg($src);
+	        } elseif ($file_ext == 'gif') {
+	            $img_r = imagecreatefromgif($src);
+	        } elseif ($file_ext == 'png') {
+	            $img_r = imagecreatefrompng($src);
+	        } elseif ($extension == 'bmp') {
+	            $img_r = imagecreatefromwbmp($src);
+	        }
+        }catch(Exception $e) {
+        	return $this->removeImgFromDatabase($this->name);
+        }
+		$dst_r = ImageCreateTrueColor( $target_w, $target_h );
+
+		imagecopyresampled($dst_r,$img_r,0,0,$x,$y,$target_w,$target_h,$w,$h);
+
+
+        ob_start();
+		imagejpeg($dst_r, null);
+		$img = ob_get_clean();
+
+
+		$urlImg = $this->prefix_img . $idAssoc .'/'. $namePic . '-'.$typeCrop.".jpg";
+		$this->sendObject($img,$urlImg);
+
+		$a = Association::find($idAssoc);
+		switch ($action) {
+			case '-cover':
+				$a->cover_img = $namePic;
+				$a->touch();
+				break;
+
+			case '-logo':
+				$a = Association::find($idAssoc);
+				$a->logo_img = $namePic;
+				$a->touch();
+				break;
+			
+			default:
+				# code...
+				break;
+		}
+		return Redirect::to('/'.$idAssoc.'-'.$a->slug);
+	}
 }
 
 

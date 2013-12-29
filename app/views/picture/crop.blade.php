@@ -7,53 +7,62 @@
 		<div>
 			<ul class="breadcrumb">
 				<li><a href="#">Association</a> <span class="divider">/</span></li>
-				<li><a href="/1-qsdf">Faites de la musique</a> <span class="divider">/</span></li>
-				<li><a href="/1/edit">Edition</a> <span class="divider">/</span></li>
+				<li><a href="/{{$association->id}}-{{$association->slug}}">{{$association->name}}</a> <span class="divider">/</span></li>
+				<li><a href="/{{$association->id}}/edit">Edition</a> <span class="divider">/</span></li>
 				<li class="active">Images</li>
 			</ul>
 			<div class="container">
-				<div class="row span21" id="uploader">
-					<div class="span10">
-						Etape #1 : Sélectionnez une image :<br>
-						<div class="js-fileapi-wrapper">
-							<div class="js-browse">
-								<input type="file" name="filedata">
-							</div>
-							<div class="js-upload" style="display: none;">
-								<div class="progress progress-success"><div class="js-progress bar"></div></div>
-								<span class="btn-txt">Envoi en cours</span>
-							</div>
-						</div>
-					</div>
-					<div class="pull-right">
-						Résultat :<br>
-						<div class="preview-pic ">
-							<div class="js-preview"></div>
-						</div>
-					</div>
-					<div class="span1">
+				<div class="row">
+					<div class="span21">
+						<br>Etape #2 : Découpez votre image, puis validez :
+						<img src="http://img.vieassociative.fr/{{$prefix}}{{$association->id}}/{{$name}}" id="jcrop_img" />
 					</div>
 				</div>
-				<div id="cropper" class="popup__body span21" style="display: none;">
-					<hr>
-					<div class="button button-green pull-right" id="validate">Valider</div>
-					<br>Etape #2 : Découpez votre image, puis validez :
-					<div class="js-img"></div>
+
+
+
+
+
+
+				<div class="row">
+					<div class="span19">
+						Résultat :<br>
+
+						<div id="preview-pane">
+						<div class="preview-container">
+							<img src="http://img.vieassociative.fr/{{$prefix}}{{$association->id}}/{{$name}}" class="jcrop-preview" alt="Preview" />
+						</div>
+						</div>
+					</div>
+
+					
+					<div class="span3" id="uploader">
+						<div class="text-center">
+							<form method="post">
+								<input type="hidden" id="x" name="x" />
+								<input type="hidden" id="y" name="y" />
+								<input type="hidden" id="w" name="w" />
+								<input type="hidden" id="h" name="h" />
+								<div class="button button-green pull-right" id="validate">Valider</div>
+							</form>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 <style type="text/css">
-	.preview-pic {
-		background: url("http://expomap.ru/images/users/no-userpic-big.gif") no-repeat scroll 0 0 / cover rgba(0, 0, 0, 0);
-		border: 2px solid #AAAAAA;
-		display: inline-block;
-		height: 200px;
-		position: relative;
-		width: 200px;
+	#preview-pane {
+		display: block;
+		z-index: 2000;
+		top: 10px;
+		right: -280px;
+		padding: 6px;
 	}
-	.js-img{
-		margin-top: 40px;
+	#preview-pane .preview-container {
+		width: {{$x}}px;
+		height: {{$y}}px;
+		overflow: hidden;
 	}
 </style>
 @stop
@@ -69,42 +78,63 @@
 	<script src="/pluggin/jquery.fileapi/jcrop/jquery.Jcrop.min.js"></script>
 	<link href="/pluggin/jquery.fileapi/jcrop/jquery.Jcrop.min.css" rel="stylesheet" type="text/css"/>
 	<script>
-		$('#uploader').fileapi({
-			url: 'http://rubaxa.org/FileAPI/server/ctrl.php',
-			accept: 'image/*',
-			imageSize: { minWidth: 200, minHeight: 200 },
-			elements: {
-				active: { show: '.js-upload', hide: '.js-browse' },
-				preview: {
-					 el: '.js-preview',
-					 width: 200,
-					 height: 200
-				},
-				progress: '.js-progress'
-			},
-			onSelect: function (evt, ui){
-				var file = ui.files[0];
-				if( file ){
-					$('#cropper').show();
-					$('#validate').click(function(){
-						$('#uploader').fileapi('upload');
-						$(this).hide();
-					});
-					$('.js-img').cropper({
-						file: file,
-						bgColor: '#fff',
-						maxSize: [$('.js-img').width(), $('.js-img').width()-100],
-						minSize: [200, 200],
-						selection: '90%',
-						aspectRatio: 1,
-						onSelect: function (coords){
-							$('#uploader').fileapi('crop', file, coords);
-						}
+		$(function(){
+			var jcrop_api,
+			boundx,
+			boundy,
+			// Grab some information about the preview pane
+			$preview = $('#preview-pane'),
+			$pcnt = $('#preview-pane .preview-container'),
+			$pimg = $('#preview-pane .preview-container img'),
+			xsize = $pcnt.width(),
+			ysize = $pcnt.height();
+		
+			$('#jcrop_img').Jcrop({
+				onChange: updateCoords,
+				onSelect: updateCoords,
+				aspectRatio: xsize / ysize
+			},function(){
+				// Use the API to get the real image size
+				var bounds = this.getBounds();
+				boundx = bounds[0];
+				boundy = bounds[1];
+				// Store the API in the jcrop_api variable
+				jcrop_api = this;
+			});
+			function updateCoords(c)
+			{
+				if (parseInt(c.w) > 0){
+					var rx = xsize / c.w;
+					var ry = ysize / c.h;
+
+					$pimg.css({
+						width: Math.round(rx * boundx) + 'px',
+						height: Math.round(ry * boundy) + 'px',
+						marginLeft: '-' + Math.round(rx * c.x) + 'px',
+						marginTop: '-' + Math.round(ry * c.y) + 'px'
 					});
 				}
-			}
+				$('#x').val(c.x);
+				$('#y').val(c.y);
+				$('#w').val(c.w);
+				$('#h').val(c.h);
+			};
 		});
+
+
+		function checkCoords()
+		{
+			if (parseInt($('#w').val())) return true;
+			alert('Please select a crop region then press submit.');
+			return false;
+		};
+		$('#validate').click(function(){
+			if(checkCoords()){
+				$(this).parent().submit();
+			}
+		})
 		
+
 	</script>
 @stop
 

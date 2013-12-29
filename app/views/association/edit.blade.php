@@ -50,12 +50,12 @@
 									<td>{{$association->nb_photos}} images</td>
 									<td><a href="edit/file/{{$association->id_folder}}"> Editer</a></td>
 								</tr>
-								@if(App::environment() != "prod")
 								<tr>
 									<td>La page Vie Associative</td>
-									<td>40% completé</td>
+									<td></td>
 									<td><a href="edit/vieassociative-informations"> Editer</a></td>
 								</tr>
+								@if(App::environment() != "prod")
 								<tr>
 									<td>Historique</td>
 									<td>200 élements</td>

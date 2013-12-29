@@ -4,13 +4,19 @@
 @set_true $large_centred 
 @section('large-content')
 	<?php
-		$profile = array(
-			//'cover'=>'https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-frc1/1005953_565503096840164_574065106_n.png',
-			//'logo'=>'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash4/c3.0.175.175/s160x160/1005401_561831680540639_154619862_a.png',
-			'cover'=>'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-prn2/969320_10152016532606124_916290804_n.jpg',
-			'logo'=>'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn1/c26.26.328.328/s160x160/378926_10150600500671124_496920089_n.jpg',
-			'name'=>'Croix Rouge Verte et Orange',
-		);
+		if(empty($association->cover_img) && empty($association->logo_img)){
+			$profile = array(
+				//'cover'=>'https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-frc1/1005953_565503096840164_574065106_n.png',
+				//'logo'=>'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash4/c3.0.175.175/s160x160/1005401_561831680540639_154619862_a.png',
+				'cover'=>'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-prn2/969320_10152016532606124_916290804_n.jpg',
+				'logo'=>'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn1/c26.26.328.328/s160x160/378926_10150600500671124_496920089_n.jpg',
+			);
+		}else{
+			$profile = array(
+				'cover'=>"http://img.vieassociative.fr/".$prefix.$association->id.'/'.$association->cover_img.'-940x350.jpg',
+				'logo'=>"http://img.vieassociative.fr/".$prefix.$association->id.'/'.$association->logo_img.'-200x200.jpg',
+			);
+		}
 	?>
 	<section class="profile unbackground">
 		<img src="{{$profile['cover']}}" class="cover">

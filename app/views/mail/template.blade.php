@@ -213,10 +213,10 @@
 					<tr>
 					<td valign="top" align="center" class="small social">
 						<div>
-							<a href="https://twitter.com/VieAssociative"><img width="32" height="32" border="0" style="max-width:32px;max-height:32px;" title="" alt="" src="/img/mail/twitter.png"></a>
-							<a href="https://www.facebook.com/vieassociativeofficiel"><img width="32" height="32" border="0" style="max-width:32px;max-height:32px;" title="" alt="" src="/img/mail/facebook.png"></a>
-							<a href="https://plus.google.com/u/0/b/111279553320723865802/111279553320723865802"><img width="32" height="32" border="0" style="max-width:32px;max-height:32px;" title="" alt="" src="/img/mail/googleplus.png"></a>
-							<a href="http://www.youtube.com/channel/UCvth03etWqhE1t2cYu4fU2A"><img width="32" height="32" border="0" style="max-width:32px;max-height:32px;" title="" alt="" src="/img/mail/youtube.png"></a>
+							<a href="https://twitter.com/VieAssociative"><img width="32" height="32" border="0" style="max-width:32px;max-height:32px;" title="" alt="" src="http://cdn.vieassociative.fr/img/mail/twitter.png"></a>
+							<a href="https://www.facebook.com/vieassociativeofficiel"><img width="32" height="32" border="0" style="max-width:32px;max-height:32px;" title="" alt="" src="http://cdn.vieassociative.fr/img/mail/facebook.png"></a>
+							<a href="https://plus.google.com/u/0/b/111279553320723865802/111279553320723865802"><img width="32" height="32" border="0" style="max-width:32px;max-height:32px;" title="" alt="" src="http://cdn.vieassociative.fr/img/mail/googleplus.png"></a>
+							<a href="http://www.youtube.com/channel/UCvth03etWqhE1t2cYu4fU2A"><img width="32" height="32" border="0" style="max-width:32px;max-height:32px;" title="" alt="" src="http://cdn.vieassociative.fr/img/mail/youtube.png"></a>
 						</div>
 					</td>
 					</tr>

@@ -18,62 +18,62 @@
                 <tr>
                   <td>Image de couverture</td>
                   <td></td>
-                  <td><a href="/<?php echo $association->id; ?>/edit/file/<?php echo $association->id_folder; ?>/940x350-cover"><i class="icon-pencil"></i></a></td>
+                  <td><a href="/<?php echo $association->id; ?>/edit/file/<?php echo $association->id_folder; ?>/940x350-cover"><i class="fa fa-pencil"></i></a></td>
                 </tr>
                 <tr>
                   <td>Logo</td>
                   <td></td>
-                  <td><a href="/<?php echo $association->id; ?>/edit/file/<?php echo $association->id_folder; ?>/200x200-logo"><i class="icon-pencil"></i></a></td>
+                  <td><a href="/<?php echo $association->id; ?>/edit/file/<?php echo $association->id_folder; ?>/200x200-logo"><i class="fa fa-pencil"></i></a></td>
                 </tr>
                 <tr>
                   <td>Niveau de protection du panel d'administration</td>
                   <td>N'importe qui peut proposer une modification.<br> Une validation de la modération est requis.</td>
-                  <td><a href="#" data-modal-form="association_protection"><i class="icon-remove"></i> Désactiver </a></td>
+                  <td><a href="#" data-modal-form="association_protection"><i class="fa fa-remove"></i> Désactiver </a></td>
                 </tr>
                 <tr>
                   <td>Categorie d'association</td>
                   <td>Musique - festivités</td>
-                  <td><a href="#" data-modal-form="association_categories"><i class="icon-chevron-down"></i> Modifier </a></td>
+                  <td><a href="#" data-modal-form="association_categories"><i class="fa fa-chevron-down"></i> Modifier </a></td>
                 </tr>
                 <tr>
                   <td>Secteur d'activité</td>
                   <td>Animations - Festivités - Culture - Restaurantions - Tournois <br>Musique : Electronique, Rock, Dub, Trance</td>
-                  <td><a href="#" data-modal-form="activities"><i class="icon-chevron-down"></i> Modifier </a></td>
+                  <td><a href="#" data-modal-form="activities"><i class="fa fa-chevron-down"></i> Modifier </a></td>
                 </tr>
                 <tr>
                   <td>Service proposés aux partenaires</td>
                   <td>Location de matériel de sonorisation</td>
-                  <td><a href="#" data-modal-form="services_between_partners"><i class="icon-chevron-down"></i> Modifier </a></td>
+                  <td><a href="#" data-modal-form="services_between_partners"><i class="fa fa-chevron-down"></i> Modifier </a></td>
                 </tr>
                 <tr>
                   <td>Module Galerie photo</td>
                   <td>Activé</td>
-                  <td><a href="#" data-modal-form="module_photo"><i class="icon-remove"></i> Désactiver </a></td>
+                  <td><a href="#" data-modal-form="module_photo"><i class="fa fa-remove"></i> Désactiver </a></td>
                 </tr>
                 <tr>
                   <td>Module Galerie évènements</td>
                   <td>Activé</td>
-                  <td><a href="#" data-modal-form="module_evenement"><i class="icon-remove"></i> Désactiver </a></td>
+                  <td><a href="#" data-modal-form="module_evenement"><i class="fa fa-remove"></i> Désactiver </a></td>
                 </tr>
                 <tr>
                   <td>Module Flux des sites sociaux</td>
                   <td>Activé</td>
-                  <td><a href="#" data-modal-form="module_social"><i class="icon-remove"></i> Désactiver </a></td>
+                  <td><a href="#" data-modal-form="module_social"><i class="fa fa-remove"></i> Désactiver </a></td>
                 </tr>
                 <tr>
                   <td>Module Galerie de sponsor</td>
                   <td>Activé</td>
-                  <td><a href="#" data-modal-form="module_sponsor"><i class="icon-remove"></i> Désactiver </a></td>
+                  <td><a href="#" data-modal-form="module_sponsor"><i class="fa fa-remove"></i> Désactiver </a></td>
                 </tr>
                 <tr>
                   <td>Module Présentation des prix</td>
                   <td>Activé</td>
-                  <td><a href="#" data-modal-form="module_price"><i class="icon-remove"></i> Désactiver </a></td>
+                  <td><a href="#" data-modal-form="module_price"><i class="fa fa-remove"></i> Désactiver </a></td>
                 </tr>
                 <tr>
                   <td>Texte de la page d'acceuil</td>
                   <td>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commo [..]</td>
-                  <td><a href="#" data-modal-form="welcome_text"><i class="icon-chevron-down"></i> Editer </a><br> <a href="#"><i class="icon-remove"></i>Supprimer </a></td>
+                  <td><a href="#" data-modal-form="welcome_text"><i class="fa fa-chevron-down"></i> Editer </a><br> <a href="#"><i class="fa fa-remove"></i>Supprimer </a></td>
                 </tr>
               </tbody>
             </table>

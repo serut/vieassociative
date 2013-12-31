@@ -32,14 +32,16 @@
                         <td>{{\Carbon\Carbon::createFromTimeStamp(strtotime($v->updated_at))->formatLocalized('%A %d %B %Y %H:%I')}}</td>
                         <td>{{$v->link}}</td>
                         @if($is_admin)
-                        <td><a href="#" onclick="removeAdmin({{$v->id}});return false;"><i class="icon-remove"></i></a></td>
+                        <td><a href="#" onclick="removeAdmin({{$v->id}});return false;"><i class="fa fa-remove"></i></a></td>
                         @endif
                     </tr>
                 </tbody>
                 @endforeach
             </table>
             @else
-                Cette association n'a pas d'administrateur. Notre politique sdfoksdfsqdlfsqdk fjzefj zoiefj ezoijf izejf zeoifj zioejf 
+                Cette association n'a pas d'administrateur. Avant de vous 
+                <a target="_blank" href="/info/condition">{{Lang::get('association/form_create.notice_part_link')}}</a>
+                {{Lang::get('association/form_create.notice_create_association')}}
             @endif
             @if($is_admin || !$admin->count())
             <hr>

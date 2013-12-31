@@ -28,7 +28,7 @@
                     <tr>
                         <td>{{{$n->title}}}</td>
                         <td>{{\Carbon\Carbon::createFromTimeStamp(strtotime($n->updated_at))->diffForHumans()}}</td>
-                        <td><i class="icon-remove"></i></td>
+                        <td><i class="fa fa-remove"></i></td>
                         <td><a href="news/{{$n->id}}/edit"> Editer</a></td>
                     </tr>
                     @endforeach

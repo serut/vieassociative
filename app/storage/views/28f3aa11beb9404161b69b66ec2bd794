@@ -16,14 +16,14 @@
 					<div class="row">
 						<div class="dropzone drag-and-drop span22">
 							<div class="text-center">
-								<i class="icon-plus"></i><br>
+								<i class="fa fa-plus"></i><br>
 								<span>Glissez déposez vous fichier ici - ou cliquez moi dessus</span>
 							</div>
 							<input type="file" name="files[]" multiple id="selectFile">
 						</div>
 						<div class="dropzone no-drag-and-drop span22">
 							<div class="text-center">
-								<i class="icon-plus"></i><br>
+								<i class="fa fa-plus"></i><br>
 								<span>Cliquez ici pour selectionner les fichiers à envoyer</span>
 							</div>
 							<input type="file" name="files[]" multiple id="selectFile">
@@ -39,9 +39,9 @@
 				               <div class="b-thumb__preview__pic"></div>
 				            </div>
 
-				            <div data-fileapi="remove" class="pull-right"><i class="icon-trash" title="Supprimer le fichier"></i></div>
+				            <div data-fileapi="remove" class="pull-right"><i class="fa fa-trash" title="Supprimer le fichier"></i></div>
 				            <% if( /^image/.test(type) ){ %>
-				               <br><div data-fileapi="rotate.cw" class="pull-right"><i class="icon-repeat" title="Faire pivoter l'image"></i></div>
+				               <br><div data-fileapi="rotate.cw" class="pull-right"><i class="fa fa-repeat" title="Faire pivoter l'image"></i></div>
 				            <% } %>
 				            </div>
 				            <div class="b-thumb__name"><%-name%></div>
@@ -117,18 +117,18 @@
                 <tr>
                 	<td class="item-option">
 		                <a class="remove" href="#" onclick="imgDelete(this);return false;">
-							<i class="icon-trash"></i>
+							<i class="fa fa-trash"></i>
 						</a>
 					</td>
 	                <td class="item-option">
 						<a class="fancybox" href="${url_img}" rel="/">
-							<i class="icon-zoom-in"></i>
+							<i class="fa fa-zoom-in"></i>
 						</a>
 					</td>
 					<?php if($hasNextStep): ?>
 					<td class="item-option">
 						<a class="select" href="${url_crop}">
-							<i class="icon-share-alt"></i>
+							<i class="fa fa-share-alt"></i>
 						</a>
 					</td>
 					<?php endif; ?>
@@ -164,7 +164,7 @@
 		            width: 98,
 		            height: 98
 		         },
-		         upload: { show: '.progress', hide: '.icon-repeat' },
+		         upload: { show: '.progress', hide: '.fa fa-repeat' },
 		         complete: { show: '.transfert-ok',hide: '.progress' },
 		         progress: '.progress .bar'
 		      },

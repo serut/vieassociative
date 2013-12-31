@@ -222,9 +222,9 @@ Ajouter un évènement
             </div>
             <div style="padding-left: 20px;" class="form-actions" id="action-container2">
                 <div style="float:right">
-                    <button name="next" class="btn button-next" type="button">Next <i class="icon-angle-right"></i></button>
-                    <button name="last" class="btn button-last" type="button">Last <i class="icon-double-angle-right"></i></button>
-                    <button name="finish" class="btn button-finish" type="button" style="display: none;">Finish <i class="icon-ok"></i></button>
+                    <button name="next" class="btn button-next" type="button">Next <i class="fa fa-angle-right"></i></button>
+                    <button name="last" class="btn button-last" type="button">Last <i class="fa fa-double-angle-right"></i></button>
+                    <button name="finish" class="btn button-finish" type="button" style="display: none;">Finish <i class="fa fa-ok"></i></button>
                 </div>
                 <div class="form-actions">
                     <input class="btn btn-primary" id="bouton-envoie" type=button value="Continuer" onClick="submit();">

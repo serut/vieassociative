@@ -1,7 +1,7 @@
 <div class="media social-box">
 	
 	<a href="#" class="pull-left social-users-avatars">
-	<img alt="Maria" src="http://cesarlab.com/templates/social/assets/img/people-face/user1_55.jpg" class="media-object">
+		<img src="{{$association->getLogo()}}" style="width: 48px;">
 	</a>
 	
 	

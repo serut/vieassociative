@@ -20,7 +20,7 @@
 		</div>
 		
 		<p class="social-time-publication">
-			3 hours ago <i class="icon-globe"></i>
+			3 hours ago <i class="fa fa-globe"></i>
 		</p>
 		
 		<?php echo $__env->make('association.wall.post-footer', array('p'=>$p), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

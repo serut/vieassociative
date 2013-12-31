@@ -40,8 +40,8 @@
 
                                 <div>
                                     <span class="count-vote">{{$p->vote}}</span>
-                                     <i class="icon-chevron-up"></i>
-                                    | <i class="icon-chevron-down"></i>
+                                     <i class="fa fa-chevron-up"></i>
+                                    | <i class="fa fa-chevron-down"></i>
                                     @if($p->level != 3)
                                         <a class="light answer" href="#">Répondre</a> 
                                     @endif
@@ -102,10 +102,10 @@
             }
             $('#answers > section > div').each(function(){
                 var id = $(this).attr('data-id');
-                $(this).find('.icon-chevron-up').click(function(){
+                $(this).find('.fa fa-chevron-up').click(function(){
                     ajaxVote($(this),1);
                 });
-                $(this).find('.icon-chevron-down').click(function(){
+                $(this).find('.fa fa-chevron-down').click(function(){
                     ajaxVote($(this),0);
                 });
                 $(this).find('.signal').click(function(){

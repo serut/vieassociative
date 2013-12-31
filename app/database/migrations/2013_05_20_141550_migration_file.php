@@ -59,6 +59,10 @@ class MigrationFile extends Migration {
 
 			$table->timestamps();
 		});
+		Schema::table('user', function($table){
+			$table->string('avatar_img')->nullable();
+			$table->foreign('avatar_img')->references('name')->on('img');
+		});
 	}
 
 	/**

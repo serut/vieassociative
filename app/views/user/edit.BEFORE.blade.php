@@ -21,7 +21,7 @@ echo $this->form()->openTag($form);
 
                     <div class="control-group">
                         <label class="control-label" for="inputPassword">Logo  
-                                <br><a href="/image/gestion-image?change=logo"> <i class="icon-arrow-right"></i> Changer de logo</a>
+                                <br><a href="/image/gestion-image?change=logo"> <i class="fa fa-arrow-right"></i> Changer de logo</a>
                         </label>
                             <div class="span2">   
                             
@@ -33,7 +33,7 @@ echo $this->form()->openTag($form);
                                         <div class="image-wrapper">
                                             <img src="<?php echo '/images/195x180/' . $this->logo['libelle']; ?>">
                                             <div> 
-                                                <a href="<?php echo '/images/original/' . $this->logo['libelle']; ?>" class="first" data-rel="prettyPhoto[gallerie]"><span><i class="icon-zoom-in"></i>Agrandir</span></a><br>
+                                                <a href="<?php echo '/images/original/' . $this->logo['libelle']; ?>" class="first" data-rel="prettyPhoto[gallerie]"><span><i class="fa fa-zoom-in"></i>Agrandir</span></a><br>
                                         </div>
                                         </div>
                                         <div class="bottom-block">
@@ -52,7 +52,7 @@ echo $this->form()->openTag($form);
 
                     <div class="control-group">
                         <label class="control-label">Votre lien avec l'association
-                            <br><a href="/association/changer-lien-association"> <i class="icon-arrow-right"></i> Changer ce lien </a>
+                            <br><a href="/association/changer-lien-association"> <i class="fa fa-arrow-right"></i> Changer ce lien </a>
                         </label>
                         <div class="control-label span4">
                             <label > <?php echo $this->rang['nom_lien'] ?></label>

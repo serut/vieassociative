@@ -40,23 +40,7 @@ class Association  extends Eloquent
         $result = DB::select($sql, array($idUser));
         return $result;
     }
-    static function getLogo($idAssoc){
-        $sql = 'SELECT image.libelle FROM association,image WHERE association.id_logo = image.id AND association.id = ?';
-        $result = DB::select($sql, array($idAssoc));
-        return $result;
-    }
     
-    static function changerLogo($idLogo,$idAssoc){
-        $sql = 'UPDATE association SET id_logo= ? WHERE id = ?';
-        $result = DB::update($sql, array($idLogo, $idAssoc));
-        return $result;
-    }
-    
-    static function changerLien($idAssoc, $lien, $idUser){
-        $sql = 'UPDATE user_association SET nom_lien = ? WHERE id_user = ? AND id_assoc = ?';
-        $result = DB::update($sql, array($lien, $idUser, $idAssoc));
-        return $result;
-    }
     static function existeNomAssociation($nom){
         $sql = 'SELECT id FROM association WHERE nom= ?';
         $result = DB::select($sql, array($nom));
@@ -71,6 +55,30 @@ class Association  extends Eloquent
                 AND user_association.id_user = ?';
         $result = DB::select($sql, array($idUser));
         return $result;
+    }
+    public function getLogo(){
+        if(empty($this->logo_img)){
+            return "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash4/c3.0.175.175/s160x160/1005401_561831680540639_154619862_a.png";
+        }
+        //The prefix of images
+        if(App::environment() == "prod"){
+            $prefix = 'a';
+        }else{
+            $prefix = 'deva';
+        }
+        return "http://img.vieassociative.fr/".$prefix.$this->id.'/'.$this->logo_img.'-200x200.jpg';
+    }
+    public function getCover(){
+        if(empty($this->cover_img)){
+            return "https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-frc1/1005953_565503096840164_574065106_n.png";
+        }
+        //The prefix of images
+        if(App::environment() == "prod"){
+            $prefix = 'a';
+        }else{
+            $prefix = 'deva';
+        }
+        return "http://img.vieassociative.fr/".$prefix.$this->id.'/'.$this->cover_img.'-940x350.jpg';
     }
     
 }

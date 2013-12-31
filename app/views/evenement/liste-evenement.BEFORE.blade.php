@@ -9,10 +9,10 @@ $this->inlineScript()->prependFile('/js/index.js')->prependFile('/js/twitter-wid
 			    <div>
 			    	<ul class="nav nav-list well">
 	                    <li class="nav-header">Critères</li>
-	                    <li <?php if('Tous'==$this->filtreCategorie) { echo 'class="active"';} ?>><a href="<?php echo $this->url_actuelle_categorie?>&categorie=Tous"><i class="icon-inbox"></i> Tous</a></li>
+	                    <li <?php if('Tous'==$this->filtreCategorie) { echo 'class="active"';} ?>><a href="<?php echo $this->url_actuelle_categorie?>&categorie=Tous"><i class="fa fa-inbox"></i> Tous</a></li>
 	                    <?php if(!empty($this->menu_categorie)){
 	                    foreach($this->menu_categorie as $k => $type) { ?>
-	                            <li <?php if($type['id_type_evenement']==$this->filtreCategorie) { echo 'class="active"';} ?>><a href="<?php echo $this->url_actuelle_categorie?>&categorie=<?php echo $type['id_type_evenement']; ?>"><i class="icon-inbox"></i> <?php echo $type['libelle']; ?><span class="badge badge-info nombre-sous-evenement"><?php echo $type['count']; ?></span></a></li>
+	                            <li <?php if($type['id_type_evenement']==$this->filtreCategorie) { echo 'class="active"';} ?>><a href="<?php echo $this->url_actuelle_categorie?>&categorie=<?php echo $type['id_type_evenement']; ?>"><i class="fa fa-inbox"></i> <?php echo $type['libelle']; ?><span class="badge badge-info nombre-sous-evenement"><?php echo $type['count']; ?></span></a></li>
 	                    <?php }} ?>
 	                    <li class="divider"></li>
 	                    <li class="nav-header">Rayon</li>
@@ -121,6 +121,6 @@ $this->inlineScript()->prependFile('/js/index.js')->prependFile('/js/twitter-wid
                     <p>Aucun résultat ne correspond à votre recherche.</p>
                 <?php } ?>
                     <div class="span3 offset6 lien-bottom">
-                         <a href="/evenement/ajouter"><i class="icon-plus"></i>Ajouter votre annonce</a>
+                         <a href="/evenement/ajouter"><i class="fa fa-plus"></i>Ajouter votre annonce</a>
                     </div>
                  </div>

@@ -89,7 +89,7 @@ function intToString(i){
         rightPanel :'<div style="float:right;">'+
             'De :<br><input type="text" class="input-small datepicker-from" required="required" pattern="^[0-3]?[0-9]\/[0-1]?[0-9]/[0-9]{4}$" title="20/10/2010"><br>'+
             'A :<br><input type="text" class="input-small datepicker-to" required="required" pattern="^[0-3]?[0-9]\/[0-1]?[0-9]/[0-9]{4}$" title="20/10/2010"><br>'+
-            '<a onclick="wsbGraph.datepicker.changePeriod();" href="#" class="btn btn-mini btn-success"><i class="icon- ui-icon-plus"></i> Valider</a>'+
+            '<a onclick="wsbGraph.datepicker.changePeriod();" href="#" class="btn btn-mini btn-success"><i class="fa fa- ui-fa fa-plus"></i> Valider</a>'+
           '</div>',
         head: [
           '<td class="datepickerBlock">',

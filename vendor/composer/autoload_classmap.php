@@ -2330,6 +2330,7 @@ return array(
     'PHPParser_TemplateLoader' => $vendorDir . '/nikic/php-parser/lib/PHPParser/TemplateLoader.php',
     'PHPParser_Unserializer' => $vendorDir . '/nikic/php-parser/lib/PHPParser/Unserializer.php',
     'PHPParser_Unserializer_XML' => $vendorDir . '/nikic/php-parser/lib/PHPParser/Unserializer/XML.php',
+    'PasswordReset' => $baseDir . '/app/models/PasswordReset.php',
     'Patchwork\\PHP\\Shim\\Iconv' => $vendorDir . '/patchwork/utf8/class/Patchwork/PHP/Shim/Iconv.php',
     'Patchwork\\PHP\\Shim\\Intl' => $vendorDir . '/patchwork/utf8/class/Patchwork/PHP/Shim/Intl.php',
     'Patchwork\\PHP\\Shim\\Mbstring' => $vendorDir . '/patchwork/utf8/class/Patchwork/PHP/Shim/Mbstring.php',
@@ -3129,5 +3130,6 @@ return array(
     'validators_contact' => $baseDir . '/app/validators/validators_contact.php',
     'validators_discussion' => $baseDir . '/app/validators/validators_discussion.php',
     'validators_editEvent' => $baseDir . '/app/validators/validators_editEvent.php',
+    'validators_editUser' => $baseDir . '/app/validators/validators_editUser.php',
     'validators_fileUpload' => $baseDir . '/app/validators/validators_fileUpload.php',
 );

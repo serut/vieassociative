@@ -20,21 +20,21 @@
                 <tr>
                   <td>L'équipe</td>
                   <td>7 postes déclarés</td>
-                  <td><a href="#"><i class="icon-chevron-down"></i> Modifier </a></td>
+                  <td><a href="#"><i class="fa fa-chevron-down"></i> Modifier </a></td>
                 </tr>
                 <tr>
                   <td>Nombre de membre :</td>
                   <td>237</td>
-                  <td><a href="#"><i class="icon-chevron-down"></i> Modifier </a></td>
+                  <td><a href="#"><i class="fa fa-chevron-down"></i> Modifier </a></td>
                 </tr>
                 <tr>
                   <td>Nombre d'employés :</td>
                   <td>16000</td>
-                  <td><a href="#"><i class="icon-chevron-down"></i> Modifier </a></td>
+                  <td><a href="#"><i class="fa fa-chevron-down"></i> Modifier </a></td>
                 </tr>
               </tbody>
             </table>
-            <p class="text-right"><a href="#"><i class="icon-plus"></i> Ajouter </a> les statistiques d'une autre année</p>
+            <p class="text-right"><a href="#"><i class="fa fa-plus"></i> Ajouter </a> les statistiques d'une autre année</p>
 
             </div>
         </div>

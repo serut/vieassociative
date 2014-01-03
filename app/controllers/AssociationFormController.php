@@ -149,7 +149,7 @@ class AssociationFormController  extends BaseController {
                 $result = $v->$item();
                 if(isset($result['success'])){
                     $update=array($item => $result['data'][$item]);
-                    $before = Association::find($id)->first()->$item;
+                    $before = Association::find($id)->$item;
                     $proposition = $result['data'][$item];
                 }
                 break;
@@ -158,7 +158,7 @@ class AssociationFormController  extends BaseController {
                 if(isset($result['success'])){
                     $boolean = ($result['data'][$item] == "true") ? 1 : 0; 
                     $update = array($item => $boolean);
-                    $before = Association::find($id)->first()->$item;
+                    $before = Association::find($id)->$item;
                     $proposition = $boolean;
                 }
                 break;

@@ -7,9 +7,10 @@
 @section('form')
 	<p>{{Lang::get('association/modal_form/general-informations.name')}}</p>
 	{{ Form::open(array('class'=> 'form-horizontal form-modal','data-validate'=>'our-parsey')) }}
-		TODO
+		{{SiteHelpers::create_datepicker()}}
     {{ Form::close() }}
     <script type="text/javascript">
   		$(".form-modal").attr('parsley',"true").parsley(confParsley);
+  		$('#datepicker').datepicker();
     </script>
 @stop

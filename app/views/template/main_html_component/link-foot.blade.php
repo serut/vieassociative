@@ -16,7 +16,7 @@
 	<script src="http://cdn.vieassociative.fr/js/vendor/parsley.min.js" async="true"></script>
 	<script src="http://cdn.vieassociative.fr/js/vendor/tmpl.min.js" async="true"></script>
 	<script src="http://cdn.vieassociative.fr/js/vendor/masonry.min.js" async="true"></script>
-	<script src="http://cdn.vieassociative.fr/js/vendor/bootstrap-datetimepicker.min.js" async="true"></script>
+	<script src="http://cdn.vieassociative.fr/pluggin/bootstrap-datepicker/bootstrap-datepicker.js" async="true"></script>
 	<script src="http://cdn.vieassociative.fr/js/vendor/jquery.hotkeys.js"></script>
 	<script src="http://cdn.vieassociative.fr/js/vendor/toastr.min.js"></script>
 @else
@@ -30,7 +30,7 @@
 	<script src="/js/vendor/parsley.min.js"></script>
 	<script src="/js/vendor/tmpl.min.js"></script>
 	<script src="/js/vendor/masonry.min.js"></script>
-	<script src="/js/vendor/bootstrap-datetimepicker.min.js"></script>
+	<script src="/pluggin/bootstrap-datepicker/bootstrap-datepicker.js"></script>
 	<script src="/js/vendor/jquery.hotkeys.js"></script>
 	<script src="/js/vendor/toastr.min.js"></script>
 @endif

@@ -64,7 +64,7 @@
                 <hr>
                 <div>
                     <label class="checkbox justify">
-                        <input name="approuve" type="checkbox" required="required">{{Lang::get('association/form_create.notice_part_1')}}<a target="_blank" href="/info/condition">{{Lang::get('association/form_create.notice_part_link')}}</a>{{Lang::get('association/form_create.notice_part_2')}}
+                        <input name="approuve" type="checkbox" required="required">{{Lang::get('association/form_create.notice_part_1')}}<a target="_blank" href="{{URLSubdomain::to('www','/info/condition')}}">{{Lang::get('association/form_create.notice_part_link')}}</a>{{Lang::get('association/form_create.notice_part_2')}}
 
                         {{Lang::get('association/form_create.notice_create_association')}}
                     </label>

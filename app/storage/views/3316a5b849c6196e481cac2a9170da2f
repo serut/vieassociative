@@ -63,7 +63,7 @@
                 <hr>
                 <div>
                     <label class="checkbox justify">
-                        <input name="approuve" type="checkbox" required="required"><?php echo Lang::get('association/form_create.notice_part_1'); ?><a target="_blank" href="/info/condition"><?php echo Lang::get('association/form_create.notice_part_link'); ?></a><?php echo Lang::get('association/form_create.notice_part_2'); ?>
+                        <input name="approuve" type="checkbox" required="required"><?php echo Lang::get('association/form_create.notice_part_1'); ?><a target="_blank" href="<?php echo URLSubdomain::to('www','/info/condition'); ?>"><?php echo Lang::get('association/form_create.notice_part_link'); ?></a><?php echo Lang::get('association/form_create.notice_part_2'); ?>
 
                         <?php echo Lang::get('association/form_create.notice_create_association'); ?>
                     </label>

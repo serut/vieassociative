@@ -6,10 +6,11 @@
 <?php $__env->startSection('form'); ?>
 	<p><?php echo Lang::get('association/modal_form/general-informations.name'); ?></p>
 	<?php echo Form::open(array('class'=> 'form-horizontal form-modal','data-validate'=>'our-parsey')); ?>
-		TODO
+		<?php echo SiteHelpers::create_datepicker(); ?>
     <?php echo Form::close(); ?>
     <script type="text/javascript">
   		$(".form-modal").attr('parsley',"true").parsley(confParsley);
+  		$('#datepicker').datepicker();
     </script>
 <?php $__env->stopSection(); ?>
 

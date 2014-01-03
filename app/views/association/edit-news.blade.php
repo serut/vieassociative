@@ -101,6 +101,8 @@
       $('#published_at').parent().datetimepicker({
           language: 'pt-BR'
         });
+        $('#published_at').datepicker();
+      
       });
     </script>
 @stop

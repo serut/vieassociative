@@ -89,7 +89,7 @@
 			xsize = $pcnt.width(),
 			ysize = $pcnt.height();
 		
-			$('#jcrop_img').Jcrop({
+			var jcrop_img = $('#jcrop_img').Jcrop({
 				onChange: updateCoords,
 				onSelect: updateCoords,
 				aspectRatio: xsize / ysize
@@ -98,9 +98,18 @@
 				var bounds = this.getBounds();
 				boundx = bounds[0];
 				boundy = bounds[1];
+				var coord = [
+					Math.round(Math.random() * bounds[0]),
+					Math.round(Math.random() * bounds[1]),
+					Math.round(Math.random() * bounds[0]),
+					Math.round(Math.random() * bounds[1])
+				];
+				this.setSelect(coord);
+
 				// Store the API in the jcrop_api variable
 				jcrop_api = this;
 			});
+			jcrop_img.setSelect(getRandom());
 			function updateCoords(c)
 			{
 				if (parseInt(c.w) > 0){
@@ -119,6 +128,13 @@
 				$('#w').val(c.w);
 				$('#h').val(c.h);
 			};
+
+			// Use the API to find cropping dimensions
+			// Then generate a random selection
+			// This function is used by setSelect and animateTo buttons
+			// Mainly for demonstration purposes
+			function getRandom() {
+			};
 		});
 
 
@@ -134,7 +150,6 @@
 			}
 		})
 		
-
 	</script>
 @stop
 

@@ -1,6 +1,6 @@
 <div class="media social-box">
 	<a href="#" class="pull-left social-users-avatars">
-	<img alt="Events" src="http://cesarlab.com/templates/social/assets/img/pages/social-timeline/calendar.png" class="media-object">
+		<img src="{{$association->getLogo()}}" style="width: 48px;">
 	</a>
 	<div class="media-body social-body">
 		<h4 class="media-heading">Upcomming Events ( To remake )</h4>
@@ -15,11 +15,11 @@
 					<table border="0" style="margin-bottom: 5px;">
 						<tbody>
 						<tr>
-							<td><i class="icon-calendar"></i></td>
+							<td><i class="fa fa-calendar"></i></td>
 							<td>Sunday at 8:00am</td>
 						</tr>
 						<tr>
-							<td style="vertical-align: top;"><i class="icon-map-marker"></i>
+							<td style="vertical-align: top;"><i class="fa fa-map-marker"></i>
 							</td>
 							<td>Convetion Center. San Francisco, CA</td>
 						</tr>
@@ -42,11 +42,11 @@
 					<table border="0" style="margin-bottom: 5px;">
 						<tbody>
 						<tr>
-							<td><i class="icon-calendar"></i></td>
+							<td><i class="fa fa-calendar"></i></td>
 							<td>Sunday at 8:00am</td>
 						</tr>
 						<tr>
-							<td style="vertical-align: top;"><i class="icon-map-marker"></i></td>
+							<td style="vertical-align: top;"><i class="fa fa-map-marker"></i></td>
 							<td>Convetion Center. San Francisco, CA</td>
 						</tr>
 						</tbody>
@@ -68,11 +68,11 @@
 					<table border="0" style="margin-bottom: 5px;">
 						<tbody>
 						<tr>
-							<td><i class="icon-calendar"></i></td>
+							<td><i class="fa fa-calendar"></i></td>
 							<td>Sunday at 8:00am</td>
 						</tr>
 						<tr>
-							<td style="vertical-align: top;"><i class="icon-map-marker"></i></td>
+							<td style="vertical-align: top;"><i class="fa fa-map-marker"></i></td>
 							<td>Convetion Center. San Francisco, CA</td>
 						</tr>
 						</tbody>

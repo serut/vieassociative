@@ -7,10 +7,10 @@
     	<div>
 	    	<h3 class="head">La connexion en 1 clic, sécurisé et rapide !</h3>
 	    	En développement
-            <a href="/membre/connexion/facebook"><i class="connection-icon connection-icon-facebook"></i></a>
-            <a href="/membre/connexion/google"><i class="connection-icon connection-icon-google"></i></a>
-            <a href="/membre/connexion/orange"><i class="connection-icon connection-icon-orange"></i></a>
-            <a href="/membre/connexion/hotmail"><i class="connection-icon connection-icon-hotmail"></i></a>
+            <a href="/membre/connexion/facebook"><i class="connection-icon connection-fa fa-facebook"></i></a>
+            <a href="/membre/connexion/google"><i class="connection-icon connection-fa fa-google"></i></a>
+            <a href="/membre/connexion/orange"><i class="connection-icon connection-fa fa-orange"></i></a>
+            <a href="/membre/connexion/hotmail"><i class="connection-icon connection-fa fa-hotmail"></i></a>
             <br>
             <span>En cliquant sur un lien ci dessus, je reconnais avoir pris connaissance des <a target="_blank" href="/info/condition">CGU</a></span>
     	</div>

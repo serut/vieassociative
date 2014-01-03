@@ -19,64 +19,64 @@
                 <tr>
                   <td>Nom de l'association sous lequel le public vous identifie</td>
                   <td>{{{$association->name}}}</td>
-                  <td><a href="#" data-modal-form="name"><i class="icon-pencil"></i></a></td>
+                  <td><a href="#" data-modal-form="name"><i class="fa fa-pencil"></i></a></td>
                 </tr>
                 <tr>
                   <td>Nom de l'association déposé en préfecture</td>
                   <td>{{{$association->legal_name}}}</td>
-                  <td><a href="#" data-modal-form="legal_name"><i class="icon-pencil"></i></a></td>
+                  <td><a href="#" data-modal-form="legal_name"><i class="fa fa-pencil"></i></a></td>
                 </tr>
                 <tr>
                   <td>Acronyme</td>
                   <td>{{{$association->acronym}}}</td>
-                  <td><a href="#" data-modal-form="acronym"><i class="icon-pencil"></i></td>
+                  <td><a href="#" data-modal-form="acronym"><i class="fa fa-pencil"></i></td>
                 </tr>
                 <tr>
                   <td>But</td>
                   <td>{{{$association->goal}}}</td>
-                  <td><a href="#" data-modal-form="goal"><i class="icon-pencil"></i></a><br></td>
+                  <td><a href="#" data-modal-form="goal"><i class="fa fa-pencil"></i></a><br></td>
                 </tr>
                 <tr>
                   <td>Date de création</td>
                   <td>{{$association->official_date_creation}}</td>
-                  <td><a href="#" data-modal-form="official_date_creation"><i class="icon-pencil"></i></a></td>
+                  <td><a href="#" data-modal-form="official_date_creation"><i class="fa fa-pencil"></i></a></td>
                 </tr>
                 <tr>
                   <td>Site web </td>
                   <td>{{{$association->website_url}}}</td>
-                  <td><a href="#" data-modal-form="website_url"><i class="icon-pencil"></i></a></td>
+                  <td><a href="#" data-modal-form="website_url"><i class="fa fa-pencil"></i></a></td>
                 </tr>
                 <tr>
                   <td>Siege</td>
                   <td>{{{$association->headquarter}}}</td>
-                  <td><a href="#" data-modal-form="headquarter"><i class="icon-pencil"></i></a></td>
+                  <td><a href="#" data-modal-form="headquarter"><i class="fa fa-pencil"></i></a></td>
                 </tr>
                 <tr>
                   <td>Association reconnue d'utilité publique </td>
                   <td>
 
                   {{{$association->admitted_public_utility_display()}}}</td>
-                  <td><a href="#" data-modal-form="admitted_public_utility"><i class="icon-pencil"></i></td>
+                  <td><a href="#" data-modal-form="admitted_public_utility"><i class="fa fa-pencil"></i></td>
                 </tr>
                 <tr>
                   <td>Statuts de l'association </td>
                   <td>
 
                   </td>
-                  <td><a href="#" data-modal-form="statuts"><i class="icon-pencil"></i></td>
+                  <td><a href="#" data-modal-form="statuts"><i class="fa fa-pencil"></i></td>
                 </tr>
                 <tr>
                   <td>Réglement intérieur </td>
                   <td>
 
                   </td>
-                  <td><a href="#" data-modal-form="internal_regulation"><i class="icon-pencil"></i></td>
+                  <td><a href="#" data-modal-form="internal_regulation"><i class="fa fa-pencil"></i></td>
                 </tr>
                 <tr>
                   <td>Adresse de contact </td>
                   <td>
                   {{{$association->contact_adress}}}</td>
-                  <td><a href="#" data-modal-form="contact_adress"><i class="icon-pencil"></i></td>
+                  <td><a href="#" data-modal-form="contact_adress"><i class="fa fa-pencil"></i></td>
                 </tr>
               </tbody>
             </table>

@@ -20,11 +20,11 @@ $this->inlineScript()->prependFile('/js/index.js')->prependFile('/js/twitter-wid
                                 <br>
                                 <div class="info">
                                     <ul class="nav ">
-                                        <li><i class="icon-user hidden-tablet"></i><small><i>Posté par : 
+                                        <li><i class="fa fa-user hidden-tablet"></i><small><i>Posté par : 
                                                     <?php
                                                         echo $resultat['name'];
                                                     ?></i></small></li>
-                                        <li><i class="icon-time hidden-tablet"></i><small><i>Ajoute :  <?php echo $resultat['date_ajout'] ?></i></small></li>
+                                        <li><i class="fa fa-time hidden-tablet"></i><small><i>Ajoute :  <?php echo $resultat['date_ajout'] ?></i></small></li>
                                     </ul>
                                 </div>
                             </div>
@@ -55,7 +55,7 @@ $this->inlineScript()->prependFile('/js/index.js')->prependFile('/js/twitter-wid
                         <div class="accordion-group">
                             <div class="accordion-head">
                                 <ul class="nav nav-pills nav-stacked" style="margin-bottom: 0px;">
-                                    <li><a href="#ville" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle"><i class="icon-chevron-right "></i> Lieu : <?php echo $resultat['nom_de_la_ville']; ?></a></li>
+                                    <li><a href="#ville" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle"><i class="fa fa-chevron-right "></i> Lieu : <?php echo $resultat['nom_de_la_ville']; ?></a></li>
                                 </ul>
                             </div>
                             <div class="accordion-body collapse in" id="ville">

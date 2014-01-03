@@ -1,7 +1,7 @@
 <div class="media social-box">
 	
 	<a href="#" class="pull-left social-users-avatars">
-	<img alt="Events" src="http://cesarlab.com/templates/social/assets/img/pages/social-timeline/calendar.png" class="media-object">
+		<img src="{{$association->getLogo()}}" style="width: 48px;">
 	</a>
 	
 	

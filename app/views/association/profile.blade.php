@@ -3,24 +3,9 @@
 
 @set_true $large_centred 
 @section('large-content')
-	<?php
-		if(empty($association->cover_img) && empty($association->logo_img)){
-			$profile = array(
-				//'cover'=>'https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-frc1/1005953_565503096840164_574065106_n.png',
-				//'logo'=>'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash4/c3.0.175.175/s160x160/1005401_561831680540639_154619862_a.png',
-				'cover'=>'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-prn2/969320_10152016532606124_916290804_n.jpg',
-				'logo'=>'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn1/c26.26.328.328/s160x160/378926_10150600500671124_496920089_n.jpg',
-			);
-		}else{
-			$profile = array(
-				'cover'=>"http://img.vieassociative.fr/".$prefix.$association->id.'/'.$association->cover_img.'-940x350.jpg',
-				'logo'=>"http://img.vieassociative.fr/".$prefix.$association->id.'/'.$association->logo_img.'-200x200.jpg',
-			);
-		}
-	?>
 	<section class="profile unbackground">
-		<img src="{{$profile['cover']}}" class="cover">
-		<img src="{{$profile['logo']}}" class="logo">
+		<img src="{{$association->getCover()}}" class="cover">
+		<img src="{{$association->getLogo()}}" class="logo">
 		<div>
 			<div>
 				<div class="span17 head">
@@ -91,7 +76,7 @@
 									</div>
 									<div class="span5">
 										<p>Actualités <b>Facebook</b></p>
-										<i class="icon-chevron-right"></i>
+										<i class="fa fa-chevron-right"></i>
 										<img src="/img/items/like.png">
 									</div>
 								</div>
@@ -184,7 +169,7 @@
 								$posts = array("single-photo","video","event","multiple-photo","link");
 							?>
 							@foreach($posts as $p )
-								@include('association.wall.'.$p, array('p'=>$p))
+								@include('association.wall.'.$p, array('p'=>$p,'association'=>$association))
 							@endforeach
 						</div>
 				 	</div>

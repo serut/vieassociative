@@ -17,14 +17,14 @@
 		<div class="row">
 			<div class="dropzone drag-and-drop span22">
 				<div class="text-center">
-					<i class="icon-plus"></i><br>
+					<i class="fa fa-plus"></i><br>
 					<span>Glissez déposez vous fichier ici - ou cliquez moi dessus</span>
 				</div>
 				<input type="file" name="files[]" multiple id="selectFile">
 			</div>
 			<div class="dropzone no-drag-and-drop span22">
 				<div class="text-center">
-					<i class="icon-plus"></i><br>
+					<i class="fa fa-plus"></i><br>
 					<span>Cliquez ici pour selectionner les fichiers à envoyer</span>
 				</div>
 				<input type="file" name="files[]" multiple id="selectFile">

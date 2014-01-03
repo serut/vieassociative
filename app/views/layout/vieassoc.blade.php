@@ -42,7 +42,7 @@
                             @else
                                 Ajouter une association
                             @endif
-                            " href="#"><i class="icon-user"></i> Gerer mes associations<b class="caret"></b></a>
+                            " href="#"><i class="fa fa-user"></i> Gerer mes associations<b class="caret"></b></a>
                             <div id="dropdown-association-toggle" class="dropdown-hide">
                                 <div class="dropdown-items">
                                     <div class="dropdown">
@@ -51,21 +51,21 @@
                                         <div class="dropdown-content">
                                             <div class="dropdown-sub">
                                                 <a href="/association/evenement/ajouter">
-                                                    <div class="icon"><i class="icon-plus"></i></div>
+                                                    <div class="icon"><i class="fa fa-plus"></i></div>
                                                     Gerer ses évènements
                                                 </a><br>
                                                 <a class="others" href="/association/evenement/ajouter">Ajouter un évènement</a><br>
                                             </div>
                                             <div class="dropdown-sub">
                                                 <a href="/image/gestion-image">
-                                                    <div class="icon"><i class="icon-tasks"></i></div>
+                                                    <div class="icon"><i class="fa fa-tasks"></i></div>
                                                     Gestion des fichiers envoyés 
                                                 </a><br>
                                                 <a class="others">You have <strong>8</strong> pending tasks</a>
                                             </div>
                                             <div class="dropdown-sub">
                                                 <a href="/association/profil">
-                                                    <div class="icon"><i class="icon-tasks"></i></div>
+                                                    <div class="icon"><i class="fa fa-tasks"></i></div>
                                                     Gestion du profil
                                                 </a><br>
                                                 <a class="others">Modifier le profil</a>
@@ -90,7 +90,7 @@
                         </li>
                         
                         <li class="dropdown">
-                            <a id="dropdown-user" class="dropdown-toggle" data-description="Bienvenue {{Auth::user()->username}}" href="#"><i class="icon-user"></i> Gerer mon profil<b class="caret"></b></a>
+                            <a id="dropdown-user" class="dropdown-toggle" data-description="Bienvenue {{Auth::user()->username}}" href="#"><i class="fa fa-user"></i> Gerer mon profil<b class="caret"></b></a>
                             <div id="dropdown-user-toggle" class="dropdown-hide">
                                 <div class="dropdown-items">
                                     <div class="dropdown">
@@ -98,14 +98,14 @@
                                         <div class="dropdown-content">
                                             <div class="dropdown-sub">
                                                 <a href="/">
-                                                    <div class="icon"><i class="icon-plus"></i></div>
+                                                    <div class="icon"><i class="fa fa-plus"></i></div>
                                                     Rechercher des évènements
                                                 </a><br>
                                                 <a class="others">View your profile</a>
                                             </div>
                                             <div class="dropdown-sub">
                                                 <a href="/membre/profil">
-                                                    <div class="icon"><i class="icon-user"></i></div>
+                                                    <div class="icon"><i class="fa fa-user"></i></div>
                                                     Mon profil
                                                 </a><br>
                                                 <a class="others">You have <strong>17</strong> new messages</a>

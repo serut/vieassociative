@@ -36,11 +36,10 @@
 	                    <li class="dropdown">
 	                    	<a data-toggle="dropdown" class="dropdown-toggle" href="#" style="margin-bottom: 5px;">
 	                    	<img src="/img/items/user-thumb.jpg" style="margin-left: 0px; width: 28px; height: 28px;margin-top:-5px;margin-right:10px;">
-	                    	<span class="hidden-phone"> Serutan  <b class="caret"></b></span>
+	                    	<span class="hidden-phone"> {{Auth::user()->username}}  <b class="caret"></b></span>
 	                    	</a>
 	                        <ul class="dropdown-menu">
 	                            <li><a href="{{URLSubdomain::to('www','/user/1/edit')}}">Options</a></li>
-	                            <li><a href="{{URLSubdomain::to('www','/user/1-dfgfdg')}}">Profils</a></li>
 	                            <li><a href="{{URLSubdomain::to('www','/user/logout')}}">Deconnexion</a></li>
 	                        </ul>
 	                	</li>

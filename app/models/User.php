@@ -106,4 +106,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         return $result;
     }
     */
+
+    public function getAvatar(){
+        if(empty($this->avatar_img)){
+            return "/img/items/user-thumb.jpg";
+        }
+        return $this->avatar_img;
+    }
 }

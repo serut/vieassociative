@@ -32,15 +32,8 @@
 		* @return View The wall of the association
 	*/
 	public function getProfile($idAssoc) {
-		//The prefix of images
-        if(App::environment() == "prod"){
-            $prefix = 'a';
-        }else{
-            $prefix = 'deva';
-        }
 		return View::make('association.profile')
 			->with('association',Association::find($idAssoc))
-			->with('prefix',$prefix)
 			->with('newsFeed',NewsFeed::get($idAssoc));
 	}
 	

@@ -31,7 +31,7 @@
                         <td><?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($v->updated_at))->formatLocalized('%A %d %B %Y %H:%I'); ?></td>
                         <td><?php echo $v->link; ?></td>
                         <?php if($is_admin): ?>
-                        <td><a href="#"><i class="icon-remove"></i></a></td>
+                        <td><a href="#"><i class="fa fa-remove"></i></a></td>
                         <?php endif; ?>
                     </tr>
                 </tbody>

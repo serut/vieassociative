@@ -47,7 +47,9 @@
                 Route::group(array('before' => 'auth'), function(){
                     Route::get('logout', 'LoginController@getLogout');
                     Route::get('{id}/edit', 'UserController@getEdit')->where('id', '[0-9]+');
-                    Route::get('{id}-{name}', 'UserController@getProfil')->where('id', '[0-9]+')->where('name', '[a-z-]+');
+                    Route::get('{id}/form/{item}', 'UserController@getForm')->where('id', '[0-9]+')->where('item', '[a-z-_]+');
+                    
+                    Route::post('{id}/form/{item}', 'UserController@postForm')->where('id', '[0-9]+')->where('item', '[a-z-_]+');
                 });
             });
             Route::get('sitemap.xml', 'SitemapController@getSitemap');

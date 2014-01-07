@@ -116,6 +116,11 @@
 					var rx = xsize / c.w;
 					var ry = ysize / c.h;
 
+					// Fix : The image have a width max of 890
+					if(rx > 890){
+						ry = 890*ry/rx;
+						rx = 890;
+					}
 					$pimg.css({
 						width: Math.round(rx * boundx) + 'px',
 						height: Math.round(ry * boundy) + 'px',

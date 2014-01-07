@@ -1,7 +1,7 @@
 <?php 
 //	""=>"",
 return array(
-	"add_association_head"=>"Crée ton association",
+	"add_association_head"=>"Ajoute ton association",
 	"add_association_text"=>"Dolor sit amet, consectetur adipiscing elit. Nulla in ligula risus. Nullam aliquet ullamcorper arcu, interdum bibendum orci dictum id. In et velit a nunc fermentum suscipit. Phasellus dui libero, sol !",
 	"add_association_btn"=>"Continuer",
 	"facebook_head"=>"Facebook",

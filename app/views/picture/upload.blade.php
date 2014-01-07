@@ -40,7 +40,7 @@
 				               <div class="b-thumb__preview__pic"></div>
 				            </div>
 
-				            <div data-fileapi="remove" class="pull-right"><i class="fa fa-trash" title="Supprimer le fichier"></i></div>
+				            <div data-fileapi="remove" class="pull-right"><i class="fa fa-trash-o" title="Supprimer le fichier"></i></div>
 				            <% if( /^image/.test(type) ){ %>
 				               <br><div data-fileapi="rotate.cw" class="pull-right"><i class="fa fa-repeat" title="Faire pivoter l'image"></i></div>
 				            <% } %>
@@ -118,18 +118,18 @@
                 <tr>
                 	<td class="item-option">
 		                <a class="remove" href="#" onclick="imgDelete(this);return false;">
-							<i class="fa fa-trash"></i>
+							<i class="fa fa-trash-o"></i>
 						</a>
 					</td>
 	                <td class="item-option">
 						<a class="fancybox" href="${url_img}" rel="/">
-							<i class="fa fa-zoom-in"></i>
+							<i class="fa fa-search-plus"></i>
 						</a>
 					</td>
 					@if($hasNextStep)
 					<td class="item-option">
 						<a class="select" href="${url_crop}">
-							<i class="fa fa-share-alt"></i>
+							<i class="fa fa-share"></i>
 						</a>
 					</td>
 					@endif

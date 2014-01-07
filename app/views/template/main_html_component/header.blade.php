@@ -3,7 +3,8 @@
 		<div class="row">
 		    <div class="span10">
 				<a id="logo" href="{{URLSubdomain::to('www','')}}">
-					<img alt="Vie Associative" src="/img/logo.png">
+					<img alt="Vie Associative" src="/img/logo.png" class="hidden-phone">
+					<img alt="Vie Associative" src="/img/logo-small.png" class="visible-phone">
 				</a>
 			</div>
 	        <nav id="menu" class="span14 align-right">

@@ -109,7 +109,7 @@
 				// Store the API in the jcrop_api variable
 				jcrop_api = this;
 			});
-			
+
 			function updateCoords(c)
 			{
 				if (parseInt(c.w) > 0){
@@ -118,8 +118,9 @@
 
 					// Fix : The image have a width max of 890
 					if(rx*boundx > 890){
-						ry = 890*ry/rx;
-						rx = 890;
+						var newrx = 890/boundx;
+						ry = newrx*ry/rx;
+						rx = newrx;
 					}
 					$pimg.css({
 						width: Math.round(rx * boundx) + 'px',

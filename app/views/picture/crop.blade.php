@@ -109,7 +109,7 @@
 				// Store the API in the jcrop_api variable
 				jcrop_api = this;
 			});
-			jcrop_img.setSelect(getRandom());
+			
 			function updateCoords(c)
 			{
 				if (parseInt(c.w) > 0){
@@ -117,7 +117,7 @@
 					var ry = ysize / c.h;
 
 					// Fix : The image have a width max of 890
-					if(rx > 890){
+					if(rx*boundx > 890){
 						ry = 890*ry/rx;
 						rx = 890;
 					}

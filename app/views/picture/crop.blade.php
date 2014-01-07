@@ -60,8 +60,13 @@
 		padding: 6px;
 	}
 	#preview-pane .preview-container {
+		@if($x > 890)
+		width: 890px;
+		height: {{ceil(890*$y/$x)}}px;
+		@else
 		width: {{$x}}px;
 		height: {{$y}}px;
+		@endif
 		overflow: hidden;
 	}
 </style>
@@ -98,6 +103,7 @@
 				var bounds = this.getBounds();
 				boundx = bounds[0];
 				boundy = bounds[1];
+
 				var coord = [
 					Math.round(Math.random() * bounds[0]),
 					Math.round(Math.random() * bounds[1]),
@@ -115,13 +121,7 @@
 				if (parseInt(c.w) > 0){
 					var rx = xsize / c.w;
 					var ry = ysize / c.h;
-
-					// Fix : The image have a width max of 890
-					if(rx*boundx > 890){
-						var newrx = 890/boundx;
-						ry = newrx*ry/rx;
-						rx = newrx;
-					}
+					console.log(rx * boundx);
 					$pimg.css({
 						width: Math.round(rx * boundx) + 'px',
 						height: Math.round(ry * boundy) + 'px',
@@ -133,13 +133,6 @@
 				$('#y').val(c.y);
 				$('#w').val(c.w);
 				$('#h').val(c.h);
-			};
-
-			// Use the API to find cropping dimensions
-			// Then generate a random selection
-			// This function is used by setSelect and animateTo buttons
-			// Mainly for demonstration purposes
-			function getRandom() {
 			};
 		});
 

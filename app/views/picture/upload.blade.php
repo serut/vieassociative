@@ -18,14 +18,14 @@
 						<div class="dropzone drag-and-drop span22">
 							<div class="text-center">
 								<i class="fa fa-plus"></i><br>
-								<span>Glissez déposez vous fichier ici - ou cliquez moi dessus</span>
+								<span>Glissez déposez vous images ici - ou cliquez moi dessus</span>
 							</div>
-							<input type="file" name="files[]" multiple id="selectFile">
+							<input type="file" name="files[]" multiple id="selectFile" accept="image/*">
 						</div>
 						<div class="dropzone no-drag-and-drop span22">
 							<div class="text-center">
 								<i class="fa fa-plus"></i><br>
-								<span>Cliquez ici pour selectionner les fichiers à envoyer</span>
+								<span>Cliquez ici pour selectionner les images à envoyer</span>
 							</div>
 							<input type="file" name="files[]" multiple id="selectFile">
 						</div>
@@ -41,9 +41,11 @@
 				            </div>
 
 				            <div data-fileapi="remove" class="pull-right"><i class="fa fa-trash-o" title="Supprimer le fichier"></i></div>
+							@if(App::environment() != "prod")
 				            <% if( /^image/.test(type) ){ %>
 				               <br><div data-fileapi="rotate.cw" class="pull-right"><i class="fa fa-repeat" title="Faire pivoter l'image"></i></div>
 				            <% } %>
+				            @endif
 				            </div>
 				            <div class="b-thumb__name"><%-name%></div>
 				            <div class="b-thumb__progress progress progress-striped active"><div class="bar"></div></div>
@@ -151,6 +153,7 @@
 			url: "{{URLSubdomain::to('association','/upload')}}",
 			data: { 'session-id': 123 }, // data with GET
 			paramName: 'filedata',
+            accept: 'image/*',
 			multiple: true,
 			chunkSize: 2 * FileAPI.MB,
 			chunkUploadRetry: 3,

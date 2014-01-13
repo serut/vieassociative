@@ -17,16 +17,6 @@
             <table class="table table-striped">
               <tbody>
                 <tr>
-                  <td>Image de couverture</td>
-                  <td></td>
-                  <td><a href="/{{$association->id}}/edit/file/{{$association->id_folder}}/940x350-cover"><i class="fa fa-pencil"></i></a></td>
-                </tr>
-                <tr>
-                  <td>Logo</td>
-                  <td></td>
-                  <td><a href="/{{$association->id}}/edit/file/{{$association->id_folder}}/200x200-logo"><i class="fa fa-pencil"></i></a></td>
-                </tr>
-                <tr>
                   <td>Niveau de protection du panel d'administration</td>
                   <td>N'importe qui peut proposer une modification.<br> Une validation de la modération est requis.</td>
                   <td><a href="#" data-modal-form="association_protection"><i class="fa fa-remove"></i> Désactiver </a></td>

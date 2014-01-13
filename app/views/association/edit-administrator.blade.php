@@ -1,8 +1,8 @@
 @extends('template.theme')
 
 
-@set_true $main_and_aside 
-@section('main-content')
+@set_true $small_centred
+@section('small-content')
     <section>
         <div>
             <ul class="breadcrumb">
@@ -75,7 +75,7 @@
                             'label'=>Lang::get('association/edit/administrator.label_admin_mail'),
                             'form' => array(
                                 'placeholder'=>Lang::get('association/edit/administrator.placeholder_admin_mail'),
-                                'class' => 'input-xlarge',
+                                'class' => 'input-large',
                                 'data-original-title'=>Lang::get('association/edit/administrator.tooltip_admin_mail'),
                                 'data-type'=>"email",
                             )
@@ -88,14 +88,13 @@
                             <a class="btn-vie-assoc" type="button" onclick="$('#link').val($(this).text());">{{Lang::get('association/form_create.link_one')}}</a>
                             <a class="btn-vie-assoc" type="button" onclick="$('#link').val($(this).text());">{{Lang::get('association/form_create.link_two')}}</a>
                             <a class="btn-vie-assoc" type="button" onclick="$('#link').val($(this).text());">{{Lang::get('association/form_create.link_three')}}</a>
-                            <a class="btn-vie-assoc" type="button" onclick="$('#link').val($(this).text());">{{Lang::get('association/form_create.link_four')}}</a>
                         </p>
                         @input = array(
                             'id'=>"link",
                             'label'=>Lang::get('association/form_create.label_link'),
                             'form' => array(
                                 'placeholder'=>Lang::get('association/form_create.placeholder_link'),
-                                'class' => 'input-xlarge',
+                                'class' => 'input-large',
                                 'data-original-title'=>Lang::get('association/form_create.tooltip_link'),
                                 'data-maxlength'=>"30",
                                 'required'=>"required",

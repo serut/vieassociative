@@ -158,14 +158,6 @@ class SiteHelpers{
 	                <a class="btn" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
 	              </div>
 	              <div class="btn-group">
-	                    <a class="btn dropdown-toggle" data-toggle="dropdown" title="Hyperlink"><i class="fa fa-link"></i></a>
-	                    <div class="dropdown-menu">
-	                        <input class="span4" placeholder="URL" type="text" data-edit="createLink"/>
-	                        <button class="btn" type="button">Add</button>
-	                    </div>
-	                    <a class="btn" data-edit="unlink" title="Remove Hyperlink"><i class="fa fa-cut"></i></a>
-	              </div>
-	              <div class="btn-group">
 	                <a class="btn" data-edit="insertunorderedlist" title="Bullet list"><i class="fa fa-list-ul"></i></a>
 	                <a class="btn" data-edit="insertorderedlist" title="Number list"><i class="fa fa-list-ol"></i></a>
 	                <a class="btn" data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="fa fa-outdent"></i></a>
@@ -174,23 +166,17 @@ class SiteHelpers{
                 if($text){
 	              $txt .='
 	              <div class="btn-group">
-	                <a class="btn" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
+	                <a class="btn btn-info" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
 	                <a class="btn" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
 	                <a class="btn" data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
 	                <a class="btn" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
 	              </div>
 	              <div class="btn-group">
-	                <a class="btn" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>
-	                <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
-	              </div>
-	              <div class="btn-group">
-	                <a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="fa fa-undo"></i></a>
-	                <a class="btn" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="fa fa-repeat"></i></a>
-	              </div>
-	              <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="">';
+	                <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="">
+	              </div>';
 				}
 				$txt.='</div>
-	            <div class="wysiwyg-editor" data-name="'.$name.'">
+	            <div class="wysiwyg-editor" tab-index="2" data-name="'.$name.'">
 	              '.$value.'
 	            </div>
 	        </div>';

@@ -12,7 +12,6 @@
               <li class="active">Informations Generales</li>
             </ul>
             <h3 class="head">{{Lang::get('association/edit/general-informations.edit_association')}}</h3>
-            <p>{{Lang::get('association/edit.warn_possiblity_for_normal_user')}}</p>
 
             <table class="table table-striped">
               <tbody>
@@ -36,47 +35,39 @@
                   <td>{{{$association->goal}}}</td>
                   <td><a href="#" data-modal-form="goal"><i class="fa fa-pencil"></i></a><br></td>
                 </tr>
+                @if(App::environment() != "prod")
                 <tr>
                   <td>Date de création</td>
                   <td>{{$association->official_date_creation}}</td>
                   <td><a href="#" data-modal-form="official_date_creation"><i class="fa fa-pencil"></i></a></td>
                 </tr>
+                @endif
                 <tr>
                   <td>Site web </td>
                   <td>{{{$association->website_url}}}</td>
                   <td><a href="#" data-modal-form="website_url"><i class="fa fa-pencil"></i></a></td>
                 </tr>
+                @if(App::environment() != "prod")
                 <tr>
                   <td>Siege</td>
                   <td>{{{$association->headquarter}}}</td>
                   <td><a href="#" data-modal-form="headquarter"><i class="fa fa-pencil"></i></a></td>
                 </tr>
+                @endif
                 <tr>
                   <td>Association reconnue d'utilité publique </td>
-                  <td>
-
-                  {{{$association->admitted_public_utility_display()}}}</td>
+                  <td>{{{$association->admitted_public_utility_display()}}}</td>
                   <td><a href="#" data-modal-form="admitted_public_utility"><i class="fa fa-pencil"></i></td>
                 </tr>
                 <tr>
-                  <td>Statuts de l'association </td>
-                  <td>
-
-                  </td>
-                  <td><a href="#" data-modal-form="statuts"><i class="fa fa-pencil"></i></td>
+                  <td>Image de couverture</td>
+                  <td><img src="{{$association->getCover()}}" class="span4"></td>
+                  <td><a href="/{{$association->id}}/edit/file/{{$association->id_folder}}/940x350-cover"><i class="fa fa-pencil"></i></a></td>
                 </tr>
                 <tr>
-                  <td>Réglement intérieur </td>
-                  <td>
-
-                  </td>
-                  <td><a href="#" data-modal-form="internal_regulation"><i class="fa fa-pencil"></i></td>
-                </tr>
-                <tr>
-                  <td>Adresse de contact </td>
-                  <td>
-                  {{{$association->contact_adress}}}</td>
-                  <td><a href="#" data-modal-form="contact_adress"><i class="fa fa-pencil"></i></td>
+                  <td>Logo</td>
+                  <td><img src="{{$association->getLogo()}}" class="span4"></td>
+                  <td><a href="/{{$association->id}}/edit/file/{{$association->id_folder}}/200x200-logo"><i class="fa fa-pencil"></i></a></td>
                 </tr>
               </tbody>
             </table>

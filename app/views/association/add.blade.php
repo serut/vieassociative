@@ -1,8 +1,8 @@
 @extends('template.theme')
 
 
-@set_true $main_and_aside 
-@section('main-content')
+@set_true $large_centred 
+@section('large-content')
     <section>
         <div>
             <h3 class="head">{{Lang::get('association/form_create.head_add_association')}}</h3>

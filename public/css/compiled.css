@@ -1528,9 +1528,10 @@ footer a{color:#000}
 .ss a.youtube{background-position:0 -1840px}
 .ss a.youtube:hover{background-position:0 -1880px}
 .wysiwyg-editor{min-height:105px;height:auto;background-color:#fff;border-collapse:separate;border:1px solid #ccc;padding:4px;box-sizing:content-box;-webkit-box-shadow:rgba(0,0,0,0.0745098) 0 1px 1px 0 inset;box-shadow:rgba(0,0,0,0.0745098) 0 1px 1px 0 inset;border-top-right-radius:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;border-top-left-radius:3px;outline:none}
-#voiceBtn{width:20px;color:transparent;background-color:transparent;transform:scale(2, 2);-webkit-transform:scale(2, 2);-moz-transform:scale(2, 2);border:transparent;cursor:pointer;box-shadow:none;-webkit-box-shadow:none}
+#voiceBtn{width:20px;color:transparent;background-color:transparent;border:transparent;cursor:pointer;box-shadow:none;-webkit-box-shadow:none}
 div[data-role="editor-toolbar"]{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
 .btn-toolbar a *{color:#333}
+.btn-toolbar{margin-top:0}
 .username-field,.password-field,.email-field{padding:8px 0 7px 50px !important}
 .username-field{background:url("/img/to sprite/user.png") no-repeat scroll 0 0 transparent}
 .password-field{background:url("/img/to sprite/password.png") no-repeat scroll 0 0 transparent}
@@ -1538,7 +1539,7 @@ div[data-role="editor-toolbar"]{-webkit-user-select:none;-moz-user-select:none;-
 .controls-full-width input[type="text"],.controls-full-width input[type="password"],.controls-full-width textarea,.controls-full-width select{float:none;display:block;width:100%;height:100%;margin-left:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 .controls-textarea div{margin:0;line-height:normal;background-color:#fff}
 .nicEdit-pane div{line-height:normal}
-.spinner-container{-webkit-transition:opacity 1s ease-in-out;-moz-transition:opacity 1s ease-in-out;-ms-transition:opacity 1s ease-in-out;-o-transition:opacity 1s ease-in-out;transition:opacity 1s ease-in-out;-moz-opacity:.5;-khtml-opacity:.5;-webkit-opacity:.5;-ms-filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);opacity:.5;-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);filter:alpha(opacity=50);background-color:#fff;background-color:rgba(255,255,255,0.75);position:absolute;-webkit-border-radius:5px;-moz-border-radius:5px;-o-border-radius:5px;-ms-border-radius:5px;border-radius:5px;padding:0}
+.spinner-container{-webkit-transition:opacity 1s ease-in-out;-moz-transition:opacity 1s ease-in-out;-ms-transition:opacity 1s ease-in-out;-o-transition:opacity 1s ease-in-out;transition:opacity 1s ease-in-out;background-color:#fff;background-color:rgba(255,255,255,0.75);position:absolute;padding:0}
 .spinner-load{margin:-16px auto;position:relative;top:50%;background-image:url(/img/items/spinner.png);width:32px;height:32px;animation:loader-spinner .7s infinite linear;-webkit-animation:loader-spinner .7s infinite linear}
 @keyframes loader-spinner{0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)}}@-webkit-keyframes loader-spinner{0%{-webkit-transform:rotate(0deg)} 100%{-webkit-transform:rotate(360deg)}}.button{-webkit-transition-property:background,color;-moz-transition-property:background,color;-o-transition-property:background,color;transition-property:background,color;-webkit-transition-duration:.3s;-moz-transition-duration:.3s;-o-transition-duration:.3s;transition-duration:.3s;display:-moz-inline-stack;display:inline-block;vertical-align:middle;*vertical-align:auto;zoom:1;*display:inline;height:32px;line-height:32px;padding:0 25.6px;font-weight:300;font-size:14px;color:#666;text-shadow:0 1px 1px #fff;margin:0;text-decoration:none;text-align:center;background:#e9e9e9;white-space:nowrap}
 .button:hover,.button:active,.button:focus{color:#fff}

@@ -57,7 +57,8 @@
         case 'association': // For association.vieassociative.fr/*
             Route::get('/', function()
             {
-                return View::make('index.association');
+                return View::make('index.listing')
+                    ->with('association',Association::all());
             });
             Route::options('/upload', 'FileUploadController@fileUpload');
             Route::post('/upload', 'FileUploadController@postFileUpload');

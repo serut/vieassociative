@@ -1,8 +1,8 @@
 @extends('template.theme')
 
 
-@set_true $main_and_aside 
-@section('main-content')
+@set_true $large_centred 
+@section('large-content')
 		<section>
 				<div>
 						<ul class="breadcrumb">
@@ -11,8 +11,7 @@
 							<li class="active">Edition</li>
 						</ul>
 						<h3 class="head">{{Lang::get('association/edit.edit_association')}}</h3>
-						<p>{{Lang::get('association/edit.warn_possiblity_for_normal_user')}}</p>
-						@if(!empty($proposition))
+						@if(!$proposition->isEmpty())
 						<p>Modification en attente :</p>
 						@foreach($proposition as $p)
 						<div class="item">
@@ -50,12 +49,12 @@
 									<td>{{$association->nb_photos}} images</td>
 									<td><a href="edit/file/{{$association->id_folder}}"> Editer</a></td>
 								</tr>
+								@if(App::environment() != "prod")
 								<tr>
 									<td>La page Vie Associative</td>
 									<td></td>
 									<td><a href="edit/vieassociative-informations"> Editer</a></td>
 								</tr>
-								@if(App::environment() != "prod")
 								<tr>
 									<td>Historique</td>
 									<td>200 élements</td>

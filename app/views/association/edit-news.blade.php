@@ -14,10 +14,9 @@
           <li class="active">Editer une publication</li>
         </ul>
         <h3 class="head">{{Lang::get('association/edit/news.modify_news')}}</h3>
-        <hr>
         {{ Form::open(array('class'=> 'form-horizontal','data-validate'=>'our-parsey')) }}
 
-        <h5>Informations sur votre évènement :</h5>
+        <?php /*
             @input = array(
                 'id'=>"publish_later",
                 'name'=>"publish_later",
@@ -49,7 +48,8 @@
                 )@
                 {{SiteHelpers::create_input($input)}}
             </div>
-
+            */
+            ?>
             <div>{{Lang::get('association/edit/news.label_title')}}</div>
             @input = array(
                 'id'=>"title",
@@ -57,11 +57,12 @@
                 'form' => array(
                     'placeholder'=>Lang::get('association/edit/news.placeholder_title'),
                     'class' => 'input-xxlarge',
+                    'tabindex'=>'1'
                 )
             )@
             {{SiteHelpers::simple_input($input)}}
             <div>
-                <label>{{Lang::get('association/edit/news.label_text')}}</label>
+                <div>{{Lang::get('association/edit/news.label_text')}}</div>
                 {{SiteHelpers::add_textarea('text',$post->text, true, true)}}
             </div>
         <br>

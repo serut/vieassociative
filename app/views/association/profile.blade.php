@@ -22,6 +22,10 @@
 				</div>
 			</div>
 			<div class="clearfix"></div>
+
+
+
+			@if(App::environment() != "prod")
 			<div class="menu row-fluid" style="display:none;">
 				<div id="photo" class="span4 img-polaroid" data-toggle="div-hidden-news">
 					<p>Fil d'actualité</p>
@@ -46,7 +50,10 @@
 					<img src="/img/to%20sprite/header-arrow.png" class="header-arrow" alt="">
 				</div>
 			</div>
-			
+			@endif
+
+
+
 			<div>
 				<div id="div-hidden-photo" style="display:none;">
 					<div class="filter-portfolio">
@@ -165,12 +172,9 @@
 							@foreach($newsFeed as $news )
 								@include('association.wall.'.$news->type, array('p'=>$news))
 							@endforeach
-							<?php
-								$posts = array("single-photo","video","event","multiple-photo","link");
-							?>
-							@foreach($posts as $p )
-								@include('association.wall.'.$p, array('p'=>$p,'association'=>$association))
-							@endforeach
+							@if($newsFeed->isEmpty())
+							<p>Vous n'avez pas encore envoyé de contenu</p>
+							@endif
 						</div>
 				 	</div>
 				</div>

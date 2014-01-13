@@ -75,7 +75,7 @@
                             'label'=>Lang::get('association/edit/administrator.label_admin_mail'),
                             'form' => array(
                                 'placeholder'=>Lang::get('association/edit/administrator.placeholder_admin_mail'),
-                                'class' => 'input-large',
+                                'class' => 'input-xlarge',
                                 'data-original-title'=>Lang::get('association/edit/administrator.tooltip_admin_mail'),
                                 'data-type'=>"email",
                             )
@@ -94,7 +94,7 @@
                             'label'=>Lang::get('association/form_create.label_link'),
                             'form' => array(
                                 'placeholder'=>Lang::get('association/form_create.placeholder_link'),
-                                'class' => 'input-large',
+                                'class' => 'input-xlarge',
                                 'data-original-title'=>Lang::get('association/form_create.tooltip_link'),
                                 'data-maxlength'=>"30",
                                 'required'=>"required",

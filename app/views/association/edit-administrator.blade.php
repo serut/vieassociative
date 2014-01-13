@@ -1,8 +1,8 @@
 @extends('template.theme')
 
 
-@set_true $small_centred
-@section('small-content')
+@set_true $large_centred 
+@section('large-content')
     <section>
         <div>
             <ul class="breadcrumb">
@@ -32,7 +32,7 @@
                         <td>{{\Carbon\Carbon::createFromTimeStamp(strtotime($v->updated_at))->formatLocalized('%A %d %B %Y %H:%I')}}</td>
                         <td>{{$v->link}}</td>
                         @if($is_admin)
-                        <td><a href="#" onclick="removeAdmin({{$v->id}});return false;"><i class="fa fa-remove"></i></a></td>
+                        <td><a href="#" onclick="removeAdmin({{$v->id}});return false;"><i class="fa fa-times"></i></a></td>
                         @endif
                     </tr>
                 </tbody>

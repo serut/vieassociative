@@ -1,8 +1,8 @@
 @extends('template.theme')
 
 
-@set_true $small_centred
-@section('small-content')
+@set_true $large_centred 
+@section('large-content')
     <section>
         <div>
             <ul class="breadcrumb">

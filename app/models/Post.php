@@ -32,11 +32,11 @@ class Post extends Eloquent
         }
         $post->title = $data['title'];
         $post->text = $data['text'];
-        if($data['publish_later'] =="true"){
+        if(isset($data['publish_later']) && $data['publish_later'] =="true"){
             $post->wish_time_publish = SiteHelpers::datepicker_to_timestamp($data['published_at']);
         }
         $post->touch();
-        if(! $idPost && $data['publish_later'] =="false"){
+        if(! $idPost && (! isset($data['publish_later']) ||  $data['publish_later'] =="false")){
             NewsFeed::addNews($idAssoc,$post->id);
         }
     }

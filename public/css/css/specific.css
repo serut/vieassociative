@@ -219,6 +219,7 @@
   border-radius: 3px;
 }
 #social-timeline .media.social-box .social-users-avatars img {
+  padding-top: 5px;
   margin-bottom: 10px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -227,6 +228,9 @@
 }
 #social-timeline .media.social-box .media-body.social-body {
   padding: 10px;
+}
+#social-timeline .media.social-box .media-body.social-body h4 {
+  margin-top: 0px;
 }
 #social-timeline .media.social-box .media-body.social-body .social-heading {
   color: #939AA4!important;

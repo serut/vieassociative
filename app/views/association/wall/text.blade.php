@@ -1,5 +1,5 @@
 <div class="media social-box">
-	<a href="#" class="pull-left social-users-avatars" style="width: 48px;">
+	<a href="#" class="pull-left social-users-avatars img-circle" style="width: 48px;">
 		<img src="{{$association->getLogo()}}">
 	</a>
 	<div class="media-body social-body">

@@ -5,7 +5,7 @@
 @section('large-content')
 	<section class="profile unbackground">
 		<img src="{{$association->getCover()}}" class="cover">
-		<img src="{{$association->getLogo()}}" class="logo">
+		<img src="{{$association->getLogo()}}" class="logo img-circle">
 		<div>
 			<div>
 				<div class="span17 head">

@@ -2,7 +2,7 @@
 ================================================== */
 .profile > div {
   position: relative;
-  margin-top: -50px;
+  margin-top: -85px;
   padding: 40px 10px 1px;
   background: white;
   z-index: 1;
@@ -15,8 +15,7 @@
 .profile .logo {
   width: 21%;
   position: relative;
-  top: 8%;
-  margin: -16% 0 0 2%;
+  margin: -12% 0 0 2%;
   z-index: 3;
 }
 .profile .head {

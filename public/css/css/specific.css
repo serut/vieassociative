@@ -26,9 +26,6 @@
   display: inline-block;
   width: 55%;
 }
-.profile .separator {
-  margin-top: 0px;
-}
 .profile .img-polaroid {
   float: left;
 }

@@ -1560,7 +1560,6 @@ div[data-role="editor-toolbar"]{-webkit-user-select:none;-moz-user-select:none;-
 .profile .cover{width:100%;position:relative;z-index:2}
 .profile .logo{width:21%;position:relative;margin:-12% 0 0 2%;z-index:3}
 .profile .head{float:right;margin-top:-50px}.profile .head .name{display:inline-block;width:55%}
-.profile .separator{margin-top:0}
 .profile .img-polaroid{float:left}.profile .img-polaroid p{padding:40px 10px;margin:0;text-align:center}
 .profile .header-arrow{margin-top:-3px}
 @media (max-width:767px){.profile>div{padding-top:50px} .profile .head .name{display:inline-block;width:75%;margin-left:25%}}.span-size1,.span-size2{width:190px;margin:10px 0 10px 10px;position:relative;overflow:hidden}

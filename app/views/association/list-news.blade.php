@@ -12,8 +12,6 @@
                 <li class="active">Mes publications</li>
             </ul>
             <h3 class="head">{{Lang::get('association/edit/news.select_news')}} </h3>
-            <p>{{Lang::get('association/edit.warn_possiblity_for_normal_user')}}</p>
-            <hr>
             <table class="table table-striped">
                 <thead>
                     <tr>

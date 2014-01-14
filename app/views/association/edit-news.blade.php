@@ -49,22 +49,31 @@
                 {{SiteHelpers::create_input($input)}}
             </div>
             */
-            ?>
-            <div>{{Lang::get('association/edit/news.label_title')}}</div>
-            @input = array(
-                'id'=>"title",
-                'value'=>$post->title,
-                'form' => array(
-                    'placeholder'=>Lang::get('association/edit/news.placeholder_title'),
-                    'class' => 'input-xxlarge',
-                    'tabindex'=>'1'
-                )
-            )@
-            {{SiteHelpers::simple_input($input)}}
-            <div>
-                <div>{{Lang::get('association/edit/news.label_text')}}</div>
-                {{SiteHelpers::add_textarea('text',$post->text, true, true)}}
+        ?>
+            <div class="row">
+                <div class="span2">
+                    <img src="{{$association->getLogo()}}" class="img-circle">
+                </div>
+                <div class="span20">
+                    @input = array(
+                        'id'=>"title",
+                        'value'=>$post->title,
+                        'form' => array(
+                            'placeholder'=>Lang::get('association/edit/news.placeholder_title'),
+                            'class' => 'input-xxlarge',
+                            'tabindex'=>'1',
+                            'data-minlength'=>'5',
+                            'required'=>"required",
+                        )
+                    )@
+                    {{SiteHelpers::simple_input($input)}}
+                    <div>
+                        {{SiteHelpers::add_textarea('text',$post->text, true, true)}}
+                    </div>
+                </div>
             </div>
+
+
         <br>
         @if(App::environment() != "prod")
         <h5>Personnalisez votre publication avec :</h5>

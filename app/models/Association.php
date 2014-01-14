@@ -70,7 +70,7 @@ class Association  extends Eloquent
     }
     public function getCover(){
         if(empty($this->cover_img)){
-            return "https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-frc1/1005953_565503096840164_574065106_n.png";
+            return "http://img.vieassociative.fr/a1/PFMyoTjSdIqzBanniC3A8reTest1.jpg";
         }
         //The prefix of images
         if(App::environment() == "prod"){

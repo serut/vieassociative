@@ -171,7 +171,6 @@
 						<div class="row-fluid">
 							@foreach($newsFeed as $news )
 								@include('association.wall.'.$news->type, array('p'=>$news))
-								<hr>
 							@endforeach
 							@if($newsFeed->isEmpty())
 							<p>Vous n'avez pas encore envoyé de contenu</p>

@@ -4,9 +4,10 @@
 	</a>
 	<div class="media-body social-body">
 		<h4>{{$p->post->title}}</h4>
-		<p>
+		<div>
 			{{$p->post->text}}
-		</p>
+		</div>
 		@include('association.wall.post-footer', array('p'=>$p))
+		<hr class="separator">
 	</div>
 </div>

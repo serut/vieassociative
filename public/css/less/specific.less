@@ -201,14 +201,24 @@
 	.social-box {
 		border: none;
 		margin-top: 0;
+        margin-bottom: 0px;
+        hr{
+        margin-bottom: 0px;
+        margin-top: 15px;
+        }
 	}
 	.media.social-box.with-heading .social-users-avatars {
 	    margin-top: 36px;
 	}
-	p{
-		margin:0 10px 10px 0;
+	div{
+		margin-left:1px;
+		margin:0 5px 10px 2px;
+		p{
+			margin-bottom:0px;
+		}
 	}
 	.media.social-box {
+		margin-left:15px;
 		.social-composer{
 			textarea {
 			    resize: none;
@@ -234,8 +244,16 @@
 		}
 		.media-body.social-body {
 		    padding: 10px;
+       		margin-bottom: 0px;
 		    h4{
 		    	margin-top:0px;
+		    	margin-bottom:0px;
+		    }
+		    div{
+				margin-bottom: 0px;
+				p{
+					margin-bottom: 10px!important;
+				}
 		    }
 		    .social-heading {
 			    color: #939AA4!important;
@@ -312,24 +330,23 @@
 				}
 			}
 			.social-footer{
-				.social-controls,.social-info-users{
-					color: #939AA4!important;
-    				font-size: 11.9px;
+				.separator{
+					margin:0px;
 				}
 				.social-controls {
-				    font-weight: bold;
-				    padding-bottom: 6px;
+					color: #939AA4!important;
+    				font-size: 11.9px;
+				    padding-top: 7px;
+					border-top-width: 0px;
+					padding-top: 0px;
+					margin-bottom:0px;
 				}
 				span {
 				    cursor: pointer;
 				    margin-right: 10px;
 				}
-				.social-info-users {
-				    padding-top: 7px;
-				    border-top: 1px solid #e6e6e6;
-				}
 				.social-comments {
-				    margin-top: 7px;
+				    margin-top: 0px;
 				    margin-bottom: -10px;
 				    padding-bottom: 5px;
 				}
@@ -337,6 +354,17 @@
 				    -webkit-border-radius: 3px;
 				    -moz-border-radius: 3px;
 				    border-radius: 3px;
+				    width:30px;
+				    margin-top:6px;
+				}
+				.media-body{
+					margin-bottom: 0px;
+					input{
+						margin-top: 6px;
+					}
+				}
+				.media{
+					margin-left: 0px;
 				}
 			}
 		}
@@ -349,7 +377,8 @@
     }
 
     #social-timeline .media.social-box.social-composer .media-body.social-body {
-        padding-bottom: 0;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
     }
 
     #social-timeline .media.social-box.social-composer .social-footer {

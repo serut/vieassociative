@@ -1,0 +1,221 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 14px;
+  font-weight: lighter;
+  background-color: #78b4e7;
+  background-attachment: scroll;
+  background-position: left 0px;
+  background-repeat: no-repeat;
+  min-height: 100%;
+  position: relative;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+caption {
+  font-family: Trebuchet MS, Liberation Sans, DejaVu Sans, sans-serif !important;
+  font-weight: normal;
+  word-spacing: 3px;
+  line-height: 1.2em;
+}
+a,
+a > * {
+  text-shadow: none;
+  text-decoration: none;
+  outline: 0;
+  color: #f18d05;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: #e8543f;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+a > i {
+  color: #333333;
+}
+html {
+  height: 100%;
+}
+@font-face {
+  font-family: 'BLOKKNeue-Regular';
+  src: url('/pluggin/BLOKKNeue/BLOKKNeue-Regular.woff') format('woff'), url('/pluggin/BLOKKNeue/BLOKKNeue-Regular.svg#BLOKKNeue-Regular') format('svg');
+}
+body #template {
+  font-family: "BLOKKNeue-Regular";
+}
+.justify {
+  text-align: justify;
+}
+header {
+  background: rgba(253, 254, 254, 0.95);
+  margin-bottom: 15px;
+}
+header div {
+  z-index: 97;
+  margin-bottom: 5px;
+}
+header div img {
+  margin-top: 6px;
+  margin-left: 30px;
+  float: left;
+  height: 45px;
+}
+header div nav {
+  margin-top: 5px;
+  text-align: right;
+  white-space: nowrap;
+}
+header div nav div {
+  margin: 5px;
+  padding-bottom: 0px;
+  padding-top: 4px;
+}
+header div nav div ul.nav {
+  float: right !important;
+}
+header #menu .dropdown-menu {
+  margin-top: 7px;
+  background: none repeat scroll 0 0 #4C4C4C;
+  min-width: 180px;
+  left: auto;
+  right: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+header #menu .dropdown-menu:after,
+header #menu .dropdown-menu:before {
+  bottom: 100%;
+  left: 86%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  margin-top: -14px;
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #4C4C4C;
+  border-width: 10px;
+  margin-left: -10px;
+}
+header #menu .dropdown-menu > li {
+  border-bottom: 1px solid #474747;
+}
+header #menu .dropdown-menu > li:last-child {
+  border: 0;
+}
+header #menu .dropdown-menu > li > a {
+  color: #FFF;
+  padding: 8px 15px;
+  text-align: left;
+}
+header #menu .dropdown-menu > li > a:hover {
+  background: #f0523f;
+  color: #FFF;
+}
+header #menu .dropdown.open a.dropdown-toggle {
+  background-color: inherit;
+}
+aside,
+nav {
+  margin-left: 10px;
+  margin-top: 20px;
+}
+aside > div,
+nav > div {
+  margin: -20px 0 40px;
+}
+aside > div.background,
+nav > div.background {
+  background: #fff;
+}
+.row {
+  margin-left: -10px;
+}
+section {
+  margin-left: 10px;
+  background: #fff;
+  margin-bottom: 30px;
+}
+section .head {
+  padding: 10px 0;
+  border-bottom: 1px;
+}
+section .text-error {
+  display: block;
+}
+section.unbackground {
+  background: none;
+}
+aside h1,
+nav h1,
+section h1,
+aside h3,
+nav h3,
+section h3,
+aside p,
+nav p,
+section p,
+aside form,
+nav form,
+section form {
+  margin: 0 10px 20px 10px;
+}
+aside > div,
+nav > div,
+section > div {
+  padding: 11px 20px 20px 20px;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-top: 15px;
+  background: #fff;
+  z-index: 2;
+}
+footer .row {
+  margin-top: -10px;
+  position: relative;
+  margin: 0 auto;
+}
+footer .row .align-right {
+  text-align: right;
+}
+footer .row a {
+  font-size: 0.8em;
+  padding: 0 15px;
+  text-transform: uppercase;
+  line-height: 4em;
+}
+footer .row div {
+  white-space: nowrap;
+}
+footer a {
+  color: #000;
+}
+@media (max-width: 767px) {
+  header {
+    margin: 0 -20px;
+  }
+  footer {
+    left: 0;
+  }
+  section {
+    padding: 0;
+  }
+}
+.modal .close-modal {
+  margin-top: 5px;
+}
+.modal .modal-footer {
+  margin-left: 0px;
+  margin-right: 0px;
+}

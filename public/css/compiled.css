@@ -1414,9 +1414,9 @@ header #menu .dropdown-menu>li{border-bottom:1px solid #474747}header #menu .dro
 header #menu .dropdown-menu>li>a{color:#fff;padding:8px 15px;text-align:left}header #menu .dropdown-menu>li>a:hover{background:#f0523f;color:#fff}
 header #menu .dropdown.open a.dropdown-toggle{background-color:inherit}
 aside,nav{margin-left:10px;margin-top:20px}aside>div,nav>div{margin:-20px 0 40px}
-aside>div.background,nav>div.background{background:#fff;-webkit-border-radius:5px;-moz-border-radius:5px;-o-border-radius:5px;-ms-border-radius:5px;border-radius:5px}
+aside>div.background,nav>div.background{background:#fff}
 .row{margin-left:-10px}
-section{margin-left:10px;background:#fff;-webkit-border-radius:5px;-moz-border-radius:5px;-o-border-radius:5px;-ms-border-radius:5px;border-radius:5px;margin-bottom:30px}section .head{padding:10px 0;border-bottom:1px}
+section{margin-left:10px;background:#fff;margin-bottom:30px}section .head{padding:10px 0;border-bottom:1px}
 section .text-error{display:block}
 section.unbackground{background:none}
 aside h1,nav h1,section h1,aside h3,nav h3,section h3,aside p,nav p,section p,aside form,nav form,section form{margin:0 10px 20px 10px}
@@ -1555,9 +1555,9 @@ div[data-role="editor-toolbar"]{-webkit-user-select:none;-moz-user-select:none;-
 .button-large{font-size:19px;height:38.4px;line-height:38.4px;padding:0 30.72px}
 .button-small{font-size:12px;height:25.6px;line-height:25.6px;padding:0 20.48px}
 .button-tiny{font-size:11px;height:22.4px;line-height:22.4px;padding:0 17.92px}
-.profile>div{position:relative;margin-top:-85px;padding:40px 10px 1px;background:#fff;z-index:1}
+.profile>div{position:relative;margin-top:-118px;padding:40px 10px 15px;background:#fff;z-index:1}
 .profile .cover{width:100%;position:relative;z-index:2}
-.profile .logo{width:21%;position:relative;margin:-12% 0 0 2%;z-index:3}
+.profile .logo{width:21%;position:relative;margin:-9% 0 0 2%;z-index:3}
 .profile .head{float:right;margin-top:-50px}.profile .head .name{display:inline-block;width:55%}
 .profile .img-polaroid{float:left}.profile .img-polaroid p{padding:40px 10px;margin:0;text-align:center}
 .profile .header-arrow{margin-top:-3px}

@@ -3,25 +3,23 @@
 
 @set_true $large_centred 
 @section('large-content')
-	<section class="profile unbackground">
+	<section class="profile">
 		<img src="{{$association->getCover()}}" class="cover">
 		<img src="{{$association->getLogo()}}" class="logo img-circle">
 		<div>
 			<div>
 				<div class="span17 head">
 					<h2 class="name">{{$association->name}}</h2>
-					<span class="pull-right" style="margin-top:10px;">
+					<span class="pull-right" style="margin-top:13px;">
 						<a class="button button-blue" href="/{{$association->id}}/edit">Editer</a>
-					</span>
-					<span class="ss hidden-phone pull-right">
-						<a class="facebook" href="#">facebook</a>
-						<a class="googleplus" href="#">googleplus</a>
-						<a class="youtube" href="#">youtube</a>
-						<a class="twitter" href="#">twitter</a>
 					</span>
 				</div>
 			</div>
-			<div class="clearfix"></div>
+		</div>
+	</section>
+	<section>
+		<div>
+
 
 
 

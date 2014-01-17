@@ -57,6 +57,9 @@ header {
   background: rgba(253, 254, 254, 0.95);
   margin-bottom: 15px;
 }
+header .row {
+  margin-bottom: 0px;
+}
 header div {
   z-index: 97;
   margin-bottom: 5px;
@@ -79,6 +82,18 @@ header div nav div {
 }
 header div nav div ul.nav {
   float: right !important;
+}
+header div nav .form-search {
+  margin-bottom: 0px;
+  margin-top: 5px;
+}
+header div nav .form-search input {
+  display: inline-block;
+}
+header div nav .form-search a {
+  width: 29px;
+  height: 30px;
+  margin-left: -6px;
 }
 header #menu .dropdown-menu {
   margin-top: 7px;
@@ -204,6 +219,9 @@ footer a {
 @media (max-width: 767px) {
   header {
     margin: 0 -20px;
+  }
+  header .form-search {
+    margin-right: 70px;
   }
   footer {
     left: 0;

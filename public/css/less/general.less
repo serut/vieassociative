@@ -49,6 +49,9 @@ body #template{
 header{
     background:rgba(253, 254, 254, 0.95);
     margin-bottom:15px; 
+    .row{
+        margin-bottom:0px;
+    }
     div {
         z-index: 97;
         margin-bottom: 5px;
@@ -68,6 +71,18 @@ header{
                 padding-top: 4px;
                 ul.nav{
                     float:right !important;
+                }
+            }
+            .form-search{
+                margin-bottom: 0px;
+                margin-top: 5px;
+                input{
+                    display: inline-block;
+                }
+                a{
+                    width: 29px;
+                    height: 30px;
+                    margin-left: -6px;
                 }
             }
         }
@@ -186,6 +201,9 @@ footer{
 @media (max-width: 767px) {
     header{
         margin: 0 -20px;
+        .form-search{
+            margin-right:70px;
+        }
     }
     footer{
         left:0;
@@ -193,6 +211,7 @@ footer{
     section{
         padding: 0;
     }
+
 }
 .modal{
     .close-modal{

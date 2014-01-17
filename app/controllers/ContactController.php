@@ -27,4 +27,19 @@ class ContactController extends BaseController
 		}
 		return Response::json(array('status'=>'error','text'=>'Aucunes données n\'a été recu'));
 	}
+
+	public function postProposition(){
+		// data for send the mail to the user
+		$data=array('email'=>'contact@vieassociative.fr',
+					'titre'=>Input::get('titre',''),
+					'texte'=>Input::get('text','')
+					);
+		Mail::send('mail.proposition', $data, function ($message) use ($data) {
+			$message->subject('VieAssociative Proposition'.$data['titre']);
+			$message->from('noreply@vieassociative.fr', 'Vie Associative');
+			$message->to($data['email']);
+		});
+
+        return Response::json(array('success'=>true,'redirect_url'=>URL::to('/')));
+	}
 }

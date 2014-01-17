@@ -21,6 +21,7 @@
             Route::get('/', 'InfoController@getIndex');
             Route::get('/info/condition', 'InfoController@getCondition');
             Route::get('/notifications', 'NotificationController@getIndex');
+            Route::post('/proposition', 'ContactController@postProposition');
 
 
 

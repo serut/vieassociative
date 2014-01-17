@@ -3,7 +3,8 @@
 		<div class="row">
 		    <div class="span10">
 				<a id="logo" href="<?php echo URLSubdomain::to('www',''); ?>">
-					<img alt="Vie Associative" src="/img/logo.png">
+					<img alt="Vie Associative" src="/img/logo.png" class="hidden-phone">
+					<img alt="Vie Associative" src="/img/logo-small.png" class="visible-phone">
 				</a>
 			</div>
 	        <nav id="menu" class="span14 align-right">
@@ -35,12 +36,11 @@
 	                	-->
 	                    <li class="dropdown">
 	                    	<a data-toggle="dropdown" class="dropdown-toggle" href="#" style="margin-bottom: 5px;">
-	                    	<img src="/img/items/user-thumb.jpg" style="margin-left: 0px; width: 28px; height: 28px;margin-top:-5px;margin-right:10px;">
-	                    	<span class="hidden-phone"> Serutan  <b class="caret"></b></span>
+	                    	<img src="<?php echo Auth::user()->getAvatar(); ?>" style="margin-left: 0px; width: 28px; height: 28px;margin-top:-5px;margin-right:10px;">
+	                    	<span class="hidden-phone"> <?php echo Auth::user()->username; ?>  <b class="caret"></b></span>
 	                    	</a>
 	                        <ul class="dropdown-menu">
-	                            <li><a href="#">Options</a></li>
-	                            <li><a href="#">Profils</a></li>
+	                            <li><a href="<?php echo URLSubdomain::to('www','/user/1/edit'); ?>">Options</a></li>
 	                            <li><a href="<?php echo URLSubdomain::to('www','/user/logout'); ?>">Deconnexion</a></li>
 	                        </ul>
 	                	</li>

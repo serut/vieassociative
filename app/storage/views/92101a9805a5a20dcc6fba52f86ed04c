@@ -2,40 +2,27 @@
 
 <?php $large_centred = true; ?>
 <?php $__env->startSection('large-content'); ?>
-	<?php
-		if(empty($association->cover_img) && empty($association->logo_img)){
-			$profile = array(
-				//'cover'=>'https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-frc1/1005953_565503096840164_574065106_n.png',
-				//'logo'=>'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash4/c3.0.175.175/s160x160/1005401_561831680540639_154619862_a.png',
-				'cover'=>'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-prn2/969320_10152016532606124_916290804_n.jpg',
-				'logo'=>'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn1/c26.26.328.328/s160x160/378926_10150600500671124_496920089_n.jpg',
-			);
-		}else{
-			$profile = array(
-				'cover'=>"http://img.vieassociative.fr/".$prefix.$association->id.'/'.$association->cover_img.'-940x350.jpg',
-				'logo'=>"http://img.vieassociative.fr/".$prefix.$association->id.'/'.$association->logo_img.'-200x200.jpg',
-			);
-		}
-	?>
-	<section class="profile unbackground">
-		<img src="<?php echo $profile['cover']; ?>" class="cover">
-		<img src="<?php echo $profile['logo']; ?>" class="logo">
+	<section class="profile">
+		<img src="<?php echo $association->getCover(); ?>" class="cover">
+		<img src="<?php echo $association->getLogo(); ?>" class="logo img-circle">
 		<div>
 			<div>
 				<div class="span17 head">
 					<h2 class="name"><?php echo $association->name; ?></h2>
-					<span class="pull-right" style="margin-top:10px;">
+					<span class="pull-right" style="margin-top:13px;">
 						<a class="button button-blue" href="/<?php echo $association->id; ?>/edit">Editer</a>
-					</span>
-					<span class="ss hidden-phone pull-right">
-						<a class="facebook" href="#">facebook</a>
-						<a class="googleplus" href="#">googleplus</a>
-						<a class="youtube" href="#">youtube</a>
-						<a class="twitter" href="#">twitter</a>
 					</span>
 				</div>
 			</div>
-			<div class="clearfix"></div>
+		</div>
+	</section>
+	<section>
+		<div>
+
+
+
+
+			<?php if(App::environment() != "prod"): ?>
 			<div class="menu row-fluid" style="display:none;">
 				<div id="photo" class="span4 img-polaroid" data-toggle="div-hidden-news">
 					<p>Fil d'actualité</p>
@@ -60,7 +47,10 @@
 					<img src="/img/to%20sprite/header-arrow.png" class="header-arrow" alt="">
 				</div>
 			</div>
-			
+			<?php endif; ?>
+
+
+
 			<div>
 				<div id="div-hidden-photo" style="display:none;">
 					<div class="filter-portfolio">
@@ -179,12 +169,9 @@
 							<?php foreach($newsFeed as $news ): ?>
 								<?php echo $__env->make('association.wall.'.$news->type, array('p'=>$news), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 							<?php endforeach; ?>
-							<?php
-								$posts = array("single-photo","video","event","multiple-photo","link");
-							?>
-							<?php foreach($posts as $p ): ?>
-								<?php echo $__env->make('association.wall.'.$p, array('p'=>$p), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-							<?php endforeach; ?>
+							<?php if($newsFeed->isEmpty()): ?>
+							<p>Vous n'avez pas encore envoyé de contenu</p>
+							<?php endif; ?>
 						</div>
 				 	</div>
 				</div>

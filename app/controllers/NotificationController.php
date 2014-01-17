@@ -2,46 +2,20 @@
 
 class NotificationController  extends BaseController {
 	// This bullshit is not working
-    public function getIndex() {
+    public function getNotification() {
+		// 1 utilisateur : 
+		//   -> a ses notifications dans sa table notification_user 
+		//   -> a les notifications des associations dans la table notification_assoc la ou il est administrateur
+		// Trie par ordre decroissant d'ajout
+    }
+    static function addNotificationUser(){
     	$pubnub = App::make('Pubnub');
-		
-		/*
-        $info = $pubnub->publish(array(
-		    'channel' => 'hello_world', ## REQUIRED Channel to Send
-		    'message' => 'Hey World!'   ## REQUIRED Message String/Array
-		));
-		print_r($info);
-		$pubnub->subscribe(array(
-		    'channel'  => 'hello_world',        ## REQUIRED Channel to Listen
-		    'callback' => function($message) {  ## REQUIRED Callback With Response
-		        var_dump($message);  ## Print Message
-		        return true;         ## Keep listening (return false to stop)
-		    }
-		));
-		*/
-/*
-		$messages = $pubnub->history(array(
-		    'channel' => 'hello_world',  ## REQUIRED Channel to Send
-		    'limit'   => 100             ## OPTIONAL Limit Number of Messages
-		));
-		print_r($messages);             ## Prints array of messages.
-		$pubnub->subscribe(array(
-		    'channel'  => 'hello_world',        ## REQUIRED Channel to Listen
-		    'callback' => create_function(      ## REQUIRED PHP 5.2.0 Method
-		        '$message',
-		        'var_dump($message); return true;'
-		    )
-		));
-
-		$pubnub->subscribe(array(
-		    'channel'  => 'hello_world',        ## REQUIRED Channel to Listen
-		    'callback' => function($message) {  ## REQUIRED Callback With Response
-		        var_dump($message);  ## Print Message
-		        return true;         ## Keep listening (return false to stop)
-		    }
-		));
-
-        return View::make('association.add');
-*/
+    	// send the notification to pubnub ( l'utilisateur le recoit en temps réel )
+    	// Et ajoute la notification dans la base de donnée
+    }
+    static function addNotificationAssociation(){
+    	$pubnub = App::make('Pubnub');
+    	// send the notification to pubnub ( l'utilisateur le recoit en temps réel )
+    	// Et ajoute la notification dans la base de donnée
     }
 }

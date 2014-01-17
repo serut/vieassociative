@@ -2,13 +2,11 @@
 
 <?php $main_and_aside = true; ?>
 <?php $__env->startSection('main-content'); ?>
-	
+	<div id="fb-root"></div>
     <section>
 	    <div>
 			<h3 class="head"><?php echo Lang::get('index/index.head_what_vieassociative'); ?></h3>
-	    	<div class="text-center">
-	    	<iframe width="480" height="360" src="//www.youtube-nocookie.com/embed/4TlJ4qKO2Xg?rel=0" frameborder="0" allowfullscreen></iframe>
-		    </div>
+		    <div class="flex-video widescreen"><iframe src="https://www.youtube-nocookie.com/embed/4TlJ4qKO2Xg?rel=0" frameborder="0" allowfullscreen=""></iframe></div>
 	        <h3 class="head"><?php echo Lang::get('index/index.head_1'); ?></h3>
 	        <p><?php echo Lang::get('index/index.content_1_0'); ?><br>
 	        <?php echo Lang::get('index/index.content_1_1'); ?><br>
@@ -70,4 +68,48 @@
     </section>
 
 <?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('footer-js'); ?>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=377363965666139";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<style type="text/css">
+.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
+    width: 100% !important;
+	margin-right: -10px;
+}
+#fb-root {
+    display: none;
+}
+.flex-video {
+  position: relative;
+  padding-top: 25px;
+  padding-bottom: 67.5%;
+  height: 0;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+ 
+.flex-video.widescreen { padding-bottom: 57.25%; }
+.flex-video.vimeo { padding-top: 0; }
+ 
+.flex-video iframe,
+.flex-video object,
+.flex-video embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+@media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px), only screen and (max-width: 767px) {
+  .flex-video { padding-top: 0; }
+}
+</style>
+<?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('template.theme', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,6 +1,14 @@
 <?php
+/**
+    * These are quick methods for send mail
+    *
+    * @author  Mieulet Léo <l.mieulet@gmail.com>
+*/
 class EmailController extends BaseController
 {
+	/**
+	*	Send a mail when an user register
+	*/
 	static function register($name,$email)
 	{
 		// data for send the mail to the user
@@ -12,6 +20,9 @@ class EmailController extends BaseController
 		});
 	}
 
+	/**
+	*	Send a mail when an user resets his password
+	*/
 	static function resetPassword($email,$pass)
 	{
 		// data for send the mail to the user

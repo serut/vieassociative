@@ -1,7 +1,14 @@
 <?php
-
+/**
+    * This is the controller for discussion
+    *
+    * @author  Mieulet Léo <l.mieulet@gmail.com>
+*/
 class DiscussionController  extends BaseController {
 
+    /**
+    *   Render a conversation
+    */
     public function getConversation($idAssoc, $idDiscu) {
     	$discussion = Answer::getAnswerAndProposition($idDiscu);
         return View::make('discussion.proposition')
@@ -11,6 +18,9 @@ class DiscussionController  extends BaseController {
             ->with('is_admin',User::isAdministrator($idAssoc));
     }
 
+    /**
+    *   API : Add a comment to a specific conversation
+    */
     public function postAdd(){
 		$v = new validators_discussion;
 		$result = $v->add();
@@ -34,7 +44,9 @@ class DiscussionController  extends BaseController {
 		return Response::json($result);
     }
     
-
+    /**
+    *   API : Add a vote to a specific post
+    */
     public function postVote(){
 		$v = new validators_discussion;
 		$result = $v->vote();
@@ -86,7 +98,9 @@ class DiscussionController  extends BaseController {
     }
 
 
-
+    /**
+    *   Valid a proposition by an administrator
+    */
     public function postValidate(){
         $v = new validators_discussion;
         $result = $v->validate();

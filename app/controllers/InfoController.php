@@ -3,6 +3,9 @@
 class InfoController extends BaseController
 {
     public function getCondition(){
-        return View::make('fsd.index');
+        return View::make('info.condition');
+    }
+    public function getIndex(){
+        return View::make('index.index');
     }
 }

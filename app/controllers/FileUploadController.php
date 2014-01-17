@@ -17,6 +17,7 @@ class FileUploadController extends BaseController
  	/**
 		* @param string header('X-Requested-With') Given by our upload API
 		* @return AJAX URL to files
+		* TODO : clean this controller
 	*/
 	public function postFileUpload(){
 		$return = array();

@@ -1,7 +1,7 @@
 
 
-<?php $main_and_aside = true; ?>
-<?php $__env->startSection('main-content'); ?>
+<?php $large_centred = true; ?>
+<?php $__env->startSection('large-content'); ?>
 		<section>
 				<div>
 						<ul class="breadcrumb">
@@ -10,8 +10,7 @@
 							<li class="active">Edition</li>
 						</ul>
 						<h3 class="head"><?php echo Lang::get('association/edit.edit_association'); ?></h3>
-						<p><?php echo Lang::get('association/edit.warn_possiblity_for_normal_user'); ?></p>
-						<?php if(!empty($proposition)): ?>
+						<?php if(!$proposition->isEmpty()): ?>
 						<p>Modification en attente :</p>
 						<?php foreach($proposition as $p): ?>
 						<div class="item">
@@ -49,12 +48,12 @@
 									<td><?php echo $association->nb_photos; ?> images</td>
 									<td><a href="edit/file/<?php echo $association->id_folder; ?>"> Editer</a></td>
 								</tr>
+								<?php if(App::environment() != "prod"): ?>
 								<tr>
 									<td>La page Vie Associative</td>
 									<td></td>
 									<td><a href="edit/vieassociative-informations"> Editer</a></td>
 								</tr>
-								<?php if(App::environment() != "prod"): ?>
 								<tr>
 									<td>Historique</td>
 									<td>200 élements</td>

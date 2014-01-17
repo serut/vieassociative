@@ -1,11 +1,17 @@
 <?php
 class ContactController extends BaseController
 {
+	/**
+	*	@important : Not used right now
+	*/
 	public function getIndex()
 	{
 		return View::make('contact.contact');
 	}
 	
+	/**
+	*	Non fonctionnel - code non testé
+	*/
 	public function postIndex()
 	{
 		if(validators_contact::validate(Input::get())){

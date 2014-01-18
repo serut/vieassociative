@@ -58,7 +58,7 @@ class Association  extends Eloquent
     }
     public function getLogo(){
         if(empty($this->logo_img)){
-            return "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash4/c3.0.175.175/s160x160/1005401_561831680540639_154619862_a.png";
+            return "http://img.vieassociative.fr/default_logo.jpg";
         }
         //The prefix of images
         if(App::environment() == "prod"){
@@ -70,7 +70,7 @@ class Association  extends Eloquent
     }
     public function getCover(){
         if(empty($this->cover_img)){
-            return "http://img.vieassociative.fr/a1/PFMyoTjSdIqzBanniC3A8reTest1.jpg";
+            return "http://img.vieassociative.fr/default_cover.jpg";
         }
         //The prefix of images
         if(App::environment() == "prod"){

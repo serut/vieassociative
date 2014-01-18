@@ -14,7 +14,7 @@
 				<tbody><tr>
 		<!-- CONTENT start -->
 					<td valign="top" align="left">
-						<div class="h"><h3>{{{$titre}}}</h3></div>
+						<div class="h"><h3>{{{$titre}}}</h3> par {{{$from}}}</div>
 						<div>
 							{{{$texte}}}
 						</div>

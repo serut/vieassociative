@@ -31,11 +31,12 @@ class ContactController extends BaseController
 	public function postProposition(){
 		// data for send the mail to the user
 		$data=array('email'=>'contact@vieassociative.fr',
-					'titre'=>Input::get('titre',''),
-					'texte'=>Input::get('text','')
+					'from'=>Input::get('from','Auteur inconnu'),
+					'titre'=>Input::get('titre','Aucun titre'),
+					'texte'=>Input::get('text','Aucun message')
 					);
 		Mail::send('mail.proposition', $data, function ($message) use ($data) {
-			$message->subject('VieAssociative Proposition '.$data['titre']);
+			$message->subject('proposition : '.$data['titre']);
 			$message->from('noreply@vieassociative.fr', 'Vie Associative');
 			$message->to($data['email']);
 		});

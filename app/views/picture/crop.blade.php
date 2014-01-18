@@ -29,9 +29,9 @@
 						Résultat :<br>
 
 						<div id="preview-pane">
-						<div class="preview-container">
-							<img src="http://img.vieassociative.fr/{{$prefix}}{{$association->id}}/{{$name}}" class="jcrop-preview" alt="Preview" />
-						</div>
+							<div class="preview-container">
+								<img src="http://img.vieassociative.fr/{{$prefix}}{{$association->id}}/{{$name}}" class="jcrop-preview" alt="Preview" />
+							</div>
 						</div>
 					</div>
 
@@ -93,28 +93,41 @@
 			$pimg = $('#preview-pane .preview-container img'),
 			xsize = $pcnt.width(),
 			ysize = $pcnt.height();
-		
-			var jcrop_img = $('#jcrop_img').Jcrop({
-				onChange: updateCoords,
-				onSelect: updateCoords,
-				aspectRatio: xsize / ysize
-			},function(){
-				// Use the API to get the real image size
-				var bounds = this.getBounds();
-				boundx = bounds[0];
-				boundy = bounds[1];
 
-				var coord = [
-					Math.round(Math.random() * bounds[0]),
-					Math.round(Math.random() * bounds[1]),
-					Math.round(Math.random() * bounds[0]),
-					Math.round(Math.random() * bounds[1])
-				];
-				this.setSelect(coord);
+			var img_original_h,
+			img_original_w;
 
-				// Store the API in the jcrop_api variable
-				jcrop_api = this;
-			});
+			var newImg = new Image();
+			var jcrop_img;
+		    newImg.onload = function() {
+		    	img_original_h = newImg.height;
+		    	img_original_w = newImg.width;
+		    	jcrop_img = $('#jcrop_img').Jcrop({
+					onChange: updateCoords,
+					onSelect: updateCoords,
+					aspectRatio: xsize / ysize,
+					trueSize: [img_original_w,img_original_h]
+				},function(){
+					// Use the API to get the real image size
+					var bounds = this.getBounds();
+					boundx = bounds[0];
+					boundy = bounds[1];
+
+					var coord = [
+						Math.round(Math.random() * bounds[0]),
+						Math.round(Math.random() * bounds[1]),
+						Math.round(Math.random() * bounds[0]),
+						Math.round(Math.random() * bounds[1])
+					];
+					this.setSelect(coord);
+
+					// Store the API in the jcrop_api variable
+					jcrop_api = this;
+				});
+		    }
+		    newImg.src = $pimg.attr('src'); // this must be done AFTER setting onload
+
+
 
 			function updateCoords(c)
 			{
@@ -129,6 +142,7 @@
 						marginTop: '-' + Math.round(ry * c.y) + 'px'
 					});
 				}
+
 				$('#x').val(c.x);
 				$('#y').val(c.y);
 				$('#w').val(c.w);

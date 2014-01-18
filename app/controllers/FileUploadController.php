@@ -289,10 +289,10 @@ class FileUploadController extends BaseController
                 break;
         }
 		
-		$x = Input::get('x',0);
-		$y = Input::get('y',0);
-		$w = Input::get('w',0);
-		$h = Input::get('h',0);
+		$x = intval(Input::get('x',0));
+		$y = intval(Input::get('y',0));
+		$w = intval(Input::get('w',0));
+		$h = intval(Input::get('h',0));
 		$jpeg_quality = 100;
 		$i = Img::find($namePic);
 		$this->prefix_img = $this->getPrefixImg();

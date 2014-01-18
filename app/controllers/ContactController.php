@@ -35,7 +35,7 @@ class ContactController extends BaseController
 					'texte'=>Input::get('text','')
 					);
 		Mail::send('mail.proposition', $data, function ($message) use ($data) {
-			$message->subject('VieAssociative Proposition'.$data['titre']);
+			$message->subject('VieAssociative Proposition '.$data['titre']);
 			$message->from('noreply@vieassociative.fr', 'Vie Associative');
 			$message->to($data['email']);
 		});

@@ -16,7 +16,7 @@
 					<td valign="top" align="left">
 						<div class="h"><h3>{{{$titre}}}</h3></div>
 						<div>
-							{{{$texte}}
+							{{{$texte}}}
 						</div>
 					</td>
 		<!-- CONTENT end -->

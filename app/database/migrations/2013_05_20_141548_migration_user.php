@@ -65,6 +65,8 @@ class MigrationUser extends Migration {
 		Schema::dropIfExists('user_token');
 		Schema::dropIfExists('connexion_tentative');
 		Schema::dropIfExists('user');
+    	DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+		
 	}
 
 }

@@ -11,17 +11,7 @@ class Posts extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('post', function($table){
-			$table->engine = 'InnoDB';
-			$table->increments('id');
-			$table->integer('id_association')->unsigned();
-			$table->foreign('id_association')->references('id')->on('association');
-			$table->string('title');
-			$table->text('text');
-			$table->timestamp('wish_time_publish');
-			$table->timestamps();
-			$table->softDeletes();
-		});
+		
 	}
 
 	/**
@@ -31,7 +21,6 @@ class Posts extends Migration {
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('post');
 	}
 
 }

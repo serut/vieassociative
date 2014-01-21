@@ -1,7 +1,7 @@
 
 
-<?php $main_and_aside = true; ?>
-<?php $__env->startSection('main-content'); ?>
+<?php $large_centred = true; ?>
+<?php $__env->startSection('large-content'); ?>
     <section>
         <div>
             <ul class="breadcrumb">
@@ -11,8 +11,6 @@
                 <li class="active">Mes publications</li>
             </ul>
             <h3 class="head"><?php echo Lang::get('association/edit/news.select_news'); ?> </h3>
-            <p><?php echo Lang::get('association/edit.warn_possiblity_for_normal_user'); ?></p>
-            <hr>
             <table class="table table-striped">
                 <thead>
                     <tr>

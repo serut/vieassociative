@@ -75,6 +75,8 @@ class MigrationFile extends Migration {
 		Schema::dropIfExists('folder_file_img');
 		Schema::dropIfExists('folder');
 		Schema::dropIfExists('img_other_version');
+		// img and user use foreign key : they can't be removed if we check foreign key
+		DB::statement('SET FOREIGN_KEY_CHECKS = 0');
 		Schema::dropIfExists('img');
 		Schema::dropIfExists('file');
 	}

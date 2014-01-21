@@ -224,7 +224,7 @@
 				<table width="600" cellspacing="0" cellpadding="0" class="wrap" style="margin-bottom:24px;">
 					<tbody><tr>
 					<td valign="top" align="center" class="small m-b">
-					<div>&copy; 2013 Vie Associative</div>
+					<div>&copy; 2013-2014 Vie Associative</div>
 					</td>
 					</tr>
 					<tr class="m-0"><td height="48" colspan="5"></td></tr>

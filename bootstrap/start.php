@@ -27,7 +27,8 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 	'local' => array('*.vieassoc.lo'),
-	'prod' => array('*.vieassociative.fr'),
+	'prod' => array('association.vieassociative.fr'),
+	'prod' => array('www.vieassociative.fr'),
 ));
 
 /*

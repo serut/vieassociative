@@ -27,7 +27,7 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 	'local' => array('Serut-PC'),
-	'prod' => array('www.vieassociative.fr','association.vieassociative.fr'),
+	'prod' => array('*'),
 ));
 
 /*

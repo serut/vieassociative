@@ -63,6 +63,11 @@ return array (
             'https' => true,
             'hostname' => 'cloudformation.sa-east-1.amazonaws.com',
         ),
+        'cn-north-1' => array(
+            'http' => false,
+            'https' => true,
+            'hostname' => 'cloudformation.cn-north-1.amazonaws.com.cn',
+        ),
         'us-gov-west-1' => array(
             'http' => false,
             'https' => true,
@@ -120,7 +125,6 @@ return array (
                     'type' => 'string',
                     'location' => 'aws.query',
                     'minLength' => 1,
-                    'maxLength' => 51200,
                 ),
                 'TemplateURL' => array(
                     'type' => 'string',
@@ -386,7 +390,6 @@ return array (
                     'type' => 'string',
                     'location' => 'aws.query',
                     'minLength' => 1,
-                    'maxLength' => 51200,
                 ),
                 'TemplateURL' => array(
                     'type' => 'string',
@@ -587,7 +590,6 @@ return array (
                     'type' => 'string',
                     'location' => 'aws.query',
                     'minLength' => 1,
-                    'maxLength' => 51200,
                 ),
                 'TemplateURL' => array(
                     'type' => 'string',
@@ -674,7 +676,6 @@ return array (
                     'type' => 'string',
                     'location' => 'aws.query',
                     'minLength' => 1,
-                    'maxLength' => 51200,
                 ),
                 'TemplateURL' => array(
                     'type' => 'string',

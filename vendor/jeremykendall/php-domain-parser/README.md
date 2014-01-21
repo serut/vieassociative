@@ -1,23 +1,27 @@
-PHP Domain Parser
+PHP Domain Parser [![Build Status](https://travis-ci.org/jeremykendall/php-domain-parser.png?branch=master)](https://travis-ci.org/jeremykendall/php-domain-parser)
 =================
 
 **PHP Domain Parser** is a [Public Suffix List](http://publicsuffix.org/) based 
 domain parser implemented in PHP.
 
-master: [![Build Status](https://travis-ci.org/jeremykendall/php-domain-parser.png?branch=master)](https://travis-ci.org/jeremykendall/php-domain-parser)
-develop: [![Build
-Status](https://travis-ci.org/jeremykendall/php-domain-parser.png?branch=development)](https://travis-ci.org/jeremykendall/php-domain-parser) 
+[![Total Downloads](https://poser.pugx.org/jeremykendall/php-domain-parser/downloads.png)](https://packagist.org/packages/jeremykendall/php-domain-parser)
+[![Latest Stable Version](https://poser.pugx.org/jeremykendall/php-domain-parser/v/stable.png)](https://packagist.org/packages/jeremykendall/php-domain-parser)
 
 Motivation
 ----------
 
 While there are plenty of excellent URL parsers and builders available, there
 are very few projects that can accurately parse a url into its component 
-subdomain, registerable domain, and public suffix parts.
+subdomain, registerable domain, and public suffix parts. 
 
 Consider the domain www.pref.okinawa.jp.  In this domain, the
-**public suffix** portion is *okinawa.jp*, the **registerable domain** is
-*pref.okinawa.jp*, and the **subdomain** is *www*. You can't regex that.
+*public suffix* portion is **okinawa.jp**, the *registerable domain* is
+**pref.okinawa.jp**, and the *subdomain* is **www**. You can't regex that.
+
+Other similar libraries focus primarily on URL building, parsing, and manipulation and 
+additionally include public suffix domain parsing.  PHP Domain Parser was built around 
+accurate Public Suffix List based parsing from the very beginning, adding a URL 
+object simply for the sake of completeness.
 
 Installation
 ------------
@@ -59,8 +63,8 @@ Parsing URLs into their component parts is as simple as the example you see belo
 
 require_once '../vendor/autoload.php';
 
-$pslManager = new PublicSuffixListManager();
-$parser = new Parser($pslManager->getList());
+$pslManager = new Pdp\PublicSuffixListManager();
+$parser = new Pdp\Parser($pslManager->getList());
 $url = $parser->parseUrl('http://user:pass@www.pref.okinawa.jp:8080/path/to/page.html?query=string#fragment');
 var_dump($url);
 ```
@@ -102,7 +106,7 @@ public suffix for a parsed domain is as simple as:
 <?php
 
 $url = $parser->parseUrl('waxaudio.com.au');
-$publicSuffix = $domain->host->publicSuffix;
+$publicSuffix = $url->host->publicSuffix;
 
 // $publicSuffix = 'com.au'
 ```
@@ -179,6 +183,12 @@ You may verify the update by checking the timestamp on the files located in the
 
 **Important**: The vendor binary `pdp-psl` depends on an internet connection to
 update the cached Public Suffix List.
+
+Contributing
+------------
+
+Pull requests are *always* welcome! Please review the CONTRIBUTING.md document before
+submitting pull requests.
 
 Attribution
 -----------

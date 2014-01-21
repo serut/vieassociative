@@ -24,7 +24,6 @@ use Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
 use Symfony\Component\DependencyInjection\Loader\ClosureLoader;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 use Symfony\Component\HttpKernel\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\MergeExtensionConfigurationPass;
@@ -48,23 +47,23 @@ abstract class Kernel implements KernelInterface, TerminableInterface
     /**
      * @var BundleInterface[]
      */
-    protected $bundles;
+    protected $bundles = array();
 
     protected $bundleMap;
     protected $container;
     protected $rootDir;
     protected $environment;
     protected $debug;
-    protected $booted;
+    protected $booted = false;
     protected $name;
     protected $startTime;
     protected $loadClassCache;
 
-    const VERSION         = '2.3.8-DEV';
-    const VERSION_ID      = '20308';
+    const VERSION         = '2.4.2-DEV';
+    const VERSION_ID      = '20402';
     const MAJOR_VERSION   = '2';
-    const MINOR_VERSION   = '3';
-    const RELEASE_VERSION = '8';
+    const MINOR_VERSION   = '4';
+    const RELEASE_VERSION = '2';
     const EXTRA_VERSION   = 'DEV';
 
     /**
@@ -79,10 +78,8 @@ abstract class Kernel implements KernelInterface, TerminableInterface
     {
         $this->environment = $environment;
         $this->debug = (Boolean) $debug;
-        $this->booted = false;
         $this->rootDir = $this->getRootDir();
         $this->name = $this->getName();
-        $this->bundles = array();
 
         if ($this->debug) {
             $this->startTime = microtime(true);
@@ -189,7 +186,7 @@ abstract class Kernel implements KernelInterface, TerminableInterface
     }
 
     /**
-     * Gets a http kernel from the container
+     * Gets a HTTP kernel from the container
      *
      * @return HttpKernel
      */

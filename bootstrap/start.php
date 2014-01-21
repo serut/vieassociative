@@ -26,8 +26,7 @@ $app = new Illuminate\Foundation\Application;
 
 
 $env = $app->detectEnvironment(array(
-	'local' => array('Serut-PC'),
-	'prod' => array('*'),
+	'local' => array('Serut-PCc')
 ));
 
 /*

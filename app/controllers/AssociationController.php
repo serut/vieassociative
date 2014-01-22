@@ -30,7 +30,7 @@
 	*/
 	public function getEdit($idAssoc) {
 		return View::make('association.edit')
-			->with('count_news',Post::countNews($idAssoc))
+			->with('count_news',News::countNews($idAssoc))
 			->with('count_admin',Association::countAdmin($idAssoc))
 			->with('association',Association::find($idAssoc))
 			->with('proposition',Proposition::getPropositions($idAssoc));
@@ -44,7 +44,7 @@
 	public function getProfile($idAssoc) {
 		return View::make('association.profile')
 			->with('association',Association::find($idAssoc))
-			->with('newsFeed',NewsFeed::get($idAssoc));
+			->with('newsFeed',News::listNews($idAssoc));
 	}
 	
  	/**
@@ -70,36 +70,6 @@
 	}
 
 	/**
-		* @see http://association.vieassociative.fr/{$idAssoc}/edit/news
-		* @param int $idAssoc The ID of this association
-		* @return View Page that display all news from an association
-	*/
-	public function getListNews($idAssoc){
-		return View::make('association.list-news')
-			->with('news',Post::listNews($idAssoc))
-			->with('association',Association::find($idAssoc));
-	}
-
-	/**
-		* @see http://association.vieassociative.fr/{$idAssoc}/edit/news/{$idNews}
-		* @param int $idAssoc The ID of this association
-		* @param int $idPost ==> if $idPost = 0 then the user wants to create a new post
-		* @return View Edit or create a news
-	*/
-	public function getEditNews($idAssoc, $idPost){
-		return View::make('association.edit-news')
-			->with('post',Post::get($idPost))
-			->with('association',Association::find($idAssoc));
-	}
-
-	/**
-		* @todo Page non fonctionnelle
-	*/
-	public function getEditSocial($idAssoc){
-		return View::make('association.edit-social');
-	}
-
-	/**
 		* @see http://association.vieassociative.fr/{$idAssoc}/edit/administrator
 		* @param int $idAssoc The ID of this association
 		* @return View Edit administrator for this association
@@ -111,12 +81,6 @@
 			->with('admin',UserAssociation::where('id_assoc',$idAssoc)->with('author')->get());
 	}
 	
-	/**
-		* @todo Page non fonctionnelle
-	*/
-	public function getHistory($idAssoc){
-		return View::make('association.history');
-	}
 	
 	/**
 		* API : Create a new association
@@ -138,25 +102,6 @@
 		}
 		return Response::json($result);
 	}
-	
-	/**
-		* API : Edit or create a news
-		* @return JSON
-	*/
-	public function postEditNews($idAssoc, $idPost){
-		$v = new validators_associationEditPost;
-		$result = $v->validate();
-		if(isset($result['success'])){
-			Post::edit($idPost,$idAssoc,$result['data']);
-			$result['redirect_url'] = '/'.$idAssoc.'/edit/';
-			$result['data']=null; //Remove data
-		}
-		return Response::json($result);
-	}
-
-
-
-
 	
     public function getUpload($idAssoc,$idGallery,$typeCrop,$action){
         if(App::environment() == "prod"){
@@ -217,4 +162,17 @@
                 ->with('association',Association::find($idAssoc))
                 ->with('type',Input::get('change'));
     }
+
+	/**
+		* @todo Page non fonctionnelle
+	*/
+	public function getEditSocial($idAssoc){
+		return View::make('association.edit-social');
+	}
+	/**
+		* @todo Page non fonctionnelle
+	*/
+	public function getHistory($idAssoc){
+		return View::make('association.history');
+	}
 }

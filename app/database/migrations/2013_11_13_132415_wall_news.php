@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class Wall extends Migration {
+class WallNews extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -42,22 +42,21 @@ class Wall extends Migration {
 			$table->string('url');
 			$table->timestamps();
 		});
-		Schema::create('wall', function($table)
+		Schema::create('news', function($table)
 		{
 			$table->engine = 'InnoDB';
 			$table->increments('id');
-			$table->string('type');
 			$table->integer('id_assoc')->unsigned()->nullable();
 			$table->foreign('id_assoc')->references('id')->on('association');
-			$table->timestamp('wish_time_publish');
+			//$table->timestamp('wish_time_publish');
 			$table->timestamps();
 			$table->softDeletes();
 		});
 		Schema::create('partial', function($table){
 			$table->engine = 'InnoDB';
 			$table->increments('id');
-			$table->integer('id_wall')->unsigned()->nullable();
-			$table->foreign('id_wall')->references('id')->on('wall');
+			$table->integer('id_news')->unsigned()->nullable();
+			$table->foreign('id_news')->references('id')->on('news');
 		    $table->integer('order');
 		    $table->string('partial_type');
 		    $table->integer('partial_id');
@@ -74,7 +73,7 @@ class Wall extends Migration {
 	public function down()
 	{
 		Schema::dropIfExists('partial');
-		Schema::dropIfExists('wall');
+		Schema::dropIfExists('news');
 		Schema::dropIfExists('partial_title');
 		Schema::dropIfExists('partial_text');
 		Schema::dropIfExists('partial_one_picture');

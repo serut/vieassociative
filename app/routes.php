@@ -54,9 +54,9 @@ switch ($server['0']) {
             Route::get('{id}/edit/evenement/{idEv}/edit', 'EvenementController@getEdit')->where('id', '[0-9]+')->where('idEv', '[0-9]+');
             Route::get('{id}/edit/file/{idGallery}{typeCrop}{action}', 'AssociationController@getUpload')->where('id', '[0-9]+')->where('idGallery', '[0-9]+')->where('typeCrop', '[\/a-z0-9]*')->where('action', '[-a-z0-9]*');
             Route::get('{id}/edit/file/crop/{typeCrop}{action}/{namePic}', 'AssociationController@getCrop')->where('id', '[0-9]+')->where('typeCrop', '[a-z0-9]+')->where('action', '[-a-z0-9]*')->where('namePic', '[a-zA-Z0-9_\.]+');
-            Route::get('{id}/edit/news', 'AssociationController@getListNews')->where('id', '[0-9]+');
-            Route::get('{id}/edit/news/add', 'AssociationController@getAddNews')->where('id', '[0-9]+');
-            Route::get('{id}/edit/news/{idNews}/edit', 'AssociationController@getEditNews')->where('id', '[0-9]+')->where('idNews', '[0-9]+');
+            Route::get('{id}/edit/news', 'AssociationNewsController@getListNews')->where('id', '[0-9]+');
+            Route::get('{id}/edit/news/add', 'AssociationNewsController@getAddNews')->where('id', '[0-9]+');
+            Route::get('{id}/edit/news/{idNews}/edit', 'AssociationNewsController@getEditNews')->where('id', '[0-9]+')->where('idNews', '[0-9]+');
             Route::get('{id}/edit/social', 'AssociationController@getEditSocial')->where('id', '[0-9]+');
             Route::get('{id}/edit/administrator', 'AssociationController@getEditAdministrator')->where('id', '[0-9]+');
             Route::get('{id}/discussion/{idDiscu}', 'DiscussionController@getConversation')->where('id', '[0-9]+')->where('idDiscu', '[0-9]+');
@@ -66,7 +66,7 @@ switch ($server['0']) {
 
             Route::options('/upload', 'FileUploadController@fileUpload');
             Route::post('/upload', 'FileUploadController@postFileUpload');
-            Route::post('{id}/edit/news/{idNews}/edit', 'AssociationController@postEditNews')->where('id', '[0-9]+')->where('idNews', '[0-9]+');
+            Route::post('{id}/edit/news/{idNews}/edit', 'AssociationNewsController@postEditNews')->where('id', '[0-9]+')->where('idNews', '[0-9]+');
             Route::post('{id}/form/{origin}/{item}', 'AssociationFormController@postForm')->where('id', '[0-9]+')->where('origin', '[a-z-]+')->where('item', '[a-z-_]+');
             Route::post('discussion/add', 'DiscussionController@postAdd');
             Route::post('discussion/vote', 'DiscussionController@postVote');

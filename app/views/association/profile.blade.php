@@ -168,11 +168,14 @@
 					<div class="span21">
 						<div class="row-fluid">
 							@foreach($newsFeed as $news )
-								@include('association.wall.'.$news->type, array('p'=>$news))
+								{{var_dump($news)}}
+								@foreach($news->partial as $partial)
+									@include('association.wall.'.$partial->partial_type, array('p'=>$news))
+								@endforeach
 							@endforeach
-							@if($newsFeed->isEmpty())
+							if($newsFeed->isEmpty())
 							<p>Vous n'avez pas encore envoyé de contenu</p>
-							@endif
+							endif
 						</div>
 				 	</div>
 				</div>

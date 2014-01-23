@@ -103,7 +103,7 @@
 		return Response::json($result);
 	}
 	
-    public function getUpload($idAssoc,$idGallery,$typeCrop,$action){
+    public function getUpload($idAssoc,$idGallery,$typeCrop = "",$action = ""){
         if(App::environment() == "production"){
             $prefix = 'a';
         }else{

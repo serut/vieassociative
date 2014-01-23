@@ -23,12 +23,14 @@
                 </thead>
                 <tbody>
                     @foreach($news as $n)
-                    <tr>
-                        <td>{{{$n->title}}}</td>
-                        <td>{{\Carbon\Carbon::createFromTimeStamp(strtotime($n->updated_at))->diffForHumans()}}</td>
-                        <td><i class="fa fa-remove"></i></td>
-                        <td><a href="news/{{$n->id}}/edit"> Editer</a></td>
-                    </tr>
+                        @if($n[0]->partial_type="PartialTitle")
+                        <tr>
+                            <td>{{{$n[0]->title}}}</td>
+                            <td>{{\Carbon\Carbon::createFromTimeStamp(strtotime($n[0]->updated_at))->diffForHumans()}}</td>
+                            <td><i class="fa fa-remove"></i></td>
+                            <td><a href="news/{{$n[0]->id_news}}/edit"> Editer</a></td>
+                        </tr>
+                        @endif
                     @endforeach
                 </tbody>
 

@@ -167,15 +167,16 @@
 				<div class="span23">
 					<div class="span21">
 						<div class="row-fluid">
-							@foreach($newsFeed as $news )
-								{{var_dump($news)}}
-								@foreach($news->partial as $partial)
-									@include('association.wall.'.$partial->partial_type, array('p'=>$news))
+							@foreach($newsFeed as $news)
+								@include('association.wall.generic-head')
+								@foreach($news as $n)
+									@include('association.wall.'.$n->partial_type, array('p'=>$n))
 								@endforeach
+								@include('association.wall.generic-foot', array('p'=>$n))
 							@endforeach
-							if($newsFeed->isEmpty())
+							@if(empty($newsFeed))
 							<p>Vous n'avez pas encore envoyé de contenu</p>
-							endif
+							@endif
 						</div>
 				 	</div>
 				</div>

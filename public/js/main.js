@@ -355,3 +355,5 @@ Not used :
       event.stopPropagation();
     })
 */
+
+console.log("Hey ! Ca vous dirai de donner un coup de main à Vie Associative ?\nFaites partie du projet et ensemble aidons les Associations : https://github.com/serut/vieassociative");

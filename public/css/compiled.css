@@ -1558,9 +1558,9 @@ div[data-role="editor-toolbar"]{-webkit-user-select:none;-moz-user-select:none;-
 .button-large{font-size:19px;height:38.4px;line-height:38.4px;padding:0 30.72px}
 .button-small{font-size:12px;height:25.6px;line-height:25.6px;padding:0 20.48px}
 .button-tiny{font-size:11px;height:22.4px;line-height:22.4px;padding:0 17.92px}
-.profile>div{position:relative;margin-top:-118px;padding:40px 10px 15px;background:#fff;z-index:1}
+.profile>div{position:relative;margin-top:-7%;padding:40px 10px 15px;background:#fff;z-index:1}
 .profile .cover{width:100%;position:relative;z-index:2}
-.profile .logo{width:21%;position:relative;margin:-9% 0 0 3%;z-index:3}
+.profile .logo{width:9%;position:relative;margin:-2% 0 0 3%;z-index:3}
 .profile .head{float:right;margin-top:-50px}.profile .head .name{display:inline-block;width:55%}
 .profile .img-polaroid{float:left}.profile .img-polaroid p{padding:40px 10px;margin:0;text-align:center}
 .profile .header-arrow{margin-top:-3px}

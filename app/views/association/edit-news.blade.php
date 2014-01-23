@@ -20,6 +20,7 @@
 					<img src="{{$association->getLogo()}}" class="img-circle">
 				</div>
 				<div class="span20">
+
 					<div id="title">
 						@input = array(
 							'id'=>"title",
@@ -32,15 +33,28 @@
 						)@
 						{{SiteHelpers::simple_input($input)}}
 					</div>
+
 					<div id="textarea">
 						{{SiteHelpers::add_textarea('text',$post->text, true, true)}}
 					</div>
-					<div id="panel">
-						<a href="#" data-component="title"><span><i class="fa fa-plus"></i> Titre</span></a>
-						<a href="#" data-component="textarea"><span><i class="fa fa-plus"></i> Texte</span></a>
-						<a href="#" data-component=""><span><i class="fa fa-plus"></i> Image</span></a>
-						<a href="#" data-component=""><span><i class="fa fa-plus"></i> Soundcloud</span></a>
-						<a href="#" data-component=""><span><i class="fa fa-plus"></i> Youtube</span></a>
+
+					<div class="blockquote text-center">
+						<br>
+						<a href="#" data-component="title" class="btn">
+							<span><i class="fa fa-plus"></i> Titre</span>
+						</a>
+						<a href="#" data-component="textarea" class="btn">
+							<span><i class="fa fa-plus"></i> Texte</span>
+						</a>
+						<a href="#" data-component="image" class="btn">
+							<span><i class="fa fa-plus"></i> Image</span>
+						</a>
+						<a href="#" data-component="soundcloud" class="btn">
+							<span><i class="fa fa-plus"></i> Soundcloud</span>
+						</a>
+						<a href="#" data-component="youtube" class="btn">
+							<span><i class="fa fa-plus"></i> Youtube</span>
+						</a>
 					</div>
 				</div>
 			</div>

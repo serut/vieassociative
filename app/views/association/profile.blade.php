@@ -8,7 +8,7 @@
 		<img src="{{$association->getLogo()}}" class="logo img-circle">
 		<div>
 			<div>
-				<div class="span17 head">
+				<div class="span20 head">
 					<h2 class="name">{{$association->name}}</h2>
 					<span class="pull-right" style="margin-top:13px;">
 						<a class="button button-blue" href="/{{$association->id}}/edit">Editer</a>

@@ -4,7 +4,7 @@
 @section('large-content')
     <section>
         <div>
-            <h3 class="head">{{Lang::get('user/edit.head_modification')}}</h3>
+            <h3 class="head">Edition du profil de l'utilisateur</h3>
                 
             <table class="table table-striped">
               <tbody>

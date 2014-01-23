@@ -74,7 +74,7 @@
 
 
         <br>
-        <?php if(App::environment() != "prod"): ?>
+        <?php if(App::environment() != "production"): ?>
         <h5>Personnalisez votre publication avec :</h5>
         <div class="row" style="margin-left:10px">
             <div class="thumbnail span4">

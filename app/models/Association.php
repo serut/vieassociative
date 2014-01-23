@@ -61,7 +61,7 @@ class Association  extends Eloquent
             return "http://img.vieassociative.fr/default_logo.jpg";
         }
         //The prefix of images
-        if(App::environment() == "prod"){
+        if(App::environment() == "production"){
             $prefix = 'a';
         }else{
             $prefix = 'deva';
@@ -73,7 +73,7 @@ class Association  extends Eloquent
             return "http://img.vieassociative.fr/default_cover.jpg";
         }
         //The prefix of images
-        if(App::environment() == "prod"){
+        if(App::environment() == "production"){
             $prefix = 'a';
         }else{
             $prefix = 'deva';

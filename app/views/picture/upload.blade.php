@@ -41,7 +41,7 @@
 				            </div>
 
 				            <div data-fileapi="remove" class="pull-right"><i class="fa fa-trash-o" title="Supprimer le fichier"></i></div>
-							@if(App::environment() != "prod")
+							@if(App::environment() != "production")
 				            <% if( /^image/.test(type) ){ %>
 				               <br><div data-fileapi="rotate.cw" class="pull-right"><i class="fa fa-repeat" title="Faire pivoter l'image"></i></div>
 				            <% } %>

@@ -1,4 +1,4 @@
-<?php if(App::environment() == "prod"): ?>
+<?php if(App::environment() == "production"): ?>
 	<?php /*  CDN link  */ ?>
 	<link rel="stylesheet" type="text/css" href="http://cdn.vieassociative.fr/css/compiled.css" />
 <?php else: ?>

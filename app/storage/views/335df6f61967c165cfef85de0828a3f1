@@ -48,7 +48,7 @@
 									<td><?php echo $association->nb_photos; ?> images</td>
 									<td><a href="edit/file/<?php echo $association->id_folder; ?>"> Editer</a></td>
 								</tr>
-								<?php if(App::environment() != "prod"): ?>
+								<?php if(App::environment() != "production"): ?>
 								<tr>
 									<td>La page Vie Associative</td>
 									<td></td>

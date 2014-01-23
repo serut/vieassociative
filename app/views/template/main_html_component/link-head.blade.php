@@ -1,4 +1,4 @@
-@if(App::environment() == "prod")
+@if(App::environment() == "production")
 	{{-- CDN link --}}
 	<link rel="stylesheet" type="text/css" href="http://cdn.vieassociative.fr/css/compiled.css" />
 @else

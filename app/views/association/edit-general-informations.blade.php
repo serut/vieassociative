@@ -35,7 +35,7 @@
                   <td>{{{$association->goal}}}</td>
                   <td><a href="#" data-modal-form="goal"><i class="fa fa-pencil"></i></a><br></td>
                 </tr>
-                @if(App::environment() != "prod")
+                @if(App::environment() != "production")
                 <tr>
                   <td>Date de création</td>
                   <td>{{$association->official_date_creation}}</td>
@@ -47,7 +47,7 @@
                   <td>{{{$association->website_url}}}</td>
                   <td><a href="#" data-modal-form="website_url"><i class="fa fa-pencil"></i></a></td>
                 </tr>
-                @if(App::environment() != "prod")
+                @if(App::environment() != "production")
                 <tr>
                   <td>Siege</td>
                   <td>{{{$association->headquarter}}}</td>

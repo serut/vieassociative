@@ -1,4 +1,4 @@
-@if(App::environment() != "prod")
+@if(App::environment() != "production")
 <div class="social-footer">
 	<div class="social-controls">
 		<span><i class="fa fa-thumbs-up "></i> Like</span>

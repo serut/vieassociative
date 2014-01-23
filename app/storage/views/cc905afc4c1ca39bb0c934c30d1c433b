@@ -34,7 +34,7 @@
                   <td><?php echo e($association->goal); ?></td>
                   <td><a href="#" data-modal-form="goal"><i class="fa fa-pencil"></i></a><br></td>
                 </tr>
-                <?php if(App::environment() != "prod"): ?>
+                <?php if(App::environment() != "production"): ?>
                 <tr>
                   <td>Date de création</td>
                   <td><?php echo $association->official_date_creation; ?></td>
@@ -46,7 +46,7 @@
                   <td><?php echo e($association->website_url); ?></td>
                   <td><a href="#" data-modal-form="website_url"><i class="fa fa-pencil"></i></a></td>
                 </tr>
-                <?php if(App::environment() != "prod"): ?>
+                <?php if(App::environment() != "production"): ?>
                 <tr>
                   <td>Siege</td>
                   <td><?php echo e($association->headquarter); ?></td>

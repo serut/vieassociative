@@ -23,7 +23,7 @@
 
 
 
-			@if(App::environment() != "prod")
+			@if(App::environment() != "production")
 			<div class="menu row-fluid" style="display:none;">
 				<div id="photo" class="span4 img-polaroid" data-toggle="div-hidden-news">
 					<p>Fil d'actualité</p>

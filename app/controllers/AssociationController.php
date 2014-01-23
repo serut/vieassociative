@@ -104,7 +104,7 @@
 	}
 	
     public function getUpload($idAssoc,$idGallery,$typeCrop,$action){
-        if(App::environment() == "prod"){
+        if(App::environment() == "production"){
             $prefix = 'a';
         }else{
             $prefix = 'deva';
@@ -118,7 +118,7 @@
                 ->with('hasNextStep',!empty($typeCrop));
     }
     public function getCrop($idAssoc,$typeCrop,$action,$namePic){
-        if(App::environment() == "prod"){
+        if(App::environment() == "production"){
             $prefix = 'a';
         }else{
             $prefix = 'deva';

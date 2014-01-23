@@ -49,7 +49,7 @@
 									<td>{{$association->nb_photos}} images</td>
 									<td><a href="edit/file/{{$association->id_folder}}"> Editer</a></td>
 								</tr>
-								@if(App::environment() != "prod")
+								@if(App::environment() != "production")
 								<tr>
 									<td>La page Vie Associative</td>
 									<td></td>

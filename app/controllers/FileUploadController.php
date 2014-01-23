@@ -61,7 +61,7 @@ class FileUploadController extends BaseController
         }
     }
 	public function getPrefixImg(){
-		if(App::environment() != "prod"){
+		if(App::environment() != "production"){
 			return 'deva';
 		}else{
 			return 'a';

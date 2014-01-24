@@ -12,11 +12,11 @@
 	   g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
 	   s.parentNode.insertBefore(g,s)}(document,'script'));
    </script>
-	<script src="http://cdn.vieassociative.fr/js/vendor/images-loaded.min.js" async="true" async></script>
-	<script src="http://cdn.vieassociative.fr/js/vendor/parsley.min.js" async="true" async></script>
-	<script src="http://cdn.vieassociative.fr/js/vendor/tmpl.min.js" async="true" async></script>
-	<script src="http://cdn.vieassociative.fr/js/vendor/masonry.min.js" async="true" async></script>
-	<script src="http://cdn.vieassociative.fr/pluggin/bootstrap-datepicker/bootstrap-datepicker.js" async="true" async></script>
+	<script src="http://cdn.vieassociative.fr/js/vendor/images-loaded.min.js" async></script>
+	<script src="http://cdn.vieassociative.fr/js/vendor/parsley.min.js" async></script>
+	<script src="http://cdn.vieassociative.fr/js/vendor/tmpl.min.js" async></script>
+	<script src="http://cdn.vieassociative.fr/js/vendor/masonry.min.js" async></script>
+	<script src="http://cdn.vieassociative.fr/pluggin/bootstrap-datepicker/bootstrap-datepicker.js" async></script>
 	<script src="http://cdn.vieassociative.fr/js/vendor/jquery.hotkeys.js"></script>
 	<script src="http://cdn.vieassociative.fr/js/vendor/toastr.min.js"></script>
 @else

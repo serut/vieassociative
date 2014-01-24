@@ -4,8 +4,8 @@
 @set_true $large_centred 
 @section('large-content')
 	<section class="profile">
-		<img src="{{$association->getCover()}}" class="cover">
-		<img src="{{$association->getLogo()}}" class="logo img-circle">
+		<img src="{{$association->getCover()}}" class="cover" alt="">
+		<img src="{{$association->getLogo()}}" class="logo img-circle" alt="">
 		<div>
 			<div>
 				<div class="span20 head">
@@ -73,8 +73,6 @@
 			</div>
 		</div>
 	</section>
-	<!-- Posts will go here ... -->
-	</ul>
 @stop
 
 @section('footer-js')

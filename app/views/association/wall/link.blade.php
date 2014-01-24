@@ -1,7 +1,7 @@
 <div class="media social-box">
 	
 	<a href="#" class="pull-left social-users-avatars">
-		<img src="{{$association->getLogo()}}" style="width: 48px;">
+		<img src="{{$association->getLogo()}}" style="width: 48px;"  alt="">
 	</a>
 	
 	

@@ -40,7 +40,8 @@
                             'placeholder'=>Lang::get('association/form_create.placeholder_link'),
                             'class' => 'input-xlarge',
                             'data-original-title'=>Lang::get('association/form_create.tooltip_link'),
-                            'data-maxlength'=>"30",
+                            'data-maxlength'=>"50",
+                            'data-minlength'=>"2",
                         )
                     )@
                     {{SiteHelpers::create_input($input)}}
@@ -56,7 +57,8 @@
                         'class' => 'input-xlarge',
                         'data-original-title'=>Lang::get('association/form_create.tooltip_name'),
                         'required'=>"required",
-                        'data-maxlength'=>"100",
+                        'data-maxlength'=>"120",
+                        'data-minlength'=>"4",
                     )
                 )@
                 {{ SiteHelpers::create_input($input) }}

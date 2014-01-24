@@ -1412,6 +1412,7 @@ header div{z-index:97;margin-bottom:5px}header div img{margin-top:6px;margin-lef
 header div nav{margin-top:5px;text-align:right;white-space:nowrap}header div nav div{margin:5px;padding-bottom:0;padding-top:4px}header div nav div ul.nav{float:right !important}
 header div nav .form-search{margin-bottom:0;margin-top:5px}header div nav .form-search input{display:inline-block}
 header div nav .form-search a{width:29px;height:30px;margin-left:-6px}
+header div nav i{color:#b4b4b4}
 header #menu .dropdown-menu{margin-top:7px;background:none repeat scroll 0 0 #4c4c4c;min-width:180px;left:auto;right:0;border-top-left-radius:0;border-top-right-radius:0}header #menu .dropdown-menu:after,header #menu .dropdown-menu:before{bottom:100%;left:86%;border:solid transparent;content:" ";height:0;width:0;position:absolute;pointer-events:none;margin-top:-14px;border-color:rgba(255,255,255,0);border-bottom-color:#4c4c4c;border-width:10px;margin-left:-10px}
 header #menu .dropdown-menu>li{border-bottom:1px solid #474747}header #menu .dropdown-menu>li:last-child{border:0}
 header #menu .dropdown-menu>li>a{color:#fff;padding:8px 15px;text-align:left}header #menu .dropdown-menu>li>a:hover{background:#f0523f;color:#fff}

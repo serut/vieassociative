@@ -18,7 +18,7 @@
                     <span class="twitter"><a title="Twitter" href="https://twitter.com/VieAssociative"></a></span>
                     <span class="facebook"><a title="Facebook" href="https://www.facebook.com/vieassociativeofficiel"></a></span>
                 </span>
-                <a href="{{URLSubdomain::to('www','/info/condition')}}" title="Généré en {{round(microtime(true) - TIME_AT_START,3)}} s">&copy; Vie Associative 2013</a>
+                <a href="{{URLSubdomain::to('www','/info/condition')}}" title="Généré en {{round(microtime(true) - TIME_AT_START,3)}} s">&copy; Vie Associative 2013 - 2014</a>
             </div>
         </div>
     </div>

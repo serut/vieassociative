@@ -95,6 +95,9 @@ header div nav .form-search a {
   height: 30px;
   margin-left: -6px;
 }
+header div nav i {
+  color: #b4b4b4;
+}
 header #menu .dropdown-menu {
   margin-top: 7px;
   background: none repeat scroll 0 0 #4C4C4C;

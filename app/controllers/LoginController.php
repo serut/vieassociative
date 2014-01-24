@@ -16,6 +16,7 @@ class LoginController extends BaseController
             $result = $v->login($nbrConnexTentative);
             if(isset($result['success'])){
                 User::connexion(Auth::user()->id);
+                $result['go_back'] = "true";
                 $result['redirect_url'] = URL::to('/');
             }else{
                 TentativeConnexion::add(IP);
@@ -38,6 +39,7 @@ class LoginController extends BaseController
             $user->save();
             Auth::loginUsingId($user->id);
             User::connexion($user->id);
+            $result['go_back'] = "true";
             $result['redirect_url'] = URL::to('/');
             EmailController::register($user->username,$user->email);
         }else{

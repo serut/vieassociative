@@ -14,7 +14,7 @@
 				<li class="active">Editer une publication</li>
 			</ul>
 			<h3 class="head">{{Lang::get('association/edit/news.modify_news')}}</h3>
-			{{ Form::open(array('class'=> 'form-horizontal','data-validate'=>'our-parsey')) }}
+			{{ Form::open(array('class'=> 'form-horizontal','data-validate'=>'our-parsey', 'data-loading'=>'true')) }}
 			<div class="row">
 				<div class="span2">
 					<img src="{{$association->getLogo()}}" class="img-circle">
@@ -29,6 +29,8 @@
 								'placeholder'=>Lang::get('association/edit/news.placeholder_title'),
 								'class' => 'input-xxlarge',
 								'tabindex'=>'1',
+	                            'data-maxlength'=>"150",
+	                            'data-minlength'=>"3",
 							)
 						)@
 						{{SiteHelpers::simple_input($input)}}

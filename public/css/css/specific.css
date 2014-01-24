@@ -24,7 +24,12 @@
 }
 .profile .head .name {
   display: inline-block;
-  width: 55%;
+  width: 87%;
+  font-size: 160%;
+}
+.profile .head .name.short {
+  font-size: 135%;
+  margin-top: 6px;
 }
 .profile .img-polaroid {
   float: left;

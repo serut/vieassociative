@@ -50,14 +50,14 @@
 												<li><a href="{{URLSubdomain::to('www','/user/logout')}}">Deconnexion</a></li>
 											</ul>
 										</li>
-										<li>
-											<a href="#" style="padding-bottom: 5px;" onclick="modalUserProposition();return false;"><i class="fa fa-bullhorn fa-2x"style="margin-top: -4px;"></i></a>
-										</li>
 										@else
 										<li>
 											<a href="{{URLSubdomain::to('www','/user/log')}}">Connexion - Inscription </a>
 										</li>
 										@endif
+										<li>
+											<a href="#" style="padding-bottom: 5px;" onclick="modalUserProposition();return false;"><i class="fa fa-bullhorn fa-2x"style="margin-top: -4px;"></i></a>
+										</li>
 									</ul>
 								</div>
 						</div>

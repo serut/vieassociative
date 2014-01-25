@@ -14,32 +14,32 @@ class WallNews extends Migration {
 		Schema::create('partial_title', function($table){
 			$table->engine = 'InnoDB';
 			$table->increments('id');
-			$table->text('title');
+			$table->text('var1');
 			$table->timestamps();
 		});
 		Schema::create('partial_text', function($table){
 			$table->engine = 'InnoDB';
 			$table->increments('id');
-			$table->text('text');
+			$table->text('var1');
 			$table->timestamps();
 		});
 		Schema::create('partial_one_picture', function($table){
 			$table->engine = 'InnoDB';
 			$table->increments('id');
-			$table->string('name_img');
-			$table->foreign('name_img')->references('name')->on('img');
+			$table->string('var1');
+			$table->foreign('var1')->references('name')->on('img');
 			$table->timestamps();
 		});
 		Schema::create('partial_youtube', function($table){
 			$table->engine = 'InnoDB';
 			$table->increments('id');
-			$table->string('url');
+			$table->string('var1');
 			$table->timestamps();
 		});
 		Schema::create('partial_soundcloud', function($table){
 			$table->engine = 'InnoDB';
 			$table->increments('id');
-			$table->string('url');
+			$table->string('var1');//URL
 			$table->timestamps();
 		});
 		Schema::create('news', function($table)

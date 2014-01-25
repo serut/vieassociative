@@ -60,7 +60,7 @@
 							@foreach($newsFeed as $news)
 								@include('association.wall.generic-head')
 								@foreach($news as $n)
-									@include('association.wall.'.$n->partial_type, array('p'=>$n))
+									@include('association.wall.'.$n['type'], array('p'=>$n))
 								@endforeach
 								@include('association.wall.generic-foot', array('p'=>$n))
 							@endforeach

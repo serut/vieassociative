@@ -5,7 +5,7 @@ class PartialTitle extends Eloquent
     public $timestamps = true;
     public static function add($title){
     	$partialTitle = new PartialTitle();
-    	$partialTitle->title=$title;
+    	$partialTitle->var1=$title;
     	$partialTitle->touch();
     	return $partialTitle->id;
     }

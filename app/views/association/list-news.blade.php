@@ -25,7 +25,7 @@
                     @foreach($news as $n)
                         @if($n[0]->partial_type="PartialTitle")
                         <tr>
-                            <td>{{{$n[0]->title}}}</td>
+                            <td>{{{$n[0]->var1}}}</td>
                             <td>{{\Carbon\Carbon::createFromTimeStamp(strtotime($n[0]->updated_at))->diffForHumans()}}</td>
                             <td><i class="fa fa-remove"></i></td>
                             <td><a href="news/{{$n[0]->id_news}}/edit"> Editer</a></td>

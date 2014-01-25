@@ -58,7 +58,7 @@ class Association  extends Eloquent
     }
     public function getLogo(){
         if(empty($this->logo_img)){
-            return "http://img.vieassociative.fr/img/items/default_logo.jpg";
+            return "http://cdn.vieassociative.fr/img/items/default_logo.jpg";
         }
         //The prefix of images
         if(App::environment() == "production"){

@@ -59,10 +59,10 @@
 						<div class="row-fluid">
 							@foreach($newsFeed as $news)
 								@include('association.wall.generic-head')
-								@foreach($news as $n)
+								@foreach($news['data'] as $n)
 									@include('association.wall.'.$n['type'], array('p'=>$n))
 								@endforeach
-								@include('association.wall.generic-foot', array('p'=>$n))
+								@include('association.wall.generic-foot')
 							@endforeach
 							@if(empty($newsFeed))
 							<p>Vous n'avez pas encore envoyé de contenu</p>

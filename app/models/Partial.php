@@ -87,25 +87,31 @@ class Partial extends Eloquent
         		if($id_news != $q->id_news){
         			$i++;
         			$id_news = $q->id_news;
+                    $result[$id_news]['updated_at'] = $q->updated_at;
         		}
                 switch ($q->partial_type) {
                     case 'PartialTitle':
-                        $result[$id_news][] = array("type"=>$q->partial_type,"title"=>$q->title);
+                        $arg1_name = "title";
                         break;
                     case 'PartialText':
-                        $result[$id_news][] = array("type"=>$q->partial_type,"text"=>$q->text);
+                        $arg1_name = "text";
                         break;
                     case 'PartialSoundCloud':
-                        $result[$id_news][] = array("type"=>$q->partial_type,"soundcloud_url"=>$q->soundcloud);
+                        $arg1_name = "soundcloud_url";
                         break;
                     case 'PartialYoutube':
-                        $result[$id_news][] = array("type"=>$q->partial_type,"youtube_slug"=>$q->youtube);
+                        $arg1_name = "youtube_slug";
                         break;
                     case 'PartialOnePicture':
-                        $result[$id_news][] = array("type"=>$q->partial_type,"img_url"=>$q->url_img);
+                        $arg1_name = "img_url";
                 }
+                $result[$id_news]['data'][] = array(
+                                                "type"=>$q->partial_type,
+                                                $arg1_name=>$q->title
+                                            );
         	}
         }
+        var_dump($result);
     	return $result;
     }
 }

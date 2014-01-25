@@ -1,4 +1,4 @@
-		@include('association.wall.post-footer', array('p'=>$p))
+		@include('association.wall.post-footer')
 		<hr class="separator">
 	</div>
 </div>

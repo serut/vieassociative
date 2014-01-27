@@ -9,4 +9,9 @@ class PartialYoutube extends Eloquent
     	$partialYoutube->touch();
     	return $partialYoutube->id;
     }
+    public static function edit($id,$value){
+    	$partialYoutube = PartialYoutube::firstOrFail($id);
+    	$partialYoutube->var1=$value;
+    	$partialYoutube->touch();
+    }
 }

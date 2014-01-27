@@ -1,11 +1,9 @@
 <?php if(App::environment() != "production"): ?>
 <div class="social-footer">
 	<div class="social-controls">
-		<span><i class="fa fa-thumbs-up "></i>Like</span>
-		<span><i class="fa fa-comment"></i>Comment</span>
-	</div>
-	<div class="social-info-users">
-	<strong>Margo Payne, Tobei Tsumura</strong>and <strong> 3,747 others</strong>like this.
+		<span><i class="fa fa-thumbs-up "></i> Like</span>
+		<span><i class="fa fa-comment"></i> Comment</span>
+		<span>- <strong>Margo Payne, Tobei Tsumura</strong>and <strong> 3,747 others</strong> like this.</span>
 	</div>
 	
 	
@@ -13,10 +11,10 @@
 	
 	<div class="media">
 		<a href="#" class="pull-left">
-		<img alt="D" src="http://cesarlab.com/templates/social/assets/img/avatars/d-30x30.png" class="media-object">
+		<img alt="D" src="<?php echo Auth::user()->getAvatar(); ?>">
 		</a>
 		<div class="media-body">
-		<strong>Margo Payne</strong>
+		<strong><?php echo Auth::user()->username; ?></strong>
 		Where is that?
 		<br>
 		<small>
@@ -44,7 +42,7 @@
 	
 	<div class="media">
 		<a href="#" class="pull-left">
-		<img width="30" height="30" alt="Julio Marquez" src="http://cesarlab.com/templates/social/assets/img/avatar-30.png" class="media-object">
+		<img alt="<?php echo Auth::user()->username; ?>" src="<?php echo Auth::user()->getAvatar(); ?>">
 		</a>
 		<div class="media-body">
 		<input type="text" placeholder="Write a comment..." class="input-block-level">

@@ -1,11 +1,11 @@
 <?php if(App::environment() == "production"): ?>
-	<?php /*  CDN link  */ ?>
+	<?php /* CDN link */ ?>
 	<link rel="stylesheet" type="text/css" href="http://cdn.vieassociative.fr/css/compiled.css" />
 <?php else: ?>
-	<?php /*  Direct link  */ ?>
+	<?php /* Direct link */ ?>
 	<link rel="stylesheet" type="text/css" href="/css/compiled.css" />
-	<?php /*  With less
+	<?php /* With less
 		<link href="/css/less/include.less" rel="stylesheet/less" type="text/css" />
 		<script src="/js/vendor/less.min.js" type="text/javascript"></script>
-	 */ ?>
+	*/ ?>
 <?php endif; ?>

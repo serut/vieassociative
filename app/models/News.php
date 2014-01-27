@@ -11,13 +11,8 @@ class News extends Eloquent
           return date("g:i a F j, Y ", strtotime($this->update_at));  
     }
     static function get($idPost){
-        $p = News::find($idPost);
-        if($p){
-            return $p;
-        }
-        return new News();
+        return Partial::get($idPost);
     }
-
     static function edit($id_news,$id_assoc, $data){
         if($id_news == 0){
             $news = new News();

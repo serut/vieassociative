@@ -166,10 +166,14 @@
 				<div class="span23">
 					<div class="span21">
 						<div class="row-fluid">
-							<?php foreach($newsFeed as $news ): ?>
-								<?php echo $__env->make('association.wall.'.$news->type, array('p'=>$news), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+							<?php foreach($newsFeed as $news): ?>
+								<?php echo $__env->make('association.wall.generic-head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+								<?php foreach($news as $n): ?>
+									<?php echo $__env->make('association.wall.'.$n->partial_type, array('p'=>$n), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+								<?php endforeach; ?>
+								<?php echo $__env->make('association.wall.generic-foot', array('p'=>$n), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 							<?php endforeach; ?>
-							<?php if($newsFeed->isEmpty()): ?>
+							<?php if(empty($newsFeed)): ?>
 							<p>Vous n'avez pas encore envoyé de contenu</p>
 							<?php endif; ?>
 						</div>
@@ -369,11 +373,11 @@
 			<img src="${url_img}" class="size${size}"alt=" " />
 		</a>
 	</div>
-	<?php /* <div class="thumb-text">
+	<?php /*<div class="thumb-text">
 		<b>${head}</b><br>
 		<div class="divider"></div>
 		<a href="#" title="Image Dummy Title" >${link}</a>
-	</div> */ ?>
+	</div>*/ ?>
 </script>
 
 <script id="evenement-pattern" type="text/x-jquery-tmpl">

@@ -9,4 +9,9 @@ class PartialText extends Eloquent
     	$partialText->touch();
     	return $partialText->id;
     }
+    public static function edit($id,$value){
+    	$partialText = PartialText::firstOrFail($id);
+    	$partialText->var1=$value;
+    	$partialText->touch();
+    }
 }

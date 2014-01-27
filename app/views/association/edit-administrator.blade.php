@@ -11,8 +11,8 @@
               <li><a href="/{{$association->id}}/edit">Edition</a> <span class="divider">/</span></li>
               <li class="active">Les administrateurs</li>
             </ul>
-            <h3 class="head">{{Lang::get('association/edit/administrator.list_admin')}} </h3>
             @if(! $admin->isEmpty())
+            <h3 class="head">{{Lang::get('association/edit/administrator.list_admin')}} </h3>
             <hr>
             <table class="table table-striped">
                 <thead>
@@ -39,7 +39,7 @@
                 @endforeach
             </table>
             @else
-                Cette association n'a pas d'administrateur. Avant de vous 
+                Cette association n'a pas d'administrateur. Avant de vous déclarer administrateur, veuillez prendre connaissance des  
                 <a target="_blank" href="/info/condition">{{Lang::get('association/form_create.notice_part_link')}}</a>
                 {{Lang::get('association/form_create.notice_create_association')}}
             @endif

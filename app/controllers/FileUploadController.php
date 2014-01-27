@@ -44,9 +44,16 @@ class FileUploadController extends BaseController
 		}
 		return Response::json($return);
 	}
-	public function postError($codeError){
-		$return = array('error'=> 'true','status'=>'Une erreur a été detecté pendant l\'upload. Code erreur : '.$codeError);
-		return Response::json($return);
+	public function fileUpload(){
+		$http_origin = $_SERVER['HTTP_ORIGIN'];
+		if ($http_origin == "http://www.vieassoc.lo" || $http_origin == "http://www.vieassociative.fr" || $http_origin == "http://association.vieassoc.lo" )
+		{  
+	        return Response::make('',200,array('Access-Control-Allow-Origin' => $http_origin,
+	        			'Access-Control-Allow-Methods'=>'POST, GET, OPTIONS',
+	        			'Access-Control-Allow-Credentials'=>'true',
+	        			'Access-Control-Allow-Headers'=>'Origin, X-Requested-With, Content-Range, Content-Disposition, Content-Type'));
+		}
+	    return;
 	}
 	public function getContext() {
     	$val = Request::header('Referer');
@@ -67,16 +74,6 @@ class FileUploadController extends BaseController
 			return 'a';
 		}
 	}
-    public function isFinished() {
-    	$val = Request::header('Content-Range');
-             //Exemple : bytes 2097152-3795036/3795037
-        $pattern  = '/bytes ([0-9]+)-([0-9]+)\/([0-9]+)/s';
-        if(preg_match($pattern, $val,$elements)){
-        	return ($elements[2]+1) == $elements[3];
-        }else{
-        	return $this->postError(4);
-        }
-    }
     public function getFileName(){
     	$val = Request::header('Content-Disposition');
              //Exemple : attachment; filename=cobravrai.png
@@ -87,7 +84,23 @@ class FileUploadController extends BaseController
         	return $this->postError(2);
         }
     }
-    /*Get the file extension*/
+    public function isFinished() {
+    	$val = Request::header('Content-Range');
+             //Exemple : bytes 2097152-3795036/3795037
+        $pattern  = '/bytes ([0-9]+)-([0-9]+)\/([0-9]+)/s';
+        if(preg_match($pattern, $val,$elements)){
+        	return ($elements[2]+1) == $elements[3];
+        }else{
+        	return $this->postError(4);
+        }
+    }
+	public function isImg(){
+		$imgExtension = array('png','jpg','bmp','jpeg');
+		return in_array(strtolower($this->file_ext), $imgExtension);
+	}
+    /**
+    *	Get the file extension
+    */
 	public function cleanFileName($file){
 		$file = preg_replace("#[^a-zA-Z0-9_\-.]#", "", $file);
 		preg_match('%^(.*?)[\\\\/]*(([^/\\\\]*?)(\.([^\.\\\\/]+?)|))[\\\\/\.]*$%im',$file,$result);
@@ -103,15 +116,21 @@ class FileUploadController extends BaseController
 		}
 	}
 
-	
-	public function isImg(){
-		$imgExtension = array('png','jpg','bmp','jpeg');
-		return in_array(strtolower($this->file_ext), $imgExtension);
+
+
+
+	/**
+	*	Not working ?
+	*/
+	public function removeImgFromDatabase($name){
+		FolderFileImg::where('id_folder',$this->id_gallery)->where('name_img',$name)->delete();
+		Img::where('name',$name)->delete();
+		return $this->postError(5);
 	}
 	public function addToDatabase(){
 		Img::add($this->name, $this->file_ext);
 		FolderFileImg::addImg($this->id_gallery,$this->name);
-		$a = Association::get($this->id_assoc)->first();
+		$a = Association::find($this->id_assoc)->get();
 		$a->nb_photos++;
 		$a->touch();
 		/*
@@ -119,38 +138,32 @@ class FileUploadController extends BaseController
 		FolderFileImg::addFile($context['idGallery'],$idFile);
 		*/
 	}
-	public function removeImgFromDatabase($name){
-		FolderFileImg::where('id_folder',$this->id_gallery)->where('name_img',$name)->delete();
-		Img::where('name',$name)->delete();
-		return $this->postError(5);
-	}
 	public function sendObject($src,$s3_url){
-			$contentType = "image/png";//image/jpeg 
-			try{
-				$s3 = AWS::get('s3');
-				$s3->putObject(array(
-					'Bucket'      => 'img.vieassociative.fr',
-					'Key'     	  => $s3_url,
-					'Body' 		  => $src,
-					'contentType' => $contentType,
-					'ACL'         => 'public-read',
-				));
-			} catch (S3Exception $e) {
-				//var_dump($e);
-				return Response::json('error', 400);
-			}
-	}
-	public function fileUpload(){
-		$http_origin = $_SERVER['HTTP_ORIGIN'];
-		if ($http_origin == "http://www.vieassoc.lo" || $http_origin == "http://www.vieassociative.fr" || $http_origin == "http://association.vieassoc.lo" )
-		{  
-	        return Response::make('',200,array('Access-Control-Allow-Origin' => $http_origin,
-	        			'Access-Control-Allow-Methods'=>'POST, GET, OPTIONS',
-	        			'Access-Control-Allow-Credentials'=>'true',
-	        			'Access-Control-Allow-Headers'=>'Origin, X-Requested-With, Content-Range, Content-Disposition, Content-Type'));
+		$contentType = "image/png";//image/jpeg 
+		try{
+			$s3 = AWS::get('s3');
+			$s3->putObject(array(
+				'Bucket'      => 'img.vieassociative.fr',
+				'Key'     	  => $s3_url,
+				'Body' 		  => $src,
+				'contentType' => $contentType,
+				'ACL'         => 'public-read',
+			));
+		} catch (S3Exception $e) {
+			//var_dump($e);
+			return Response::json('error', 400);
 		}
-	    return;
 	}
+
+
+
+
+
+
+
+
+
+
 	public function galleryThumbnail(){
 		//$img = $this->creerImageDimensionnee($this->file_ext,$this->original_url);
 		$img = $this->createImageFixedWidth($this->file_ext,$this->original_url,190);
@@ -256,7 +269,6 @@ class FileUploadController extends BaseController
 		return $new_image;
     }
 	public function postCrop($idAssoc,$typeCrop,$action,$namePic){
-
         switch ($typeCrop) {
             case '400x400':
                 $target_w = 400;
@@ -274,16 +286,6 @@ class FileUploadController extends BaseController
             	$target_w = 940;
 				$target_h = 350;
                 break;
-            case '400x400':
-                $target_w = 150;
-                $target_h = 150;
-                break;
-
-            case '400x400':
-                $target_w = 150;
-                $target_h = 150;
-                break;
-
             default:
                 return Response::view('errors.404', array(), 404);
                 break;
@@ -342,6 +344,20 @@ class FileUploadController extends BaseController
 				break;
 		}
 		return Redirect::to('/'.$idAssoc.'-'.$a->slug);
+	}
+
+
+
+
+
+
+
+
+
+
+	public function postError($codeError){
+		$return = array('error'=> 'true','status'=>'Une erreur a été detecté pendant l\'upload. Code erreur : '.$codeError);
+		return Response::json($return);
 	}
 }
 

@@ -20,11 +20,17 @@
 					<img src="{{$association->getLogo()}}" class="img-circle">
 				</div>
 				<div class="span20">
-
-					<div id="title">
+					
+					<div id="title"
+					@if(Partial::has($post,'title'))
+						style="display:none;"
+					@endif
+					>
 						@input = array(
 							'id'=>"title",
-							//'value'=>$post->var1,
+							@if(Partial::has($post,'title'))
+							'value'=>Partial::search($post,'title')['title'],
+							@endif
 							'form' => array(
 								'placeholder'=>Lang::get('association/edit/news.placeholder_title'),
 								'class' => 'input-xxlarge',
@@ -35,23 +41,28 @@
 						)@
 						{{SiteHelpers::simple_input($input)}}
 					</div>
+					@endif
+
+
 
 					<div id="textarea">
 						{{SiteHelpers::add_textarea('text',$post->var1, true, true)}}
 					</div>
 
 					<div id="soundcloud" style="display:none;">
-						<script src="http://connect.soundcloud.com/sdk.js"></script>
-						<script>
-						SC.initialize({
-						  client_id: 'YOUR_CLIENT_ID'
-						});
+						@if(Partial::has($post,'soundcloud'))
+							<script src="http://connect.soundcloud.com/sdk.js"></script>
+							<script>
+							SC.initialize({
+							  client_id: 'YOUR_CLIENT_ID'
+							});
 
-						var track_url = 'http://soundcloud.com/forss/flickermood';
-						SC.oEmbed(track_url, { auto_play: true }, function(oEmbed) {
-						  console.log('oEmbed response: ' + oEmbed);
-						});
-						</script>
+							var track_url = 'http://soundcloud.com/forss/flickermood';
+							SC.oEmbed(track_url, { auto_play: true }, function(oEmbed) {
+							  console.log('oEmbed response: ' + oEmbed);
+							});
+							</script>
+						@endif
 						<hr>
 						@input = array(
 							'id'=>"soundcloud",
@@ -70,13 +81,17 @@
 					
 					<div id="youtube" style="display:none;">
 						<hr>
-		    			<div class="flex-video widescreen">
-		    				<iframe src="https://www.youtube-nocookie.com/embed/4TlJ4qKO2Xg?rel=0" frameborder="0" allowfullscreen=""></iframe>
-	    				</div>
+						@if(Partial::has($post,'youtube'))
+			    			<div class="flex-video widescreen">
+			    				<iframe src="https://www.youtube-nocookie.com/embed/4TlJ4qKO2Xg?rel=0" frameborder="0" allowfullscreen=""></iframe>
+		    				</div>
+						@endif
 
 						@input = array(
 							'id'=>"youtube",
-							//'value'=>$post->var1,
+						@if(Partial::has($post,'youtube'))
+							'value'=>$post->var1,
+						@endif
 							'form' => array(
 								'placeholder'=>"L'identifiant de la vidéo",
 								'class' => 'input-large',
@@ -91,10 +106,22 @@
 					<div id="toolnews" class="blockquote text-center">
 						<br>
 						<a href="#" data-component="title" class="btn">
-							<span><i class="fa fa-times"></i> Titre</span>
+							<span><i class="fa 
+							@if(Partial::has($post,'title'))
+								fa-times
+							@else
+								fa-plus
+							@endif
+							"></i> Titre</span>
 						</a>
 						<a href="#" data-component="textarea" class="btn">
-							<span><i class="fa fa-times"></i> Texte</span>
+							<span><i class="fa 
+							@if(Partial::has($post,'text'))
+								fa-times
+							@else
+								fa-plus
+							@endif
+							"></i> Texte</span>
 						</a>
 						<a href="#" data-component="image" class="btn">
 							<span><i class="fa fa-plus"></i> Image</span>

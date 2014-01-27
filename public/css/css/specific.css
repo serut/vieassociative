@@ -241,10 +241,10 @@
 #social-timeline .media.social-box .media-body.social-body {
   padding: 10px;
   margin-bottom: 0px;
+  margin-top: 15px;
 }
 #social-timeline .media.social-box .media-body.social-body h4 {
   margin-top: 0px;
-  margin-bottom: 0px;
 }
 #social-timeline .media.social-box .media-body.social-body div {
   margin-bottom: 0px;
@@ -567,6 +567,15 @@
   float: left;
 }
 /* CONTENU MULTIMEDIA */
+.fb_iframe_widget,
+.fb_iframe_widget span,
+.fb_iframe_widget span iframe[style] {
+  width: 100% !important;
+  margin-right: -10px;
+}
+#fb-root {
+  display: none;
+}
 .flex-video {
   position: relative;
   padding-top: 25px;

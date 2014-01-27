@@ -15,7 +15,7 @@
 
 	.ExternalClass{width:100%;}
 
-	.ExternalClass,.ExternalClass p,.ExternalClass span,.ExternalClass font,.ExternalClass td,.ExternalClass div{line-height:100%;}
+	.ExternalClass,.ExternalClass p,.ExternalClass col-lg-,.ExternalClass font,.ExternalClass td,.ExternalClass div{line-height:100%;}
 
 	.bodytbl{margin:0;padding:0;width:100% !important;}
 

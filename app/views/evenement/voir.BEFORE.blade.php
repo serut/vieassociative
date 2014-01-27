@@ -6,14 +6,14 @@ $this->inlineScript()->prependFile('/js/index.js')->prependFile('/js/twitter-wid
     <div class="container">
         <section class="blog full">
             <div class="row">
-                <div class="span4">
+                <div class="col-lg-4">
                     <article>
                         <h3 class="post-title"><?php echo $resultat['titre']; ?></h3>
                         <p><?php
                         echo $resultat['jours_concernes'];
                         ?></p>
                         <div class="row">
-                            <div class="span1">
+                            <div class="col-lg-1">
                                 <?php if (!empty($resultat['id_photo'])) { ?> 
                                     <a href="#" class="thumbnail"><img src="<?php echo $resultat['urlAffiche']; ?>" alt="test"></a>
 <?php } ?>
@@ -28,7 +28,7 @@ $this->inlineScript()->prependFile('/js/index.js')->prependFile('/js/twitter-wid
                                     </ul>
                                 </div>
                             </div>
-                            <div class="span3">
+                            <div class="col-lg-3">
                                 <div class="blog-post">
                                     <p>
                     <?php echo $resultat['texte']; ?>
@@ -41,8 +41,8 @@ $this->inlineScript()->prependFile('/js/index.js')->prependFile('/js/twitter-wid
 
                         </div>	<!-- /row -->	
                     </article> 
-                </div> <!-- /span4 -->
-                <div class="span2">
+                </div> <!-- /col-lg-4 -->
+                <div class="col-lg-2">
                     <aside class="sidebar">
                         <div class="sidebar-item">
                             <h5>Organisateur : <?php echo $resultat['nomAssoc']; ?></h5>
@@ -108,7 +108,7 @@ $this->inlineScript()->prependFile('/js/index.js')->prependFile('/js/twitter-wid
                           </div> <!-- /sidebar-item -->
                          */ ?>
                     </aside> <!-- /sidebar -->
-                </div> <!-- /span2 -->
+                </div> <!-- /col-lg-2 -->
             </div> <!-- /row -->
         </section> <!-- /blog full -->	
     </div>

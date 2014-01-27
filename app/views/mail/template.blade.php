@@ -15,7 +15,7 @@
 
 	.ExternalClass{width:100%;}
 
-	.ExternalClass,.ExternalClass p,.ExternalClass span,.ExternalClass font,.ExternalClass td,.ExternalClass div{line-height:100%;}
+	.ExternalClass,.ExternalClass p,.ExternalClass col-lg-,.ExternalClass font,.ExternalClass td,.ExternalClass div{line-height:100%;}
 
 	.bodytbl{margin:0;padding:0;width:100% !important;}
 
@@ -209,7 +209,7 @@
 		<tbody><tr>
 			<td valign="top" align="center">
 				<table width="600" cellspacing="0" cellpadding="0" class="wrap">
-					<tbody><tr height="24"><td colspan="5"></td></tr>
+					<tbody><tr height="24"><td colcol-lg-="5"></td></tr>
 					<tr>
 					<td valign="top" align="center" class="small social">
 						<div>
@@ -227,7 +227,7 @@
 					<div>&copy; 2013-2014 Vie Associative</div>
 					</td>
 					</tr>
-					<tr class="m-0"><td height="48" colspan="5"></td></tr>
+					<tr class="m-0"><td height="48" colcol-lg-="5"></td></tr>
 				</tbody></table>
 			</td>
 		</tr>

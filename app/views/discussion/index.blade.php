@@ -5,41 +5,41 @@
 @section('small-content')
     <div>
         <div id="answers">
-            <section class="span7">
+            <section class="col-lg-7">
         @if(!empty($posts))
             @foreach($posts as $p)
                 <div data-id="{{$p->id}}">
                     @if($p->level == 2)
-                        <div class="span-comment-space-2 pull-left">
+                        <div class="col-lg--comment-space-2 pull-left">
                         </div>
                     @endif
                     @if($p->level == 3)
-                        <div class="span-comment-space-3 pull-left">
+                        <div class="col-lg--comment-space-3 pull-left">
                         </div>
                     @endif
                     <div class="row">
-                        <div class="span-image pull-left">
+                        <div class="col-lg--image pull-left">
                             <img src="/img/items/user-thumb.jpg" alt="placeholder+image">
                         </div>
                             <div class="
                         @if($p->level == 1)
-                            span5
+                            col-lg-5
                         @endif
                         @if($p->level == 2)
-                            span17
+                            col-lg-17
                         @endif
                         @if($p->level == 3)
-                            span7
+                            col-lg-7
                         @endif
                             ">
-                            <span class="author"><a href="#profil">{{$p->author->username}}</a></span>
-                            <span class="light">- {{\Carbon\Carbon::createFromTimeStamp(strtotime($p->created_at))->diffForHumans()}}</span><br>
+                            <col-lg- class="author"><a href="#profil">{{$p->author->username}}</a></col-lg->
+                            <col-lg- class="light">- {{\Carbon\Carbon::createFromTimeStamp(strtotime($p->created_at))->diffForHumans()}}</col-lg-><br>
                             <div>
                                 {{$p->content}}
                             </div>
 
                                 <div>
-                                    <span class="count-vote">{{$p->vote}}</span>
+                                    <col-lg- class="count-vote">{{$p->vote}}</col-lg->
                                      <i class="fa fa-chevron-up"></i>
                                     | <i class="fa fa-chevron-down"></i>
                                     @if($p->level != 3)
@@ -57,7 +57,7 @@
 
             <div class="form-answer">
                 <div class="row">
-                    <div class="span-image pull-left">
+                    <div class="col-lg--image pull-left">
                         <img src="/img/items/user-thumb.jpg" alt="placeholder+image">
                     </div>
                     <div>

@@ -26,17 +26,17 @@
                 	'data-trigger'=>"change",
                 	'data-original-title'=>"Votre pseudo doit comporter au minimun 4 caractères alphanumerique, sans espace. Vous devez creer votre compte personnel en premier lieu, et ce n'est qu'ensuite que vous pourrez rajouter l'association que vous voulez representer"
             	))}}
-		    	@foreach ($errors->get('pseudo','<span class="help-inline">:message</span>') as $message)
+		    	@foreach ($errors->get('pseudo','<col-lg- class="help-inline">:message</col-lg->') as $message)
                     {{$message}}
                 @endforeach
-                <span class="text-error">Voici une erreur</span>
+                <col-lg- class="text-error">Voici une erreur</col-lg->
 		    </div>
 	    </div>
 	    <div>
 		    <label class="control-label" for="inputPassword">Password</label>
 		    <div class="controls">
 		    	<input type="password" id="inputPassword" placeholder="Placeholder" data-minwords="6" data-trigger="change">
-                <span class="text-error"></span>
+                <col-lg- class="text-error"></col-lg->
 		    </div>
 	    </div>
 	    <div>

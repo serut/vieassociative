@@ -133,7 +133,7 @@
 	</tr>
 	</table><!-- /column 2 -->
 		
-	<span class="clear"></span>
+	<col-lg- class="clear"></col-lg->
 		
 	</td>
 	</tr>

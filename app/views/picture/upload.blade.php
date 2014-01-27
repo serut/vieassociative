@@ -6,35 +6,35 @@
 	<section>
 		<div>
             <ul class="breadcrumb">
-              <li><a href="#">Association</a> <span class="divider">/</span></li>
-              <li><a href="/{{$association->id}}-{{$association->slug}}">{{$association->name}}</a> <span class="divider">/</span></li>
-              <li><a href="/{{$association->id}}/edit">Edition</a> <span class="divider">/</span></li>
+              <li><a href="#">Association</a> <col-lg- class="divider">/</col-lg-></li>
+              <li><a href="/{{$association->id}}-{{$association->slug}}">{{$association->name}}</a> <col-lg- class="divider">/</col-lg-></li>
+              <li><a href="/{{$association->id}}/edit">Edition</a> <col-lg- class="divider">/</col-lg-></li>
 			  <li class="active">Images</li>
             </ul>
 			<div class="container">
 				<br>
 				<div id="dnd" class="b-upload b-upload_dnd">
 					<div class="row">
-						<div class="dropzone drag-and-drop span6">
+						<div class="dropzone drag-and-drop col-lg-6">
 							<div class="text-center">
 								<i class="fa fa-plus"></i><br>
-								<span>Glissez déposez vous images ici - ou cliquez moi dessus</span>
+								<col-lg->Glissez déposez vous images ici - ou cliquez moi dessus</col-lg->
 							</div>
 							<input type="file" name="files[]" multiple id="selectFile" accept="image/*">
 						</div>
-						<div class="dropzone no-drag-and-drop span6">
+						<div class="dropzone no-drag-and-drop col-lg-6">
 							<div class="text-center">
 								<i class="fa fa-plus"></i><br>
-								<span>Cliquez ici pour selectionner les images à envoyer</span>
+								<col-lg->Cliquez ici pour selectionner les images à envoyer</col-lg->
 							</div>
 							<input type="file" name="files[]" multiple id="selectFile">
 						</div>
 					</div>
-					<div class="row span6" style="margin-bottom: 20px;">
+					<div class="row col-lg-6" style="margin-bottom: 20px;">
 						<div class="ctrl-upload button button-green pull-right">Upload</div>
 					</div>
 					 <div class="row js-files">
-				         <div class="js-file-tpl span3 img-polaroid" data-id="<%=uid%>" title="<%-name%>, <%-sizeText%>">
+				         <div class="js-file-tpl col-lg-3 img-polaroid" data-id="<%=uid%>" title="<%-name%>, <%-sizeText%>">
 				            <div class="row">
 				            <div class="b-thumb__preview pull-left">
 				               <div class="b-thumb__preview__pic"></div>
@@ -55,7 +55,7 @@
 				      </div>
 				</div>
 				<div id="div-hidden-photo">
-					<div id="gallery" class="portfolio-items isotope span13">
+					<div id="gallery" class="portfolio-items isotope col-lg-13">
 						<!-- Pictures will go here ... -->
 					</div>
 				</div>
@@ -113,7 +113,7 @@
 	<script src="/pluggin/jquery.fileapi/FileAPI/FileAPI.min.js"></script>
 	<script src="/pluggin/jquery.fileapi/jquery.fileapi.min.js"></script>
 	<script id="photo-pattern" type="text/x-jquery-tmpl">
-		<div class="element span-size${size} img-polaroid" >
+		<div class="element col-lg--size${size} img-polaroid" >
 			<img src="${thumbnail}" class="size${size}" />
 			<div class="options">
 			<table class="table table-option">

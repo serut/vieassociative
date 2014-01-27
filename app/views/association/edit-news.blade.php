@@ -8,18 +8,18 @@
 <section>
 		<div>
 			<ul class="breadcrumb">
-				<li><a href="/{{$association->id}}-{{$association->slug}}">{{$association->name}}</a> <span class="divider">/</span></li>
-				<li><a href="/{{$association->id}}/edit">Edition</a> <span class="divider">/</span></li>
-				<li><a href="/{{$association->id}}/edit/news">Mes publications</a> <span class="divider">/</span></li>
+				<li><a href="/{{$association->id}}-{{$association->slug}}">{{$association->name}}</a> <col-lg- class="divider">/</col-lg-></li>
+				<li><a href="/{{$association->id}}/edit">Edition</a> <col-lg- class="divider">/</col-lg-></li>
+				<li><a href="/{{$association->id}}/edit/news">Mes publications</a> <col-lg- class="divider">/</col-lg-></li>
 				<li class="active">Editer une publication</li>
 			</ul>
 			<h3 class="head">{{Lang::get('association/edit/news.modify_news')}}</h3>
 			{{ Form::open(array('class'=> 'form-horizontal','data-validate'=>'our-parsey', 'data-loading'=>'true')) }}
 			<div class="row">
-				<div class="span1">
+				<div class="col-lg-1">
 					<img src="{{$association->getLogo()}}" class="img-circle">
 				</div>
-				<div class="span5">
+				<div class="col-lg-5">
 					<div id="title">
 						@if(Partial::has($post,'PartialTitle'))
 							@input = array(
@@ -148,31 +148,31 @@
 					<div id="toolnews" class="blockquote text-center">
 						<br>
 						<a href="#" data-component="title" class="btn">
-							<span><i class="fa 
+							<col-lg-><i class="fa 
 							@if(Partial::has($post,'title'))
 								fa-times
 							@else
 								fa-plus
 							@endif
-							"></i> Titre</span>
+							"></i> Titre</col-lg->
 						</a>
 						<a href="#" data-component="textarea" class="btn">
-							<span><i class="fa 
+							<col-lg-><i class="fa 
 							@if(Partial::has($post,'text'))
 								fa-times
 							@else
 								fa-plus
 							@endif
-							"></i> Texte</span>
+							"></i> Texte</col-lg->
 						</a>
 						<a href="#" data-component="image" class="btn">
-							<span><i class="fa fa-plus"></i> Image</span>
+							<col-lg-><i class="fa fa-plus"></i> Image</col-lg->
 						</a>
 						<a href="#" data-component="soundcloud" class="btn">
-							<span><i class="fa fa-plus"></i> Soundcloud</span>
+							<col-lg-><i class="fa fa-plus"></i> Soundcloud</col-lg->
 						</a>
 						<a href="#" data-component="youtube" class="btn">
-							<span><i class="fa fa-plus"></i> Youtube</span>
+							<col-lg-><i class="fa fa-plus"></i> Youtube</col-lg->
 						</a>
 					</div>
 				</div>

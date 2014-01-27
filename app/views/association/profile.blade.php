@@ -8,11 +8,11 @@
 		<img src="{{$association->getLogo()}}" class="logo img-circle" alt="">
 		<div>
 			<div>
-				<div class="span5 head">
+				<div class="col-lg-5 head">
 					<h2 class="name">{{$association->name}}</h2>
-					<span class="pull-right" style="margin-top:13px;">
+					<col-lg- class="pull-right" style="margin-top:13px;">
 						<a class="button button-blue" href="/{{$association->id}}/edit">Editer</a>
-					</span>
+					</col-lg->
 				</div>
 			</div>
 		</div>
@@ -24,17 +24,17 @@
 
 
 			@if(App::environment() != "production")
-			<div class="menu row-fluid" style="display:none;">
-				<div id="photo" class="span2 img-polaroid" data-toggle="div-hidden-news">
+			<div class="menu row" style="display:none;">
+				<div id="photo" class="col-lg-2 img-polaroid" data-toggle="div-hidden-news">
 					<p>Fil d'actualité</p>
 				</div>
-				<div id="photo" class="span2 img-polaroid" data-toggle="div-hidden-photo">
+				<div id="photo" class="col-lg-2 img-polaroid" data-toggle="div-hidden-photo">
 					<p>Photos</p>
 				</div>
-				<div id="evenement" class="span2 img-polaroid" data-toggle="div-hidden-evenement">
+				<div id="evenement" class="col-lg-2 img-polaroid" data-toggle="div-hidden-evenement">
 					<p>Evenements</p>
 				</div>
-				<div id="social" class="span2 img-polaroid" data-toggle="div-hidden-social">
+				<div id="social" class="col-lg-2 img-polaroid" data-toggle="div-hidden-social">
 					<p>Social</p>
 				</div>
 			</div>
@@ -54,9 +54,9 @@
 
 
 			<div id="social-timeline" class="row">
-				<div class="span13">
-					<div class="span11">
-						<div class="row-fluid">
+				<div class="col-lg-13">
+					<div class="col-lg-11">
+						<div class="row">
 							@foreach($newsFeed as $news)
 								@include('association.wall.generic-head')
 								@foreach($news['data'] as $n)
@@ -257,7 +257,7 @@
 	/* Menu PART END*/
 	</script>
 <script id="photo-pattern" type="text/x-jquery-tmpl">
-	<div class="element ${categories} span-size${size}" >
+	<div class="element ${categories} col-lg--size${size}" >
 		<a class="fancybox" href="${url_img}" rel="gallery1" title="A title">
 			<img src="${url_img}" class="size${size}"alt=" " />
 		</a>
@@ -271,12 +271,12 @@
 
 <script id="evenement-pattern" type="text/x-jquery-tmpl">
 	<div class="row">
-		<div class="date span1">
+		<div class="date col-lg-1">
 			<i></i>
 			<h6>${start_date}</h6>
 		</div>
-		<div class="content span5">
-			<span class="pointer">&nbsp;</span>
+		<div class="content col-lg-5">
+			<col-lg- class="pointer">&nbsp;</col-lg->
 			<div class="thumb">
 				<img alt="" src="${img}">
 			</div>
@@ -287,9 +287,9 @@
 				</p>
 			</div>
 			<div class="panel">
-				<span class="location">${event_location}</span>
-				<span class="time">${event_time}</span>
-				<span class="more"><a href="${event_link}">en savoir plus</a></span>
+				<col-lg- class="location">${event_location}</col-lg->
+				<col-lg- class="time">${event_time}</col-lg->
+				<col-lg- class="more"><a href="${event_link}">en savoir plus</a></col-lg->
 			</div>
 		</div>
 	</div>

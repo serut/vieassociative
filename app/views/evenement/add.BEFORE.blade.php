@@ -25,7 +25,7 @@ Ajouter un évènement
 
 {{-- Content --}}
 @section('content')
-<div class="column left span9">
+<div class="column left col-lg-9">
     <!-- Tabs Section Start -->
         {{ Form::open(array('class' => 'form-horizontal')) }}
     <div class="tab-section">
@@ -49,7 +49,7 @@ Ajouter un évènement
                     <small>Vous voulez ajouter un évènement à <b>{{Session::get('associationEnManagementNom')}}</b>. <a href="/association/gerer">Changer ?</a></small>
                     <h5>Informations sur votre évènement :</h5>
                     {{ Form::token() }}
-                    <div class="control-group @if($errors->get('nomEv','<span class="help-inline">:message</span>'))error@endif">
+                    <div class="control-group @if($errors->get('nomEv','<col-lg- class="help-inline">:message</col-lg->'))error@endif">
                         <label class="control-label">Nom / titre / intitulé <br> de votre évènement</label>
                         <div class="controls">
                             <div class="formulaire">
@@ -61,7 +61,7 @@ Ajouter un évènement
                         </div>
                     </div>
 
-                    <div class="control-group @if($errors->get('text','<span class="help-inline">:message</span>'))error@endif">
+                    <div class="control-group @if($errors->get('text','<col-lg- class="help-inline">:message</col-lg->'))error@endif">
                         <label class="control-label">Texte</label>
                         <div class="controls">
                             <div class="formulaire">
@@ -75,7 +75,7 @@ Ajouter un évènement
                 </div>
                 <div id="tab2" class="tab-pane">
                     <h5>Le type d'activité de votre évènement :</h5>
-                    <div class="control-group @if($errors->get('choixActivite','<span class="help-inline">:message</span>'))error@endif">
+                    <div class="control-group @if($errors->get('choixActivite','<col-lg- class="help-inline">:message</col-lg->'))error@endif">
                         <label class="control-label">Type d'activé</label>
                         <div class="controls">
                             <div class="formulaire">
@@ -96,7 +96,7 @@ Ajouter un évènement
                         </div>
                     </div>
                     
-                    <div class="control-group @if($errors->get('propositionSousCategorie','<span class="help-inline">:message</span>'))error@endif">
+                    <div class="control-group @if($errors->get('propositionSousCategorie','<col-lg- class="help-inline">:message</col-lg->'))error@endif">
                         <label class="control-label">Ou ajouter la si la sous-activité est abscente de ce menu déroulant</label>
                         <div class="controls">
                             <div class="formulaire">
@@ -111,7 +111,7 @@ Ajouter un évènement
                 <div id="tab3" class="tab-pane">
                     <h5>La localisation de votre évènement :</h5>
                     <p>Etape 1 : Renseigner le nom d'un lieu proche de votre position actuelle :</p>
-                    <div class="control-group @if($errors->get('ville','<span class="help-inline">:message</span>'))error@endif">
+                    <div class="control-group @if($errors->get('ville','<col-lg- class="help-inline">:message</col-lg->'))error@endif">
                         <label class="control-label">Votre lieu proche</label>
                         <div class="controls">
                             <div class="formulaire">
@@ -127,7 +127,7 @@ Ajouter un évènement
                         <p>#Etape 2 : Modifiez, en déplaçant le curseur, pour réellement concorder au point exact ou est situé votre évènement  :</p>
                         <div id="map_canvas"></div>
                     </div>
-                    <div class="control-group @if($errors->get('adresse_reelle','<span class="help-inline">:message</span>'))error@endif">
+                    <div class="control-group @if($errors->get('adresse_reelle','<col-lg- class="help-inline">:message</col-lg->'))error@endif">
                         <p>#Etape 3 : Nommez ce lieu plus correctement, pour la meilleure compréhension de tous !</p>
                         <label class="control-label">Nom correct du lieu</label>
                         <div class="controls">
@@ -150,7 +150,7 @@ Ajouter un évènement
 
                     {{-- EVENEMENT QUI SE REPETE --}}
                     <div id="partie-repete">
-                        <div class="control-group @if($errors->get('deb','<span class="help-inline">:message</span>'))error@endif">
+                        <div class="control-group @if($errors->get('deb','<col-lg- class="help-inline">:message</col-lg->'))error@endif">
                             <label class="control-label">Date de début de l'activité</label>
                             <div class="controls">
                                 <div class="formulaire">
@@ -162,7 +162,7 @@ Ajouter un évènement
                             </div>
                         </div>
 
-                        <div class="control-group @if($errors->get('fin','<span class="help-inline">:message</span>'))error@endif">
+                        <div class="control-group @if($errors->get('fin','<col-lg- class="help-inline">:message</col-lg->'))error@endif">
                             <label class="control-label">Date de fin de l'activité</label>
                             <div class="controls">
                                 <div class="formulaire">
@@ -181,19 +181,19 @@ Ajouter un évènement
                                 <label class="radio"><?php echo $this->formInput($form->get('repetition')) ?> Toutes les 1 semaines sur 2 ( Ex : tous les lundi, mardi et jeudi de la periode 1 semaine sur 2 )</label>
                             </div>
                             <div class="controls-allbox">
-                                <label class="checkbox noretourligne"><?php echo $this->formInput($form->get('lundi')); ?> Lundi </label><span id="lundiheure"> - Heure : <?php echo $this->formInput($form->get('lundid')); ?> à <?php echo $this->formInput($form->get('lundif')); ?></span><br>
-                                <label class="checkbox noretourligne"><?php echo $this->formInput($form->get('mardi')); ?> Mardi </label><span id="mardiheure"> - Heure : <?php echo $this->formInput($form->get('mardid')); ?> à <?php echo $this->formInput($form->get('mardif')); ?></span><br>
-                                <label class="checkbox noretourligne"><?php echo $this->formInput($form->get('mercredi')); ?> Mercredi </label><span id="mercrediheure"> - Heure : <?php echo $this->formInput($form->get('mercredid')); ?> à <?php echo $this->formInput($form->get('mercredif')); ?></span><br>
-                                <label class="checkbox noretourligne"><?php echo $this->formInput($form->get('jeudi')); ?> Jeudi </label><span id="jeudiheure"> - Heure : <?php echo $this->formInput($form->get('jeudid')); ?> à <?php echo $this->formInput($form->get('jeudif')); ?></span><br>
-                                <label class="checkbox noretourligne"><?php echo $this->formInput($form->get('vendredi')); ?> Vendredi </label><span id="vendrediheure"> - Heure : <?php echo $this->formInput($form->get('vendredid')); ?> à <?php echo $this->formInput($form->get('vendredif')); ?></span><br>
-                                <label class="checkbox noretourligne"><?php echo $this->formInput($form->get('samedi')); ?> Samedi </label><span id="samediheure"> - Heure : <?php echo $this->formInput($form->get('samedid')); ?> à <?php echo $this->formInput($form->get('samedif')); ?></span><br>
-                                <label class="checkbox noretourligne"><?php echo $this->formInput($form->get('dimanche')); ?> Dimanche </label><span id="dimancheheure"> - Heure : <?php echo $this->formInput($form->get('dimanched')); ?> à <?php echo $this->formInput($form->get('dimanchef')); ?></span>
+                                <label class="checkbox noretourligne"><?php echo $this->formInput($form->get('lundi')); ?> Lundi </label><col-lg- id="lundiheure"> - Heure : <?php echo $this->formInput($form->get('lundid')); ?> à <?php echo $this->formInput($form->get('lundif')); ?></col-lg-><br>
+                                <label class="checkbox noretourligne"><?php echo $this->formInput($form->get('mardi')); ?> Mardi </label><col-lg- id="mardiheure"> - Heure : <?php echo $this->formInput($form->get('mardid')); ?> à <?php echo $this->formInput($form->get('mardif')); ?></col-lg-><br>
+                                <label class="checkbox noretourligne"><?php echo $this->formInput($form->get('mercredi')); ?> Mercredi </label><col-lg- id="mercrediheure"> - Heure : <?php echo $this->formInput($form->get('mercredid')); ?> à <?php echo $this->formInput($form->get('mercredif')); ?></col-lg-><br>
+                                <label class="checkbox noretourligne"><?php echo $this->formInput($form->get('jeudi')); ?> Jeudi </label><col-lg- id="jeudiheure"> - Heure : <?php echo $this->formInput($form->get('jeudid')); ?> à <?php echo $this->formInput($form->get('jeudif')); ?></col-lg-><br>
+                                <label class="checkbox noretourligne"><?php echo $this->formInput($form->get('vendredi')); ?> Vendredi </label><col-lg- id="vendrediheure"> - Heure : <?php echo $this->formInput($form->get('vendredid')); ?> à <?php echo $this->formInput($form->get('vendredif')); ?></col-lg-><br>
+                                <label class="checkbox noretourligne"><?php echo $this->formInput($form->get('samedi')); ?> Samedi </label><col-lg- id="samediheure"> - Heure : <?php echo $this->formInput($form->get('samedid')); ?> à <?php echo $this->formInput($form->get('samedif')); ?></col-lg-><br>
+                                <label class="checkbox noretourligne"><?php echo $this->formInput($form->get('dimanche')); ?> Dimanche </label><col-lg- id="dimancheheure"> - Heure : <?php echo $this->formInput($form->get('dimanched')); ?> à <?php echo $this->formInput($form->get('dimanchef')); ?></col-lg->
                             </div>
                         </div>
                         */ ?>
                     </div>
                     <div id="partie-non-repete">
-                        <div class="control-group @if($errors->get('ddd','<span class="help-inline">:message</span>'))error@endif">
+                        <div class="control-group @if($errors->get('ddd','<col-lg- class="help-inline">:message</col-lg->'))error@endif">
                             <label class="control-label">Date du début de l'évènement</label>
                             <div class="controls">
                                 <div class="formulaire">
@@ -204,7 +204,7 @@ Ajouter un évènement
                                 </div>
                             </div>
                         </div>
-                        <div class="control-group @if($errors->get('ddf','<span class="help-inline">:message</span>'))error@endif">
+                        <div class="control-group @if($errors->get('ddf','<col-lg- class="help-inline">:message</col-lg->'))error@endif">
                             <label class="control-label">Date du fin de l'évènement</label>
                             <div class="controls">
                                 <div class="formulaire">

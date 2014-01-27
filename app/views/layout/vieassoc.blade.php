@@ -131,9 +131,9 @@
     @show
 
     @if(isset($transparent))
-    <section id="content" class=" span6">
+    <section id="content" class=" col-lg-6">
     @else
-    <section id="content" class="well span6">
+    <section id="content" class="well col-lg-6">
     @endif
         <div class=" container">
         @yield('content')
@@ -194,7 +194,7 @@ Form::macro('fullInput', function($id,$options)
     }
     $text += '">';
     $text +='        <div class="formulaire">';
-    foreach ($errors->get($id,'<span class="help-inline">:message</span>') as $message){
+    foreach ($errors->get($id,'<col-lg- class="help-inline">:message</col-lg->') as $message){
         $text +=$message;
     }
     $text += Form::password($id,$options);

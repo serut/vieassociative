@@ -48,47 +48,36 @@ body #template{
 }
 header{
     background:rgba(253, 254, 254, 0.95);
-    margin-bottom:15px; 
-    .row{
-        margin-bottom:0px;
-    }
-    div {
+    margin-bottom:30px; 
+    .navbar {
         z-index: 97;
-        margin-bottom: 5px;
-        img {
-            margin-top: 6px;
+        margin-bottom: 15px;
+        border-bottom:0px;
+        #logo img {
             margin-left: 30px;
             float: left;
             height: 45px;
-        }
-        nav {
             margin-top: 5px;
-            text-align:right;
-            white-space: nowrap;
-            div{
-                margin: 5px;
-                padding-bottom: 0px;
-                padding-top: 4px;
-                ul.nav{
-                    float:right !important;
-                }
-            }
-            .form-search{
-                margin-bottom: 0px;
-                margin-top: 5px;
-                input{
-                    display: inline-block;
-                }
-                a{
-                    width: 29px;
-                    height: 30px;
-                    margin-left: -6px;
-                }
-            }
-            i{
-                color:#b4b4b4;
-            }
         }
+        ul i{
+            color:#b4b4b4;
+        }
+        ul li a{
+            padding-top: 15px;
+        }
+        .search-form{
+            margin-top: 5px;
+        }
+        .img-user{
+            margin-left: 0px;
+            width: 28px;
+            height: 28px;
+            margin-right:10px;
+        }
+    }
+    .dropdown-menu{
+        border:0px;
+        padding-top: 0px;
     }
     #menu .dropdown-menu{
         margin-top:7px;
@@ -201,21 +190,6 @@ footer{
     }
 }
 
-@media (max-width: 767px) {
-    header{
-        margin: 0 -20px;
-        .form-search{
-            margin-right:70px;
-        }
-    }
-    footer{
-        left:0;
-    }
-    section{
-        padding: 0;
-    }
-
-}
 .modal{
     .close-modal{
         margin-top: 5px;

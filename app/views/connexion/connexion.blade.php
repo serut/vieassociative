@@ -12,7 +12,7 @@
             <a href="/membre/connexion/orange"><i class="connection-icon connection-fa fa-orange"></i></a>
             <a href="/membre/connexion/hotmail"><i class="connection-icon connection-fa fa-hotmail"></i></a>
             <br>
-            <span>En cliquant sur un lien ci dessus, je reconnais avoir pris connaissance des <a target="_blank" href="/info/condition">CGU</a></span>
+            <col-lg->En cliquant sur un lien ci dessus, je reconnais avoir pris connaissance des <a target="_blank" href="/info/condition">CGU</a></col-lg->
     	</div>
     </section>
 @stop

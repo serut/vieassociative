@@ -55,48 +55,37 @@ body #template {
 }
 header {
   background: rgba(253, 254, 254, 0.95);
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
-header .row {
-  margin-bottom: 0px;
-}
-header div {
+header .navbar {
   z-index: 97;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
+  border-bottom: 0px;
 }
-header div img {
-  margin-top: 6px;
+header .navbar #logo img {
   margin-left: 30px;
   float: left;
   height: 45px;
-}
-header div nav {
-  margin-top: 5px;
-  text-align: right;
-  white-space: nowrap;
-}
-header div nav div {
-  margin: 5px;
-  padding-bottom: 0px;
-  padding-top: 4px;
-}
-header div nav div ul.nav {
-  float: right !important;
-}
-header div nav .form-search {
-  margin-bottom: 0px;
   margin-top: 5px;
 }
-header div nav .form-search input {
-  display: inline-block;
-}
-header div nav .form-search a {
-  width: 29px;
-  height: 30px;
-  margin-left: -6px;
-}
-header div nav i {
+header .navbar ul i {
   color: #b4b4b4;
+}
+header .navbar ul li a {
+  padding-top: 15px;
+}
+header .navbar .search-form {
+  margin-top: 5px;
+}
+header .navbar .img-user {
+  margin-left: 0px;
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+}
+header .dropdown-menu {
+  border: 0px;
+  padding-top: 0px;
 }
 header #menu .dropdown-menu {
   margin-top: 7px;
@@ -218,20 +207,6 @@ footer .row div {
 }
 footer a {
   color: #000;
-}
-@media (max-width: 767px) {
-  header {
-    margin: 0 -20px;
-  }
-  header .form-search {
-    margin-right: 70px;
-  }
-  footer {
-    left: 0;
-  }
-  section {
-    padding: 0;
-  }
 }
 .modal .close-modal {
   margin-top: 5px;

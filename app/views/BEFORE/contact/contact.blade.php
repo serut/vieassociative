@@ -11,7 +11,7 @@ Contact
 @section('content')
     <section>
         <div class="row features">
-            <div class="span2 offset4 well data-bar">
+            <div class="col-lg-2 offset4 well data-bar">
                 <h3>Contact</h3>
 
 

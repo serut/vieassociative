@@ -10,13 +10,13 @@ Modifier ses évènements
 @section('content')
     <div class="row features">
         <div class="tab-section raw-fluid">
-            <div class="span3">
+            <div class="col-lg-3">
                 <div class="tab-head">
                     <h1>Ajouter une association</h1>
                 </div>
                 @include('forms.ajouterAssociation')
             </div>
-            <div class="span3">
+            <div class="col-lg-3">
                 <div class="tab-head">
                     <h1>Vos associations :</h1>
                 </div>

@@ -6,8 +6,8 @@
 		<section>
 				<div>
 						<ul class="breadcrumb">
-							<li><a href="/">Association</a> <span class="divider">/</span></li>
-							<li><a href="/{{$association->id}}-{{$association->slug}}">{{$association->name}}</a> <span class="divider">/</span></li>
+							<li><a href="/">Association</a> <col-lg- class="divider">/</col-lg-></li>
+							<li><a href="/{{$association->id}}-{{$association->slug}}">{{$association->name}}</a> <col-lg- class="divider">/</col-lg-></li>
 							<li class="active">Edition</li>
 						</ul>
 						<h3 class="head">{{Lang::get('association/edit.edit_association')}}</h3>
@@ -16,7 +16,7 @@
 						@foreach($proposition as $p)
 						<div class="item">
 								<div class="text">
-										<span>{{$p->discussion->title}}</span>
+										<col-lg->{{$p->discussion->title}}</col-lg->
 										<div class="tweetbtn">
 										<img width="13" height="13" alt="Favorite" src="/img/to sprite/retweet_mini.png">
 										<a href="discussion/{{$p->discussion->id}}">Afficher</a>

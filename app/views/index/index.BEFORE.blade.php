@@ -22,13 +22,13 @@ Les évènements associatifs dans ta région !
 
 {{-- Content --}}
 @section('content')
-	<div class="row-fluid">
+	<div class="row">
 			<!-- Tabs Section End -->
 			
 			<!-- Tabs Section Start -->
 			<div class="tab-section raw-fluid">
                 
-                <div class="span3">
+                <div class="col-lg-3">
                     <div class="tab-head">
                         <h1>trouver les évènements</h1>
                     </div>
@@ -38,11 +38,11 @@ Les évènements associatifs dans ta région !
                                 
                             </div>
                             <ul id="test"></ul>
-                            <ul class="liste-ville span3">
+                            <ul class="liste-ville col-lg-3">
                                 <li>
-                                    <div class="desc-in span4">
-                                        <div class="span3">
-                                            <span class="pointer">&nbsp;</span>
+                                    <div class="desc-in col-lg-4">
+                                        <div class="col-lg-3">
+                                            <col-lg- class="pointer">&nbsp;</col-lg->
                                         </div>
                                     </div>
                                 </li>
@@ -51,7 +51,7 @@ Les évènements associatifs dans ta région !
                         </div>
                     </div>
                 </div>
-                <div class="span3">
+                <div class="col-lg-3">
                     <h1 class="tab-head">ajouter les évènements</h1>
                     <div class="tab_container">
                         <div class="tab_container_in">
@@ -62,7 +62,7 @@ Les évènements associatifs dans ta région !
 			</div>
 			<!-- Tabs Section End -->
 		</div>   
-		<div class="column span3">
+		<div class="column col-lg-3">
 			
 			<?php
 			// <div class="box-small facebook_module">

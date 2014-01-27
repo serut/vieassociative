@@ -6,14 +6,14 @@
 	<section>
 		<div>
 			<ul class="breadcrumb">
-				<li><a href="#">Association</a> <span class="divider">/</span></li>
-				<li><a href="/{{$association->id}}-{{$association->slug}}">{{$association->name}}</a> <span class="divider">/</span></li>
-				<li><a href="/{{$association->id}}/edit">Edition</a> <span class="divider">/</span></li>
+				<li><a href="#">Association</a> <col-lg- class="divider">/</col-lg-></li>
+				<li><a href="/{{$association->id}}-{{$association->slug}}">{{$association->name}}</a> <col-lg- class="divider">/</col-lg-></li>
+				<li><a href="/{{$association->id}}/edit">Edition</a> <col-lg- class="divider">/</col-lg-></li>
 				<li class="active">Images</li>
 			</ul>
 			<div class="container">
 				<div class="row">
-					<div class="span11">
+					<div class="col-lg-11">
 						<br>Etape #2 : Découpez votre image, puis validez :
 						<img src="http://img.vieassociative.fr/{{$prefix}}{{$association->id}}/{{$name}}" id="jcrop_img" />
 					</div>
@@ -25,7 +25,7 @@
 
 
 				<div class="row">
-					<div class="span19">
+					<div class="col-lg-19">
 						Résultat :<br>
 
 						<div id="preview-pane">
@@ -36,7 +36,7 @@
 					</div>
 
 					
-					<div class="span3" id="uploader">
+					<div class="col-lg-3" id="uploader">
 						<div class="text-center">
 							<form method="post">
 								<input type="hidden" id="x" name="x" />

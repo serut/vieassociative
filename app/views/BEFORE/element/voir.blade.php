@@ -1,5 +1,5 @@
 @extends('layout.bootstrap')
-<div class="span3">
+<div class="col-lg-3">
 	<table class="table">
 		<thead>
 			<tr>
@@ -16,7 +16,7 @@
 			@endforeach
 		</tbody>
 	</table>
-</div> <!-- /le span -->
+</div> <!-- /le col-lg- -->
 <button class="btn btn-large btn-primary" type="button" id="creer">Creer cookie</button>
 <button class="btn btn-large btn-primary" type="button" id="supprimer">Supprimer cookie</button>
 

@@ -1,9 +1,9 @@
 @if(App::environment() != "production")
 <div class="social-footer">
 	<div class="social-controls">
-		<span><i class="fa fa-thumbs-up "></i> Like</span>
-		<span><i class="fa fa-comment"></i> Comment</span>
-		<span>- <strong>Margo Payne, Tobei Tsumura</strong>and <strong> 3,747 others</strong> like this.</span>
+		<col-lg-><i class="fa fa-thumbs-up "></i> Like</col-lg->
+		<col-lg-><i class="fa fa-comment"></i> Comment</col-lg->
+		<col-lg->- <strong>Margo Payne, Tobei Tsumura</strong>and <strong> 3,747 others</strong> like this.</col-lg->
 	</div>
 	
 	
@@ -18,7 +18,7 @@
 		Where is that?
 		<br>
 		<small>
-			<span class="muted">Today at 7:36am</span>
+			<col-lg- class="muted">Today at 7:36am</col-lg->
 		</small>
 		<strong style="cursor:pointer">Like</strong>
 		</div>
@@ -33,7 +33,7 @@
 		<strong>Tobei Tsumura</strong>
 		Really Nice
 		<br>
-		<small><span class="muted">Yesterday at 3:45pm</span></small>
+		<small><col-lg- class="muted">Yesterday at 3:45pm</col-lg-></small>
 		
 		<strong style="cursor:pointer">Like</strong>
 		</div>

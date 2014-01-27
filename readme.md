@@ -1,10 +1,8 @@
 
-## Link
+## Links
 
-* [Access to the online doc](http://doc.vieassociative.fr)
-* [Access to the website](http://www.vieassociative.fr)
-* [Github vieassociative doc](https://github.com/serut/doc-vieassoc)
-* [Github vieassociative](https://github.com/serut/vieassociative)
+* [Documentation](http://doc.vieassociative.fr) - [Source of the documentation](https://github.com/serut/doc-vieassoc)
+* [Official website](http://www.vieassociative.fr) - [Source of the project vieassociative](https://github.com/serut/vieassociative)
 
 
 ## License
@@ -16,7 +14,7 @@ French version : http://creativecommons.org/licenses/by-nc-sa/3.0/fr/
 
 ## we do not reinvent the wheel ##
 
-We currently use these softwares for making vieassociative awesome :
+We currently use these softwares in order to make vieassociative awesome :
 
 * [Laravel](http://laravel.com/docs) : MIT License
 * [Bootstrap](http://getbootstrap.com/2.3.2/) : Apache 2.0
@@ -37,4 +35,4 @@ We currently use these softwares for making vieassociative awesome :
 
 Moreover there are libraries included by Laravel : thanks to them too. ;)
 
-Designed and built with all the love in the world by Mieulet L.
+Designed and built with love by Mieulet L.

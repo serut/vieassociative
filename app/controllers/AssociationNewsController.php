@@ -19,23 +19,23 @@
 	/**
 		* @see http://association.vieassociative.fr/{$idAssoc}/edit/news/{$idNews}
 		* @param int $idAssoc The ID of this association
-		* @param int $idPost ==> if $idPost = 0 then the user wants to create a new post
+		* @param int $idNews ==> if $idNews = 0 then the user wants to create a new post
 		* @return View Edit or create a news
 	*/
-	public function getEditNews($idAssoc, $idPost){
+	public function getEditNews($idAssoc, $idNews){
 		return View::make('association.edit-news')
-			->with('post',News::get($idPost))
+			->with('post',News::get($idNews))
 			->with('association',Association::find($idAssoc));
 	}
 	/**
 		* API : Edit or create a news
 		* @return JSON
 	*/
-	public function postEditNews($idAssoc, $idPost){
+	public function postEditNews($idAssoc, $idNews){
 		$v = new validators_associationEditPost;
 		$result = $v->validate();
 		if(isset($result['success'])){
-			News::edit($idPost,$idAssoc,$result['data']);
+			News::edit($idNews,$idAssoc,$result['data']);
 			$result['redirect_url'] = '/'.$idAssoc.'/edit';
 			$result['data']=null; //Remove data
 		}

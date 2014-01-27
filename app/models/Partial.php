@@ -9,15 +9,18 @@ class Partial extends Eloquent
     }
     static function search($container, $type){
         foreach ($container['data'] as $key => $value) {
-            if($value['value'] == $type){
+            if($value['type'] == $type){
                 return $value;
             }
         }
         throw new Exception("Error Processing Request", 1);
     }
     static function has($container, $type){
+        if(!isset($container['data']) || empty($container['data'])){
+            return false;
+        }
         foreach ($container['data'] as $key => $value) {
-            if($value['value'] == $type){
+            if($value['type'] == $type){
                 return true;
             }
         }
@@ -25,96 +28,113 @@ class Partial extends Eloquent
     }
     static function edit($id_news, $data){
 
-        $newsBefore = $this->get($id_news);
-        if(isset($data['title']) && !empty($data['title']) && !Partial::has($newsBefore,'title')){
+        $p = News::where('id',$id_news)->get(); 
+        $newsBefore = Partial::get($p);
+        if(isset($data['title']) && !empty($data['title'])){
+            if(!Partial::has($newsBefore,'PartialTitle')){
             //add
-            $idTitle = PartialTitle::add($data['title']);
-            $partial = new Partial();
-            $partial->order=0;
-            $partial->partial_type="PartialTitle";
-            $partial->partial_id = $idTitle;
-            $partial->id_news = $id_news;
-            $partial->touch();
-        }else{
-            if($data['title']!=$newsBefore['title']){
-                //edit
-                PartialTitle::edit($newsBefore['partial_id'],$newsBefore['title']);
+                $idTitle = PartialTitle::add($data['title']);
+                $partial = new Partial();
+                $partial->order=0;
+                $partial->partial_type="PartialTitle";
+                $partial->partial_id = $idTitle;
+                $partial->id_news = $id_news;
+                $partial->touch();
+            }else{
+                $precedent_val = Partial::search($newsBefore,'PartialTitle');
+                if($data['title']!=$precedent_val['title']){
+                    //edit
+                    PartialTitle::edit($precedent_val['partial_id'],$data['title']);
+                }
+            }
+        }
+        if(isset($data['text']) && !empty($data['text'])){
+            if(!Partial::has($newsBefore,'PartialText')){
+                //add
+                $idText = PartialText::add($data['text']);
+                $partial = new Partial();
+                $partial->order=1;
+                $partial->partial_type="PartialText";
+                $partial->partial_id = $idText;
+                $partial->id_news = $id_news;
+                $partial->touch();
+            }else{
+                $precedent_val = Partial::search($newsBefore,'PartialText');
+                if($data['text']!=$precedent_val['text']){
+                    //edit
+                    PartialText::edit($precedent_val['partial_id'],$data['text']);
+                }
             }
         }
 
-        if(isset($data['text']) && !empty($data['text']) && !Partial::has($newsBefore,'text')){
-            //add
-            $idText = PartialText::add($data['text']);
-            $partial = new Partial();
-            $partial->order=1;
-            $partial->partial_type="PartialText";
-            $partial->partial_id = $idText;
-            $partial->id_news = $id_news;
-            $partial->touch();
-        }else{
-            if($data['text']!=$newsBefore['text']){
-                //edit
-                PartialText::edit($newsBefore['partial_id'],$newsBefore['text']);
+
+        if(isset($data['soundcloud']) && !empty($data['soundcloud'])){
+            if(!Partial::has($newsBefore,'PartialSoundCloud')){
+                //add
+                $idTitle = PartialSoundCloud::add($data['soundcloud']);
+                $partial = new Partial();
+                $partial->order=2;
+                $partial->partial_type="PartialSoundCloud";
+                $partial->partial_id = $idTitle;
+                $partial->id_news = $id_news;
+                $partial->touch();
+            }else{
+                $precedent_val = Partial::search($newsBefore,'PartialSoundCloud');
+                if($data['soundcloud']!=$precedent_val['soundcloud_url']){
+                    //edit
+                    PartialSoundcloud::edit($precedent_val['partial_id'],$data['soundcloud_url']);
+                }
             }
         }
 
-        if(isset($data['soundcloud']) && !empty($data['soundcloud']) && !Partial::has($newsBefore,'soundcloud')){
-            //add
-            $idTitle = PartialSoundCloud::add($data['soundcloud']);
-            $partial = new Partial();
-            $partial->order=2;
-            $partial->partial_type="PartialSoundCloud";
-            $partial->partial_id = $idTitle;
-            $partial->id_news = $id_news;
-            $partial->touch();
-        }else{
-            if($data['soundcloud']!=$newsBefore['soundcloud']){
-                //edit
-                PartialSoundcloud::edit($newsBefore['partial_id'],$newsBefore['soundcloud']);
+
+
+        if(isset($data['youtube']) && !empty($data['youtube'])){
+            if(!Partial::has($newsBefore,'PartialYoutube')){
+                //add
+                $idText = PartialYoutube::add($data['youtube']);
+                $partial = new Partial();
+                $partial->order=3;
+                $partial->partial_type="PartialYoutube";
+                $partial->partial_id = $idText;
+                $partial->id_news = $id_news;
+                $partial->touch();
+            }else{
+                $precedent_val = Partial::search($newsBefore,'PartialYoutube')['youtube_slug'];
+                if($data['youtube']!=$precedent_val['youtube_slug']){
+                    //edit
+                    PartialYoutube::edit($precedent_val['partial_id'],$data['youtube_slug']);
+                }
             }
         }
 
-        if(isset($data['youtube']) && !empty($data['youtube']) && !Partial::has($newsBefore,'youtube')){
-            //add
-            $idText = PartialYoutube::add($data['youtube']);
-            $partial = new Partial();
-            $partial->order=3;
-            $partial->partial_type="PartialYoutube";
-            $partial->partial_id = $idText;
-            $partial->id_news = $id_news;
-            $partial->touch();
-        }else{
-            if($data['youtube']!=$newsBefore['youtube']){
-                //edit
-                PartialYoutube::edit($newsBefore['partial_id'],$newsBefore['youtube']);
-            }
-        }
-
-        if(isset($data['onepicture']) && !empty($data['onepicture']) && !Partial::has($newsBefore,'onepicture')){
-            //add
-            $idText = PartialOnePicture::add($data['onepicture']);
-            $partial = new Partial();
-            $partial->order=4;
-            $partial->partial_type="PartialOnePicture";
-            $partial->partial_id = $idText;
-            $partial->id_news = $id_news;
-            $partial->touch();
-        }else{
-            if($data['onepicture']!=$newsBefore['onepicture']){
-                //edit
-                PartialOnePicture::edit($newsBefore['partial_id'],$newsBefore['onepicture']);
+        if(isset($data['onepicture']) && !empty($data['onepicture'])) {
+            if(!Partial::has($newsBefore,'PartialOnePicture')){
+                //add
+                $idText = PartialOnePicture::add($data['onepicture']);
+                $partial = new Partial();
+                $partial->order=4;
+                $partial->partial_type="PartialOnePicture";
+                $partial->partial_id = $idText;
+                $partial->id_news = $id_news;
+                $partial->touch();
+            }else{
+                $precedent_val = Partial::search($newsBefore,'PartialOnePicture');
+                if($data['onepicture']!=$precedent_val['img_url']){
+                    //edit
+                    PartialOnePicture::edit($precedent_val['img_url'],$data['img_url']);
+                }
             }
         }
     }
-    static function get($idNews){
-        $p = News::find($idNews); 
-        if(!$p->isEmpty()){
-            $result = Partial::getNews(array($idPost));
+    static function get($news){
+        if(!empty($news)){
+            $result = Partial::getNews($news);
             foreach ($result as $r) {
                 return $r;
             }
         }
-        return $p;
+        return $news;
     }
     static function getNews($news){
         $result = array();
@@ -124,12 +144,13 @@ class Partial extends Eloquent
         	foreach ($news as $n) {
         		$listNews[] = $n->id;
         	}
-        	$query = DB::select('select *,partial.updated_at as updated_at,partial.id as id 
+        	$query = DB::select('select *,partial.updated_at as updated_at,partial.id as id
+                    ,partial.partial_id as partial_id 
                     ,partial_title.var1 as title
                     ,partial_text.var1 as text
-                    ,partial_soundcloud.var1 as soundcloud
-                    ,partial_youtube.var1 as youtube
-                    ,partial_one_picture.var1 as url_img
+                    ,partial_soundcloud.var1 as soundcloud_url
+                    ,partial_youtube.var1 as youtube_slug
+                    ,partial_one_picture.var1 as img_url
                     from partial 
         			LEFT JOIN partial_title ON partial.partial_type = "PartialTitle" AND partial_title.id = partial.partial_id
                     LEFT JOIN partial_text ON partial.partial_type = "PartialText" AND partial_text.id = partial.partial_id
@@ -164,7 +185,8 @@ class Partial extends Eloquent
                 }
                 $result[$id_news]['data'][] = array(
                                                 "type"=>$q->partial_type,
-                                                $arg1_name=>$q->title
+                                                $arg1_name=>$q->$arg1_name,
+                                                "partial_id"=>$q->partial_id,
                                             );
         	}
         }

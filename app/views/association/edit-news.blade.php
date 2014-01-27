@@ -20,37 +20,51 @@
 					<img src="{{$association->getLogo()}}" class="img-circle">
 				</div>
 				<div class="span20">
-					
-					<div id="title"
-					@if(Partial::has($post,'title'))
-						style="display:none;"
-					@endif
-					>
-						@input = array(
-							'id'=>"title",
-							@if(Partial::has($post,'title'))
-							'value'=>Partial::search($post,'title')['title'],
-							@endif
-							'form' => array(
-								'placeholder'=>Lang::get('association/edit/news.placeholder_title'),
-								'class' => 'input-xxlarge',
-								'tabindex'=>'1',
-	                            'data-maxlength'=>"150",
-	                            'data-minlength'=>"3",
-							)
-						)@
+					<div id="title">
+						@if(Partial::has($post,'PartialTitle'))
+							@input = array(
+								'id'=>"title",
+								'value'=>Partial::search($post,'PartialTitle')['title'],
+								'form' => array(
+									'placeholder'=>Lang::get('association/edit/news.placeholder_title'),
+									'class' => 'input-xxlarge',
+									'tabindex'=>'1',
+		                            'data-maxlength'=>"150",
+		                            'data-minlength'=>"3",
+								)
+							)@
+						@else
+							@input = array(
+								'id'=>"title",
+								'form' => array(
+									'placeholder'=>Lang::get('association/edit/news.placeholder_title'),
+									'class' => 'input-xxlarge',
+									'tabindex'=>'1',
+		                            'data-maxlength'=>"150",
+		                            'data-minlength'=>"3",
+								)
+							)@
+						@endif
 						{{SiteHelpers::simple_input($input)}}
 					</div>
-					@endif
-
 
 
 					<div id="textarea">
-						{{SiteHelpers::add_textarea('text',$post->var1, true, true)}}
+						@if(Partial::has($post,'PartialText'))
+							{{SiteHelpers::add_textarea('text',Partial::search($post,'PartialText')['text'], true, true)}}
+						@else
+							{{SiteHelpers::add_textarea('text',"", true, true)}}
+						@endif
 					</div>
 
-					<div id="soundcloud" style="display:none;">
-						@if(Partial::has($post,'soundcloud'))
+
+
+					<div id="soundcloud" 
+					@if(!Partial::has($post,'PartialSoundCloud'))
+						style="display:none;"
+					@endif
+					>
+						@if(Partial::has($post,'PartialSoundCloud'))
 							<script src="http://connect.soundcloud.com/sdk.js"></script>
 							<script>
 							SC.initialize({
@@ -64,42 +78,70 @@
 							</script>
 						@endif
 						<hr>
-						@input = array(
-							'id'=>"soundcloud",
-							//'value'=>$post->var1,
-							'form' => array(
-								'placeholder'=>Lang::get('association/edit/news.placeholder_title'),
-								'class' => 'input-large',
-								'tabindex'=>'1',
-	                            'data-maxlength'=>"150",
-	                            'data-minlength'=>"3",
-							)
-						)@
+						@if(Partial::has($post,'PartialSoundCloud'))
+							@input = array(
+								'id'=>"soundcloud",
+								'value'=>Partial::search($post,'PartialSoundCloud')['soundcloud_url'],
+								'form' => array(
+									'placeholder'=>Lang::get('association/edit/news.placeholder_title'),
+									'class' => 'input-large',
+									'tabindex'=>'1',
+		                            'data-maxlength'=>"150",
+		                            'data-minlength'=>"3",
+								)
+							)@
+						@else
+							@input = array(
+								'id'=>"soundcloud",
+								'form' => array(
+									'placeholder'=>Lang::get('association/edit/news.placeholder_title'),
+									'class' => 'input-large',
+									'tabindex'=>'1',
+		                            'data-maxlength'=>"150",
+		                            'data-minlength'=>"3",
+								)
+							)@
+						@endif
 						{{SiteHelpers::simple_input($input)}}
 						<hr>
 					</div>
 					
-					<div id="youtube" style="display:none;">
+					<div id="youtube" 
+					@if(!Partial::has($post,'PartialYoutube'))
+						style="display:none;"
+					@endif
+					>
 						<hr>
-						@if(Partial::has($post,'youtube'))
+						@if(Partial::has($post,'PartialYoutube'))
 			    			<div class="flex-video widescreen">
 			    				<iframe src="https://www.youtube-nocookie.com/embed/4TlJ4qKO2Xg?rel=0" frameborder="0" allowfullscreen=""></iframe>
 		    				</div>
 						@endif
 
-						@input = array(
-							'id'=>"youtube",
-						@if(Partial::has($post,'youtube'))
-							'value'=>$post->var1,
+						@if(Partial::has($post,'PartialYoutube'))
+							@input = array(
+								'id'=>"youtube",
+								'value'=>Partial::search($post,'PartialYoutube')['youtube_slug'],
+								'form' => array(
+									'placeholder'=>"L'identifiant de la vidéo",
+									'class' => 'input-large',
+									'tabindex'=>'1',
+		                            'data-maxlength'=>"150",
+		                            'data-minlength'=>"3",
+								)
+							)@
+						@else
+							@input = array(
+								'id'=>"youtube",
+								'form' => array(
+									'placeholder'=>"L'identifiant de la vidéo",
+									'class' => 'input-large',
+									'tabindex'=>'1',
+		                            'data-maxlength'=>"150",
+		                            'data-minlength'=>"3",
+								)
+							)@
 						@endif
-							'form' => array(
-								'placeholder'=>"L'identifiant de la vidéo",
-								'class' => 'input-large',
-								'tabindex'=>'1',
-	                            'data-maxlength'=>"150",
-	                            'data-minlength'=>"3",
-							)
-						)@
 						{{SiteHelpers::simple_input($input)}}
 						<hr>
 					</div>

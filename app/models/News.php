@@ -10,16 +10,23 @@ class News extends Eloquent
         return $this->update_at;
           return date("g:i a F j, Y ", strtotime($this->update_at));  
     }
-    static function get($idPost){
-        return Partial::get($idPost);
+    static function get($idNews){
+        if(intval($idNews) == 0){
+            return array();
+        }else{
+            $p = News::where('id',$idNews)->get(); 
+            return Partial::get($p);
+        }
     }
     static function edit($id_news,$id_assoc, $data){
-        if($id_news == 0){
+        if(intval($id_news) == 0){
+            //add
             $news = new News();
             $news->id_assoc=$id_assoc;
             $news->touch();
-            Partial::add($news->id, $data);
+            Partial::edit($news->id, $data);
         }else{
+            //edit
             Partial::edit($id_news, $data);
         }
     }

@@ -10,7 +10,7 @@ class PartialSoundCloud extends Eloquent
     	return $partialSoundCloud->id;
     }
     public static function edit($id,$value){
-    	$partialSoundCloud = PartialSoundCloud::firstOrFail($id);
+    	$partialSoundCloud = PartialSoundCloud::find($id);
     	$partialSoundCloud->var1=$value;
     	$partialSoundCloud->touch();
     }

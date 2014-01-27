@@ -10,7 +10,7 @@ class PartialOnePicture extends Eloquent
     	return $partialOnePicture->id;
     }
     public static function edit($id,$value){
-    	$partialOnePicture = PartialOnePicture::firstOrFail($id);
+    	$partialOnePicture = PartialOnePicture::find($id);
     	$partialOnePicture->var1=$value;
     	$partialOnePicture->touch();
     }

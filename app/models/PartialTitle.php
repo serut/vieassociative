@@ -10,7 +10,7 @@ class PartialTitle extends Eloquent
     	return $partialTitle->id;
     }
     public static function edit($id,$value){
-    	$partialTitle = PartialTitle::firstOrFail($id);
+    	$partialTitle = PartialTitle::find($id);
     	$partialTitle->var1=$value;
     	$partialTitle->touch();
     }

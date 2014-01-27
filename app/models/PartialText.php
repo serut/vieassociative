@@ -10,7 +10,7 @@ class PartialText extends Eloquent
     	return $partialText->id;
     }
     public static function edit($id,$value){
-    	$partialText = PartialText::firstOrFail($id);
+    	$partialText = PartialText::find($id);
     	$partialText->var1=$value;
     	$partialText->touch();
     }

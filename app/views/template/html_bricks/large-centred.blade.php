@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="span24">
+    <div class="span7">
 		@yield('large-content')
 	</div>
 </div>

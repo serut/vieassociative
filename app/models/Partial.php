@@ -100,7 +100,7 @@ class Partial extends Eloquent
                 $partial->id_news = $id_news;
                 $partial->touch();
             }else{
-                $precedent_val = Partial::search($newsBefore,'PartialYoutube')['youtube_slug'];
+                $precedent_val = Partial::search($newsBefore,'PartialYoutube');
                 if($data['youtube']!=$precedent_val['youtube_slug']){
                     //edit
                     PartialYoutube::edit($precedent_val['partial_id'],$data['youtube_slug']);

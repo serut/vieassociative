@@ -28,7 +28,7 @@ Les évènements associatifs dans ta région !
 			<!-- Tabs Section Start -->
 			<div class="tab-section raw-fluid">
                 
-                <div class="span6">
+                <div class="span3">
                     <div class="tab-head">
                         <h1>trouver les évènements</h1>
                     </div>
@@ -40,8 +40,8 @@ Les évènements associatifs dans ta région !
                             <ul id="test"></ul>
                             <ul class="liste-ville span3">
                                 <li>
-                                    <div class="desc-in span8">
-                                        <div class="span6">
+                                    <div class="desc-in span4">
+                                        <div class="span3">
                                             <span class="pointer">&nbsp;</span>
                                         </div>
                                     </div>
@@ -51,7 +51,7 @@ Les évènements associatifs dans ta région !
                         </div>
                     </div>
                 </div>
-                <div class="span6">
+                <div class="span3">
                     <h1 class="tab-head">ajouter les évènements</h1>
                     <div class="tab_container">
                         <div class="tab_container_in">

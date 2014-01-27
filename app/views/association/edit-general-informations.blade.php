@@ -61,12 +61,12 @@
                 </tr>
                 <tr>
                   <td>Image de couverture</td>
-                  <td><img src="{{$association->getCover()}}" class="span4"></td>
+                  <td><img src="{{$association->getCover()}}" class="span2"></td>
                   <td><a href="/{{$association->id}}/edit/file/{{$association->id_folder}}/940x350-cover"><i class="fa fa-pencil"></i></a></td>
                 </tr>
                 <tr>
                   <td>Logo</td>
-                  <td><img src="{{$association->getLogo()}}" class="span4"></td>
+                  <td><img src="{{$association->getLogo()}}" class="span2"></td>
                   <td><a href="/{{$association->id}}/edit/file/{{$association->id_folder}}/200x200-logo"><i class="fa fa-pencil"></i></a></td>
                 </tr>
               </tbody>

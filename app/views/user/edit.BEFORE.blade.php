@@ -13,7 +13,7 @@ echo $this->form()->openTag($form);
 
                     <div class="control-group">
                         <label class="control-label">Nom de l </label>
-                        <div class="control-label span4">
+                        <div class="control-label span2">
                             <label > <?php echo $this->associationEnGestationNom; ?></label>
                         </div>
                     </div>
@@ -23,7 +23,7 @@ echo $this->form()->openTag($form);
                         <label class="control-label" for="inputPassword">Logo  
                                 <br><a href="/image/gestion-image?change=logo"> <i class="fa fa-arrow-right"></i> Changer de logo</a>
                         </label>
-                            <div class="span2">   
+                            <div class="span1">   
                             
                             <?php
                              if (!empty($this->logo)) { ?>
@@ -44,7 +44,7 @@ echo $this->form()->openTag($form);
                                 </ul>
                             
                             <?php } else {
-                                echo '<div class="control-label span4"> Vous n\'avez pas encore de logo lié à votre association.</div>';
+                                echo '<div class="control-label span2"> Vous n\'avez pas encore de logo lié à votre association.</div>';
                             } ?>
                                 </div>
                     </div>
@@ -54,7 +54,7 @@ echo $this->form()->openTag($form);
                         <label class="control-label">Votre lien avec l'association
                             <br><a href="/association/changer-lien-association"> <i class="fa fa-arrow-right"></i> Changer ce lien </a>
                         </label>
-                        <div class="control-label span4">
+                        <div class="control-label span2">
                             <label > <?php echo $this->rang['nom_lien'] ?></label>
                         </div>
                     </div>

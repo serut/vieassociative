@@ -11,24 +11,24 @@
 			Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
 		</p>
 		<ul class="gallery">
-			<li class="span8">
+			<li class="span4">
 				<img alt="alt name" src="http://cesarlab.com/templates/social/assets/img/pages/social-timeline/event-image1.jpg">
 			</li>
-			<li class="span8">
+			<li class="span4">
 				<img alt="alt name" src="http://cesarlab.com/templates/social/assets/img/pages/social-timeline/event-image2.jpg">
 			</li>
-			<li class="span8">
+			<li class="span4">
 				<img alt="alt name" src="http://cesarlab.com/templates/social/assets/img/pages/social-timeline/event-image3.jpg">
 			</li>
 		</ul>
 		<ul class="gallery">
-			<li class="span8">
+			<li class="span4">
 				<img alt="alt name" src="http://cesarlab.com/templates/social/assets/img/pages/social-timeline/event-image1.jpg">
 			</li>
-			<li class="span8">
+			<li class="span4">
 				<img alt="alt name" src="http://cesarlab.com/templates/social/assets/img/pages/social-timeline/event-image3.jpg">
 			</li>
-			<li class="span8">
+			<li class="span4">
 				<img alt="alt name" src="http://cesarlab.com/templates/social/assets/img/pages/social-timeline/event-image2.jpg">
 			</li>
 		</ul>

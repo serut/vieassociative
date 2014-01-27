@@ -1,13 +1,13 @@
 <header>
 <div class="container">
 	<div class="row">
-		<div class="span8">
+		<div class="span4">
 			<a id="logo" href="{{URLSubdomain::to('www','')}}">
 				<img alt="Vie Associative" src="/img/logo.png" class="hidden-phone">
 				<img alt="Vie Associative" src="/img/logo-small.png" class="visible-phone">
 			</a>
 		</div>
-		<nav id="menu" class="span16 align-right">
+		<nav id="menu" class="span8 align-right">
 			<div class="navbar" style="margin-top: 0px;">
 				<ul class="nav">
 					<li>
@@ -68,7 +68,7 @@
 <noscript>
 	<div class="container">
 		<div class="row">
-			<section class="span24">
+			<section class="span7">
 				<div>
 					Notre site est incapable de bien fonctionner sans JavaScript. Merci de le réactiver ! 
 				</div>

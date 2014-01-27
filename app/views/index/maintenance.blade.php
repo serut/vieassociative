@@ -15,9 +15,9 @@ Maintenance
 {{-- Content --}}
 @section('content')
 <div class="row">
-    <div class="span18">
+    <div class="span9">
 		<div id="rocket"></div>
-		<aside class="span10">
+		<aside class="span5">
 			<div class="background hidden-tablet hidden-phone">
 			    <h1 class="head">Toujours en développement</h1>
 			    <div>
@@ -44,7 +44,7 @@ Maintenance
 	}
 	
 	@media (max-width: 767px) {
-		.span12{
+		.span6{
 			margin-top: 0px;
 			margin-left: 3px;
 		}

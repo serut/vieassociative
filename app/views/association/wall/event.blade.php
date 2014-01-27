@@ -5,7 +5,7 @@
 	<div class="media-body social-body">
 		<h4 class="media-heading">Upcomming Events ( To remake )</h4>
 		<ul style="margin-bottom: 0;" class="thumbnails">
-			<li class="span8">
+			<li class="span4">
 				<div class="thumbnail">
 					<img alt="alt name" src="http://cesarlab.com/templates/social/assets/img/pages/social-timeline/event-image1.jpg">
 					<div class="caption">
@@ -34,7 +34,7 @@
 					</div>
 				</div>
 			</li>
-			<li class="span8">
+			<li class="span4">
 				<div class="thumbnail">
 					<img alt="alt name" src="http://cesarlab.com/templates/social/assets/img/pages/social-timeline/event-image2.jpg">
 					<div class="caption">
@@ -60,7 +60,7 @@
 					</div>
 				</div>
 			</li>
-			<li class="span8">
+			<li class="span4">
 				<div class="thumbnail">
 					<img alt="alt name" src="http://cesarlab.com/templates/social/assets/img/pages/social-timeline/event-image3.jpg">
 					<div class="caption">

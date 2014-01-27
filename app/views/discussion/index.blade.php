@@ -5,7 +5,7 @@
 @section('small-content')
     <div>
         <div id="answers">
-            <section class="span24">
+            <section class="span7">
         @if(!empty($posts))
             @foreach($posts as $p)
                 <div data-id="{{$p->id}}">
@@ -23,13 +23,13 @@
                         </div>
                             <div class="
                         @if($p->level == 1)
-                            span20
+                            span5
                         @endif
                         @if($p->level == 2)
                             span17
                         @endif
                         @if($p->level == 3)
-                            span14
+                            span7
                         @endif
                             ">
                             <span class="author"><a href="#profil">{{$p->author->username}}</a></span>

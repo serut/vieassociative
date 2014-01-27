@@ -131,9 +131,9 @@
     @show
 
     @if(isset($transparent))
-    <section id="content" class=" span12">
+    <section id="content" class=" span6">
     @else
-    <section id="content" class="well span12">
+    <section id="content" class="well span6">
     @endif
         <div class=" container">
         @yield('content')

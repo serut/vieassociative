@@ -8,7 +8,7 @@
 		<img src="{{$association->getLogo()}}" class="logo img-circle" alt="">
 		<div>
 			<div>
-				<div class="span20 head">
+				<div class="span5 head">
 					<h2 class="name">{{$association->name}}</h2>
 					<span class="pull-right" style="margin-top:13px;">
 						<a class="button button-blue" href="/{{$association->id}}/edit">Editer</a>
@@ -25,16 +25,16 @@
 
 			@if(App::environment() != "production")
 			<div class="menu row-fluid" style="display:none;">
-				<div id="photo" class="span4 img-polaroid" data-toggle="div-hidden-news">
+				<div id="photo" class="span2 img-polaroid" data-toggle="div-hidden-news">
 					<p>Fil d'actualité</p>
 				</div>
-				<div id="photo" class="span4 img-polaroid" data-toggle="div-hidden-photo">
+				<div id="photo" class="span2 img-polaroid" data-toggle="div-hidden-photo">
 					<p>Photos</p>
 				</div>
-				<div id="evenement" class="span4 img-polaroid" data-toggle="div-hidden-evenement">
+				<div id="evenement" class="span2 img-polaroid" data-toggle="div-hidden-evenement">
 					<p>Evenements</p>
 				</div>
-				<div id="social" class="span4 img-polaroid" data-toggle="div-hidden-social">
+				<div id="social" class="span2 img-polaroid" data-toggle="div-hidden-social">
 					<p>Social</p>
 				</div>
 			</div>
@@ -54,8 +54,8 @@
 
 
 			<div id="social-timeline" class="row">
-				<div class="span23">
-					<div class="span21">
+				<div class="span13">
+					<div class="span11">
 						<div class="row-fluid">
 							@foreach($newsFeed as $news)
 								@include('association.wall.generic-head')
@@ -271,11 +271,11 @@
 
 <script id="evenement-pattern" type="text/x-jquery-tmpl">
 	<div class="row">
-		<div class="date span2">
+		<div class="date span1">
 			<i></i>
 			<h6>${start_date}</h6>
 		</div>
-		<div class="content span20">
+		<div class="content span5">
 			<span class="pointer">&nbsp;</span>
 			<div class="thumb">
 				<img alt="" src="${img}">

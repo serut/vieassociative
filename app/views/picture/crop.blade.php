@@ -13,7 +13,7 @@
 			</ul>
 			<div class="container">
 				<div class="row">
-					<div class="span21">
+					<div class="span11">
 						<br>Etape #2 : Découpez votre image, puis validez :
 						<img src="http://img.vieassociative.fr/{{$prefix}}{{$association->id}}/{{$name}}" id="jcrop_img" />
 					</div>

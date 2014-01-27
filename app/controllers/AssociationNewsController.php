@@ -36,7 +36,8 @@
 		$result = $v->validate();
 		if(isset($result['success'])){
 			News::edit($idNews,$idAssoc,$result['data']);
-			$result['redirect_url'] = '/'.$idAssoc.'/edit';
+			$association = Association::find($idAssoc);
+			$result['redirect_url'] = '/'.$idAssoc.'-'.$association->slug;
 			$result['data']=null; //Remove data
 		}
 		return Response::json($result);

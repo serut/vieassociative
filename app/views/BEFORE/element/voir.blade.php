@@ -1,5 +1,5 @@
 @extends('layout.bootstrap')
-<div class="span6">
+<div class="span3">
 	<table class="table">
 		<thead>
 			<tr>

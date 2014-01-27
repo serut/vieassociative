@@ -16,10 +16,10 @@
 			<h3 class="head">{{Lang::get('association/edit/news.modify_news')}}</h3>
 			{{ Form::open(array('class'=> 'form-horizontal','data-validate'=>'our-parsey', 'data-loading'=>'true')) }}
 			<div class="row">
-				<div class="span2">
+				<div class="span1">
 					<img src="{{$association->getLogo()}}" class="img-circle">
 				</div>
-				<div class="span20">
+				<div class="span5">
 					<div id="title">
 						@if(Partial::has($post,'PartialTitle'))
 							@input = array(
@@ -114,7 +114,7 @@
 						<hr>
 						@if(Partial::has($post,'PartialYoutube'))
 			    			<div class="flex-video widescreen">
-			    				<iframe src="https://www.youtube-nocookie.com/embed/4TlJ4qKO2Xg?rel=0" frameborder="0" allowfullscreen=""></iframe>
+			    				<iframe src="https://www.youtube-nocookie.com/embed/{{Partial::search($post,'PartialYoutube')['youtube_slug']}}?rel=0" frameborder="0" allowfullscreen=""></iframe>
 		    				</div>
 						@endif
 

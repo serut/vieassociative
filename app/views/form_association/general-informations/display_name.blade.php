@@ -12,7 +12,7 @@
 	        'label'=>Lang::get('association/modal_form/general-informations.label_display_name'),
 	        'form' => array(
 	            'placeholder'=>Lang::get('association/modal_form/general-informations.placeholder_display_name'),
-	            'class' => 'input-xlarge',
+	            'class' => 'form-control',
 	            'data-original-title'=>Lang::get('association/modal_form/general-informations.tooltip_display_name'),
 	            'data-maxlength'=>"100",
 	        )

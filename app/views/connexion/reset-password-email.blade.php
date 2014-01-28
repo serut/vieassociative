@@ -14,7 +14,7 @@
 			            'full-width'=>true,
 	            		'form' => array(
 				            'placeholder'=>Lang::get('membre/form_connexion.placeholder_email'),
-				            'class' => 'input-large email-field',
+				            'class' => 'form-control email-field',
 		            		'data-original-title'=>Lang::get('membre/form_connexion.tooltip_register_email'),
 		            		'required'=>"required",
 		            		'data-type'=>"email",

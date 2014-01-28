@@ -5,9 +5,9 @@
     <section>
         <div>
             <ul class="breadcrumb">
-                <li><a href="#">Association</a> <span class="divider">/</span></li>
-                <li><a href="/<?php echo $association->id; ?>-<?php echo $association->slug; ?>"><?php echo $association->name; ?></a> <span class="divider">/</span></li>
-                <li><a href="/<?php echo $association->id; ?>/edit">Edition</a> <span class="divider">/</span></li>
+                <li><a href="/">Association</a> </li>
+                <li><a href="/<?php echo $association->id; ?>-<?php echo $association->slug; ?>"><?php echo $association->name; ?></a> </li>
+                <li><a href="/<?php echo $association->id; ?>/edit">Edition</a> </li>
                 <li class="active">Mes publications</li>
             </ul>
             <h3 class="head"><?php echo Lang::get('association/edit/news.select_news'); ?> </h3>
@@ -21,15 +21,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($news as $n): ?>
-                        <?php if($n[0]->partial_type="PartialTitle"): ?>
-                        <tr>
-                            <td><?php echo e($n[0]->title); ?></td>
-                            <td><?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($n[0]->updated_at))->diffForHumans(); ?></td>
-                            <td><i class="fa fa-remove"></i></td>
-                            <td><a href="news/<?php echo $n[0]->id_news; ?>/edit"> Editer</a></td>
-                        </tr>
-                        <?php endif; ?>
+                    <?php foreach($news as $key => $new): ?>
+                            <tr>
+                        <?php foreach($new['data'] as $partial): ?>
+                            <?php if($partial['type']=="PartialTitle"): ?>
+                                <td><?php echo e($partial['title']); ?></td>
+                                <td><?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($new['updated_at']))->diffForHumans(); ?></td>
+                                <td><i class="fa fa-remove"></i></td>
+                                <td><a href="news/<?php echo $key; ?>/edit"> Editer</a></td>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                            </tr>
                     <?php endforeach; ?>
                 </tbody>
 

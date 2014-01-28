@@ -33,7 +33,7 @@
 				            'full-width'=>true,
 		            		'form' => array(
 					            'placeholder'=>Lang::get('membre/form_connexion.placeholder_pseudo'),
-					            'class' => 'input-large username-field',
+					            'class' => 'form-control username-field',
 			            		'data-original-title'=>Lang::get('membre/form_connexion.tooltip_login_pseudo'),
 			            		'required'=>"required",
 			            		'data-minlength'=>"4",
@@ -48,7 +48,7 @@
 				            'full-width'=>true,
 		            		'form' => array(
 					            'placeholder'=>Lang::get('membre/form_connexion.placeholder_password'),
-					            'class' => 'input-large password-field',
+					            'class' => 'form-control password-field',
 			            		'data-original-title'=>Lang::get('membre/form_connexion.tooltip_login_password'),
 			            		'required'=>"required",
 			            		'data-minlength'=>"6",
@@ -85,7 +85,7 @@
 			            'full-width'=>true,
 	            		'form' => array(
 				            'placeholder'=>Lang::get('membre/form_connexion.placeholder_pseudo'),
-				            'class' => 'input-large username-field',
+				            'class' => 'form-control username-field',
 		            		'data-original-title'=>Lang::get('membre/form_connexion.tooltip_register_pseudo'),
 		            		'required'=>"required",
 		            		'data-minlength'=>"4",
@@ -100,7 +100,7 @@
 			            'full-width'=>true,
 	            		'form' => array(
 				            'placeholder'=>Lang::get('membre/form_connexion.placeholder_email'),
-				            'class' => 'input-large email-field',
+				            'class' => 'form-control email-field',
 		            		'data-original-title'=>Lang::get('membre/form_connexion.tooltip_register_email'),
 		            		'required'=>"required",
 		            		'data-type'=>"email",
@@ -115,7 +115,7 @@
 			            'full-width'=>true,
 	            		'form' => array(
 				            'placeholder'=>Lang::get('membre/form_connexion.placeholder_password'),
-				            'class' => 'input-large password-field',
+				            'class' => 'form-control password-field',
 		            		'data-original-title'=>Lang::get('membre/form_connexion.tooltip_register_password'),
 		            		'required'=>"required",
 		            		'data-minlength'=>"6",

@@ -14,7 +14,7 @@
 			            'full-width'=>true,
 	            		'form' => array(
 				            'placeholder'=>Lang::get('membre/form_connexion.placeholder_password'),
-				            'class' => 'input-large password-field',
+				            'class' => 'form-control password-field',
 		            		'data-original-title'=>Lang::get('membre/form_connexion.tooltip_login_password'),
 		            		'required'=>"required",
 		            		'data-minlength'=>"6",

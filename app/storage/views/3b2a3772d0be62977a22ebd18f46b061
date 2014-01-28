@@ -1,17 +1,17 @@
 
 
-<?php $main_and_aside = true; ?>
-<?php $__env->startSection('main-content'); ?>
+<?php $large_centred = true; ?>
+<?php $__env->startSection('large-content'); ?>
     <section>
         <div>
             <ul class="breadcrumb">
-              <li><a href="#">Association</a> <span class="divider">/</span></li>
-              <li><a href="/<?php echo $association->id; ?>-<?php echo $association->slug; ?>"><?php echo $association->name; ?></a> <span class="divider">/</span></li>
-              <li><a href="/<?php echo $association->id; ?>/edit">Edition</a> <span class="divider">/</span></li>
+              <li><a href="#">Association</a> </li>
+              <li><a href="/<?php echo $association->id; ?>-<?php echo $association->slug; ?>"><?php echo $association->name; ?></a> </li>
+              <li><a href="/<?php echo $association->id; ?>/edit">Edition</a> </li>
               <li class="active">Les administrateurs</li>
             </ul>
-            <h3 class="head"><?php echo Lang::get('association/edit/administrator.list_admin'); ?> </h3>
             <?php if(! $admin->isEmpty()): ?>
+            <h3 class="head"><?php echo Lang::get('association/edit/administrator.list_admin'); ?> </h3>
             <hr>
             <table class="table table-striped">
                 <thead>
@@ -31,14 +31,16 @@
                         <td><?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($v->updated_at))->formatLocalized('%A %d %B %Y %H:%I'); ?></td>
                         <td><?php echo $v->link; ?></td>
                         <?php if($is_admin): ?>
-                        <td><a href="#"><i class="fa fa-remove"></i></a></td>
+                        <td><a href="#" onclick="removeAdmin(<?php echo $v->id; ?>);return false;"><i class="fa fa-times"></i></a></td>
                         <?php endif; ?>
                     </tr>
                 </tbody>
                 <?php endforeach; ?>
             </table>
             <?php else: ?>
-                Cette association n'a pas d'administrateur. Notre politique sdfoksdfsqdlfsqdk fjzefj zoiefj ezoijf izejf zeoifj zioejf 
+                Cette association n'a pas d'administrateur. Avant de vous déclarer administrateur, veuillez prendre connaissance des  
+                <a target="_blank" href="/info/condition"><?php echo Lang::get('association/form_create.notice_part_link'); ?></a>
+                <?php echo Lang::get('association/form_create.notice_create_association'); ?>
             <?php endif; ?>
             <?php if($is_admin || !$admin->count()): ?>
             <hr>
@@ -72,7 +74,7 @@
                             'label'=>Lang::get('association/edit/administrator.label_admin_mail'),
                             'form' => array(
                                 'placeholder'=>Lang::get('association/edit/administrator.placeholder_admin_mail'),
-                                'class' => 'input-xlarge',
+                                'class' => 'form-control',
                                 'data-original-title'=>Lang::get('association/edit/administrator.tooltip_admin_mail'),
                                 'data-type'=>"email",
                             )
@@ -85,14 +87,13 @@
                             <a class="btn-vie-assoc" type="button" onclick="$('#link').val($(this).text());"><?php echo Lang::get('association/form_create.link_one'); ?></a>
                             <a class="btn-vie-assoc" type="button" onclick="$('#link').val($(this).text());"><?php echo Lang::get('association/form_create.link_two'); ?></a>
                             <a class="btn-vie-assoc" type="button" onclick="$('#link').val($(this).text());"><?php echo Lang::get('association/form_create.link_three'); ?></a>
-                            <a class="btn-vie-assoc" type="button" onclick="$('#link').val($(this).text());"><?php echo Lang::get('association/form_create.link_four'); ?></a>
                         </p>
                         <?php $input= array(
                             'id'=>"link",
                             'label'=>Lang::get('association/form_create.label_link'),
                             'form' => array(
                                 'placeholder'=>Lang::get('association/form_create.placeholder_link'),
-                                'class' => 'input-xlarge',
+                                'class' => 'form-control',
                                 'data-original-title'=>Lang::get('association/form_create.tooltip_link'),
                                 'data-maxlength'=>"30",
                                 'required'=>"required",
@@ -111,4 +112,22 @@
         </div>
     </section>
 <?php $__env->stopSection(); ?>
+<?php $__env->startSection('footer-js'); ?>
+<script type="text/javascript">
+    var IDASSOC = <?php echo $association->id; ?>;
+    function removeAdmin(id){
+        $.ajax({
+            type: "POST",
+            url: '/'+IDASSOC+'/form/administrator/remove',
+            dataType: "json",
+            data: {'id':id}
+        }).done(function ( data ) {
+            window.location = data['redirect_url'];
+        }).fail(function() {
+            alert("error");
+        });
+    }
+</script>
+<?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('template.theme', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

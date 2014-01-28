@@ -19,7 +19,7 @@
 		    <div class="controls">
                 {{Form::text('pseudo','',array(
                 	'placeholder'=>'Placeholder',
-                	'class' => 'input-xlarge username-field',
+                	'class' => 'form-control username-field',
                 	'id'=>"pseudo",
                 	'data-placement'=> 'right',
                 	'data-rel'=> 'tooltip',
@@ -29,14 +29,14 @@
 		    	@foreach ($errors->get('pseudo','<col-lg- class="help-inline">:message</col-lg->') as $message)
                     {{$message}}
                 @endforeach
-                <col-lg- class="text-error">Voici une erreur</col-lg->
+                <col-lg- class="text-danger">Voici une erreur</col-lg->
 		    </div>
 	    </div>
 	    <div>
 		    <label class="control-label" for="inputPassword">Password</label>
 		    <div class="controls">
 		    	<input type="password" id="inputPassword" placeholder="Placeholder" data-minwords="6" data-trigger="change">
-                <col-lg- class="text-error"></col-lg->
+                <col-lg- class="text-danger"></col-lg->
 		    </div>
 	    </div>
 	    <div>
@@ -63,7 +63,7 @@
 	    <div>
 		    <label class="control-label" for="inputPassword">Password</label>
 		    <div class="controls controls-textarea">
-		    	<textarea rows="8" id="text" class="input-xxlarge" onclick="launchEditor($(this))">gsdfg</textarea>
+		    	<textarea rows="8" id="text" class="form-control" onclick="launchEditor($(this))">gsdfg</textarea>
 		    </div>
 	    </div>
 	    <div>

@@ -7,9 +7,9 @@
 <section>
     <div>
         <ul class="breadcrumb">
-          <li><a href="/1-qsdf">Faites de la musique</a> <col-lg- class="divider">/</col-lg-></li>
-          <li><a href="/1/edit">Edition</a> <col-lg- class="divider">/</col-lg-></li>
-          <li><a href="/1/edit/evenement">Mes évènements</a> <col-lg- class="divider">/</col-lg-></li>
+          <li><a href="/1-qsdf">Faites de la musique</a> </li>
+          <li><a href="/1/edit">Edition</a> </li>
+          <li><a href="/1/edit/evenement">Mes évènements</a> </li>
           <li class="active">Editer un évènement</li>
         </ul>
         <h3 class="head">{{Lang::get('association/edit.edit_association')}}</h3>
@@ -49,7 +49,7 @@
                                 @foreach ($errors->get('text') as $message)
                                     {{$message}}
                                 @endforeach
-                                {{Form::textarea('text','',array('id'=>"text",'rows'=>"7", 'class'=>"input-xlarge mceEditor","data-textarea"=>"activer"))}}
+                                {{Form::textarea('text','',array('id'=>"text",'rows'=>"7", 'class'=>"form-control mceEditor","data-textarea"=>"activer"))}}
                             </div>
                         </div>
                     </div>
@@ -115,7 +115,7 @@
                                 @foreach ($errors->get('adresse_reelle') as $message)
                                     {{$message}}
                                 @endforeach
-                                {{Form::text('adresse_reelle','',array('id'=>"adresse_reelle",'rows'=>"2", 'class'=>"input-xxlarge"))}}
+                                {{Form::text('adresse_reelle','',array('id'=>"adresse_reelle",'rows'=>"2", 'class'=>"form-control"))}}
                             </div>
                         </div>
                     </div>

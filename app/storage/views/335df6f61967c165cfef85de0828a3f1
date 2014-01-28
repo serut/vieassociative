@@ -5,8 +5,8 @@
 		<section>
 				<div>
 						<ul class="breadcrumb">
-							<li><a href="#">Association</a> <span class="divider">/</span></li>
-							<li><a href="/<?php echo $association->id; ?>-<?php echo $association->slug; ?>"><?php echo $association->name; ?></a> <span class="divider">/</span></li>
+							<li><a href="/">Association</a> </li>
+							<li><a href="/<?php echo $association->id; ?>-<?php echo $association->slug; ?>"><?php echo $association->name; ?></a> </li>
 							<li class="active">Edition</li>
 						</ul>
 						<h3 class="head"><?php echo Lang::get('association/edit.edit_association'); ?></h3>
@@ -15,7 +15,7 @@
 						<?php foreach($proposition as $p): ?>
 						<div class="item">
 								<div class="text">
-										<span><?php echo $p->discussion->title; ?></span>
+										<col-lg-><?php echo $p->discussion->title; ?></col-lg->
 										<div class="tweetbtn">
 										<img width="13" height="13" alt="Favorite" src="/img/to sprite/retweet_mini.png">
 										<a href="discussion/<?php echo $p->discussion->id; ?>">Afficher</a>

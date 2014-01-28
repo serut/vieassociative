@@ -63,7 +63,6 @@ header .navbar {
   border-bottom: 0px;
 }
 header .navbar #logo img {
-  margin-left: 30px;
   float: left;
   height: 45px;
   margin-top: 5px;
@@ -73,6 +72,9 @@ header .navbar ul i {
 }
 header .navbar ul li a {
   padding-top: 15px;
+}
+header .navbar ul li a span {
+  display: inline!important;
 }
 header .navbar .search-form {
   margin-top: 5px;

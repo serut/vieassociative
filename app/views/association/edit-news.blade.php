@@ -8,18 +8,18 @@
 <section>
 		<div>
 			<ul class="breadcrumb">
-				<li><a href="/{{$association->id}}-{{$association->slug}}">{{$association->name}}</a> <col-lg- class="divider">/</col-lg-></li>
-				<li><a href="/{{$association->id}}/edit">Edition</a> <col-lg- class="divider">/</col-lg-></li>
-				<li><a href="/{{$association->id}}/edit/news">Mes publications</a> <col-lg- class="divider">/</col-lg-></li>
+				<li><a href="/{{$association->id}}-{{$association->slug}}">{{$association->name}}</a> </li>
+				<li><a href="/{{$association->id}}/edit">Edition</a> </li>
+				<li><a href="/{{$association->id}}/edit/news">Mes publications</a> </li>
 				<li class="active">Editer une publication</li>
 			</ul>
 			<h3 class="head">{{Lang::get('association/edit/news.modify_news')}}</h3>
 			{{ Form::open(array('class'=> 'form-horizontal','data-validate'=>'our-parsey', 'data-loading'=>'true')) }}
 			<div class="row">
-				<div class="col-lg-1">
-					<img src="{{$association->getLogo()}}" class="img-circle">
+				<div>
+					<img src="{{$association->getLogo()}}" class="img-circle col-sm-1">
 				</div>
-				<div class="col-lg-5">
+				<div class="col-sm-11">
 					<div id="title">
 						@if(Partial::has($post,'PartialTitle'))
 							@input = array(
@@ -27,7 +27,7 @@
 								'value'=>Partial::search($post,'PartialTitle')['title'],
 								'form' => array(
 									'placeholder'=>Lang::get('association/edit/news.placeholder_title'),
-									'class' => 'input-xxlarge',
+									'class' => 'form-control',
 									'tabindex'=>'1',
 		                            'data-maxlength'=>"150",
 		                            'data-minlength'=>"3",
@@ -38,7 +38,7 @@
 								'id'=>"title",
 								'form' => array(
 									'placeholder'=>Lang::get('association/edit/news.placeholder_title'),
-									'class' => 'input-xxlarge',
+									'class' => 'form-control',
 									'tabindex'=>'1',
 		                            'data-maxlength'=>"150",
 		                            'data-minlength'=>"3",
@@ -84,7 +84,7 @@
 								'value'=>Partial::search($post,'PartialSoundCloud')['soundcloud_url'],
 								'form' => array(
 									'placeholder'=>Lang::get('association/edit/news.placeholder_title'),
-									'class' => 'input-large',
+									'class' => 'form-control',
 									'tabindex'=>'1',
 		                            'data-maxlength'=>"150",
 		                            'data-minlength'=>"3",
@@ -95,7 +95,7 @@
 								'id'=>"soundcloud",
 								'form' => array(
 									'placeholder'=>Lang::get('association/edit/news.placeholder_title'),
-									'class' => 'input-large',
+									'class' => 'form-control',
 									'tabindex'=>'1',
 		                            'data-maxlength'=>"150",
 		                            'data-minlength'=>"3",
@@ -124,7 +124,7 @@
 								'value'=>Partial::search($post,'PartialYoutube')['youtube_slug'],
 								'form' => array(
 									'placeholder'=>"L'identifiant de la vidéo",
-									'class' => 'input-large',
+									'class' => 'form-control',
 									'tabindex'=>'1',
 		                            'data-maxlength'=>"150",
 		                            'data-minlength'=>"3",
@@ -135,7 +135,7 @@
 								'id'=>"youtube",
 								'form' => array(
 									'placeholder'=>"L'identifiant de la vidéo",
-									'class' => 'input-large',
+									'class' => 'form-control',
 									'tabindex'=>'1',
 		                            'data-maxlength'=>"150",
 		                            'data-minlength'=>"3",

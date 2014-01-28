@@ -6,9 +6,9 @@
     <section>
         <div>
             <ul class="breadcrumb">
-              <li><a href="/">Association</a> <col-lg- class="divider">/</col-lg-></li>
-              <li><a href="/{{$association->id}}-{{$association->slug}}">{{$association->name}}</a> <col-lg- class="divider">/</col-lg-></li>
-              <li><a href="/{{$association->id}}/edit">Edition</a> <col-lg- class="divider">/</col-lg-></li>
+              <li><a href="/">Association</a> </li>
+              <li><a href="/{{$association->id}}-{{$association->slug}}">{{$association->name}}</a> </li>
+              <li><a href="/{{$association->id}}/edit">Edition</a> </li>
               <li class="active">Informations Generales</li>
             </ul>
             <h3 class="head">{{Lang::get('association/edit/general-informations.edit_association')}}</h3>

@@ -5,44 +5,46 @@
 	<section>
 		<div>
             <ul class="breadcrumb">
-              <li><a href="#">Association</a> <span class="divider">/</span></li>
-              <li><a href="/<?php echo $association->id; ?>-<?php echo $association->slug; ?>"><?php echo $association->name; ?></a> <span class="divider">/</span></li>
-              <li><a href="/<?php echo $association->id; ?>/edit">Edition</a> <span class="divider">/</span></li>
+              <li><a href="#">Association</a> </li>
+              <li><a href="/<?php echo $association->id; ?>-<?php echo $association->slug; ?>"><?php echo $association->name; ?></a> </li>
+              <li><a href="/<?php echo $association->id; ?>/edit">Edition</a> </li>
 			  <li class="active">Images</li>
             </ul>
-			<div class="container">
+			<div>
 				<br>
 				<div id="dnd" class="b-upload b-upload_dnd">
 					<div class="row">
-						<div class="dropzone drag-and-drop span22">
+						<div class="dropzone drag-and-drop col-sm-12">
 							<div class="text-center">
 								<i class="fa fa-plus"></i><br>
-								<span>Glissez déposez vous fichier ici - ou cliquez moi dessus</span>
+								<col-lg->Glissez déposez vous images ici - ou cliquez moi dessus</col-lg->
 							</div>
-							<input type="file" name="files[]" multiple id="selectFile">
+							<input type="file" name="files[]" multiple id="selectFile" accept="image/*">
 						</div>
-						<div class="dropzone no-drag-and-drop span22">
+						<div class="dropzone no-drag-and-drop col-sm-12">
 							<div class="text-center">
 								<i class="fa fa-plus"></i><br>
-								<span>Cliquez ici pour selectionner les fichiers à envoyer</span>
+								<col-lg->Cliquez ici pour selectionner les images à envoyer</col-lg->
 							</div>
 							<input type="file" name="files[]" multiple id="selectFile">
 						</div>
 					</div>
-					<div class="row span22" style="margin-bottom: 20px;">
+					<div class="row col-lg-12" style="margin-bottom: 20px;">
 						<div class="ctrl-upload button button-green pull-right">Upload</div>
 					</div>
 					 <div class="row js-files">
-				         <div class="js-file-tpl span3 img-polaroid" data-id="<%=uid%>" title="<%-name%>, <%-sizeText%>">
+				         <div class="js-file-tpl col-lg-2 img-polaroid" data-id="<%=uid%>" title="<%-name%>, <%-sizeText%>">
 				            <div class="row">
 				            <div class="b-thumb__preview pull-left">
 				               <div class="b-thumb__preview__pic"></div>
 				            </div>
 
-				            <div data-fileapi="remove" class="pull-right"><i class="fa fa-trash" title="Supprimer le fichier"></i></div>
+				            <div data-fileapi="remove" class="pull-right"><i class="fa fa-trash-o" title="Supprimer le fichier"></i></div>
+							<?php if(App::environment() != "production"): ?>
 				            <% if( /^image/.test(type) ){ %>
 				               <br><div data-fileapi="rotate.cw" class="pull-right"><i class="fa fa-repeat" title="Faire pivoter l'image"></i></div>
 				            <% } %>
+				            <?php endif; ?>
 				            </div>
 				            <div class="b-thumb__name"><%-name%></div>
 				            <div class="b-thumb__progress progress progress-striped active"><div class="bar"></div></div>
@@ -52,7 +54,7 @@
 				      </div>
 				</div>
 				<div id="div-hidden-photo">
-					<div id="gallery" class="portfolio-items isotope span23">
+					<div id="gallery" class="portfolio-items isotope col-lg-12">
 						<!-- Pictures will go here ... -->
 					</div>
 				</div>
@@ -110,25 +112,25 @@
 	<script src="/pluggin/jquery.fileapi/FileAPI/FileAPI.min.js"></script>
 	<script src="/pluggin/jquery.fileapi/jquery.fileapi.min.js"></script>
 	<script id="photo-pattern" type="text/x-jquery-tmpl">
-		<div class="element span-size${size} img-polaroid" >
+		<div class="element col-lg--size${size} img-polaroid" >
 			<img src="${thumbnail}" class="size${size}" />
 			<div class="options">
 			<table class="table table-option">
                 <tr>
                 	<td class="item-option">
 		                <a class="remove" href="#" onclick="imgDelete(this);return false;">
-							<i class="fa fa-trash"></i>
+							<i class="fa fa-trash-o"></i>
 						</a>
 					</td>
 	                <td class="item-option">
 						<a class="fancybox" href="${url_img}" rel="/">
-							<i class="fa fa-zoom-in"></i>
+							<i class="fa fa-search-plus"></i>
 						</a>
 					</td>
 					<?php if($hasNextStep): ?>
 					<td class="item-option">
 						<a class="select" href="${url_crop}">
-							<i class="fa fa-share-alt"></i>
+							<i class="fa fa-share"></i>
 						</a>
 					</td>
 					<?php endif; ?>
@@ -139,17 +141,18 @@
 				
 			</div>
 		</div>
-		<?php /* <div class="thumb-text">
+		<?php /*<div class="thumb-text">
 			<b>${head}</b><br>
 			<div class="divider"></div>
 			<a href="#" title="Image Dummy Title" >${link}</a>
-		</div> */ ?>
+		</div>*/ ?>
 	</script>
 	<script>
 	    $('#dnd').fileapi({
 			url: "<?php echo URLSubdomain::to('association','/upload'); ?>",
 			data: { 'session-id': 123 }, // data with GET
 			paramName: 'filedata',
+            accept: 'image/*',
 			multiple: true,
 			chunkSize: 2 * FileAPI.MB,
 			chunkUploadRetry: 3,

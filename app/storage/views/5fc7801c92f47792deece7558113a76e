@@ -1,6 +1,6 @@
 
 
-<?php /* set_true $small_centred  */ ?>
+<?php /*set_true $small_centred */ ?>
 <?php $__env->startSection('small-content'); ?> 
     <section>
     	<div>
@@ -11,7 +11,7 @@
             <a href="/membre/connexion/orange"><i class="connection-icon connection-fa fa-orange"></i></a>
             <a href="/membre/connexion/hotmail"><i class="connection-icon connection-fa fa-hotmail"></i></a>
             <br>
-            <span>En cliquant sur un lien ci dessus, je reconnais avoir pris connaissance des <a target="_blank" href="/info/condition">CGU</a></span>
+            <col-lg->En cliquant sur un lien ci dessus, je reconnais avoir pris connaissance des <a target="_blank" href="/info/condition">CGU</a></col-lg->
     	</div>
     </section>
 <?php $__env->stopSection(); ?>
@@ -23,7 +23,7 @@
     	<div>
 			<h3 class="head"><?php echo Lang::get('membre/connexion.head_connect_account'); ?></h3>
 	        <?php if ( $connexTentative < 10 ): ?>
-	            <?php /* // Le gars a le droit de voir le formulaire  */ ?>
+	            <?php /*// Le gars a le droit de voir le formulaire */ ?>
                 <p><?php echo Lang::choice('membre/connexion.connect_account',10-$connexTentative,array('number' => 10-$connexTentative)); ?></p>
 	            <?php echo Form::open(array('class'=> 'form','url' => 'user/log/login', 'data-validate'=>'our-parsey-1', 'data-loading'=>'true')); ?>
 
@@ -32,7 +32,7 @@
 				            'full-width'=>true,
 		            		'form' => array(
 					            'placeholder'=>Lang::get('membre/form_connexion.placeholder_pseudo'),
-					            'class' => 'input-large username-field',
+					            'class' => 'form-control username-field',
 			            		'data-original-title'=>Lang::get('membre/form_connexion.tooltip_login_pseudo'),
 			            		'required'=>"required",
 			            		'data-minlength'=>"4",
@@ -47,7 +47,7 @@
 				            'full-width'=>true,
 		            		'form' => array(
 					            'placeholder'=>Lang::get('membre/form_connexion.placeholder_password'),
-					            'class' => 'input-large password-field',
+					            'class' => 'form-control password-field',
 			            		'data-original-title'=>Lang::get('membre/form_connexion.tooltip_login_password'),
 			            		'required'=>"required",
 			            		'data-minlength'=>"6",
@@ -84,7 +84,7 @@
 			            'full-width'=>true,
 	            		'form' => array(
 				            'placeholder'=>Lang::get('membre/form_connexion.placeholder_pseudo'),
-				            'class' => 'input-large username-field',
+				            'class' => 'form-control username-field',
 		            		'data-original-title'=>Lang::get('membre/form_connexion.tooltip_register_pseudo'),
 		            		'required'=>"required",
 		            		'data-minlength'=>"4",
@@ -99,7 +99,7 @@
 			            'full-width'=>true,
 	            		'form' => array(
 				            'placeholder'=>Lang::get('membre/form_connexion.placeholder_email'),
-				            'class' => 'input-large email-field',
+				            'class' => 'form-control email-field',
 		            		'data-original-title'=>Lang::get('membre/form_connexion.tooltip_register_email'),
 		            		'required'=>"required",
 		            		'data-type'=>"email",
@@ -114,7 +114,7 @@
 			            'full-width'=>true,
 	            		'form' => array(
 				            'placeholder'=>Lang::get('membre/form_connexion.placeholder_password'),
-				            'class' => 'input-large password-field',
+				            'class' => 'form-control password-field',
 		            		'data-original-title'=>Lang::get('membre/form_connexion.tooltip_register_password'),
 		            		'required'=>"required",
 		            		'data-minlength'=>"6",

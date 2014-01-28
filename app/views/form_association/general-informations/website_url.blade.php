@@ -13,7 +13,7 @@
 	        'value'=>$val,
 	        'form' => array(
 	            'placeholder'=>Lang::get('association/modal_form/general-informations.placeholder_website_url'),
-	            'class' => 'input-xlarge',
+	            'class' => 'form-control',
 	            'data-maxlength'=>"100",
 	        )
 	    )@

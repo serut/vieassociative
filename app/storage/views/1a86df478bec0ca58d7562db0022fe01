@@ -11,7 +11,7 @@
 	        'label'=>Lang::get('association/modal_form/vieassociative-informations.label_acronym'),
 	        'form' => array(
 	            'placeholder'=>Lang::get('association/modal_form/vieassociative-informations.placeholder_acronym'),
-	            'class' => 'input-xlarge',
+	            'class' => 'form-control',
 	            'data-original-title'=>Lang::get('association/modal_form/vieassociative-informations.tooltip_acronym'),
 	            'data-maxlength'=>"100",
 	        )

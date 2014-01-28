@@ -6,9 +6,9 @@
     <section>
         <div>
             <ul class="breadcrumb">
-              <li><a href="#">Association</a> <col-lg- class="divider">/</col-lg-></li>
-              <li><a href="/1-qsdf">Faites de la musique</a> <col-lg- class="divider">/</col-lg-></li>
-              <li><a href="/1/edit">Edition</a> <col-lg- class="divider">/</col-lg-></li>
+              <li><a href="#">Association</a> </li>
+              <li><a href="/1-qsdf">Faites de la musique</a> </li>
+              <li><a href="/1/edit">Edition</a> </li>
               <li class="active">Mes évènements</li>
             </ul>
             <h3 class="head">{{Lang::get('association/edit/evenement.select_evenement')}} </h3>

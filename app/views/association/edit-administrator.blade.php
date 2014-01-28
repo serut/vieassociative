@@ -6,9 +6,9 @@
     <section>
         <div>
             <ul class="breadcrumb">
-              <li><a href="#">Association</a> <col-lg- class="divider">/</col-lg-></li>
-              <li><a href="/{{$association->id}}-{{$association->slug}}">{{$association->name}}</a> <col-lg- class="divider">/</col-lg-></li>
-              <li><a href="/{{$association->id}}/edit">Edition</a> <col-lg- class="divider">/</col-lg-></li>
+              <li><a href="#">Association</a> </li>
+              <li><a href="/{{$association->id}}-{{$association->slug}}">{{$association->name}}</a> </li>
+              <li><a href="/{{$association->id}}/edit">Edition</a> </li>
               <li class="active">Les administrateurs</li>
             </ul>
             @if(! $admin->isEmpty())
@@ -75,7 +75,7 @@
                             'label'=>Lang::get('association/edit/administrator.label_admin_mail'),
                             'form' => array(
                                 'placeholder'=>Lang::get('association/edit/administrator.placeholder_admin_mail'),
-                                'class' => 'input-xlarge',
+                                'class' => 'form-control',
                                 'data-original-title'=>Lang::get('association/edit/administrator.tooltip_admin_mail'),
                                 'data-type'=>"email",
                             )
@@ -94,7 +94,7 @@
                             'label'=>Lang::get('association/form_create.label_link'),
                             'form' => array(
                                 'placeholder'=>Lang::get('association/form_create.placeholder_link'),
-                                'class' => 'input-xlarge',
+                                'class' => 'form-control',
                                 'data-original-title'=>Lang::get('association/form_create.tooltip_link'),
                                 'data-maxlength'=>"30",
                                 'required'=>"required",

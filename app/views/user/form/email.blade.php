@@ -12,7 +12,7 @@
 	        'value'=>$val,
 	        'form' => array(
 	            'placeholder'=>Lang::get('membre/form_connexion.placeholder_email'),
-	            'class' => 'input-xlarge',
+	            'class' => 'form-control',
         		'data-type'=>"email",
 	        )
 	    )@

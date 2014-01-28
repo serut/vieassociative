@@ -7,12 +7,12 @@
 		<img src="{{$association->getCover()}}" class="cover" alt="">
 		<img src="{{$association->getLogo()}}" class="logo img-circle" alt="">
 		<div>
-			<div>
-				<div class="col-lg-5 head">
+			<div class="row">
+				<div class="col-sm-10 col-sm-push-2 head">
 					<h2 class="name">{{$association->name}}</h2>
-					<col-lg- class="pull-right" style="margin-top:13px;">
-						<a class="button button-blue" href="/{{$association->id}}/edit">Editer</a>
-					</col-lg->
+				</div>
+				<div class="col-sm-2" style="margin-top:13px;">
+					<a class="button button-blue" href="/{{$association->id}}/edit">Editer</a>
 				</div>
 			</div>
 		</div>

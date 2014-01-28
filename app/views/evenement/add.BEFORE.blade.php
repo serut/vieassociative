@@ -68,7 +68,7 @@ Ajouter un évènement
                                 @foreach ($errors->get('text') as $message)
                                     {{$message}}
                                 @endforeach
-                                {{Form::textarea('text','',array('id'=>"text",'rows'=>"7", 'class'=>"input-xlarge mceEditor","data-textarea"=>"activer"))}}
+                                {{Form::textarea('text','',array('id'=>"text",'rows'=>"7", 'class'=>"form-control mceEditor","data-textarea"=>"activer"))}}
                             </div>
                         </div>
                     </div>
@@ -135,7 +135,7 @@ Ajouter un évènement
                                 @foreach ($errors->get('adresse_reelle') as $message)
                                     {{$message}}
                                 @endforeach
-                                {{Form::text('adresse_reelle','',array('id'=>"adresse_reelle",'rows'=>"2", 'class'=>"input-xxlarge"))}}
+                                {{Form::text('adresse_reelle','',array('id'=>"adresse_reelle",'rows'=>"2", 'class'=>"form-control"))}}
                             </div>
                         </div>
                     </div>

@@ -1,8 +1,8 @@
 <div class="row">
-    <div class="span12">
+    <div class="col-lg-5 col-lg-offset-1 col-md-6 col-sm-6">
 		<?php echo $__env->yieldContent('left-content'); ?>
     </div>
-    <div class="span12">
+    <div class="col-lg-5 col-md-6 col-sm-6">
 		<?php echo $__env->yieldContent('right-content'); ?>
     </div>
 </div>

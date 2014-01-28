@@ -6,9 +6,9 @@ class SiteHelpers{
 	}
 
 	static function create_radio($options){
-		$txt = '<div class="control-group">';
+		$txt = '<div class="form-group">';
 			$txt.= SiteHelpers::add_label($options);
-			$txt.= '<div class="controls"';
+			$txt.= '<div class="controls col-sm-8"';
 			if(isset($options['data-toggle']))
 				$txt.= ' data-toggle="'.$options['data-toggle'].'"';
 
@@ -33,7 +33,7 @@ class SiteHelpers{
 	static function create_checkbox($options){
 		$txt = '<div>';
 			$txt.= SiteHelpers::add_label($options);
-			$txt.= '<div class="controls"';
+			$txt.= '<div class="controls col-sm-8"';
 			if(isset($options['data-toggle']))
 				$txt.= ' data-toggle="'.$options['data-toggle'].'"';
 			$txt.= '>';
@@ -54,13 +54,10 @@ class SiteHelpers{
 	}
 	
 	static function create_input($options){
-		$txt = '<div class="control-group">';
+		$txt = '<div class="form-group">';
 			$txt.= SiteHelpers::add_label($options);
-			if(isset($options['full-width']))
-				$txt.= '<div class="controls-full-width">';
-			else
-				$txt.= '<div class="controls">';
-				$txt.= SiteHelpers::simple_input($options);
+			$txt.= '<div class="controls col-sm-8">';
+			$txt.= SiteHelpers::simple_input($options);
 			$txt.= "</div>";
 		$txt.= "</div>";
 		return $txt;
@@ -98,7 +95,7 @@ class SiteHelpers{
 			}
 			$txt.= SiteHelpers::callFormClass($options);
 
-			$txt.= '	<span class="text-error">';
+			$txt.= '	<span class="text-danger">';
 				if(isset($options['errors'])){
 					foreach ($options['errors']->get('pseudo','<ul class="help-inline">:message</ul>') as $message){
 			            $txt.=$message;
@@ -125,7 +122,7 @@ class SiteHelpers{
 
 	static function add_label($options){
 		if(isset($options['label'])){
-			return '<label class="control-label">'.$options['label'].'</label>';
+			return '<label class="col-sm-4 control-label">'.$options['label'].'</label>';
 		}
 	}
 

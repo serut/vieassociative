@@ -38,7 +38,7 @@
                         'label'=>Lang::get('association/form_create.label_link'),
                         'form' => array(
                             'placeholder'=>Lang::get('association/form_create.placeholder_link'),
-                            'class' => 'input-xlarge',
+                            'class' => 'form-control',
                             'data-original-title'=>Lang::get('association/form_create.tooltip_link'),
                             'data-maxlength'=>"50",
                             'data-minlength'=>"2",
@@ -54,7 +54,7 @@
                     'label'=>Lang::get('association/form_create.placeholder_name'),
                     'form' => array(
                         'placeholder'=>Lang::get('association/form_create.placeholder_name'),
-                        'class' => 'input-xlarge',
+                        'class' => 'form-control',
                         'data-original-title'=>Lang::get('association/form_create.tooltip_name'),
                         'required'=>"required",
                         'data-maxlength'=>"120",

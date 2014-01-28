@@ -63,7 +63,7 @@
                     <div>
                         {{ Form::open(array('class'=> 'form','url' => '/discussion/add', 'data-validate'=>'our-parsey-1')) }}
 
-                        <textarea name="text" rows="4" id="text" class="input-xxlarge nicEditor-textarea" onclick="launchEditor($(this))"></textarea>
+                        <textarea name="text" rows="4" id="text" class="form-control nicEditor-textarea" onclick="launchEditor($(this))"></textarea>
                         <br>
                         <div class="nav pull-right">
                             <button type="submit" class="button button-green">Envoyer</button>

@@ -3,15 +3,15 @@
 <?php $large_centred = true; ?>
 <?php $__env->startSection('large-content'); ?>
 	<section class="profile">
-		<img src="<?php echo $association->getCover(); ?>" class="cover">
-		<img src="<?php echo $association->getLogo(); ?>" class="logo img-circle">
+		<img src="<?php echo $association->getCover(); ?>" class="cover" alt="">
+		<img src="<?php echo $association->getLogo(); ?>" class="logo img-circle" alt="">
 		<div>
-			<div>
-				<div class="span17 head">
+			<div class="row">
+				<div class="col-sm-10 col-sm-push-2 head">
 					<h2 class="name"><?php echo $association->name; ?></h2>
-					<span class="pull-right" style="margin-top:13px;">
-						<a class="button button-blue" href="/<?php echo $association->id; ?>/edit">Editer</a>
-					</span>
+				</div>
+				<div class="col-sm-2" style="margin-top:13px;">
+					<a class="button button-blue" href="/<?php echo $association->id; ?>/edit">Editer</a>
 				</div>
 			</div>
 		</div>
@@ -23,17 +23,17 @@
 
 
 			<?php if(App::environment() != "production"): ?>
-			<div class="menu row-fluid" style="display:none;">
-				<div id="photo" class="span4 img-polaroid" data-toggle="div-hidden-news">
+			<div class="menu row" style="display:none;">
+				<div id="photo" class="col-lg-2 img-polaroid" data-toggle="div-hidden-news">
 					<p>Fil d'actualité</p>
 				</div>
-				<div id="photo" class="span4 img-polaroid" data-toggle="div-hidden-photo">
+				<div id="photo" class="col-lg-2 img-polaroid" data-toggle="div-hidden-photo">
 					<p>Photos</p>
 				</div>
-				<div id="evenement" class="span4 img-polaroid" data-toggle="div-hidden-evenement">
+				<div id="evenement" class="col-lg-2 img-polaroid" data-toggle="div-hidden-evenement">
 					<p>Evenements</p>
 				</div>
-				<div id="social" class="span4 img-polaroid" data-toggle="div-hidden-social">
+				<div id="social" class="col-lg-2 img-polaroid" data-toggle="div-hidden-social">
 					<p>Social</p>
 				</div>
 			</div>
@@ -51,127 +51,17 @@
 
 
 
-			<div>
-				<div id="div-hidden-photo" style="display:none;">
-					<div class="filter-portfolio">
-						 <ul class="filterable">
-							<li><a class="option-set" data-categories="*">All</a></li>
-							<li><a class="option-set" data-categories="design">Design</a></li>
-							<li><a class="option-set" data-categories="illustration">Illustration</a></li>
-						</ul>	
-					</div>
-								
-					<div id="gallery" class="portfolio-items isotope span23">
-						<!-- Pictures will go here ... -->
-					</div>
-				</div>
-				
-				<div id="div-hidden-evenement" style="display:none;">
-					<div id="timeline-evenement" class="timeline"></div>
-				</div>
-
-				<div id="div-hidden-social" style="display:none;">
-					<div id="social-fetch">
-						<div class="row">
-							<aside class="span8 social-partner">
-								<div class="row facebook">
-									<div class="span2 fb">
-										<i href="#" class="logo"></i>
-									</div>
-									<div class="span5">
-										<p>Actualités <b>Facebook</b></p>
-										<i class="fa fa-chevron-right"></i>
-										<img src="/img/items/like.png">
-									</div>
-								</div>
-
-								<div class="row twitter">
-									<div class="span2 tw">
-										<i href="#" class="logo"></i>
-									</div>
-									<div class="span5">
-										<p>Actualités <b>Twitter</b></p>
-										<img src="/img/items/follow.png">
-									</div>
-								</div>
-
-								<div class="row google-plus">
-									<div class="span2 ggl">
-										<i href="#" class="logo"></i>
-									</div>
-									<div class="span5">
-										<p>Actualités <b>Google +</b></p>
-										<img src="/img/items/plus-one.png">
-									</div>
-								</div>
-							</aside>
-							<div class="span13 content">
-								<?php for($i=0; $i<5;$i++): ?>
-								<div class="item itemtwitter">
-									<div class="thumb">
-										<img src="http://a0.twimg.com/profile_images/2627364267/nlliljk98fr9hqgvmoho_normal.jpeg" class="avatar">
-									</div>
-									<div class="text">
-										<span>Güzel güzel söz verdik iyimi, gelde şimdi yap...</span>
-										<div class="tweetbtn">
-										<img width="13" height="13" alt="Favorite" src="/img/to sprite/retweet_mini.png">
-										<a href="http://twitter.com/intent/retweet?tweet_id=319926146185711616">Retweet</a>
-										<img width="12" height="12" alt="Favorite" src="/img/to sprite/reply_mini.png">
-										<a href="http://twitter.com/intent/tweet?in_reply_to=319926146185711616">Reply</a>
-										<img width="12" height="12" alt="Favorite" src="/img/to sprite/favorite_mini.png">
-										<a href="http://twitter.com/intent/favorite?tweet_id=319926146185711616">Favorite</a>
-										<i>3 months ago</i>
-										</div>
-									</div>
-								</div>
-								<?php endfor; ?>
-								<h1>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h1>
-								
-								<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
-								
-								<h2>Header Level 2</h2>
-								
-								<ol>
-									<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-									<li>Aliquam tincidunt mauris eu risus.</li>
-								</ol>
-								
-								<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
-								
-								<h3>Header Level 3</h3>
-								
-								<ul>
-									<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-									<li>Aliquam tincidunt mauris eu risus.</li>
-								</ul>
-								
-								<pre><code>
-								#header h1 a { 
-									display: block; 
-									width: 300px; 
-									height: 80px; 
-								}
-								</code></pre>
-							</div>
-						</div>
-					</div>
-					<p>
-						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-					</p>
-				</div>
-
-			</div>
 
 			<div id="social-timeline" class="row">
-				<div class="span23">
-					<div class="span21">
-						<div class="row-fluid">
+				<div class="col-lg-13">
+					<div class="col-lg-11">
+						<div class="row">
 							<?php foreach($newsFeed as $news): ?>
 								<?php echo $__env->make('association.wall.generic-head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-								<?php foreach($news as $n): ?>
-									<?php echo $__env->make('association.wall.'.$n->partial_type, array('p'=>$n), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+								<?php foreach($news['data'] as $n): ?>
+									<?php echo $__env->make('association.wall.'.$n['type'], array('p'=>$n), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 								<?php endforeach; ?>
-								<?php echo $__env->make('association.wall.generic-foot', array('p'=>$n), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+								<?php echo $__env->make('association.wall.generic-foot', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 							<?php endforeach; ?>
 							<?php if(empty($newsFeed)): ?>
 							<p>Vous n'avez pas encore envoyé de contenu</p>
@@ -182,8 +72,6 @@
 			</div>
 		</div>
 	</section>
-	<!-- Posts will go here ... -->
-	</ul>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('footer-js'); ?>
@@ -368,7 +256,7 @@
 	/* Menu PART END*/
 	</script>
 <script id="photo-pattern" type="text/x-jquery-tmpl">
-	<div class="element ${categories} span-size${size}" >
+	<div class="element ${categories} col-lg--size${size}" >
 		<a class="fancybox" href="${url_img}" rel="gallery1" title="A title">
 			<img src="${url_img}" class="size${size}"alt=" " />
 		</a>
@@ -382,12 +270,12 @@
 
 <script id="evenement-pattern" type="text/x-jquery-tmpl">
 	<div class="row">
-		<div class="date span2">
+		<div class="date col-lg-1">
 			<i></i>
 			<h6>${start_date}</h6>
 		</div>
-		<div class="content span20">
-			<span class="pointer">&nbsp;</span>
+		<div class="content col-lg-5">
+			<col-lg- class="pointer">&nbsp;</col-lg->
 			<div class="thumb">
 				<img alt="" src="${img}">
 			</div>
@@ -398,9 +286,9 @@
 				</p>
 			</div>
 			<div class="panel">
-				<span class="location">${event_location}</span>
-				<span class="time">${event_time}</span>
-				<span class="more"><a href="${event_link}">en savoir plus</a></span>
+				<col-lg- class="location">${event_location}</col-lg->
+				<col-lg- class="time">${event_time}</col-lg->
+				<col-lg- class="more"><a href="${event_link}">en savoir plus</a></col-lg->
 			</div>
 		</div>
 	</div>

@@ -20,9 +20,9 @@ Contact
                 {{ Form::open(array()) }}
                         <div class="controls">
                             <div class="formulaire">
-                        		{{Form::text('nom','',array('placeholder'=>'Nom','class' => 'input-xlarge username-field', 'id'=>"nom", 'data-placement'=> 'right','data-rel'=> 'tooltip', 'data-trigger'=>"focus", 'data-original-title'=>"Votre nom"))}}
-                        		{{Form::text('email','',array('placeholder'=>'Adresse email','class' => 'input-large email-field', 'id'=>"mail", 'data-placement'=> 'right','data-rel'=> 'tooltip', 'data-trigger'=>"focus", 'data-original-title'=>"Votre adresse email que vous avez indiqué lors de votre inscription"))}}
-                        		{{Form::textarea('text','',array('id'=>"text",'rows'=>"7", 'class'=>"input-xlarge mceEditor","data-textarea"=>"activer"))}}
+                        		{{Form::text('nom','',array('placeholder'=>'Nom','class' => 'form-control username-field', 'id'=>"nom", 'data-placement'=> 'right','data-rel'=> 'tooltip', 'data-trigger'=>"focus", 'data-original-title'=>"Votre nom"))}}
+                        		{{Form::text('email','',array('placeholder'=>'Adresse email','class' => 'form-control email-field', 'id'=>"mail", 'data-placement'=> 'right','data-rel'=> 'tooltip', 'data-trigger'=>"focus", 'data-original-title'=>"Votre adresse email que vous avez indiqué lors de votre inscription"))}}
+                        		{{Form::textarea('text','',array('id'=>"text",'rows'=>"7", 'class'=>"form-control mceEditor","data-textarea"=>"activer"))}}
                             </div>
                         </div>
                         <div class="nav pull-right">

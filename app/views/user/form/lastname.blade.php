@@ -11,7 +11,7 @@
 	        'label'=>"Votre prénom",
 	        'value'=>$val,
 	        'form' => array(
-	            'class' => 'input-xlarge',
+	            'class' => 'form-control',
 	        )
 	    )@
 	    {{SiteHelpers::create_input($input)}}

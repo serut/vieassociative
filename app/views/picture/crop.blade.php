@@ -13,21 +13,20 @@
 			</ul>
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-11">
-						<br>Etape #2 : Découpez votre image, puis validez :
+						<p>Etape #1 : Découpez votre image</p>
+					<div class="col-lg-9 col-lg-push-1">
 						<img src="http://img.vieassociative.fr/{{$prefix}}{{$association->id}}/{{$name}}" id="jcrop_img" />
 					</div>
 				</div>
 
 
 
-
+<hr class="col-lg-9 col-lg-push-1">
 
 
 				<div class="row">
-					<div class="col-lg-19">
-						Résultat :<br>
-
+					<div class="col-lg-11">
+						<p>Etape #2 : Validez la prévisualisation</p>
 						<div id="preview-pane">
 							<div class="preview-container">
 								<img src="http://img.vieassociative.fr/{{$prefix}}{{$association->id}}/{{$name}}" class="jcrop-preview" alt="Preview" />
@@ -36,14 +35,15 @@
 					</div>
 
 					
-					<div class="col-lg-3" id="uploader">
+					<div class="col-lg-11" id="uploader">
 						<div class="text-center">
 							<form method="post">
 								<input type="hidden" id="x" name="x" />
 								<input type="hidden" id="y" name="y" />
 								<input type="hidden" id="w" name="w" />
 								<input type="hidden" id="h" name="h" />
-								<div class="button button-green pull-right" id="validate">Valider</div>
+								<p>Etape #3 : Mettre en ligne</p>
+								<div class="button button-green" id="validate">Valider</div>
 							</form>
 						</div>
 					</div>

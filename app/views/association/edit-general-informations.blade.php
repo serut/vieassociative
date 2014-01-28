@@ -13,12 +13,12 @@
             </ul>
             <h3 class="head">{{Lang::get('association/edit/general-informations.edit_association')}}</h3>
 
-            <table class="table table-striped">
+            <table class="table table-hover table-striped">
               <tbody>
                 <tr>
-                  <td class="col-sm-2">Nom de l'association sous lequel le public vous identifie</td>
-                  <td class="col-sm-9">{{{$association->name}}}</td>
-                  <td class="col-sm-1"><a href="#" data-modal-form="name"><i class="fa fa-pencil"></i></a></td>
+                  <td>Nom de l'association sous lequel le public vous identifie</td>
+                  <td>{{{$association->name}}}</td>
+                  <td><a href="#" data-modal-form="name"><i class="fa fa-pencil"></i></a></td>
                 </tr>
                 <tr>
                   <td>Nom de l'association déposé en préfecture</td>
@@ -57,14 +57,14 @@
                   <td>{{{$association->admitted_public_utility_display()}}}</td>
                   <td><a href="#" data-modal-form="admitted_public_utility"><i class="fa fa-pencil"></i></td>
                 </tr>
-                <tr>
+                <tr> 
                   <td>Image de couverture</td>
-                  <td><img src="{{$association->getCover()}}" ></td>
+                  <td><img class="col-sm-5" src="{{$association->getCover()}}" ></td>
                   <td><a href="/{{$association->id}}/edit/file/{{$association->id_folder}}/940x350-cover"><i class="fa fa-pencil"></i></a></td>
                 </tr>
                 <tr>
                   <td>Logo</td>
-                  <td><img src="{{$association->getLogo()}}" ></td>
+                  <td><img  class="col-sm-3" src="{{$association->getLogo()}}" ></td>
                   <td><a href="/{{$association->id}}/edit/file/{{$association->id_folder}}/200x200-logo"><i class="fa fa-pencil"></i></a></td>
                 </tr>
               </tbody>

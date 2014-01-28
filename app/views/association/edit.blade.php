@@ -73,12 +73,9 @@
 				@endif
 
 			</tbody>
-		</tabale>
+		</table>
 
 	</div>
 </div>
 </section>
-@stop
-@section('footer-js')
-<script src="/js/vendor/jquery.mousewheel.min.js" async="true"></script>
 @stop

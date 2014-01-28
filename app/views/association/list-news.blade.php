@@ -24,14 +24,16 @@
                 <tbody>
                     @foreach($news as $key => $new)
                             <tr>
+                            <td>
                         @foreach($new['data'] as $partial)
                             @if($partial['type']=="PartialTitle")
-                                <td>{{{$partial['title']}}}</td>
-                                <td>{{\Carbon\Carbon::createFromTimeStamp(strtotime($new['updated_at']))->diffForHumans()}}</td>
-                                <td><i class="fa fa-remove"></i></td>
-                                <td><a href="news/{{$key}}/edit"> Editer</a></td>
+                                {{{$partial['title']}}}
                             @endif
                         @endforeach
+                            </td>
+                            <td>{{\Carbon\Carbon::createFromTimeStamp(strtotime($new['updated_at']))->diffForHumans()}}</td>
+                            <td><i class="fa fa-remove"></i></td>
+                            <td><a href="news/{{$key}}/edit"> Editer</a></td>
                             </tr>
                     @endforeach
                 </tbody>

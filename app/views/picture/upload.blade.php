@@ -12,17 +12,16 @@
 			  <li class="active">Images</li>
             </ul>
 			<div>
-				<br>
 				<div id="dnd" class="b-upload b-upload_dnd">
 					<div class="row">
-						<div class="dropzone drag-and-drop col-sm-12">
+						<div class="dropzone drag-and-drop  col-sm-10 col-sm-push-1">
 							<div class="text-center">
 								<i class="fa fa-plus"></i><br>
 								<col-lg->Glissez déposez vous images ici - ou cliquez moi dessus</col-lg->
 							</div>
 							<input type="file" name="files[]" multiple id="selectFile" accept="image/*">
 						</div>
-						<div class="dropzone no-drag-and-drop col-sm-12">
+						<div class="dropzone no-drag-and-drop  col-sm-10 col-sm-push-1">
 							<div class="text-center">
 								<i class="fa fa-plus"></i><br>
 								<col-lg->Cliquez ici pour selectionner les images à envoyer</col-lg->
@@ -33,8 +32,8 @@
 					<div class="row col-lg-12" style="margin-bottom: 20px;">
 						<div class="ctrl-upload button button-green pull-right">Upload</div>
 					</div>
-					 <div class="row js-files">
-				         <div class="js-file-tpl col-lg-2 img-polaroid" data-id="<%=uid%>" title="<%-name%>, <%-sizeText%>">
+					<div class="row js-files">
+				         <div class="js-file-tpl col-sm-2 img-polaroid" data-id="<%=uid%>" title="<%-name%>, <%-sizeText%>">
 				            <div class="row">
 				            <div class="b-thumb__preview pull-left">
 				               <div class="b-thumb__preview__pic"></div>
@@ -48,21 +47,28 @@
 				            @endif
 				            </div>
 				            <div class="b-thumb__name"><%-name%></div>
-				            <div class="b-thumb__progress progress progress-striped active"><div class="bar"></div></div>
+				            <div class="b-thumb__progress progress-bar progress-bar-striped active"><div class="bar"></div></div>
 				            <div class="transfert-ok" style="display: none;">Transfert effectué</div>
 
 				         </div>
 				      </div>
 				</div>
-				<div id="div-hidden-photo">
-					<div id="gallery" class="portfolio-items isotope col-lg-12">
-						<!-- Pictures will go here ... -->
-					</div>
-				</div>
 			</div>
 		</div>
 	</section>
+			<section>
+				<br>
+				<div id="gallery" class="portfolio-items isotope">
+					<!-- Pictures will go here ... -->
+				</div>
+			</section>
 <style type="text/css">
+	#gallery{
+		margin: 30px 0 0 3%;
+	}
+	#dnd{
+		margin-top: 40px;
+	}
 	.dropzone {
 		background: none repeat scroll 0 0 rgba(0, 0, 0, 0.03);
 		border: 3px dashed rgba(0, 0, 0, 0.03);
@@ -113,7 +119,7 @@
 	<script src="/pluggin/jquery.fileapi/FileAPI/FileAPI.min.js"></script>
 	<script src="/pluggin/jquery.fileapi/jquery.fileapi.min.js"></script>
 	<script id="photo-pattern" type="text/x-jquery-tmpl">
-		<div class="element col-lg--size${size} img-polaroid" >
+		<div class="element col-sm-${size} img-polaroid" >
 			<img src="${thumbnail}" class="size${size}" />
 			<div class="options">
 			<table class="table table-option">
@@ -165,11 +171,11 @@
 		         tpl: '.js-file-tpl',
 		         preview: {
 		            el: '.b-thumb__preview',
-		            width: 98,
-		            height: 98
+		            width: 148,
+		            height: 148
 		         },
-		         upload: { show: '.progress', hide: '.fa fa-repeat' },
-		         complete: { show: '.transfert-ok',hide: '.progress' },
+		         upload: { show: '.progress-bar', hide: '.fa fa-repeat' },
+		         complete: { show: '.transfert-ok',hide: '.progress-bar' },
 		         progress: '.progress .bar'
 		      },
 		      dnd: {
@@ -212,7 +218,7 @@
 			'url_crop':'/{{$association->id}}/edit/file/crop{{$typeCrop}}{{$action}}/{{$e->name_img}}',
 			'url_img':'http://img.vieassociative.fr/{{$prefix}}{{$association->id}}/{{$e->name_img}}',
 			'thumbnail':'http://img.vieassociative.fr/{{$prefix}}{{$association->id}}/{{$e->name_img}}_thumbnail.jpg',
-			'size' : '1',
+			'size' : '2',
 		},
 
 		@endforeach]

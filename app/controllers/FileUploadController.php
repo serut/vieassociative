@@ -130,7 +130,7 @@ class FileUploadController extends BaseController
 	public function addToDatabase(){
 		Img::add($this->name, $this->file_ext);
 		FolderFileImg::addImg($this->id_gallery,$this->name);
-		$a = Association::find($this->id_assoc)->get();
+		$a = Association::get($this->id_assoc);
 		$a->nb_photos++;
 		$a->touch();
 		/*

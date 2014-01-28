@@ -40,7 +40,7 @@
             </table>
             @else
                 Cette association n'a pas d'administrateur. Avant de vous déclarer administrateur, veuillez prendre connaissance des  
-                <a target="_blank" href="/info/condition">{{Lang::get('association/form_create.notice_part_link')}}</a>
+                <a target="_blank" href="/info/condition">{{Lang::get('association/form_create.notice_part_link')}}</a>.
                 {{Lang::get('association/form_create.notice_create_association')}}
             @endif
             @if($is_admin || !$admin->count())
@@ -84,7 +84,7 @@
                     </div>
 
                     <div id="div-linked">
-                        <p>{{Lang::get('association/edit/administrator.he_is')}} : 
+                        <p class="col-sm-push-4 col-sm-8">{{Lang::get('association/edit/administrator.he_is')}} : 
                             <a class="btn-vie-assoc" type="button" onclick="$('#link').val($(this).text());">{{Lang::get('association/form_create.link_one')}}</a>
                             <a class="btn-vie-assoc" type="button" onclick="$('#link').val($(this).text());">{{Lang::get('association/form_create.link_two')}}</a>
                             <a class="btn-vie-assoc" type="button" onclick="$('#link').val($(this).text());">{{Lang::get('association/form_create.link_three')}}</a>

@@ -6,6 +6,7 @@ class InfoController extends BaseController
         return View::make('info.condition');
     }
     public function getIndex(){
-        return View::make('index.index');
+        return View::make('index.index')
+            ->with('association',Association::all());
     }
 }

@@ -109,13 +109,14 @@ initToolbarBootstrapBindings();
 
 
 
-
 /*Modal form PLUGIN STARTS*/
 function modalForFormModification(data){
-    var html = '<section id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
+    var html = '<div class="modal fade" id="myModal">';
+        html+= '<div class="modal-dialog">';
+        html+= '<div class="modal-content">';
         html+= '<div class="modal-header">';
-        html+= '<button type="button" class="close close-modal" data-dismiss="modal" aria-hidden="true">×</button>';
-        html+= '<h3>'+data['head']+'</h3>';
+        html+= '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
+        html+= '<h4 class="modal-title">'+data['head']+'</h4>';
         html+= '</div>';
         html+= '<div class="modal-body">';
         html+= data['content'];
@@ -124,7 +125,10 @@ function modalForFormModification(data){
         html+= '<button class="button button-orange" data-dismiss="modal" aria-hidden="true">Annuler</button> ';
         html+= '<button class="button button-blue" onclick="$(this).parent().parent().find(\'form\').submit();">Envoyer</button>';
         html+= '</div>';
-        html+= '</section>';
+        html+= '</div>';
+        html+= '</div>';
+        html+= '</div>';
+
     $('#push').before(html);
     $('#myModal').on('hidden', function () {
       $(this).remove();
@@ -135,10 +139,12 @@ function modalForFormModification(data){
 
 /*Modal agree PLUGIN STARTS*/
 function modalAgree(data){
-    var html = '<section id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
+    var html = '<div class="modal fade" id="myModal">';
+        html+= '<div class="modal-dialog">';
+        html+= '<div class="modal-content">';
         html+= '<div class="modal-header">';
-        html+= '<button type="button" class="close close-modal" data-dismiss="modal" aria-hidden="true">×</button>';
-        html+= '<h3>'+data['head']+'</h3>';
+        html+= '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
+        html+= '<h4 class="modal-title">'+data['head']+'</h4>';
         html+= '</div>';
         html+= '<div class="modal-body">';
         html+= data['content'];
@@ -147,7 +153,9 @@ function modalAgree(data){
         html+= '<button class="button button-red" data-dismiss="modal" aria-hidden="true">Non</button> ';
         html+= '<button class="button button-green" onclick="$(this).parent().parent().find(\'form\').submit();">Oui</button>';
         html+= '</div>';
-        html+= '</section>';
+        html+= '</div>';
+        html+= '</div>';
+        html+= '</div>';
     $('#push').before(html);
     $('#myModal').on('hidden', function () {
       $(this).remove();
@@ -291,7 +299,7 @@ $(function(){
             t = 'お使いのブラウザ「%s」は、<b>時代遅れ</b>のバージョンです。既知の<b>脆弱性</b>が存在するばかりか、<b>機能不足</b>によって、サイトが正常に表示できない可能性があります。 \
                  <a href="http://browsehappy.com/">ブラウザを更新する方法を確認する</a>';
         else if (ll=="fr")
-            t = 'Certaines choses vieillisse bien et prennent de la valeur avec le temps.  Ce n\'est assurément pas le cas de %s.<br> <a href="http://browsehappy.com/">Mettez le à jour</a> tout de suite tant qu\'il en est encore temps !';
+            t = 'Certaines choses vieillissent bien et prennent de la valeur avec le temps.  Ce n\'est assurément pas le cas de %s.<br> <a href="http://browsehappy.com/">Mettez le à jour</a> tout de suite tant qu\'il en est encore temps !';
         else if (ll=="da")
                 t = 'Din browser (%s) er <b>forældet</b>. Den har kendte <b>sikkerhedshuller</b> og kan måske <b>ikke vise alle funktioner</b> på dette og andre websteder. <a href="http://browsehappy.com/">Se hvordan du opdaterer din browser</a>';
         else if (ll=="al")

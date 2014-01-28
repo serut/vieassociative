@@ -8,11 +8,11 @@
 	<img src="{{$association->getLogo()}}" class="logo img-circle" alt="Logo de {{$association->name}}">
 	<div>
 		<div class="row">
-			<div class="col-xs-6 col-sm-8 col-xs-push-2 head">
+			<div class="col-xs-8 col-sm-8 col-md-9 col-xs-push-2 head">
 				<h2 class="name">{{$association->name}}</h2>
 			</div>
-			<div class="col-xs-4 col-sm-2 col-sm-push-2 col-xs-push-2 col-md-2">
-				<a class="button button-blue" href="/{{$association->id}}/edit">Editer</a>
+			<div class="col-xs-2 col-md-1 col-sm-2 col-sm-push-2 col-xs-push-2 head-panel">
+				<a class="btn" href="/{{$association->id}}/edit">Editer</a>
 			</div>
 		</div>
 	</div>
@@ -46,19 +46,17 @@
 		</div>
 		@endif
 		<div id="social-timeline" class="row">
-			<div class="col-sm-10 col-sm-push-2">
-				<div class="row">
-					@foreach($newsFeed as $news)
-					@include('association.wall.generic-head')
-					@foreach($news['data'] as $n)
-					@include('association.wall.'.$n['type'], array('p'=>$n))
-					@endforeach
-					@include('association.wall.generic-foot')
-					@endforeach
-					@if(empty($newsFeed))
-					<p>Vous n'avez pas encore envoyé de contenu</p>
-					@endif
-				</div>
+			<div class="col-sm-12">
+				@foreach($newsFeed as $news)
+				@include('association.wall.generic-head')
+				@foreach($news['data'] as $n)
+				@include('association.wall.'.$n['type'], array('p'=>$n))
+				@endforeach
+				@include('association.wall.generic-foot')
+				@endforeach
+				@if(empty($newsFeed))
+				<p>Vous n'avez pas encore envoyé de contenu</p>
+				@endif
 			</div>
 		</div>
 	</div>

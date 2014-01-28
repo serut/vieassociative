@@ -16,9 +16,9 @@
             <table class="table table-striped">
               <tbody>
                 <tr>
-                  <td>Nom de l'association sous lequel le public vous identifie</td>
-                  <td>{{{$association->name}}}</td>
-                  <td><a href="#" data-modal-form="name"><i class="fa fa-pencil"></i></a></td>
+                  <td class="col-sm-2">Nom de l'association sous lequel le public vous identifie</td>
+                  <td class="col-sm-9">{{{$association->name}}}</td>
+                  <td class="col-sm-1"><a href="#" data-modal-form="name"><i class="fa fa-pencil"></i></a></td>
                 </tr>
                 <tr>
                   <td>Nom de l'association déposé en préfecture</td>
@@ -35,19 +35,17 @@
                   <td>{{{$association->goal}}}</td>
                   <td><a href="#" data-modal-form="goal"><i class="fa fa-pencil"></i></a><br></td>
                 </tr>
-                @if(App::environment() != "production")
-                <tr>
-                  <td>Date de création</td>
-                  <td>{{$association->official_date_creation}}</td>
-                  <td><a href="#" data-modal-form="official_date_creation"><i class="fa fa-pencil"></i></a></td>
-                </tr>
-                @endif
                 <tr>
                   <td>Site web </td>
                   <td>{{{$association->website_url}}}</td>
                   <td><a href="#" data-modal-form="website_url"><i class="fa fa-pencil"></i></a></td>
                 </tr>
                 @if(App::environment() != "production")
+                <tr>
+                  <td>Date de création</td>
+                  <td>{{$association->official_date_creation}}</td>
+                  <td><a href="#" data-modal-form="official_date_creation"><i class="fa fa-pencil"></i></a></td>
+                </tr>
                 <tr>
                   <td>Siege</td>
                   <td>{{{$association->headquarter}}}</td>
@@ -61,12 +59,12 @@
                 </tr>
                 <tr>
                   <td>Image de couverture</td>
-                  <td><img src="{{$association->getCover()}}" class="col-lg-2"></td>
+                  <td><img src="{{$association->getCover()}}" ></td>
                   <td><a href="/{{$association->id}}/edit/file/{{$association->id_folder}}/940x350-cover"><i class="fa fa-pencil"></i></a></td>
                 </tr>
                 <tr>
                   <td>Logo</td>
-                  <td><img src="{{$association->getLogo()}}" class="col-lg-2"></td>
+                  <td><img src="{{$association->getLogo()}}" ></td>
                   <td><a href="/{{$association->id}}/edit/file/{{$association->id_folder}}/200x200-logo"><i class="fa fa-pencil"></i></a></td>
                 </tr>
               </tbody>

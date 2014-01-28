@@ -5,9 +5,9 @@
     <section>
         <div>
             <ul class="breadcrumb">
-              <li><a href="#">Association</a> <span class="divider">/</span></li>
-              <li><a href="/<?php echo $association->id; ?>-<?php echo $association->slug; ?>"><?php echo $association->name; ?></a> <span class="divider">/</span></li>
-              <li><a href="/<?php echo $association->id; ?>/edit">Edition</a> <span class="divider">/</span></li>
+              <li><a href="/">Association</a> </li>
+              <li><a href="/<?php echo $association->id; ?>-<?php echo $association->slug; ?>"><?php echo $association->name; ?></a> </li>
+              <li><a href="/<?php echo $association->id; ?>/edit">Edition</a> </li>
               <li class="active">Informations Generales</li>
             </ul>
             <h3 class="head"><?php echo Lang::get('association/edit/general-informations.edit_association'); ?></h3>
@@ -60,12 +60,12 @@
                 </tr>
                 <tr>
                   <td>Image de couverture</td>
-                  <td><img src="<?php echo $association->getCover(); ?>" class="span4"></td>
+                  <td class="col-sm-9"><img src="<?php echo $association->getCover(); ?>" ></td>
                   <td><a href="/<?php echo $association->id; ?>/edit/file/<?php echo $association->id_folder; ?>/940x350-cover"><i class="fa fa-pencil"></i></a></td>
                 </tr>
                 <tr>
                   <td>Logo</td>
-                  <td><img src="<?php echo $association->getLogo(); ?>" class="span4"></td>
+                  <td class="col-sm-9"><img src="<?php echo $association->getLogo(); ?>" ></td>
                   <td><a href="/<?php echo $association->id; ?>/edit/file/<?php echo $association->id_folder; ?>/200x200-logo"><i class="fa fa-pencil"></i></a></td>
                 </tr>
               </tbody>

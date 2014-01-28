@@ -3,80 +3,72 @@
 
 @set_true $large_centred 
 @section('large-content')
-	<section class="profile">
-		<img src="{{$association->getCover()}}" class="cover" alt="">
-		<img src="{{$association->getLogo()}}" class="logo img-circle" alt="">
-		<div>
-			<div class="row">
-				<div class="col-sm-10 col-sm-push-2 head">
-					<h2 class="name">{{$association->name}}</h2>
-				</div>
-				<div class="col-sm-2" style="margin-top:13px;">
-					<a class="button button-blue" href="/{{$association->id}}/edit">Editer</a>
-				</div>
+<section class="profile">
+	<img src="{{$association->getCover()}}" class="cover" alt="Couverture de {{$association->name}}">
+	<img src="{{$association->getLogo()}}" class="logo img-circle" alt="Logo de {{$association->name}}">
+	<div>
+		<div class="row">
+			<div class="col-xs-6 col-sm-8 col-xs-push-2 head">
+				<h2 class="name">{{$association->name}}</h2>
+			</div>
+			<div class="col-xs-4 col-sm-2 col-sm-push-2 col-xs-push-2 col-md-2">
+				<a class="button button-blue" href="/{{$association->id}}/edit">Editer</a>
 			</div>
 		</div>
-	</section>
-	<section>
-		<div>
-
-
-
-
-			@if(App::environment() != "production")
-			<div class="menu row" style="display:none;">
-				<div id="photo" class="col-lg-2 img-polaroid" data-toggle="div-hidden-news">
-					<p>Fil d'actualité</p>
-				</div>
-				<div id="photo" class="col-lg-2 img-polaroid" data-toggle="div-hidden-photo">
-					<p>Photos</p>
-				</div>
-				<div id="evenement" class="col-lg-2 img-polaroid" data-toggle="div-hidden-evenement">
-					<p>Evenements</p>
-				</div>
-				<div id="social" class="col-lg-2 img-polaroid" data-toggle="div-hidden-social">
-					<p>Social</p>
-				</div>
+	</div>
+</section>
+<section>
+	<div>
+		@if(App::environment() != "production")
+		<div class="menu row" style="display:none;">
+			<div id="photo" class="col-sm-2 img-polaroid" data-toggle="div-hidden-news">
+				<p>Fil d'actualité</p>
 			</div>
-			<div id="info-box">
-				<div class="text-center" style="font-weight: bold;margin-bottom: 10px;margin-top: 20px;">
+			<div id="photo" class="col-sm-2 img-polaroid" data-toggle="div-hidden-photo">
+				<p>Photos</p>
+			</div>
+			<div id="evenement" class="col-sm-2 img-polaroid" data-toggle="div-hidden-evenement">
+				<p>Evenements</p>
+			</div>
+			<div id="social" class="col-sm-2 img-polaroid" data-toggle="div-hidden-social">
+				<p>Social</p>
+			</div>
+		</div>
+		<div id="info-box">
+			<div class="text-center" style="font-weight: bold;margin-bottom: 10px;margin-top: 20px;">
 				Afficher le menu
-				</div>
-				<div style="background-color: #8F8F92; height: 2px">
-				</div>
-				<div class="text-center">
-					<img src="/img/to%20sprite/header-arrow.png" class="header-arrow" alt="">
-				</div>
 			</div>
-			@endif
-
-
-
-
-			<div id="social-timeline" class="row">
-				<div class="col-lg-13">
-					<div class="col-lg-11">
-						<div class="row">
-							@foreach($newsFeed as $news)
-								@include('association.wall.generic-head')
-								@foreach($news['data'] as $n)
-									@include('association.wall.'.$n['type'], array('p'=>$n))
-								@endforeach
-								@include('association.wall.generic-foot')
-							@endforeach
-							@if(empty($newsFeed))
-							<p>Vous n'avez pas encore envoyé de contenu</p>
-							@endif
-						</div>
-				 	</div>
+			<div style="background-color: #8F8F92; height: 2px">
+			</div>
+			<div class="text-center">
+				<img src="/img/to%20sprite/header-arrow.png" class="header-arrow" alt="">
+			</div>
+		</div>
+		@endif
+		<div id="social-timeline" class="row">
+			<div class="col-sm-10 col-sm-push-2">
+				<div class="row">
+					@foreach($newsFeed as $news)
+					@include('association.wall.generic-head')
+					@foreach($news['data'] as $n)
+					@include('association.wall.'.$n['type'], array('p'=>$n))
+					@endforeach
+					@include('association.wall.generic-foot')
+					@endforeach
+					@if(empty($newsFeed))
+					<p>Vous n'avez pas encore envoyé de contenu</p>
+					@endif
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
+</section>
 @stop
 
 @section('footer-js')
 <script type="text/javascript">
+
+	@if(App::environment() != "production")
 
 	/*toggle divs PART START*/
 	var el = $('.img-polaroid');
@@ -294,5 +286,6 @@
 		</div>
 	</div>
 </script>
+		@endif
 
 @stop

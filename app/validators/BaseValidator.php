@@ -10,6 +10,10 @@ class BaseValidator{
             $message = array('success'=>'true','data'=>$inputs);
         }else{
             $message = array('error'=>"Une erreur est survenue avec la validation");
+            foreach ($v->messages()->all('<li>:message</li>') as $m)
+            {
+                $message['error-message'][] = $m;
+            }
         }
         return $message;
     }

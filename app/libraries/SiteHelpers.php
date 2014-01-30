@@ -56,7 +56,11 @@ class SiteHelpers{
 	static function create_input($options){
 		$txt = '<div class="form-group row">';
 			$txt.= SiteHelpers::add_label($options);
-			$txt.= '<div class="controls col-sm-8">';
+			if(isset($options['full-width'])){
+				$txt.= '<div class="controls">';
+			}else{
+				$txt.= '<div class="controls col-sm-8">';
+			}
 			$txt.= SiteHelpers::simple_input($options);
 			$txt.= "</div>";
 		$txt.= "</div>";

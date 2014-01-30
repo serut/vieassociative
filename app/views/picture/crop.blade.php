@@ -69,6 +69,9 @@
 		@endif
 		overflow: hidden;
 	}
+	.progress{
+		margin-bottom: 20px;
+	}
 </style>
 @stop
 @section('footer-js')

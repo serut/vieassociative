@@ -13,7 +13,7 @@
             </ul>
             <h3 class="head">{{Lang::get('association/edit/general-informations.edit_association')}}</h3>
 
-            <table class="table table-hover table-striped">
+            <table class="table table-hover table-striped text-right">
               <tbody>
                 <tr>
                   <td>Nom de l'association sous lequel le public vous identifie</td>
@@ -59,12 +59,12 @@
                 </tr>
                 <tr> 
                   <td>Image de couverture</td>
-                  <td><img class="col-sm-5" src="{{$association->getCover()}}" ></td>
+                  <td><img class="col-sm-10" src="{{$association->getCover()}}" ></td>
                   <td><a href="/{{$association->id}}/edit/file/{{$association->id_folder}}/940x350-cover"><i class="fa fa-pencil"></i></a></td>
                 </tr>
                 <tr>
                   <td>Logo</td>
-                  <td><img  class="col-sm-3" src="{{$association->getLogo()}}" ></td>
+                  <td><img  class="col-sm-5 img-circle" src="{{$association->getLogo()}}" ></td>
                   <td><a href="/{{$association->id}}/edit/file/{{$association->id_folder}}/200x200-logo"><i class="fa fa-pencil"></i></a></td>
                 </tr>
               </tbody>

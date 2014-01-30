@@ -18,8 +18,9 @@ h6,
 caption {
   font-family: Trebuchet MS, Liberation Sans, DejaVu Sans, sans-serif !important;
   font-weight: normal;
-  word-spacing: 3px;
   line-height: 1.2em;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 a,
 a > * {
@@ -27,6 +28,9 @@ a > * {
   text-decoration: none;
   outline: 0;
   color: #f18d05;
+}
+label {
+  font-weight: 100;
 }
 a:hover,
 a:focus {
@@ -54,18 +58,17 @@ body #template {
   text-align: justify;
 }
 header {
-  background: rgba(253, 254, 254, 0.95);
   margin-bottom: 30px;
+  background: rgba(253, 254, 254, 0.95);
 }
 header .navbar {
   z-index: 97;
   margin-bottom: 15px;
-  border-bottom: 0px;
 }
 header .navbar #logo img {
-  float: left;
   height: 45px;
-  margin-top: 5px;
+  margin-top: 1px;
+  padding: 0;
 }
 header .navbar ul i {
   color: #b4b4b4;
@@ -76,77 +79,46 @@ header .navbar ul li a {
 header .navbar ul li a span {
   display: inline!important;
 }
-header .navbar .search-form {
-  margin-top: 5px;
+header .navbar .search-form-phone {
+  margin-top: 12px;
 }
-header .navbar .img-user {
-  margin-left: 0px;
+header .navbar .menu-item-imaged-with-text.open {
+  z-index: 1;
+}
+header .navbar .menu-item-imaged-with-text i {
+  float: left;
+  margin: 9px 0 10px 5px;
+  z-index: 2;
+}
+header .navbar .menu-item-imaged-with-text > a {
+  padding-top: 15px;
+  padding-left: 40px;
+  z-index: 1;
+}
+header .navbar .menu-item-imaged-with-text .img-user {
+  display: block;
+  float: left;
   width: 28px;
   height: 28px;
-  margin-right: 10px;
+  margin: 9px 0 0 5px;
+  z-index: 2;
 }
-header .dropdown-menu {
-  border: 0px;
-  padding-top: 0px;
+header .navbar .menu-item-imaged > a {
+  padding-top: 3px;
+  padding-bottom: 45px;
 }
-header #menu .dropdown-menu {
-  margin-top: 7px;
-  background: none repeat scroll 0 0 #4C4C4C;
-  min-width: 180px;
-  left: auto;
-  right: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+header .navbar .menu-item-imaged i {
+  float: left;
+  margin: 9px 0 10px 5px;
+  z-index: 2;
 }
-header #menu .dropdown-menu:after,
-header #menu .dropdown-menu:before {
-  bottom: 100%;
-  left: 86%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-  margin-top: -14px;
-  border-color: rgba(255, 255, 255, 0);
-  border-bottom-color: #4C4C4C;
-  border-width: 10px;
-  margin-left: -10px;
-}
-header #menu .dropdown-menu > li {
-  border-bottom: 1px solid #474747;
-}
-header #menu .dropdown-menu > li:last-child {
-  border: 0;
-}
-header #menu .dropdown-menu > li > a {
-  color: #FFF;
-  padding: 8px 15px;
-  text-align: left;
-}
-header #menu .dropdown-menu > li > a:hover {
-  background: #f0523f;
-  color: #FFF;
-}
-header #menu .dropdown.open a.dropdown-toggle {
-  background-color: inherit;
-}
-aside,
-nav {
-  margin-left: 10px;
-  margin-top: 20px;
-}
-aside > div,
-nav > div {
-  margin: -20px 0 40px;
-}
-aside > div.background,
-nav > div.background {
-  background: #fff;
-}
-.row {
-  margin-left: -10px;
+header .nav li > a:focus,
+header .nav li > a:hover,
+header .nav .open > a,
+header .nav .open > a:hover,
+header .nav .open > a:focus {
+  background-color: transparent!important;
+  z-index: 1;
 }
 section {
   margin-left: 10px;
@@ -163,22 +135,9 @@ section .text-error {
 section.unbackground {
   background: none;
 }
-aside h1,
-nav h1,
-section h1,
-aside h3,
-nav h3,
-section h3,
-aside p,
-nav p,
-section p,
-aside form,
-nav form,
 section form {
-  margin: 0 10px 20px 10px;
+  margin: 0 10px 0px 10px;
 }
-aside > div,
-nav > div,
 section > div {
   padding: 11px 20px 20px 20px;
 }
@@ -209,11 +168,4 @@ footer .row div {
 }
 footer a {
   color: #000;
-}
-.modal .close-modal {
-  margin-top: 5px;
-}
-.modal .modal-footer {
-  margin-left: 0px;
-  margin-right: 0px;
 }

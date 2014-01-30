@@ -40,7 +40,7 @@
             </table>
             @else
                 Cette association n'a pas d'administrateur. Avant de vous déclarer administrateur, veuillez prendre connaissance des  
-                <a target="_blank" href="/info/condition">{{Lang::get('association/form_create.notice_part_link')}}</a>.
+                <a target="_blank" href="{{URLSubdomain::to('www','/info/condition')}}">{{Lang::get('association/form_create.notice_part_link')}}</a>.
                 {{Lang::get('association/form_create.notice_create_association')}}
             @endif
             @if($is_admin || !$admin->count())
@@ -67,7 +67,11 @@
                     @if($is_admin)
                         <div id="div-user">
                     @else
-                        {{SiteHelpers::create_radio($input)}}
+                        <div class="col-sm-10 col-sm-push-1">
+                            <div class="col-sm-10 col-sm-push-3">
+                                {{SiteHelpers::create_radio($input)}}
+                            </div>
+                        </div>
                         <div style="display:none;" id="div-user">
                     @endif
                         @input = array(
@@ -116,6 +120,7 @@
 @section('footer-js')
 <script type="text/javascript">
     var IDASSOC = {{$association->id}};
+
     function removeAdmin(id){
         $.ajax({
             type: "POST",

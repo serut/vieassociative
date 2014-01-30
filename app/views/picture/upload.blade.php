@@ -6,7 +6,7 @@
 	<section>
 		<div>
             <ul class="breadcrumb">
-              <li><a href="#">Association</a> </li>
+              <li><a href="/">Liste des Associations</a> </li>
               <li><a href="/{{$association->id}}-{{$association->slug}}">{{$association->name}}</a> </li>
               <li><a href="/{{$association->id}}/edit">Edition</a> </li>
 			  <li class="active">Images</li>
@@ -124,8 +124,8 @@
 	<script id="photo-pattern" type="text/x-jquery-tmpl">
 		<div class="element col-sm-${size} img-polaroid" >
 			<img src="${thumbnail}" class="size${size}" />
-			<div class="options">
-			<table class="table table-option">
+			<div class="options row">
+			<table class="table table-option text-center col-sm-10 col-sm-push-1">
                 <tr>
                 	<td class="item-option">
 		                <a class="remove" href="#" onclick="imgDelete(this);return false;">

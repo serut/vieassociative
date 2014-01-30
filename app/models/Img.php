@@ -7,7 +7,7 @@ class Img extends Eloquent
 	static function add($name, $extension){
 		$i = new Img();
 		$i->name = $name;
-		$i->extension = $extension;
+		$i->extension = strtolower($extension);
 		$i->id_user = Auth::user()->id;
 		$i->touch();
 		return $i->id;

@@ -27,7 +27,7 @@
 	            {{--// Le gars a le droit de voir le formulaire --}}
                 <p>{{Lang::choice('membre/connexion.connect_account',10-$connexTentative,array('number' => 10-$connexTentative))}}</p>
 	            {{ Form::open(array('class'=> 'form','url' => 'user/log/login', 'data-validate'=>'our-parsey-1', 'data-loading'=>'true')) }}
-
+	            	<ul class="error-laravel text-danger"></ul>
 		            @input = array(
 				            'id'=>"username",
 				            'full-width'=>true,

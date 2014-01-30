@@ -13,6 +13,8 @@ h1, h2, h3, h4, h5, h6, caption {
     font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif !important;
     font-weight: normal;
     line-height: 1.2em;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 a, a > * {
 	text-shadow: none;
@@ -49,17 +51,15 @@ body #template{
     text-align: justify;
 }
 header{
-    background:rgba(253, 254, 254, 0.95);
     margin-bottom:30px; 
+    background:rgba(253, 254, 254, 0.95);
     .navbar {
         z-index: 97;
         margin-bottom: 15px;
-        border-bottom:0px;
         #logo img {
-            //margin-left: 30px;
-            float: left;
             height: 45px;
-            margin-top: 5px;
+            margin-top: 1px;
+            padding: 0;
         }
         ul i{
             color:#b4b4b4;
@@ -70,76 +70,49 @@ header{
                 display:inline!important;
             }
         }
-        .search-form{
-            margin-top: 5px;
+        .search-form-phone{
+            margin-top: 12px;
         }
-        .img-user{
-            margin-left: 0px;
-            width: 28px;
-            height: 28px;
-            margin-right:10px;
-        }
-    }
-    .dropdown-menu{
-        border:0px;
-        padding-top: 0px;
-    }
-    #menu .dropdown-menu{
-        margin-top:7px;
-        background: none repeat scroll 0 0 #4C4C4C;
-        min-width: 180px;
-        left: auto;
-        right: 0;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        &:after,&:before{
-            bottom: 100%;
-            left:86%;
-            border: solid transparent;
-            content: " ";
-            height: 0;
-            width: 0;
-            position: absolute;
-            pointer-events: none;
-            margin-top: -14px;
-            border-color: rgba(255, 255, 255, 0);
-            border-bottom-color: #4C4C4C;
-            border-width: 10px;
-            margin-left: -10px;
-        }
-        > li{
-            border-bottom:1px solid #474747;
-            &:last-child{
-                border:0;
+        .menu-item-imaged-with-text{
+            &.open{
+                z-index:1;
             }
-            > a{
-                color:#FFF;
-                padding:8px 15px;
-                text-align: left;
-                &:hover{
-                    background:#f0523f;
-                    color:#FFF;
-                }
+            i{
+                float: left;
+                margin: 9px 0 10px 5px;
+                z-index:2;
+            }
+            >a{
+                padding-top: 15px;
+                padding-left: 40px;
+                z-index:1;
+            }
+            .img-user{
+                display: block;
+                float: left;
+                width: 28px;
+                height: 28px;
+                margin: 9px 0 0 5px;
+                z-index:2;
+            }
+        }
+        .menu-item-imaged{
+            >a{
+                padding-top: 3px;
+                padding-bottom: 45px;
+            }
+            i{
+                float: left;
+                margin: 9px 0 10px 5px;
+                z-index:2;
             }
         }
     }
 
-    #menu .dropdown.open a.dropdown-toggle {
-        background-color: inherit;
+    .nav li > a:focus,.nav li > a:hover,.nav .open > a, .nav .open > a:hover, .nav .open > a:focus{
+        background-color: transparent!important;
+        z-index: 1;
     }
-}
-aside,nav{
-    margin-left:10px;
-    margin-top: 20px;
-    > div{
-        margin:-20px 0 40px;
-    }
-    > div.background{
-        background: #fff;
-    }
-}
-.row{
-    margin-left: -10px;
 }
 section{
     margin-left:10px;
@@ -155,17 +128,13 @@ section{
     &.unbackground{
         background: none;
     }
-}
-aside,nav,section{
-    h1,h3,p, form{
-        margin: 0 10px 20px 10px; 
+    form{
+        margin: 0 10px 0px 10px; 
     }
-    
     > div{
         padding: 11px 20px 20px 20px;
     }
 }
-
 
 footer{
     position: absolute;
@@ -192,15 +161,5 @@ footer{
     }
     a{
         color:#000;
-    }
-}
-
-.modal{
-    .close-modal{
-        margin-top: 5px;
-    }
-    .modal-footer{
-        margin-left: 0px; 
-        margin-right: 0px;
     }
 }

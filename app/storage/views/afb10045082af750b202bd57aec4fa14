@@ -1,7 +1,7 @@
 
 
-<?php $large_centred = true; ?>
-<?php $__env->startSection('large-content'); ?>
+<?php $medium_centred = true; ?>
+<?php $__env->startSection('medium-content'); ?>
     <section>
         <div>
             <ul class="breadcrumb">
@@ -23,14 +23,16 @@
                 <tbody>
                     <?php foreach($news as $key => $new): ?>
                             <tr>
+                            <td>
                         <?php foreach($new['data'] as $partial): ?>
                             <?php if($partial['type']=="PartialTitle"): ?>
-                                <td><?php echo e($partial['title']); ?></td>
-                                <td><?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($new['updated_at']))->diffForHumans(); ?></td>
-                                <td><i class="fa fa-remove"></i></td>
-                                <td><a href="news/<?php echo $key; ?>/edit"> Editer</a></td>
+                                <?php echo e($partial['title']); ?>
                             <?php endif; ?>
                         <?php endforeach; ?>
+                            </td>
+                            <td><?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($new['updated_at']))->diffForHumans(); ?></td>
+                            <td><i class="fa fa-remove"></i></td>
+                            <td><a href="news/<?php echo $key; ?>/edit"> Editer</a></td>
                             </tr>
                     <?php endforeach; ?>
                 </tbody>

@@ -19,6 +19,10 @@
 		@include('template.html_bricks.large-centred') 
 	@endif
 
+	@if(isset($medium_centred) && $medium_centred)
+		@include('template.html_bricks.medium-centred') 
+	@endif
+
 	@if(isset($main_and_aside) && $main_and_aside)
 		@include('template.html_bricks.main-and-aside') 
 	@endif

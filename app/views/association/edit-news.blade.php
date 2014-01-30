@@ -3,11 +3,12 @@
 
 
 
-@set_true $large_centred 
-@section('large-content')
+@set_true $medium_centred 
+@section('medium-content')
 <section>
 		<div>
 			<ul class="breadcrumb">
+            	<li><a href="/">Liste des Associations</a> </li>
 				<li><a href="/{{$association->id}}-{{$association->slug}}">{{$association->name}}</a> </li>
 				<li><a href="/{{$association->id}}/edit">Edition</a> </li>
 				<li><a href="/{{$association->id}}/edit/news">Mes publications</a> </li>

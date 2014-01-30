@@ -1,7 +1,7 @@
 
 
-<?php $large_centred = true; ?>
-<?php $__env->startSection('large-content'); ?>
+<?php $small_centred = true; ?>
+<?php $__env->startSection('small-content'); ?>
     <section>
         <div>
             <h3 class="head"><?php echo Lang::get('association/form_create.head_add_association'); ?></h3>

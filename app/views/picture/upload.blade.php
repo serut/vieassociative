@@ -32,7 +32,7 @@
 					<div class="row col-lg-12" style="margin-bottom: 20px;">
 						<div class="ctrl-upload button button-green pull-right">Upload</div>
 					</div>
-					<div class="row js-files">
+					<div class="row js-files" style="display:none;">
 				         <div class="js-file-tpl col-sm-2 img-polaroid" data-id="<%=uid%>" title="<%-name%>, <%-sizeText%>">
 				            <div class="row">
 				            <div class="b-thumb__preview pull-left">
@@ -47,7 +47,10 @@
 				            @endif
 				            </div>
 				            <div class="b-thumb__name"><%-name%></div>
-				            <div class="b-thumb__progress progress-bar progress-bar-striped active"><div class="bar"></div></div>
+				            <div class="progress">
+							  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+							  </div>
+							</div>
 				            <div class="transfert-ok" style="display: none;">Transfert effectué</div>
 
 				         </div>
@@ -155,6 +158,7 @@
 		</div>--}}
 	</script>
 	<script>
+		$(".row.js-files").show();
 	    $('#dnd').fileapi({
 			url: "{{URLSubdomain::to('association','/upload')}}",
 			data: { 'session-id': 123 }, // data with GET
@@ -176,7 +180,7 @@
 		         },
 		         upload: { show: '.progress-bar', hide: '.fa fa-repeat' },
 		         complete: { show: '.transfert-ok',hide: '.progress-bar' },
-		         progress: '.progress .bar'
+		         progress: '.progress .progress-bar'
 		      },
 		      dnd: {
 		         el: '.dropzone.drag-and-drop',

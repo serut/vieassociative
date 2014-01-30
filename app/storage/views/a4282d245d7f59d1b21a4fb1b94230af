@@ -2,8 +2,8 @@
 
 
 
-<?php $large_centred = true; ?>
-<?php $__env->startSection('large-content'); ?>
+<?php $medium_centred = true; ?>
+<?php $__env->startSection('medium-content'); ?>
 <section>
 		<div>
 			<ul class="breadcrumb">

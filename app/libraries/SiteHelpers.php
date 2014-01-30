@@ -8,7 +8,7 @@ class SiteHelpers{
 	static function create_radio($options){
 		$txt = '<div class="form-group">';
 			$txt.= SiteHelpers::add_label($options);
-			$txt.= '<div class="controls col-sm-8 col-sm-push-4"';
+			$txt.= '<div class="controls col-sm-8"';
 			if(isset($options['data-toggle']))
 				$txt.= ' data-toggle="'.$options['data-toggle'].'"';
 
@@ -54,7 +54,7 @@ class SiteHelpers{
 	}
 	
 	static function create_input($options){
-		$txt = '<div class="form-group">';
+		$txt = '<div class="form-group row">';
 			$txt.= SiteHelpers::add_label($options);
 			$txt.= '<div class="controls col-sm-8">';
 			$txt.= SiteHelpers::simple_input($options);

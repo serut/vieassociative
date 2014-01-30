@@ -1,10 +1,15 @@
 @extends('template.theme')
 
 
-@set_true $large_centred 
-@section('large-content')
+@set_true $small_centred
+@section('small-content')
     <section>
         <div>
+
+            <ul class="breadcrumb">
+              <li><a href="/">Liste des Associations</a> </li>
+              <li class="active">Ajout d'une association</li>
+            </ul>
             <h3 class="head">{{Lang::get('association/form_create.head_add_association')}}</h3>
             {{ Form::open(array('class'=> 'form-horizontal','data-validate'=>'our-parsey', 'data-loading'=>'true')) }}
 

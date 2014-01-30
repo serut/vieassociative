@@ -17,7 +17,7 @@
 		</div>
 	</div>
 </section>
-<section>
+<section  class="col-lg-10 col-lg-push-1 col-sm-12">
 	<div>
 		@if(App::environment() != "production")
 		<div class="menu row" style="display:none;">
@@ -46,7 +46,7 @@
 		</div>
 		@endif
 		<div id="social-timeline" class="row">
-			<div class="col-sm-12">
+			<div>
 				@foreach($newsFeed as $news)
 				@include('association.wall.generic-head')
 				@foreach($news['data'] as $n)

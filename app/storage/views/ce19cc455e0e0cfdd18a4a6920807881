@@ -1,4 +1,4 @@
-<?php /*  v1  */ ?>
+<?php /* v1 */ ?>
 <?php echo $__env->make('template.main_html_component.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php echo $__env->make('template.main_html_component.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php if(isset($sub_head) && $sub_head): ?>
@@ -17,6 +17,10 @@
 
 	<?php if(isset($large_centred) && $large_centred): ?>
 		<?php echo $__env->make('template.html_bricks.large-centred', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?> 
+	<?php endif; ?>
+
+	<?php if(isset($medium_centred) && $medium_centred): ?>
+		<?php echo $__env->make('template.html_bricks.medium-centred', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?> 
 	<?php endif; ?>
 
 	<?php if(isset($main_and_aside) && $main_and_aside): ?>

@@ -1,7 +1,7 @@
 <?php 
 //	""=>"",
 return array(
-	"head"=>"Modifier le nom officiel de l'association",
+	"head"=>"Modifier l'élement",
 	"name"=>"C'est ce nom que nous afficherons sur la page de profil",
 	"label_name"=>"Nom de l'association public",
 	"placeholder_name"=>"Association ...",

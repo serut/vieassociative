@@ -5,7 +5,7 @@
 @stop
 
 @section('form')
-	<p>{{Lang::get('association/modal_form/general-informations.name')}}{{$val}}</p>
+	<p>{{Lang::get('association/modal_form/general-informations.name')}} {{$val}}</p>
 	{{ Form::open(array('class'=> 'form-horizontal form-modal','data-validate'=>'our-parsey', 'data-loading'=>'true')) }}
 		@input = array(
 	        'id'=>"name",

@@ -94,7 +94,7 @@
 			// if the association has been created by one of his authorised user
 			if($result['data']['choice']=="true"){
 				User::addAssoc(Auth::user()->id,$id_assoc,$result['data']['link']);
-				$result['redirect_url'] = '/'.$id_assoc.'/edit';
+				$result['redirect_url'] = '/'.$id_assoc.'/edit/general-informations';
 			}else{
 				$result['redirect_url'] = '/'.$id_assoc.'-'.Str::slug($result['data']['name'],'-');;
 			}

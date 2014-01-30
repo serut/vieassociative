@@ -14,14 +14,14 @@
 			<div>
 				<div id="dnd" class="b-upload b-upload_dnd">
 					<div class="row">
-						<div class="dropzone drag-and-drop  col-sm-10 col-sm-push-1">
+						<div class="dropzone drag-and-drop col-sm-10 col-sm-push-1">
 							<div class="text-center">
 								<i class="fa fa-plus"></i><br>
 								<col-lg->Glissez déposez vous images ici - ou cliquez moi dessus</col-lg->
 							</div>
 							<input type="file" name="files[]" multiple id="selectFile" accept="image/*">
 						</div>
-						<div class="dropzone no-drag-and-drop  col-sm-10 col-sm-push-1">
+						<div class="dropzone no-drag-and-drop col-sm-10 col-sm-push-1" style="display:none;">
 							<div class="text-center">
 								<i class="fa fa-plus"></i><br>
 								<col-lg->Cliquez ici pour selectionner les images à envoyer</col-lg->
@@ -29,7 +29,7 @@
 							<input type="file" name="files[]" multiple id="selectFile">
 						</div>
 					</div>
-					<div class="row col-lg-12" style="margin-bottom: 20px;">
+					<div class="row col-lg-12" style="margin-bottom: 20px; display:none;">
 						<div class="ctrl-upload button button-green pull-right">Upload</div>
 					</div>
 					<div class="row js-files" style="display:none;">

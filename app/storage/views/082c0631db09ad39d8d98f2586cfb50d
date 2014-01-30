@@ -2,7 +2,6 @@
 
 <?php $large_centred = true; ?>
 <?php $__env->startSection('large-content'); ?>
-	<section>
 		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
@@ -41,102 +40,27 @@
 				<span class="fa fa-chevron-right"></span>
 			</a>
 		</div>
-	</section>
 	<section>
 		<div class="row">
-			<div class="col-sm-7">
+			<div class="col-sm-7 col-lg-9">
 				<div class="flex-video widescreen"><iframe src="https://www.youtube-nocookie.com/embed/4TlJ4qKO2Xg?rel=0" frameborder="0" allowfullscreen=""></iframe></div>
 			</div>
-			<div class="col-sm-5">
-				<div class="background">
-				    <h3 class="head"><?php echo Lang::get('aside.facebook_head'); ?></h3>
-				    <div class="fb-like-box" data-href="http://www.facebook.com/vieassociativeofficiel" data-width="270" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="false"></div>
-				</div>
+			<div class="col-sm-5 col-lg-3">
+			    <h3 class="head">Rejoignez nous sur Facebook !</h3>
+			    <div class="fb-like-box" data-href="http://www.facebook.com/vieassociativeofficiel" data-width="270" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="false"></div>
 			</div>
 		</div>
 	</section>
 	<section>
-		<div class="row">
-			<?php foreach($association as $a): ?>
+		<div class="row text-center">
 			<div class="col-sm-6">
-				<img src="<?php echo $a->getCover(); ?>" class="img-responsive">
-				<div class="row">
-					<div class="col-sm-6">
-						<img src="<?php echo $a->getLogo(); ?>" class="img-responsive img-circle">
-					</div>
-					<div class="col-sm-6">
-						<a href="<?php echo URLSubdomain::to('association','/'); ?><?php echo $a->id; ?>-<?php echo $a->slug; ?>">
-							<?php echo $a->name; ?>
-						</a>
-					</div>
-				</div>
+				Ajouter son association
 			</div>
-			<?php endforeach; ?>
+			<div class="col-sm-6">
+				Rechercher dans nos associations
+			</div>
 		</div>
 	</section>
-
-		<section>
-			<div>
-			<h3 class="head"><?php echo Lang::get('index/index.head_what_vieassociative'); ?></h3>
-					<h3 class="head"><?php echo Lang::get('index/index.head_1'); ?></h3>
-					<p><?php echo Lang::get('index/index.content_1_0'); ?><br>
-					<?php echo Lang::get('index/index.content_1_1'); ?><br>
-					<h3 class="head"><?php echo Lang::get('index/index.questions'); ?></h3>
-			<div class="accordion" id="accordion">
-				<div class="accordion-group">
-					<div class="accordion-heading">
-						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-						<?php echo Lang::get('index/index.avantage_contributor'); ?>
-						</a>
-					</div>
-					<div id="collapseOne" class="accordion-body collapse in">
-						<div class="accordion-inner">
-							<p><?php echo Lang::get('index/index.avantage_contributor_1'); ?></p>
-							<p><?php echo Lang::get('index/index.avantage_contributor_2'); ?></p>
-						</div>
-					</div>
-				</div>
-				<div class="accordion-group">
-					<div class="accordion-heading">
-						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-						<?php echo Lang::get('index/index.avantage_association'); ?>
-						</a>
-					</div>
-					<div id="collapseTwo" class="accordion-body collapse">
-						<div class="accordion-inner">
-							<p><?php echo Lang::get('index/index.avantage_association_1'); ?></p>
-							<p><?php echo Lang::get('index/index.avantage_association_2'); ?></p>
-						</div>
-					</div>
-				</div>
-				<div class="accordion-group">
-					<div class="accordion-heading">
-						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-						<?php echo Lang::get('index/index.join_us'); ?>
-						</a>
-					</div>
-					<div id="collapseThree" class="accordion-body collapse">
-						<div class="accordion-inner">
-							<p><?php echo Lang::get('index/index.join_us_1'); ?></p>
-						</div>
-					</div>
-				</div>
-				<div class="accordion-group">
-					<div class="accordion-heading">
-						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-						<?php echo Lang::get('index/index.your_right'); ?>
-						</a>
-					</div>
-					<div id="collapseFour" class="accordion-body collapse">
-						<div class="accordion-inner">
-							<p><?php echo Lang::get('index/index.your_right_1'); ?></p>
-							<p><?php echo Lang::get('index/index.your_right_2'); ?></p>
-						</div>
-					</div>
-				</div>
-			</div>
-				</div>
-		</section>
 
 <?php $__env->stopSection(); ?>
 

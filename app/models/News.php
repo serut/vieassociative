@@ -18,17 +18,11 @@ class News extends Eloquent
             return Partial::get($p);
         }
     }
-    static function edit($id_news,$id_assoc, $data){
-        if(intval($id_news) == 0){
-            //add
-            $news = new News();
-            $news->id_assoc=$id_assoc;
-            $news->touch();
-            Partial::edit($news->id, $data);
-        }else{
-            //edit
-            Partial::edit($id_news, $data);
-        }
+    static function add($id_assoc){
+        $news = new News();
+        $news->id_assoc=$id_assoc;
+        $news->touch();
+        return $news->id;
     }
     static function listNews($idAssoc){
         $news = News::where('id_assoc',$idAssoc)->get();

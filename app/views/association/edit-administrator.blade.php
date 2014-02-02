@@ -88,11 +88,14 @@
                     </div>
 
                     <div id="div-linked">
-                        <p class="col-sm-push-4 col-sm-8">{{Lang::get('association/edit/administrator.he_is')}} : 
-                            <a class="btn-vie-assoc" type="button" onclick="$('#link').val($(this).text());">{{Lang::get('association/form_create.link_one')}}</a>
-                            <a class="btn-vie-assoc" type="button" onclick="$('#link').val($(this).text());">{{Lang::get('association/form_create.link_two')}}</a>
-                            <a class="btn-vie-assoc" type="button" onclick="$('#link').val($(this).text());">{{Lang::get('association/form_create.link_three')}}</a>
-                        </p>
+                        <div class="row">
+                            <p class="col-sm-push-4 col-sm-8">{{Lang::get('association/edit/administrator.he_is')}} : 
+                                <a class="btn-vie-assoc" type="button" onclick="$('#link').val($(this).text());">{{Lang::get('association/form_create.link_one')}}</a>
+                                <a class="btn-vie-assoc" type="button" onclick="$('#link').val($(this).text());">{{Lang::get('association/form_create.link_two')}}</a>
+                                <a class="btn-vie-assoc" type="button" onclick="$('#link').val($(this).text());">{{Lang::get('association/form_create.link_three')}}</a>
+                            </p>
+                        </div>
+                        <div class="row">
                         @input = array(
                             'id'=>"link",
                             'label'=>Lang::get('association/form_create.label_link'),
@@ -105,6 +108,7 @@
                             )
                         )@
                         {{SiteHelpers::create_input($input)}}
+                        </div>
                     </div>
                     <p class="nav pull-right">
                         <button type="submit" class="button button-green">{{Lang::get('association/edit/administrator.add')}}</button>

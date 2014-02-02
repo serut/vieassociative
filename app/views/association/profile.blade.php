@@ -8,54 +8,63 @@
 	<img src="{{$association->getLogo()}}" class="logo img-circle" alt="Logo de {{$association->name}}">
 	<div>
 		<div class="row">
-			<div class="col-xs-8 col-sm-8 col-md-9 col-xs-push-2 head">
+			<div class="col-xs-10 col-sm-10 col-md-10 col-xs-push-2 head">
 				<h2 class="name">{{$association->name}}</h2>
-			</div>
-			<div class="col-xs-2 col-md-1 col-sm-2 col-sm-push-2 col-xs-push-2 head-panel">
-				<a class="btn" href="/{{$association->id}}/edit">Editer</a>
 			</div>
 		</div>
 	</div>
 </section>
-<section  class="col-lg-10 col-lg-push-1 col-sm-12">
+@if(App::environment() != "production")
+<section>
+			<div class="navbar-header visible-xs">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-js-navbar-scrollspy">
+					<span class="sr-only">Toggle navigation</span>
+					<i class="fa fa-bars fa-lg"></i>
+				</button>
+				<a class="navbar-brand" href="#">Menu</a>
+			</div>
+			<div class="collapse navbar-collapse bs-js-navbar-scrollspy" role="navigation">
+				<ul class="nav navbar-nav navbar-left">
+					<li class="active"><a href="#social-timeline">Fil d'actualité</a></li>
+					@if(App::environment() != "production")
+					<li><a href="#photo-timeline">Photos</a></li>
+					@endif
+				</ul>
+
+				@if(Auth::check() && ($association->nb_admin == 0 || Auth::user()->isAdministrator($association->id)))
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-pencil"></i></a>
+						<ul class="dropdown-menu">
+							<li><a href="/{{$association->id}}/edit">Panel d'administrateur</a></li>
+							<li class="divider"></li>
+							<li><a href="/{{$association->id}}/edit/file/{{$association->id_folder}}"><span class="pull-right label label-primary">{{$association->nb_photos}}</span>Mes images</a></li>
+							<li><a href="/{{$association->id}}/edit/file/{{$association->id_folder}}/940x350-cover">Changer la couverture</a></li>
+							<li><a href="/{{$association->id}}/edit/file/{{$association->id_folder}}/200x200-logo">Changer le logo</a></li>
+							<li class="divider"></li>
+							<li><a href="/{{$association->id}}/edit/news"><span class="badge pull-right">{{$association->nb_news}}</span>Mes news</a></li>
+							<li class="divider"></li>
+							<li><a href="/{{$association->id}}/edit/general-informations">Edition des informations</a></li>
+						</ul>
+					</li>
+				</ul>
+				@endif
+			</div>
+</section>
+@endif
+<section  class="col-lg-10 col-lg-push-1">
 	<div>
-		@if(App::environment() != "production")
-		<div class="menu row" style="display:none;">
-			<div id="photo" class="col-sm-2 img-polaroid" data-toggle="div-hidden-news">
-				<p>Fil d'actualité</p>
-			</div>
-			<div id="photo" class="col-sm-2 img-polaroid" data-toggle="div-hidden-photo">
-				<p>Photos</p>
-			</div>
-			<div id="evenement" class="col-sm-2 img-polaroid" data-toggle="div-hidden-evenement">
-				<p>Evenements</p>
-			</div>
-			<div id="social" class="col-sm-2 img-polaroid" data-toggle="div-hidden-social">
-				<p>Social</p>
-			</div>
-		</div>
-		<div id="info-box">
-			<div class="text-center" style="font-weight: bold;margin-bottom: 10px;margin-top: 20px;">
-				Afficher le menu
-			</div>
-			<div style="background-color: #8F8F92; height: 2px">
-			</div>
-			<div class="text-center">
-				<img src="/img/to%20sprite/header-arrow.png" class="header-arrow" alt="">
-			</div>
-		</div>
-		@endif
 		<div id="social-timeline" class="row">
 			<div>
 				@foreach($newsFeed as $news)
-				@include('association.wall.generic-head')
-				@foreach($news['data'] as $n)
-				@include('association.wall.'.$n['type'], array('p'=>$n))
-				@endforeach
-				@include('association.wall.generic-foot')
+					@include('association.wall.generic-head')
+					@foreach($news['data'] as $n)
+						@include('association.wall.'.$n['type'], array('p'=>$n))
+					@endforeach
+					@include('association.wall.generic-foot')
 				@endforeach
 				@if(empty($newsFeed))
-				<p>Vous n'avez pas encore envoyé de contenu</p>
+					<p>Vous n'avez pas encore envoyé de contenu</p>
 				@endif
 			</div>
 		</div>
@@ -283,7 +292,14 @@
 			</div>
 		</div>
 	</div>
-</script>
 		@endif
-
+		('.cat').hover(
+			function () {
+				$(this).show();
+			}, 
+			function () {
+				$(this).hide();
+			}
+		);
+</script>
 @stop

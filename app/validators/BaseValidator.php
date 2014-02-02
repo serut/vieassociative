@@ -3,7 +3,7 @@ class BaseValidator{
 	public function test($rules,$toPurify=array()){
         $inputs = Input::get();
         if(!empty($toPurify)){
-            $inputs = $this->purify($input,$toPurify);
+            $inputs = $this->purify($inputs,$toPurify);
         }
         $v = Validator::make($inputs, $rules);
         if(! $v->fails()){
@@ -24,6 +24,7 @@ class BaseValidator{
                 $input[$v] = $purifier->purify($input[$v]);
             }
         }
+        return $input;
     }
 	public function getMessageMissingInput(){
 		return array('error'=>array('type'=>'Validateur Error', 'message'=>Lang::get('core/form.input_missing'),'file'=>'Validator','line'=>0));

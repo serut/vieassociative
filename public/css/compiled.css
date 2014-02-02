@@ -1540,6 +1540,7 @@ section .text-error{display:block}
 section.unbackground{background:none}
 section form{margin:0 10px 0 10px}
 section>div{padding:11px 20px 20px 20px}
+section .bs-js-navbar-scrollspy{padding:0 30px 0 15px}
 footer{position:absolute;bottom:0;width:100%;margin-top:15px;background:#fff;z-index:2}footer .row{margin-top:-10px;position:relative;margin:0 auto}footer .row .align-right{text-align:right}
 footer .row a{font-size:.8em;padding:0 15px;text-transform:uppercase;line-height:4em}
 footer .row div{white-space:nowrap}

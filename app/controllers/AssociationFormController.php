@@ -93,6 +93,17 @@ class AssociationFormController  extends BaseController {
                     case 'remove':
                         $result = $this->removeAdministrator($id_assoc);
                         break;
+                }
+
+            case 'news':
+                switch ($item) {
+                    case 'add':
+                        $result = AssociationNewsController::addNews($id_assoc);
+                        break;
+                    case 'title':
+                    case 'textarea':
+                        $result = AssociationNewsController::editPartialNews($id_assoc,$origin,$item);
+                        break;
 
                 }
                 

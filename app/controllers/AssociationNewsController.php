@@ -24,23 +24,36 @@
 	*/
 	public function getEditNews($idAssoc, $idNews){
 		return View::make('association.edit-news')
+			->with('id_news',$idNews)
 			->with('post',News::get($idNews))
 			->with('association',Association::find($idAssoc));
 	}
 	/**
+		* API : Create a news
+		* @return JSON
+	*/
+	static function addNews($idAssoc){
+		$v = new validators_associationEditPost;
+		$result = $v->create();
+		if(isset($result['success'])){
+			$result['id_news'] = News::add($idAssoc);
+		}
+		return $result;
+	}
+
+
+	/**
 		* API : Edit or create a news
 		* @return JSON
 	*/
-	public function postEditNews($idAssoc, $idNews){
+	static function editPartialNews($idAssoc,$partial, $item){
 		$v = new validators_associationEditPost;
-		$result = $v->validate();
+		$result = $v->$item();
 		if(isset($result['success'])){
-			News::edit($idNews,$idAssoc,$result['data']);
+			Partial::edit($result['data']);
 			$association = Association::find($idAssoc);
 			$result['redirect_url'] = '/'.$idAssoc.'-'.$association->slug;
-			$result['data']=null; //Remove data
 		}
-		return Response::json($result);
+		return $result;
 	}
-
 }

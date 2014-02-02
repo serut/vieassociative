@@ -1,4 +1,4 @@
-@if(App::environment() != "production")
+@if(App::environment() != "production" && Auth::check())
 <div class="social-footer">
 	<div class="social-controls">
 		<col-lg-><i class="fa fa-thumbs-up "></i> Like</col-lg->

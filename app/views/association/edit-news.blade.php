@@ -15,7 +15,6 @@
 				<li class="active">Editer une publication</li>
 			</ul>
 			<h3 class="head">{{Lang::get('association/edit/news.modify_news')}}</h3>
-			{{ Form::open(array('class'=> 'form-horizontal','data-validate'=>'our-parsey', 'data-loading'=>'true')) }}
 			<div class="row">
 				<div>
 					<img src="{{$association->getLogo()}}" class="img-circle col-sm-1">
@@ -27,26 +26,25 @@
 			<div id="toolnews" class="blockquote text-center">
 				<br>
 				<a href="#" data-component="title" class="btn" onclick="addTitle();return false;">
-					<col-lg-><i class="fa fa-plus"></i> Titre</col-lg->
+					<span><i class="fa fa-plus"></i> Titre</span>
 				</a>
 				<a href="#" data-component="textarea" class="btn" onclick="addTextArea();return false;">
-					<col-lg-><i class="fa fa-plus"></i> Texte</col-lg->
+					<span><i class="fa fa-plus"></i> Texte</span>
 				</a>
-				<a href="#" data-component="image" class="btn">
-					<col-lg-><i class="fa fa-plus"></i> Image</col-lg->
+				<a href="#" data-component="image" class="btn" onclick="addImage();return false;">
+					<span><i class="fa fa-plus"></i> Image</span>
 				</a>
-				<a href="#" data-component="soundcloud" class="btn">
-					<col-lg-><i class="fa fa-plus"></i> Soundcloud</col-lg->
+				<a href="#" data-component="soundcloud" class="btn" onclick="addSoundcloud();return false;">
+					<span><i class="fa fa-plus"></i> Soundcloud</span>
 				</a>
-				<a href="#" data-component="youtube" class="btn">
-					<col-lg-><i class="fa fa-plus"></i> Youtube</col-lg->
+				<a href="#" data-component="youtube" class="btn" onclick="addYoutube();return false;">
+					<span><i class="fa fa-plus"></i> Youtube</span>
 				</a>
 			</div>
 			<div class="text-right">
 				<a class="button button-green" onclick="modePreview()">Preview</a>
 				<a class="button button-green" onclick="save();">Publier</a>
 			</div>
-			{{ Form::close() }}
 		</div>
 </section>
 
@@ -72,10 +70,9 @@
 			@endforeach
 		@endif
 	});
-	function titlePreview(el){
-		var titleID = el.parent().parent().attr('data-id-partial');
-		$(el).parent().parent().parent().find("h4").text($(el).parent().parent().parent().find("input").val())
-	}
+
+
+
 	function textareaPreview(el){
 		var textID = el.parent().parent().attr('data-id-partial');
 		$(el).parent().parent().parent().find(".textarea-preview").html($(el).parent().parent().parent().find(".wysiwyg-editor").html())
@@ -85,10 +82,94 @@
    		myWysiwyg($("#textarea-"+ORDER));
    		ORDER = ORDER+1;
 	}
+	function saveTextarea(el,index){
+		var id_el = el.attr('data-id-partial');
+		$.ajax({
+            type: "POST",
+            url: '/'+IDASSOC+'/form/news/textarea',
+            dataType: "json",
+            data: {
+            	'id': id_el,
+            	'id_news':IDNEWS,
+            	'textarea':$(el).parent().find(".wysiwyg-editor").html(),
+            	'order':index,
+        	}
+        }).done(function ( data ) {
+        	return data;
+        }).fail(function() {
+            alert("error");
+        });
+	}
+
+
+
+	function titlePreview(el){
+		var titleID = el.parent().parent().attr('data-id-partial');
+		$(el).parent().parent().parent().find("h4").text($(el).parent().parent().parent().find("input").val())
+	}
 	function addTitle(data){
    		$('#title-pattern').tmpl(data).appendTo('#news-editor');
    		ORDER = ORDER+1;
 	}
+	function saveTitle(el,index){
+		var id_el = el.attr('data-id-partial');
+		$.ajax({
+            type: "POST",
+            url: '/'+IDASSOC+'/form/news/title',
+            dataType: "json",
+            data: {
+            	'id': id_el,
+            	'id_news':IDNEWS,
+            	'title':$(el).parent().find("input").val(),
+            	'order':index,
+        	}
+        }).done(function ( data ) {
+        	return data;
+        }).fail(function() {
+            alert("error");
+        });
+
+	}
+
+
+
+	function addImage(el){
+
+	}
+	function imagePreview(el){
+
+	}
+	function saveImage(el,index){
+
+	}
+
+
+
+	function addSoundcloud(el){
+
+	}
+	function soundCloudPreview(el){
+
+	}
+	function saveSoundCloud(el,index){
+
+	}
+
+
+
+
+
+	function addYoutube(el){
+
+	}
+	function previewYoutube(el){
+
+	}
+	function saveYoutube(el,index){
+
+	}
+
+
 	function save(){
         if(IDNEWS == 0){
         	create_news();
@@ -117,43 +198,6 @@
 	        $.each($('.nav-tabs'),function(index){
 	        	saveElement($(this).attr('data-type'),$(this),index);
 	        });
-        }).fail(function() {
-            alert("error");
-        });
-	}
-	function saveTitle(el,index){
-		var id_el = el.attr('data-id-partial');
-		$.ajax({
-            type: "POST",
-            url: '/'+IDASSOC+'/form/news/title',
-            dataType: "json",
-            data: {
-            	'id': id_el,
-            	'id_news':IDNEWS,
-            	'title':$(el).parent().find("input").val(),
-            	'order':index,
-        	}
-        }).done(function ( data ) {
-        	return data;
-        }).fail(function() {
-            alert("error");
-        });
-
-	}
-	function saveTextarea(el,index){
-		var id_el = el.attr('data-id-partial');
-		$.ajax({
-            type: "POST",
-            url: '/'+IDASSOC+'/form/news/textarea',
-            dataType: "json",
-            data: {
-            	'id': id_el,
-            	'id_news':IDNEWS,
-            	'textarea':$(el).parent().find(".wysiwyg-editor").html(),
-            	'order':index,
-        	}
-        }).done(function ( data ) {
-        	return data;
         }).fail(function() {
             alert("error");
         });

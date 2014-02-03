@@ -11,7 +11,7 @@
             </ul>
             <h3 class="head"><?php echo Lang::get('association/form_create.head_add_association'); ?></h3>
             <?php echo Form::open(array('class'=> 'form-horizontal','data-validate'=>'our-parsey', 'data-loading'=>'true')); ?>
-
+                <ul class="error-laravel text-danger"></ul>
                 <?php $input= array(
                     'id'=>"link",
                     'label'=>Lang::get('association/form_create.label_choice_link'),

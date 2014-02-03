@@ -32,13 +32,13 @@
 						<i class="fa fa-bell-o fa-2x"></i>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
+						<li><a href="#">Notification 1</a></li>
+						<li><a href="#">Notification 1</a></li>
+						<li><a href="#">Notification 1</a></li>
 						<li class="divider"></li>
-						<li><a href="#">Separated link</a></li>
+						<li><a href="#">Notification 1</a></li>
 						<li class="divider"></li>
-						<li><a href="#">One more separated link</a></li>
+						<li><a href="#">Notification 1</a></li>
 					</ul>
 				</li>
 				@endif

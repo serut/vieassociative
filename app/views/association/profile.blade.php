@@ -1,5 +1,9 @@
 @extends('template.theme')
 
+@section('title') 
+{{$association->name}} -
+@stop
+
 
 @set_true $large_centred 
 @section('large-content')
@@ -14,7 +18,6 @@
 		</div>
 	</div>
 </section>
-@if(App::environment() != "production")
 <section>
 			<div class="navbar-header visible-xs">
 				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-js-navbar-scrollspy">
@@ -51,7 +54,6 @@
 				@endif
 			</div>
 </section>
-@endif
 <section  class="col-lg-10 col-lg-push-1">
 	<div>
 		<div id="social-timeline" class="row">

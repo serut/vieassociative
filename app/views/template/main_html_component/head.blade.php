@@ -6,7 +6,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vie Associative</title>
+    <title>
+    @section('title')
+    @show
+    Vie Associative</title>
     <meta name="description" content="">
 
 	@include ('template.main_html_component.link-head') 

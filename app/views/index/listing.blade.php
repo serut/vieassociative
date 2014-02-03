@@ -7,7 +7,7 @@
 		
 		<div class="row">
 			<p class="col-sm-8">Listing provisoire des associations</p>
-			<div class="col-sm-4 btn"><a href="{{URLSubdomain::to('association','/add')}}">Referencez votre association</a></div>
+			<div class="col-sm-4"><a href="{{URLSubdomain::to('association','/add')}}" class="button button-green">Referencez votre association</a></div>
 		</div>
 		<hr>
 		<div class="row">

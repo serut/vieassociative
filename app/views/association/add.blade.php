@@ -12,7 +12,7 @@
             </ul>
             <h3 class="head">{{Lang::get('association/form_create.head_add_association')}}</h3>
             {{ Form::open(array('class'=> 'form-horizontal','data-validate'=>'our-parsey', 'data-loading'=>'true')) }}
-
+                <ul class="error-laravel text-danger"></ul>
                 @input = array(
                     'id'=>"link",
                     'label'=>Lang::get('association/form_create.label_choice_link'),

@@ -115,15 +115,15 @@ function modalForFormModification(data){
         html+= '<div class="modal-dialog">';
         html+= '<div class="modal-content">';
         html+= '<div class="modal-header">';
-        html+= '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
-        html+= '<h4 class="modal-title">'+data['head']+'</h4>';
+            html+= '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
+            html+= '<h4 class="modal-title">'+data['head']+'</h4>';
         html+= '</div>';
         html+= '<div class="modal-body">';
-        html+= data['content'];
+            html+= data['content'];
         html+= '</div>';
         html+= '<div class="modal-footer">';
-        html+= '<button class="button button-orange" data-dismiss="modal" aria-hidden="true">Annuler</button> ';
-        html+= '<button class="button button-blue" onclick="$(this).parent().parent().find(\'form\').submit();">Envoyer</button>';
+            html+= '<button class="button button-orange" data-dismiss="modal" aria-hidden="true">Annuler</button> ';
+            html+= '<button class="button button-blue" onclick="$(this).parent().parent().find(\'form\').submit();">Envoyer</button>';
         html+= '</div>';
         html+= '</div>';
         html+= '</div>';
@@ -177,10 +177,7 @@ $(function(){
 
 /* Propositon PLUGIN STARTS */
 function modalUserProposition(){
-    var data = {
-        'head':'Contactez-nous !',
-        'content':"<form action=\"http://www.vieassociative.fr/proposition\" method=\"POST\" data-loading=\"true\" class=\"form-horizontal form-modal\">\n<p>Nous vous invitons à nous faire parvenir vos premières impressions, afin que nous puissions améliorer notre site avec vos critiques !</p><p><input type=\"text\" name=\"from\" placeholder=\"Votre nom\">\n</p><p><input type=\"text\" name=\"titre\" placeholder=\"Titre\">\n</p>\n<p data-target=\"#editor\" data-role=\"editor-toolbar\" class=\"btn-toolbar\"><div class=\"btn-group\">\n<a title=\"\" data-edit=\"bold\" class=\"btn\" data-original-title=\"Bold (Ctrl/Cmd+B)\"><i class=\"fa fa-bold\"></i></a>\n                    <a title=\"\" data-edit=\"italic\" class=\"btn\" data-original-title=\"Italic (Ctrl/Cmd+I)\"><i class=\"fa fa-italic\"></i></a>\n                    <a title=\"\" data-edit=\"strikethrough\" class=\"btn\" data-original-title=\"Strikethrough\"><i class=\"fa fa-strikethrough\"></i></a>\n                    <a title=\"\" data-edit=\"underline\" class=\"btn\" data-original-title=\"Underline (Ctrl/Cmd+U)\"><i class=\"fa fa-underline\"></i></a>\n                  </div>\n                  <div class=\"btn-group\">\n                    <a title=\"\" data-edit=\"insertunorderedlist\" class=\"btn\" data-original-title=\"Bullet list\"><i class=\"fa fa-list-ul\"></i></a>\n                    <a title=\"\" data-edit=\"insertorderedlist\" class=\"btn\" data-original-title=\"Number list\"><i class=\"fa fa-list-ol\"></i></a>\n                    <a title=\"\" data-edit=\"outdent\" class=\"btn\" data-original-title=\"Reduce indent (Shift+Tab)\"><i class=\"fa fa-outdent\"></i></a>\n                    <a title=\"\" data-edit=\"indent\" class=\"btn\" data-original-title=\"Indent (Tab)\"><i class=\"fa fa-indent\"></i></a>\n                  </div></p>\n                <p contenteditable=\"true\" data-name=\"text\" tab-index=\"2\" class=\"wysiwyg-editor\">\n                  \n                </p>\n            </div>                                                </form><script type=\"text\/javascript\">\r\n  \t\t$(\".form-modal\").attr('parsley',\"true\").parsley(confParsley);\r\n  \t\t$(\"[data-rel=tooltip]\").tooltip();\r\n    <\/script>\r\n"
-    }
+    var data = {"head":"\tContactez-nous !\r\n","content":"\t<p>Nous vous invitons \u00e0 nous faire parvenir vos premi\u00e8res impressions, afin que nous puissions am\u00e9liorer notre site avec vos critiques !<\/p>\r\n\t<form method=\"POST\" action=\"http:\/\/association.vieassoc.lo\/4\/form\/general-informations\/name\" accept-charset=\"UTF-8\" class=\"form-horizontal form-modal\" data-validate=\"our-parsey\" data-loading=\"true\"><input name=\"_token\" type=\"hidden\" value=\"SEox5XhM6YiwnI1xneONKiXnHr401kpdQZNQB6Kx\">\t\t\t    <div class=\"form-group row\"><div class=\"controls col-sm-8\"><input placeholder=\"Votre nom\" class=\"form-control\" data-maxlength=\"100\" id=\"from\" name=\"from\" type=\"text\" value=\"\">\t<span class=\"text-danger\">\t<\/span><\/div><\/div>\t    \t    <div class=\"form-group row\"><div class=\"controls col-sm-8\"><input placeholder=\"Votre titre\" class=\"form-control\" data-maxlength=\"100\" id=\"title\" name=\"title\" type=\"text\" value=\"\">\t<span class=\"text-danger\">\t<\/span><\/div><\/div>\t\t<textarea data-maxlength=\"1000\" rows=\"3\" class=\"col-lg-12\" placeholder=\"Votre texte\" name=\"text\" style=\"margin-bottom:20px;\"><\/textarea>\r\n\r\n    <\/form>    <script type=\"text\/javascript\">\r\n  \t\t$(\".form-modal\").attr('parsley',\"true\").parsley(confParsley);\r\n  \t\t$(\"[data-rel=tooltip]\").tooltip();\r\n    <\/script>\r\n"}
     modalForFormModification(data);
 }
 /* Propositon PLUGIN END */

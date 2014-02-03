@@ -1,5 +1,9 @@
 @extends('template.theme')
 
+@section('title') 
+Connexion - Inscription -
+@stop
+
 
 {{--set_true $small_centred --}}
 @section('small-content') 
@@ -80,6 +84,7 @@
 	    	<h3 class="head">{{Lang::get('membre/connexion.head_create_account')}}</h3>
 	        <p>{{Lang::get('membre/connexion.create_account')}}</p>
 	        {{ Form::open(array('class'=> 'form','url' => 'user/log/register', 'data-validate'=>'our-parsey-2', 'data-loading'=>'true')) }}
+	            <ul class="error-laravel text-danger"></ul>
 	        	@input = array(
 			            'id'=>"pseudo",
 			            'full-width'=>true,

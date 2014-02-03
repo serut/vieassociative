@@ -1,4 +1,8 @@
 
+<?php $__env->startSection('title'); ?> 
+Connexion - Inscription -
+<?php $__env->stopSection(); ?>
+
 
 <?php /*set_true $small_centred */ ?>
 <?php $__env->startSection('small-content'); ?> 
@@ -79,6 +83,7 @@
 	    	<h3 class="head"><?php echo Lang::get('membre/connexion.head_create_account'); ?></h3>
 	        <p><?php echo Lang::get('membre/connexion.create_account'); ?></p>
 	        <?php echo Form::open(array('class'=> 'form','url' => 'user/log/register', 'data-validate'=>'our-parsey-2', 'data-loading'=>'true')); ?>
+	            <ul class="error-laravel text-danger"></ul>
 	        	<?php $input= array(
 			            'id'=>"pseudo",
 			            'full-width'=>true,

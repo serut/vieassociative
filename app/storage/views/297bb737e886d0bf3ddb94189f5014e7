@@ -6,7 +6,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vie Associative</title>
+    <title>
+    <?php $__env->startSection('title'); ?>
+    <?php echo $__env->yieldSection(); ?>
+    Vie Associative</title>
     <meta name="description" content="">
 
 	<?php echo $__env->make ('template.main_html_component.link-head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?> 

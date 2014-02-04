@@ -31,6 +31,7 @@
 				<a href="#" data-component="textarea" class="btn" onclick="addTextArea();return false;">
 					<span><i class="fa fa-plus"></i> Texte</span>
 				</a>
+				@if(App::environment() != "production")
 				<a href="#" data-component="image" class="btn" onclick="addImage();return false;">
 					<span><i class="fa fa-plus"></i> Image</span>
 				</a>
@@ -40,9 +41,12 @@
 				<a href="#" data-component="youtube" class="btn" onclick="addYoutube();return false;">
 					<span><i class="fa fa-plus"></i> Youtube</span>
 				</a>
+				@endif
 			</div>
 			<div class="text-right">
+				@if(App::environment() != "production")
 				<a class="button button-green" onclick="modePreview()">Preview</a>
+				@endif
 				<a class="button button-green" onclick="save();">Publier</a>
 			</div>
 		</div>

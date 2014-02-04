@@ -5,7 +5,7 @@
 @section('large-content')
 
 	<section id="services" class="section">
-		<div id="carousel-example-generic" class="carousel slide animated fadeIn" data-ride="carousel" >
+		<div id="carousel-example-generic" class="carousel slide animated fadeIn" data-ride="carousel" style="padding: 0 0 0 0;">
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
 				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -44,50 +44,63 @@
 
 			<!-- Controls -->
 			<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-				<span class="fa fa-chevron-left icon-prev"></span>
+				<i class="fa fa-chevron-left icon-prev"></i>
 			</a>
 			<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-				<span class="fa fa-chevron-right icon-next"></span>
+				<i class="fa fa-chevron-right icon-next"></i>
 			</a>
 		</div>
       		
-		<div class="row">
+		<div class="row text-center">
 			<div class="caption col-sm-10 col-sm-push-1" style="margin-top:40px;">
 		        <h2>Le réseau social des associations !</h2>
-		        <h4>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</h4>
+				<p>
+					Notre but est de référencer les associations et de mettre à leur disposition des outils puissants et simples d'utilisation pour les aider aussi bien au niveau de la communication que de la gestion !
+					<br>
+					Ajoutez votre association et complétez son profil afin de découvrir toutes les possibilités qui s'offrent à vous !
+				</p>
+				<div>
+					<a href="http://association.vieassoc.lo/">
+						<button type="button" href="" class="btn btn-info">Rejoignez nous !</button>
+					</a>
+					<a href="http://association.vieassoc.lo/">
+						<button type="button" class="btn btn-primary" style="margin-left:20px;">Rechercher une association</button>
+					</a>
+				</div>
 		    </div>
 	    </div>
+	    <hr>
 		<div class="row">
-		    <div class="text-center">
+		    <div class="text-center col-sm-10 col-sm-push-1">
 		    	
 	          <!--Seciton 1-->
-	          <div class="col-sm-4 col-lg-6">
+	          <div class="col-sm-6">
 	              <i class="fa fa-video-camera fa-4x light-gray"></i>
-	              <h3>Qu'est ce que Vie Associative ?</h3>
+	              <h3 style="margin-bottom: 30px;">Qu'est ce que Vie Associative ?</h3>
 				<div class="flex-video widescreen"><iframe src="https://www.youtube-nocookie.com/embed/4TlJ4qKO2Xg?rel=0" frameborder="0" allowfullscreen=""></iframe></div>
 	          </div>
-	          
+	          <br class="visible-xs">
+	          <hr class="visible-xs">
 	          <!--Seciton 2-->
-	          <div class="col-sm-4 col-lg-3">
+	          <div class="col-sm-4 col-sm-push-2 col-xs-8 col-xs-push-2">
 	              <i class="fa fa-thumbs-up fa-4x light-gray"></i>
-	              <h3>Facebook</h3>
-			      <div class="fb-like-box" data-href="http://www.facebook.com/vieassociativeofficiel" data-width="270" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="false"></div>
-
+	              <h3 style="margin-bottom: 30px;">Facebook</h3>
+			      <div class="fb-like-box" data-href="http://www.facebook.com/vieassociativeofficiel" data-width="320" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="false"></div>
 	          </div>
 	          
-	          <!--Seciton 3-->
-	          <div class=" col-lg-3 col-sm-4">
-	              <i class="fa fa-flag fa-4x light-gray"></i>
-	              <h3>Rejoignez nous !</h3>
-	              <p>Notre but est de référencer les associations et de mettre à leur disposition des outils puissants et simples d'utilisation pour les aider aussi bien au niveau de la communication que de la gestion !
-	              <br>
-	              Ajoutez votre association et complétez son profil afin de découvrir toutes les possibilités qui s'offrent à vous !</p>
-
-	          </div>
 		    </div>
         </div>
     </section>
+<style type="text/css">
+	.carousel-indicators li {
+  background-color: #999;
+  background-color: rgba(70,70,70,.25);
+}
 
+.carousel-indicators .active {
+  background-color: #444;
+}
+</style>
 @stop
 
 @section('footer-js')

@@ -108,6 +108,12 @@
 .carousel-indicators .active {
   background-color: #444;
 }
+.carousel-control.left,.carousel-control.right{
+	background-image:none; 
+}
+.carousel-caption{
+	color:#333;
+}
 </style>
 @stop
 

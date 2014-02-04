@@ -25,7 +25,7 @@
 	public function getEditNews($idAssoc, $idNews){
 		return View::make('association.edit-news')
 			->with('id_news',$idNews)
-			->with('post',News::get($idNews))
+			->with('news',News::get($idNews))
 			->with('association',Association::find($idAssoc));
 	}
 	/**

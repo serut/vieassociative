@@ -132,13 +132,9 @@
                 $x = 120;
                 $y = 120;
                 break;
-            case '200x200':
-                $x = 200;
-                $y = 200;
-                break;
-            case '940x350':
-                $x = 940;
-                $y = 350;
+            case '1130x400':
+                $target_w = 1130;
+                $target_h = 400;
                 break;
             case '400x400':
                 $x = 150;

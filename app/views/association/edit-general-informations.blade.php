@@ -60,7 +60,7 @@
                 <tr> 
                   <td>Image de couverture</td>
                   <td><img class="col-sm-10" src="{{$association->getCover()}}" ></td>
-                  <td><a href="/{{$association->id}}/edit/file/{{$association->id_folder}}/940x350-cover"><i class="fa fa-pencil"></i></a></td>
+                  <td><a href="/{{$association->id}}/edit/file/{{$association->id_folder}}/1130x400-cover"><i class="fa fa-pencil"></i></a></td>
                 </tr>
                 <tr>
                   <td>Logo</td>

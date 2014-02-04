@@ -9,9 +9,11 @@
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
 				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				@if(App::environment() != "production")
 				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
 				<li data-target="#carousel-example-generic" data-slide-to="2"></li>
 				<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+				@endif
 			</ol>
 
 			<!-- Wrapper for slides -->
@@ -19,9 +21,11 @@
 				<div class="item active">
 					<img src="/img/slide1.png">
 					<div class="carousel-caption">
-						CACA
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. 
 					</div>
 				</div>
+				@if(App::environment() != "production")
 				<div class="item">
 					<img src="/img/slide2.png">
 					<div class="carousel-caption">
@@ -31,15 +35,19 @@
 				<div class="item">
 					<img src="/img/slide3.png">
 					<div class="carousel-caption">
-						PIPI
+						Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. 
 					</div>
 				</div>
 				<div class="item">
 					<img src="/img/slide4.png">
 					<div class="carousel-caption">
-						PIPI
+						Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	
 					</div>
 				</div>
+				@endif
 			</div>
 
 			<!-- Controls -->
@@ -92,7 +100,7 @@
         </div>
     </section>
 <style type="text/css">
-	.carousel-indicators li {
+.carousel-indicators li {
   background-color: #999;
   background-color: rgba(70,70,70,.25);
 }

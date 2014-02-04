@@ -29,7 +29,7 @@
 							<input type="file" name="files[]" multiple id="selectFile">
 						</div>
 					</div>
-					<div class="row col-lg-12" style="margin-bottom: 20px; display:none;">
+					<div class="row col-lg-12" style="margin-bottom: 20px;">
 						<div class="ctrl-upload button button-green pull-right">Upload</div>
 					</div>
 					<div class="row js-files" style="display:none;">

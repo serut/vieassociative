@@ -64,12 +64,24 @@
 	$(function() {
 		var data = {};
 		@if($id_news ==0)
-	   		addTitle({'id_news':{{$id_news}}});
-	   		addTextArea({'id_news':{{$id_news}}});
-	   		@else
+	   		addTitle();
+	   		addTextArea();
+   		@else
 	   		@foreach($news['data'] as $n)
-		   		@if($n['type'] == "title")
-		   		addTitle($n);
+		   		@if($n['type'] == "PartialTitle")
+			   		data = {
+			   			'title': '{{$n['title']}}',
+			   			'partial_id' : {{$n['partial_id']}}
+			   		}
+			   		addTitle(data);
+			   	@else
+				   	@if($n['type'] == "PartialText")
+				   		data = {
+				   			'text': '{{$n['text']}}',
+				   			'partial_id' : {{$n['partial_id']}}
+				   		}
+				   		addTitle(data);
+					@endif
 				@endif
 			@endforeach
 		@endif
@@ -82,6 +94,12 @@
 		$(el).parent().parent().parent().find(".textarea-preview").html($(el).parent().parent().parent().find(".wysiwyg-editor").html())
 	}
 	function addTextArea(data){
+		if(!isset(data['partial_id'])){
+			data = {
+	   			'text': '',
+	   			'partial_id' : 0
+	   		};
+		}
    		$('#textarea-pattern').tmpl(data).appendTo('#news-editor');
    		myWysiwyg($("#textarea-"+ORDER));
    		ORDER = ORDER+1;
@@ -108,6 +126,12 @@
 
 
 	function titlePreview(el){
+		if(!isset(data['partial_id'])){
+			data = {
+	   			'title': '',
+	   			'partial_id' : 0
+	   		}
+		}
 		var titleID = el.parent().parent().attr('data-id-partial');
 		$(el).parent().parent().parent().find("h4").text($(el).parent().parent().parent().find("input").val())
 	}
@@ -214,23 +238,24 @@
 	</script>
 	<script id="title-pattern" type="text/x-jquery-tmpl">
 		<div>
-			<ul class="nav nav-tabs" data-id-partial="0" data-type="title">
+			<ul class="nav nav-tabs" data-id-partial="${partial_id}" data-type="title">
 				<li class="active"><a href="#title-${ORDER}" data-toggle="tab">Editer</a></li>
 				<li class=""><a onclick="titlePreview($(this));" href="#title-${ORDER}-preview" data-toggle="tab">Tester</a></li>
 			</ul>
 			<div class="tab-content">
 				<div class="tab-pane fade active in" id="title-${ORDER}">
-					@input = array(
-						'id'=>"title",
-						'form' => array(
-							'placeholder'=>Lang::get('association/edit/news.placeholder_title'),
-							'class' => 'form-control',
-							'tabindex'=>'1',
-	                        'data-maxlength'=>"150",
-	                        'data-minlength'=>"3",
-						)
-					)@
-					{{SiteHelpers::simple_input($input)}}
+					<input placeholder="Le titre de votre publication" class="form-control" tabindex="1" data-maxlength="150" data-minlength="3" id="title" name="title" type="text" value="${title}">
+					{{-- @input = array(
+										'id'=>"title",
+										'form' => array(
+											'placeholder'=>Lang::get('association/edit/news.placeholder_title'),
+											'class' => 'form-control',
+											'tabindex'=>'1',
+					                        'data-maxlength'=>"150",
+					                        'data-minlength'=>"3",
+										)
+									)@
+									{{SiteHelpers::simple_input($input)}} --}}
 				</div>
 				<div class="tab-pane fade" id="title-${ORDER}-preview">
 					<h4></h4>
@@ -242,13 +267,14 @@
 
 	<script id="textarea-pattern" type="text/x-jquery-tmpl">
 		<div>
-			<ul class="nav nav-tabs" data-id-partial="0" data-type="textarea">
+			<ul class="nav nav-tabs" data-id-partial="${partial_id}" data-type="textarea">
 				<li class="active"><a href="#textarea-${ORDER}" data-toggle="tab">Editer</a></li>
 				<li class=""><a onclick="textareaPreview($(this));" href="#textarea-${ORDER}-preview" data-toggle="tab">Tester</a></li>
 			</ul>
 			<div class="tab-content">
 				<div class="tab-pane fade active in" id="textarea-${ORDER}">
-					{{SiteHelpers::add_textarea('text',"", true, true)}}
+				<div>              <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor"><div class="btn-group">                  <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font"><i class="fa fa-font"></i><b class="caret"></b></a>                    <ul class="dropdown-menu">                    </ul>                </div>                <div class="btn-group">                  <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>                    <ul class="dropdown-menu">                    <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>                    <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>                    <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>                    </ul>                </div><div class="btn-group">                  <a class="btn" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>                  <a class="btn" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>                  <a class="btn" data-edit="strikethrough" title="Strikethrough"><i class="fa fa-strikethrough"></i></a>                  <a class="btn" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>                </div>                <div class="btn-group">                  <a class="btn" data-edit="insertunorderedlist" title="Bullet list"><i class="fa fa-list-ul"></i></a>                  <a class="btn" data-edit="insertorderedlist" title="Number list"><i class="fa fa-list-ol"></i></a>                  <a class="btn" data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="fa fa-outdent"></i></a>                  <a class="btn" data-edit="indent" title="Indent (Tab)"><i class="fa fa-indent"></i></a>                </div>                <div class="btn-group">                  <a class="btn btn-info" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>                  <a class="btn" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>                  <a class="btn" data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>                  <a class="btn" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>                </div>                <div class="btn-group">                  <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="">                </div></div>              <div class="wysiwyg-editor" tab-index="2" data-name="text">${text}</div>          </div>
+					{{--{{SiteHelpers::add_textarea('text',"", true, true)}}--}}
 				</div>
 				<div class="tab-pane fade" id="textarea-${ORDER}-preview">
 					<div class="textarea-preview">Texte</div>

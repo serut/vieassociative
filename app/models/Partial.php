@@ -4,9 +4,6 @@ class Partial extends Eloquent
     protected $table = 'partial';
     public $timestamps = true;
     
-    public function partiable(){
-        return $this->morphTo();
-    }
     static function search($container, $type){
         foreach ($container['data'] as $key => $value) {
             if($value['type'] == $type){

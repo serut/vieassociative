@@ -45,7 +45,7 @@
 							<li><a href="/{{$association->id}}/edit/file/{{$association->id_folder}}/1130x400-cover">Changer la couverture</a></li>
 							<li><a href="/{{$association->id}}/edit/file/{{$association->id_folder}}/200x200-logo">Changer le logo</a></li>
 							<li class="divider"></li>
-							<li><a href="/{{$association->id}}/edit/news"><span class="badge pull-right">{{$association->nb_news}}</span>Mes news</a></li>
+							<li><a href="/{{$association->id}}/edit/news"><span class="badge pull-right">{{$association->nb_publications}}</span>Mes news</a></li>
 							<li class="divider"></li>
 							<li><a href="/{{$association->id}}/edit/general-informations">Edition des informations</a></li>
 						</ul>

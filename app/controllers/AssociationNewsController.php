@@ -50,7 +50,7 @@
 		$v = new validators_associationEditPost;
 		$result = $v->$item();
 		if(isset($result['success'])){
-			Partial::edit($result['data']);
+			$result = Partial::edit($result['data'],$result);
 			$association = Association::find($idAssoc);
 			$result['redirect_url'] = '/'.$idAssoc.'-'.$association->slug;
 		}

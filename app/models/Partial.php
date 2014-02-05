@@ -23,7 +23,7 @@ class Partial extends Eloquent
         }
         return false;
     }
-    static function edit($data){
+    static function edit($data,$result){
         $id_news = $data['id_news'];
         $p = News::where('id',$id_news)->get(); 
         $newsBefore = Partial::get($p);
@@ -37,6 +37,7 @@ class Partial extends Eloquent
                 $partial->partial_id = $idTitle;
                 $partial->id_news = $id_news;
                 $partial->touch();
+                $result['id_title'] = $idTitle;
             }else{
                 $precedent_val = Partial::search($newsBefore,'PartialTitle');
                 if($data['title']!=$precedent_val['title']){
@@ -55,6 +56,7 @@ class Partial extends Eloquent
                 $partial->partial_id = $idText;
                 $partial->id_news = $id_news;
                 $partial->touch();
+                $result['id_textarea'] = $idText;
             }else{
                 $precedent_val = Partial::search($newsBefore,'PartialText');
                 if($data['textarea']!=$precedent_val['text']){
@@ -68,13 +70,14 @@ class Partial extends Eloquent
         if(isset($data['soundcloud']) && !empty($data['soundcloud'])){
             if(!Partial::has($data['id'],$newsBefore,'PartialSoundCloud')){
                 //add
-                $idTitle = PartialSoundCloud::add($data['soundcloud']);
+                $idSoundcloud = PartialSoundCloud::add($data['soundcloud']);
                 $partial = new Partial();
                 $partial->order=2;
                 $partial->partial_type="PartialSoundCloud";
-                $partial->partial_id = $idTitle;
+                $partial->partial_id = $idSoundcloud;
                 $partial->id_news = $id_news;
                 $partial->touch();
+                $result['id_soundcloud'] = $idSoundcloud;
             }else{
                 $precedent_val = Partial::search($newsBefore,'PartialSoundCloud');
                 if($data['soundcloud']!=$precedent_val['soundcloud_url']){
@@ -89,13 +92,14 @@ class Partial extends Eloquent
         if(isset($data['youtube']) && !empty($data['youtube'])){
             if(!Partial::has($data['id'],$newsBefore,'PartialYoutube')){
                 //add
-                $idText = PartialYoutube::add($data['youtube']);
+                $idYoutube = PartialYoutube::add($data['youtube']);
                 $partial = new Partial();
                 $partial->order=3;
                 $partial->partial_type="PartialYoutube";
-                $partial->partial_id = $idText;
+                $partial->partial_id = $idYoutube;
                 $partial->id_news = $id_news;
                 $partial->touch();
+                $result['id_youtube'] = $idYoutube;
             }else{
                 $precedent_val = Partial::search($newsBefore,'PartialYoutube');
                 if($data['youtube']!=$precedent_val['youtube_slug']){
@@ -108,13 +112,14 @@ class Partial extends Eloquent
         if(isset($data['onepicture']) && !empty($data['onepicture'])) {
             if(!Partial::has($data['id'],$newsBefore,'PartialOnePicture')){
                 //add
-                $idText = PartialOnePicture::add($data['onepicture']);
+                $idOnePicture = PartialOnePicture::add($data['onepicture']);
                 $partial = new Partial();
                 $partial->order=4;
                 $partial->partial_type="PartialOnePicture";
-                $partial->partial_id = $idText;
+                $partial->partial_id = $idOnePicture;
                 $partial->id_news = $id_news;
                 $partial->touch();
+                $result['id_onepicture'] = $idOnePicture;
             }else{
                 $precedent_val = Partial::search($newsBefore,'PartialOnePicture');
                 if($data['onepicture']!=$precedent_val['img_url']){
@@ -123,6 +128,7 @@ class Partial extends Eloquent
                 }
             }
         }
+        return $result;
     }
     static function get($news){
         if(!empty($news)){

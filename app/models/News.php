@@ -18,17 +18,23 @@ class News extends Eloquent
             return Partial::get($p);
         }
     }
+    /**
+    * Needs a real association !
+    */
     static function add($id_assoc){
+        $association = Association::findOrFail($id_assoc);
+        $association->nb_publications++;
+        $association->touch();
         $news = new News();
         $news->id_assoc=$id_assoc;
         $news->touch();
         return $news->id;
     }
-    static function listNews($idAssoc){
-        $news = News::where('id_assoc',$idAssoc)->get();
+    static function listNews($id_assoc){
+        $news = News::where('id_assoc',$id_assoc)->get();
         return Partial::getNews($news);
     }
-    static function countNews($idAssoc){
-        return News::where('id_assoc',$idAssoc)->count();
+    static function countNews($id_assoc){
+        return News::where('id_assoc',$id_assoc)->count();
     }
 }

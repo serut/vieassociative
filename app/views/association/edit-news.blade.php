@@ -61,6 +61,8 @@
     var IDASSOC = {{$association->id}};
     var IDNEWS = {{$id_news}};
     var ORDER = 0;
+    var URL_RETURN = '/{{$association->id}}-{{$association->slug}}';
+    var error_spotted = false;
 	$(function() {
 		var data = {};
 		@if($id_news ==0)
@@ -89,26 +91,27 @@
 
 
 
-	function textareaPreview(el){
-		var textID = el.parent().parent().attr('data-id-partial');
-		$(el).parent().parent().parent().find(".textarea-preview").html($(el).parent().parent().parent().find(".wysiwyg-editor").html())
-	}
 	function addTextArea(data){
-		if(!isset(data['partial_id'])){
+		if(!data){
 			data = {
 	   			'text': '',
-	   			'partial_id' : 0
+	   			'partial_id' : "0"
 	   		};
 		}
    		$('#textarea-pattern').tmpl(data).appendTo('#news-editor');
    		myWysiwyg($("#textarea-"+ORDER));
    		ORDER = ORDER+1;
 	}
+	function textareaPreview(el){
+		var textID = el.parent().parent().attr('data-id-partial');
+		$(el).parent().parent().parent().find(".textarea-preview").html($(el).parent().parent().parent().find(".wysiwyg-editor").html())
+	}
 	function saveTextarea(el,index){
 		var id_el = el.attr('data-id-partial');
 		$.ajax({
             type: "POST",
             url: '/'+IDASSOC+'/form/news/textarea',
+            async: false,
             dataType: "json",
             data: {
             	'id': id_el,
@@ -117,33 +120,35 @@
             	'order':index,
         	}
         }).done(function ( data ) {
-        	return data;
-        }).fail(function() {
-            alert("error");
+        	if(el.attr('data-id-partial') == "0")
+        		el.attr('data-id-partial',data['id_textarea']);
+        },el).fail(function() {
+        	error_spotted++;
         });
 	}
 
 
 
-	function titlePreview(el){
-		if(!isset(data['partial_id'])){
-			data = {
-	   			'title': '',
-	   			'partial_id' : 0
-	   		}
-		}
-		var titleID = el.parent().parent().attr('data-id-partial');
-		$(el).parent().parent().parent().find("h4").text($(el).parent().parent().parent().find("input").val())
-	}
 	function addTitle(data){
+		if(!data){
+			data = {
+	   			'text': '',
+	   			'partial_id' : "0"
+	   		};
+		}
    		$('#title-pattern').tmpl(data).appendTo('#news-editor');
    		ORDER = ORDER+1;
+	}
+	function titlePreview(el){
+		var titleID = el.parent().parent().attr('data-id-partial');
+		$(el).parent().parent().parent().find("h4").text($(el).parent().parent().parent().find("input").val())
 	}
 	function saveTitle(el,index){
 		var id_el = el.attr('data-id-partial');
 		$.ajax({
             type: "POST",
             url: '/'+IDASSOC+'/form/news/title',
+            async: false,
             dataType: "json",
             data: {
             	'id': id_el,
@@ -151,10 +156,11 @@
             	'title':$(el).parent().find("input").val(),
             	'order':index,
         	}
-        }).done(function ( data ) {
-        	return data;
+        },el).done(function ( data ) {
+        	if(el.attr('data-id-partial') == "0")
+        		el.attr('data-id-partial',data['id_title']);
         }).fail(function() {
-            alert("error");
+        	error_spotted++;
         });
 
 	}
@@ -202,17 +208,29 @@
         if(IDNEWS == 0){
         	create_news();
         }else{
-	        $.each($('.nav-tabs'),function(index){
-	        	saveElement($(this).attr('data-type'),$(this),index);
-	        });
+        	save_2();
+        }
+	}
+	function save_2(){
+		var statuts = true;
+        $.each($('.nav-tabs'),function(index){
+        	saveElement($(this).attr('data-type'),$(this),index);
+        });
+        if(error_spotted == 0){
+        	//window.location = URL_RETURN;
+        }else{
+        	alert("Impossible de valider le formulaire tel quel");
+        	error_spotted = 0;
         }
 	}
 	function saveElement(type, el,index){
 		if(type=="title"){
-			saveTitle(el,index);
+			return saveTitle(el,index);
 		}
-		else if(type=="textarea"){
-			saveTextarea(el,index);
+		else{
+			if(type=="textarea"){
+				return saveTextarea(el,index);
+			}
 		}
 	}
 	function create_news(){
@@ -220,14 +238,13 @@
             type: "POST",
             url: '/'+IDASSOC+'/form/news/add',
             dataType: "json",
+            async: false,
             data: {'id':0}
         }).done(function ( data ) {
 	        IDNEWS = data['id_news'];
-	        $.each($('.nav-tabs'),function(index){
-	        	saveElement($(this).attr('data-type'),$(this),index);
-	        });
+        	save_2();
         }).fail(function() {
-            alert("error");
+        	error_spotted++;
         });
 	}
 

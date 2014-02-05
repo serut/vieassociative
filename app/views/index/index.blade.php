@@ -68,10 +68,10 @@
 					Ajoutez votre association et complétez son profil afin de découvrir toutes les possibilités qui s'offrent à vous !
 				</p>
 				<div>
-					<a href="http://association.vieassoc.lo/">
+					<a href="{{URLSubdomain::to('association','/add')}}">
 						<button type="button" href="" class="btn btn-info">Rejoignez nous !</button>
 					</a>
-					<a href="http://association.vieassoc.lo/">
+					<a href="{{URLSubdomain::to('association','/')}}">
 						<button type="button" class="btn btn-primary" style="margin-left:20px;">Rechercher une association</button>
 					</a>
 				</div>

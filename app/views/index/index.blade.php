@@ -49,7 +49,6 @@
 				</div>
 				@endif
 			</div>
-
 			<!-- Controls -->
 			<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
 				<i class="fa fa-chevron-left icon-prev"></i>

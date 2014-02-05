@@ -217,7 +217,7 @@
         	saveElement($(this).attr('data-type'),$(this),index);
         });
         if(error_spotted == 0){
-        	//window.location = URL_RETURN;
+        	window.location = URL_RETURN;
         }else{
         	alert("Impossible de valider le formulaire tel quel");
         	error_spotted = 0;

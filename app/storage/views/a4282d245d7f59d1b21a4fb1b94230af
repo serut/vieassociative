@@ -98,7 +98,8 @@
 	   		};
 		}
    		$('#textarea-pattern').tmpl(data).appendTo('#news-editor');
-   		myWysiwyg($("#textarea-"+ORDER));
+   		myWysiwyg($("#textarea-"+ORDER+" .wysiwyg-editor"));
+   		
    		ORDER = ORDER+1;
 	}
 	function textareaPreview(el){
@@ -216,7 +217,7 @@
         	saveElement($(this).attr('data-type'),$(this),index);
         });
         if(error_spotted == 0){
-        	//window.location = URL_RETURN;
+        	window.location = URL_RETURN;
         }else{
         	alert("Impossible de valider le formulaire tel quel");
         	error_spotted = 0;

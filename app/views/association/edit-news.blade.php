@@ -99,7 +99,8 @@
 	   		};
 		}
    		$('#textarea-pattern').tmpl(data).appendTo('#news-editor');
-   		myWysiwyg($("#textarea-"+ORDER));
+   		myWysiwyg($("#textarea-"+ORDER+" .wysiwyg-editor"));
+
    		ORDER = ORDER+1;
 	}
 	function textareaPreview(el){
@@ -167,8 +168,15 @@
 
 
 
-	function addImage(el){
-
+	function addImage(data){
+		if(!data){
+			data = {
+	   			'url_img': '',
+	   			'partial_id' : "0"
+	   		};
+		}
+   		$('#title-pattern').tmpl(data).appendTo('#news-editor');
+   		ORDER = ORDER+1;
 	}
 	function imagePreview(el){
 
@@ -179,7 +187,13 @@
 
 
 
-	function addSoundcloud(el){
+	function addSoundcloud(data){
+		if(!data){
+			data = {
+	   			'url_soundcloud': '',
+	   			'partial_id' : "0"
+	   		};
+		}
 
 	}
 	function soundCloudPreview(el){
@@ -193,7 +207,13 @@
 
 
 
-	function addYoutube(el){
+	function addYoutube(data){
+		if(!data){
+			data = {
+	   			'url_youtube': '',
+	   			'partial_id' : "0"
+	   		};
+		}
 
 	}
 	function previewYoutube(el){
@@ -267,7 +287,6 @@
 										'form' => array(
 											'placeholder'=>Lang::get('association/edit/news.placeholder_title'),
 											'class' => 'form-control',
-											'tabindex'=>'1',
 					                        'data-maxlength'=>"150",
 					                        'data-minlength'=>"3",
 										)
@@ -295,6 +314,87 @@
 				</div>
 				<div class="tab-pane fade" id="textarea-${ORDER}-preview">
 					<div class="textarea-preview">Texte</div>
+				</div>
+			</div>
+		</div>
+	</script>
+
+
+	<script id="onepicture-pattern" type="text/x-jquery-tmpl">
+		<div>
+			<ul class="nav nav-tabs" data-id-partial="${partial_id}" data-type="onepicture">
+				<li class="active"><a href="#onepicture-${ORDER}" data-toggle="tab">Editer</a></li>
+				<li class=""><a onclick="onepicturePreview($(this));" href="#onepicture-${ORDER}-preview" data-toggle="tab">Tester</a></li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane fade active in" id="onepicture-${ORDER}">
+
+					{{--  --}}
+					@input = array(
+						'id'=>"onepicture",
+						'form' => array(
+							'placeholder'=>"URL de l'image",
+							'class' => 'form-control',
+						)
+					)@
+					{{SiteHelpers::simple_input($input)}}
+				</div>
+				<div class="tab-pane fade" id="onepicture-${ORDER}-preview">
+					<div class="onepicture-preview">Texte</div>
+				</div>
+			</div>
+		</div>
+	</script>
+
+
+	<script id="soundcloud-pattern" type="text/x-jquery-tmpl">
+		<div>
+			<ul class="nav nav-tabs" data-id-partial="${partial_id}" data-type="soundcloud">
+				<li class="active"><a href="#soundcloud-${ORDER}" data-toggle="tab">Editer</a></li>
+				<li class=""><a onclick="soundcloudPreview($(this));" href="#soundcloud-${ORDER}-preview" data-toggle="tab">Tester</a></li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane fade active in" id="soundcloud-${ORDER}">
+
+					{{--  --}}
+					@input = array(
+						'id'=>"soundcloud",
+						'form' => array(
+							'placeholder'=>"URL de l'image",
+							'class' => 'form-control',
+						)
+					)@
+					{{SiteHelpers::simple_input($input)}}
+				</div>
+				<div class="tab-pane fade" id="soundcloud-${ORDER}-preview">
+					<div class="soundcloud-preview">Texte</div>
+				</div>
+			</div>
+		</div>
+	</script>
+
+
+	<script id="youtube-pattern" type="text/x-jquery-tmpl">
+		<div>
+			<ul class="nav nav-tabs" data-id-partial="${partial_id}" data-type="youtube">
+				<li class="active"><a href="#youtube-${ORDER}" data-toggle="tab">Editer</a></li>
+				<li class=""><a onclick="youtubePreview($(this));" href="#youtube-${ORDER}-preview" data-toggle="tab">Tester</a></li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane fade active in" id="youtube-${ORDER}">
+
+					{{--  --}}
+					@input = array(
+						'id'=>"youtube",
+						'form' => array(
+							'placeholder'=>"URL de l'image",
+							'class' => 'form-control',
+						)
+					)@
+					{{SiteHelpers::simple_input($input)}}
+				</div>
+				<div class="tab-pane fade" id="youtube-${ORDER}-preview">
+					<div class="youtube-preview">Texte</div>
 				</div>
 			</div>
 		</div>

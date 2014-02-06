@@ -43,7 +43,7 @@
 	*/
 	public function getProfile($idAssoc) {
 		return View::make('association.profile')
-			->with('association',Association::find($idAssoc))
+			->with('association',Association::findOrFail($idAssoc))
 			->with('newsFeed',News::listNews($idAssoc));
 	}
 	

@@ -78,7 +78,7 @@ class Association  extends Eloquent
         }else{
             $prefix = 'deva';
         }
-        return "http://img.vieassociative.fr/".$prefix.$this->id.'/'.$this->cover_img.'-940x350.jpg';
+        return "http://img.vieassociative.fr/".$prefix.$this->id.'/'.$this->cover_img.'-1130x400.jpg';
     }
     
 }

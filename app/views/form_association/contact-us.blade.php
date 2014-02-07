@@ -6,7 +6,7 @@
 
 @section('form')
 	<p>Nous vous invitons à nous faire parvenir vos premières impressions, afin que nous puissions améliorer notre site avec vos critiques !</p>
-	{{ Form::open(array('class'=> 'form-horizontal form-modal','data-validate'=>'our-parsey', 'data-loading'=>'true')) }}
+	{{ Form::open(array('class'=> 'form-horizontal form-modal','action'=>"http://www.vieassociative.fr/proposition",'data-validate'=>'our-parsey', 'data-loading'=>'true')) }}
 		@input = array(
 	        'id'=>"from",
 	        'form' => array(
@@ -25,7 +25,7 @@
 	        )
 	    )@
 	    {{SiteHelpers::create_input($input)}}
-		<textarea data-maxlength="1000" rows="3" class="col-lg-12" placeholder="Votre texte" name="text" style="margin-bottom:20px;"></textarea>
+		<textarea data-maxlength="1000" rows="3" cols="60" placeholder="Votre texte" name="text"></textarea>
 
     {{ Form::close() }}
     <script type="text/javascript">

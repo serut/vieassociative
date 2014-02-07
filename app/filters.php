@@ -46,13 +46,16 @@ Route::when('user/log', 'guest');
 Route::filter('auth', function()
 {
 	if (Auth::guest()){
+        Session::put('url.intended', Request::url());
         return Redirect::to(URLSubdomain::to('www','/user/log'));
     }
 });
 Route::filter('guest', function()
 {
-    if (Auth::check())
+    if (Auth::check()){
+        Session::put('url.intended', Request::url());
         return Redirect::to('/');
+    }
 });
 
 Route::filter('assoc', function()

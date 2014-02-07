@@ -1517,15 +1517,14 @@ th.hidden-lg,td.hidden-lg{display:table-cell !important}
 .mCS-dark-thin>.mCSB_scrollTools .mCSB_buttonRight{background-position:-80px -56px}
 body{font-family:"Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;font-size:14px;font-weight:lighter;background-color:#78b4e7;background-attachment:scroll;background-position:left 0;background-repeat:no-repeat;min-height:100%;position:relative}
 h1,h2,h3,h4,h5,h6,caption{font-family:Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif !important;font-weight:normal;line-height:1.2em;margin-top:5px;margin-bottom:5px}
-a,a>*{text-shadow:none;text-decoration:none;outline:0;color:#f18d05}
+a,a>*{text-shadow:none;text-decoration:none;outline:0;color:#656565}
 label{font-weight:100}
 a:hover,a:focus{text-decoration:none;color:#e8543f;-webkit-transition-duration:.3s;-moz-transition-duration:.3s;-o-transition-duration:.3s;transition-duration:.3s}
-a>i{color:#333}
+a>i{color:#656565}
 html{height:100%}
 @font-face{font-family:'BLOKKNeue-Regular';src:url('/pluggin/BLOKKNeue/BLOKKNeue-Regular.woff') format('woff'),url('/pluggin/BLOKKNeue/BLOKKNeue-Regular.svg#BLOKKNeue-Regular') format('svg')}body #template{font-family:"BLOKKNeue-Regular"}
 .justify{text-align:justify}
-header{margin-bottom:30px;background:rgba(253,254,254,0.95)}header .navbar{z-index:97;margin-bottom:15px}header .navbar i,header .navbar a,header .navbar span{color:#656565}
-header .navbar #logo img{height:45px;margin-top:1px;padding:0}
+header{margin-bottom:30px;background:rgba(253,254,254,0.95)}header .navbar{z-index:97;margin-bottom:15px}header .navbar #logo img{height:45px;margin-top:1px;padding:0}
 header .navbar ul li span{display:inline !important}
 header .navbar .search-form-phone{margin-top:12px}
 header .navbar .menu-item-imaged-with-text.open{z-index:1}

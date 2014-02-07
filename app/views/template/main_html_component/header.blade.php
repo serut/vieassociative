@@ -73,8 +73,10 @@
 				@endif
 				@else
 				<li class="menu-item-imaged-with-text">
+				<span>
 					<i class="fa fa-user fa-2x"></i>
 					<a href="{{URLSubdomain::to('www','/user/log')}}"><span>Connexion</span></a>
+					</span>
 				</li>
 				@endif
 			</ul>

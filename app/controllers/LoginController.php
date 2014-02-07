@@ -16,8 +16,9 @@ class LoginController extends BaseController
             $result = $v->login($nbrConnexTentative);
             if(isset($result['success'])){
                 User::connexion(Auth::user()->id);
-                $result['go_back'] = "true";
-                $result['redirect_url'] = URL::to('/');
+                $path = Session::get('url.intended', '/');
+                Session::forget('url.intended');
+                $result['redirect_url'] = $path;
             }else{
                 TentativeConnexion::add(IP);
                 $result['error'] = Lang::get('membre/form_connexion.login_not_correct');
@@ -39,8 +40,9 @@ class LoginController extends BaseController
             $user->save();
             Auth::loginUsingId($user->id);
             User::connexion($user->id);
-            $result['go_back'] = "true";
-            $result['redirect_url'] = URL::to('/');
+            $path = Session::get('url.intended', '/');
+            Session::forget('url.intended');
+            $result['redirect_url'] = $path;
             EmailController::register($user->username,$user->email);
         }else{
             $result['error']=Lang::get('core/form.form_uncomplete');

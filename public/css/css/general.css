@@ -23,7 +23,8 @@ caption {
   margin-bottom: 5px;
 }
 a,
-a > * {
+a > *,
+i {
   text-shadow: none;
   text-decoration: none;
   outline: 0;
@@ -40,9 +41,6 @@ a:focus {
   -moz-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
-}
-a > i {
-  color: #656565;
 }
 html {
   height: 100%;

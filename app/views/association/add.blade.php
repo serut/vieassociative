@@ -78,7 +78,7 @@
                     
                 </div>
                 <div class="nav text-right">
-                    <button type="submit" class="button button-green">{{Lang::get('core/form.send')}}</button>
+                    <button type="submit" class="btn btn-primary">{{Lang::get('core/form.send')}}</button>
                 </div>
             {{ Form::close() }}
         </div>

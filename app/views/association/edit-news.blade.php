@@ -275,9 +275,10 @@
 	</script>
 	<script id="title-pattern" type="text/x-jquery-tmpl">
 		<div>
-			<ul class="nav nav-tabs" data-id-partial="${partial_id}" data-type="title">
-				<li class="active"><a href="#title-${ORDER}" data-toggle="tab">Editer</a></li>
-				<li class=""><a onclick="titlePreview($(this));" href="#title-${ORDER}-preview" data-toggle="tab">Tester</a></li>
+			<ul class="nav nav-tabs nav-right" data-id-partial="${partial_id}" data-type="title">
+				<li class="active"><a href="#title-${ORDER}" data-toggle="tab"><i class="fa fa-wrench"></i> Editer</a></li>
+				<li class=""><a onclick="titlePreview($(this));" href="#title-${ORDER}-preview" data-toggle="tab"><i class="fa fa-rocket"></i> Tester</a></li>
+				<li class=""><a><i class="fa fa-times"></i></a></li>
 			</ul>
 			<div class="tab-content">
 				<div class="tab-pane fade active in" id="title-${ORDER}">

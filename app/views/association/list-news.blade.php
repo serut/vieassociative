@@ -12,6 +12,9 @@
                 <li class="active">Mes publications</li>
             </ul>
             <h3 class="head">{{Lang::get('association/edit/news.select_news')}} </h3>
+            <div class="pull-right">
+                <a class="btn btn-primary" href="news/0/edit">{{Lang::get('association/edit/news.create_news')}}</a>
+            </div>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -39,9 +42,6 @@
                 </tbody>
 
             </table>
-            <div class="text-right">
-                <a class="button button-green" href="news/0/edit">{{Lang::get('association/edit/news.create_news')}}</a>
-            </div>
 
             </div>
         </div>

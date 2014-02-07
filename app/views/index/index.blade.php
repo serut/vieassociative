@@ -9,7 +9,7 @@
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
 				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-				@if(App::environment() != "production")
+				@if(App::environment() != "local")
 				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
 				<li data-target="#carousel-example-generic" data-slide-to="2"></li>
 				<li data-target="#carousel-example-generic" data-slide-to="3"></li>
@@ -20,12 +20,21 @@
 			<div class="carousel-inner">
 				<div class="item active">
 					<img src="/img/slide1.png">
-					<div class="carousel-caption">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. 
+					<div class="carousel-caption" style="bottom: 18%; left: 36%; text-align:right;">
+					<h1 class="carousel-caption" style="bottom: 73%;text-align:right;">
+						Bienvenue !
+					</h1>
+						<p class="hidden-sm hidden-xs">
+						Notre équipe travaille dans l'optique d'aider les associations à se développer et à se mettre en avant.
+						Ajoutez votre association et complétez son profil afin de découvrir toutes les possibilités qui s'offrent à vous ! 
+						</p>
+						<br>
+						<a href="{{URLSubdomain::to('association','/add')}}">
+							<button type="button" class="btn btn-warning" style="margin-left:20px;">Créez la page de votre association</button>
+						</a>
 					</div>
 				</div>
-				@if(App::environment() != "production")
+				@if(App::environment() != "local")
 				<div class="item">
 					<img src="/img/slide2.png">
 					<div class="carousel-caption">
@@ -63,8 +72,6 @@
 		        <h2>Le réseau social des associations !</h2>
 				<p>
 					Notre but est de référencer les associations et de mettre à leur disposition des outils puissants et simples d'utilisation pour les aider aussi bien au niveau de la communication que de la gestion !
-					<br>
-					Ajoutez votre association et complétez son profil afin de découvrir toutes les possibilités qui s'offrent à vous !
 				</p>
 				<div>
 					<a href="{{URLSubdomain::to('association','/add')}}">
@@ -112,16 +119,19 @@
 }
 .carousel-caption{
 	color:#333;
+	right:15%;
 }
 </style>
 @stop
 
 @section('footer-js')
-<script>(function(d, s, id) {
-	var js, fjs = d.getElementsByTagName(s)[0];
-	if (d.getElementById(id)) return;
-	js = d.createElement(s); js.id = id;
-	js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=377363965666139";
-	fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<script type="text/javascript">
+	(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=377363965666139";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+	</script>
 @stop

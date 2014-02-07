@@ -41,11 +41,11 @@
 						<ul class="dropdown-menu">
 							<li><a href="/{{$association->id}}/edit">Panel d'administrateur</a></li>
 							<li class="divider"></li>
-							<li><a href="/{{$association->id}}/edit/file/{{$association->id_folder}}"><span class="pull-right label label-primary">{{$association->nb_photos}}</span>Mes images</a></li>
+							<li><a href="/{{$association->id}}/edit/file/{{$association->id_folder}}"><span class="pull-right badge">{{$association->nb_photos}}</span>Mes images</a></li>
 							<li><a href="/{{$association->id}}/edit/file/{{$association->id_folder}}/1130x400-cover">Changer la couverture</a></li>
 							<li><a href="/{{$association->id}}/edit/file/{{$association->id_folder}}/200x200-logo">Changer le logo</a></li>
 							<li class="divider"></li>
-							<li><a href="/{{$association->id}}/edit/news"><span class="badge pull-right">{{$association->nb_publications}}</span>Mes news</a></li>
+							<li><a href="/{{$association->id}}/edit/news"><span class="pull-right badge">{{$association->nb_publications}}</span>Mes news</a></li>
 							<li class="divider"></li>
 							<li><a href="/{{$association->id}}/edit/general-informations">Edition des informations</a></li>
 						</ul>

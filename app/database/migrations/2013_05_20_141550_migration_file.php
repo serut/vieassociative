@@ -51,6 +51,7 @@ class MigrationFile extends Migration {
 			$table->increments('id');
 			$table->integer('id_folder')->unsigned()->nullable();
 			$table->foreign('id_folder')->references('id')->on('folder');
+			$table->string('extension');
 
 			$table->string('name_img');
 			$table->foreign('name_img')->references('name')->on('img');

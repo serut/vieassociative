@@ -36,7 +36,7 @@ class FileUploadController extends BaseController
 					$return["status"] = 200;
 					$return["file"] = array($this->original_url);
 					$return["img_name"] = array($this->name);
-					$return["thumbnail"] = array($this->original_url. "_thumbnail.jpg");
+					$return["thumbnail"] = array($this->original_url. "_thumbnail.".$this->file_ext);
 				}else{
 					return $this->postError('Not an image');	
 				}
@@ -109,7 +109,7 @@ class FileUploadController extends BaseController
 			$file_name = preg_replace('/[^\w\._]+/', '_', $file_name);
 			$randomString =  Str::random(12);
 			$this->file_name = $randomString.$file_name;
-			$this->file_ext=$result[5];
+			$this->file_ext=strtolower($result[5]);
 			$this->name = $this->file_name.'.'.$this->file_ext;
 		}else{
 			return $this->postError(3);
@@ -129,7 +129,7 @@ class FileUploadController extends BaseController
 	}
 	public function addToDatabase(){
 		Img::add($this->name, $this->file_ext);
-		FolderFileImg::addImg($this->id_gallery,$this->name);
+		FolderFileImg::addImg($this->id_gallery,$this->name,$this->prefix_img);
 		$a = Association::get($this->id_assoc);
 		$a->nb_photos++;
 		$a->touch();
@@ -167,12 +167,33 @@ class FileUploadController extends BaseController
 	public function galleryThumbnail(){
 		//$img = $this->creerImageDimensionnee($this->file_ext,$this->original_url);
 		$img = $this->createImageFixedWidth($this->file_ext,$this->original_url,190);
-
         ob_start();
-		imagejpeg($img, null);
+        switch ($this->file_ext) {
+        	case 'jpg':
+        	case 'jpeg':
+				imagejpeg($img, null);
+				$thumb = "_thumbnail.jpg";
+        		break;
+        	case 'gif':
+				imagegif($img, null);
+				$thumb = "_thumbnail.gif";
+        		break;
+        	case 'png':
+				imagepng($img, null);
+				$thumb = "_thumbnail.png";
+        		break;
+        	case 'bmp':
+				imagewbmp($img, null);
+				$thumb = "_thumbnail.bmp";
+        		break;
+        	
+        	default:
+        		# code...
+        		break;
+        }
 		$img = ob_get_clean();
 
-		$this->sendObject($img,$this->original_url . "_thumbnail.jpg");
+		$this->sendObject($img,$this->original_url .$thumb);
 	}
 	public function creerImageDimensionnee($file_ext,$from_url, $imageX="180", $imageY="180") {
         // A partir du nom du fichier, recupere le nom et l'extension

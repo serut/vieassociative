@@ -9,7 +9,7 @@
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
 				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-				@if(App::environment() != "local")
+				@if(App::environment() != "production")
 				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
 				<li data-target="#carousel-example-generic" data-slide-to="2"></li>
 				<li data-target="#carousel-example-generic" data-slide-to="3"></li>
@@ -34,7 +34,7 @@
 						</a>
 					</div>
 				</div>
-				@if(App::environment() != "local")
+				@if(App::environment() != "production")
 				<div class="item">
 					<img src="/img/slide2.png">
 					<div class="carousel-caption">

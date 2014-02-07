@@ -274,9 +274,9 @@ class FileUploadController extends BaseController
                 $target_w = 400;
                 $target_h = 400;
                 break;
-            case '120x120':
-                $target_w = 120;
-                $target_h = 120;
+            case '200x200':
+                $target_w = 200;
+                $target_h = 200;
                 break;
             case '1130x400':
                 $target_w = 1130;

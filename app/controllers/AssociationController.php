@@ -136,6 +136,10 @@
                 $x = 1130;
                 $y = 400;
                 break;
+            case '200x200':
+                $x = 200;
+                $y = 200;
+                break;
 
             default:
                 return Response::view('errors.404', array(), 404);

@@ -20,7 +20,7 @@ class validators_associationEditPost extends BaseValidator
     }
     public function textarea(){
         $rules = array(
-            'textarea' => 'required|min:1|max:1500',
+            'textarea' => 'required|min:1|max:5000',
             'id'=> 'required|integer',
 			'id_news'=> 'required|integer',
 			'order'=> 'required|integer',

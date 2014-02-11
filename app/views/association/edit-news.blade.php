@@ -71,31 +71,39 @@
    		@else
 	   		@foreach($news['data'] as $n)
 		   		@if($n['type'] == "PartialTitle")
-			   		data = {
-			   			'title': '{{addslashes($n['title'])}}',
-			   			'partial_id' : {{$n['partial_id']}}
-			   		}
+			   		data = 
+			   		{{json_encode(array(
+			   			'title'=>addslashes($n['title']),
+			   			'partial_id'=>$n['partial_id']
+			   		))}}
+
 			   		addTitle(data);
 			   	@else
 				   	@if($n['type'] == "PartialText")
-				   		data = {
-				   			'text': '{{addslashes($n['text'])}}',
-				   			'partial_id' : {{$n['partial_id']}}
-				   		}
+				   		data = 
+				   		{{json_encode(array(
+				   			'text'=>addslashes($n['text']),
+				   			'partial_id'=>$n['partial_id']
+				   		))}}
+
 				   		addTextArea(data);
 				   	@else
 					   	@if($n['type'] == "PartialOnePicture")
-					   		data = {
-					   			'url_img': '{{$n['img_url']}}',
-					   			'partial_id' : {{$n['partial_id']}}
-					   		}
+					   		data = 
+					   		{{json_encode(array(
+					   			'url_img'=>addslashes($n['url_img']),
+					   			'partial_id'=>$n['partial_id']
+					   		))}}
+					   		
 					   		addOnePicture(data);
 						@else
 						   	@if($n['type'] == "PartialYoutube")
-						   		data = {
-						   			'url_youtube': '{{$n['youtube_slug']}}',
-						   			'partial_id' : {{$n['partial_id']}}
-						   		}
+						   		data = 
+						   		{{json_encode(array(
+						   			'url_youtube'=>addslashes($n['url_youtube']),
+						   			'partial_id'=>$n['partial_id']
+						   		))}}
+
 						   		addYoutube(data);
 							@endif
 						@endif

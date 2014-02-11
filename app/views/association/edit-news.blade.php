@@ -34,12 +34,12 @@
 				<a href="#" data-component="image" class="btn" onclick="addOnePicture();return false;">
 					<span><i class="fa fa-plus"></i> Image</span>
 				</a>
+				<a href="#" data-component="youtube" class="btn" onclick="addYoutube();return false;">
+					<span><i class="fa fa-plus"></i> Youtube</span>
+				</a>
 				@if(App::environment() != "production")
 				<a href="#" data-component="soundcloud" class="btn" onclick="addSoundcloud();return false;">
 					<span><i class="fa fa-plus"></i> Soundcloud</span>
-				</a>
-				<a href="#" data-component="youtube" class="btn" onclick="addYoutube();return false;">
-					<span><i class="fa fa-plus"></i> Youtube</span>
 				</a>
 				@endif
 			</div>

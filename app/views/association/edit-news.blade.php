@@ -73,7 +73,7 @@
 		   		@if($n['type'] == "PartialTitle")
 			   		data = 
 			   		{{json_encode(array(
-			   			'title'=>addslashes($n['title']),
+			   			'title'=>$n['title'],
 			   			'partial_id'=>$n['partial_id']
 			   		))}}
 
@@ -82,7 +82,7 @@
 				   	@if($n['type'] == "PartialText")
 				   		data = 
 				   		{{json_encode(array(
-				   			'text'=>addslashes($n['text']),
+				   			'text'=>$n['text'],
 				   			'partial_id'=>$n['partial_id']
 				   		))}}
 
@@ -91,7 +91,7 @@
 					   	@if($n['type'] == "PartialOnePicture")
 					   		data = 
 					   		{{json_encode(array(
-					   			'url_img'=>addslashes($n['url_img']),
+					   			'url_img'=>$n['url_img'],
 					   			'partial_id'=>$n['partial_id']
 					   		))}}
 
@@ -100,7 +100,7 @@
 						   	@if($n['type'] == "PartialYoutube")
 						   		data = 
 						   		{{json_encode(array(
-						   			'url_youtube'=>addslashes($n['url_youtube']),
+						   			'url_youtube'=>$n['url_youtube'],
 						   			'partial_id'=>$n['partial_id']
 						   		))}}
 

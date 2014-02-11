@@ -29,7 +29,7 @@
 						</div>
 					</div>
 					<div class="row col-lg-12" style="margin-bottom: 20px;">
-						<div class="ctrl-upload button button-green pull-right">Upload</div>
+						<div class="ctrl-upload btn button-green pull-right">Upload</div>
 					</div>
 					<div class="row js-files" style="display:none;">
 				         <div class="js-file-tpl col-sm-2 img-polaroid" data-id="<%=uid%>" title="<%-name%>, <%-sizeText%>">

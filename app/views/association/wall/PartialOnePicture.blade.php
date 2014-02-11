@@ -1,1 +1,1 @@
-<img src="{{$p['img_url']}}">
+<img src="{{$p['img_url']}}" class="img-responsive">

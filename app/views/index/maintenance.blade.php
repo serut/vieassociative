@@ -23,7 +23,7 @@ Maintenance
 			    <div>
 			        <p class="justify">Le temps que les associations passent pour communiquer, pour s'organiser, pour se réunir, et donc pour exister est colossal. Vie Associative est et sera conçu dans ce sens : simplifier au maximum les taches des associations pour qu'elles se concentrent sur les services qu'elles rendent et pas toute la com, la gestion, etc<br>
 			        License CC-BY-NC-SA </p>
-			        <p class="text-right"><a href="https://docs.google.com/document/d/1JnhtId2slrnP0_Gcq3NUSIYtfxhFxm02cacnhRBcP3E" class="button button-violet">En savoir plus</a></p>
+			        <p class="text-right"><a href="https://docs.google.com/document/d/1JnhtId2slrnP0_Gcq3NUSIYtfxhFxm02cacnhRBcP3E" class="btn button-violet">En savoir plus</a></p>
 			    </div>
 			</div>
 		</aside>

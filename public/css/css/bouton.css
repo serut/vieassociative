@@ -1,0 +1,71 @@
+.button-blue {
+  box-shadow: none;
+  background: #00a1cb;
+  color: white;
+  text-shadow: none;
+  border: none;
+}
+.button-blue:hover {
+  background: #00b5e5;
+  color: white;
+}
+.button-blue:active {
+  background: #1495b7;
+  color: #F5F5F5;
+}
+.button-green {
+  background: #7db500;
+  color: white;
+  text-shadow: none;
+  border: none;
+}
+.button-green:hover {
+  background: #8fcf00;
+  color: white;
+}
+.button-green:active {
+  background: #76a312;
+  color: #F5F5F5;
+}
+.button-orange {
+  background: #f18d05;
+  color: white;
+  text-shadow: none;
+  border: none;
+}
+.button-orange:hover {
+  background: #fa9915;
+  color: white;
+}
+.button-orange:active {
+  background: #d8891e;
+  color: #F5F5F5;
+}
+.button-red {
+  background: #e54028;
+  color: white;
+  text-shadow: none;
+  border: none;
+}
+.button-red:hover {
+  background: #e8543f;
+  color: white;
+}
+.button-red:active {
+  background: #cd5240;
+  color: #F5F5F5;
+}
+.button-violet {
+  background: #87318c;
+  color: white;
+  text-shadow: none;
+  border: none;
+}
+.button-violet:hover {
+  background: #99389f;
+  color: white;
+}
+.button-violet:active {
+  background: #764479;
+  color: #F5F5F5;
+}

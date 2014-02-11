@@ -14,8 +14,8 @@
             <p><?php echo Lang::get('association/edit.warn_possiblity_for_normal_user'); ?></p>
             <hr>
                 <div class="pull-right">
-                    <a class="button button-blue" href="file/upload"><?php echo Lang::get('association/edit/news.create_news'); ?></a>
-                    <a class="button button-blue" href="file/crop"><?php echo Lang::get('association/edit/news.create_news'); ?></a>
+                    <a class="btn button-blue" href="file/upload"><?php echo Lang::get('association/edit/news.create_news'); ?></a>
+                    <a class="btn button-blue" href="file/crop"><?php echo Lang::get('association/edit/news.create_news'); ?></a>
                 </div>
             </div>
         </div>

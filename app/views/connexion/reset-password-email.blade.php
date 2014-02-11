@@ -23,7 +23,7 @@
 	            @
 	            {{ SiteHelpers::create_input($input) }}
 	            <div class="text-right">
-			    	<button class="button button-green" type="submit">Envoyer</a><br>
+			    	<button class="btn button-green" type="submit">Envoyer</a><br>
 			    </div>
             {{ Form::close() }}
     	</div>

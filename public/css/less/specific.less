@@ -148,42 +148,7 @@
 				}
 			}
 			.flex-video{
-				margin-top: 10px;
-			}
-			.social-share-video {
-			    color: #ffffff!important;
-			    h1,h2,h3,h4,h5,h6{
-    				margin: 0;
-			    }
-			    img {
-				    display: block;
-				    height: auto;
-				    width: 100%;
-				}
-				.social-share-video-wrapper {
-				    position: relative;
-				    display: inline-block;
-				    cursor: pointer;
-				}
-				.social-share-video-wrapper:after {
-				    position: absolute;
-				    left: 0;
-				    top: 0;
-				    right: 0;
-				    bottom: 0;
-				    content: '';
-				    background-image: url(http://cesarlab.com/templates/social/assets/css/pages/../../img/pages/social-timeline/media-play.png);
-				    background-repeat: no-repeat;
-				    background-position: center center;
-				    opacity: 0.9;
-				    border-radius: 2em;
-				    border-radius: 50px;
-				}
-				.social-share-video-text {
-				    left: 10px;
-				    bottom: 0;
-				    position: absolute;
-				}
+				margin: 10px 0 10px 0;
 			}
 			.social-footer{
 				margin-top: 10px;
@@ -230,184 +195,8 @@
 
 
 
-/*social-timeline
 
 
-@media (max-width: 480px) {
-    #social-timeline .media.social-box.social-composer .social-users-avatars {
-        display: none;
-    }
-
-    #social-timeline .media.social-box.social-composer .media-body.social-body {
-        padding-bottom: 0px;
-        margin-bottom: 0px;
-    }
-
-    #social-timeline .media.social-box.social-composer .social-footer {
-        display: inline-table;
-        width: 100%;
-        margin-bottom: -10px;
-    }
-
-    #social-timeline .media.social-box.social-composer .social-footer .btn-group {
-        float: left;
-    }
-
-    #social-timeline .media.social-box.social-composer .social-footer .btn.pull-right {
-        float: right;
-    }
-
-    #social-timeline .media.social-box {
-        position: relative;
-    }
-
-    #social-timeline .media.social-box .media-heading {
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 65px;
-        display: block;
-        padding: 17px 0px;
-        background: white;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        border-radius: 3px;
-        text-align: center;
-    }
-
-    #social-timeline .media.social-box .pull-left {
-        float: left;
-    }
-
-    #social-timeline .media.social-box .social-users-avatars {
-        float: none;
-        margin-bottom: 0;
-    }
-
-    #social-timeline .media.social-box .social-users-avatars img {
-        display: inline-block!important;
-    }
-
-    #social-timeline .media-body.social-body .social-share-video2 .social-share-video-wrapper:after {
-        background-size: 50px;
-    }
-}
-
-*/
-
-
-
-
-
-
-
-/* social reporter  
-================================================== */
-#social-fetch{
-	margin-top: 20px;
-	.social-partner{
-		margin-left: 40px;
-		.row{
-			color: white;
-			margin-bottom: 20px;
-			padding-bottom: 0;
-			.span2{
-				margin-left:-20px; 
-				padding-left: 15px;
-				padding-right: 15px;
-				margin-top: -11px;
-				height: 104px;
-				p{
-					width: 100%;
-				}
-				&.fb{
-					background-color: #4363ac;
-				}
-				&.tw{
-					background-color: #3bc7fc;
-				}
-				&.ggl{
-					background-color: #de5d47;
-				}
-			}
-			i.logo{
-				background-image: url("/img/to sprite/social.png");
-				width: 52px;
-				display: inline-block;
-				top:40px;
-				left:9px;
-			}
-		}
-
-		.facebook{
-			background-color: #3b5ba4;
-			i{
-				height: 50px;
-			}
-		}
-		.twitter{
-			background-color: #1eb8f4;
-			i{
-				height: 49px;
-				background-position: 0 -52px;
-			}
-		}
-		.google-plus{
-			background-color: #d64e38;
-			i{
-				height: 47px;
-				background-position: 0 -103px;
-			}
-		}
-		i.fa fa-chevron-right{
-			float: right;
-			height: 14px;
-			margin-top: -5px;
-		}
-	}
-	.content{
-	    margin: 0;
-	    overflow: auto;
-	    padding: 20px;
-		border:#d7d7d7 solid 1px;
-		height: 270px;
-		overflow: auto;
-		.item {
-		    overflow: hidden;
-		    border-top: 1px solid #FFF;
-		    border-bottom: 1px solid #AAA;
-		    text-shadow: 0 1px rgba(255, 255, 255, 1);
-		    color:#333;
-		    &:hover {
-			    z-index: 2;
-			    background: #EEEEEE;
-			    border-color: #777;
-			    cursor: pointer;
-			    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.25), 0 1px #DDD, 0 -1px #DDD;
-			    box-shadow: inset 0 1px rgba(255, 255, 255, 0.25), 0 1px #DDD, 0 -1px #DDD;
-			}
-			&:active{
-			    z-index: 3;
-			    background: #DDD;
-			    border-color: #777;
-			    cursor: auto;
-			    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3), 0 1px #DDD, 0 -1px #DDD;
-			    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3), 0 1px #DDD, 0 -1px #DDD;
-			}
-			.text{
-				margin-bottom: 30px;
-			}
-			.thumb{
-				min-height: 35px;
-				margin:10px 20px 10px 10px;
-				float:left;
-				img{
-					max-height: 80px;
-				}
-			}
-		}
-	}
-}
 
 #list-modification{
     overflow: auto;
@@ -469,9 +258,14 @@
   padding-bottom: 67.5%;
   height: 0;
   margin-bottom: 16px;
+  margin:10px 0 16px 0;
   overflow: hidden;
-  &.widescreen { padding-bottom: 57.25%; }
-  &.vimeo { padding-top: 0; }
+  &.widescreen {
+  	padding-bottom: 57.25%;
+  }
+  &.vimeo {
+  	padding-top: 0;
+  }
   iframe, object, embed{
 	  position: absolute;
 	  top: 0;

@@ -77,7 +77,7 @@
                     
                 </div>
                 <div class="nav text-right">
-                    <button type="submit" class="button button-green"><?php echo Lang::get('core/form.send'); ?></button>
+                    <button type="submit" class="btn button-green"><?php echo Lang::get('core/form.send'); ?></button>
                 </div>
             <?php echo Form::close(); ?>
         </div>

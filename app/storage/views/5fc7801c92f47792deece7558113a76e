@@ -15,7 +15,7 @@ Connexion - Inscription -
             <a href="/membre/connexion/orange"><i class="connection-icon connection-fa fa-orange"></i></a>
             <a href="/membre/connexion/hotmail"><i class="connection-icon connection-fa fa-hotmail"></i></a>
             <br>
-            <col-lg->En cliquant sur un lien ci dessus, je reconnais avoir pris connaissance des <a target="_blank" href="/info/condition">CGU</a></col-lg->
+            <span>En cliquant sur un lien ci dessus, je reconnais avoir pris connaissance des <a target="_blank" href="/info/condition">CGU</a></span>
     	</div>
     </section>
 <?php $__env->stopSection(); ?>
@@ -62,7 +62,7 @@ Connexion - Inscription -
 		            <?php echo SiteHelpers::create_input($input); ?>
 
 		            <div class="nav pull-right">
-		                <button type="submit" class="button button-green"><?php echo Lang::get('membre/connexion.connexion'); ?></button>
+		                <button type="submit" class="btn button-green"><?php echo Lang::get('membre/connexion.connexion'); ?></button>
 		            </div>
 		            <div class="formulaire">
 		                <p><a href="/user/reset-password"><?php echo Lang::get('membre/connexion.forget_password'); ?></a></p>
@@ -129,7 +129,7 @@ Connexion - Inscription -
 	            ; ?>
 	            <?php echo SiteHelpers::create_input($input); ?>
 		        <div class="nav pull-right">
-		            <button type="submit" class="button button-green"><?php echo Lang::get('membre/connexion.inscription'); ?></button>
+		            <button type="submit" class="btn button-green"><?php echo Lang::get('membre/connexion.inscription'); ?></button>
 		        </div>
 		        <div class="formulaire">
 		            <p><?php echo Lang::get('membre/connexion.read_and_agree'); ?><a target="_blank" href="/info/condition"><?php echo Lang::get('membre/connexion.cgu'); ?></a></p>

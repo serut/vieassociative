@@ -66,7 +66,7 @@
                         <textarea name="text" rows="4" id="text" class="form-control nicEditor-textarea" onclick="launchEditor($(this))"></textarea>
                         <br>
                         <div class="nav pull-right">
-                            <button type="submit" class="button button-green">Envoyer</button>
+                            <button type="submit" class="btn button-green">Envoyer</button>
                         </div>
                         {{Form::hidden('id_answer', '0',array('id'=>'id_answer'))}}
                         {{Form::hidden('id_discussion', $id_discussion)}}

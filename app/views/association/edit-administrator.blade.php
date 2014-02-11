@@ -111,7 +111,7 @@
                         </div>
                     </div>
                     <p class="nav pull-right">
-                        <button type="submit" class="button button-green">{{Lang::get('association/edit/administrator.add')}}</button>
+                        <button type="submit" class="btn button-green">{{Lang::get('association/edit/administrator.add')}}</button>
                     </p>
                     <br>
                 {{ Form::close() }}

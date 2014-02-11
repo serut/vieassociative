@@ -45,9 +45,9 @@
 			</div>
 			<div class="text-right">
 				@if(App::environment() != "production")
-				<a class="button button-green" onclick="modePreview()">Preview</a>
+				<a class="btn button-green" onclick="modePreview()">Preview</a>
 				@endif
-				<a class="button button-green" onclick="save();">Publier</a>
+				<a class="btn button-green" onclick="save();">Publier</a>
 			</div>
 		</div>
 </section>
@@ -100,7 +100,7 @@
 						   	@if($n['type'] == "PartialYoutube")
 						   		data = 
 						   		{{json_encode(array(
-						   			'url_youtube'=>$n['url_youtube'],
+						   			'url_youtube'=>$n['youtube_slug'],
 						   			'partial_id'=>$n['partial_id']
 						   		))}}
 
@@ -363,13 +363,17 @@
 		$('.nav-tabs').toggleClass("hidden-xs");
 	}
 
+	function removeFromDom(el){
+		$(el).parent().parent().parent().remove();
+		return false;
+	}
 	</script>
 	<script id="title-pattern" type="text/x-jquery-tmpl">
 		<div>
 			<ul class="nav nav-tabs nav-right" data-id-partial="${partial_id}" data-type="title">
 				<li class="active"><a href="#title-${ORDER}" data-toggle="tab"><i class="fa fa-wrench"></i> Editer</a></li>
 				<li class=""><a onclick="titlePreview($(this));" href="#title-${ORDER}-preview" data-toggle="tab"><i class="fa fa-rocket"></i> Tester</a></li>
-				<li class=""><a><i class="fa fa-times"></i></a></li>
+				<li class=""><a onclick="removeFromDom($(this));" href="#"><i class="fa fa-times"></i></a></li>
 			</ul>
 			<div class="tab-content">
 				<div class="tab-pane fade active in" id="title-${ORDER}">
@@ -396,8 +400,9 @@
 	<script id="textarea-pattern" type="text/x-jquery-tmpl">
 		<div>
 			<ul class="nav nav-tabs" data-id-partial="${partial_id}" data-type="textarea">
-				<li class="active"><a href="#textarea-${ORDER}" data-toggle="tab">Editer</a></li>
-				<li class=""><a onclick="textareaPreview($(this));" href="#textarea-${ORDER}-preview" data-toggle="tab">Tester</a></li>
+				<li class="active"><a href="#textarea-${ORDER}" data-toggle="tab"><i class="fa fa-wrench"></i> Editer</a></li>
+				<li class=""><a onclick="textareaPreview($(this));" href="#textarea-${ORDER}-preview" data-toggle="tab"><i class="fa fa-rocket"></i> Tester</a></li>
+				<li class=""><a onclick="removeFromDom($(this));" href="#"><i class="fa fa-times"></i></a></li>
 			</ul>
 			<div class="tab-content">
 				<div class="tab-pane fade active in" id="textarea-${ORDER}">
@@ -416,8 +421,9 @@
 	<script id="onepicture-pattern" type="text/x-jquery-tmpl">
 		<div>
 			<ul class="nav nav-tabs" data-id-partial="${partial_id}" data-type="onepicture">
-				<li class="active"><a href="#onepicture-${ORDER}" data-toggle="tab">Editer</a></li>
-				<li class=""><a onclick="onePicturePreview($(this));" href="#onepicture-${ORDER}-preview" data-toggle="tab">Tester</a></li>
+				<li class="active"><a href="#onepicture-${ORDER}" data-toggle="tab"><i class="fa fa-wrench"></i> Editer</a></li>
+				<li class=""><a onclick="onePicturePreview($(this));" href="#onepicture-${ORDER}-preview" data-toggle="tab"><i class="fa fa-rocket"></i> Tester</a></li>
+				<li class=""><a onclick="removeFromDom($(this));" href="#"><i class="fa fa-times"></i></a></li>
 			</ul>
 			<div class="tab-content">
 				<div class="tab-pane fade active in" id="onepicture-${ORDER}">
@@ -434,7 +440,7 @@
 					{{SiteHelpers::simple_input($input)}}  --}}
 				</div>
 				<div class="tab-pane fade" id="onepicture-${ORDER}-preview">
-					<img src="#" class="onepicture-preview">
+					<img src="#" class="onepicture-preview img-responsive">
 				</div>
 			</div>
 		</div>
@@ -444,8 +450,9 @@
 	<script id="soundcloud-pattern" type="text/x-jquery-tmpl">
 		<div>
 			<ul class="nav nav-tabs" data-id-partial="${partial_id}" data-type="soundcloud">
-				<li class="active"><a href="#soundcloud-${ORDER}" data-toggle="tab">Editer</a></li>
-				<li class=""><a onclick="soundcloudPreview($(this));" href="#soundcloud-${ORDER}-preview" data-toggle="tab">Tester</a></li>
+				<li class="active"><a href="#soundcloud-${ORDER}" data-toggle="tab"><i class="fa fa-wrench"></i> Editer</a></li>
+				<li class=""><a onclick="soundcloudPreview($(this));" href="#soundcloud-${ORDER}-preview" data-toggle="tab"><i class="fa fa-rocket"></i> Tester</a></li>
+				<li class=""><a onclick="removeFromDom($(this));" href="#"><i class="fa fa-times"></i></a></li>
 			</ul>
 			<div class="tab-content">
 				<div class="tab-pane fade active in" id="soundcloud-${ORDER}">
@@ -466,16 +473,22 @@
 			</div>
 		</div>
 	</script>
-
+  </div>
 
 	<script id="youtube-pattern" type="text/x-jquery-tmpl">
 		<div>
 			<ul class="nav nav-tabs" data-id-partial="${partial_id}" data-type="youtube">
-				<li class="active"><a href="#youtube-${ORDER}" data-toggle="tab">Editer</a></li>
-				<li class=""><a onclick="youtubePreview($(this));" href="#youtube-${ORDER}-preview" data-toggle="tab">Tester</a></li>
+				<li class="active"><a href="#youtube-${ORDER}" data-toggle="tab"><i class="fa fa-wrench"></i> Editer</a></li>
+				<li class=""><a onclick="youtubePreview($(this));" href="#youtube-${ORDER}-preview" data-toggle="tab"><i class="fa fa-rocket"></i> Tester</a></li>
+				<li class=""><a onclick="removeFromDom($(this));" href="#"><i class="fa fa-times"></i></a></li>
 			</ul>
 			<div class="tab-content">
-				<div class="tab-pane fade active in" id="youtube-${ORDER}">
+				<div class="tab-pane fade active in form-group form-horizontal" id="youtube-${ORDER}">
+    				<label for="youtube" class="col-sm-5 control-label">
+						http://www.youtube.com/watch?v=</span>
+					</label>
+					<div class="col-sm-6">
+						
 					<input type="text" value="${url_youtube}" name="youtube" id="youtube" class="form-control" placeholder="L'identifiant de la vidéo Youtube">
 					{{--  
 					@input = array(
@@ -486,9 +499,12 @@
 						)
 					)@
 					{{SiteHelpers::simple_input($input)}}--}}
+					</div>
 				</div>
 				<div class="tab-pane fade" id="youtube-${ORDER}-preview">
-					<iframe class="youtube-preview" src="#" frameborder="0" allowfullscreen=""></iframe>
+					<div class="flex-video widescreen">
+						<iframe class="youtube-preview" src="#" frameborder="0" allowfullscreen=""></iframe>
+					</div>
 				</div>
 			</div>
 		</div>

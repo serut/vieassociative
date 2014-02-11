@@ -63,7 +63,7 @@ Connexion - Inscription -
 		            {{ SiteHelpers::create_input($input) }}
 
 		            <div class="nav pull-right">
-		                <button type="submit" class="button button-green">{{Lang::get('membre/connexion.connexion')}}</button>
+		                <button type="submit" class="btn button-green">{{Lang::get('membre/connexion.connexion')}}</button>
 		            </div>
 		            <div class="formulaire">
 		                <p><a href="/user/reset-password">{{Lang::get('membre/connexion.forget_password')}}</a></p>
@@ -130,7 +130,7 @@ Connexion - Inscription -
 	            @
 	            {{ SiteHelpers::create_input($input) }}
 		        <div class="nav pull-right">
-		            <button type="submit" class="button button-green">{{Lang::get('membre/connexion.inscription')}}</button>
+		            <button type="submit" class="btn button-green">{{Lang::get('membre/connexion.inscription')}}</button>
 		        </div>
 		        <div class="formulaire">
 		            <p>{{Lang::get('membre/connexion.read_and_agree')}}<a target="_blank" href="/info/condition">{{Lang::get('membre/connexion.cgu')}}</a></p>

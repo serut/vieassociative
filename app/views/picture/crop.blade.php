@@ -43,7 +43,7 @@
 								<input type="hidden" id="w" name="w" />
 								<input type="hidden" id="h" name="h" />
 								<p>Etape #3 : Mettre en ligne</p>
-								<div class="button button-green" id="validate">Valider</div>
+								<div class="btn button-green" id="validate">Valider</div>
 							</form>
 						</div>
 					</div>

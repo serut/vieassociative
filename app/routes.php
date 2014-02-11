@@ -66,7 +66,6 @@ switch ($server['0']) {
 
             Route::options('/upload', 'FileUploadController@fileUpload');
             Route::post('/upload', 'FileUploadController@postFileUpload');
-            Route::post('{id}/edit/news/{idNews}/edit', 'AssociationNewsController@postEditNews')->where('id', '[0-9]+')->where('idNews', '[0-9]+');
             Route::post('{id}/form/{origin}/{item}', 'AssociationFormController@postForm')->where('id', '[0-9]+')->where('origin', '[a-z-]+')->where('item', '[a-z-_]+');
             Route::post('discussion/add', 'DiscussionController@postAdd');
             Route::post('discussion/vote', 'DiscussionController@postVote');

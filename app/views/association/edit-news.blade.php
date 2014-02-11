@@ -31,10 +31,10 @@
 				<a href="#" data-component="textarea" class="btn" onclick="addTextArea();return false;">
 					<span><i class="fa fa-plus"></i> Texte</span>
 				</a>
-				@if(App::environment() != "production")
-				<a href="#" data-component="image" class="btn" onclick="addImage();return false;">
+				<a href="#" data-component="image" class="btn" onclick="addOnePicture();return false;">
 					<span><i class="fa fa-plus"></i> Image</span>
 				</a>
+				@if(App::environment() != "production")
 				<a href="#" data-component="soundcloud" class="btn" onclick="addSoundcloud();return false;">
 					<span><i class="fa fa-plus"></i> Soundcloud</span>
 				</a>
@@ -82,7 +82,15 @@
 				   			'text': '{{$n['text']}}',
 				   			'partial_id' : {{$n['partial_id']}}
 				   		}
-				   		addTitle(data);
+				   		addTextArea(data);
+				   	@else
+					   	@if($n['type'] == "PartialOnePicture")
+					   		data = {
+					   			'text': '{{$n['text']}}',
+					   			'partial_id' : {{$n['partial_id']}}
+					   		}
+					   		addOnePicture(data);
+						@endif
 					@endif
 				@endif
 			@endforeach
@@ -104,7 +112,7 @@
    		ORDER = ORDER+1;
 	}
 	function textareaPreview(el){
-		var textID = el.parent().parent().attr('data-id-partial');
+		//var textID = el.parent().parent().attr('data-id-partial');
 		$(el).parent().parent().parent().find(".textarea-preview").html($(el).parent().parent().parent().find(".wysiwyg-editor").html())
 	}
 	function saveTextarea(el,index){
@@ -141,7 +149,7 @@
    		ORDER = ORDER+1;
 	}
 	function titlePreview(el){
-		var titleID = el.parent().parent().attr('data-id-partial');
+		//var titleID = el.parent().parent().attr('data-id-partial');
 		$(el).parent().parent().parent().find("h4").text($(el).parent().parent().parent().find("input").val())
 	}
 	function saveTitle(el,index){
@@ -163,26 +171,43 @@
         }).fail(function() {
         	error_spotted++;
         });
-
 	}
 
 
 
-	function addImage(data){
+	function addOnePicture(data){
 		if(!data){
 			data = {
 	   			'url_img': '',
 	   			'partial_id' : "0"
 	   		};
 		}
-   		$('#title-pattern').tmpl(data).appendTo('#news-editor');
+   		$('#onepicture-pattern').tmpl(data).appendTo('#news-editor');
    		ORDER = ORDER+1;
 	}
-	function imagePreview(el){
-
+	function onePicturePreview(el){
+		//var imgID = el.parent().parent().attr('data-id-partial');
+		$(el).parent().parent().parent().find(".onepicture-preview").attr('src',($(el).parent().parent().parent().find("input").val()))
 	}
 	function saveImage(el,index){
-
+		var id_el = el.attr('data-id-partial');
+		$.ajax({
+            type: "POST",
+            url: '/'+IDASSOC+'/form/news/onepicture',
+            async: false,
+            dataType: "json",
+            data: {
+            	'id': id_el,
+            	'id_news':IDNEWS,
+            	'onepicture':$(el).parent().find("input").val(),
+            	'order':index,
+        	}
+        },el).done(function ( data ) {
+        	if(el.attr('data-id-partial') == "0")
+        		el.attr('data-id-partial',data['id_onepicture']);
+        }).fail(function() {
+        	error_spotted++;
+        });
 	}
 
 
@@ -194,13 +219,33 @@
 	   			'partial_id' : "0"
 	   		};
 		}
-
+		$('#soundcloud-pattern').tmpl(data).appendTo('#news-editor');
+   		ORDER = ORDER+1;
 	}
 	function soundCloudPreview(el){
-
+		//http://developers.soundcloud.com/docs/api/guide#uploading
+		//http://soundcloud.com/you/apps
+		$(el).parent().parent().parent().find(".soundcloud-preview").attr('src',"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/"+($(el).parent().parent().parent().find("input").val())+"%3Fsecret_token%3Ds-eBsGL&amp;auto_play=false&amp;hide_related=false&amp;visual=true")
 	}
 	function saveSoundCloud(el,index){
-
+		var id_el = el.attr('data-id-partial');
+		$.ajax({
+            type: "POST",
+            url: '/'+IDASSOC+'/form/news/soundcloud',
+            async: false,
+            dataType: "json",
+            data: {
+            	'id': id_el,
+            	'id_news':IDNEWS,
+            	'soundcloud':$(el).parent().find("input").val(),
+            	'order':index,
+        	}
+        },el).done(function ( data ) {
+        	if(el.attr('data-id-partial') == "0")
+        		el.attr('data-id-partial',data['id_soundcloud']);
+        }).fail(function() {
+        	error_spotted++;
+        });
 	}
 
 
@@ -214,13 +259,32 @@
 	   			'partial_id' : "0"
 	   		};
 		}
-
+		$('#youtube-pattern').tmpl(data).appendTo('#news-editor');
+   		ORDER = ORDER+1;
 	}
-	function previewYoutube(el){
-
+	function youtubePreview(el){
+		//var youtubeID = el.parent().parent().attr('data-id-partial');
+		$(el).parent().parent().parent().find(".youtube-preview").attr('src',"https://www.youtube-nocookie.com/embed/"+($(el).parent().parent().parent().find("input").val()))
 	}
 	function saveYoutube(el,index){
-
+		var id_el = el.attr('data-id-partial');
+		$.ajax({
+            type: "POST",
+            url: '/'+IDASSOC+'/form/news/youtube',
+            async: false,
+            dataType: "json",
+            data: {
+            	'id': id_el,
+            	'id_news':IDNEWS,
+            	'youtube':$(el).parent().find("input").val(),
+            	'order':index,
+        	}
+        },el).done(function ( data ) {
+        	if(el.attr('data-id-partial') == "0")
+        		el.attr('data-id-partial',data['id_youtube']);
+        }).fail(function() {
+        	error_spotted++;
+        });
 	}
 
 
@@ -246,10 +310,21 @@
 	function saveElement(type, el,index){
 		if(type=="title"){
 			return saveTitle(el,index);
-		}
-		else{
+		}else{
 			if(type=="textarea"){
 				return saveTextarea(el,index);
+			}else{
+				if(type=="onepicture"){
+					return saveImage(el,index);
+				}else{
+					if(type=="youtube"){
+						return saveYoutube(el,index);
+					}else{
+						if(type=="soundcloud"){
+							return saveSoundCloud(el,index);
+						}
+					}
+				}
 			}
 		}
 	}
@@ -284,15 +359,15 @@
 				<div class="tab-pane fade active in" id="title-${ORDER}">
 					<input placeholder="Le titre de votre publication" class="form-control" tabindex="1" data-maxlength="150" data-minlength="3" id="title" name="title" type="text" value="${title}">
 					{{-- @input = array(
-										'id'=>"title",
-										'form' => array(
-											'placeholder'=>Lang::get('association/edit/news.placeholder_title'),
-											'class' => 'form-control',
-					                        'data-maxlength'=>"150",
-					                        'data-minlength'=>"3",
-										)
-									)@
-									{{SiteHelpers::simple_input($input)}} --}}
+						'id'=>"title",
+						'form' => array(
+							'placeholder'=>Lang::get('association/edit/news.placeholder_title'),
+							'class' => 'form-control',
+	                        'data-maxlength'=>"150",
+	                        'data-minlength'=>"3",
+						)
+					)@
+					{{SiteHelpers::simple_input($input)}} --}}
 				</div>
 				<div class="tab-pane fade" id="title-${ORDER}-preview">
 					<h4></h4>
@@ -320,12 +395,11 @@
 		</div>
 	</script>
 
-
 	<script id="onepicture-pattern" type="text/x-jquery-tmpl">
 		<div>
 			<ul class="nav nav-tabs" data-id-partial="${partial_id}" data-type="onepicture">
 				<li class="active"><a href="#onepicture-${ORDER}" data-toggle="tab">Editer</a></li>
-				<li class=""><a onclick="onepicturePreview($(this));" href="#onepicture-${ORDER}-preview" data-toggle="tab">Tester</a></li>
+				<li class=""><a onclick="onePicturePreview($(this));" href="#onepicture-${ORDER}-preview" data-toggle="tab">Tester</a></li>
 			</ul>
 			<div class="tab-content">
 				<div class="tab-pane fade active in" id="onepicture-${ORDER}">
@@ -341,7 +415,7 @@
 					{{SiteHelpers::simple_input($input)}}
 				</div>
 				<div class="tab-pane fade" id="onepicture-${ORDER}-preview">
-					<div class="onepicture-preview">Texte</div>
+					<img src="#" class="onepicture-preview">
 				</div>
 			</div>
 		</div>
@@ -361,14 +435,14 @@
 					@input = array(
 						'id'=>"soundcloud",
 						'form' => array(
-							'placeholder'=>"URL de l'image",
+							'placeholder'=>"L'url du son SoundCloud",
 							'class' => 'form-control',
 						)
 					)@
 					{{SiteHelpers::simple_input($input)}}
 				</div>
 				<div class="tab-pane fade" id="soundcloud-${ORDER}-preview">
-					<div class="soundcloud-preview">Texte</div>
+					<iframe class="soundcloud-preview" src="#" height="450" width="100%" frameborder="no" scrolling="no"></iframe>
 				</div>
 			</div>
 		</div>
@@ -388,14 +462,14 @@
 					@input = array(
 						'id'=>"youtube",
 						'form' => array(
-							'placeholder'=>"URL de l'image",
+							'placeholder'=>"L'identifiant de la vidéo Youtube",
 							'class' => 'form-control',
 						)
 					)@
 					{{SiteHelpers::simple_input($input)}}
 				</div>
 				<div class="tab-pane fade" id="youtube-${ORDER}-preview">
-					<div class="youtube-preview">Texte</div>
+					<iframe class="youtube-preview" src="#" frameborder="0" allowfullscreen=""></iframe>
 				</div>
 			</div>
 		</div>

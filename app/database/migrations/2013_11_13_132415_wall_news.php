@@ -27,7 +27,6 @@ class WallNews extends Migration {
 			$table->engine = 'InnoDB';
 			$table->increments('id');
 			$table->string('var1');
-			$table->foreign('var1')->references('name')->on('img');
 			$table->timestamps();
 		});
 		Schema::create('partial_youtube', function($table){

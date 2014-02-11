@@ -102,6 +102,9 @@ class AssociationFormController  extends BaseController {
                         break;
                     case 'title':
                     case 'textarea':
+                    case 'onepicture':
+                    case 'soundcloud':
+                    case 'youtube':
                         $result = AssociationNewsController::editPartialNews($id_assoc,$origin,$item);
                         break;
 

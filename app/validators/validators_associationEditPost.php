@@ -28,4 +28,22 @@ class validators_associationEditPost extends BaseValidator
         $toPurify = array('textarea');
         return $this->test($rules,$toPurify);
     }
+    public function onepicture(){
+        $rules = array(
+            'onepicture' => 'required|url',
+            'id'=> 'required|integer',
+            'id_news'=> 'required|integer',
+            'order'=> 'required|integer',
+        );
+        return $this->test($rules);
+    }
+    public function youtube(){
+        $rules = array(
+            'youtube' => 'required|min:8|max:12',
+            'id'=> 'required|integer',
+            'id_news'=> 'required|integer',
+            'order'=> 'required|integer',
+        );
+        return $this->test($rules);
+    }
 }

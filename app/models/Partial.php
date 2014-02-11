@@ -108,7 +108,6 @@ class Partial extends Eloquent
                 }
             }
         }
-
         if(isset($data['onepicture']) && !empty($data['onepicture'])) {
             if(!Partial::has($data['id'],$newsBefore,'PartialOnePicture')){
                 //add

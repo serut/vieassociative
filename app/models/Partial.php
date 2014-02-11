@@ -72,7 +72,7 @@ class Partial extends Eloquent
                 //add
                 $idSoundcloud = PartialSoundCloud::add($data['soundcloud']);
                 $partial = new Partial();
-                $partial->order=2;
+                $partial->order=$data['order'];
                 $partial->partial_type="PartialSoundCloud";
                 $partial->partial_id = $idSoundcloud;
                 $partial->id_news = $id_news;
@@ -94,7 +94,7 @@ class Partial extends Eloquent
                 //add
                 $idYoutube = PartialYoutube::add($data['youtube']);
                 $partial = new Partial();
-                $partial->order=3;
+                $partial->order=$data['order'];
                 $partial->partial_type="PartialYoutube";
                 $partial->partial_id = $idYoutube;
                 $partial->id_news = $id_news;
@@ -113,7 +113,7 @@ class Partial extends Eloquent
                 //add
                 $idOnePicture = PartialOnePicture::add($data['onepicture']);
                 $partial = new Partial();
-                $partial->order=4;
+                $partial->order=$data['order'];
                 $partial->partial_type="PartialOnePicture";
                 $partial->partial_id = $idOnePicture;
                 $partial->id_news = $id_news;

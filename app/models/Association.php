@@ -4,6 +4,12 @@ class Association  extends Eloquent
     protected $table = 'association';
     protected $primaryKey = 'id';
     public $timestamps = true;
+
+    public function setNameAttribute($value){
+        //TO DO
+        $this->attributes['name'] = $value;
+        $this->attributes['slug'] = Str::slug($assoc['name'],'-');
+    }
     public function admitted_public_utility_display(){
         return $this->admitted_public_utility ? 'Oui' : 'Non';
     }

@@ -72,24 +72,32 @@
 	   		@foreach($news['data'] as $n)
 		   		@if($n['type'] == "PartialTitle")
 			   		data = {
-			   			'title': '{{$n['title']}}',
+			   			'title': '{{addslashes($n['title'])}}',
 			   			'partial_id' : {{$n['partial_id']}}
 			   		}
 			   		addTitle(data);
 			   	@else
 				   	@if($n['type'] == "PartialText")
 				   		data = {
-				   			'text': '{{$n['text']}}',
+				   			'text': '{{addslashes($n['text'])}}',
 				   			'partial_id' : {{$n['partial_id']}}
 				   		}
 				   		addTextArea(data);
 				   	@else
 					   	@if($n['type'] == "PartialOnePicture")
 					   		data = {
-					   			'text': '{{$n['text']}}',
+					   			'url_img': '{{$n['img_url']}}',
 					   			'partial_id' : {{$n['partial_id']}}
 					   		}
 					   		addOnePicture(data);
+						@else
+						   	@if($n['type'] == "PartialYoutube")
+						   		data = {
+						   			'url_youtube': '{{$n['youtube_slug']}}',
+						   			'partial_id' : {{$n['partial_id']}}
+						   		}
+						   		addYoutube(data);
+							@endif
 						@endif
 					@endif
 				@endif
@@ -403,8 +411,9 @@
 			</ul>
 			<div class="tab-content">
 				<div class="tab-pane fade active in" id="onepicture-${ORDER}">
-
-					{{--  --}}
+					<input placeholder="URL de l&#039;image" class="form-control" id="onepicture" name="onepicture" type="text" value="${url_img}">
+					<span class="text-danger">	</span>				
+					{{--
 					@input = array(
 						'id'=>"onepicture",
 						'form' => array(
@@ -412,7 +421,7 @@
 							'class' => 'form-control',
 						)
 					)@
-					{{SiteHelpers::simple_input($input)}}
+					{{SiteHelpers::simple_input($input)}}  --}}
 				</div>
 				<div class="tab-pane fade" id="onepicture-${ORDER}-preview">
 					<img src="#" class="onepicture-preview">
@@ -457,8 +466,8 @@
 			</ul>
 			<div class="tab-content">
 				<div class="tab-pane fade active in" id="youtube-${ORDER}">
-
-					{{--  --}}
+					<input type="text" value="${url_youtube}" name="youtube" id="youtube" class="form-control" placeholder="L'identifiant de la vidéo Youtube">
+					{{--  
 					@input = array(
 						'id'=>"youtube",
 						'form' => array(
@@ -466,7 +475,7 @@
 							'class' => 'form-control',
 						)
 					)@
-					{{SiteHelpers::simple_input($input)}}
+					{{SiteHelpers::simple_input($input)}}--}}
 				</div>
 				<div class="tab-pane fade" id="youtube-${ORDER}-preview">
 					<iframe class="youtube-preview" src="#" frameborder="0" allowfullscreen=""></iframe>

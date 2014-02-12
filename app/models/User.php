@@ -53,9 +53,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         $el->link = $link;
         $el->touch();
     }
-    static function connexion($id){
+    static function connect($id){
         $infoProfil = User::getInfoProfils($id);
         Session::put('name', $infoProfil->username);
+        Session::put('myassocs',Association::getListWhereAdmin($id));
         $token = sha1(mt_rand(0, 0x7fffffff ) ^ crc32("okw6XAw25BOX8EY") ^ crc32(microtime()));
         User::creerToken($id,$token);
         if(App::environment() == 'local')
@@ -63,6 +64,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         else
             $domain = "vieassociative.fr";
         setcookie('vieasso_remember', $token, strtotime( '+30 days' ), '/',$domain);
+    }
+    static function disconnect(){
+        Session::put('name',null);
+        Session::put('myassocs',array());
     }
     static function addAssoc($id_user,$id_assoc,$link){
         $el = new UserAssociation;

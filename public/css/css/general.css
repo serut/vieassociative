@@ -81,10 +81,14 @@ header .navbar .menu-item-imaged-with-text i {
   margin: 9px 0 10px 5px;
   z-index: 2;
 }
-header .navbar .menu-item-imaged-with-text > a {
+header .navbar .menu-item-imaged-with-text .menu-user {
   padding-top: 15px;
   padding-bottom: 12px;
   padding-left: 40px;
+  z-index: 1;
+}
+header .navbar .menu-item-imaged-with-text > a {
+  padding: 0 5px 3px;
   z-index: 1;
 }
 header .navbar .menu-item-imaged-with-text .img-user {

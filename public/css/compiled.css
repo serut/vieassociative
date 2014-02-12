@@ -1431,7 +1431,8 @@ header .navbar ul li span{display:inline !important}
 header .navbar .search-form-phone{margin-top:12px}
 header .navbar .menu-item-imaged-with-text.open{z-index:1}
 header .navbar .menu-item-imaged-with-text i{margin:9px 0 10px 5px;z-index:2}
-header .navbar .menu-item-imaged-with-text>a{padding-top:15px;padding-bottom:12px;padding-left:40px;z-index:1}
+header .navbar .menu-item-imaged-with-text .menu-user{padding-top:15px;padding-bottom:12px;padding-left:40px;z-index:1}
+header .navbar .menu-item-imaged-with-text>a{padding:0 5px 3px;z-index:1}
 header .navbar .menu-item-imaged-with-text .img-user{display:block;float:left;width:28px;height:28px;margin:11px 0 0 5px;z-index:2}
 header .navbar .menu-item-imaged>a{padding-top:3px;padding-bottom:45px}
 header .navbar .menu-item-imaged i{float:left;margin:9px 0 10px 5px;z-index:2}

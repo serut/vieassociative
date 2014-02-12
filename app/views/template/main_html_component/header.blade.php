@@ -26,13 +26,14 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="menu">
 			<ul class="nav navbar-nav">
-				<li class="menu-item-imaged" data-rel="tooltip" data-toggle="tooltip" data-placement="bottom" title="Signalez nous un problème !">
+				<li class="menu-item-imaged-with-text" data-rel="tooltip" data-toggle="tooltip" data-placement="bottom" title="Signalez nous un problème !">
 					<a href="#" onclick="modalUserProposition();return false;">
 						<i class="fa fa-bullhorn fa-2x"></i>
+						<span class="hidden-sm hidden-md hidden-lg visible-xs">Envoyez nous vos critiques !</span>
 					</a>
 				</li>
 			</ul>
-			<div class="search-form col-lg-5 col-lg-push-1 col-md-4 col-md-push-1 col-sm-6 col-sm-push-1 col-xs-10 col-xs-push-1">
+			<div class="search-form col-lg-5 col-lg-push-1 col-md-5 col-md-push-1 col-sm-6 col-sm-push-1 hidden-xs">
 				<form class="navbar-form" action="{{URLSubdomain::to('association','/')}}" method="get" role="search">
 					<div class="input-group">
 						<input type="text" class="form-control" name="q" placeholder="Rechercher une association">
@@ -53,12 +54,19 @@
 					<ul class="dropdown-menu">
 						<!--<li><a href="{{URLSubdomain::to('www','/user/'.Auth::user()->id.'/edit')}}">Options</a></li>-->
 						<li><a href="{{URLSubdomain::to('www','/user/logout')}}">Deconnexion</a></li>
+						@if( ! Session::get('myassocs')->isEmpty())
+						<li class="divider"></li>
+						@foreach(Session::get('myassocs') as $link)
+						<li><a href="{{URLSubdomain::to('association',$link->association->id.'-'.$link->association->slug)}}">{{$link->association->name}}</a></li>
+						@endforeach
+						@endif
 					</ul>
 				</li>
 				@if(App::environment() != "production")
-				<li class="menu-item-imaged dropdown">
+				<li class="menu-item-imaged-with-text dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 						<i class="fa fa-bell-o fa-2x"></i>
+						<span class="hidden-sm hidden-md hidden-lg visible-xs">Vos notifications</span>
 					</a>
 					<ul class="dropdown-menu">
 						<li><a href="#">Notification 1</a></li>
@@ -73,9 +81,10 @@
 				@endif
 				@else
 				<li class="menu-item-imaged-with-text">
-				<span>
-					<i class="fa fa-user fa-2x"></i>
-					<a href="{{URLSubdomain::to('www','/user/log')}}"><span>Connexion</span></a>
+					<span>
+						<a href="{{URLSubdomain::to('www','/user/log')}}">
+						<i class="fa fa-user fa-2x"></i>
+						<span>Connexion</span></a>
 					</span>
 				</li>
 				@endif

@@ -4,7 +4,10 @@ class Association  extends Eloquent
     protected $table = 'association';
     protected $primaryKey = 'id';
     public $timestamps = true;
-
+    public function userAssociation()
+    {
+        return $this->belongsTo('user_association','id_user');
+    }
     public function setNameAttribute($value){
         //TO DO
         $this->attributes['name'] = $value;
@@ -53,11 +56,11 @@ class Association  extends Eloquent
         $next = $result->current();
         return !empty($next);
     }
-    static function getMesAssociations($idUser){
-        $sql = 'SELECT association.nom, association.id
+    static function getListWhereAdmin($idUser){
+        return UserAssociation::with('association')->where('id_user',$idUser)->get();
+        $sql = 'SELECT association.name, association.id, association.slug
                 FROM user_association,association
                 WHERE user_association.id_assoc = association.id 
-                AND association.active = 1
                 AND user_association.id_user = ?';
         $result = DB::select($sql, array($idUser));
         return $result;

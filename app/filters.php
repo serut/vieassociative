@@ -18,7 +18,7 @@ App::before(function($request)
         $id = User::reconnecterDepuisToken($_COOKIE['vieasso_remember']);
         if($id > 0){
             Auth::loginUsingId($id);
-            User::connexion(Auth::user()->id);
+            User::connect(Auth::user()->id);
         }else{
             setcookie('vieasso_remember', $_COOKIE['vieasso_remember'], time()-10);
         }

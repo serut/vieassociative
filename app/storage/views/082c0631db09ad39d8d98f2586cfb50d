@@ -4,7 +4,7 @@
 <?php $__env->startSection('large-content'); ?>
 
 	<section id="services" class="section">
-		<div id="carousel-example-generic" class="carousel slide animated fadeIn" data-ride="carousel" style="padding: 0 0 0 0;">
+		<div id="carousel-example-generic" class="carousel slide animated fadeIn hidden-xs" data-ride="carousel" style="padding: 0 0 0 0;">
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
 				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -23,7 +23,7 @@
 					<h1 class="carousel-caption" style="bottom: 73%;text-align:right;">
 						Bienvenue !
 					</h1>
-						<p class="hidden-sm hidden-xs">
+						<p class="hidden-sm">
 						Notre équipe travaille dans l'optique d'aider les associations à se développer et à se mettre en avant.
 						Ajoutez votre association et complétez son profil afin de découvrir toutes les possibilités qui s'offrent à vous ! 
 						</p>
@@ -63,6 +63,20 @@
 			</a>
 			<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
 				<i class="fa fa-chevron-right icon-next"></i>
+			</a>
+		</div>
+		<div class="visible-xs text-center">
+			<img src="/img/slide1.png" class="img-responsive">
+			<h1>
+				Bienvenue !
+			</h1>
+			<p>
+			Notre équipe travaille dans l'optique d'aider les associations à se développer et à se mettre en avant.
+			Ajoutez votre association et complétez son profil afin de découvrir toutes les possibilités qui s'offrent à vous ! 
+			</p>
+			<br>
+			<a href="<?php echo URLSubdomain::to('association','/add'); ?>">
+				<button type="button" class="btn btn-warning" style="margin-left:20px;">Créez la page de votre association</button>
 			</a>
 		</div>
       		

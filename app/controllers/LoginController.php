@@ -15,7 +15,7 @@ class LoginController extends BaseController
             $v = new validators_connexion;
             $result = $v->login($nbrConnexTentative);
             if(isset($result['success'])){
-                User::connexion(Auth::user()->id);
+                User::connect(Auth::user()->id);
                 $path = Session::get('url.intended', '/');
                 Session::forget('url.intended');
                 $result['redirect_url'] = $path;
@@ -39,7 +39,7 @@ class LoginController extends BaseController
             $user->password = Hash::make(Input::get('password'));
             $user->save();
             Auth::loginUsingId($user->id);
-            User::connexion($user->id);
+            User::connect($user->id);
             $path = Session::get('url.intended', '/');
             Session::forget('url.intended');
             $result['redirect_url'] = $path;
@@ -51,12 +51,7 @@ class LoginController extends BaseController
 
     }
     public function disconnect(){
-        Session::put('associationEnManagement',null);
-        Session::put('associationEnManagementNom',null);
-        Session::put('myassocs',array());
-        Session::put('idUser',null);
-        Session::put('level',null);
-        Session::put('name',null);
+        User::disconnect();
         if(App::environment() == 'local')
             $domain = "vieassoc.lo";
         else

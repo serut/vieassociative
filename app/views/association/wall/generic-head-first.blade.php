@@ -3,4 +3,3 @@
 		<img src="{{$association->getLogo()}}" class="img-circle hidden-sm hidden-xs" alt="Logo de {{$association->name}}">
 	</div>
 	<div class="media-body social-body col-md-10 col-sm-10">
-		<hr class="separator">

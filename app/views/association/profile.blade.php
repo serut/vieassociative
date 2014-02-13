@@ -58,8 +58,14 @@
 	<div>
 		<div id="social-timeline" class="row">
 			<div>
+				<?php $first = true; ?>
 				@foreach($newsFeed as $news)
-					@include('association.wall.generic-head')
+					@if($first)
+						@include('association.wall.generic-head-first')
+						<?php $first = false; ?>
+					@else
+						@include('association.wall.generic-head')
+					@endif
 					@foreach($news['data'] as $n)
 						@include('association.wall.'.$n['type'], array('p'=>$n))
 					@endforeach

@@ -1499,12 +1499,13 @@ form .control-label{padding-top:0 !important}
 .profile .head .name{display:inline-block;font-size:160%;margin-top:5px;margin-bottom:5px}.profile .head .name.short{font-size:135%;margin-top:6px}
 .profile .head-panel{margin-top:13px}
 .input-block-level{display:block;width:100%;min-height:30px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
-#social-timeline{margin-top:20px}#social-timeline .social-box{border:none;margin-top:0;margin-bottom:0}#social-timeline .social-box hr{margin-bottom:0;margin-top:15px}
-#social-timeline div{margin-left:1px;margin:0 5px 10px 2px}#social-timeline div p{margin-bottom:0}
-#social-timeline .media.social-box{margin-left:15px}#social-timeline .media.social-box .social-composer textarea{resize:none;height:20px;margin-bottom:0;-webkit-transition:all .4s ease;-moz-transition:all .4s ease;-o-transition:all .4s ease;transition:all .4s ease}#social-timeline .media.social-box .social-composer textarea:focus{height:80px}
+#social-timeline{margin-top:0}#social-timeline .social-box{border:none;margin-top:0;margin-bottom:0}#social-timeline .social-box hr{margin-bottom:18px;margin-top:0}
+#social-timeline div{margin:0 5px 10px 0}#social-timeline div p{margin-bottom:0}
+#social-timeline .media.social-box:first{margin-top:0}
+#social-timeline .media.social-box{margin-left:15px;margin-top:30px}#social-timeline .media.social-box .social-composer textarea{resize:none;height:20px;margin-bottom:0;-webkit-transition:all .4s ease;-moz-transition:all .4s ease;-o-transition:all .4s ease;transition:all .4s ease}#social-timeline .media.social-box .social-composer textarea:focus{height:80px}
 #social-timeline .media.social-box .social-composer .btn{-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}
 #social-timeline .media.social-box .social-users-avatars img{margin-bottom:10px;margin-top:10px;width:140%;height:auto;display:block}
-#social-timeline .media.social-box .media-body.social-body{margin-bottom:0;margin-top:15px}#social-timeline .media.social-box .media-body.social-body h4{margin-top:0}
+#social-timeline .media.social-box .media-body.social-body{margin-bottom:0;margin-top:0}#social-timeline .media.social-box .media-body.social-body h4{margin-top:0}
 #social-timeline .media.social-box .media-body.social-body div{margin-bottom:0}#social-timeline .media.social-box .media-body.social-body div p{margin-bottom:10px !important}
 #social-timeline .media.social-box .media-body.social-body .social-heading{color:#939aa4 !important;font-size:11.9px;border-bottom:1px solid #e6e6e6;padding-bottom:6px;margin-left:-10px;margin-right:-10px;padding-left:10px;padding-right:10px}
 #social-timeline .media.social-box .media-body.social-body .social-time-publication{color:#939aa4 !important;font-size:11.9px}

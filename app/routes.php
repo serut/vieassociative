@@ -40,6 +40,14 @@ switch ($server['0']) {
                 Route::post('{id}/form/{item}', 'UserController@postForm')->where('id', '[0-9]+')->where('item', '[a-z-_]+');
             });
         });
+
+        Route::group(array('prefix' => 'api'), function()
+        {
+            Route::group(array('prefix' => '0.1'), function()
+            {
+                Route::get('{id}/news', 'AssociationAPIController@getNews')->where('id', '[0-9]+');
+            });
+        });
         Route::get('sitemap.xml', 'SitemapController@getSitemap');
         break;
     case 'association': // For association.vieassociative.fr/*

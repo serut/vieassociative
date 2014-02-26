@@ -58,12 +58,6 @@ class Association  extends Eloquent
     }
     static function getListWhereAdmin($idUser){
         return UserAssociation::with('association')->where('id_user',$idUser)->get();
-        $sql = 'SELECT association.name, association.id, association.slug
-                FROM user_association,association
-                WHERE user_association.id_assoc = association.id 
-                AND user_association.id_user = ?';
-        $result = DB::select($sql, array($idUser));
-        return $result;
     }
     public function getLogo(){
         if(empty($this->logo_img)){

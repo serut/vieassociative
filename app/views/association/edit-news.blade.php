@@ -91,7 +91,7 @@
 					   	@if($n['type'] == "PartialOnePicture")
 					   		data = 
 					   		{{json_encode(array(
-					   			'url_img'=>$n['url_img'],
+					   			'url_img'=>$n['img_url'],
 					   			'partial_id'=>$n['partial_id']
 					   		))}}
 

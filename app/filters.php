@@ -58,24 +58,10 @@ Route::filter('guest', function()
     }
 });
 
-Route::filter('assoc', function()
+Route::filter('assoc', function($idAssoc)
 {
-    $listeAssoc = array();
-    $myassocs = Session::get('myassocs');
-    $idAssoc = Request::segment(2);
-
-    //Get user's association from his session
-        
-    if(Session::get('level') == "user"){
-        if(Session::has('myassocs') && ! empty($myassocs))
-            foreach ($myassocs as $k => $v) {
-                $listeAssoc[] = $v->id;
-            }
-        // Look if the user is not using a wrong association
-        if (!in_array(Session::get('associationEnManagement'),$listeAssoc)){
-            // Il se balade sur notre site sans en avoir le droit
-            return '02 Action non autorisée : l\'association que vous avez tenté de modifier ne vous appartient pas'.Session::get('associationEnManagement');
-        }
+    if (Auth::guest() || User::isAdministrator($idAssoc)){
+        return App::abort(403);
     }
 });
 /*

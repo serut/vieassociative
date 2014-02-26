@@ -11,7 +11,7 @@ class Association  extends Eloquent
     public function setNameAttribute($value){
         //TO DO
         $this->attributes['name'] = $value;
-        $this->attributes['slug'] = Str::slug($assoc['name'],'-');
+        $this->attributes['slug'] = Str::slug($value,'-');
     }
     public function admitted_public_utility_display(){
         return $this->admitted_public_utility ? 'Oui' : 'Non';

@@ -1,11 +1,12 @@
 <?php
+
 class validators_editUser extends BaseValidator
 {
-    public function email(){
+    public function email()
+    {
 
-        Validator::extend('existing_mail', function($attribute, $value, $parameters)
-        {
-            return ! User::isTakenMail(Input::get('mail'));
+        Validator::extend('existing_mail', function ($attribute, $value, $parameters) {
+            return !User::isTakenMail(Input::get('mail'));
         });
 
         $rules = array(

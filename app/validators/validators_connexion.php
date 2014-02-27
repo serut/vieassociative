@@ -1,34 +1,34 @@
 <?php
+
 class validators_connexion extends BaseValidator
 {
-	public function login($nbrConnexTentative){
+    public function login($nbrConnexTentative)
+    {
         // Add specific rule for the validation of data
         $rules = array(
             'password' => 'required|min:6|max:30',
             'username' => 'required|min:4|connexion'
         );
 
-        Validator::extend('connexion', function($attribute, $value, $parameters)
-        {
+        Validator::extend('connexion', function ($attribute, $value, $parameters) {
             $credentialsWithUsername = array('username' => Input::get('username'),
-                                        'password' => Input::get('password'));
-            $credentialsWithMail = array('email' => Input::get('username'), 
-                                    'password' => Input::get('password'));
+                'password' => Input::get('password'));
+            $credentialsWithMail = array('email' => Input::get('username'),
+                'password' => Input::get('password'));
             return Auth::attempt($credentialsWithUsername) || Auth::attempt($credentialsWithMail);
         });
 
         return $this->test($rules);
-	}
+    }
 
 
-	public function register(){
-        Validator::extend('existing_nick', function($attribute, $value, $parameters)
-        {
-            return ! User::isTakenUsername(Input::get('pseudo'));
+    public function register()
+    {
+        Validator::extend('existing_nick', function ($attribute, $value, $parameters) {
+            return !User::isTakenUsername(Input::get('pseudo'));
         });
-        Validator::extend('existing_mail', function($attribute, $value, $parameters)
-        {
-            return ! User::isTakenMail(Input::get('mail'));
+        Validator::extend('existing_mail', function ($attribute, $value, $parameters) {
+            return !User::isTakenMail(Input::get('mail'));
         });
 
         $rules = array(
@@ -49,11 +49,11 @@ class validators_connexion extends BaseValidator
             }
 
         */
-	}
+    }
 
-    public function resetPassword(){
-        Validator::extend('existing_mail', function($attribute, $value, $parameters)
-        {
+    public function resetPassword()
+    {
+        Validator::extend('existing_mail', function ($attribute, $value, $parameters) {
             return User::isTakenMail(Input::get('mail'));
         });
         $rules = array(

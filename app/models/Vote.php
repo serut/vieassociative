@@ -1,7 +1,8 @@
 <?php
-class Vote  extends Eloquent
+
+class Vote extends Eloquent
 {
-	protected $table = 'vote';
+    protected $table = 'vote';
     protected $primaryKey = 'id';
-   	public $timestamps = true;
+    public $timestamps = true;
 }

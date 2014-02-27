@@ -1,7 +1,9 @@
 <?php
+
 class validators_associationAdd extends BaseValidator
 {
-    public function add(){
+    public function add()
+    {
         $rules = array(
             'name' => 'required|min:4|max:120',
             'choice' => 'required|in:true,false',

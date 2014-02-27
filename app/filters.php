@@ -11,24 +11,23 @@
 |
 */
 
-App::before(function($request)
-{
+App::before(function ($request) {
 
-    if(isset($_COOKIE['vieasso_remember']) && !empty($_COOKIE['vieasso_remember']) && Auth::guest()){
+    if (isset($_COOKIE['vieasso_remember']) && !empty($_COOKIE['vieasso_remember']) && Auth::guest()) {
         $id = User::reconnecterDepuisToken($_COOKIE['vieasso_remember']);
-        if($id > 0){
+        if ($id > 0) {
             Auth::loginUsingId($id);
             User::connect(Auth::user()->id);
-        }else{
-            setcookie('vieasso_remember', $_COOKIE['vieasso_remember'], time()-10);
+        } else {
+            setcookie('vieasso_remember', $_COOKIE['vieasso_remember'], time() - 10);
         }
     }
-    if($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
         $statusCode = 204;
         $headers = [
-            'Access-Control-Allow-Origin'      => '*',
-            'Access-Control-Allow-Methods'     => 'GET, POST, OPTIONS',
-            'Access-Control-Allow-Headers'     => 'Origin, Content-Type, Accept, Authorization, X-Requested-With',
+            'Access-Control-Allow-Origin' => '*',
+            'Access-Control-Allow-Methods' => 'GET, POST, OPTIONS',
+            'Access-Control-Allow-Headers' => 'Origin, Content-Type, Accept, Authorization, X-Requested-With',
             'Access-Control-Allow-Credentials' => 'true'
         ];
 
@@ -37,8 +36,7 @@ App::before(function($request)
 });
 
 
-App::after(function($request, $response)
-{
+App::after(function ($request, $response) {
     $response->headers->set('Access-Control-Allow-Origin', '*');
     $response->headers->set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     $response->headers->set('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept, Authorization, X-Requested-With');
@@ -58,24 +56,21 @@ Route::when('user/log', 'guest');
 |
 */
 
-Route::filter('auth', function()
-{
-	if (Auth::guest()){
+Route::filter('auth', function () {
+    if (Auth::guest()) {
         Session::put('url.intended', Request::url());
-        return Redirect::to(URLSubdomain::to('www','/user/log'));
+        return Redirect::to(URLSubdomain::to('www', '/user/log'));
     }
 });
-Route::filter('guest', function()
-{
-    if (Auth::check()){
+Route::filter('guest', function () {
+    if (Auth::check()) {
         Session::put('url.intended', Request::url());
         return Redirect::to('/');
     }
 });
 
-Route::filter('assoc', function($idAssoc)
-{
-    if (Auth::guest() || User::isAdministrator($idAssoc)){
+Route::filter('assoc', function ($idAssoc) {
+    if (Auth::guest() || User::isAdministrator($idAssoc)) {
         return App::abort(404, 'Unauthorized action.');
     }
 });
@@ -91,7 +86,6 @@ Route::filter('assoc', function($idAssoc)
 */
 
 
-
 /*
 |--------------------------------------------------------------------------
 | CSRF Protection Filter
@@ -103,12 +97,10 @@ Route::filter('assoc', function($idAssoc)
 |
 */
 
-Route::filter('csrf', function()
-{
-	if (Session::token() != Input::get('_token'))
-	{
-		throw new Illuminate\Session\TokenMismatchException;
-	}
+Route::filter('csrf', function () {
+    if (Session::token() != Input::get('_token')) {
+        throw new Illuminate\Session\TokenMismatchException;
+    }
 });
 
 

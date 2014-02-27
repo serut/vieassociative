@@ -19,8 +19,7 @@ switch ($server['0']) {
         Route::get('/notifications', 'NotificationController@getIndex');
         Route::post('/proposition', 'ContactController@postProposition');
         //www.vieassociative.fr/user/*
-        Route::group(array('prefix' => 'user'), function()
-        {
+        Route::group(array('prefix' => 'user'), function () {
             Route::get('log', 'LoginController@getConnexion');
             Route::get('reset-password', 'LoginController@getResetPassword');
             Route::get('reset/{pass}', 'LoginController@getResetPasswordAfter')->where('pass', '[a-zA-Z0-9]+');
@@ -32,23 +31,20 @@ switch ($server['0']) {
             Route::post('reset-password', 'LoginController@postResetPassword');
             Route::post('log/register', 'LoginController@postRegister');
             Route::post('log/login', 'LoginController@postLogin');
-            Route::group(array('before' => 'auth'), function(){
+            Route::group(array('before' => 'auth'), function () {
                 Route::get('logout', 'LoginController@getLogout');
                 Route::get('{id}/edit', 'UserController@getEdit')->where('id', '[0-9]+');
                 Route::get('{id}/form/{item}', 'UserController@getForm')->where('id', '[0-9]+')->where('item', '[a-z-_]+');
-                
+
                 Route::post('{id}/form/{item}', 'UserController@postForm')->where('id', '[0-9]+')->where('item', '[a-z-_]+');
             });
         });
 
-        Route::group(array('prefix' => 'api'), function()
-        {
-            Route::group(array('prefix' => '0.1'), function()
-            {
-                
-                Route::group(array('prefix' => 'association'), function()
-                {
-                    
+        Route::group(array('prefix' => 'api'), function () {
+            Route::group(array('prefix' => '0.1'), function () {
+
+                Route::group(array('prefix' => 'association'), function () {
+
 
                     Route::get('{id}/news', 'AssociationAPIController@getNews')->where('id', '[0-9]+');
                 });
@@ -59,7 +55,7 @@ switch ($server['0']) {
     case 'association': // For association.vieassociative.fr/*
         Route::get('/', 'AssociationController@getSearchIngine');
         Route::get('{id}-{text}', 'AssociationController@getProfile')->where('id', '[0-9]+')->where('text', '[a-z-0-9]+');
-        Route::group(array('before'=>'auth'), function(){ // Loggin required
+        Route::group(array('before' => 'auth'), function () { // Loggin required
             Route::get('add', 'AssociationController@getAdd');
             Route::get('{id}/edit', 'AssociationController@getEdit')->where('id', '[0-9]+');
             Route::get('{id}/edit/general-informations', 'AssociationController@getEditGeneralInformations')->where('id', '[0-9]+');
@@ -75,7 +71,6 @@ switch ($server['0']) {
             Route::get('{id}/edit/administrator', 'AssociationController@getEditAdministrator')->where('id', '[0-9]+');
             Route::get('{id}/discussion/{idDiscu}', 'DiscussionController@getConversation')->where('id', '[0-9]+')->where('idDiscu', '[0-9]+');
             Route::get('{id}/form/{origin}/{item}', 'AssociationFormController@getForm')->where('id', '[0-9]+')->where('origin', '[a-z-]+')->where('item', '[a-z-_]+');
-            
 
 
             Route::options('/upload', 'FileUploadController@fileUpload');
@@ -89,8 +84,8 @@ switch ($server['0']) {
         });
         break;
     case 'alive':
-        Route::get('/alive',function(){
-            try{
+        Route::get('/alive', function () {
+            try {
                 $abusePingdom = fopen('http://www.vieassociative.fr', 'r');
                 fclose($abusePingdom);
                 $abusePingdom = fopen('http://faitesdelamusique.vieassociative.fr', 'r');
@@ -99,9 +94,7 @@ switch ($server['0']) {
                 fclose($abusePingdom);
                 $abusePingdom = fopen('http://doc.vieassociative.fr', 'r');
                 fclose($abusePingdom);
-            }
-            catch(Exception $e)
-            {
+            } catch (Exception $e) {
                 echo $e->getMessage();
             }
             TentativeConnexion::deleteOldEntries();
@@ -116,8 +109,7 @@ Route::controller('image', 'ImgsController');
 Route::get('voir-evenement/{:ville}/{:categorie}/{:titre}-{:id}', 'EvenementController@voir');
 Route::controller('search/{:action}/{:id}', 'EvenementController');
 */
-App::missing(function($exception)
-{
+App::missing(function ($exception) {
     switch ($exception->getStatusCode()) {
         case '404':
             return Response::view('errors.404', array(), 404);;

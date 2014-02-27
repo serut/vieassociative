@@ -1,7 +1,8 @@
 <?php
-class Discussion  extends Eloquent
+
+class Discussion extends Eloquent
 {
-	protected $table = 'discussion';
+    protected $table = 'discussion';
     protected $primaryKey = 'id';
-   	public $timestamps = true;
+    public $timestamps = true;
 }

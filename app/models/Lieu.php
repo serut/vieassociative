@@ -1,7 +1,8 @@
 <?php
-class Lieu  extends Eloquent
+
+class Lieu extends Eloquent
 {
-	protected $table = 'lieu';
+    protected $table = 'lieu';
     protected $primaryKey = 'id';
-   	public $timestamps = false;
+    public $timestamps = false;
 }

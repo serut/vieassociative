@@ -1,0 +1,5 @@
+<aside class="col-lg-3 col-md-4 hidden-xs hidden-sm">
+	<?php echo $__env->make('template.aside.facebook-interactive', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?> 
+	<?php echo $__env->make('template.aside.avancement', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?> 
+	<?php echo $__env->make('template.aside.add-your-association', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</aside>

@@ -1,0 +1,24 @@
+
+
+<?php $main_and_aside = true; ?>
+<?php $__env->startSection('main-content'); ?>
+    <section>
+        <div>
+            <ul class="breadcrumb">
+                <li><a href="#">Association</a> <span class="divider">/</span></li>
+                <li><a href="/<?php echo $association->id; ?>-<?php echo $association->slug; ?>"><?php echo $association->name; ?></a> <span class="divider">/</span></li>
+                <li><a href="/<?php echo $association->id; ?>/edit">Edition</a> <span class="divider">/</span></li>
+                <li class="active">Mes publications</li>
+            </ul>
+            <h3 class="head"><?php echo Lang::get('association/edit/news.select_news'); ?> </h3>
+            <p><?php echo Lang::get('association/edit.warn_possiblity_for_normal_user'); ?></p>
+            <hr>
+                <div class="pull-right">
+                    <a class="btn button-blue" href="file/upload"><?php echo Lang::get('association/edit/news.create_news'); ?></a>
+                    <a class="btn button-blue" href="file/crop"><?php echo Lang::get('association/edit/news.create_news'); ?></a>
+                </div>
+            </div>
+        </div>
+    </section>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('template.theme', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

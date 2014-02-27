@@ -1,0 +1,6 @@
+Header set X-UA-Compatible "IE=Edge,chrome=1"
+
+Options +FollowSymLinks
+RewriteEngine on
+RewriteBase /
+RewriteRule (.*) public/$1 [L]

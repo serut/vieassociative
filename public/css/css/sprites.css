@@ -1,0 +1,78 @@
+.social_icons a {
+  background: url("/img/to sprite/social_icons.png") no-repeat scroll 0 0 transparent;
+  transition: all 0.3s ease-out 0s;
+  float: right;
+  height: 40px;
+  position: relative;
+  padding: 0px;
+}
+.social_icons .facebook a {
+  background-position: 0 top;
+}
+.social_icons .facebook a:hover {
+  background-color: #3B5998;
+  background-position: 0 bottom;
+}
+.social_icons .twitter a {
+  background-position: -34px top;
+}
+.social_icons .twitter a:hover {
+  background-color: #33CCFF;
+  background-position: -34px bottom;
+}
+.social_icons .vimeo a {
+  background-position: -68px top;
+}
+.social_icons .vimeo a:hover {
+  background-color: #41B0FF;
+  background-position: -68px bottom;
+}
+.social_icons .googleplus a {
+  background-position: -102px top;
+}
+.social_icons .googleplus a:hover {
+  background-color: #D94A39;
+  background-position: -102px bottom;
+}
+.social_icons .pinterest a {
+  background-position: -136px top;
+}
+.social_icons .pinterest a:hover {
+  background-color: #CB2027;
+  background-position: -136px bottom;
+}
+.social_icons .linkedin a {
+  background-position: -170px top;
+}
+.social_icons .linkedin a:hover {
+  background-color: #71B2D0;
+  background-position: -170px bottom;
+}
+.social_icons .dribbble a {
+  background-position: -204px top;
+}
+.social_icons .dribbble a:hover {
+  background-color: #EF5B92;
+  background-position: -204px bottom;
+}
+.social_icons .instagram a {
+  background-position: -238px top;
+}
+.social_icons .instagram a:hover {
+  background-color: #3C87FC;
+  background-position: -238px bottom;
+}
+.social_icons .skype a {
+  background-position: -272px top;
+}
+.social_icons .skype a:hover {
+  background-color: #18B7F1;
+  background-position: -272px bottom;
+}
+.social_icons .rss a {
+  background-position: -306px top;
+}
+.social_icons .rss a:hover {
+  background-color: #FE9900;
+  background-position: -306px bottom;
+}

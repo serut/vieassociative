@@ -1,0 +1,35 @@
+<?php /* v1 */ ?>
+<?php echo $__env->make('template.main_html_component.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('template.main_html_component.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php if(isset($sub_head) && $sub_head): ?>
+	<?php echo $__env->make('template.sub-head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php endif; ?>
+<div class="container">
+<?php $__env->startSection ('content'); ?>
+
+	<?php if(isset($small_centred) && $small_centred): ?>
+		<?php echo $__env->make('template.html_bricks.small-centred', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?> 
+	<?php endif; ?>
+
+	<?php if(isset($two_part) && $two_part): ?>
+		<?php echo $__env->make('template.html_bricks.two-part', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?> 
+	<?php endif; ?>
+
+	<?php if(isset($large_centred) && $large_centred): ?>
+		<?php echo $__env->make('template.html_bricks.large-centred', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?> 
+	<?php endif; ?>
+
+	<?php if(isset($medium_centred) && $medium_centred): ?>
+		<?php echo $__env->make('template.html_bricks.medium-centred', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?> 
+	<?php endif; ?>
+
+	<?php if(isset($main_and_aside) && $main_and_aside): ?>
+		<?php echo $__env->make('template.html_bricks.main-and-aside', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?> 
+	<?php endif; ?>
+<?php echo $__env->yieldSection(); ?>
+</div>
+
+<?php $__env->startSection ('full-container'); ?>
+<?php echo $__env->yieldSection(); ?>
+<?php echo $__env->make('template.main_html_component.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('template.main_html_component.foot', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

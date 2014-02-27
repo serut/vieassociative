@@ -1,0 +1,31 @@
+
+<?php $__env->startSection('head'); ?>
+	<?php echo Lang::get('association/modal_form/vieassociative-informations.head'); ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('form'); ?>
+	<p><?php echo Lang::get('association/modal_form/vieassociative-informations.acronym'); ?></p>
+	<?php echo Form::open(array('class'=> 'form-horizontal form-modal','data-validate'=>'our-parsey')); ?>
+		<?php $input= array(
+		    'id'=>"link",
+		    'label'=>Lang::get('association/modal_form/vieassociative-informations.label_choice_admitted_public_utility'),
+		    'name'=> 'choice',
+		    'elements' => array(
+		        '1'=>array(
+		            'value'=>'true',
+		            'text'=>Lang::get('association/modal_form/vieassociative-informations.radio_yes'),
+		        ),
+		        '2'=>array(
+		            'value'=>'false',
+		            'text'=>Lang::get('association/modal_form/vieassociative-informations.radio_no'),
+		        ),
+		    )
+		); ?>
+        <?php echo SiteHelpers::create_radio($input); ?>
+    <?php echo Form::close(); ?>
+    <script type="text/javascript">
+  		$(".form-modal").attr('parsley',"true").parsley(confParsley);
+    </script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('form_association.general', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

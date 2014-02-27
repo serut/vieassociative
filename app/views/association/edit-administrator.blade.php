@@ -1,0 +1,141 @@
+@extends('template.theme')
+
+
+@set_true $medium_centred 
+@section('medium-content')
+    <section>
+        <div>
+            <ul class="breadcrumb">
+              <li><a href="/">Liste des Associations</a> </li>
+              <li><a href="/{{$association->id}}-{{$association->slug}}">{{$association->name}}</a> </li>
+              <li><a href="/{{$association->id}}/edit">Edition</a> </li>
+              <li class="active">Les administrateurs</li>
+            </ul>
+            @if(! $admin->isEmpty())
+            <h3 class="head">{{Lang::get('association/edit/administrator.list_admin')}} </h3>
+            <hr>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td>{{Lang::get('association/edit/administrator.nickname')}}</td>
+                        <td>{{Lang::get('association/edit/administrator.date_function_added')}}</td>
+                        <td>{{Lang::get('association/edit/administrator.link')}}</td>
+                        @if($is_admin)
+                        <td>{{Lang::get('association/edit/administrator.remove')}}</td>
+                        @endif
+                    </tr>
+                </thead>
+                @foreach($admin as $k=>$v)
+                <tbody>
+                    <tr>
+                        <td>{{$v->author->username}}</td>
+                        <td>{{\Carbon\Carbon::createFromTimeStamp(strtotime($v->updated_at))->formatLocalized('%A %d %B %Y %H:%I')}}</td>
+                        <td>{{$v->link}}</td>
+                        @if($is_admin)
+                        <td><a href="#" onclick="removeAdmin({{$v->id}});return false;"><i class="fa fa-times"></i></a></td>
+                        @endif
+                    </tr>
+                </tbody>
+                @endforeach
+            </table>
+            @else
+                Cette association n'a pas d'administrateur. Avant de vous déclarer administrateur, veuillez prendre connaissance des  
+                <a target="_blank" href="{{URLSubdomain::to('www','/info/condition')}}">{{Lang::get('association/form_create.notice_part_link')}}</a>.
+                {{Lang::get('association/form_create.notice_create_association')}}
+            @endif
+            @if($is_admin || !$admin->count())
+            <hr>
+            <div>
+                <h3 class="head">{{Lang::get('association/edit/administrator.add_admin')}} </h3>
+                {{ Form::open(array('class'=> 'form-horizontal form-modal','data-validate'=>'our-parsey', 'url'=>'/'.$association->id.'/form/administrator/add', 'data-loading'=>'true')) }}
+                    @input = array(
+                        'id'=>"who",
+                        'name'=> 'who',
+                        'data-toggle'=> 'div-user',
+                        'elements' => array(
+                            '1'=>array(
+                                'value'=>'false',
+                                'text'=>Lang::get('association/edit/administrator.add_me'),
+                                'checked'=>true,
+                            ),
+                            '2'=>array(
+                                'value'=>'true',
+                                'text'=>Lang::get('association/edit/administrator.add_someone_else'),
+                            ),
+                        )
+                    )@
+                    @if($is_admin)
+                        <div id="div-user">
+                    @else
+                        <div class="col-sm-10 col-sm-push-1">
+                            <div class="col-sm-10 col-sm-push-3">
+                                {{SiteHelpers::create_radio($input)}}
+                            </div>
+                        </div>
+                        <div style="display:none;" id="div-user">
+                    @endif
+                        @input = array(
+                            'id'=>"admin_mail",
+                            'label'=>Lang::get('association/edit/administrator.label_admin_mail'),
+                            'form' => array(
+                                'placeholder'=>Lang::get('association/edit/administrator.placeholder_admin_mail'),
+                                'class' => 'form-control',
+                                'data-original-title'=>Lang::get('association/edit/administrator.tooltip_admin_mail'),
+                                'data-type'=>"email",
+                            )
+                        )@
+                        {{SiteHelpers::create_input($input)}}
+                    </div>
+
+                    <div id="div-linked">
+                        <div class="row">
+                            <p class="col-sm-push-4 col-sm-8">{{Lang::get('association/edit/administrator.he_is')}} : 
+                                <a class="btn-vie-assoc" type="button" onclick="$('#link').val($(this).text());">{{Lang::get('association/form_create.link_one')}}</a>
+                                <a class="btn-vie-assoc" type="button" onclick="$('#link').val($(this).text());">{{Lang::get('association/form_create.link_two')}}</a>
+                                <a class="btn-vie-assoc" type="button" onclick="$('#link').val($(this).text());">{{Lang::get('association/form_create.link_three')}}</a>
+                            </p>
+                        </div>
+                        <div class="row">
+                        @input = array(
+                            'id'=>"link",
+                            'label'=>Lang::get('association/form_create.label_link'),
+                            'form' => array(
+                                'placeholder'=>Lang::get('association/form_create.placeholder_link'),
+                                'class' => 'form-control',
+                                'data-original-title'=>Lang::get('association/form_create.tooltip_link'),
+                                'data-maxlength'=>"30",
+                                'required'=>"required",
+                            )
+                        )@
+                        {{SiteHelpers::create_input($input)}}
+                        </div>
+                    </div>
+                    <p class="nav pull-right">
+                        <button type="submit" class="btn button-green">{{Lang::get('association/edit/administrator.add')}}</button>
+                    </p>
+                    <br>
+                {{ Form::close() }}
+                </div>
+            </div>
+            @endif
+        </div>
+    </section>
+@stop
+@section('footer-js')
+<script type="text/javascript">
+    var IDASSOC = {{$association->id}};
+
+    function removeAdmin(id){
+        $.ajax({
+            type: "POST",
+            url: '/'+IDASSOC+'/form/administrator/remove',
+            dataType: "json",
+            data: {'id':id}
+        }).done(function ( data ) {
+            window.location = data['redirect_url'];
+        }).fail(function() {
+            alert("error");
+        });
+    }
+</script>
+@stop

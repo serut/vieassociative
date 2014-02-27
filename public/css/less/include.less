@@ -1,0 +1,48 @@
+
+/* LIBRARIES */
+@import "bootstrap3.0.3/bootstrap.less";
+@import "fancybox/jquery.fancybox.less";
+@import "fontAwesome/font-awesome.less";
+
+
+@import "general.less";
+@import "sprites.less";
+@import "forms.less";
+@import "bouton.less";
+@import "specific.less";
+@import "datepicker.less";
+
+@import "notification/toastr.less";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// LESS FUNCTIONS
+
+.opacity(@opacity: 0.5) {
+  -moz-opacity: @opacity;
+  -khtml-opacity: @opacity;
+  -webkit-opacity: @opacity;
+  opacity: @opacity;
+  @opperc: @opacity * 100;
+  -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
+  filter: ~"alpha(opacity=@{opperc})";
+}
+.rounded-corners (@radius: 5px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	-ms-border-radius: @radius;
+	-o-border-radius: @radius;
+	-ms-border-radius: @radius;
+	border-radius: @radius;
+}

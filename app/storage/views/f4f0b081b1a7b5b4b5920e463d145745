@@ -1,0 +1,156 @@
+
+
+<?php $large_centred = true; ?>
+<?php $__env->startSection('large-content'); ?>
+	<section>
+		<div>
+			<ul class="breadcrumb">
+				<li><a href="#">Association</a> <span class="divider">/</span></li>
+				<li><a href="/<?php echo $association->id; ?>-<?php echo $association->slug; ?>"><?php echo $association->name; ?></a> <span class="divider">/</span></li>
+				<li><a href="/<?php echo $association->id; ?>/edit">Edition</a> <span class="divider">/</span></li>
+				<li class="active">Images</li>
+			</ul>
+			<div class="container">
+				<div class="row">
+					<div class="span21">
+						<br>Etape #2 : Découpez votre image, puis validez :
+						<img src="http://img.vieassociative.fr/<?php echo $prefix; ?><?php echo $association->id; ?>/<?php echo $name; ?>" id="jcrop_img" />
+					</div>
+				</div>
+
+
+
+
+
+
+				<div class="row">
+					<div class="span19">
+						Résultat :<br>
+
+						<div id="preview-pane">
+						<div class="preview-container">
+							<img src="http://img.vieassociative.fr/<?php echo $prefix; ?><?php echo $association->id; ?>/<?php echo $name; ?>" class="jcrop-preview" alt="Preview" />
+						</div>
+						</div>
+					</div>
+
+					
+					<div class="span3" id="uploader">
+						<div class="text-center">
+							<form method="post">
+								<input type="hidden" id="x" name="x" />
+								<input type="hidden" id="y" name="y" />
+								<input type="hidden" id="w" name="w" />
+								<input type="hidden" id="h" name="h" />
+								<div class="btn button-green pull-right" id="validate">Valider</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<style type="text/css">
+	#preview-pane {
+		display: block;
+		z-index: 2000;
+		top: 10px;
+		right: -280px;
+		padding: 6px;
+	}
+	#preview-pane .preview-container {
+		width: <?php echo $x; ?>px;
+		height: <?php echo $y; ?>px;
+		overflow: hidden;
+	}
+</style>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('footer-js'); ?>
+	<script>
+		window.FileAPI = {
+			debug: false, // debug mode
+			staticPath: '/js/jquery.fileapi/FileAPI/' // path to *.swf
+		};
+	</script>
+	<script src="/pluggin/jquery.fileapi/FileAPI/FileAPI.min.js"></script>
+	<script src="/pluggin/jquery.fileapi/jquery.fileapi.min.js"></script>
+	<script src="/pluggin/jquery.fileapi/jcrop/jquery.Jcrop.min.js"></script>
+	<link href="/pluggin/jquery.fileapi/jcrop/jquery.Jcrop.min.css" rel="stylesheet" type="text/css"/>
+	<script>
+		$(function(){
+			var jcrop_api,
+			boundx,
+			boundy,
+			// Grab some information about the preview pane
+			$preview = $('#preview-pane'),
+			$pcnt = $('#preview-pane .preview-container'),
+			$pimg = $('#preview-pane .preview-container img'),
+			xsize = $pcnt.width(),
+			ysize = $pcnt.height();
+		
+			var jcrop_img = $('#jcrop_img').Jcrop({
+				onChange: updateCoords,
+				onSelect: updateCoords,
+				aspectRatio: xsize / ysize
+			},function(){
+				// Use the API to get the real image size
+				var bounds = this.getBounds();
+				boundx = bounds[0];
+				boundy = bounds[1];
+				var coord = [
+					Math.round(Math.random() * bounds[0]),
+					Math.round(Math.random() * bounds[1]),
+					Math.round(Math.random() * bounds[0]),
+					Math.round(Math.random() * bounds[1])
+				];
+				this.setSelect(coord);
+
+				// Store the API in the jcrop_api variable
+				jcrop_api = this;
+			});
+			jcrop_img.setSelect(getRandom());
+			function updateCoords(c)
+			{
+				if (parseInt(c.w) > 0){
+					var rx = xsize / c.w;
+					var ry = ysize / c.h;
+
+					$pimg.css({
+						width: Math.round(rx * boundx) + 'px',
+						height: Math.round(ry * boundy) + 'px',
+						marginLeft: '-' + Math.round(rx * c.x) + 'px',
+						marginTop: '-' + Math.round(ry * c.y) + 'px'
+					});
+				}
+				$('#x').val(c.x);
+				$('#y').val(c.y);
+				$('#w').val(c.w);
+				$('#h').val(c.h);
+			};
+
+			// Use the API to find cropping dimensions
+			// Then generate a random selection
+			// This function is used by setSelect and animateTo buttons
+			// Mainly for demonstration purposes
+			function getRandom() {
+			};
+		});
+
+
+		function checkCoords()
+		{
+			if (parseInt($('#w').val())) return true;
+			alert('Please select a crop region then press submit.');
+			return false;
+		};
+		$('#validate').click(function(){
+			if(checkCoords()){
+				$(this).parent().submit();
+			}
+		})
+		
+	</script>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('template.theme', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

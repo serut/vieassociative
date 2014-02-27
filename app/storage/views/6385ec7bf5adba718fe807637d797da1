@@ -1,0 +1,7 @@
+<div class="background">
+    <h3 class="head"><?php echo Lang::get('aside.add_association_head'); ?></h3>
+    <p class="justify"><?php echo Lang::get('aside.add_association_text'); ?></p>
+    <div class="text-center">
+    	<a href="<?php echo URLSubdomain::to('association','/add'); ?>" class="btn button-orange"><?php echo Lang::get('aside.add_association_btn'); ?></a><br>
+    </div>
+</div>	

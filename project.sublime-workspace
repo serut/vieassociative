@@ -1,0 +1,647 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"id",
+				"id_user"
+			],
+			[
+				"data",
+				"dataMessage"
+			],
+			[
+				"is",
+				"is_array"
+			],
+			[
+				"join",
+				"join_us"
+			],
+			[
+				"avan",
+				"avantage_association"
+			],
+			[
+				"avantage_contrib",
+				"avantage_contributor_1"
+			],
+			[
+				"u",
+				"update"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"border",
+				"border-left"
+			],
+			[
+				"date",
+				"datepicker"
+			],
+			[
+				"php",
+				"phpinfo"
+			],
+			[
+				"in",
+				"in_array"
+			],
+			[
+				"lorem",
+				"lorem	lorem - Medium paragraph"
+			],
+			[
+				"pad",
+				"padding-bottom"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"max",
+				"max-height"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"appen",
+				"appendTo"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"a",
+				"text-align"
+			],
+			[
+				"bl",
+				"inline-block"
+			],
+			[
+				"check",
+				"checked"
+			],
+			[
+				"c",
+				"context"
+			],
+			[
+				"URL",
+				"URL-to	URL-to"
+			],
+			[
+				"Route",
+				"Route-crn	Route-currentRouteName"
+			],
+			[
+				"Rou",
+				"Routes"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"re",
+				"result"
+			],
+			[
+				"Lang",
+				"Lang-get	Lang-get"
+			],
+			[
+				"Form",
+				"Form-password	Form-password"
+			],
+			[
+				"data-",
+				"data-original-title"
+			],
+			[
+				"arra",
+				"arrayElements"
+			],
+			[
+				"Ro",
+				"Routes"
+			],
+			[
+				"preg",
+				"preg_match"
+			],
+			[
+				"bor",
+				"border-top"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"r",
+				"rows	Attr"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/views/index/association.blade.php",
+			"settings":
+			{
+				"buffer_size": 4419,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 58.0,
+		"selected_items":
+		[
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 386.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/xampp/htdocs/vieassociative/app/libraries/SiteHelpers.php",
+		"/D/xampp/htdocs/vieassociative/app/views/association/edit-news.blade.php",
+		"/D/xampp/htdocs/philippe/index.html",
+		"/D/xampp/htdocs/vieassociative/public/css/less/forms.less",
+		"/D/xampp/htdocs/vieassociative/app/views/connexion/connexion.blade.php",
+		"/D/xampp/htdocs/vieassociative/app/views/template/main_html_component/footer.blade.php",
+		"/D/xampp/htdocs/vieassociative/app/views/template/theme.blade.php",
+		"/D/xampp/htdocs/vieassociative/readme.md",
+		"/D/xampp/htdocs/vieassociative/app/controllers/AssociationFormController.php",
+		"/D/xampp/htdocs/vieassociative/app/models/validators/associationAdministrator.php",
+		"/D/xampp/htdocs/vieassociative/app/controllers/AssociationController.php",
+		"/D/xampp/htdocs/vieassociative/app/views/template/aside/avancement.blade.php",
+		"/D/xampp/htdocs/vieassociative/public/js/vendor/bootstrap-datetimepicker.min.js",
+		"/D/xampp/htdocs/vieassociative/app/views/template/main_html_component/link-foot.blade.php",
+		"/D/xampp/htdocs/vieassociative/app/views/index/association.blade.php",
+		"/D/xampp/htdocs/vieassociative/public/css/less/include.less",
+		"/D/xampp/htdocs/vieassociative/public/css/less/datepicker.less",
+		"/D/xampp/htdocs/vieassociative/app/views/template/main_html_component/link-head.blade.php",
+		"/D/xampp/htdocs/vieassociative/public/css/less/calendar.less",
+		"/D/xampp/htdocs/vieassociative/app/views/association/edit.blade.php",
+		"/D/xampp/htdocs/vieassociative/app/lang/fr/association/edit/news.php",
+		"/D/xampp/htdocs/vieassociative/app/routes.php",
+		"/D/xampp/htdocs/vieassociative/app/models/Association.php",
+		"/D/xampp/htdocs/vieassociative/app/models/User.php",
+		"/D/xampp/htdocs/vieassociative/app/views/association/edit-administrator.blade.php",
+		"/D/xampp/htdocs/vieassociative/app/views/association/edit-social.blade.php",
+		"/D/xampp/htdocs/vieassociative/app/views/association/edit-statistics.blade.php",
+		"/D/xampp/htdocs/vieassociative/app/views/association/list-news.blade.php",
+		"/D/xampp/htdocs/vieassociative/app/views/association/edit-vieassociative-informations.blade.php",
+		"/D/xampp/htdocs/vieassociative/app/views/association/history.blade.php",
+		"/D/xampp/htdocs/vieassociative/app/controllers/LoginController.php",
+		"/D/xampp/htdocs/vieassociative/app/controllers/DiscussionController.php",
+		"/D/xampp/htdocs/vieassociative/app/models/Proposition.php",
+		"/D/xampp/htdocs/vieassociative/app/models/elo/UserAssociation.php",
+		"/D/xampp/htdocs/vieassociative/app/database/migrations/2013_09_27_080749_history_association.php",
+		"/D/xampp/htdocs/vieassociative/app/views/discussion/proposition.blade.php",
+		"/D/xampp/htdocs/vieassociative/app/models/Answer.php",
+		"/D/xampp/htdocs/vieassociative/app/lang/fr/association/proposition/answer.php",
+		"/D/xampp/htdocs/vieassociative/app/models/elo/Proposition.php",
+		"/D/xampp/htdocs/vieassociative/app/models/validators/discussion.php",
+		"/D/xampp/htdocs/vieassociative/app/models/elo/Answer.php",
+		"/D/xampp/htdocs/vieassociative/public/js/vendor/parsley.min.js",
+		"/D/xampp/htdocs/vieassociative/app/views/association/edit-general-informations.blade.php",
+		"/D/xampp/htdocs/vieassociative/public/css/compiled.css",
+		"/D/xampp/htdocs/vieassociative/public/css/css/include.css",
+		"/D/xampp/htdocs/vieassociative/public/css/less/general.less",
+		"/D/xampp/htdocs/vieassociative/public/js/social.js",
+		"/D/xampp/htdocs/vieassociative/app/models/LieuTable.php",
+		"/D/xampp/htdocs/vieassociative/app/lang/fr/association/proposition/title.php",
+		"/D/xampp/htdocs/vieassociative/app/lang/fr/association/proposition/type.php",
+		"/D/xampp/htdocs/vieassociative/app/lang/fr/association/proposition.php",
+		"/D/xampp/htdocs/vieassociative/app/lang/fr/association/modal_form/general-informations.php",
+		"/D/xampp/htdocs/vieassociative/app/views/discussion/index.blade.php",
+		"/D/Users/ser/Desktop/tube.c",
+		"/D/Users/ser/Desktop/canular1",
+		"/D/xampp/htdocs/vieassociative/app/models/elo/Discussion.php",
+		"/D/xampp/htdocs/vieassociative/app/database/migrations/2013_10_07_122749_proposition.php",
+		"/D/xampp/htdocs/vieassociative/artisan",
+		"/D/Users/ser/Desktop/Ouvrage.java",
+		"/D/Users/ser/Desktop/class Ouvrage{",
+		"/D/xampp/htdocs/vieassociative/app/models/elo/Vote.php",
+		"/D/Users/ser/Desktop/qsd",
+		"/D/xampp/htdocs/vieassociative/public/css/less/specific.less",
+		"/D/xampp/htdocs/vieassociative/public/css/before/design.css",
+		"/D/xampp/htdocs/vieassociative/app/storage/views/d70dde38ccb431c1ccc8d788c3ac4f0e",
+		"/D/xampp/htdocs/vieassociative/vendor/composer/autoload_classmap.php",
+		"/D/xampp/htdocs/vieassociative/app/database/migrations/2013_05_20_141549_from_scratch.php",
+		"/D/Users/ser/Desktop/Exemplaire.java",
+		"/D/xampp/htdocs/vieassociative/.gitignore",
+		"/D/xampp/htdocs/vieassociative/app/database/migrations/2013_09_27_080749_HistoryAssociation.php",
+		"/D/xampp/htdocs/vieassociative/app/database/migrations/2013_09_24_101334_history_association.php",
+		"/D/Users/ser/Desktop/jfioqefzeofjzeoifjzeoifjzoeifjzeoi.java",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/index/index.blade.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/association/edit-general-informations.blade.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/form_association/general-informations/internal_regulation.blade.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/models/validators/associationGeneralInformation.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/controllers/AssociationFormController.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/form_association/general-informations/statuts.blade.php",
+		"/J/Users/Serut/Desktop/couldown.html",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/lang/fr/association/form_create.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/association/add.blade.php",
+		"/J/Users/Serut/AppData/Local/Temp/7zOC7BE.tmp/battle4s_phpBB3UP.sql",
+		"/D/torrent/Journal/Steinberg.Cubase.v5.1.AiR/airiso.nfo",
+		"/J/xampp2/htdocs/wordpress-pyreneautomation/wp-content/plugins/revslider/revslider_admin.php",
+		"/J/xampp2/htdocs/wordpress-pyreneautomation/wp-content/themes/inovado/single.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/wordpress-heroku-master/wp-config.php",
+		"/D/Incomming/inovado_v3.0.1/inovado/themeforest-3810895-inovado-retina-responsive-multipurpose-theme/SampleData/Demo Content/inovado.wordpress.2013-08-12.xml",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/wordpress-heroku-master/wp-content/themes/index.php",
+		"/F/Jeux/fear2/SKIDROW.ini",
+		"/J/xampp2/htdocs/wordpress-pyreneautomation/wp-config.php",
+		"/J/xampp2/htdocs/wordpress-pyreneautomation/wp-content/themes/inovado/framework/languages/de_DE.po",
+		"/J/xampp2/htdocs/wordpress-pyreneautomation/wp-content/themes/inovado/framework/languages/en_EN.mo",
+		"/J/xampp2/htdocs/wordpress-pyreneautomation/wp-content/themes/inovado/framework/languages/en_EN.po",
+		"/F/ISO/Fear - Trilogy ISO/Extraction Point/fearxp.txt",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/wordpress-heroku-master/.gitignore",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/routes.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/lang/fr/association/modal_form/general-informations.php",
+		"/F/ISO/Fear - Trilogy ISO/Perseus Mandate/NS-FEARXP2_SR-poseden.nfo",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/models/User.php",
+		"/F/ISO/Fear - Trilogy ISO/Extraction Point/Poseden/readme.txt",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/database/migrations/2013_08_12_121039_complete_association_profile.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/lang/fr/form.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/libraries/SiteHelpers.php",
+		"/F/ISO/Fear - Trilogy ISO/Fear/flt-fear.nfo",
+		"/F/ISO/FEAR 2 ISO/f2-clonedvd.nfo",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/association/edit-vieassociative-informations.blade.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/association/profile.blade.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/controllers/AssociationController.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/association/edit.blade.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/form_association/general-informations/admitted_public_utility.blade.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/readme.md",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/association/edit-statistics.blade.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/storage/logs/log-apache2handler-2013-08-12.txt",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/storage/views/67d4ba289e7a8def3a57ded43d2da2eb",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/storage/views/aa7c078c5204c6e11091246787eebd6b",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/form_association/general-informations/acronym_name.blade.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/form_association/vieassociative-informations/acronym_name.blade.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/form_association/vieassociative-informations/activities.blade.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/form_association/vieassociative-informations/association_categories.blade.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/form_association/vieassociative-informations/association_protection.blade.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/form_association/vieassociative-informations/main_mail.blade.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/form_association/vieassociative-informations/module_evenement.blade.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/form_association/vieassociative-informations/module_photo.blade.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/form_association/vieassociative-informations/module_price.blade.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/form_association/vieassociative-informations/module_social.blade.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/form_association/vieassociative-informations/module_sponsor.blade.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/form_association/vieassociative-informations/services_between_partners.blade.php",
+		"/J/xampp2/htdocs/lara_vieassoc/Dropbox/Dev/www-vieassoc/app/views/form_association/vieassociative-informations/welcome_text.blade.php"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"D:\\xampp\\htdocs\\vieassociative",
+			"J:\\xampp2\\htdocs\\lara_vieassoc\\Dropbox\\Dev\\www-vieassoc\\app",
+			"J:\\xampp2\\htdocs\\lara_vieassoc\\Dropbox\\Dev\\laravel-master",
+			"J:\\xampp2\\htdocs\\lara_vieassoc\\Dropbox\\Dev\\www-vieassoc\\ext",
+			"J:\\xampp2\\htdocs\\lara_vieassoc\\Dropbox\\Dev\\www-vieassoc\\",
+			"J:\\xampp2\\htdocs\\lara_vieassoc\\Dropbox\\Dev\\www-vieassoc\\app\\views\\form_association\\vieassociative-informations",
+			"J:\\xampp2\\htdocs\\lara_vieassoc\\Dropbox\\Dev\\www-vieassoc\\app\\",
+			"J:\\xampp2\\htdocs\\lara_vieassoc\\Dropbox\\Dev\\www-vieassoc\\app\\views"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"input[type=\"text\"]",
+			"controls input[type=\"text\"]",
+			"\\9",
+			"private function ",
+			"isAdministrator",
+			"admin_mail",
+			"requir",
+			"I",
+			"id_discussion",
+			"e",
+			"oswald",
+			"owwald",
+			"association",
+			"answer-middel",
+			"HistoryAssociation",
+			"history",
+			"CompleteAssociationProfile",
+			"statuts",
+			"\n              ",
+			"}}}</",
+			"acronym_name",
+			"display_name",
+			"tooltip",
+			"display_name",
+			"auto",
+			"associationEnManagement",
+			"options",
+			"wrapper",
+			"intTo",
+			"			\n",
+			"OPENSSL_RAW_DATA",
+			"@",
+			"},\n",
+			"mcrypt",
+			"mcr",
+			"general-informations",
+			"href=\"\"",
+			"display_",
+			"display_display",
+			"display_",
+			"name",
+			"display_name",
+			"name",
+			"div-real-name",
+			"php",
+			"create_radio",
+			"create_checkbox",
+			"ajax",
+			"form",
+			"mongo",
+			"pecl",
+			"1150",
+			"27%",
+			"47%",
+			"1200px",
+			"media",
+			"data",
+			"2000",
+			"href=\"\"",
+			"icon-chevron-down",
+			"url('",
+			"<a%s>",
+			"number",
+			"container",
+			"portfolio-items",
+			"div-hidden-evenement",
+			"one-fourth",
+			"\"images",
+			"images",
+			"\n	",
+			"li.",
+			".ss",
+			"ss",
+			"))",
+			"input",
+			"align",
+			"media",
+			"media (min-width:1200px.*?media",
+			"media(min-width:1200px",
+			"media",
+			"incorrect subdomain",
+			"https",
+			";\n",
+			"SiteHelpers",
+			"to",
+			"login",
+			"###",
+			"'",
+			"\\'",
+			"var",
+			"isExistantMail",
+			"module.facebook",
+			"xlarge",
+			"media",
+			"nbrConnexTentative",
+			"Connexion",
+			"player",
+			"Delete",
+			"F3",
+			"fSuicide",
+			"Suicide",
+			"F3",
+			"Tab",
+			"PlayerInput",
+			"h1",
+			"{{ ",
+			"include",
+			"_server",
+			"/",
+			"main",
+			"*/",
+			"/*",
+			"control-group",
+			"h1",
+			" @",
+			"@media",
+			">\n",
+			"justi",
+			"}\n",
+			"flat",
+			"/*",
+			"/* ",
+			"/*",
+			"button-flat",
+			"icon",
+			"gradient",
+			"button-circle",
+			"\\\\"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"acronym",
+			"name",
+			"vieassociative-informations"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/views/index/association.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4419,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4158,
+								4158
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1650.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"project": "project.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 261.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

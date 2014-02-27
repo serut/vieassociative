@@ -46,10 +46,6 @@ App::after(function($request, $response)
     return $response;
 });
 
-
-	//
-});
-
 Route::when('user/log', 'guest');
 /*
 |--------------------------------------------------------------------------

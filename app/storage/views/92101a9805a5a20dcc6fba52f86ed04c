@@ -17,6 +17,7 @@
 		</div>
 	</div>
 </section>
+
 <section>
 			<div class="navbar-header visible-xs">
 				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-js-navbar-scrollspy">
@@ -32,8 +33,7 @@
 					<li><a href="#photo-timeline">Photos</a></li>
 					<?php endif; ?>
 				</ul>
-
-				<?php if(Auth::check() && ($association->nb_admin == 0 || Auth::user()->isAdministrator($association->id))): ?>
+				<?php if(Auth::check() && ($association->nb_administrator == 0 || User::isAdministrator($association->id))): ?>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-pencil"></i></a>

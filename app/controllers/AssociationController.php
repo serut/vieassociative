@@ -9,9 +9,14 @@
 		* @see http://association.vieassociative.fr/
 		* @return View Search associations
 	*/
-	public function getIndex() {
+	public function getSearchIngine() {
+        if(Input::has('all')){
+            $listAssociation = Association::all();
+        }else{
+            $listAssociation = Association::where('plan','>',1)->get();
+        }
         return View::make('index.listing')
-            ->with('association',Association::all());
+            ->with('association',$listAssociation);
 	}
 
 
@@ -41,9 +46,14 @@
 		* @param int $idAssoc The ID of this association
 		* @return View The wall of the association
 	*/
-	public function getProfile($idAssoc) {
+	public function getProfile($idAssoc, $slug) {
+        $association = Association::find($idAssoc);
+        if($association->plan == 1 && $slug != $association->slug) {
+            // It's a private association
+            return App::abort(404);
+        }
 		return View::make('association.profile')
-			->with('association',Association::findOrFail($idAssoc))
+			->with('association',$association)
 			->with('newsFeed',News::listNews($idAssoc));
 	}
 	

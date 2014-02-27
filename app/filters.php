@@ -76,7 +76,7 @@ Route::filter('guest', function()
 Route::filter('assoc', function($idAssoc)
 {
     if (Auth::guest() || User::isAdministrator($idAssoc)){
-        return App::abort(403);
+        return App::abort(404, 'Unauthorized action.');
     }
 });
 /*

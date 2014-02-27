@@ -24,6 +24,7 @@ class Association  extends Eloquent
         $a->name = $assoc['name'];
         $a->slug = Str::slug($assoc['name'],'-');
         $a->id_folder = $gallery->id;
+        $a->plan = 2; // It's a normal page
         $a->touch();
         return $a->id;
     }

@@ -57,7 +57,7 @@ switch ($server['0']) {
         Route::get('sitemap.xml', 'SitemapController@getSitemap');
         break;
     case 'association': // For association.vieassociative.fr/*
-        Route::get('/', 'AssociationController@getIndex');
+        Route::get('/', 'AssociationController@getSearchIngine');
         Route::get('{id}-{text}', 'AssociationController@getProfile')->where('id', '[0-9]+')->where('text', '[a-z-0-9]+');
         Route::group(array('before'=>'auth'), function(){ // Loggin required
             Route::get('add', 'AssociationController@getAdd');

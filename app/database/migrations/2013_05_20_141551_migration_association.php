@@ -30,6 +30,7 @@ class MigrationAssociation extends Migration {
 			$table->text('statuts');
 			$table->text('internal_regulation');
 			$table->string('contact_adress'); // an email for contact the association
+            $table->integer('plan');
 
 
 			$table->string('page_facebook');

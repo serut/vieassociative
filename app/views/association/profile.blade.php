@@ -18,6 +18,7 @@
 		</div>
 	</div>
 </section>
+
 <section>
 			<div class="navbar-header visible-xs">
 				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-js-navbar-scrollspy">

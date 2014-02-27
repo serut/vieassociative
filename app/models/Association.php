@@ -11,7 +11,11 @@ class Association  extends Eloquent
     public function setNameAttribute($value){
         //TO DO
         $this->attributes['name'] = $value;
+<<<<<<< HEAD
         $this->attributes['slug'] = Str::slug($assoc['name'],'-');
+=======
+        $this->attributes['slug'] = Str::slug($value,'-');
+>>>>>>> aad3adecb9197548aa8f5cdb19df06b8d97330dd
     }
     public function admitted_public_utility_display(){
         return $this->admitted_public_utility ? 'Oui' : 'Non';
@@ -58,12 +62,15 @@ class Association  extends Eloquent
     }
     static function getListWhereAdmin($idUser){
         return UserAssociation::with('association')->where('id_user',$idUser)->get();
+<<<<<<< HEAD
         $sql = 'SELECT association.name, association.id, association.slug
                 FROM user_association,association
                 WHERE user_association.id_assoc = association.id 
                 AND user_association.id_user = ?';
         $result = DB::select($sql, array($idUser));
         return $result;
+=======
+>>>>>>> aad3adecb9197548aa8f5cdb19df06b8d97330dd
     }
     public function getLogo(){
         if(empty($this->logo_img)){

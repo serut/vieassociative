@@ -46,7 +46,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         $is_admin = UserAssociation::where('id_assoc',$id_assoc)->where('id_user',$id_user)->count();
         return $is_admin>0 ? true : false; 
     }
-    static function addAdmin($id_user,$id_assoc,$link){
+    static function addAssoc($id_user,$id_assoc,$link){
+        $association = Association::findOrFail($id_assoc);
+        $association->nb_administrator ++;
+        $association->touch();
         $el = new UserAssociation();
         $el->id_user = $id_user;
         $el->id_assoc = $id_assoc;
@@ -68,13 +71,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     static function disconnect(){
         Session::put('name',null);
         Session::put('myassocs',array());
-    }
-    static function addAssoc($id_user,$id_assoc,$link){
-        $el = new UserAssociation;
-        $el->id_user = $id_user;
-        $el->id_assoc = $id_assoc;
-        $el->link = $link;
-        $el->touch();
     }
     static function creerToken($id_user,$token){
         $el = new UserToken;

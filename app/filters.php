@@ -23,6 +23,7 @@ App::before(function($request)
             setcookie('vieasso_remember', $_COOKIE['vieasso_remember'], time()-10);
         }
     }
+<<<<<<< HEAD
 
     
     if($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
@@ -36,11 +37,14 @@ App::before(function($request)
 
         return Response::make(null, $statusCode, $headers);
     }
+=======
+>>>>>>> aad3adecb9197548aa8f5cdb19df06b8d97330dd
 });
 
 
 App::after(function($request, $response)
 {
+<<<<<<< HEAD
     $response->headers->set('Access-Control-Allow-Origin', '*');
     $response->headers->set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     $response->headers->set('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept, Authorization, X-Requested-With');
@@ -49,6 +53,11 @@ App::after(function($request, $response)
 });
 
 
+=======
+	//
+});
+
+>>>>>>> aad3adecb9197548aa8f5cdb19df06b8d97330dd
 Route::when('user/log', 'guest');
 /*
 |--------------------------------------------------------------------------
@@ -76,6 +85,7 @@ Route::filter('guest', function()
     }
 });
 
+<<<<<<< HEAD
 Route::filter('assoc', function()
 {
     $listeAssoc = array();
@@ -94,6 +104,12 @@ Route::filter('assoc', function()
             // Il se balade sur notre site sans en avoir le droit
             return '02 Action non autorisée : l\'association que vous avez tenté de modifier ne vous appartient pas'.Session::get('associationEnManagement');
         }
+=======
+Route::filter('assoc', function($idAssoc)
+{
+    if (Auth::guest() || User::isAdministrator($idAssoc)){
+        return App::abort(403);
+>>>>>>> aad3adecb9197548aa8f5cdb19df06b8d97330dd
     }
 });
 /*

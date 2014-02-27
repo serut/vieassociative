@@ -11,6 +11,6 @@ class UserAssociation  extends Eloquent
     }
     public function association()
     {
-        return $this->belongsTo('Association','id');
+        return $this->belongsTo('Association','id_assoc');
     }
 }

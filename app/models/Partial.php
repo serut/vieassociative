@@ -167,7 +167,11 @@ class Partial extends Eloquent
         		if($id_news != $q->id_news){
         			$i++;
         			$id_news = $q->id_news;
+<<<<<<< HEAD
                     $result[$id_news]['updated_at'] = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $q->updated_at)->toISO8601String();
+=======
+                    $result[$id_news]['updated_at'] = $q->updated_at;
+>>>>>>> aad3adecb9197548aa8f5cdb19df06b8d97330dd
         		}
                 switch ($q->partial_type) {
                     case 'PartialTitle':

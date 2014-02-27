@@ -33,8 +33,7 @@
 					<li><a href="#photo-timeline">Photos</a></li>
 					@endif
 				</ul>
-
-				@if(Auth::check() && ($association->nb_admin == 0 || Auth::user()->isAdministrator($association->id)))
+				@if(Auth::check() && ($association->nb_administrator == 0 || User::isAdministrator($association->id)))
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-pencil"></i></a>

@@ -1,12 +1,6 @@
 <?php
 
-namespace PhpParser\Unserializer;
-
-use XMLReader;
-use DomainException;
-use PhpParser\Unserializer;
-
-class XML implements Unserializer
+class PHPParser_Unserializer_XML implements PHPParser_Unserializer
 {
     protected $reader;
 
@@ -128,8 +122,8 @@ class XML implements Unserializer
 
     protected function readComment() {
         $className = $this->reader->getAttribute('isDocComment') === 'true'
-            ? 'PhpParser\Comment\Doc'
-            : 'PhpParser\Comment'
+            ? 'PHPParser_Comment_Doc'
+            : 'PHPParser_Comment'
         ;
         return new $className(
             $this->reader->readString(),

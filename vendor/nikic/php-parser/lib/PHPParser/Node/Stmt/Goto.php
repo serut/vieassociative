@@ -1,13 +1,9 @@
 <?php
 
-namespace PhpParser\Node\Stmt;
-
-use PhpParser\Node\Stmt;
-
 /**
  * @property string $name Name of label to jump to
  */
-class Goto_ extends Stmt
+class PHPParser_Node_Stmt_Goto extends PHPParser_Node_Stmt
 {
     /**
      * Constructs a goto node.

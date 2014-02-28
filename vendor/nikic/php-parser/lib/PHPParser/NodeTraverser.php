@@ -1,11 +1,9 @@
 <?php
 
-namespace PhpParser;
-
-class NodeTraverser implements NodeTraverserInterface
+class PHPParser_NodeTraverser implements PHPParser_NodeTraverserInterface
 {
     /**
-     * @var NodeVisitor[] Visitors
+     * @var PHPParser_NodeVisitor[] Visitors
      */
     protected $visitors;
 
@@ -19,18 +17,18 @@ class NodeTraverser implements NodeTraverserInterface
     /**
      * Adds a visitor.
      *
-     * @param NodeVisitor $visitor Visitor to add
+     * @param PHPParser_NodeVisitor $visitor Visitor to add
      */
-    public function addVisitor(NodeVisitor $visitor) {
+    public function addVisitor(PHPParser_NodeVisitor $visitor) {
         $this->visitors[] = $visitor;
     }
 
     /**
      * Removes an added visitor.
      *
-     * @param NodeVisitor $visitor
+     * @param PHPParser_NodeVisitor $visitor
      */
-    public function removeVisitor(NodeVisitor $visitor) {
+    public function removeVisitor(PHPParser_NodeVisitor $visitor) {
         foreach ($this->visitors as $index => $storedVisitor) {
             if ($storedVisitor === $visitor) {
                 unset($this->visitors[$index]);
@@ -42,9 +40,9 @@ class NodeTraverser implements NodeTraverserInterface
     /**
      * Traverses an array of nodes using the registered visitors.
      *
-     * @param Node[] $nodes Array of nodes
+     * @param PHPParser_Node[] $nodes Array of nodes
      *
-     * @return Node[] Traversed array of nodes
+     * @return PHPParser_Node[] Traversed array of nodes
      */
     public function traverse(array $nodes) {
         foreach ($this->visitors as $visitor) {
@@ -64,7 +62,7 @@ class NodeTraverser implements NodeTraverserInterface
         return $nodes;
     }
 
-    protected function traverseNode(Node $node) {
+    protected function traverseNode(PHPParser_Node $node) {
         $node = clone $node;
 
         foreach ($node->getSubNodeNames() as $name) {
@@ -72,7 +70,7 @@ class NodeTraverser implements NodeTraverserInterface
 
             if (is_array($subNode)) {
                 $subNode = $this->traverseArray($subNode);
-            } elseif ($subNode instanceof Node) {
+            } elseif ($subNode instanceof PHPParser_Node) {
                 foreach ($this->visitors as $visitor) {
                     if (null !== $return = $visitor->enterNode($subNode)) {
                         $subNode = $return;
@@ -98,7 +96,7 @@ class NodeTraverser implements NodeTraverserInterface
         foreach ($nodes as $i => &$node) {
             if (is_array($node)) {
                 $node = $this->traverseArray($node);
-            } elseif ($node instanceof Node) {
+            } elseif ($node instanceof PHPParser_Node) {
                 foreach ($this->visitors as $visitor) {
                     if (null !== $return = $visitor->enterNode($node)) {
                         $node = $return;

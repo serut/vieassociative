@@ -1,14 +1,12 @@
 <?php
 
-namespace PhpParser;
-
 /**
  * @codeCoverageIgnore
  */
-class NodeVisitorAbstract implements NodeVisitor
+class PHPParser_NodeVisitorAbstract implements PHPParser_NodeVisitor
 {
     public function beforeTraverse(array $nodes)    { }
-    public function enterNode(Node $node) { }
-    public function leaveNode(Node $node) { }
+    public function enterNode(PHPParser_Node $node) { }
+    public function leaveNode(PHPParser_Node $node) { }
     public function afterTraverse(array $nodes)     { }
 }

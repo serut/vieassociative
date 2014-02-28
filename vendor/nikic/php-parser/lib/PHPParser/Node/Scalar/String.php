@@ -1,13 +1,9 @@
 <?php
 
-namespace PhpParser\Node\Scalar;
-
-use PhpParser\Node\Scalar;
-
 /**
  * @property string $value String value
  */
-class String extends Scalar
+class PHPParser_Node_Scalar_String extends PHPParser_Node_Scalar
 {
     protected static $replacements = array(
         '\\' => '\\',

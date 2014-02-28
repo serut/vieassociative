@@ -1,29 +1,25 @@
 <?php
 
-namespace PhpParser;
-
-use PhpParser\Builder;
-
 /**
  * "class", "interface" and "function" are reserved keywords, so the methods are defined as _class(),
  * _interface() and _function() in the class and are made available as class(), interface() and function()
  * through __call() magic.
  *
- * @method Builder\Class      class(string $name)     Creates a class builder.
- * @method Builder\Function_  function(string $name)  Creates a function builder
- * @method Builder\Interface_ interface(string $name) Creates an interface builder.
+ * @method PHPParser_Builder_Class     class(string $name)     Creates a class builder.
+ * @method PHPParser_Builder_Function  function(string $name)  Creates a function builder
+ * @method PHPParser_Builder_Interface interface(string $name) Creates an interface builder.
  */
-class BuilderFactory
+class PHPParser_BuilderFactory
 {
     /**
      * Creates a class builder.
      *
      * @param string $name Name of the class
      *
-     * @return Builder\Class_ The created class builder
+     * @return PHPParser_Builder_Class The created class builder
      */
     protected function _class($name) {
-        return new Builder\Class_($name);
+        return new PHPParser_Builder_Class($name);
     }
 
     /**
@@ -31,10 +27,10 @@ class BuilderFactory
      *
      * @param string $name Name of the interface
      *
-     * @return Builder\Interface_ The created interface builder
+     * @return PHPParser_Builder_Class The created interface builder
      */
     protected function _interface($name) {
-        return new Builder\Interface_($name);
+        return new PHPParser_Builder_Interface($name);
     }
 
     /**
@@ -42,10 +38,10 @@ class BuilderFactory
      *
      * @param string $name Name of the method
      *
-     * @return Builder\Method The created method builder
+     * @return PHPParser_Builder_Method The created method builder
      */
     public function method($name) {
-        return new Builder\Method($name);
+        return new PHPParser_Builder_Method($name);
     }
 
     /**
@@ -53,10 +49,10 @@ class BuilderFactory
      *
      * @param string $name Name of the parameter
      *
-     * @return Builder\Param The created parameter builder
+     * @return PHPParser_Builder_Param The created parameter builder
      */
     public function param($name) {
-        return new Builder\Param($name);
+        return new PHPParser_Builder_Param($name);
     }
 
     /**
@@ -64,10 +60,10 @@ class BuilderFactory
      *
      * @param string $name Name of the property
      *
-     * @return Builder\Property The created property builder
+     * @return PHPParser_Builder_Property The created property builder
      */
     public function property($name) {
-        return new Builder\Property($name);
+        return new PHPParser_Builder_Property($name);
     }
 
     /**
@@ -75,10 +71,10 @@ class BuilderFactory
      *
      * @param string $name Name of the function
      *
-     * @return Builder\Function_ The created function builder
+     * @return PHPParser_Builder_Property The created function builder
      */
     protected function _function($name) {
-        return new Builder\Function_($name);
+        return new PHPParser_Builder_Function($name);
     }
 
     public function __call($name, array $args) {
@@ -86,6 +82,6 @@ class BuilderFactory
             return call_user_func_array(array($this, '_' . $name), $args);
         }
 
-        throw new \LogicException(sprintf('Method "%s" does not exist', $name));
+        throw new LogicException(sprintf('Method "%s" does not exist', $name));
     }
 }

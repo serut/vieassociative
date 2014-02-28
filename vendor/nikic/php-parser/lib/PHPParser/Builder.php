@@ -1,13 +1,11 @@
 <?php
 
-namespace PhpParser;
-
-interface Builder
+interface PHPParser_Builder
 {
     /**
      * Returns the built node.
      *
-     * @return Node The built node
+     * @return PHPParser_Node The built node
      */
     public function getNode();
 }

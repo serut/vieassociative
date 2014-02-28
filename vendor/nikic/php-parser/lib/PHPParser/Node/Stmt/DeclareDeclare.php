@@ -1,23 +1,19 @@
 <?php
 
-namespace PhpParser\Node\Stmt;
-
-use PhpParser\Node;
-
 /**
- * @property string    $key   Key
- * @property Node\Expr $value Value
+ * @property string              $key   Key
+ * @property PHPParser_Node_Expr $value Value
  */
-class DeclareDeclare extends Node\Stmt
+class PHPParser_Node_Stmt_DeclareDeclare extends PHPParser_Node_Stmt
 {
     /**
      * Constructs a declare key=>value pair node.
      *
-     * @param string    $key        Key
-     * @param Node\Expr $value      Value
-     * @param array     $attributes Additional attributes
+     * @param string              $key        Key
+     * @param PHPParser_Node_Expr $value      Value
+     * @param array               $attributes Additional attributes
      */
-    public function __construct($key, Node\Expr $value, array $attributes = array()) {
+    public function __construct($key, PHPParser_Node_Expr $value, array $attributes = array()) {
         parent::__construct(
             array(
                 'key'   => $key,

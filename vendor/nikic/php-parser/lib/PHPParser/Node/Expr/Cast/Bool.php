@@ -1,9 +1,5 @@
 <?php
 
-namespace PhpParser\Node\Expr\Cast;
-
-use PhpParser\Node\Expr\Cast;
-
-class Bool extends Cast
+class PHPParser_Node_Expr_Cast_Bool extends PHPParser_Node_Expr_Cast
 {
 }

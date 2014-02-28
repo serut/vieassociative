@@ -1,12 +1,6 @@
 <?php
 
-namespace PhpParser\Builder;
-
-use PhpParser;
-use PhpParser\Node\Name;
-use PhpParser\Node\Stmt;
-
-class Class_ extends PhpParser\BuilderAbstract
+class PHPParser_Builder_Class extends PHPParser_BuilderAbstract
 {
     protected $name;
 
@@ -37,9 +31,9 @@ class Class_ extends PhpParser\BuilderAbstract
     /**
      * Extends a class.
      *
-     * @param Name|string $class Name of class to extend
+     * @param PHPParser_Node_Name|string $class Name of class to extend
      *
-     * @return self The builder instance (for fluid interface)
+     * @return PHPParser_Builder_Class The builder instance (for fluid interface)
      */
     public function extend($class) {
         $this->extends = $this->normalizeName($class);
@@ -50,10 +44,10 @@ class Class_ extends PhpParser\BuilderAbstract
     /**
      * Implements one or more interfaces.
      *
-     * @param Name|string $interface Name of interface to implement
-     * @param Name|string $...       More interfaces to implement
+     * @param PHPParser_Node_Name|string $interface Name of interface to implement
+     * @param PHPParser_Node_Name|string $...       More interfaces to implement
      *
-     * @return self The builder instance (for fluid interface)
+     * @return PHPParser_Builder_Class The builder instance (for fluid interface)
      */
     public function implement() {
         foreach (func_get_args() as $interface) {
@@ -66,10 +60,10 @@ class Class_ extends PhpParser\BuilderAbstract
     /**
      * Makes the class abstract.
      *
-     * @return self The builder instance (for fluid interface)
+     * @return PHPParser_Builder_Class The builder instance (for fluid interface)
      */
     public function makeAbstract() {
-        $this->setModifier(Stmt\Class_::MODIFIER_ABSTRACT);
+        $this->setModifier(PHPParser_Node_Stmt_Class::MODIFIER_ABSTRACT);
 
         return $this;
     }
@@ -77,10 +71,10 @@ class Class_ extends PhpParser\BuilderAbstract
     /**
      * Makes the class final.
      *
-     * @return self The builder instance (for fluid interface)
+     * @return PHPParser_Builder_Class The builder instance (for fluid interface)
      */
     public function makeFinal() {
-        $this->setModifier(Stmt\Class_::MODIFIER_FINAL);
+        $this->setModifier(PHPParser_Node_Stmt_Class::MODIFIER_FINAL);
 
         return $this;
     }
@@ -88,9 +82,9 @@ class Class_ extends PhpParser\BuilderAbstract
     /**
      * Adds a statement.
      *
-     * @param Stmt|PhpParser\Builder $stmt The statement to add
+     * @param PHPParser_Node_Stmt|PHPParser_Builder $stmt The statement to add
      *
-     * @return self The builder instance (for fluid interface)
+     * @return PHPParser_Builder_Class The builder instance (for fluid interface)
      */
     public function addStmt($stmt) {
         $stmt = $this->normalizeNode($stmt);
@@ -104,7 +98,7 @@ class Class_ extends PhpParser\BuilderAbstract
 
         $type = $stmt->getType();
         if (!isset($targets[$type])) {
-            throw new \LogicException(sprintf('Unexpected node of type "%s"', $type));
+            throw new LogicException(sprintf('Unexpected node of type "%s"', $type));
         }
 
         $targets[$type][] = $stmt;
@@ -117,7 +111,7 @@ class Class_ extends PhpParser\BuilderAbstract
      *
      * @param array $stmts The statements to add
      *
-     * @return self The builder instance (for fluid interface)
+     * @return PHPParser_Builder_Class The builder instance (for fluid interface)
      */
     public function addStmts(array $stmts) {
         foreach ($stmts as $stmt) {
@@ -130,10 +124,10 @@ class Class_ extends PhpParser\BuilderAbstract
     /**
      * Returns the built class node.
      *
-     * @return Stmt\Class_ The built class node
+     * @return PHPParser_Node_Stmt_Class The built class node
      */
     public function getNode() {
-        return new Stmt\Class_($this->name, array(
+        return new PHPParser_Node_Stmt_Class($this->name, array(
             'type' => $this->type,
             'extends' => $this->extends,
             'implements' => $this->implements,

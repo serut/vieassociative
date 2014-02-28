@@ -1,12 +1,6 @@
 <?php
 
-namespace PhpParser\Builder;
-
-use PhpParser;
-use PhpParser\Node\Name;
-use PhpParser\Node\Stmt;
-
-class Interface_ extends PhpParser\BuilderAbstract
+class PHPParser_Builder_Interface extends PHPParser_BuilderAbstract
 {
     protected $name;
     protected $extends;
@@ -27,10 +21,10 @@ class Interface_ extends PhpParser\BuilderAbstract
     /**
      * Extends one or more interfaces.
      *
-     * @param Name|string $interface Name of interface to extend
-     * @param Name|string $...       More interfaces to extend
+     * @param PHPParser_Node_Name|string $interface Name of interface to extend
+     * @param PHPParser_Node_Name|string $...       More interfaces to extend
      *
-     * @return self The builder instance (for fluid interface)
+     * @return PHPParser_Builder_Interface The builder instance (for fluid interface)
      */
     public function extend() {
         foreach (func_get_args() as $interface) {
@@ -43,9 +37,9 @@ class Interface_ extends PhpParser\BuilderAbstract
     /**
      * Adds a statement.
      *
-     * @param Stmt|PhpParser\Builder $stmt The statement to add
+     * @param PHPParser_Node_Stmt|PHPParser_Builder $stmt The statement to add
      *
-     * @return self The builder instance (for fluid interface)
+     * @return PHPParser_Builder_Interface The builder instance (for fluid interface)
      */
     public function addStmt($stmt) {
         $stmt = $this->normalizeNode($stmt);
@@ -63,7 +57,7 @@ class Interface_ extends PhpParser\BuilderAbstract
                 break;
 
             default:
-                throw new \LogicException(sprintf('Unexpected node of type "%s"', $type));
+                throw new LogicException(sprintf('Unexpected node of type "%s"', $type));
         }
 
         return $this;
@@ -74,7 +68,7 @@ class Interface_ extends PhpParser\BuilderAbstract
      *
      * @param array $stmts The statements to add
      *
-     * @return self The builder instance (for fluid interface)
+     * @return PHPParser_Builder_Class The builder instance (for fluid interface)
      */
     public function addStmts(array $stmts) {
         foreach ($stmts as $stmt) {
@@ -87,10 +81,10 @@ class Interface_ extends PhpParser\BuilderAbstract
     /**
      * Returns the built class node.
      *
-     * @return Stmt\Interface_ The built interface node
+     * @return PHPParser_Node_Stmt_Interface The built interface node
      */
     public function getNode() {
-        return new Stmt\Interface_($this->name, array(
+        return new PHPParser_Node_Stmt_Interface($this->name, array(
             'extends' => $this->extends,
             'stmts' => array_merge($this->constants, $this->methods),
         ));

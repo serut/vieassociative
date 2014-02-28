@@ -1,9 +1,5 @@
 <?php
 
-namespace PhpParser\Node\Expr\Cast;
-
-use PhpParser\Node\Expr\Cast;
-
-class Unset_ extends Cast
+class PHPParser_Node_Expr_Cast_Unset extends PHPParser_Node_Expr_Cast
 {
 }

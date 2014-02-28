@@ -1,21 +1,17 @@
 <?php
 
-namespace PhpParser\Node\Stmt;
-
-use PhpParser\Node;
-
 /**
- * @property Node\Name[]          $traits      Traits
- * @property TraitUseAdaptation[] $adaptations Adaptations
+ * @property PHPParser_Node_Name[]                    $traits      Traits
+ * @property PHPParser_Node_Stmt_TraitUseAdaptation[] $adaptations Adaptations
  */
-class TraitUse extends Node\Stmt
+class PHPParser_Node_Stmt_TraitUse extends PHPParser_Node_Stmt
 {
     /**
      * Constructs a trait use node.
      *
-     * @param Node\Name[]          $traits      Traits
-     * @param TraitUseAdaptation[] $adaptations Adaptations
-     * @param array                $attributes  Additional attributes
+     * @param PHPParser_Node_Name[]                    $traits      Traits
+     * @param PHPParser_Node_Stmt_TraitUseAdaptation[] $adaptations Adaptations
+     * @param array                                    $attributes  Additional attributes
      */
     public function __construct(array $traits, array $adaptations = array(), array $attributes = array()) {
         parent::__construct(

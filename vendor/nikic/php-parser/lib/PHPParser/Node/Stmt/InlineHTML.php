@@ -1,13 +1,9 @@
 <?php
 
-namespace PhpParser\Node\Stmt;
-
-use PhpParser\Node\Stmt;
-
 /**
  * @property string $value String
  */
-class InlineHTML extends Stmt
+class PHPParser_Node_Stmt_InlineHTML extends PHPParser_Node_Stmt
 {
     /**
      * Constructs an inline HTML node.

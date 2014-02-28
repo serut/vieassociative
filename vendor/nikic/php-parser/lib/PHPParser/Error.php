@@ -1,8 +1,6 @@
 <?php
 
-namespace PhpParser;
-
-class Error extends \RuntimeException
+class PHPParser_Error extends RuntimeException
 {
     protected $rawMessage;
     protected $rawLine;

@@ -1,8 +1,6 @@
 <?php
 
-namespace PhpParser;
-
-class Comment
+class PHPParser_Comment
 {
     protected $text;
     protected $line;

@@ -1,14 +1,10 @@
 <?php
 
-namespace PhpParser\Node\Expr;
-
-use PhpParser\Node\Expr;
-
 /**
- * @property Expr $expr Expression
- * @property int  $type Type of include
+ * @property PHPParser_Node_Expr $expr Expression
+ * @property int                 $type Type of include
  */
-class Include_ extends Expr
+class PHPParser_Node_Expr_Include extends PHPParser_Node_Expr
 {
     const TYPE_INCLUDE      = 1;
     const TYPE_INCLUDE_ONCE = 2;
@@ -18,11 +14,11 @@ class Include_ extends Expr
     /**
      * Constructs an include node.
      *
-     * @param Expr  $expr       Expression
-     * @param int   $type       Type of include
-     * @param array $attributes Additional attributes
+     * @param PHPParser_Node_Expr $expr       Expression
+     * @param int                 $type       Type of include
+     * @param array               $attributes Additional attributes
      */
-    public function __construct(Expr $expr, $type, array $attributes = array()) {
+    public function __construct(PHPParser_Node_Expr $expr, $type, array $attributes = array()) {
         parent::__construct(
             array(
                 'expr' => $expr,

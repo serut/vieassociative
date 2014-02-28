@@ -1,21 +1,17 @@
 <?php
 
-namespace PhpParser\Node\Stmt;
-
-use PhpParser\Node;
-
 /**
- * @property null|Node\Expr $num Number of loops to break
+ * @property null|PHPParser_Node_Expr $num Number of loops to break
  */
-class Break_ extends Node\Stmt
+class PHPParser_Node_Stmt_Break extends PHPParser_Node_Stmt
 {
     /**
      * Constructs a break node.
      *
-     * @param null|Node\Expr $num        Number of loops to break
-     * @param array          $attributes Additional attributes
+     * @param null|PHPParser_Node_Expr $num        Number of loops to break
+     * @param array                    $attributes Additional attributes
      */
-    public function __construct(Node\Expr $num = null, array $attributes = array()) {
+    public function __construct(PHPParser_Node_Expr $num = null, array $attributes = array()) {
         parent::__construct(
             array(
                 'num' => $num,

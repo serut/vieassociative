@@ -1,19 +1,15 @@
 <?php
 
-namespace PhpParser\Node\Stmt;
-
-use PhpParser\Node;
-
 /**
- * @property Node[] $stmts Statements
+ * @property PHPParser_Node[] $stmts Statements
  */
-class Else_ extends Node\Stmt
+class PHPParser_Node_Stmt_Else extends PHPParser_Node_Stmt
 {
     /**
      * Constructs an else node.
      *
-     * @param Node[] $stmts      Statements
-     * @param array  $attributes Additional attributes
+     * @param PHPParser_Node[] $stmts      Statements
+     * @param array            $attributes Additional attributes
      */
     public function __construct(array $stmts = array(), array $attributes = array()) {
         parent::__construct(

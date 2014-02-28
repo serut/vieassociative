@@ -90,53 +90,6 @@
         ]
     },
     {
-        "name": "nikic/php-parser",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/nikic/PHP-Parser.git",
-            "reference": "74efea91d1476cb7cb7f2899ed949ecf9570a9f4"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/74efea91d1476cb7cb7f2899ed949ecf9570a9f4",
-            "reference": "74efea91d1476cb7cb7f2899ed949ecf9570a9f4",
-            "shasum": ""
-        },
-        "require": {
-            "ext-tokenizer": "*",
-            "php": ">=5.3"
-        },
-        "time": "2014-02-21 17:19:28",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.0-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "files": [
-                "lib/bootstrap.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Nikita Popov"
-            }
-        ],
-        "description": "A PHP parser written in PHP",
-        "keywords": [
-            "parser",
-            "php"
-        ]
-    },
-    {
         "name": "jeremeamia/SuperClosure",
         "version": "1.0.1",
         "version_normalized": "1.0.1.0",
@@ -946,12 +899,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/laravel/framework.git",
-            "reference": "175948ba09f238dc1af208289a34e699a6a08f51"
+            "reference": "902974def400cec6c36e37190da3be8c38e17d16"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/laravel/framework/zipball/175948ba09f238dc1af208289a34e699a6a08f51",
-            "reference": "175948ba09f238dc1af208289a34e699a6a08f51",
+            "url": "https://api.github.com/repos/laravel/framework/zipball/902974def400cec6c36e37190da3be8c38e17d16",
+            "reference": "902974def400cec6c36e37190da3be8c38e17d16",
             "shasum": ""
         },
         "require": {
@@ -1019,7 +972,7 @@
         "suggest": {
             "doctrine/dbal": "Allow renaming columns and dropping SQLite columns."
         },
-        "time": "2014-02-27 22:15:06",
+        "time": "2014-02-28 04:51:36",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3054,6 +3007,53 @@
             "nosql",
             "predis",
             "redis"
+        ]
+    },
+    {
+        "name": "nikic/php-parser",
+        "version": "0.9.x-dev",
+        "version_normalized": "0.9.9999999.9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nikic/PHP-Parser.git",
+            "reference": "118f28344daf154e47e73e79779a60bc7430a40f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/118f28344daf154e47e73e79779a60bc7430a40f",
+            "reference": "118f28344daf154e47e73e79779a60bc7430a40f",
+            "shasum": ""
+        },
+        "require": {
+            "ext-tokenizer": "*",
+            "php": ">=5.2"
+        },
+        "time": "2014-02-12 19:19:48",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.9-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "PHPParser": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Nikita Popov"
+            }
+        ],
+        "description": "A PHP parser written in PHP",
+        "keywords": [
+            "parser",
+            "php"
         ]
     }
 ]

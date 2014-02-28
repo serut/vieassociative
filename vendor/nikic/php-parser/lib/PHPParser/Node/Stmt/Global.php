@@ -1,19 +1,15 @@
 <?php
 
-namespace PhpParser\Node\Stmt;
-
-use PhpParser\Node;
-
 /**
- * @property Node\Expr[] $vars Variables
+ * @property PHPParser_Node_Expr[] $vars Variables
  */
-class Global_ extends Node\Stmt
+class PHPParser_Node_Stmt_Global extends PHPParser_Node_Stmt
 {
     /**
      * Constructs a global variables list node.
      *
-     * @param Node\Expr[] $vars       Variables to unset
-     * @param array       $attributes Additional attributes
+     * @param PHPParser_Node_Expr[] $vars       Variables to unset
+     * @param array                 $attributes Additional attributes
      */
     public function __construct(array $vars, array $attributes = array()) {
         parent::__construct(

@@ -1,8 +1,6 @@
 <?php
 
-namespace PhpParser;
-
-abstract class NodeAbstract implements Node, \IteratorAggregate
+abstract class PHPParser_NodeAbstract implements PHPParser_Node, IteratorAggregate
 {
     protected $subNodes;
     protected $attributes;
@@ -24,7 +22,7 @@ abstract class NodeAbstract implements Node, \IteratorAggregate
      * @return string Type of the node
      */
     public function getType() {
-        return strtr(substr(rtrim(get_class($this), '_'), 15), '\\', '_');
+        return substr(get_class($this), 15);
     }
 
     /**
@@ -59,7 +57,7 @@ abstract class NodeAbstract implements Node, \IteratorAggregate
      *
      * The doc comment has to be the last comment associated with the node.
      *
-     * @return null|Comment\Doc Doc comment object or null
+     * @return null|PHPParser_Comment_Doc Doc comment object or null
      */
     public function getDocComment() {
         $comments = $this->getAttribute('comments');
@@ -68,7 +66,7 @@ abstract class NodeAbstract implements Node, \IteratorAggregate
         }
 
         $lastComment = $comments[count($comments) - 1];
-        if (!$lastComment instanceof Comment\Doc) {
+        if (!$lastComment instanceof PHPParser_Comment_Doc) {
             return null;
         }
 
@@ -122,6 +120,6 @@ abstract class NodeAbstract implements Node, \IteratorAggregate
         unset($this->subNodes[$name]);
     }
     public function getIterator() {
-        return new \ArrayIterator($this->subNodes);
+        return new ArrayIterator($this->subNodes);
     }
 }

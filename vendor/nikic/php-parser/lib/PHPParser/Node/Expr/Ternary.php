@@ -1,25 +1,21 @@
 <?php
 
-namespace PhpParser\Node\Expr;
-
-use PhpParser\Node\Expr;
-
 /**
- * @property Expr      $cond Condition
- * @property null|Expr $if   Expression for true
- * @property Expr      $else Expression for false
+ * @property PHPParser_Node_Expr      $cond Condition
+ * @property null|PHPParser_Node_Expr $if   Expression for true
+ * @property PHPParser_Node_Expr      $else Expression for false
  */
-class Ternary extends Expr
+class PHPParser_Node_Expr_Ternary extends PHPParser_Node_Expr
 {
     /**
      * Constructs a ternary operator node.
      *
-     * @param Expr      $cond       Condition
-     * @param null|Expr $if         Expression for true
-     * @param Expr      $else       Expression for false
+     * @param PHPParser_Node_Expr      $cond       Condition
+     * @param null|PHPParser_Node_Expr $if         Expression for true
+     * @param PHPParser_Node_Expr      $else       Expression for false
      * @param array                    $attributes Additional attributes
      */
-    public function __construct(Expr $cond, $if, Expr $else, array $attributes = array()) {
+    public function __construct(PHPParser_Node_Expr $cond, $if, PHPParser_Node_Expr $else, array $attributes = array()) {
         parent::__construct(
             array(
                 'cond' => $cond,

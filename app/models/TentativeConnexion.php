@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * An Eloquent Model: 'TentativeConnexion'
+ *
+ * @property integer $id
+ * @property string $ip
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ */
 class TentativeConnexion extends Eloquent
 {
     protected $table = 'connexion_tentative';

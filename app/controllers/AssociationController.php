@@ -49,6 +49,7 @@ class AssociationController extends BaseController
     /**
      * @see http://association.vieassociative.fr/{$idAssoc}-{$slug}
      * @param int $idAssoc The ID of this association
+     * @param $slug
      * @return View The wall of the association
      */
     public function getProfile($idAssoc, $slug)
@@ -66,7 +67,7 @@ class AssociationController extends BaseController
     /**
      * @see http://association.vieassociative.fr/{$idAssoc}/edit/general-informations
      * @param int $idAssoc The ID of this association
-     * @param string $slug The slug corresponding of the name of the association
+     * @internal param string $slug The slug corresponding of the name of the association
      * @return View Page where you can edit general information
      */
     public function getEditGeneralInformations($idAssoc)

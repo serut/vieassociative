@@ -1,13 +1,18 @@
 <?php
 
+namespace PhpParser\Node\Expr;
+
+use PhpParser\Node;
+use PhpParser\Node\Expr;
+
 /**
- * @property PHPParser_Node[]                 $stmts  Statements
- * @property PHPParser_Node_Param[]           $params Parameters
- * @property PHPParser_Node_Expr_ClosureUse[] $uses   use()s
- * @property bool                             $byRef  Whether to return by reference
- * @property bool                             $static Whether the closure is static
+ * @property Node[]       $stmts  Statements
+ * @property Node\Param[] $params Parameters
+ * @property ClosureUse[] $uses   use()s
+ * @property bool         $byRef  Whether to return by reference
+ * @property bool         $static Whether the closure is static
  */
-class PHPParser_Node_Expr_Closure extends PHPParser_Node_Expr
+class Closure extends Expr
 {
     /**
      * Constructs a lambda function node.

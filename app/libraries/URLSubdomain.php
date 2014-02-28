@@ -1,19 +1,18 @@
 <?php
 
 class URLSubdomain extends Symfony\Component\HttpFoundation\Request{
-	/**
-	 * Generate a absolute URL to the given path.
-	 *
-	 * @param  string  $path
-	 * @param  mixed   $parameters
-	 * @param  bool    $secure
-	 * @return string
-	 */
+    /**
+     * Generate a absolute URL to the given path.
+     *
+     * @param $domain
+     * @param  string $path
+     * @param array $get
+     * @param  bool $secure
+     * @internal param mixed $parameters
+     * @return string
+     */
 	static function to($domain, $path, $get = array(), $secure = true)
 	{
-		// Unless $https is specified (true or false), we maintain the current request
-		// security for any new links generated. So https for all secure links.
-		if (is_null($secure)) $https = Request::secure();
 		 
 		
 		$pattern = '/([a-z]+)\.([a-z]+)/s';

@@ -1,5 +1,21 @@
 <?php
 
+/**
+ * An Eloquent Model: 'Proposition'
+ *
+ * @property integer $id
+ * @property \Carbon\Carbon $deadline
+ * @property integer $id_discussion
+ * @property integer $id_assoc
+ * @property string $type_query
+ * @property integer $id_answer
+ * @property string $data
+ * @property string $where
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property \Carbon\Carbon $deleted_at
+ * @property-read \Discussion $discussion
+ */
 class Proposition extends Eloquent
 {
     protected $table = 'proposition';

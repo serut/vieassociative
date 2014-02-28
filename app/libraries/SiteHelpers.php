@@ -15,7 +15,7 @@ class SiteHelpers{
 			if(!isset($options['value']))
 				$options['value']='';
 			$txt.= '>';
-				foreach ($options['elements'] as $k => $v) {
+				foreach ($options['elements'] as $v) {
 					$txt.= '<label class="checkbox">';
 					if(isset($v['checked']) || $options['value']==$v['value']){
 						$txt.= Form::radio($options['name'], $v['value'],true);

@@ -4,6 +4,7 @@ use DateTime;
 use ArrayAccess;
 use Carbon\Carbon;
 use LogicException;
+use JsonSerializable;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -20,7 +21,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Database\ConnectionResolverInterface as Resolver;
 
-abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterface {
+abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterface, JsonSerializable {
 
 	/**
 	 * The connection name for the model.
@@ -240,6 +241,20 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
 	 */
 	public function __construct(array $attributes = array())
 	{
+		$this->bootIfNotBooted();
+
+		$this->syncOriginal();
+
+		$this->fill($attributes);
+	}
+
+	/**
+	 * Check if the model needs to be booted and if so, do it.
+	 *
+	 * @return void
+	 */
+	protected function bootIfNotBooted()
+	{
 		if ( ! isset(static::$booted[get_class($this)]))
 		{
 			static::$booted[get_class($this)] = true;
@@ -250,10 +265,6 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
 
 			$this->fireModelEvent('booted', false);
 		}
-
-		$this->syncOriginal();
-
-		$this->fill($attributes);
 	}
 
 	/**
@@ -316,7 +327,7 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
 	public function fill(array $attributes)
 	{
 		$totallyGuarded = $this->totallyGuarded();
-		
+
 		foreach ($this->fillableFromArray($attributes) as $key => $value)
 		{
 			$key = $this->removeTableFromKey($key);
@@ -502,6 +513,8 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
 	 */
 	public static function find($id, $columns = array('*'))
 	{
+		if (is_array($id) && empty($id)) return new Collection;
+
 		$instance = new static;
 
 		return $instance->newQuery()->find($id, $columns);
@@ -520,7 +533,7 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
 	{
 		if ( ! is_null($model = static::find($id, $columns))) return $model;
 
-		throw new ModelNotFoundException(get_called_class().' model not found');
+		throw with(new ModelNotFoundException)->setModel(get_called_class());
 	}
 
 	/**
@@ -750,9 +763,7 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
 		// title of this relation since that is a great convention to apply.
 		if (is_null($relation))
 		{
-			$caller = $this->getBelongsToManyCaller();
-
-			$name = $caller['function'];
+			$relation = $this->getBelongsToManyCaller();
 		}
 
 		// First, we'll need to determine the foreign key and "other key" for the
@@ -813,7 +824,7 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
 
 		return new MorphToMany(
 			$query, $this, $name, $table, $foreignKey,
-			$otherKey, $caller['function'], $inverse
+			$otherKey, $caller, $inverse
 		);
 	}
 
@@ -848,12 +859,14 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
 	{
 		$self = __FUNCTION__;
 
-		return array_first(debug_backtrace(false), function($trace) use ($self)
+		$caller = array_first(debug_backtrace(false), function($key, $trace) use ($self)
 		{
 			$caller = $trace['function'];
 
 			return ( ! in_array($caller, Model::$manyMethods) && $caller != $self);
 		});
+
+		return ! is_null($caller) ? $caller['function'] : null;
 	}
 
 	/**
@@ -1334,13 +1347,13 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
 			if ($this->timestamps)
 			{
 				$this->updateTimestamps();
-
-				$dirty = $this->getDirty();
 			}
 
 			// Once we have run the update operation, we will fire the "updated" event for
 			// this model instance. This will allow developers to hook into these after
 			// models are updated, giving them a chance to do any special processing.
+			$dirty = $this->getDirty();
+
 			$this->setKeysForSaveQuery($query)->update($dirty);
 
 			$this->fireModelEvent('updated', false);
@@ -2062,6 +2075,16 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
 	public function toJson($options = 0)
 	{
 		return json_encode($this->toArray(), $options);
+	}
+
+	/**
+	 * Convert the object into something JSON serializable.
+	 *
+	 * @return array
+	 */
+	public function jsonSerialize()
+	{
+		return $this->toArray();
 	}
 
 	/**
@@ -2852,6 +2875,16 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
 	public function __toString()
 	{
 		return $this->toJson();
+	}
+
+	/**
+	 * When a model is being unserialized, check if it needs to be booted.
+	 *
+	 * @return void
+	 */
+	public function __wakeup()
+	{
+		$this->bootIfNotBooted();
 	}
 
 }

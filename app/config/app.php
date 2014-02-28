@@ -110,6 +110,7 @@ return array(
 		'Artdarek\OAuth\OAuthServiceProvider',
 		'Aws\Laravel\AwsServiceProvider',
 		'Themonkeys\ErrorEmailer\ErrorEmailerServiceProvider',
+        'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 	),
 
 	/*

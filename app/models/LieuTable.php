@@ -1,10 +1,9 @@
 <?php
-
+/*
 /**
  *On garde ce fichier uniquement pour la requete getLieu.
  *Ce fichier ne compile pas du tout !!!
  *
- */
 namespace VieAssoc\Model;
 
 use Zend\Db\TableGateway\AbstractTableGateway;
@@ -44,4 +43,4 @@ class LieuTable extends AbstractTableGateway
         $result = $this->adapter->query($sql)->execute(array($adresse_reelle, $ville, $lat, $lng));
         return $result->getGeneratedValue();
     }
-}
+}*/

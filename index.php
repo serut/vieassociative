@@ -1,3 +1,5 @@
 <?php
 
-// Just for heroku <3
+/**
+ * Just for heroku <3
+ */

@@ -329,6 +329,45 @@ class PHPSDKTestCase extends PHPUnit_Framework_TestCase {
                        'Expect getCode to fail, CSRF state not sent back.');
   }
 
+  public function testPersistentCSRFState()
+  {
+    $facebook = new FBCode(array(
+      'appId'  => self::APP_ID,
+      'secret' => self::SECRET,
+    ));
+    $facebook->setCSRFStateToken();
+    $code = $facebook->getCSRFStateToken();
+
+    $facebook = new FBCode(array(
+      'appId'  => self::APP_ID,
+      'secret' => self::SECRET,
+    ));
+
+    $this->assertEquals($code, $facebook->publicGetState(),
+            'Persisted CSRF state token not loaded correctly');
+  }
+
+  public function testPersistentCSRFStateWithSharedSession()
+  {
+    $_SERVER['HTTP_HOST'] = 'fbrell.com';
+    $facebook = new FBCode(array(
+      'appId'  => self::APP_ID,
+      'secret' => self::SECRET,
+      'sharedSession' => true,
+    ));
+    $facebook->setCSRFStateToken();
+    $code = $facebook->getCSRFStateToken();
+
+    $facebook = new FBCode(array(
+      'appId'  => self::APP_ID,
+      'secret' => self::SECRET,
+      'sharedSession' => true,
+    ));
+
+    $this->assertEquals($code, $facebook->publicGetState(),
+            'Persisted CSRF state token not loaded correctly with shared session');
+  }
+
   public function testGetUserFromSignedRequest() {
     $facebook = new TransientFacebook(array(
       'appId'  => self::APP_ID,
@@ -340,7 +379,20 @@ class PHPSDKTestCase extends PHPUnit_Framework_TestCase {
                         'Failed to get user ID from a valid signed request.');
   }
 
-  public function testSignedRequestRewrite(){
+  public function testDisallowSignedRequest() {
+    $facebook = new TransientFacebook(array(
+      'appId'  => self::APP_ID,
+      'secret' => self::SECRET,
+      'allowSignedRequest' => false
+    ));
+
+    $_REQUEST['signed_request'] = self::kValidSignedRequest();
+    $this->assertEquals(0, $facebook->getUser(),
+        'Should not have received valid user from signed_request.');
+  }
+
+
+    public function testSignedRequestRewrite(){
     $facebook = new FBRewrite(array(
       'appId'  => self::APP_ID,
       'secret' => self::SECRET,
@@ -794,10 +846,11 @@ class PHPSDKTestCase extends PHPUnit_Framework_TestCase {
       'appId'  => self::APP_ID,
       'secret' => self::SECRET
     ));
-    $payload = $facebook->publicParseSignedRequest(self::kValidSignedRequest());
+    $sr = self::kValidSignedRequest();
+    $payload = $facebook->publicParseSignedRequest($sr);
     $this->assertNotNull($payload, 'Expected token to parse');
     $this->assertEquals($facebook->getSignedRequest(), null);
-    $_REQUEST['signed_request'] = self::kValidSignedRequest();
+    $_REQUEST['signed_request'] = $sr;
     $this->assertEquals($facebook->getSignedRequest(), $payload);
   }
 
@@ -1309,10 +1362,40 @@ class PHPSDKTestCase extends PHPUnit_Framework_TestCase {
     $this->assertFalse($stub->publicGetAccessTokenFromCode('c', ''));
   }
 
+  public function testAppsecretProofNoParams() {
+    $fb = new FBRecordMakeRequest(array(
+      'appId'  => self::APP_ID,
+      'secret' => self::SECRET,
+    ));
+    $token = $fb->getAccessToken();
+    $proof = $fb->publicGetAppSecretProof($token);
+    $params = array();
+    $fb->api('/mattynoce', $params);
+    $requests = $fb->publicGetRequests();
+    $this->assertEquals($proof, $requests[0]['params']['appsecret_proof']);
+  }
+
+  public function testAppsecretProofWithParams() {
+    $fb = new FBRecordMakeRequest(array(
+      'appId'  => self::APP_ID,
+      'secret' => self::SECRET,
+    ));
+    $proof = 'foo';
+    $params = array('appsecret_proof' => $proof);
+    $fb->api('/mattynoce', $params);
+    $requests = $fb->publicGetRequests();
+    $this->assertEquals($proof, $requests[0]['params']['appsecret_proof']);
+  }
+
   public function testExceptionConstructorWithErrorCode() {
     $code = 404;
     $e = new FacebookApiException(array('error_code' => $code));
     $this->assertEquals($code, $e->getCode());
+  }
+
+  public function testExceptionConstructorWithInvalidErrorCode() {
+    $e = new FacebookApiException(array('error_code' => 'not an int'));
+    $this->assertEquals(0, $e->getCode());
   }
 
   // this happens often despite the fact that it is useless
@@ -1895,6 +1978,10 @@ class FBRecordMakeRequest extends TransientFacebook {
   public function publicGetRequests() {
     return $this->requests;
   }
+
+  public function publicGetAppSecretProof($access_token) {
+    return $this->getAppSecretProof($access_token);
+  }
 }
 
 class FBPublic extends TransientFacebook {
@@ -1961,6 +2048,10 @@ class PersistentFBPublic extends Facebook {
 class FBCode extends Facebook {
   public function publicGetCode() {
     return $this->getCode();
+  }
+
+  public function publicGetState() {
+    return $this->state;
   }
 
   public function setCSRFStateToken() {

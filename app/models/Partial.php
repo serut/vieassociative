@@ -1,5 +1,17 @@
 <?php
 
+/**
+ * An Eloquent Model: 'Partial'
+ *
+ * @property integer $id
+ * @property integer $id_news
+ * @property integer $order
+ * @property string $partial_type
+ * @property integer $partial_id
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property \Carbon\Carbon $deleted_at
+ */
 class Partial extends Eloquent
 {
     protected $table = 'partial';

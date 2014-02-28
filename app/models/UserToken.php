@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * An Eloquent Model: 'UserToken'
+ *
+ * @property integer $id_user
+ * @property string $token
+ * @property \Carbon\Carbon $date_fin
+ */
 class UserToken extends Eloquent
 {
     protected $table = 'user_token';

@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * An Eloquent Model: 'Img'
+ *
+ * @property string $name
+ * @property string $extension
+ * @property integer $id_user
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ */
 class Img extends Eloquent
 {
     protected $table = 'img';

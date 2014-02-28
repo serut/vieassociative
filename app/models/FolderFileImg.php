@@ -1,5 +1,18 @@
 <?php
 
+/**
+ * An Eloquent Model: 'FolderFileImg'
+ *
+ * @property integer $id
+ * @property integer $id_folder
+ * @property string $name_img
+ * @property string $extension
+ * @property integer $id_file
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property-read \Img $img
+ * @property-read \Files $file
+ */
 class FolderFileImg extends Eloquent
 {
     protected $table = 'folder_file_img';

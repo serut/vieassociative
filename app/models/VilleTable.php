@@ -1,5 +1,5 @@
 <?php
-namespace VieAssoc\Model;
+/*namespace VieAssoc\Model;
 
 use Zend\Db\Sql\Sql,
     Zend\Db\Sql\Where,
@@ -104,4 +104,4 @@ class VilleTable extends AbstractTableGateway
         return $return;
     }
 
-}
+}*/

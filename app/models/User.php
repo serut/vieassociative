@@ -3,6 +3,21 @@
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
+/**
+ * An Eloquent Model: 'User'
+ *
+ * @property integer $id
+ * @property string $username
+ * @property string $email
+ * @property string $password
+ * @property string $level
+ * @property string $firstname
+ * @property string $lastname
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property integer $state
+ * @property string $avatar_img
+ */
 class User extends Eloquent implements UserInterface, RemindableInterface
 {
 

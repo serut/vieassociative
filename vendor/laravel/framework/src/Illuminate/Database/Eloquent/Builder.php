@@ -95,7 +95,7 @@ class Builder {
 	{
 		if ( ! is_null($model = $this->find($id, $columns))) return $model;
 
-		throw new ModelNotFoundException;
+		throw with(new ModelNotFoundException)->setModel(get_class($this->model));
 	}
 
 	/**
@@ -121,7 +121,7 @@ class Builder {
 	{
 		if ( ! is_null($model = $this->first($columns))) return $model;
 
-		throw new ModelNotFoundException;
+		throw with(new ModelNotFoundException)->setModel(get_class($this->model));
 	}
 
 	/**
@@ -427,7 +427,7 @@ class Builder {
 	 */
 	protected function isSoftDeleteConstraint(array $where, $column)
 	{
-		return $where['column'] == $column && $where['type'] == 'Null';
+		return $where['type'] == 'Null' && $where['column'] == $column;
 	}
 
 	/**
@@ -519,14 +519,12 @@ class Builder {
 	 */
 	public function getRelation($relation)
 	{
-		$me = $this;
-
 		// We want to run a relationship query without any constrains so that we will
 		// not have to remove these where clauses manually which gets really hacky
 		// and is error prone while we remove the developer's own where clauses.
-		$query = Relation::noConstraints(function() use ($me, $relation)
+		$query = Relation::noConstraints(function() use ($relation)
 		{
-			return $me->getModel()->$relation();
+			return $this->getModel()->$relation();
 		});
 
 		$nested = $this->nestedRelations($relation);
@@ -578,6 +576,46 @@ class Builder {
 		$dots = str_contains($name, '.');
 
 		return $dots && starts_with($name, $relation) && $name != $relation;
+	}
+
+	/**
+	 * Add a basic where clause to the query.
+	 *
+	 * @param  string  $column
+	 * @param  string  $operator
+	 * @param  mixed   $value
+	 * @param  string  $boolean
+	 * @return \Illuminate\Database\Eloquent\Builder|static
+	 */
+	public function where($column, $operator = null, $value = null, $boolean = 'and')
+	{
+		if ($column instanceof Closure)
+		{
+			$query = $this->model->newQuery(false);
+
+			call_user_func($column, $query);
+
+			$this->query->addNestedWhereQuery($query->getQuery(), $boolean);
+		}
+		else
+		{
+			$this->query->where($column, $operator, $value, $boolean);
+		}
+
+		return $this;
+	}
+
+	/**
+	 * Add an "or where" clause to the query.
+	 *
+	 * @param  string  $column
+	 * @param  string  $operator
+	 * @param  mixed   $value
+	 * @return \Illuminate\Database\Eloquent\Builder|static
+	 */
+	public function orWhere($column, $operator = null, $value = null)
+	{
+		return $this->where($column, $operator, $value, 'or');
 	}
 
 	/**
@@ -688,11 +726,9 @@ class Builder {
 	 */
 	protected function getHasRelationQuery($relation)
 	{
-		$me = $this;
-
-		return Relation::noConstraints(function() use ($me, $relation)
+		return Relation::noConstraints(function() use ($relation)
 		{
-			return $me->getModel()->$relation();
+			return $this->getModel()->$relation();
 		});
 	}
 

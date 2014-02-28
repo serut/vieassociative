@@ -1,5 +1,22 @@
 <?php
 
+/**
+ * An Eloquent Model: 'Answer'
+ *
+ * @property integer $id
+ * @property integer $id_assoc
+ * @property integer $id_user
+ * @property integer $id_answer
+ * @property integer $id_discussion
+ * @property integer $level
+ * @property integer $vote
+ * @property string $content
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property \Carbon\Carbon $deleted_at
+ * @property-read \User $author
+ * @property-read \Proposition $proposition
+ */
 class Answer extends Eloquent
 {
     protected $table = 'answer';

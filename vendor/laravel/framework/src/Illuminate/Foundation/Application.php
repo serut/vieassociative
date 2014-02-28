@@ -654,7 +654,7 @@ class Application extends Container implements HttpKernelInterface, TerminableIn
 	 */
 	protected function registerBaseMiddlewares()
 	{
-		$this->middleware('Illuminate\Http\FrameGuard');
+		//
 	}
 
 	/**
@@ -728,6 +728,11 @@ class Application extends Container implements HttpKernelInterface, TerminableIn
 			$response = $this['events']->until('illuminate.app.down');
 
 			if ( ! is_null($response)) return $this->prepareResponse($response, $request);
+		}
+
+		if ($this->runningUnitTests() && ! $this['session']->isStarted())
+		{
+			$this['session']->start();
 		}
 
 		return $this['router']->dispatch($this->prepareRequest($request));
@@ -975,6 +980,17 @@ class Application extends Container implements HttpKernelInterface, TerminableIn
 	}
 
 	/**
+	 * Determine if the given service is a deferred service.
+	 *
+	 * @param  string  $service
+	 * @return bool
+	 */
+	public function isDeferredService($service)
+	{
+		return isset($this->deferredServices[$service]);
+	}
+
+	/**
 	 * Get or set the request class for the application.
 	 *
 	 * @param  string  $class
@@ -1049,6 +1065,7 @@ class Application extends Container implements HttpKernelInterface, TerminableIn
 			'app'            => 'Illuminate\Foundation\Application',
 			'artisan'        => 'Illuminate\Console\Application',
 			'auth'           => 'Illuminate\Auth\AuthManager',
+			'auth.reminder.repository' => 'Illuminate\Auth\Reminders\ReminderRepositoryInterface',
 			'blade.compiler' => 'Illuminate\View\Compilers\BladeCompiler',
 			'cache'          => 'Illuminate\Cache\CacheManager',
 			'cache.store'    => 'Illuminate\Cache\Repository',

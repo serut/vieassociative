@@ -1,5 +1,39 @@
 <?php
 
+/**
+ * An Eloquent Model: 'Association'
+ *
+ * @property integer $id
+ * @property string $name
+ * @property string $slug
+ * @property string $acronym
+ * @property string $legal_name
+ * @property string $goal
+ * @property string $website_url
+ * @property string $official_date_creation
+ * @property string $headquarter
+ * @property boolean $admitted_public_utility
+ * @property integer $nb_publications
+ * @property integer $nb_photos
+ * @property integer $nb_administrator
+ * @property integer $nb_evenements
+ * @property string $statuts
+ * @property string $internal_regulation
+ * @property string $contact_adress
+ * @property integer $plan
+ * @property string $page_facebook
+ * @property string $page_googleplus
+ * @property string $page_youtube
+ * @property string $page_paypal
+ * @property string $page_twitter
+ * @property integer $id_folder
+ * @property string $cover_img
+ * @property string $logo_img
+ * @property \Carbon\Carbon $deleted_at
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property-read \user_association $userAssociation
+ */
 class Association extends Eloquent
 {
     protected $table = 'association';
@@ -10,7 +44,6 @@ class Association extends Eloquent
     {
         return $this->belongsTo('user_association', 'id_user');
     }
-
     public function setNameAttribute($value)
     {
         //TO DO

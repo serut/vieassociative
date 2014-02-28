@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * An Eloquent Model: 'PartialOnePicture'
+ *
+ * @property integer $id
+ * @property string $var1
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ */
 class PartialOnePicture extends Eloquent
 {
     protected $table = 'partial_one_picture';

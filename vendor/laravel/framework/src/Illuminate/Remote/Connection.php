@@ -143,6 +143,17 @@ class Connection implements ConnectionInterface {
 	}
 
 	/**
+	 * Get the contents of a remote file.
+	 *
+	 * @param  string  $remote
+	 * @return string
+	 */
+	public function getString($remote)
+	{
+		return $this->getGateway()->getString($remote);
+	}
+
+	/**
 	 * Upload a local file to the server.
 	 *
 	 * @param  string  $local
@@ -202,9 +213,7 @@ class Connection implements ConnectionInterface {
 	{
 		if ( ! is_null($callback)) return $callback;
 
-		$me = $this;
-
-		return function($line) use ($me) { $me->display($line); };
+		return function($line) { $this->display($line); };
 	}
 
 	/**

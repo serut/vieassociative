@@ -423,7 +423,7 @@ Any request that has set POST fields or files will use cURL's POST message funct
     // Set an overwrite any previously specified value
     $request->setPostField('foo', 'bar');
     // Append a value to any existing values
-    $request->addPostField('foo', 'baz');
+    $request->getPostFields()->add('foo', 'baz');
     // Remove a POST field by name
     $request->removePostField('fizz');
 
@@ -590,7 +590,7 @@ Connection problems and cURL specific errors can also occur when transferring re
 encounters cURL specific errors while transferring a single request, a ``Guzzle\Http\Exception\CurlException`` is
 thrown with an informative error message and access to the cURL error message.
 
-A ``Guzzle\Common\Exception\MultiTransferException`` exception is thrown when a cURL specific error occurs while
+A ``Guzzle\Http\Exception\MultiTransferException`` exception is thrown when a cURL specific error occurs while
 transferring multiple requests in parallel. You can then iterate over all of the exceptions encountered during the
 transfer.
 

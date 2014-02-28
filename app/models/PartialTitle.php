@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * An Eloquent Model: 'PartialTitle'
+ *
+ * @property integer $id
+ * @property string $var1
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ */
 class PartialTitle extends Eloquent
 {
     protected $table = 'partial_title';

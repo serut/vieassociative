@@ -1,6 +1,46 @@
 CHANGELOG
 =========
 
+2.5.3 (2014-02-27)
+------------------
+
+* Added support for HTTP and HTTPS string-match health checks and HTTPS health checks to the Amazon Route 53 client
+* Added support for the UPSERT action for the Amazon Route 53 ChangeResourceRecordSets operation
+* Added support for SerialNumber and TokenCode to the AssumeRole operation of the IAM Security Token Service (STS).
+* Added support for RequestInterval and FailureThreshold to the Amazon Route53 client.
+* Added support for smooth streaming to the Amazon CloudFront client.
+* Added the us-west-2, eu-west-1, ap-southeast-2, and ap-northeast-1 regions to the AWS Data Pipeline client.
+* Added iterators to the Amazon Kinesis client
+* Updated iterator configurations for all services to match our new iterator config spec (care was taken to continue
+  supporting manually-specified configurations in the old format to prevent BC)
+* Updated the Amazon EC2 model to include the latest updates and documentation. Removed deprecated license-related
+  operations (this is not considered a BC since we have confirmed that these operations are not used by customers)
+* Updated the Amazon Route 53 client to use the 2013-04-01 API version
+* Fixed several iterator configurations for various services to better support existing operations and parameters
+* Fixed an issue with the Amazon S3 client where an exception was thrown when trying to add a default Content-MD5
+  header to a request that uses a non-rewindable stream.
+* Updated the Amazon S3 PostObject class to work with CNAME style buckets.
+
+2.5.2 (2014-01-29)
+------------------
+
+* Added support for dead letter queues to Amazon SQS
+* Added support for the new M3 medium and large instance types to the Amazon EC2 client
+* Added support for using the `eu-west-1` and `us-west-2` regions to the Amazon SES client
+* Adding content-type guessing to the Amazon S3 stream wrapper (see #210)
+* Added an event to the Amazon S3 multipart upload helpers to allow granular customization of multipart uploads during
+  a sync (see #209)
+* Updated Signature V4 logic for Amazon S3 to throw an exception if you attempt to create a presigned URL that expires
+  later than a week (see #215)
+* Fixed the `downloadBucket` and `uploadDirectory` methods to support relative paths and better support
+  Windows (see #207)
+* Fixed issue #195 in the Amazon S3 multipart upload helpers to properly support additional parameters (see #211)
+* [Docs] Expanded examples in the [API reference](http://docs.aws.amazon.com/aws-sdk-php/latest/index.html) by default
+  so they don't get overlooked
+* [Docs] Moved the API reference links in the [service-specific user guide
+  pages](http://docs.aws.amazon.com/aws-sdk-php/guide/latest/index.html#service-specific-guides) to the bottom so
+  the page's content takes priority
+
 2.5.1 (2014-01-09)
 ------------------
 

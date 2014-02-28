@@ -1,5 +1,5 @@
 {
-    "name": "facebook-php-sdk",
+    "name": "thomaswelton/facebook-php-sdk",
     "description": "Facebook PHP SDK",
     "keywords": ["facebook", "sdk"],
     "type": "library",
@@ -15,6 +15,9 @@
         "php": ">=5.2.0",
         "ext-curl": "*",
         "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
     },
     "autoload": {
         "classmap": ["src"]

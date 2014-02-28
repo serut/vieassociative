@@ -17,6 +17,9 @@ class AssociationFormController extends BaseController
      * @origin = the page name on the association control panel
      * @item = the name of the input that the user wants to edit
      *    Controls the origin and the item before redering corresponding form
+     * @param $id_assoc
+     * @param $origin
+     * @param $item
      * @return View The form needed for edit the corresponding information
      */
     public function getForm($id_assoc, $origin, $item)
@@ -64,6 +67,9 @@ class AssociationFormController extends BaseController
      * @origin = the page name on the association control panel
      * @item = the name of the input that the user wants to edit
      *    Controls the origin and the item before redering corresponding form
+     * @param $id_assoc
+     * @param $origin
+     * @param $item
      * @return View The form needed for edit the corresponding information
      */
     public function postForm($id_assoc, $origin, $item)

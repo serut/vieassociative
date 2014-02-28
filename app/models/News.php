@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * An Eloquent Model: 'News'
+ *
+ * @property integer $id
+ * @property integer $id_assoc
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property \Carbon\Carbon $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Partial[] $partial
+ */
 class News extends Eloquent
 {
     protected $table = 'news';

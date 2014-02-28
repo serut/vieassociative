@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * An Eloquent Model: 'Folder'
+ *
+ * @property integer $id
+ * @property string $name
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ */
 class Folder extends Eloquent
 {
     protected $table = 'folder';

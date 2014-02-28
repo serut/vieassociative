@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * An Eloquent Model: 'TypeEvenement'
+ *
+ */
 class TypeEvenement extends Eloquent
 {
     protected $table = 'type_evenement';

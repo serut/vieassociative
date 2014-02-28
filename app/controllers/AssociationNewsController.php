@@ -35,6 +35,7 @@ class AssociationNewsController extends BaseController
 
     /**
      * API : Create a news
+     * @param $idAssoc
      * @return JSON
      */
     static function addNews($idAssoc)
@@ -50,6 +51,9 @@ class AssociationNewsController extends BaseController
 
     /**
      * API : Edit or create a news
+     * @param $idAssoc
+     * @param $partial
+     * @param $item
      * @return JSON
      */
     static function editPartialNews($idAssoc, $partial, $item)

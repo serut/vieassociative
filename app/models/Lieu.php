@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * An Eloquent Model: 'Lieu'
+ *
+ */
 class Lieu extends Eloquent
 {
     protected $table = 'lieu';

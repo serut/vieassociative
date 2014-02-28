@@ -1,4 +1,6 @@
-Facebook PHP SDK (v.3.2.2)
+[![Total Downloads](https://poser.pugx.org/thomaswelton/facebook-php-sdk/downloads.png)](https://packagist.org/packages/thomaswelton/facebook-php-sdk)
+
+Facebook PHP SDK (v.3.2.3)
 
 The [Facebook Platform](http://developers.facebook.com/) is
 a set of APIs that make your app more social.
@@ -14,40 +16,48 @@ Usage
 
 The [examples][examples] are a good place to start. The minimal you'll need to
 have is:
+```php
+require 'facebook-php-sdk/src/Facebook.php';
 
-    require 'facebook-php-sdk/src/Facebook.php';
+$facebook = new Facebook\Facebook(array(
+  'appId'  => 'YOUR_APP_ID',
+  'secret' => 'YOUR_APP_SECRET',
+));
 
-    $facebook = new Facebook\Facebook(array(
-      'appId'  => 'YOUR_APP_ID',
-      'secret' => 'YOUR_APP_SECRET',
-    ));
-
-    // Get User ID
-    $user = $facebook->getUser();
+// Get User ID
+$user = $facebook->getUser();
+```
 
 To make [API][API] calls:
+```php
+if ($user) {
+  try {
+    // Proceed knowing you have a logged in user who's authenticated.
+    $user_profile = $facebook->api('/me');
+  } catch (FacebookApiException $e) {
+    error_log($e);
+    $user = null;
+  }
+}
+```
 
-    if ($user) {
-      try {
-        // Proceed knowing you have a logged in user who's authenticated.
-        $user_profile = $facebook->api('/me');
-      } catch (Facebook\FacebookApiException $e) {
-        error_log($e);
-        $user = null;
-      }
-    }
+You can make api calls by choosing the `HTTP method` and setting optional `parameters`:
+```php
+$facebook->api('/me/feed/', 'post', array(
+	'message' => 'I want to display this message on my wall'
+));
+```
 
 Login or logout url will be needed depending on current user state.
-
-    if ($user) {
-      $logoutUrl = $facebook->getLogoutUrl();
-    } else {
-      $loginUrl = $facebook->getLoginUrl();
-    }
-
-[examples]: http://github.com/facebook/facebook-php-sdk/blob/master/examples/example.php
+```php
+if ($user) {
+  $logoutUrl = $facebook->getLogoutUrl();
+} else {
+  $loginUrl = $facebook->getLoginUrl();
+}
+```
+[examples]: /examples/example.php
 [API]: http://developers.facebook.com/docs/api
-
 
 Tests
 -----

@@ -1,11 +1,25 @@
 <?php
+
+/**
+ * Class SiteHelpers
+ */
+
+/** @noinspection PhpInconsistentReturnPointsInspection */
 class SiteHelpers{
-	static function datepicker_to_timestamp($t){
+    /**
+     * @param $t
+     * @return mixed
+     */
+    static function datepicker_to_timestamp($t){
 		$pattern = '/([0-9]{2})\/([0-9]{2})\/([0-9]{4}) ([0-9]{2}):([0-9]{2}):([0-9]{2})/';
         return preg_replace($pattern, '$3-$2-$1 $4:$5:$6',$t);
 	}
 
-	static function create_radio($options){
+    /**
+     * @param $options
+     * @return string
+     */
+    static function create_radio($options){
 		$txt = '<div class="form-group">';
 			$txt.= SiteHelpers::add_label($options);
 			$txt.= '<div class="controls col-sm-8"';
@@ -30,7 +44,11 @@ class SiteHelpers{
 		return $txt;
 	}
 
-	static function create_checkbox($options){
+    /**
+     * @param $options
+     * @return string
+     */
+    static function create_checkbox($options){
 		$txt = '<div>';
 			$txt.= SiteHelpers::add_label($options);
 			$txt.= '<div class="controls col-sm-8"';
@@ -38,7 +56,7 @@ class SiteHelpers{
 				$txt.= ' data-toggle="'.$options['data-toggle'].'"';
 			$txt.= '>';
 
-				foreach ($options['elements'] as $k => $v) {
+				foreach ($options['elements'] as $v) {
 					$txt.= '<label class="checkbox">';
 					if(isset($v['checked'])){
 						$txt.= Form::checkbox($options['name'], $v['value'],$v['checked']);
@@ -52,8 +70,12 @@ class SiteHelpers{
 		$txt.= "</div>";
 		return $txt;
 	}
-	
-	static function create_input($options){
+
+    /**
+     * @param $options
+     * @return string
+     */
+    static function create_input($options){
 		$txt = '<div class="form-group row">';
 			$txt.= SiteHelpers::add_label($options);
 			if(isset($options['full-width'])){
@@ -66,8 +88,11 @@ class SiteHelpers{
 		$txt.= "</div>";
 		return $txt;
 	}
-	
-	static function create_datepicker_range(){
+
+    /**
+     * @return string
+     */
+    static function create_datepicker_range(){
 		$txt = '<div class="date-container" id="datepicker">';
 			$txt.= '<div class="date-range-field"><span></span>';
 			$txt.= '<a href="#">▼</a></div>';
@@ -76,12 +101,19 @@ class SiteHelpers{
 		return $txt;
 	}
 
-	static function create_datepicker(){
+    /**
+     * @return string
+     */
+    static function create_datepicker(){
 		$txt = '<input type="text" id="datepicker">';
 		return $txt;
 	}
 
-	static function simple_input($options){
+    /**
+     * @param $options
+     * @return string
+     */
+    static function simple_input($options){
 		$txt= '';
 			// manage the form
 			$options['form']['id'] = $options['id'];
@@ -109,7 +141,11 @@ class SiteHelpers{
 		return $txt;
 	}
 
-	static function callFormClass($options){
+    /**
+     * @param $options
+     * @return string
+     */
+    static function callFormClass($options){
 		switch ($options['type']) {
 			case 'password':
 				return Form::password($options['id'], $options['form']);
@@ -128,6 +164,7 @@ class SiteHelpers{
 		if(isset($options['label'])){
 			return '<label class="col-sm-4 control-label">'.$options['label'].'</label>';
 		}
+        return "";
 	}
 
 

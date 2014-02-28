@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class EvenementController
+ */
 class EvenementController extends BaseController
 {
     /**

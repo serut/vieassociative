@@ -226,8 +226,8 @@
 			'thumbnail':'http://img.vieassociative.fr/{{$prefix}}{{$association->id}}/{{$e->name_img}}_thumbnail.{{$e->extension}}',
 			'size' : '2',
 		},
-
-		@endforeach]
+		@endforeach
+        ]
 		loadGallery($('#gallery'),data,$('#photo-pattern'));
 		function open(){
 

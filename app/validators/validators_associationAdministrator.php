@@ -1,7 +1,13 @@
 <?php
 
+/**
+ * Class validators_associationAdministrator
+ */
 class validators_associationAdministrator extends BaseValidator
 {
+    /**
+     * @return array
+     */
     public function add_when_not_admin()
     {
         if (Input::get('who', 'true') == 'false') {
@@ -21,6 +27,9 @@ class validators_associationAdministrator extends BaseValidator
         return $this->test($rules);
     }
 
+    /**
+     * @return array
+     */
     public function add_when_already_admin()
     {
         // he adds somebody else as admin
@@ -31,6 +40,10 @@ class validators_associationAdministrator extends BaseValidator
         return $this->test($rules);
     }
 
+    /**
+     * @param $idAssoc
+     * @return array
+     */
     public function remove($idAssoc)
     {
         Validator::extend('allowed_to_remove', function ($attribute, $value, $parameters) {

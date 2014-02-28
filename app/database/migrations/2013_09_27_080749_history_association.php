@@ -2,6 +2,9 @@
 
 use Illuminate\Database\Migrations\Migration;
 
+/**
+ * Class HistoryAssociation
+ */
 class HistoryAssociation extends Migration {
 
 	/**

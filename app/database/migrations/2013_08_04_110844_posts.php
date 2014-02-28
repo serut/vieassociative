@@ -2,6 +2,9 @@
 
 use Illuminate\Database\Migrations\Migration;
 
+/**
+ * Class Posts
+ */
 class Posts extends Migration {
 
 	/**

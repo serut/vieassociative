@@ -54,17 +54,31 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         return $this->email;
     }
 
+    /**
+     * @param $id_assoc
+     * @return bool
+     */
     static function isAdministrator($id_assoc)
     {
         return User::isUserAdministrator($id_assoc, Auth::user()->id);
     }
 
+    /**
+     * @param $id_assoc
+     * @param $id_user
+     * @return bool
+     */
     static function isUserAdministrator($id_assoc, $id_user)
     {
         $is_admin = UserAssociation::where('id_assoc', $id_assoc)->where('id_user', $id_user)->count();
         return $is_admin > 0 ? true : false;
     }
 
+    /**
+     * @param $id_user
+     * @param $id_assoc
+     * @param $link
+     */
     static function addAssoc($id_user, $id_assoc, $link)
     {
         $association = Association::findOrFail($id_assoc);
@@ -77,6 +91,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         $el->touch();
     }
 
+    /**
+     * @param $id
+     */
     static function connect($id)
     {
         $infoProfil = User::getInfoProfils($id);
@@ -97,6 +114,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         Session::put('myassocs', array());
     }
 
+    /**
+     * @param $id_user
+     * @param $token
+     */
     static function creerToken($id_user, $token)
     {
         $el = new UserToken;
@@ -106,6 +127,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         $el->save();
     }
 
+    /**
+     * @param $token
+     * @return int|mixed
+     */
     static function reconnecterDepuisToken($token)
     {
         $el = UserToken::where('token', '=', $token)->where('date_fin', '>', date('Y-m-d h:m:s', time()))->first();
@@ -115,6 +140,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         return $el->id_user;
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
     static function getInfoProfils($id)
     {
         $sql = 'SELECT level,username from user where id = ?';
@@ -122,6 +151,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         return $result[0];
     }
 
+    /**
+     * @param $username
+     * @return bool
+     */
     static function isTakenUsername($username)
     {
         $count = User::where('username', $username)->count();
@@ -129,6 +162,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface
 
     }
 
+    /**
+     * @param $email
+     * @return bool
+     */
     static function isTakenMail($email)
     {
         $count = User::where('email', $email)->count();
@@ -143,6 +180,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     }
     */
 
+    /**
+     * @return string
+     */
     public function getAvatar()
     {
         if (empty($this->avatar_img)) {

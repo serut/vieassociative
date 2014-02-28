@@ -1,7 +1,14 @@
 <?php
 
+/**
+ * Class validators_contact
+ */
 class validators_contact
 {
+    /**
+     * @param $input
+     * @return bool
+     */
     static function validate($input)
     {
         $rules = array(

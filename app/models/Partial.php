@@ -17,9 +17,15 @@ class Partial extends Eloquent
     protected $table = 'partial';
     public $timestamps = true;
 
+    /**
+     * @param $container
+     * @param $type
+     * @return mixed
+     * @throws Exception
+     */
     static function search($container, $type)
     {
-        foreach ($container['data'] as $key => $value) {
+        foreach ($container['data'] as $value) {
             if ($value['type'] == $type) {
                 return $value;
             }
@@ -27,12 +33,18 @@ class Partial extends Eloquent
         throw new Exception("Error Processing Request", 1);
     }
 
+    /**
+     * @param string $id_partial
+     * @param string $container
+     * @param int $type
+     * @return bool
+     */
     static function has($id_partial, $container, $type)
     {
         if (!isset($container['data']) || empty($container['data'])) {
             return false;
         }
-        foreach ($container['data'] as $key => $value) {
+        foreach ($container['data'] as $value) {
             if ($value['type'] == $type && $value['partial_id'] == $id_partial) {
                 return true;
             }
@@ -40,6 +52,11 @@ class Partial extends Eloquent
         return false;
     }
 
+    /**
+     * @param $data
+     * @param $result
+     * @return mixed
+     */
     static function edit($data, $result)
     {
         $id_news = $data['id_news'];
@@ -147,6 +164,10 @@ class Partial extends Eloquent
         return $result;
     }
 
+    /**
+     * @param array $news
+     * @return array
+     */
     static function get($news)
     {
         if (!empty($news)) {
@@ -158,6 +179,10 @@ class Partial extends Eloquent
         return $news;
     }
 
+    /**
+     * @param $news
+     * @return array
+     */
     static function getNews($news)
     {
         $result = array();

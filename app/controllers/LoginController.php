@@ -1,7 +1,13 @@
 <?php
 
+/**
+ * Class LoginController
+ */
 class LoginController extends BaseController
 {
+    /**
+     * @return \Illuminate\View\View
+     */
     public function getConnexion()
     {
         $connexTentative = TentativeConnexion::get(IP);
@@ -9,6 +15,9 @@ class LoginController extends BaseController
             ->with('connexTentative', $connexTentative);
     }
 
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function postLogin()
     {
         $nbrConnexTentative = TentativeConnexion::get(IP);
@@ -29,6 +38,9 @@ class LoginController extends BaseController
         return Response::json($result);
     }
 
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function postRegister()
     {
         $v = new validators_connexion;
@@ -63,11 +75,17 @@ class LoginController extends BaseController
     }
 
 
+    /**
+     * @return \Illuminate\View\View
+     */
     public function getResetPassword()
     {
         return View::make('connexion.reset-password-email');
     }
 
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function postResetPassword()
     {
         $v = new validators_connexion;
@@ -85,6 +103,10 @@ class LoginController extends BaseController
         return Response::json($result);
     }
 
+    /**
+     * @param $pass
+     * @return \Illuminate\View\View
+     */
     public function getResetPasswordAfter($pass)
     {
         $pr = PasswordReset::where('pass', $pass)->first();
@@ -97,6 +119,9 @@ class LoginController extends BaseController
             ->with('username', User::find($pr->id_user)->username);
     }
 
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function getLogout()
     {
         Auth::logout();
@@ -104,6 +129,9 @@ class LoginController extends BaseController
         return Redirect::to('/user/log');
     }
 
+    /**
+     * @return \Illuminate\Http\Response
+     */
     public function getFacebook()
     {
         // get data from input
@@ -126,8 +154,13 @@ class LoginController extends BaseController
             $url = $fb->getAuthorizationUri();
             return Response::make()->header('Location', (string)$url);
         }
+
+        return;
     }
 
+    /**
+     * @return \Illuminate\Http\Response
+     */
     public function getGoogle()
     {
         $code = Input::get('code');
@@ -142,8 +175,13 @@ class LoginController extends BaseController
             $url = $googleService->getAuthorizationUri();
             return Response::make()->header('Location', (string)$url);
         }
+
+        return;
     }
 
+    /**
+     * @return \Illuminate\Http\Response
+     */
     public function getLive()
     {
         $code = Input::get('code');
@@ -158,6 +196,8 @@ class LoginController extends BaseController
             $url = $microsoft->getAuthorizationUri();
             return Response::make()->header('Location', (string)$url);
         }
+
+        return;
     }
     /*
         Facebook data : 

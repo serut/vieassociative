@@ -13,6 +13,10 @@ class PartialText extends Eloquent
     protected $table = 'partial_text';
     public $timestamps = true;
 
+    /**
+     * @param $text
+     * @return int
+     */
     public static function add($text)
     {
         $partialText = new PartialText();
@@ -21,6 +25,10 @@ class PartialText extends Eloquent
         return $partialText->id;
     }
 
+    /**
+     * @param $id
+     * @param $value
+     */
     public static function edit($id, $value)
     {
         $partialText = PartialText::find($id);

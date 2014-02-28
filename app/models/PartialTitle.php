@@ -13,6 +13,10 @@ class PartialTitle extends Eloquent
     protected $table = 'partial_title';
     public $timestamps = true;
 
+    /**
+     * @param $title
+     * @return int
+     */
     public static function add($title)
     {
         $partialTitle = new PartialTitle();
@@ -21,6 +25,10 @@ class PartialTitle extends Eloquent
         return $partialTitle->id;
     }
 
+    /**
+     * @param $id
+     * @param $value
+     */
     public static function edit($id, $value)
     {
         $partialTitle = PartialTitle::find($id);

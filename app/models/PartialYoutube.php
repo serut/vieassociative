@@ -13,6 +13,10 @@ class PartialYoutube extends Eloquent
     protected $table = 'partial_youtube';
     public $timestamps = true;
 
+    /**
+     * @param $text
+     * @return int
+     */
     public static function add($text)
     {
         $partialYoutube = new PartialYoutube();
@@ -21,6 +25,10 @@ class PartialYoutube extends Eloquent
         return $partialYoutube->id;
     }
 
+    /**
+     * @param $id
+     * @param $value
+     */
     public static function edit($id, $value)
     {
         $partialYoutube = PartialYoutube::find($id);

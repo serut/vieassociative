@@ -2,6 +2,9 @@
 
 use Illuminate\Database\Migrations\Migration;
 
+/**
+ * Class MigrationFile
+ */
 class MigrationFile extends Migration {
 
 	/**

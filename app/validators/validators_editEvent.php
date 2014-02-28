@@ -1,7 +1,14 @@
 <?php
 
+/**
+ * Class validators_editEvent
+ */
 class validators_editEvent
 {
+    /**
+     * @param $input
+     * @return bool
+     */
     static function validateFirstStep($input)
     {
         $rules = array(

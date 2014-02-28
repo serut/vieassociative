@@ -14,6 +14,10 @@ class Folder extends Eloquent
     protected $primaryKey = 'id';
     public $timestamps = true;
 
+    /**
+     * @param $idAssoc
+     * @return array
+     */
     static function getGallery($idAssoc)
     {
         $a = Association::find($idAssoc);

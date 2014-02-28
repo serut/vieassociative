@@ -2,18 +2,21 @@
 
 /**
  * Class AssociationAPIController
- *
- *
+ * @category
+ * @package
+ * @author
+ * @licence
+ * @link
  */
 class AssociationAPIController extends BaseController
 {
     /**
-     * @param $idAssoc
+     * @param $idAssoc integer
      * @return Json all news from an association
      */
     public function getNews($idAssoc)
     {
-        $association = Association::findOrFail($idAssoc);
+        Association::findOrFail($idAssoc);
         return Response::json(News::listNews($idAssoc));
     }
 } 

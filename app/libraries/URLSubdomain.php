@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class URLSubdomain
+ */
 class URLSubdomain extends Symfony\Component\HttpFoundation\Request{
     /**
      * Generate a absolute URL to the given path.

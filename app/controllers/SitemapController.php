@@ -1,8 +1,14 @@
 <?php
 
+/**
+ * Class SitemapController
+ */
 class SitemapController extends BaseController
 {
 
+    /**
+     * @return \Illuminate\Http\Response
+     */
     public function getSitemap()
     {
         $localURL = array(

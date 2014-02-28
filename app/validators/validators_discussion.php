@@ -1,7 +1,13 @@
 <?php
 
+/**
+ * Class validators_discussion
+ */
 class validators_discussion extends BaseValidator
 {
+    /**
+     * @return array
+     */
     public function add()
     {
         $rules = array(
@@ -12,6 +18,9 @@ class validators_discussion extends BaseValidator
         return $this->test($rules);
     }
 
+    /**
+     * @return array
+     */
     public function vote()
     {
         $rules = array(
@@ -21,6 +30,9 @@ class validators_discussion extends BaseValidator
         return $this->test($rules);
     }
 
+    /**
+     * @return array
+     */
     public function validate()
     {
         Validator::extend('have_autorisation', function ($attribute, $value, $parameters) {

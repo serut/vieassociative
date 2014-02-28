@@ -1,7 +1,13 @@
 <?php
 
+/**
+ * Class validators_associationGeneralInformation
+ */
 class validators_associationGeneralInformation extends BaseValidator
 {
+    /**
+     * @return array
+     */
     public function name()
     {
         $rules = array(
@@ -10,6 +16,9 @@ class validators_associationGeneralInformation extends BaseValidator
         return $this->test($rules);
     }
 
+    /**
+     * @return array
+     */
     public function legal_name()
     {
         $rules = array(
@@ -18,6 +27,9 @@ class validators_associationGeneralInformation extends BaseValidator
         return $this->test($rules);
     }
 
+    /**
+     * @return array
+     */
     public function acronym()
     {
         $rules = array(
@@ -26,6 +38,9 @@ class validators_associationGeneralInformation extends BaseValidator
         return $this->test($rules);
     }
 
+    /**
+     * @return array
+     */
     public function goal()
     {
         $rules = array(
@@ -34,6 +49,9 @@ class validators_associationGeneralInformation extends BaseValidator
         return $this->test($rules);
     }
 
+    /**
+     * @return array
+     */
     public function official_date_creation()
     {
         $rules = array(
@@ -42,6 +60,9 @@ class validators_associationGeneralInformation extends BaseValidator
         return $this->test($rules);
     }
 
+    /**
+     * @return array
+     */
     public function website_url()
     {
         $rules = array(
@@ -50,6 +71,9 @@ class validators_associationGeneralInformation extends BaseValidator
         return $this->test($rules);
     }
 
+    /**
+     * @return array
+     */
     public function headquarter()
     {
         $rules = array(
@@ -58,6 +82,9 @@ class validators_associationGeneralInformation extends BaseValidator
         return $this->test($rules);
     }
 
+    /**
+     * @return array
+     */
     public function admitted_public_utility()
     {
         $rules = array(
@@ -66,6 +93,9 @@ class validators_associationGeneralInformation extends BaseValidator
         return $this->test($rules);
     }
 
+    /**
+     * @return array
+     */
     public function internal_regulation()
     {
         $rules = array(
@@ -74,6 +104,9 @@ class validators_associationGeneralInformation extends BaseValidator
         return $this->test($rules);
     }
 
+    /**
+     * @return array
+     */
     public function statuts()
     {
         $rules = array(
@@ -82,6 +115,9 @@ class validators_associationGeneralInformation extends BaseValidator
         return $this->test($rules);
     }
 
+    /**
+     * @return array
+     */
     public function contact_adress()
     {
         $rules = array(

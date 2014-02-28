@@ -15,6 +15,9 @@ class TentativeConnexion extends Eloquent
     public $timestamps = true;
 
 
+    /**
+     * @param $ip
+     */
     static function add($ip)
     {
         $test = new TentativeConnexion;
@@ -22,6 +25,10 @@ class TentativeConnexion extends Eloquent
         $test->touch();
     }
 
+    /**
+     * @param array $ip
+     * @return mixed
+     */
     static function get($ip)
     {
         $sql = "SELECT count(*) AS nombre FROM connexion_tentative WHERE ip = ? AND created_at BETWEEN ? AND ? ";
@@ -29,6 +36,9 @@ class TentativeConnexion extends Eloquent
         return $result[0]->nombre;
     }
 
+    /**
+     * @return bool
+     */
     static function deleteOldEntries()
     {
         $sql = "DELETE FROM connexion_tentative WHERE created_at < ? ";

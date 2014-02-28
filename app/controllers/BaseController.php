@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class BaseController
+ */
 class BaseController extends Controller
 {
 

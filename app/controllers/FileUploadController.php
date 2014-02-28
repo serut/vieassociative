@@ -47,6 +47,9 @@ class FileUploadController extends BaseController
         return Response::json($return);
     }
 
+    /**
+     * @return \Illuminate\Http\Response
+     */
     public function fileUpload()
     {
         $http_origin = $_SERVER['HTTP_ORIGIN'];
@@ -59,6 +62,9 @@ class FileUploadController extends BaseController
         return;
     }
 
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function getContext()
     {
         $val = Request::header('Referer');
@@ -71,8 +77,13 @@ class FileUploadController extends BaseController
         } else {
             return $this->postError(1);
         }
+
+        return;
     }
 
+    /**
+     * @return string
+     */
     public function getPrefixImg()
     {
         if (App::environment() != "production") {
@@ -82,6 +93,9 @@ class FileUploadController extends BaseController
         }
     }
 
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function getFileName()
     {
         $val = Request::header('Content-Disposition');
@@ -92,8 +106,13 @@ class FileUploadController extends BaseController
         } else {
             return $this->postError(2);
         }
+
+        return;
     }
 
+    /**
+     * @return bool|\Illuminate\Http\JsonResponse
+     */
     public function isFinished()
     {
         $val = Request::header('Content-Range');
@@ -106,6 +125,9 @@ class FileUploadController extends BaseController
         }
     }
 
+    /**
+     * @return bool
+     */
     public function isImg()
     {
         $imgExtension = array('png', 'jpg', 'bmp', 'jpeg');
@@ -129,6 +151,8 @@ class FileUploadController extends BaseController
         } else {
             return $this->postError(3);
         }
+
+        return;
     }
 
 
@@ -155,6 +179,11 @@ class FileUploadController extends BaseController
         */
     }
 
+    /**
+     * @param $src
+     * @param $s3_url
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function sendObject($src, $s3_url)
     {
         $contentType = "image/png"; //image/jpeg
@@ -171,6 +200,8 @@ class FileUploadController extends BaseController
             //var_dump($e);
             return Response::json('error', 400);
         }
+
+        return;
     }
 
 
@@ -207,6 +238,13 @@ class FileUploadController extends BaseController
         $this->sendObject($img, $this->original_url . $thumb);
     }
 
+    /**
+     * @param $file_ext
+     * @param $from_url
+     * @param string $imageX
+     * @param string $imageY
+     * @return resource
+     */
     public function creerImageDimensionnee($file_ext, $from_url, $imageX = "180", $imageY = "180")
     {
         // A partir du nom du fichier, recupere le nom et l'extension
@@ -249,7 +287,7 @@ class FileUploadController extends BaseController
                 $image_new = imagecreatefromgif($imageProvenance);
             } elseif ($file_ext == 'png') {
                 $image_new = imagecreatefrompng($imageProvenance);
-            } elseif ($extension == 'bmp') {
+            } elseif ($file_ext == 'bmp') {
                 $image_new = imagecreatefromwbmp($imageProvenance);
             }
         } catch (Exception $e) {
@@ -265,6 +303,12 @@ class FileUploadController extends BaseController
         return $image;
     }
 
+    /**
+     * @param $file_ext
+     * @param $from_url
+     * @param $width
+     * @return \Illuminate\Http\JsonResponse|resource
+     */
     public function createImageFixedWidth($file_ext, $from_url, $width)
     {
         // Loading the image and getting the original dimensions
@@ -279,7 +323,7 @@ class FileUploadController extends BaseController
                 $image = imagecreatefromgif($imageProvenance);
             } elseif ($file_ext == 'png') {
                 $image = imagecreatefrompng($imageProvenance);
-            } elseif ($extension == 'bmp') {
+            } elseif ($file_ext == 'bmp') {
                 $image = imagecreatefromwbmp($imageProvenance);
             }
         } catch (Exception $e) {
@@ -304,6 +348,13 @@ class FileUploadController extends BaseController
         return $new_image;
     }
 
+    /**
+     * @param $idAssoc
+     * @param $typeCrop
+     * @param $action
+     * @param $namePic
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
+     */
     public function postCrop($idAssoc, $typeCrop, $action, $namePic)
     {
         switch ($typeCrop) {
@@ -344,7 +395,7 @@ class FileUploadController extends BaseController
                 $img_r = imagecreatefromgif($src);
             } elseif ($file_ext == 'png') {
                 $img_r = imagecreatefrompng($src);
-            } elseif ($extension == 'bmp') {
+            } elseif ($file_ext == 'bmp') {
                 $img_r = imagecreatefromwbmp($src);
             }
         } catch (Exception $e) {
@@ -384,6 +435,10 @@ class FileUploadController extends BaseController
     }
 
 
+    /**
+     * @param $codeError
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function postError($codeError)
     {
         $return = array('error' => 'true', 'status' => 'Une erreur a été detecté pendant l\'upload. Code erreur : ' . $codeError);

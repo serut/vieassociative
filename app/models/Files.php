@@ -16,6 +16,11 @@ class Files extends Eloquent
     protected $primaryKey = 'id';
     public $timestamps = true;
 
+    /**
+     * @param $name
+     * @param $extension
+     * @return int
+     */
     static function add($name, $extension)
     {
         $f = new Files();

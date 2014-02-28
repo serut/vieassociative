@@ -11,7 +11,7 @@ return array(
     | This will be used to prefix flash messages.
     |
     */
-    'session_prefix'                       => 'notifications_',
+    'session_prefix' => 'notifications_',
 
     /*
     |--------------------------------------------------------------------------
@@ -21,7 +21,7 @@ return array(
     | This name will be used to name default container (when calling it with null value).
     |
     */
-    'default_container'                     => 'default',
+    'default_container' => 'default',
 
     /*
     |--------------------------------------------------------------------------
@@ -35,7 +35,7 @@ return array(
     | :message - message text.
     |
     */
-    'default_format'                        => '<div class="alert alert-:type">:message</div>',
+    'default_format' => '<div class="alert alert-:type">:message</div>',
 
     /*
     |--------------------------------------------------------------------------
@@ -59,14 +59,12 @@ return array(
     | :message - message text.
     |
     */
-    'default_formats'                       => array(
+    'default_formats' => array(
 
         /**
          * Default individual messages for all containers.
          */
-        '__'                    => array(
-
-        ),
+        '__' => array(),
 
     )
 

@@ -124,6 +124,13 @@ class AssociationController extends BaseController
         return Response::json($result);
     }
 
+    /**
+     * @param $idAssoc
+     * @param $idGallery
+     * @param string $typeCrop
+     * @param string $action
+     * @return \Illuminate\View\View
+     */
     public function getUpload($idAssoc, $idGallery, $typeCrop = "", $action = "")
     {
         if (App::environment() == "production") {
@@ -140,6 +147,13 @@ class AssociationController extends BaseController
             ->with('hasNextStep', !empty($typeCrop));
     }
 
+    /**
+     * @param $idAssoc
+     * @param $typeCrop
+     * @param $action
+     * @param $namePic
+     * @return \Illuminate\Http\Response|\Illuminate\View\View
+     */
     public function getCrop($idAssoc, $typeCrop, $action, $namePic)
     {
         if (App::environment() == "production") {

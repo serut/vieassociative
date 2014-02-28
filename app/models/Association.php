@@ -40,10 +40,17 @@ class Association extends Eloquent
     protected $primaryKey = 'id';
     public $timestamps = true;
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function userAssociation()
     {
         return $this->belongsTo('user_association', 'id_user');
     }
+
+    /**
+     * @param $value
+     */
     public function setNameAttribute($value)
     {
         //TO DO
@@ -51,11 +58,18 @@ class Association extends Eloquent
         $this->attributes['slug'] = Str::slug($value, '-');
     }
 
+    /**
+     * @return string
+     */
     public function admitted_public_utility_display()
     {
         return $this->admitted_public_utility ? 'Oui' : 'Non';
     }
 
+    /**
+     * @param $assoc
+     * @return int
+     */
     static function add($assoc)
     {
         $gallery = new Folder;
@@ -70,29 +84,50 @@ class Association extends Eloquent
         return $a->id;
     }
 
+    /**
+     * @param $id_user
+     * @param $id_assoc
+     * @return mixed|string
+     */
     static function getRangUser($id_user, $id_assoc)
     {
         $l = UserAssociation::where('id_user', $id_user)->where('id_assoc', $id_assoc)->firstOrFail();
         return empty($l) ? $l->link : '';
     }
 
+    /**
+     * @param $id_assoc
+     * @return mixed|string
+     */
     static function getName($id_assoc)
     {
         $a = Association::findOrFail($id_assoc);
         return $a->name;
     }
 
+    /**
+     * @param array $id_assoc
+     * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|static
+     */
     static function get($id_assoc)
     {
         $a = Association::findOrFail($id_assoc);
         return $a;
     }
 
+    /**
+     * @param $idAssoc
+     * @return int
+     */
     static function countAdmin($idAssoc)
     {
         return UserAssociation::where('id_assoc', $idAssoc)->count();
     }
 
+    /**
+     * @param $idUser
+     * @return array
+     */
     static function getAssociations($idUser)
     {
         $sql = 'SELECT id_assoc as id,link FROM user_association WHERE user_association.id_user = ?';
@@ -100,6 +135,10 @@ class Association extends Eloquent
         return $result;
     }
 
+    /**
+     * @param $nom
+     * @return bool
+     */
     static function existeNomAssociation($nom)
     {
         $sql = 'SELECT id FROM association WHERE nom= ?';
@@ -108,11 +147,18 @@ class Association extends Eloquent
         return !empty($next);
     }
 
+    /**
+     * @param $idUser
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
     static function getListWhereAdmin($idUser)
     {
         return UserAssociation::with('association')->where('id_user', $idUser)->get();
     }
 
+    /**
+     * @return string
+     */
     public function getLogo()
     {
         if (empty($this->logo_img)) {
@@ -127,6 +173,9 @@ class Association extends Eloquent
         return "http://img.vieassociative.fr/" . $prefix . $this->id . '/' . $this->logo_img . '-200x200.jpg';
     }
 
+    /**
+     * @return string
+     */
     public function getCover()
     {
         if (empty($this->cover_img)) {

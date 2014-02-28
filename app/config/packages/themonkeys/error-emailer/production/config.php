@@ -40,5 +40,5 @@ return array(
     |
     */
 
-    'to' => array('address' => 'automatic-error@vieassociative.fr', 'name' =>"Report automatique d'erreur"),
+    'to' => array('address' => 'automatic-error@vieassociative.fr', 'name' => "Report automatique d'erreur"),
 );

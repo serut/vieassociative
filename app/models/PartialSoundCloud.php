@@ -13,6 +13,10 @@ class PartialSoundCloud extends Eloquent
     protected $table = 'partial_soundcloud';
     public $timestamps = true;
 
+    /**
+     * @param $text
+     * @return int
+     */
     public static function add($text)
     {
         $partialSoundCloud = new PartialSoundCloud();
@@ -21,6 +25,10 @@ class PartialSoundCloud extends Eloquent
         return $partialSoundCloud->id;
     }
 
+    /**
+     * @param $id
+     * @param $value
+     */
     public static function edit($id, $value)
     {
         $partialSoundCloud = PartialSoundCloud::find($id);

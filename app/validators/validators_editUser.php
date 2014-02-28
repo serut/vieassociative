@@ -1,7 +1,16 @@
 <?php
 
+/** @noinspection PhpMissingDocCommentInspection */
+
+/**
+ * Class validators_editUser
+ */
 class validators_editUser extends BaseValidator
 {
+    /** @noinspection PhpMissingDocCommentInspection */
+    /**
+     * @return array
+     */
     public function email()
     {
 

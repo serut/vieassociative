@@ -24,11 +24,17 @@ class Proposition extends Eloquent
     public $timestamps = true;
 
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function discussion()
     {
         return $this->belongsTo('Discussion', 'id_discussion');
     }
 
+    /**
+     * @param $data
+     */
     static function add($data)
     {
         $proposition = new Proposition();
@@ -55,6 +61,10 @@ class Proposition extends Eloquent
         $proposition->touch();
     }
 
+    /**
+     * @param $id_assoc
+     * @return array|static[]
+     */
     static function getPropositions($id_assoc)
     {
         return Proposition::where('id_assoc', $id_assoc)
@@ -64,6 +74,9 @@ class Proposition extends Eloquent
     }
 
 
+    /**
+     * @param $id
+     */
     static function process($id)
     {
         $p = Proposition::findOrFail($id);
@@ -83,6 +96,9 @@ class Proposition extends Eloquent
         }
     }
 
+    /**
+     * @param $p
+     */
     static function processSimpleAssociationUpdate($p)
     {
         $where = json_decode($p->where, true);
@@ -97,6 +113,9 @@ class Proposition extends Eloquent
         $a->touch();
     }
 
+    /**
+     * @param $id
+     */
     static function refused($id)
     {
         $p = Proposition::findOrFail($id);

@@ -2,6 +2,9 @@
 
 use Illuminate\Database\Migrations\Migration;
 
+/**
+ * Class WallNews
+ */
 class WallNews extends Migration {
 
 	/**

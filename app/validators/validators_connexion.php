@@ -1,7 +1,14 @@
 <?php
 
+/**
+ * Class validators_connexion
+ */
 class validators_connexion extends BaseValidator
 {
+    /**
+     * @param $nbrConnexTentative
+     * @return array
+     */
     public function login($nbrConnexTentative)
     {
         // Add specific rule for the validation of data
@@ -22,6 +29,9 @@ class validators_connexion extends BaseValidator
     }
 
 
+    /**
+     * @return array
+     */
     public function register()
     {
         Validator::extend('existing_nick', function ($attribute, $value, $parameters) {
@@ -51,6 +61,9 @@ class validators_connexion extends BaseValidator
         */
     }
 
+    /**
+     * @return array
+     */
     public function resetPassword()
     {
         Validator::extend('existing_mail', function ($attribute, $value, $parameters) {

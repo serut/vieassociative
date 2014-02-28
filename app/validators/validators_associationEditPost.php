@@ -1,8 +1,14 @@
 <?php
 
+/**
+ * Class validators_associationEditPost
+ */
 class validators_associationEditPost extends BaseValidator
 {
 
+    /**
+     * @return array
+     */
     public function create()
     {
         $rules = array(
@@ -11,6 +17,9 @@ class validators_associationEditPost extends BaseValidator
         return $this->test($rules);
     }
 
+    /**
+     * @return array
+     */
     public function title()
     {
         $rules = array(
@@ -23,6 +32,9 @@ class validators_associationEditPost extends BaseValidator
         return $this->test($rules, $toPurify);
     }
 
+    /**
+     * @return array
+     */
     public function textarea()
     {
         $rules = array(
@@ -35,6 +47,9 @@ class validators_associationEditPost extends BaseValidator
         return $this->test($rules, $toPurify);
     }
 
+    /**
+     * @return array
+     */
     public function onepicture()
     {
         $rules = array(
@@ -46,6 +61,9 @@ class validators_associationEditPost extends BaseValidator
         return $this->test($rules);
     }
 
+    /**
+     * @return array
+     */
     public function youtube()
     {
         $rules = array(

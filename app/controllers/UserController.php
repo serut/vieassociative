@@ -7,6 +7,10 @@
  */
 class UserController extends BaseController
 {
+    /**
+     * @param $id
+     * @return \Illuminate\View\View
+     */
     public function getEdit($id)
     {
         return View::make('user.edit')

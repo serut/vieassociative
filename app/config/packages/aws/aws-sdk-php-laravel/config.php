@@ -31,7 +31,7 @@ return array(
     | more information see http://docs.aws.amazon.com/aws-sdk-php-2/guide/latest/configuration.html
     |
     */
-    'key'    => getenv('VA_AWS_KEY'),
+    'key' => getenv('VA_AWS_KEY'),
     'secret' => getenv('VA_AWS_SECRET'),
 
 

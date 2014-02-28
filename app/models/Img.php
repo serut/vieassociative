@@ -15,6 +15,11 @@ class Img extends Eloquent
     protected $primaryKey = 'name';
     public $timestamps = true;
 
+    /**
+     * @param $name
+     * @param $extension
+     * @return mixed
+     */
     static function add($name, $extension)
     {
         $i = new Img();

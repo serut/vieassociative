@@ -19,6 +19,11 @@ class FolderFileImg extends Eloquent
     protected $primaryKey = 'id';
     public $timestamps = true;
 
+    /**
+     * @param $idFolder
+     * @param $name
+     * @param $extension
+     */
     static function addImg($idFolder, $name, $extension)
     {
         $f = new FolderFileImg;
@@ -28,6 +33,10 @@ class FolderFileImg extends Eloquent
         $f->touch();
     }
 
+    /**
+     * @param $idFolder
+     * @param $idFile
+     */
     static function addFile($idFolder, $idFile)
     {
         $f = new FolderFileImg;
@@ -36,11 +45,17 @@ class FolderFileImg extends Eloquent
         $f->touch();
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function img()
     {
         return $this->belongsTo('Img', 'name_img');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function file()
     {
         return $this->belongsTo('Files', 'id_file');

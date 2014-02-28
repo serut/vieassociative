@@ -13,6 +13,10 @@ class PartialOnePicture extends Eloquent
     protected $table = 'partial_one_picture';
     public $timestamps = true;
 
+    /**
+     * @param $text
+     * @return int
+     */
     public static function add($text)
     {
         $partialOnePicture = new PartialOnePicture();
@@ -21,6 +25,10 @@ class PartialOnePicture extends Eloquent
         return $partialOnePicture->id;
     }
 
+    /**
+     * @param $id
+     * @param $value
+     */
     public static function edit($id, $value)
     {
         $partialOnePicture = PartialOnePicture::find($id);

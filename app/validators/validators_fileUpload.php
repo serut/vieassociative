@@ -1,7 +1,13 @@
 <?php
 
+/**
+ * Class validators_fileUpload
+ */
 class validators_fileUpload extends BaseValidator
 {
+    /**
+     * @return array
+     */
     public function name()
     {
         $rules = array(

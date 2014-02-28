@@ -23,16 +23,26 @@ class Answer extends Eloquent
     protected $primaryKey = 'id';
     public $timestamps = true;
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function author()
     {
         return $this->belongsTo('User', 'id_user');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function proposition()
     {
         return $this->hasOne('Proposition', 'id_answer');
     }
 
+    /**
+     * @param $id_discussion
+     * @return array
+     */
     static function getAnswer($id_discussion)
     {
         $data = Answer::where('id_discussion', $id_discussion)
@@ -40,6 +50,10 @@ class Answer extends Eloquent
         return Answer::organizeComments($data);
     }
 
+    /**
+     * @param $id_discussion
+     * @return array
+     */
     static function getAnswerAndProposition($id_discussion)
     {
         $data = Answer::where('id_discussion', $id_discussion)
@@ -48,6 +62,10 @@ class Answer extends Eloquent
         return Answer::organizeComments($data);
     }
 
+    /**
+     * @param $result
+     * @return array
+     */
     static function organizeComments($result)
     {
 
@@ -56,7 +74,7 @@ class Answer extends Eloquent
         $comments = array();
 
         //Classify comments between their level
-        foreach ($result as $k => $v) {
+        foreach ($result as $v) {
             switch ($v->level) {
                 case 3:
                     $commentsLevel3[$v->id_answer][] = $v;
@@ -78,13 +96,13 @@ class Answer extends Eloquent
 
         $return = array();
         // put all comments on an array of 1 dimension, as it will be writen on the HTML
-        foreach ($comments as $k => $v) {
+        foreach ($comments as $v) {
             $return[] = $v;
             if (isset($v['child'])) { // If there are 2nd level comments
-                foreach ($v['child'] as $k => $v) {
+                foreach ($v['child'] as $v) {
                     $return[] = $v;
                     if (isset($v['child'])) { // If there are 3rd level comments
-                        foreach ($v['child'] as $k => $v) {
+                        foreach ($v['child'] as $v) {
                             $return[] = $v;
                         }
                     }
@@ -94,6 +112,10 @@ class Answer extends Eloquent
         return $return;
     }
 
+    /**
+     * @param $data
+     * @return int
+     */
     static function addFirstMessageNewProposition($data)
     {
         $a = new Answer();

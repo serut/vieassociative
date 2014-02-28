@@ -104,6 +104,7 @@ class AssociationFormController extends BaseController
                         $result = $this->removeAdministrator($id_assoc);
                         break;
                 }
+                break;
 
             case 'news':
                 switch ($item) {
@@ -132,20 +133,17 @@ class AssociationFormController extends BaseController
      */
     private function addAdministrator($id_assoc, $item)
     {
+        $association = Association::findOrFail($id_assoc);
         $v = new validators_associationAdministrator;
         if (Input::has('who')) {
             // if we don't know if he register himself or somebody else
             $result = $v->add_when_not_admin();
             if (isset($result['success'])) {
-                $nbAdmin = UserAssociation::where('id_assoc', $id_assoc)->count();
-                if ($nbAdmin == 0 || User::isAdministrator($id_assoc)) {
+                if ($association->nb_administrator == 0 || User::isAdministrator($id_assoc)) {
                     if ($result['data']['who'] == 'false') {
-                        User::addAdmin(Auth::user()->id, $id_assoc, $result['data']['link']);
+                        UserAssociation::add(Auth::user()->id, $id_assoc, $result['data']['link']);
                     } else {
-                        $user = User::where('email', $result['data']['admin_mail'])->firstOrFail();
-                        if (!User::isUserAdministrator($id_assoc, $user->id)) {
-                            User::addAdmin($user->id, $id_assoc, $result['data']['link']);
-                        }
+                        UserAssociation::addByMail($result['data']['admin_mail'], $id_assoc, $result['data']['link']);
                     }
                 }
             }
@@ -153,11 +151,7 @@ class AssociationFormController extends BaseController
             $result = $v->add_when_already_admin();
             // he is already an admin, he is adding somebody else
             if (isset($result['success']) && User::isAdministrator($id_assoc)) {
-                $user = User::where('email', "l.mieulet@gmail.com")->first();
-                //$user = User::where('email',$result['data']['admin_mail'])->first();
-                if (!User::isUserAdministrator($id_assoc, $user->id)) {
-                    User::addAdmin($user->id, $id_assoc, $result['data']['link']);
-                }
+                UserAssociation::addByMail($result['data']['admin_mail'], $id_assoc, $result['data']['link']);
             }
         }
         if (isset($result['success'])) {
@@ -174,7 +168,7 @@ class AssociationFormController extends BaseController
         $v = new validators_associationAdministrator;
         $result = $v->remove($id_assoc);
         if (isset($result['success'])) {
-            UserAssociation::findOrFail(Input::get('id'))->delete();
+            UserAssociation::remove(Input::get('id'));
         }
         $result['redirect_url'] = '/' . $id_assoc . '/edit/administrator';
         return $result;

@@ -1,15 +1,15 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
-*/
+/**
+ * |--------------------------------------------------------------------------
+ * | Application Routes
+ * |--------------------------------------------------------------------------
+ * |
+ * | Here is where you can register all of the routes for an application.
+ * | It's a breeze. Simply tell Laravel the URIs it should respond to
+ * | and give it the Closure to execute when that URI is requested.
+ * |
+ */
 $server = explode('.', Request::server('HTTP_HOST')); // routing according to subdomain
 switch ($server['0']) {
     case 'www': // For www.vieassociative.fr/*
@@ -109,17 +109,3 @@ Route::controller('image', 'ImgsController');
 Route::get('voir-evenement/{:ville}/{:categorie}/{:titre}-{:id}', 'EvenementController@voir');
 Route::controller('search/{:action}/{:id}', 'EvenementController');
 */
-App::missing(function ($exception) {
-    switch ($exception->getStatusCode()) {
-        case '404':
-            return Response::view('errors.404', array(), 404);;
-        case '403':
-            return Response::view('errors.403', array(), 403);;
-        case '500':
-            //Log::error('http error 500 on page ' . Request::url());
-            return Response::view('errors.500', array(), 500);;
-        default:
-            //Log::error('http error '.$exception->getStatusCode().' on page ' . Request::url());
-            return Response::view('errors.500', array(), 500);;
-    }
-});

@@ -1,16 +1,4 @@
 <?php
-
-/*
-|--------------------------------------------------------------------------
-| Application & Route Filters
-|--------------------------------------------------------------------------
-|
-| Below you will find the "before" and "after" events for the application
-| which may be used to do any work before or after a request into your
-| application. Here you may also register your custom route filters.
-|
-*/
-
 App::before(function ($request) {
 
     if (isset($_COOKIE['vieasso_remember']) && !empty($_COOKIE['vieasso_remember']) && Auth::guest()) {
@@ -71,7 +59,7 @@ Route::filter('guest', function () {
 
 Route::filter('assoc', function ($idAssoc) {
     if (Auth::guest() || User::isAdministrator($idAssoc)) {
-        return App::abort(404, 'Unauthorized action.');
+        App::abort(404, 'Unauthorized action.');
     }
 });
 /*
@@ -105,13 +93,6 @@ Route::filter('csrf', function () {
 
 
 /*
-|--------------------------------------------------------------------------
-| Language
-|--------------------------------------------------------------------------
-|
-| Detect the browser language.
-|
-
 
 Route::filter('detectLang',  function($route, $request, $lang = 'auto')
 {

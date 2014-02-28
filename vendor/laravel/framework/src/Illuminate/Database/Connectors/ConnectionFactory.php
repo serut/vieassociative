@@ -171,11 +171,6 @@ class ConnectionFactory {
 			throw new \InvalidArgumentException("A driver must be specified.");
 		}
 
-		if ($this->container->bound($key = "db.connector.{$config['driver']}"))
-		{
-			return $this->container->make($key);
-		}
-
 		switch ($config['driver'])
 		{
 			case 'mysql':

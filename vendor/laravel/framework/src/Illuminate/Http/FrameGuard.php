@@ -13,7 +13,7 @@ class FrameGuard implements HttpKernelInterface {
 	protected $app;
 
 	/**
-	 * Create a new FrameGuard instance.
+	 * Create a new CookieQueue instance.
 	 *
 	 * @param  \Symfony\Component\HttpKernel\HttpKernelInterface  $app
 	 * @return void

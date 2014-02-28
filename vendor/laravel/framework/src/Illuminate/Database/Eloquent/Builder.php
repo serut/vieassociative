@@ -34,8 +34,8 @@ class Builder {
 	 * @var array
 	 */
 	protected $passthru = array(
-		'toSql', 'lists', 'insert', 'insertGetId', 'pluck', 'count',
-		'min', 'max', 'avg', 'sum', 'exists', 'getBindings',
+		'toSql', 'lists', 'insert', 'insertGetId', 'pluck',
+		'count', 'min', 'max', 'avg', 'sum', 'exists',
 	);
 
 	/**
@@ -95,7 +95,7 @@ class Builder {
 	{
 		if ( ! is_null($model = $this->find($id, $columns))) return $model;
 
-		throw with(new ModelNotFoundException)->setModel(get_class($this->model));
+		throw new ModelNotFoundException;
 	}
 
 	/**
@@ -121,7 +121,7 @@ class Builder {
 	{
 		if ( ! is_null($model = $this->first($columns))) return $model;
 
-		throw with(new ModelNotFoundException)->setModel(get_class($this->model));
+		throw new ModelNotFoundException;
 	}
 
 	/**
@@ -235,7 +235,7 @@ class Builder {
 	/**
 	 * Get a paginator for a grouped statement.
 	 *
-	 * @param  \Illuminate\Pagination\Factory  $paginator
+	 * @param  \Illuminate\Pagination\Environment  $paginator
 	 * @param  int    $perPage
 	 * @param  array  $columns
 	 * @return \Illuminate\Pagination\Paginator
@@ -250,7 +250,7 @@ class Builder {
 	/**
 	 * Get a paginator for an ungrouped statement.
 	 *
-	 * @param  \Illuminate\Pagination\Factory  $paginator
+	 * @param  \Illuminate\Pagination\Environment  $paginator
 	 * @param  int    $perPage
 	 * @param  array  $columns
 	 * @return \Illuminate\Pagination\Paginator
@@ -427,7 +427,7 @@ class Builder {
 	 */
 	protected function isSoftDeleteConstraint(array $where, $column)
 	{
-		return $where['type'] == 'Null' && $where['column'] == $column;
+		return $where['column'] == $column && $where['type'] == 'Null';
 	}
 
 	/**
@@ -519,12 +519,14 @@ class Builder {
 	 */
 	public function getRelation($relation)
 	{
+		$me = $this;
+
 		// We want to run a relationship query without any constrains so that we will
 		// not have to remove these where clauses manually which gets really hacky
 		// and is error prone while we remove the developer's own where clauses.
-		$query = Relation::noConstraints(function() use ($relation)
+		$query = Relation::noConstraints(function() use ($me, $relation)
 		{
-			return $this->getModel()->$relation();
+			return $me->getModel()->$relation();
 		});
 
 		$nested = $this->nestedRelations($relation);
@@ -579,48 +581,6 @@ class Builder {
 	}
 
 	/**
-	 * Add a basic where clause to the query.
-	 *
-	 * @param  string  $column
-	 * @param  string  $operator
-	 * @param  mixed   $value
-	 * @param  string  $boolean
-	 * @return \Illuminate\Database\Eloquent\Builder|static
-	 */
-	public function where($column, $operator = null, $value = null, $boolean = 'and')
-	{
-		if ($column instanceof Closure)
-		{
-			$query = $this->model->newQuery(false);
-
-			call_user_func($column, $query);
-
-			$this->query->addNestedWhereQuery($query->getQuery(), $boolean);
-		}
-		else
-		{
-			return call_user_func_array(
-				array($this->query, 'where'), array_slice(func_get_args(), 0, func_num_args())
-			);
-		}
-
-		return $this;
-	}
-
-	/**
-	 * Add an "or where" clause to the query.
-	 *
-	 * @param  string  $column
-	 * @param  string  $operator
-	 * @param  mixed   $value
-	 * @return \Illuminate\Database\Eloquent\Builder|static
-	 */
-	public function orWhere($column, $operator = null, $value = null)
-	{
-		return $this->where($column, $operator, $value, 'or');
-	}
-
-	/**
 	 * Add a relationship count condition to the query.
 	 *
 	 * @param  string  $relation
@@ -634,7 +594,7 @@ class Builder {
 	{
 		$relation = $this->getHasRelationQuery($relation);
 
-		$query = $relation->getRelationCountQuery($relation->getRelated()->newQuery(), $this);
+		$query = $relation->getRelationCountQuery($relation->getRelated()->newQuery());
 
 		if ($callback) call_user_func($callback, $query);
 
@@ -728,9 +688,11 @@ class Builder {
 	 */
 	protected function getHasRelationQuery($relation)
 	{
-		return Relation::noConstraints(function() use ($relation)
+		$me = $this;
+
+		return Relation::noConstraints(function() use ($me, $relation)
 		{
-			return $this->getModel()->$relation();
+			return $me->getModel()->$relation();
 		});
 	}
 

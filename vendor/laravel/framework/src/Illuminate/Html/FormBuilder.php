@@ -2,11 +2,8 @@
 
 use Illuminate\Routing\UrlGenerator;
 use Illuminate\Session\Store as Session;
-use Illuminate\Support\Traits\MacroableTrait;
 
 class FormBuilder {
-
-	use MacroableTrait;
 
 	/**
 	 * The HTML builder instance.
@@ -49,6 +46,13 @@ class FormBuilder {
 	 * @var array
 	 */
 	protected $labels = array();
+
+	/**
+	 * The registered form builder macros.
+	 *
+	 * @var array
+	 */
+	protected $macros = array();
 
 	/**
 	 * The reserved form open attributes.
@@ -144,17 +148,6 @@ class FormBuilder {
 		$this->model = $model;
 
 		return $this->open($options);
-	}
-
-	/**
-	 * Set the model instance on the form builder.
-	 *
-	 * @param  mixed  $model
-	 * @return void
-	 */
-	public function setModel($model)
-	{
-		$this->model = $model;
 	}
 
 	/**
@@ -406,7 +399,7 @@ class FormBuilder {
 
 		$options['id'] = $this->getIdAttribute($name, $options);
 
-		if ( ! isset($options['name'])) $options['name'] = $name;
+		$options['name'] = $name;
 
 		// We will simply loop through the options and build an HTML value for each of
 		// them until we have an array of HTML declarations. Then we will join them
@@ -608,7 +601,7 @@ class FormBuilder {
 	 * @param  string  $name
 	 * @param  mixed   $value
 	 * @param  bool    $checked
-	 * @return bool
+	 * @return void
 	 */
 	protected function getCheckedState($type, $name, $value, $checked)
 	{
@@ -724,6 +717,18 @@ class FormBuilder {
 		}
 
 		return '<button'.$this->html->attributes($options).'>'.$value.'</button>';
+	}
+
+	/**
+	 * Register a custom form macro.
+	 *
+	 * @param  string    $name
+	 * @param  callable  $macro
+	 * @return void
+	 */
+	public function macro($name, $macro)
+	{
+		$this->macros[$name] = $macro;
 	}
 
 	/**
@@ -966,6 +971,25 @@ class FormBuilder {
 		$this->session = $session;
 
 		return $this;
+	}
+
+	/**
+	 * Dynamically handle calls to the form builder.
+	 *
+	 * @param  string  $method
+	 * @param  array   $parameters
+	 * @return mixed
+	 *
+	 * @throws \BadMethodCallException
+	 */
+	public function __call($method, $parameters)
+	{
+		if (isset($this->macros[$method]))
+		{
+			return call_user_func_array($this->macros[$method], $parameters);
+		}
+
+		throw new \BadMethodCallException("Method {$method} does not exist.");
 	}
 
 }

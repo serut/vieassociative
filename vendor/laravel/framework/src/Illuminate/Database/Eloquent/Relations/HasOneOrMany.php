@@ -57,7 +57,7 @@ abstract class HasOneOrMany extends Relation {
 	 */
 	public function addEagerConstraints(array $models)
 	{
-		$this->query->whereIn($this->foreignKey, $this->getKeys($models, $this->localKey));
+		$this->query->whereIn($this->foreignKey, $this->getKeys($models));
 	}
 
 	/**
@@ -189,12 +189,16 @@ abstract class HasOneOrMany extends Relation {
 	 */
 	public function create(array $attributes)
 	{
+		$foreign = array(
+			$this->getPlainForeignKey() => $this->getParentKey(),
+		);
+
 		// Here we will set the raw attributes to avoid hitting the "fill" method so
 		// that we do not have to worry about a mass accessor rules blocking sets
 		// on the models. Otherwise, some of these attributes will not get set.
-		$instance = $this->related->newInstance($attributes);
+		$instance = $this->related->newInstance();
 
-		$instance->setAttribute($this->getPlainForeignKey(), $this->getParentKey());
+		$instance->setRawAttributes(array_merge($attributes, $foreign));
 
 		$instance->save();
 
@@ -272,7 +276,7 @@ abstract class HasOneOrMany extends Relation {
 	 *
 	 * @return mixed
 	 */
-	public function getParentKey()
+	protected function getParentKey()
 	{
 		return $this->parent->getAttribute($this->localKey);
 	}
@@ -282,7 +286,7 @@ abstract class HasOneOrMany extends Relation {
 	 *
 	 * @return string
 	 */
-	public function getQualifiedParentKeyName()
+	protected function getQualifiedParentKeyName()
 	{
 		return $this->parent->getTable().'.'.$this->localKey;
 	}

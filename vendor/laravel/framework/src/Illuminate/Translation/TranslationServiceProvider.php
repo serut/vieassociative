@@ -31,8 +31,6 @@ class TranslationServiceProvider extends ServiceProvider {
 
 			$trans = new Translator($loader, $locale);
 
-			$trans->setFallback($app['config']['app.fallback_locale']);
-
 			return $trans;
 		});
 	}

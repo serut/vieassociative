@@ -64,9 +64,7 @@ class RedisQueue extends Queue implements QueueInterface {
 	 */
 	public function pushRaw($payload, $queue = null, array $options = array())
 	{
-		$this->redis->rpush($this->getQueue($queue), $payload);
-
-		return array_get(json_decode($payload, true), 'id');
+		return $this->redis->rpush($this->getQueue($queue), $payload);
 	}
 
 	/**
@@ -74,7 +72,7 @@ class RedisQueue extends Queue implements QueueInterface {
 	 *
 	 * @param  \DateTime|int  $delay
 	 * @param  string  $job
-	 * @param  mixed   $data
+	 * @param  mixed  $data
 	 * @param  string  $queue
 	 * @return void
 	 */
@@ -82,11 +80,7 @@ class RedisQueue extends Queue implements QueueInterface {
 	{
 		$payload = $this->createPayload($job, $data);
 
-		$delay = $this->getSeconds($delay);
-
 		$this->redis->zadd($this->getQueue($queue).':delayed', $this->getTime() + $delay, $payload);
-
-		return array_get(json_decode($payload, true), 'id');
 	}
 
 	/**
@@ -175,7 +169,7 @@ class RedisQueue extends Queue implements QueueInterface {
 	 * Get the delayed jobs that are ready.
 	 *
 	 * @param  string  $queue
-	 * @param  int     $time
+	 * @param  int  $time
 	 * @return array
 	 */
 	protected function getExpiredJobs($queue, $time)
@@ -187,7 +181,7 @@ class RedisQueue extends Queue implements QueueInterface {
 	 * Remove the delayed jobs that are ready for processing.
 	 *
 	 * @param  string  $queue
-	 * @param  int     $time
+	 * @param  int  $time
 	 * @return void
 	 */
 	protected function removeExpiredJobs($queue, $time)

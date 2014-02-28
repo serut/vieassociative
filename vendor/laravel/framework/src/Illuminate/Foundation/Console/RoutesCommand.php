@@ -109,7 +109,7 @@ class RoutesCommand extends Command {
 	 */
 	protected function getRouteInformation(Route $route)
 	{
-		$uri = implode('|', $route->methods()).' '.$route->uri();
+		$uri = head($route->methods()).' '.$route->uri();
 
 		return $this->filterRoute(array(
 			'host'   => $route->domain(),
@@ -166,7 +166,7 @@ class RoutesCommand extends Command {
 			// we have already gathered up then return them back out to these consumers.
 			$inner = $this->getMethodPatterns($route->uri(), $method);
 
-			$patterns = array_merge($patterns, array_keys($inner));
+			$patterns = array_merge($patterns, $inner);
 		}
 
 		return $patterns;

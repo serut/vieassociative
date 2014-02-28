@@ -76,13 +76,6 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 	protected $patternFilters = array();
 
 	/**
-	 * The registered regular expression based filters.
-	 *
-	 * @var array
-	 */
-	protected $regexFilters = array();
-
-	/**
 	 * The reigstered route value binders.
 	 *
 	 * @var array
@@ -127,10 +120,8 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 	public function __construct(Dispatcher $events, Container $container = null)
 	{
 		$this->events = $events;
-		$this->routes = new RouteCollection;
 		$this->container = $container ?: new Container;
-
-		$this->bind('_missing', function($v) { return explode('/', $v); });
+		$this->routes = new RouteCollection;
 	}
 
 	/**
@@ -256,17 +247,15 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 	 */
 	public function controller($uri, $controller, $names = array())
 	{
-		$prepended = $controller;
-
 		// First, we will check to see if a controller prefix has been registered in
 		// the route group. If it has, we will need to prefix it before trying to
 		// reflect into the class instance and pull out the method for routing.
 		if (count($this->groupStack) > 0)
 		{
-			$prepended = $this->prependGroupUses($controller);
+			$controller = $this->prependGroupUses($controller);
 		}
 
-		$routable = $this->getInspector()->getRoutable($prepended, $uri);
+		$routable = $this->getInspector()->getRoutable($controller, $uri);
 
 		// When a controller is routed using this method, we use Reflection to parse
 		// out all of the routable methods for the controller, then register each
@@ -440,12 +429,14 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 	 */
 	protected function getNestedResourceUri(array $segments)
 	{
+		$me = $this;
+
 		// We will spin through the segments and create a place-holder for each of the
 		// resource segments, as well as the resource itself. Then we should get an
 		// entire string for the resource URI that contains all nested resources.
-		return implode('/', array_map(function($s)
+		return implode('/', array_map(function($s) use ($me)
 		{
-			return $s.'/{'.$this->getResourceWildcard($s).'}';
+			return $s.'/{'.$me->getResourceWildcard($s).'}';
 
 		}, $segments));
 	}
@@ -478,32 +469,23 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 	{
 		if (isset($options['names'][$method])) return $options['names'][$method];
 
-		// If a global prefix has been assigned to all names for this resource, we will
-		// grab that so we can prepend it onto the name when we create this name for
-		// the resource action. Otherwise we'll just use an empty string for here.
-		$prefix = isset($options['as']) ? $options['as'].'.' : '';
+		if (count($this->groupStack) == 0) return $resource.'.'.$method;
 
-		if (count($this->groupStack) == 0)
-		{
-			return $prefix.$resource.'.'.$method;
-		}
-
-		return $this->getGroupResourceName($prefix, $resource, $method);
+		return $this->getGroupResourceName($resource, $method);
 	}
 
 	/**
 	 * Get the resource name for a grouped resource.
 	 *
-	 * @param  string  $prefix
 	 * @param  string  $resource
 	 * @param  string  $method
 	 * @return string
 	 */
-	protected function getGroupResourceName($prefix, $resource, $method)
+	protected function getGroupResourceName($resource, $method)
 	{
-		$group = str_replace('/', '.', $this->getLastGroupPrefix());
+		$prefix = str_replace('/', '.', $this->getLastGroupPrefix());
 
-		return trim("{$prefix}{$group}.{$resource}.{$method}", '.');
+		return trim("{$prefix}.{$resource}.{$method}", '.');
 	}
 
 	/**
@@ -524,7 +506,7 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 	 * @param  string  $base
 	 * @param  string  $controller
 	 * @param  array   $options
-	 * @return Route
+	 * @return void
 	 */
 	protected function addResourceIndex($name, $base, $controller, $options)
 	{
@@ -540,7 +522,7 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 	 * @param  string  $base
 	 * @param  string  $controller
 	 * @param  array   $options
-	 * @return Route
+	 * @return void
 	 */
 	protected function addResourceCreate($name, $base, $controller, $options)
 	{
@@ -556,7 +538,7 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 	 * @param  string  $base
 	 * @param  string  $controller
 	 * @param  array   $options
-	 * @return Route
+	 * @return void
 	 */
 	protected function addResourceStore($name, $base, $controller, $options)
 	{
@@ -572,7 +554,7 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 	 * @param  string  $base
 	 * @param  string  $controller
 	 * @param  array   $options
-	 * @return Route
+	 * @return void
 	 */
 	protected function addResourceShow($name, $base, $controller, $options)
 	{
@@ -588,7 +570,7 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 	 * @param  string  $base
 	 * @param  string  $controller
 	 * @param  array   $options
-	 * @return Route
+	 * @return void
 	 */
 	protected function addResourceEdit($name, $base, $controller, $options)
 	{
@@ -620,7 +602,7 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 	 * @param  string  $base
 	 * @param  string  $controller
 	 * @param  array   $options
-	 * @return Route
+	 * @return void
 	 */
 	protected function addPutResourceUpdate($name, $base, $controller, $options)
 	{
@@ -651,7 +633,7 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 	 * @param  string  $base
 	 * @param  string  $controller
 	 * @param  array   $options
-	 * @return Route
+	 * @return void
 	 */
 	protected function addResourceDestroy($name, $base, $controller, $options)
 	{
@@ -783,7 +765,6 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 	 * @param  array|string  $methods
 	 * @param  string  $uri
 	 * @param  \Closure|array|string  $action
-	 * @return \Illuminate\Routing\Route
 	 */
 	protected function addRoute($methods, $uri, $action)
 	{
@@ -808,8 +789,8 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 			$action = $this->getControllerAction($action);
 		}
 
-		$route = $this->newRoute(
-			$methods, $uri = $this->prefix($uri), $action
+		$route = with(new Route(
+			$methods, $uri = $this->prefix($uri), $action)
 		);
 
 		$route->where($this->patterns);
@@ -823,19 +804,6 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 		}
 
 		return $route;
-	}
-
-	/**
-	 * Create a new Route object.
-	 *
-	 * @param  array|string $methods
-	 * @param  string  $uri
-	 * @param  mixed  $action
-	 * @return \Illuminate\Routing\Route
-	 */
-	protected function newRoute($methods, $uri, $action)
-	{
-		return new Route($methods, $uri, $action);
 	}
 
 	/**
@@ -879,7 +847,7 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 	 * Add a controller based route action to the action array.
 	 *
 	 * @param  array|string  $action
-	 * @return array
+	 * @return void
 	 */
 	protected function getControllerAction($action)
 	{
@@ -911,16 +879,18 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 	 */
 	protected function getClassClosure($controller)
 	{
+		$me = $this;
+
 		// Here we'll get an instance of this controller dispatcher and hand it off to
 		// the Closure so it will be used to resolve the class instances out of our
 		// IoC container instance and call the appropriate methods on the class.
 		$d = $this->getControllerDispatcher();
 
-		return function() use ($d, $controller)
+		return function() use ($me, $d, $controller)
 		{
-			$route = $this->current();
+			$route = $me->current();
 
-			$request = $this->getCurrentRequest();
+			$request = $me->getCurrentRequest();
 
 			// Now we can split the controller and method out of the action string so that we
 			// can call them appropriately on the class. This controller and method are in
@@ -968,7 +938,7 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 
 		// Once this route has run and the response has been prepared, we will run the
 		// after filter to do any last work on the response or for this application
-		// before we will return the response back to the consuming code for use.
+		// before we will return the rseponse back to the consuming code for use.
 		$this->callFilter('after', $request, $response);
 
 		return $response;
@@ -983,8 +953,6 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 	public function dispatchToRoute(Request $request)
 	{
 		$route = $this->findRoute($request);
-
-		$this->events->fire('router.matched', array($route, $request));
 
 		// Once we have successfully matched the incoming request to a given route we
 		// can call the before filters on that route. This works similar to global
@@ -1052,17 +1020,6 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 	}
 
 	/**
-	 * Register a route matched event listener.
-	 *
-	 * @param  callable  $callback
-	 * @return void
-	 */
-	public function matched($callback)
-	{
-		$this->events->listen('router.matched', $callback);
-	}
-
-	/**
 	 * Register a new "before" filter with the router.
 	 *
 	 * @param  mixed  $callback
@@ -1088,7 +1045,7 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 	 * Register a new global filter with the router.
 	 *
 	 * @param  string  $filter
-	 * @param  mixed   $callback
+	 * @param  mxied   $callback
 	 * @return void
 	 */
 	protected function addGlobalFilter($filter, $callback)
@@ -1116,7 +1073,7 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 	 */
 	protected function parseFilter($callback)
 	{
-		if (is_string($callback) && ! str_contains($callback, '@'))
+		if (is_string($callback) and ! str_contains($callback, '@'))
 		{
 			return $callback.'@filter';
 		}
@@ -1138,21 +1095,6 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 		if ( ! is_null($methods)) $methods = array_map('strtoupper', (array) $methods);
 
 		$this->patternFilters[$pattern][] = compact('name', 'methods');
-	}
-
-	/**
-	 * Register a regular expression based filter with the router.
-	 *
-	 * @param  string     $pattern
-	 * @param  string     $name
-	 * @param  array|null $methods
-	 * @return void
-	 */
-	public function whenRegex($pattern, $name, $methods = null)
-	{
-		if ( ! is_null($methods)) $methods = array_map('strtoupper', (array) $methods);
-
-		$this->regexFilters[$pattern][] = compact('name', 'methods');
 	}
 
 	/**
@@ -1271,27 +1213,14 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 	{
 		$results = array();
 
-		list($path, $method) = array($request->path(), $request->getMethod());
+		$method = $request->getMethod();
 
 		foreach ($this->patternFilters as $pattern => $filters)
 		{
 			// To find the patterned middlewares for a request, we just need to check these
 			// registered patterns against the path info for the current request to this
 			// applications, and when it matches we will merge into these middlewares.
-			if (str_is($pattern, $path))
-			{
-				$merge = $this->patternsByMethod($method, $filters);
-
-				$results = array_merge($results, $merge);
-			}
-		}
-
-		foreach ($this->regexFilters as $pattern => $filters)
-		{
-			// To find the patterned middlewares for a request, we just need to check these
-			// registered patterns against the path info for the current request to this
-			// applications, and when it matches we will merge into these middlewares.
-			if (preg_match($pattern, $path))
+			if (str_is($pattern, $request->path()))
 			{
 				$merge = $this->patternsByMethod($method, $filters);
 
@@ -1392,21 +1321,7 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 
 		$data = array_merge(array($route, $request, $response), $parameters);
 
-		return $this->events->until('router.filter: '.$filter, $this->cleanFilterParameters($data));
-	}
-
-	/**
-	 * Clean the parameters being passed to a filter callback.
-	 *
-	 * @param  array  $parameters
-	 * @return array
-	 */
-	protected function cleanFilterParameters(array $parameters)
-	{
-		return array_filter($parameters, function($p)
-		{
-			return ! is_null($p) && $p !== '';
-		});
+		return $this->events->until('router.filter: '.$filter, array_filter($data));
 	}
 
 	/**
@@ -1478,29 +1393,9 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 	 *
 	 * @return \Illuminate\Routing\Route
 	 */
-	public function getCurrentRoute()
-	{
-		return $this->current();
-	}
-
-	/**
-	 * Get the currently dispatched route instance.
-	 *
-	 * @return \Illuminate\Routing\Route
-	 */
 	public function current()
 	{
 		return $this->current;
-	}
-
-	/**
-	 * Get the current route name.
-	 *
-	 * @return string|null
-	 */
-	public function currentRouteName()
-	{
-		return ($this->current()) ? $this->current()->getName() : null;
 	}
 
 	/**
@@ -1511,7 +1406,7 @@ class Router implements HttpKernelInterface, RouteFiltererInterface {
 	 */
 	public function currentRouteNamed($name)
 	{
-		return ($this->current()) ? $this->current()->getName() == $name : false;
+		return $this->current()->getName() == $name;
 	}
 
 	/**

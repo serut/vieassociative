@@ -78,7 +78,7 @@ class TagSet {
 	 */
 	public function resetTag($name)
 	{
-		$this->store->forever($this->tagKey($name), $id = str_replace('.', '', uniqid('', true)));
+		$this->store->forever($this->tagKey($name), $id = uniqid());
 
 		return $id;
 	}

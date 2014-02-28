@@ -6,25 +6,10 @@ use Illuminate\Database\Eloquent\Collection;
 
 class HasManyThrough extends Relation {
 
-	/**
-	 * The distance parent model instance.
-	 *
-	 * @var \Illuminate\Database\Eloquent\Model
-	 */
 	protected $farParent;
 
-	/**
-	 * The near key on the relationship.
-	 *
-	 * @var string
-	 */
 	protected $firstKey;
 
-	/**
-	 * The far key on the relationship.
-	 *
-	 * @var string
-	 */
 	protected $secondKey;
 
 	/**
@@ -32,8 +17,7 @@ class HasManyThrough extends Relation {
 	 *
 	 * @param  \Illuminate\Database\Eloquent\Builder  $query
 	 * @param  \Illuminate\Database\Eloquent\Model  $parent
-	 * @param  string  $firstKey
-	 * @param  string  $secondKey
+	 * @param  string  $foreignKey
 	 * @return void
 	 */
 	public function __construct(Builder $query, Model $farParent, Model $parent, $firstKey, $secondKey)
@@ -66,20 +50,19 @@ class HasManyThrough extends Relation {
 	 * Add the constraints for a relationship count query.
 	 *
 	 * @param  \Illuminate\Database\Eloquent\Builder  $query
-	 * @param  \Illuminate\Database\Eloquent\Builder  $parent
 	 * @return \Illuminate\Database\Eloquent\Builder
 	 */
-	public function getRelationCountQuery(Builder $query, Builder $parent)
+	public function getRelationCountQuery(Builder $query)
 	{
 		$this->setJoin($query);
 
-		return parent::getRelationCountQuery($query, $parent);
+		return parent::getRelationCountQuery($query);
 	}
 
 	/**
 	 * Set the join clause on the query.
 	 *
-	 * @param  \Illuminate\Database\Eloquent\Builder|null  $query
+	 * @param  \Illuminate\Databaes\Eloquent\Builder|null  $query
 	 * @return void
 	 */
 	protected function setJoin(Builder $query = null)

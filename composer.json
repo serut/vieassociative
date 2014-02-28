@@ -3,7 +3,7 @@
 	"description": "The Laravel Framework.",
 	"keywords": ["framework", "laravel"],
 	"require": {
-		"laravel/framework": "4.*",
+		"laravel/framework": "4.1",
 		"aws/aws-sdk-php-laravel": "dev-master",
 		"edvinaskrucas/notification": "1.*",
 		"thomaswelton/laravel-facebook": "dev-master",

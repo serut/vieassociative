@@ -35,33 +35,10 @@ class RefreshCommand extends Command {
 		// them in succession. We'll also see if we need to res-eed the database.
 		$this->call('migrate', array('--database' => $database));
 
-		if ($this->needsSeeding())
+		if ($this->input->getOption('seed'))
 		{
-			$this->runSeeder($database);
+			$this->call('db:seed', array('--database' => $database));
 		}
-	}
-
-	/**
-	 * Determine if the developer has requested database seeding.
-	 *
-	 * @return bool
-	 */
-	protected function needsSeeding()
-	{
-		return $this->option('seed') || $this->option('seeder');
-	}
-
-	/**
-	 * Run the database seeder command.
-	 *
-	 * @param  string  $database
-	 * @return void
-	 */
-	protected function runSeeder($database)
-	{
-		$class = $this->option('seeder') ?: 'DatabaseSeeder';
-
-		$this->call('db:seed', array('--database' => $database, '--class' => $class));
 	}
 
 	/**
@@ -75,8 +52,6 @@ class RefreshCommand extends Command {
 			array('database', null, InputOption::VALUE_OPTIONAL, 'The database connection to use.'),
 
 			array('seed', null, InputOption::VALUE_NONE, 'Indicates if the seed task should be re-run.'),
-
-			array('seeder', null, InputOption::VALUE_OPTIONAL, 'The class name of the root seeder.'),
 		);
 	}
 

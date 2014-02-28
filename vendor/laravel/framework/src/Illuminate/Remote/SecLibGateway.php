@@ -78,11 +78,11 @@ class SecLibGateway implements GatewayInterface {
 	 * Connect to the SSH server.
 	 *
 	 * @param  string  $username
-	 * @return bool
+	 * @return void
 	 */
 	public function connect($username)
 	{
-		return $this->getConnection()->login($username, $this->getAuthForLogin());
+		$this->getConnection()->login($username, $this->getAuthForLogin());
 	}
 
 	/**
@@ -104,29 +104,6 @@ class SecLibGateway implements GatewayInterface {
 	public function run($command)
 	{
 		$this->getConnection()->exec($command, false);
-	}
-
-	/**
-	 * Download the contents of a remote file.
-	 *
-	 * @param  string  $remote
-	 * @param  string  $local
-	 * @return void
-	 */
-	public function get($remote, $local)
-	{
-		$this->getConnection()->get($remote, $local);
-	}
-
-	/**
-	 * Get the contents of a remote file.
-	 *
-	 * @param  string  $remote
-	 * @return string
-	 */
-	public function getString($remote)
-	{
-		return $this->getConnection()->get($remote);
 	}
 
 	/**
@@ -199,9 +176,7 @@ class SecLibGateway implements GatewayInterface {
 	 */
 	protected function hasRsaKey()
 	{
-		$hasKey = (isset($this->auth['key']) && trim($this->auth['key']) != '');
-
-		return $hasKey || (isset($this->auth['keytext']) && trim($this->auth['keytext']) != '');
+		return (isset($this->auth['key']) && trim($this->auth['key']) != '');
 	}
 
 	/**
@@ -212,22 +187,9 @@ class SecLibGateway implements GatewayInterface {
 	 */
 	protected function loadRsaKey(array $auth)
 	{
-		with($key = $this->getKey($auth))->loadKey($this->readRsaKey($auth));
+		with($key = $this->getKey($auth))->loadKey($this->files->get($auth['key']));
 
 		return $key;
-	}
-
-	/**
-	 * Read the contents of the RSA key.
-	 *
-	 * @param  array  $auth
-	 * @return string
-	 */
-	protected function readRsaKey(array $auth)
-	{
-		if (isset($auth['key'])) return $this->files->get($auth['key']);
-
-		return $auth['keytext'];
 	}
 
 	/**

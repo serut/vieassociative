@@ -60,10 +60,8 @@ class ConsoleSupportServiceProvider extends ServiceProvider {
 	{
 		$provides = array();
 
-		foreach ($this->providers as $provider)
+		foreach ($this->instances as $instance)
 		{
-			$instance = $this->app->resolveProviderClass($provider);
-
 			$provides = array_merge($provides, $instance->provides());
 		}
 

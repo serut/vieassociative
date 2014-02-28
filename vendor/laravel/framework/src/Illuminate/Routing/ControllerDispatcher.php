@@ -1,6 +1,5 @@
 <?php namespace Illuminate\Routing;
 
-use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Container\Container;
 
@@ -136,20 +135,9 @@ class ControllerDispatcher {
 			// router take care of calling these filters so we do not duplicate logics.
 			if ($this->filterApplies($filter, $request, $method))
 			{
-				$route->after($this->getAssignableAfter($filter));
+				$route->after($filter['filter']);
 			}
 		}
-	}
-
-	/**
-	 * Get the assignable after filter for the route.
-	 *
-	 * @param  Closure|string  $filter
-	 * @return string
-	 */
-	protected function getAssignableAfter($filter)
-	{
-		return $filter['original'] instanceof Closure ? $filter['filter'] : $filter['original'];
 	}
 
 	/**
@@ -158,7 +146,6 @@ class ControllerDispatcher {
 	 * @param  array  $filter
 	 * @param  \Illuminate\Http\Request  $request
 	 * @param  string  $method
-	 * @return bool
 	 */
 	protected function filterApplies($filter, $request, $method)
 	{
@@ -179,7 +166,6 @@ class ControllerDispatcher {
 	 * @param  array  $filter
 	 * @param  \Illuminate\Http\Request  $request
 	 * @param  string  $method
-	 * @return bool
 	 */
 	protected function filterFailsOnly($filter, $request, $method)
 	{
@@ -194,7 +180,6 @@ class ControllerDispatcher {
 	 * @param  array  $filter
 	 * @param  \Illuminate\Http\Request  $request
 	 * @param  string  $method
-	 * @return bool
 	 */
 	protected function filterFailsExcept($filter, $request, $method)
 	{
@@ -209,7 +194,6 @@ class ControllerDispatcher {
 	 * @param  array  $filter
 	 * @param  \Illuminate\Http\Request  $request
 	 * @param  string  $method
-	 * @return bool
 	 */
 	protected function filterFailsOn($filter, $request, $method)
 	{

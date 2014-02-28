@@ -6,7 +6,7 @@ use Illuminate\Container\Container;
 use Illuminate\View\Engines\EngineResolver;
 use Illuminate\Support\Contracts\ArrayableInterface as Arrayable;
 
-class Factory {
+class Environment {
 
 	/**
 	 * The engine implementation.
@@ -32,7 +32,7 @@ class Factory {
 	/**
 	 * The IoC container instance.
 	 *
-	 * @var \Illuminate\Container\Container
+	 * @var \Illuminate\Container
 	 */
 	protected $container;
 
@@ -86,7 +86,7 @@ class Factory {
 	protected $renderCount = 0;
 
 	/**
-	 * Create a new view factory instance.
+	 * Create a new view environment instance.
 	 *
 	 * @param  \Illuminate\View\Engines\EngineResolver  $engines
 	 * @param  \Illuminate\View\ViewFinderInterface  $finder
@@ -103,7 +103,7 @@ class Factory {
 	}
 
 	/**
-	 * Get the evaluated view contents for the given view.
+	 * Get a evaluated view contents for the given view.
 	 *
 	 * @param  string  $view
 	 * @param  array   $data
@@ -133,7 +133,7 @@ class Factory {
 	}
 
 	/**
-	 * Get the evaluated view contents for a named view.
+	 * Get a evaluated view contents for a named view.
 	 *
 	 * @param string $view
 	 * @param mixed $data
@@ -283,24 +283,6 @@ class Factory {
 		}
 
 		return $creators;
-	}
-
-	/**
-	 * Register multiple view composers via an array.
-	 *
-	 * @param array  $composers
-	 * @return array
-	 */
-	public function composers(array $composers)
-	{
-		$registered = array();
-
-		foreach ($composers as $callback => $views)
-		{
-			$registered += $this->composer($views, $callback);
-		}
-
-		return $registered;
 	}
 
 	/**
@@ -645,18 +627,6 @@ class Factory {
 	}
 
 	/**
-	 * Prepend a new namespace to the loader.
-	 *
-	 * @param  string  $namespace
-	 * @param  string|array  $hints
-	 * @return void
-	 */
-	public function prependNamespace($namespace, $hints)
-	{
-		$this->finder->prependNamespace($namespace, $hints);
-	}
-
-	/**
 	 * Register a valid view extension and its engine.
 	 *
 	 * @param  string   $extension
@@ -673,7 +643,7 @@ class Factory {
 			$this->engines->register($engine, $resolver);
 		}
 
-		unset($this->extensions[$extension]);
+		unset($this->extensions[$engine]);
 
 		$this->extensions = array_merge(array($extension => $engine), $this->extensions);
 	}

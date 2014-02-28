@@ -140,11 +140,11 @@ class PasswordBroker {
 		// so that it may be displayed for an user to click for password reset.
 		$view = $this->reminderView;
 
-		return $this->mailer->send($view, compact('token', 'user'), function($m) use ($user, $token, $callback)
+		return $this->mailer->send($view, compact('token', 'user'), function($m) use ($user, $callback)
 		{
 			$m->to($user->getReminderEmail());
 
-			if ( ! is_null($callback)) call_user_func($callback, $m, $user, $token);
+			if ( ! is_null($callback)) call_user_func($callback, $m, $user);
 		});
 	}
 
@@ -183,7 +183,7 @@ class PasswordBroker {
 	 * Validate a password reset for the given credentials.
 	 *
 	 * @param  array  $credentials
-	 * @return \Illuminate\Auth\Reminders\RemindableInterface
+	 * @return \Illuminate\Auth\RemindableInterface
 	 */
 	protected function validateReset(array $credentials)
 	{
@@ -244,9 +244,7 @@ class PasswordBroker {
 	 */
 	protected function validatePasswordWithDefaults(array $credentials)
 	{
-		$matches = $credentials['password'] == $credentials['password_confirmation'];
-
-		return $matches && $credentials['password'] && strlen($credentials['password']) >= 6;
+		return $credentials['password'] && strlen($credentials['password']) >= 6;
 	}
 
 	/**

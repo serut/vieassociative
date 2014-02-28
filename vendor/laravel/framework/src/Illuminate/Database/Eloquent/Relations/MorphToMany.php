@@ -108,7 +108,7 @@ class MorphToMany extends BelongsToMany {
 	 *
 	 * @param  array  $attributes
 	 * @param  bool   $exists
-	 * @return \Illuminate\Database\Eloquent\Relations\Pivot
+	 * @return \Illuminate\Database\Eloquent\Relation\Pivot
 	 */
 	public function newPivot(array $attributes = array(), $exists = false)
 	{

@@ -20,13 +20,6 @@ class Builder {
 	protected $grammar;
 
 	/**
-	 * The Blueprint resolver callback.
-	 *
-	 * @var \Closure
-	 */
-	protected $resolver;
-
-	/**
 	 * Create a new database Schema manager.
 	 *
 	 * @param  \Illuminate\Database\Connection  $connection
@@ -178,14 +171,7 @@ class Builder {
 	 */
 	protected function createBlueprint($table, Closure $callback = null)
 	{
-		if (isset($this->resolver))
-		{
-			return call_user_func($this->resolver, $table, $callback);
-		}
-		else
-		{
-			return new Blueprint($table, $callback);
-		}
+		return new Blueprint($table, $callback);
 	}
 
 	/**
@@ -209,17 +195,6 @@ class Builder {
 		$this->connection = $connection;
 
 		return $this;
-	}
-
-	/**
-	 * Set the Schema Blueprint resolver callback.
-	 *
-	 * @param  \Closure  $resolver
-	 * @return void
-	 */
-	public function blueprintResolver(Closure $resolver)
-	{
-		$this->resolver = $resolver;
 	}
 
 }

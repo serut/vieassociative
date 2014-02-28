@@ -7,7 +7,7 @@ class MorphPivot extends Pivot {
 	/**
 	 * Set the keys for a save update query.
 	 *
-	 * @param  \Illuminate\Database\Eloquent\Builder  $query
+	 * @param  \Illuminate\Database\Eloquent\Builder
 	 * @return \Illuminate\Database\Eloquent\Builder
 	 */
 	protected function setKeysForSaveQuery(Builder $query)

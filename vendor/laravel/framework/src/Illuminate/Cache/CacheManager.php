@@ -126,17 +126,6 @@ class CacheManager extends Manager {
 	}
 
 	/**
-	 * Set the cache "prefix" value.
-	 *
-	 * @param  string  $name
-	 * @return void
-	 */
-	public function setPrefix($name)
-	{
-		$this->app['config']['cache.prefix'] = $name;
-	}
-
-	/**
 	 * Create a new cache repository with the given implementation.
 	 *
 	 * @param  \Illuminate\Cache\StoreInterface  $store
@@ -152,20 +141,9 @@ class CacheManager extends Manager {
 	 *
 	 * @return string
 	 */
-	public function getDefaultDriver()
+	protected function getDefaultDriver()
 	{
 		return $this->app['config']['cache.driver'];
-	}
-
-	/**
-	 * Set the default cache driver name.
-	 *
-	 * @param  string  $name
-	 * @return void
-	 */
-	public function setDefaultDriver($name)
-	{
-		$this->app['config']['cache.driver'] = $name;
 	}
 
 }

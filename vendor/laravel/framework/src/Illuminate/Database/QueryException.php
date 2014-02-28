@@ -1,8 +1,6 @@
 <?php namespace Illuminate\Database;
 
-use PDOException;
-
-class QueryException extends PDOException {
+class QueryException extends \PDOException {
 
 	/**
 	 * The SQL for the query.
@@ -19,11 +17,11 @@ class QueryException extends PDOException {
 	protected $bindings;
 
 	/**
-	 * Create a new query exception instance.
+	 * Create a new query excetion instance.
 	 *
 	 * @param  string  $sql
 	 * @param  array  $bindings
-	 * @param  \Exception $previous
+	 * @param  \PDOException $previous
 	 * @return void
 	 */
 	public function __construct($sql, array $bindings, $previous)
@@ -32,12 +30,8 @@ class QueryException extends PDOException {
 		$this->bindings = $bindings;
 		$this->previous = $previous;
 		$this->code = $previous->getCode();
+		$this->errorInfo = $previous->errorInfo;
 		$this->message = $this->formatMessage($sql, $bindings, $previous);
-
-		if ($previous instanceof PDOException)
-		{
-			$this->errorInfo = $previous->errorInfo;
-		}
 	}
 
 	/**
@@ -45,7 +39,7 @@ class QueryException extends PDOException {
 	 *
 	 * @param  string  $sql
 	 * @param  array  $bindings
-	 * @param  \Exception $previous
+	 * @param  \PDOException $previous
 	 * @return string
 	 */
 	protected function formatMessage($sql, $bindings, $previous)

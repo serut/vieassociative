@@ -410,6 +410,8 @@ class Grammar extends BaseGrammar {
 	 */
 	protected function compileHavings(Builder $query, $havings)
 	{
+		$me = $this;
+
 		$sql = implode(' ', array_map(array($this, 'compileHaving'), $havings));
 
 		return 'having '.preg_replace('/and /', '', $sql, 1);
@@ -458,11 +460,13 @@ class Grammar extends BaseGrammar {
 	 */
 	protected function compileOrders(Builder $query, $orders)
 	{
-		return 'order by '.implode(', ', array_map(function($order)
+		$me = $this;
+
+		return 'order by '.implode(', ', array_map(function($order) use ($me)
 		{
 			if (isset($order['sql'])) return $order['sql'];
 
-			return $this->wrap($order['column']).' '.$order['direction'];
+			return $me->wrap($order['column']).' '.$order['direction'];
 		}
 		, $orders));
 	}

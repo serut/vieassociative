@@ -48,7 +48,7 @@ class QueueManager {
 	 */
 	public function connected($name = null)
 	{
-		return isset($this->connections[$name ?: $this->getDefaultDriver()]);
+		return isset($this->connections[$name ?: $this->getDefault()]);
 	}
 
 	/**
@@ -59,7 +59,7 @@ class QueueManager {
 	 */
 	public function connection($name = null)
 	{
-		$name = $name ?: $this->getDefaultDriver();
+		$name = $name ?: $this->getDefault();
 
 		// If the connection has not been resolved yet we will resolve it now as all
 		// of the connections are resolved when they are actually needed so we do
@@ -145,20 +145,9 @@ class QueueManager {
 	 *
 	 * @return string
 	 */
-	public function getDefaultDriver()
+	protected function getDefault()
 	{
 		return $this->app['config']['queue.default'];
-	}
-
-	/**
-	 * Set the name of the default queue connection.
-	 *
-	 * @param  string  $name
-	 * @return void
-	 */
-	public function setDefaultDriver($name)
-	{
-		$this->app['config']['queue.default'] = $name;
 	}
 
 	/**
@@ -169,7 +158,7 @@ class QueueManager {
 	 */
 	public function getName($connection = null)
 	{
-		return $connection ?: $this->getDefaultDriver();
+		return $connection ?: $this->getDefault();
 	}
 
 	/**

@@ -4,6 +4,7 @@ use Whoops\Run;
 use Whoops\Handler\PrettyPageHandler;
 use Whoops\Handler\JsonResponseHandler;
 use Illuminate\Support\ServiceProvider;
+use Symfony\Component\Debug\ExceptionHandler as KernelHandler;
 
 class ExceptionServiceProvider extends ServiceProvider {
 
@@ -151,14 +152,16 @@ class ExceptionServiceProvider extends ServiceProvider {
 	 */
 	protected function registerPrettyWhoopsHandler()
 	{
-		$this->app['whoops.handler'] = $this->app->share(function()
+		$me = $this;
+
+		$this->app['whoops.handler'] = $this->app->share(function() use ($me)
 		{
 			with($handler = new PrettyPageHandler)->setEditor('sublime');
 
 			// If the resource path exists, we will register the resource path with Whoops
 			// so our custom Laravel branded exception pages will be used when they are
 			// displayed back to the developer. Otherwise, the default pages are run.
-			if ( ! is_null($path = $this->resourcePath()))
+			if ( ! is_null($path = $me->resourcePath()))
 			{
 				$handler->setResourcesPath($path);
 			}

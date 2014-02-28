@@ -86,16 +86,6 @@ class BeanstalkdJob extends Job {
 	}
 
 	/**
-	 * Bury the job in the queue.
-	 *
-	 * @return void
-	 */
-	public function bury()
-	{
-		$this->pheanstalk->bury($this->job);
-	}
-
-	/**
 	 * Get the number of times the job has been attempted.
 	 *
 	 * @return int

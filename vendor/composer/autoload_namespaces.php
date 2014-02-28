@@ -12,7 +12,6 @@ return array(
     'Thomaswelton\\LaravelFacebook' => array($vendorDir . '/thomaswelton/laravel-facebook/src'),
     'Themonkeys\\ErrorEmailer' => array($vendorDir . '/themonkeys/error-emailer/src'),
     'Symfony\\Component\\Translation\\' => array($vendorDir . '/symfony/translation'),
-    'Symfony\\Component\\Routing\\' => array($vendorDir . '/symfony/routing'),
     'Symfony\\Component\\Process\\' => array($vendorDir . '/symfony/process'),
     'Symfony\\Component\\HttpKernel\\' => array($vendorDir . '/symfony/http-kernel'),
     'Symfony\\Component\\HttpFoundation\\' => array($vendorDir . '/symfony/http-foundation'),

@@ -239,18 +239,9 @@ class Container implements ArrayAccess {
 			throw new \InvalidArgumentException("Type {$abstract} is not bound.");
 		}
 
-		if (isset($this->instances[$abstract]))
-		{
-			$this->instances[$abstract] = $closure($this->instances[$abstract], $this);
+		$extender = $this->getExtender($abstract, $closure);
 
-			$this->rebound($abstract);
-		}
-		else
-		{
-			$extender = $this->getExtender($abstract, $closure);
-
-			$this->bind($abstract, $extender, $this->isShared($abstract));
-		}
+		$this->bind($abstract, $extender, $this->isShared($abstract));
 	}
 
 	/**
@@ -504,30 +495,25 @@ class Container implements ArrayAccess {
 			return new $concrete;
 		}
 
-		$dependencies = $constructor->getParameters();
+		$classes = $constructor->getParameters();
 
 		// Once we have all the constructor's parameters we can create each of the
 		// dependency instances and then use the reflection instances to make a
 		// new instance of this class, injecting the created dependencies in.
-		$parameters = $this->keyParametersByArgument(
-			$dependencies, $parameters
-		);
+		$deps = array_merge($parameters, $this->getDependencies(
+			array_diff_key($classes, $parameters)
+		));
 
-		$instances = $this->getDependencies(
-			$dependencies, $parameters
-		);
-
-		return $reflector->newInstanceArgs($instances);
+		return $reflector->newInstanceArgs($deps);
 	}
 
 	/**
 	 * Resolve all of the dependencies from the ReflectionParameters.
 	 *
 	 * @param  array  $parameters
-	 * @param  array  $primitives
 	 * @return array
 	 */
-	protected function getDependencies($parameters, array $primitives = array())
+	protected function getDependencies($parameters)
 	{
 		$dependencies = array();
 
@@ -537,12 +523,8 @@ class Container implements ArrayAccess {
 
 			// If the class is null, it means the dependency is a string or some other
 			// primitive type which we can not resolve since it is not a class and
-			// we will just bomb out with an error since we have no-where to go.
-			if (array_key_exists($parameter->name, $primitives))
-			{
-				$dependencies[] = $primitives[$parameter->name];
-			}
-			elseif (is_null($dependency))
+			// we'll just bomb out with an error since we have no-where to go.
+			if (is_null($dependency))
 			{
 				$dependencies[] = $this->resolveNonClass($parameter);
 			}
@@ -609,28 +591,6 @@ class Container implements ArrayAccess {
 	}
 
 	/**
-	 * If extra parameters are passed by numeric ID, rekey them by argument name.
-	 *
-	 * @param  array  $dependencies
-	 * @param  array  $parameters
-	 * @param  array
-	 */
-	protected function keyParametersByArgument(array $dependencies, array $parameters)
-	{
-		foreach ($parameters as $key => $value)
-		{
-			if (is_numeric($key))
-			{
-				unset($parameters[$key]);
-
-				$parameters[$dependencies[$key]->name] = $value;
-			}
-		}
-
-		return $parameters;
-	}
-
-	/**
 	 * Register a new resolving callback.
 	 *
 	 * @param  string  $abstract
@@ -679,7 +639,7 @@ class Container implements ArrayAccess {
 	{
 		foreach ($callbacks as $callback)
 		{
-			call_user_func($callback, $object, $this);
+			call_user_func($callback, $object);
 		}
 	}
 

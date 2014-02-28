@@ -22,13 +22,6 @@ class Translator extends NamespacedItemResolver implements TranslatorInterface {
 	protected $locale;
 
 	/**
-	 * The fallback locale used by the translator.
-	 *
-	 * @var string
-	 */
-	protected $fallback;
-
-	/**
 	 * The array of loaded translation groups.
 	 *
 	 * @var array
@@ -75,21 +68,18 @@ class Translator extends NamespacedItemResolver implements TranslatorInterface {
 		// Here we will get the locale that should be used for the language line. If one
 		// was not passed, we will use the default locales which was given to us when
 		// the translator was instantiated. Then, we can load the lines and return.
-		foreach ($this->parseLocale($locale) as $locale)
-		{
-			$this->load($namespace, $group, $locale);
+		$locale = $locale ?: $this->getLocale();
 
-			$line = $this->getLine(
-				$namespace, $group, $locale, $item, $replace
-			);
+		$this->load($namespace, $group, $locale);
 
-			if ( ! is_null($line)) break;
-		}
+		$line = $this->getLine(
+			$namespace, $group, $locale, $item, $replace
+		);
 
 		// If the line doesn't exist, we will return back the key which was requested as
 		// that will be quick to spot in the UI if language keys are wrong or missing
 		// from the application's language files. Otherwise we can return the line.
-		if ( ! isset($line)) return $key;
+		if (is_null($line)) return $key;
 
 		return $line;
 	}
@@ -112,7 +102,7 @@ class Translator extends NamespacedItemResolver implements TranslatorInterface {
 		{
 			return $this->makeReplacements($line, $replace);
 		}
-		elseif (is_array($line) && count($line) > 0)
+		elseif (is_array($line) and count($line) > 0)
 		{
 			return $line;
 		}
@@ -259,23 +249,6 @@ class Translator extends NamespacedItemResolver implements TranslatorInterface {
 	}
 
 	/**
-	 * Get the array of locales to be checked.
-	 *
-	 * @return array
-	 */
-	protected function parseLocale($locale)
-	{
-		if ( ! is_null($locale))
-		{
-			return array_filter(array($locale, $this->fallback));
-		}
-		else
-		{
-			return array_filter(array($this->locale, $this->fallback));
-		}
-	}
-
-	/**
 	 * Get the message selector instance.
 	 *
 	 * @return \Symfony\Component\Translation\MessageSelector
@@ -340,27 +313,6 @@ class Translator extends NamespacedItemResolver implements TranslatorInterface {
 	public function setLocale($locale)
 	{
 		$this->locale = $locale;
-	}
-
-	/**
-	 * Set the fallback locale being used.
-	 *
-	 * @return string
-	 */
-	public function getFallback()
-	{
-		return $this->fallback;
-	}
-
-	/**
-	 * Set the fallback locale being used.
-	 *
-	 * @param  string  $fallback
-	 * @return void
-	 */
-	public function setFallback($fallback)
-	{
-		$this->fallback = $fallback;
 	}
 
 }

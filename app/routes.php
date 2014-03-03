@@ -42,10 +42,7 @@ switch ($server['0']) {
 
         Route::group(array('prefix' => 'api'), function () {
             Route::group(array('prefix' => '0.1'), function () {
-
                 Route::group(array('prefix' => 'association'), function () {
-
-
                     Route::get('{id}/news', 'AssociationAPIController@getNews')->where('id', '[0-9]+');
                 });
             });

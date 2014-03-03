@@ -213,7 +213,8 @@ class Partial extends Eloquent
                 if ($id_news != $q->id_news) {
                     $i++;
                     $id_news = $q->id_news;
-                    $result[$id_news]['updated_at'] = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $q->updated_at)->toISO8601String();
+                    $result[$i]['id_news'] = $id_news;
+                    $result[$i]['updated_at'] = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $q->updated_at)->toISO8601String();
                 }
                 switch ($q->partial_type) {
                     case 'PartialTitle':
@@ -231,7 +232,7 @@ class Partial extends Eloquent
                     case 'PartialOnePicture':
                         $arg1_name = "img_url";
                 }
-                $result[$id_news]['data'][] = array(
+                $result[$i]['data'][] = array(
                     "type" => $q->partial_type,
                     $arg1_name => $q->$arg1_name,
                     "partial_id" => $q->partial_id,

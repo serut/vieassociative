@@ -66,7 +66,7 @@ class News extends Eloquent
      */
     static function listNews($id_assoc)
     {
-        $news = News::where('id_assoc', $id_assoc)->get();
+        $news = News::where('id_assoc', $id_assoc)->orderBy('id', 'DESC')->get();
         return Partial::getNews($news);
     }
 

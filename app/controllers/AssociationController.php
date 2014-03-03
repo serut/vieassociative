@@ -56,7 +56,7 @@ class AssociationController extends BaseController
     {
         $association = Association::find($idAssoc);
         if ($association->plan == 1 && $slug != $association->slug) {
-            // It's a private association
+// It's a private association
             return App::abort(404);
         }
         return View::make('association.profile')
@@ -112,7 +112,7 @@ class AssociationController extends BaseController
         $result = $v->add();
         if (isset($result['success'])) {
             $id_assoc = Association::add($result['data']);
-            // if the association has been created by one of his authorised user
+// if the association has been created by one of his authorised user
             if ($result['data']['choice'] == "true") {
                 User::addAssoc(Auth::user()->id, $id_assoc, $result['data']['link']);
                 $result['redirect_url'] = '/' . $id_assoc . '/edit/general-informations';

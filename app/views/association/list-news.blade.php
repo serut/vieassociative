@@ -36,7 +36,7 @@
                             </td>
                             <td>{{\Carbon\Carbon::createFromTimeStamp(strtotime($new['updated_at']))->diffForHumans()}}</td>
                             <td><i class="fa fa-remove"></i></td>
-                            <td><a href="news/{{$key}}/edit"> Editer</a></td>
+                            <td><a href="news/{{$new['id_news']}}/edit"> Editer</a></td>
                             </tr>
                     @endforeach
                 </tbody>

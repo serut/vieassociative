@@ -40,9 +40,9 @@ class AssociationController extends BaseController
     public function getEdit($idAssoc)
     {
         return View::make('association.edit')
+            ->with('association', Association::findOrFail($idAssoc))
             ->with('count_news', News::countNews($idAssoc))
             ->with('count_admin', Association::countAdmin($idAssoc))
-            ->with('association', Association::find($idAssoc))
             ->with('proposition', Proposition::getPropositions($idAssoc));
     }
 
@@ -54,9 +54,9 @@ class AssociationController extends BaseController
      */
     public function getProfile($idAssoc, $slug)
     {
-        $association = Association::find($idAssoc);
+        $association = Association::findOrFail($idAssoc);
         if ($association->plan == 1 && $slug != $association->slug) {
-// It's a private association
+            // It's a private association
             return App::abort(404);
         }
         return View::make('association.profile')
@@ -73,7 +73,7 @@ class AssociationController extends BaseController
     public function getEditGeneralInformations($idAssoc)
     {
         return View::make('association.edit-general-informations')
-            ->with('association', Association::find($idAssoc));
+            ->with('association', Association::findOrFail($idAssoc));
     }
 
     /**
@@ -85,7 +85,7 @@ class AssociationController extends BaseController
     public function getEditVieAssociativeInformations($idAssoc)
     {
         return View::make('association.edit-vieassociative-informations')
-            ->with('association', Association::find($idAssoc));
+            ->with('association', Association::findOrFail($idAssoc));
     }
 
     /**
@@ -96,7 +96,7 @@ class AssociationController extends BaseController
     public function getEditAdministrator($idAssoc)
     {
         return View::make('association.edit-administrator')
-            ->with('association', Association::find($idAssoc))
+            ->with('association', Association::findOrFail($idAssoc))
             ->with('is_admin', User::isAdministrator($idAssoc))
             ->with('admin', UserAssociation::where('id_assoc', $idAssoc)->with('author')->get());
     }
@@ -139,7 +139,7 @@ class AssociationController extends BaseController
             $prefix = 'deva';
         }
         return View::make('picture.upload')
-            ->with('association', Association::find($idAssoc))
+            ->with('association', Association::findOrFail($idAssoc))
             ->with('gallery', Folder::getGallery($idAssoc))
             ->with('prefix', $prefix)
             ->with('typeCrop', $typeCrop)

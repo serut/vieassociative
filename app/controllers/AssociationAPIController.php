@@ -17,6 +17,6 @@ class AssociationAPIController extends BaseController
     public function getNews($idAssoc)
     {
         Association::findOrFail($idAssoc);
-        return Response::json(News::listNews($idAssoc));
+        return Response::json(News::listNews(AssociationMenu::getFirstNewsFeed($idAssoc)));
     }
 } 

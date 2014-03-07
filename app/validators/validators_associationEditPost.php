@@ -13,6 +13,7 @@ class validators_associationEditPost extends BaseValidator
     {
         $rules = array(
             'id' => 'required|integer',
+            'id_wall_news' => 'required|integer',
         );
         return $this->test($rules);
     }

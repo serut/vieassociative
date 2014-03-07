@@ -60,6 +60,7 @@
 	<script type="text/javascript">
     var IDASSOC = {{$association->id}};
     var IDNEWS = {{$id_news}};
+    var IDWALLNEWS = {{$id_wall_news}};
     var ORDER = 0;
     var URL_RETURN = '/{{$association->id}}-{{$association->slug}}';
     var error_spotted = false;
@@ -350,7 +351,7 @@
             url: '/'+IDASSOC+'/form/news/add',
             dataType: "json",
             async: false,
-            data: {'id':0}
+            data: {'id':0,'id_wall_news': IDWALLNEWS}
         }).done(function ( data ) {
 	        IDNEWS = data['id_news'];
         	save_2();

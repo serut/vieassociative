@@ -5,7 +5,7 @@ use Illuminate\Database\Migrations\Migration;
 /**
  * Class WallNews
  */
-class WallNews extends Migration {
+class WallNewsTable extends Migration {
 
 	/**
 	 * Run the migrations.

@@ -41,7 +41,7 @@ class AssociationController extends BaseController
     {
         return View::make('association.edit')
             ->with('association', Association::findOrFail($idAssoc))
-            ->with('count_news', News::countNews($idAssoc))
+            ->with('id_feed_news', AssociationMenu::getFirstNewsFeed($idAssoc))
             ->with('count_admin', Association::countAdmin($idAssoc))
             ->with('proposition', Proposition::getPropositions($idAssoc));
     }
@@ -52,16 +52,22 @@ class AssociationController extends BaseController
      * @param $slug
      * @return View The wall of the association
      */
-    public function getProfile($idAssoc, $slug)
+    public function getIndexAssociation($idAssoc, $slug)
     {
         $association = Association::findOrFail($idAssoc);
         if ($association->plan == 1 && $slug != $association->slug) {
-            // It's a private association
-            return App::abort(404);
+            // It's a private association, and the slug is not correct
+            App::abort(404);
         }
-        return View::make('association.profile')
-            ->with('association', $association)
-            ->with('newsFeed', News::listNews($idAssoc));
+        $menu = AssociationMenu::where('id_assoc',$association->id)->get();
+        $root = AssociationMenu::getIndex($menu);
+        if($root->id_wall_news != null){
+            return View::make('association.profile')
+                ->with('association', $association)
+                ->with('id_feed_news', $root->id_wall_news)
+                ->with('newsFeed', News::listNews($root->id_wall_news));
+        }
+        App::abort(404);
     }
 
     /**

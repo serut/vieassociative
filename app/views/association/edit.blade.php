@@ -41,8 +41,8 @@
 				</tr>
 				<tr>
 					<td>Les publications</td>
-					<td>{{$count_news}} publications</td>
-					<td><a href="edit/news"> Editer</a></td>
+					<td>{{$association->nb_publications}} publications</td>
+					<td><a href="edit/newsfeed/{{$id_feed_news}}"> Editer</a></td>
 				</tr>
 				<tr>
 					<td>Les photos</td>

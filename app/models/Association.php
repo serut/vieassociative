@@ -77,10 +77,18 @@ class Association extends Eloquent
         $gallery->touch();
         $a = new Association;
         $a->name = $assoc['name'];
-        $a->slug = Str::slug($assoc['name'], '-');
         $a->id_folder = $gallery->id;
         $a->plan = 1; // It's a private page
         $a->touch();
+        $wallNews = new WallNews;
+        $wallNews->id_assoc = $a->id;
+        $wallNews->title = "Fil d'actualité";
+        $wallNews->touch();
+        $associationMenu = new AssociationMenu;
+        $associationMenu->id_assoc = $a->id;
+        $associationMenu->order = 1;
+        $associationMenu->id_wall_news = $wallNews->id;
+        $associationMenu->touch();
         return $a->id;
     }
 

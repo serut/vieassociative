@@ -13,7 +13,7 @@
             </ul>
             <h3 class="head">{{Lang::get('association/edit/news.select_news')}} </h3>
             <div class="pull-right">
-                <a class="btn btn-primary" href="news/0/edit">{{Lang::get('association/edit/news.create_news')}}</a>
+                <a class="btn btn-primary" href="{{$id_wall_news}}/news/0/edit">{{Lang::get('association/edit/news.create_news')}}</a>
             </div>
             <table class="table table-striped">
                 <thead>
@@ -36,7 +36,7 @@
                             </td>
                             <td>{{\Carbon\Carbon::createFromTimeStamp(strtotime($new['updated_at']))->diffForHumans()}}</td>
                             <td><i class="fa fa-remove"></i></td>
-                            <td><a href="news/{{$new['id_news']}}/edit"> Editer</a></td>
+                            <td><a href="{{$id_wall_news}}/news/{{$new['id_news']}}/edit"> Editer</a></td>
                             </tr>
                     @endforeach
                 </tbody>

@@ -49,13 +49,13 @@ class News extends Eloquent
     /**
      * Needs a real association !
      */
-    static function add($id_assoc)
+    static function add($id_assoc,$id_wall_news)
     {
         $association = Association::findOrFail($id_assoc);
         $association->nb_publications++;
         $association->touch();
         $news = new News();
-        $news->id_assoc = $id_assoc;
+        $news->id_wall_news = $id_wall_news;
         $news->touch();
         return $news->id;
     }
@@ -64,9 +64,9 @@ class News extends Eloquent
      * @param $id_assoc
      * @return array
      */
-    static function listNews($id_assoc)
+    static function listNews($id_wall_news)
     {
-        $news = News::where('id_assoc', $id_assoc)->orderBy('id', 'DESC')->get();
+        $news = News::where('id_wall_news', $id_wall_news)->orderBy('id', 'DESC')->get();
         return Partial::getNews($news);
     }
 

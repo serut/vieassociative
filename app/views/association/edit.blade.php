@@ -44,6 +44,11 @@
 					<td>{{$association->nb_publications}} publications</td>
 					<td><a href="edit/newsfeed/{{$id_feed_news}}"> Editer</a></td>
 				</tr>
+                <tr>
+                    <td>Le contenu</td>
+                    <td>{{$association->nb_publications}} publications</td>
+                    <td><a href="edit/page-content/"> Editer</a></td>
+                </tr>
 				<tr>
 					<td>Les photos</td>
 					<td>{{$association->nb_photos}} images</td>

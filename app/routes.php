@@ -71,6 +71,9 @@ switch ($server['0']) {
             Route::get('{id_assoc}/discussion/{idDiscu}', 'DiscussionController@getConversation')->where('idDiscu', '[0-9]+');
             Route::get('{id_assoc}/form/{origin}/{item}', 'AssociationFormController@getForm')->where('origin', '[a-z-]+')->where('item', '[a-z-_]+');
 
+            Route::get('{id_assoc}/edit/page-content/', 'AssociationStaticPageController@get');
+            Route::get('{id_assoc}/edit/page-content/{idStaticPage}', 'AssociationStaticPageController@show')->where('idStaticPage', '[0-9]+');
+            Route::get('{id_assoc}/edit/page-content/{idNewsFeed}/news/{idNews}/edit', 'AssociationNewsController@getEditNews')->where('idNewsFeed', '[0-9]+')->where('idNews', '[0-9]+');
 
             Route::options('/upload', 'FileUploadController@fileUpload');
             Route::post('/upload', 'FileUploadController@postFileUpload');
